@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="45">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>100</ID>
+      <Description>"=== Mewgenics (喵星人) 综合辅助 CT 表 ==="</Description>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>1</ID>
+          <Description>"[激活] 家园状态核心注入 (House & Save State Hook)"</Description>
+          <Options moHideChildren="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+// Code injection at House Load routine
+// AOB: 41 B8 04 00 00 00 48 8D 15 ?? ?? ?? ?? 48 8D 4C 24 30 E8
+aobscanmodule(HouseHookAOB,Mewgenics.exe,41 B8 04 00 00 00 48 8D 15 ?? ?? ?? ?? 48 8D 4C 24 30)
+alloc(newmem,$1000,HouseHookAOB)
+
+label(code)
+label(return)
+globalalloc(p_House,8)
+
+newmem:
+  mov [p_House],r12
+
+code:
+  mov r8d,00000004
+  jmp return
+
+HouseHookAOB:
+  jmp newmem
+  nop
+return:
+registersymbol(HouseHookAOB)
+
+[DISABLE]
+HouseHookAOB:
+  db 41 B8 04 00 00 00
+
+unregistersymbol(HouseHookAOB)
+dealloc(newmem)
+          </AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>2</ID>
+              <Description>"家园金币 (House Gold)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>[p_House]+588</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>3</ID>
+              <Description>"家园食物 (House Food)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>[p_House]+590</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>4</ID>
+              <Description>"当前天数 (Current Day)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>[p_House]+580</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5</ID>
+              <Description>"储藏上限 (Storage Upgrades)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>[p_House]+598</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>6</ID>
+              <Description>"空白项圈 (Blank Collars)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>[p_House]+5A0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>7</ID>
+              <Description>"家具储藏箱 (Furniture Boxes)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>[p_House]+5A8</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>10</ID>
+          <Description>"[脚本] 无限金币锁定 (999,999 Gold)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+[p_House]+588:
+  dd #999999
+
+[DISABLE]
+          </AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>11</ID>
+          <Description>"[脚本] 无限食物锁定 (999,999 Food)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+[p_House]+590:
+  dd #999999
+
+[DISABLE]
+          </AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
