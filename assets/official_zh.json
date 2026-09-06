@@ -1,0 +1,1438 @@
+{
+  "AREA_NAME_TUTORIAL": {
+    "en": "The Path",
+    "zh": "小径"
+  },
+  "AREA_NAME_HOUSE": {
+    "en": "Home",
+    "zh": "家"
+  },
+  "AREA_NAME_ALLEY": {
+    "en": "The Alley",
+    "zh": "小巷"
+  },
+  "AREA_NAME_SEWERS": {
+    "en": "The Sewers",
+    "zh": "下水道"
+  },
+  "AREA_NAME_JUNKYARD": {
+    "en": "The Junkyard",
+    "zh": "垃圾场"
+  },
+  "AREA_NAME_CAVES": {
+    "en": "The Caves",
+    "zh": "洞穴"
+  },
+  "AREA_NAME_BONEYARD": {
+    "en": "The Boneyard",
+    "zh": "白骨墓园"
+  },
+  "AREA_NAME_MEATWORLD": {
+    "en": "The Throbbing Domain",
+    "zh": "搏动领域"
+  },
+  "AREA_NAME_DESERT": {
+    "en": "The Desert",
+    "zh": "沙漠"
+  },
+  "AREA_NAME_CRATER": {
+    "en": "The Crater",
+    "zh": "陨坑"
+  },
+  "AREA_NAME_BUNKER": {
+    "en": "The Bunker",
+    "zh": "地堡"
+  },
+  "AREA_NAME_MOON": {
+    "en": "The Moon",
+    "zh": "月球"
+  },
+  "AREA_NAME_CORE": {
+    "en": "The Core",
+    "zh": "地核"
+  },
+  "AREA_NAME_DIMENSIONX": {
+    "en": "The Rift",
+    "zh": "裂隙"
+  },
+  "AREA_NAME_LAB": {
+    "en": "The Lab",
+    "zh": "实验室"
+  },
+  "AREA_NAME_ICEAGE": {
+    "en": "The Ice Age",
+    "zh": "冰河时代"
+  },
+  "AREA_NAME_JURASSIC": {
+    "en": "The Jurassic",
+    "zh": "侏罗纪"
+  },
+  "AREA_NAME_FUTURE": {
+    "en": "Das Füture",
+    "zh": "德·未来"
+  },
+  "AREA_NAME_THEEND": {
+    "en": "The End",
+    "zh": "终点"
+  },
+  "AREA_NAME_ENDOFTIME": {
+    "en": "The Infinite",
+    "zh": "无限界"
+  },
+  "AREA_NAME_UNKNOWN": {
+    "en": "Somewhere",
+    "zh": "某处"
+  },
+  "AREA_NAME_ALLEY_BANNER": {
+    "en": "THE ALLEY",
+    "zh": "小巷"
+  },
+  "AREA_NAME_SEWERS_BANNER": {
+    "en": "SEWERS",
+    "zh": "下水道"
+  },
+  "AREA_NAME_JUNKYARD_BANNER": {
+    "en": "JUNKYARD",
+    "zh": "垃圾场"
+  },
+  "AREA_NAME_CAVES_BANNER": {
+    "en": "CAVES",
+    "zh": "洞穴"
+  },
+  "AREA_NAME_BONEYARD_BANNER": {
+    "en": "BONEYARD",
+    "zh": "白骨墓园"
+  },
+  "AREA_NAME_MEATWORLD_BANNER": {
+    "en": "THROBBING DOMAIN",
+    "zh": "搏动领域"
+  },
+  "AREA_NAME_DESERT_BANNER": {
+    "en": "DESERT",
+    "zh": "沙漠"
+  },
+  "AREA_NAME_CRATER_BANNER": {
+    "en": "THE CRATER",
+    "zh": "陨坑"
+  },
+  "AREA_NAME_BUNKER_BANNER": {
+    "en": "BUNKER",
+    "zh": "地堡"
+  },
+  "AREA_NAME_MOON_BANNER": {
+    "en": "THE MOON",
+    "zh": "月球"
+  },
+  "AREA_NAME_CORE_BANNER": {
+    "en": "THE CORE",
+    "zh": "地核"
+  },
+  "AREA_NAME_DIMENSIONX_BANNER": {
+    "en": "THE RIFT",
+    "zh": "裂隙"
+  },
+  "AREA_NAME_LAB_BANNER": {
+    "en": "THE LAB",
+    "zh": "实验室"
+  },
+  "AREA_NAME_ICEAGE_BANNER": {
+    "en": "ICE AGE",
+    "zh": "冰河时代"
+  },
+  "AREA_NAME_JURASSIC_BANNER": {
+    "en": "JURASSIC",
+    "zh": "侏罗纪"
+  },
+  "AREA_NAME_FUTURE_BANNER": {
+    "en": "THE FUTURE",
+    "zh": "未来"
+  },
+  "AREA_NAME_THEEND_BANNER": {
+    "en": "THE END",
+    "zh": "终点"
+  },
+  "AREA_NAME_ENDOFTIME_BANNER": {
+    "en": "∞",
+    "zh": "∞"
+  },
+  "MUTATION_BODY_NAME": {
+    "en": "Body Mutation",
+    "zh": "身体突变"
+  },
+  "MUTATION_HEAD_NAME": {
+    "en": "Head Mutation",
+    "zh": "头部突变"
+  },
+  "MUTATION_TAIL_NAME": {
+    "en": "Tail Mutation",
+    "zh": "尾部突变"
+  },
+  "MUTATION_LEG_NAME": {
+    "en": "Leg Mutation",
+    "zh": "腿部突变"
+  },
+  "MUTATION_ARM_NAME": {
+    "en": "Arm Mutation",
+    "zh": "手臂突变"
+  },
+  "MUTATION_EYE_NAME": {
+    "en": "Eye Mutation",
+    "zh": "眼部突变"
+  },
+  "MUTATION_EYEBROW_NAME": {
+    "en": "Eyebrow Mutation",
+    "zh": "眉毛突变"
+  },
+  "MUTATION_EAR_NAME": {
+    "en": "Ear Mutation",
+    "zh": "耳部突变"
+  },
+  "MUTATION_MOUTH_NAME": {
+    "en": "Mouth Mutation",
+    "zh": "嘴部突变"
+  },
+  "MUTATION_FUR_NAME": {
+    "en": "Fur Mutation",
+    "zh": "毛皮突变"
+  },
+  "MUTATION_BODY_NAME_BAD": {
+    "en": "Body Birth Defect",
+    "zh": "身体先天缺陷"
+  },
+  "MUTATION_HEAD_NAME_BAD": {
+    "en": "Head Birth Defect",
+    "zh": "头部先天缺陷"
+  },
+  "MUTATION_TAIL_NAME_BAD": {
+    "en": "Tail Birth Defect",
+    "zh": "尾部先天缺陷"
+  },
+  "MUTATION_LEG_NAME_BAD": {
+    "en": "Leg Birth Defect",
+    "zh": "腿部先天缺陷"
+  },
+  "MUTATION_ARM_NAME_BAD": {
+    "en": "Arm Birth Defect",
+    "zh": "手臂先天缺陷"
+  },
+  "MUTATION_EYE_NAME_BAD": {
+    "en": "Eye Birth Defect",
+    "zh": "眼部先天缺陷"
+  },
+  "MUTATION_EYEBROW_NAME_BAD": {
+    "en": "Eyebrow Birth Defect",
+    "zh": "眉毛先天缺陷"
+  },
+  "MUTATION_EAR_NAME_BAD": {
+    "en": "Ear Birth Defect",
+    "zh": "耳部先天缺陷"
+  },
+  "MUTATION_MOUTH_NAME_BAD": {
+    "en": "Mouth Birth Defect",
+    "zh": "嘴部先天缺陷"
+  },
+  "MUTATION_FUR_NAME_BAD": {
+    "en": "Fur Birth Defect",
+    "zh": "毛皮先天缺陷"
+  },
+  "CAT_CLASS_FIGHTER_NAME": {
+    "en": "Fighter",
+    "zh": "战士"
+  },
+  "CAT_CLASS_FIGHTER_DESC": {
+    "en": "Punch your way to victory! Fighters are great at doing big strong melee attacks and smashing things to pieces!",
+    "zh": "拳打脚踢，走向胜利！\n战士擅长进行强力的近战攻击，\n将物体粉碎成渣！"
+  },
+  "CAT_CLASS_HUNTER_NAME": {
+    "en": "Hunter",
+    "zh": "猎人"
+  },
+  "CAT_CLASS_HUNTER_DESC": {
+    "en": "Shoot things from afar! Hunters are great at hitting things from a distance while staying out of danger themselves!",
+    "zh": "百步穿杨！猎人擅长在远处打击目标，\n同时让自己远离危险！"
+  },
+  "CAT_CLASS_MAGE_NAME": {
+    "en": "Mage",
+    "zh": "法师"
+  },
+  "CAT_CLASS_MAGE_DESC": {
+    "en": "Blast your foes! Mages are great at casting all sorts of crazy spells and dealing elemental damage!",
+    "zh": "轰击你的敌人！\n法师擅长施放各种疯狂的法术，\n并造成元素伤害！"
+  },
+  "CAT_CLASS_MEDIC_NAME": {
+    "en": "Cleric",
+    "zh": "牧师"
+  },
+  "CAT_CLASS_MEDIC_DESC": {
+    "en": "Be the best friend! Clerics are great at keeping your team alive and helping them recover from taking hits!",
+    "zh": "做大家最好的朋友！\n牧师擅长让你的队伍存活下来，\n并帮助他们从打击中恢复！"
+  },
+  "CAT_CLASS_TANK_NAME": {
+    "en": "Tank",
+    "zh": "坦克"
+  },
+  "CAT_CLASS_TANK_DESC": {
+    "en": "Get in the way! Tanks are great at absorbing damage and pushing enemies around!",
+    "zh": "挡在前面！坦克擅长\n吸收伤害并推搡敌人！"
+  },
+  "CAT_CLASS_THIEF_NAME": {
+    "en": "Thief",
+    "zh": "盗贼"
+  },
+  "CAT_CLASS_THIEF_DESC": {
+    "en": "Attack from the shadows! Thiefs are great at evading hits, collecting coins, and striking from behind!",
+    "zh": "暗影突袭！盗贼擅长闪避攻击、\n收集金币以及从背后发起攻击！"
+  },
+  "CAT_CLASS_COLORLESS_NAME": {
+    "en": "Collarless",
+    "zh": "无项圈"
+  },
+  "CAT_CLASS_COLORLESS_DESC": {
+    "en": "It's a cat!",
+    "zh": "就是一只猫！"
+  },
+  "CAT_CLASS_MONK_NAME": {
+    "en": "Monk",
+    "zh": "武僧"
+  },
+  "CAT_CLASS_MONK_DESC": {
+    "en": "A versatile combat master! Monks can switch between ranged and melee stances and attack twice per turn!",
+    "zh": "多面手的战斗大师！\n武僧可以在远程和近战架势之间切换，\n并且每回合攻击两次！"
+  },
+  "CAT_CLASS_BUTCHER_NAME": {
+    "en": "Butcher",
+    "zh": "屠夫"
+  },
+  "CAT_CLASS_BUTCHER_DESC": {
+    "en": "Meat Meat Meat Meat Meat! Butchers are great at cleaving chunks of meat off of things and have a hook to pull stuff towards them!",
+    "zh": "肉肉肉肉肉！\n屠夫擅长从物体上劈下肉块，\n并拥有能将物体拉向身边的钩爪！"
+  },
+  "CAT_CLASS_DRUID_NAME": {
+    "en": "Druid",
+    "zh": "德鲁伊"
+  },
+  "CAT_CLASS_DRUID_DESC": {
+    "en": "One with nature! Druids are great at summoning animal friends and come with a special Crow counterpart!",
+    "zh": "天人合一！德鲁伊擅长召唤动物朋友，\n并伴有一只特殊的乌鸦伙伴！"
+  },
+  "CAT_CLASS_TINKERER_NAME": {
+    "en": "Tinkerer",
+    "zh": "工匠"
+  },
+  "CAT_CLASS_TINKERER_DESC": {
+    "en": "A crafty inventor! Tinkerers are great at crafting temporary weapons and using all sorts of crazy gadgets!",
+    "zh": "心灵手巧的发明家！\n工匠擅长制作临时武器\n并使用各种疯狂的小玩意！"
+  },
+  "CAT_CLASS_NECROMANCER_NAME": {
+    "en": "Necromancer",
+    "zh": "死灵法师"
+  },
+  "CAT_CLASS_NECROMANCER_DESC": {
+    "en": "Rise from the dead! Necromancers are great at playing with corpses and leeching life from enemies!",
+    "zh": "死而复生！死灵法师擅长摆弄尸体，\n并从敌人身上吸取生命！"
+  },
+  "CAT_CLASS_PSYCHIC_NAME": {
+    "en": "Psychic",
+    "zh": "灵能者"
+  },
+  "CAT_CLASS_PSYCHIC_DESC": {
+    "en": "Clear your mind! Psychics are great at manipulating things from afar and moving objects with their minds! Psychics also have +5 starting mana.",
+    "zh": "清空思绪！灵能者擅长\n远程操控事物并用念力移动物体！\n灵能者还拥有 +5 初始法力值。"
+  },
+  "CAT_CLASS_JESTER_NAME": {
+    "en": "Jester",
+    "zh": "小丑"
+  },
+  "CAT_CLASS_JESTER_DESC": {
+    "en": "You can be anything! Jesters have no limits!",
+    "zh": "你可以成为任何人！\n小丑没有任何限制！"
+  },
+  "MUTATION_BODY_301_DESC": {
+    "en": "+1 Thorns.",
+    "zh": "+1 荆棘。"
+  },
+  "MUTATION_BODY_309_DESC": {
+    "en": "Units that contact you get knocked back 2 tiles.",
+    "zh": "接触你的单位会被击退 2 格。"
+  },
+  "MUTATION_BODY_312_DESC": {
+    "en": "Spawn a coin when you take damage.",
+    "zh": "当你受到伤害时，生成一枚金币。"
+  },
+  "MUTATION_BODY_313_DESC": {
+    "en": "+1 Kinetic Spikes.",
+    "zh": "+1 动能尖刺。"
+  },
+  "MUTATION_BODY_314_DESC": {
+    "en": "+2 Thorns.",
+    "zh": "+2 荆棘。"
+  },
+  "MUTATION_BODY_315_DESC": {
+    "en": "+1 Brace.",
+    "zh": "+1 护甲。"
+  },
+  "MUTATION_BODY_317_DESC": {
+    "en": "Immune to Heat Wave weather.",
+    "zh": "免疫热浪天气。"
+  },
+  "MUTATION_BODY_318_DESC": {
+    "en": "25% chance to spawn a Charmed Fly each turn.",
+    "zh": "每回合有 25% 的几率生成一只魅惑苍蝇。"
+  },
+  "MUTATION_BODY_319_DESC": {
+    "en": "When you take damage from an attack, gain a random buff.",
+    "zh": "当你受到攻击伤害时，\n获得一个随机增益。"
+  },
+  "MUTATION_BODY_321_DESC": {
+    "en": "Spawn a Charmed Kitten familiar when you get downed.",
+    "zh": "当你倒地时，生成一只魅惑小猫使魔。"
+  },
+  "MUTATION_BODY_322_DESC": {
+    "en": "Gain an extra consumable item at the end of each battle.",
+    "zh": "在每场战斗结束时，\n获得一个额外消耗品。"
+  },
+  "MUTATION_BODY_323_DESC": {
+    "en": "Trample. When damaged, move 1 tile in a random direction.",
+    "zh": "践踏。受到伤害时，\n向随机方向移动 1 格。"
+  },
+  "MUTATION_BODY_324_DESC": {
+    "en": "Gain +1 range when you get a kill.",
+    "zh": "当你造成击杀时，获得 +1 射程。"
+  },
+  "MUTATION_BODY_703_DESC": {
+    "en": "Start each battle with Bruise 1.",
+    "zh": "每场战斗开始时带有 1 层淤伤。"
+  },
+  "MUTATION_BODY_750_DESC": {
+    "en": "+1 Thorns.",
+    "zh": "+1 荆棘。"
+  },
+  "MUTATION_BODY_758_DESC": {
+    "en": "Start with +1 Bonus Attack.",
+    "zh": "初始拥有 +1 奖励攻击。"
+  },
+  "MUTATION_EARS_302_DESC": {
+    "en": "+1 Health and Mana Regeneration while wet.",
+    "zh": "潮湿状态下 +1 生命恢复和法力恢复。"
+  },
+  "MUTATION_EARS_303_DESC": {
+    "en": "Adds +1 Knockback to your basic attack if it's melee.",
+    "zh": "如果你的基础攻击是近战攻击，\n增加 +1 击退。"
+  },
+  "MUTATION_EARS_309_DESC": {
+    "en": "Adds +1 Bleed to your basic attack.",
+    "zh": "为你的基础攻击增加 +1 流血。"
+  },
+  "MUTATION_EARS_313_DESC": {
+    "en": "Adds +1 Knockback to your basic attack if it's melee.",
+    "zh": "如果你的基础攻击是近战攻击，\n增加 +1 击退。"
+  },
+  "MUTATION_EARS_314_DESC": {
+    "en": "Thorns 1. Your basic attack inflicts Bleed if it's melee.",
+    "zh": "荆棘 1。如果你的基础攻击是近战攻击，\n会造成流血效果。"
+  },
+  "MUTATION_EARS_315_DESC": {
+    "en": "50% chance to spawn a Charmed Fly each turn. Start with Poison 1.",
+    "zh": "每回合有 50% 的几率生成一只魅惑苍蝇。\n初始带有 1 层中毒。"
+  },
+  "MUTATION_EARS_316_DESC": {
+    "en": "You can see hidden things. 5% dodge chance.",
+    "zh": "你可以看到隐藏之物。5% 闪避率。"
+  },
+  "MUTATION_EARS_317_DESC": {
+    "en": "Whenever you down a unit, you have a 10% chance to reanimate that unit with 50% HP.",
+    "zh": "每当你击倒一个单位，\n有 10% 的\n几率将其复生并拥有 50% 生命值。"
+  },
+  "MUTATION_EARS_318_DESC": {
+    "en": "You have Brace 1 while wet.",
+    "zh": "潮湿状态下拥有 1 层护甲。"
+  },
+  "MUTATION_EARS_319_DESC": {
+    "en": "Gain +1 Charge when you take damage.",
+    "zh": "当你受到伤害时，获得 +1 充能。"
+  },
+  "MUTATION_EARS_320_DESC": {
+    "en": "+1 Kinetic Spikes.",
+    "zh": "+1 动能尖刺。"
+  },
+  "MUTATION_EARS_321_DESC": {
+    "en": "Units that contact you get knocked back 1 tile.",
+    "zh": "接触你的单位会被击退 1 格。"
+  },
+  "MUTATION_EARS_323_DESC": {
+    "en": "Gain 1 HP when your basic attack deals damage.",
+    "zh": "当你的基础攻击造成伤害时，\n恢复 1 点生命值。"
+  },
+  "MUTATION_EARS_325_DESC": {
+    "en": "If you're wet, gain +1 Charge and +1 [img:shield] at the end of your turn.",
+    "zh": "如果你处于潮湿状态，\n回合结束时获得 +1 充能和 +1 [img:shield]。"
+  },
+  "MUTATION_EARS_326_DESC": {
+    "en": "5% chance to spawn a Maggot familiar each turn.",
+    "zh": "每回合有 5% 的几率生成一只蛆虫使魔。"
+  },
+  "MUTATION_EARS_327_DESC": {
+    "en": "An extra food pickup will spawn in each battle.",
+    "zh": "每场战斗中会生成一个额外的食物掉落物。"
+  },
+  "MUTATION_EARS_328_DESC": {
+    "en": "5% chance to Petrify on damage and when hit.",
+    "zh": "造成伤害或受到攻击时有 5% 的\n几率施加石化。"
+  },
+  "MUTATION_EARS_329_DESC": {
+    "en": "Your basic attack leaves water tiles.",
+    "zh": "你的基础攻击会留下水地块。"
+  },
+  "MUTATION_EARS_330_DESC": {
+    "en": "Thorns 1. 10% chance to inflict Immobile on units that contact you.",
+    "zh": "荆棘 1。\n接触你的单位有 10% 的几率被施加定身。"
+  },
+  "MUTATION_EARS_331_DESC": {
+    "en": "Your basic attack has +1 Knockback.",
+    "zh": "你的基础攻击拥有 +1 击退。"
+  },
+  "MUTATION_EARS_332_DESC": {
+    "en": "Brace 1.",
+    "zh": "护甲 1。"
+  },
+  "MUTATION_EARS_334_DESC": {
+    "en": "Spawn 1-3 more coins/scrap around the map on random tiles at the start of each battle.",
+    "zh": "每场战斗开始时，\n在地图上的\n随机地块生成额外 1-3 枚金币/废料。"
+  },
+  "MUTATION_EARS_335_DESC": {
+    "en": "Start with Bleed 1 and a bonus attack.",
+    "zh": "初始带有 1 层流血和一个奖励攻击。"
+  },
+  "MUTATION_EARS_336_DESC": {
+    "en": "You gain 3 mana at the end of your turn if you didn't use your movement action.",
+    "zh": "如果你在回合结束时没有使用移动行动，\n获得 3 点法力值。"
+  },
+  "MUTATION_EARS_337_DESC": {
+    "en": "Your basic attack inflicts Burn 1.",
+    "zh": "你的基础攻击造成 1 层燃烧。"
+  },
+  "MUTATION_EARS_338_DESC": {
+    "en": "Your basic attack has a 15% chance to inflict Freeze.",
+    "zh": "你的基础攻击有 15% 的几率造成冻结。"
+  },
+  "MUTATION_EARS_339_DESC": {
+    "en": "You have electric immunity.",
+    "zh": "你拥有电击免疫。"
+  },
+  "MUTATION_EARS_341_DESC": {
+    "en": "10% chance to backflip when targeted.",
+    "zh": "被选中为目标时有 10% 的几率后空翻。"
+  },
+  "MUTATION_EARS_342_DESC": {
+    "en": "20% chance to spawn a Charmed Flea when damaged.",
+    "zh": "受到伤害时有 20% 的\n几率生成一只魅惑跳蚤。"
+  },
+  "MUTATION_EARS_343_DESC": {
+    "en": "Thorns 1.",
+    "zh": "荆棘 1。"
+  },
+  "MUTATION_EARS_344_DESC": {
+    "en": "Spawn a Charmed Kitten familiar when you get downed.",
+    "zh": "当你倒地时，生成一只魅惑小猫使魔。"
+  },
+  "MUTATION_EARS_345_DESC": {
+    "en": "Units that contact or attack you have a 15% chance to get Charmed.",
+    "zh": "接触或攻击你的单位有 15% 的几率被魅惑。"
+  },
+  "MUTATION_EARS_750_DESC": {
+    "en": "Your movement action is a jump.",
+    "zh": "你的移动行动变为跳跃。"
+  },
+  "MUTATION_EARS_751_DESC": {
+    "en": "+10% dodge chance.",
+    "zh": "+10% 闪避率。"
+  },
+  "MUTATION_EARS_752_DESC": {
+    "en": "You have +2 Damage while wet.",
+    "zh": "潮湿状态下 +2 伤害。"
+  },
+  "MUTATION_EARS_753_DESC": {
+    "en": "+1 Knockback damage. Your basic attack has +1 Knockback.",
+    "zh": "+1 击退伤害。\n你的基础攻击拥有 +1 击退。"
+  },
+  "MUTATION_EARS_754_DESC": {
+    "en": "Electric damage you deal is increased by 1.",
+    "zh": "你造成的电击伤害增加 1 点。"
+  },
+  "MUTATION_EARS_755_DESC": {
+    "en": "Gain +1 Charge every time you cast a spell.",
+    "zh": "每次施放法术获得 +1 充能。"
+  },
+  "MUTATION_EARS_900_DESC": {
+    "en": "+10% dodge chance.",
+    "zh": "+10% 闪避率。"
+  },
+  "MUTATION_EARS_1500_DESC": {
+    "en": "+2% dodge chance",
+    "zh": "+2% 闪避率"
+  },
+  "MUTATION_EARS_703_DESC": {
+    "en": "Start each battle with Confusion 2.",
+    "zh": "每场战斗开始时带有 2 层混乱。"
+  },
+  "MUTATION_EARS_704_DESC": {
+    "en": "Start each battle with Immobile 1.",
+    "zh": "每场战斗开始时带有 1 层定身。"
+  },
+  "MUTATION_EYEBROWS_301_DESC": {
+    "en": "You have a 10% chance to inflict Confusion on units who contact or attack you.",
+    "zh": "接触或攻击你的单位有 10% 的\n几率被施加混乱。"
+  },
+  "MUTATION_EYEBROWS_306_DESC": {
+    "en": "You have a 5% chance to inflict Fear on units who contact or attack you.",
+    "zh": "接触或攻击你的单位有 5% 的\n几率被施加恐惧。"
+  },
+  "MUTATION_EYEBROWS_307_DESC": {
+    "en": "+1 Mana Regeneration. +1 Health Regeneration.",
+    "zh": "+1 法力恢复。+1 生命恢复。"
+  },
+  "MUTATION_EYEBROWS_309_DESC": {
+    "en": "+1 Thorns.",
+    "zh": "+1 荆棘。"
+  },
+  "MUTATION_EYEBROWS_310_DESC": {
+    "en": "+1 Range.",
+    "zh": "+1 射程。"
+  },
+  "MUTATION_EYEBROWS_311_DESC": {
+    "en": "When you cast your third spell each turn, heal 2.",
+    "zh": "当你每回合施放第三个法术时，\n治疗 2 点生命值。"
+  },
+  "MUTATION_EYEBROWS_313_DESC": {
+    "en": "Spawn 1-2 extra pickups in each battle.",
+    "zh": "每场战斗生成 1-2 个额外掉落物。"
+  },
+  "MUTATION_EYEBROWS_314_DESC": {
+    "en": "When an allied cat dies, gain +2 Damage.",
+    "zh": "当友方猫咪死亡时，获得 +2 伤害。"
+  },
+  "MUTATION_EYEBROWS_315_DESC": {
+    "en": "You can reroll your options when you level up.",
+    "zh": "升级时你可以重掷选项。"
+  },
+  "MUTATION_EYEBROWS_900_DESC": {
+    "en": "+5% dodge chance. Your basic attack has a 1% chance to inflict Freeze.",
+    "zh": "+5% 闪避率。\n你的基础攻击有 1% 的几率造成冻结。"
+  },
+  "MUTATION_EYES_300_DESC": {
+    "en": "Your basic attack has a 10% chance to inflict Fear.",
+    "zh": "你的基础攻击有 10% 的几率造成恐惧。"
+  },
+  "MUTATION_EYES_302_DESC": {
+    "en": "+1 Thorns.",
+    "zh": "+1 荆棘。"
+  },
+  "MUTATION_EYES_304_DESC": {
+    "en": "Take your turn later.",
+    "zh": "延后你的回合。"
+  },
+  "MUTATION_EYES_306_DESC": {
+    "en": "Your basic attack has a 10% chance to inflict Confusion 3.",
+    "zh": "你的基础攻击有 10% 的\n几率造成 3 层混乱。"
+  },
+  "MUTATION_EYES_307_DESC": {
+    "en": "Gain 1 mana when anything dies.",
+    "zh": "当任何单位死亡时，\n获得 1 点法力值。"
+  },
+  "MUTATION_EYES_308_DESC": {
+    "en": "+5% dodge chance.",
+    "zh": "+5% 闪避率。"
+  },
+  "MUTATION_EYES_309_DESC": {
+    "en": "+2 corpse health.",
+    "zh": "+2 尸体生命值。"
+  },
+  "MUTATION_EYES_310_DESC": {
+    "en": "+1 Health Regeneration",
+    "zh": "+1 生命恢复"
+  },
+  "MUTATION_EYES_311_DESC": {
+    "en": "You do not take extra damage from backstabs.",
+    "zh": "你不会受到额外的背刺伤害。"
+  },
+  "MUTATION_EYES_312_DESC": {
+    "en": "+1 Brace.",
+    "zh": "+1 护甲。"
+  },
+  "MUTATION_EYES_314_DESC": {
+    "en": "When you are downed, spawn 3 Flies. +2 corpse health.",
+    "zh": "当你倒地时，生成 3 只苍蝇。\n+2 尸体生命值。"
+  },
+  "MUTATION_EYES_315_DESC": {
+    "en": "+1 Kinetic Spikes.",
+    "zh": "+1 动能尖刺。"
+  },
+  "MUTATION_EYES_316_DESC": {
+    "en": "15% chance to counter attack with Chain Lightning when you get hit.",
+    "zh": "受到攻击时有 15% 的\n几率用连锁闪电进行反击。"
+  },
+  "MUTATION_EYES_317_DESC": {
+    "en": "Gain a random stat up at the end of each turn.",
+    "zh": "每回合结束时获得一项随机属性提升。"
+  },
+  "MUTATION_EYES_318_DESC": {
+    "en": "You can see hidden things. +1 Knockback damage.",
+    "zh": "你可以看到隐藏之物。\n+1 击退伤害。"
+  },
+  "MUTATION_EYES_319_DESC": {
+    "en": "Blind. +1 Damage. +1 Thorns.",
+    "zh": "致盲。+1 伤害。+1 荆棘。"
+  },
+  "MUTATION_EYES_324_DESC": {
+    "en": "Spawn 2 extra coins each battle.",
+    "zh": "每场战斗生成额外 2 枚金币。"
+  },
+  "MUTATION_EYES_325_DESC": {
+    "en": "Thorns 1.",
+    "zh": "荆棘 1。"
+  },
+  "MUTATION_EYES_326_DESC": {
+    "en": "Gain 2 Charge each time you cast 4 spells.",
+    "zh": "每当你施放 4 个法术，\n获得 2 点充能。"
+  },
+  "MUTATION_EYES_328_DESC": {
+    "en": "+10% crit chance.",
+    "zh": "+10% 暴击率。"
+  },
+  "MUTATION_EYES_329_DESC": {
+    "en": "Your basic attack has a 15% chance to inflict Confusion.",
+    "zh": "你的基础攻击有 15% 的几率造成混乱。"
+  },
+  "MUTATION_EYES_331_DESC": {
+    "en": "At the start of each battle, gain a random temporary pill if your trinket slot is empty.",
+    "zh": "每场战斗开始时，如果你的饰品槽为空，\n获得一颗随机临时药丸。"
+  },
+  "MUTATION_EYES_332_DESC": {
+    "en": "Start each battle Bleeding. Gain 1 Charge each time you take damage.",
+    "zh": "每场战斗开始时处于流血状态。\n每次受到伤害获得 1 点充能。"
+  },
+  "MUTATION_EYES_333_DESC": {
+    "en": "Your basic attack can't miss.",
+    "zh": "你的基础攻击必定命中。"
+  },
+  "MUTATION_EYES_334_DESC": {
+    "en": "Blind. Spawn a Flea when you take damage.",
+    "zh": "致盲。受到伤害时生成一只跳蚤。"
+  },
+  "MUTATION_EYES_335_DESC": {
+    "en": "Your basic attack has a 10% chance to Charm.",
+    "zh": "你的基础攻击有 10% 的几率造成魅惑。"
+  },
+  "MUTATION_EYES_336_DESC": {
+    "en": "Your basic attack is electric element and has a 5% chance to stun.",
+    "zh": "你的基础攻击为电击元素，\n且有 5% 的几率造成击晕。"
+  },
+  "MUTATION_EYES_337_DESC": {
+    "en": "Your basic attack is ice element and inflicts Slow.",
+    "zh": "你的基础攻击为冰元素，\n且造成减速效果。"
+  },
+  "MUTATION_EYES_338_DESC": {
+    "en": "Your basic attack inflicts Burn.",
+    "zh": "你的基础攻击造成燃烧效果。"
+  },
+  "MUTATION_EYES_339_DESC": {
+    "en": "+1 Health Regeneration while wet. Your basic attack is water element.",
+    "zh": "潮湿状态下 +1 生命恢复。\n你的基础攻击为水元素。"
+  },
+  "MUTATION_EYES_340_DESC": {
+    "en": "Your basic attack inflicts Leech.",
+    "zh": "你的基础攻击造成一层水蛭效果。"
+  },
+  "MUTATION_EYES_341_DESC": {
+    "en": "Gain Charge 1 the first time you move each turn.",
+    "zh": "每回合首次移动时获得 1 层充能。"
+  },
+  "MUTATION_EYES_342_DESC": {
+    "en": "Your basic attack inflicts Poison 1. Start each battle Poisoned.",
+    "zh": "你的基础攻击造成 1 层中毒。\n每场战斗开始时处于中毒状态。"
+  },
+  "MUTATION_EYES_343_DESC": {
+    "en": "You have a 5% chance to inflict Fear on units who contact or attack you.",
+    "zh": "接触或攻击你的单位有 5% 的\n几率被施加恐惧。"
+  },
+  "MUTATION_EYES_344_DESC": {
+    "en": "You have a 10% chance to Blind units who contact or attack you.",
+    "zh": "接触或攻击你的单位有 10% 的几率被致盲。"
+  },
+  "MUTATION_EYES_345_DESC": {
+    "en": "Inflict a random debuff on units who contact you.",
+    "zh": "对接触你的单位施加随机减益效果。"
+  },
+  "MUTATION_EYES_346_DESC": {
+    "en": "Spawn a rock when damaged.",
+    "zh": "受到伤害时生成一块岩石。"
+  },
+  "MUTATION_EYES_347_DESC": {
+    "en": "Your basic attack has a 15% chance to inflict Confusion 2.",
+    "zh": "你的基础攻击有 15% 的\n几率造成 2 层混乱。"
+  },
+  "MUTATION_EYES_348_DESC": {
+    "en": "+1 range, +1 reach.",
+    "zh": "+1 射程，+1 近战范围。"
+  },
+  "MUTATION_EYES_349_DESC": {
+    "en": "Emit 4 Sparkles each time you cast 8 spells.",
+    "zh": "每当你施放 8 个法术，\n发出 4 道火花。"
+  },
+  "MUTATION_EYES_351_DESC": {
+    "en": "Your bonus ability is a different random spell each battle.",
+    "zh": "每场战斗你的额外技能会是一个不同的随机法术。"
+  },
+  "MUTATION_EYES_352_DESC": {
+    "en": "You have All Stats Up while Bleeding.",
+    "zh": "你在流血状态下全属性提升。"
+  },
+  "MUTATION_EYES_353_DESC": {
+    "en": "You take no extra damage from backstabs.",
+    "zh": "你不会受到额外的背刺伤害。"
+  },
+  "MUTATION_EYES_442_DESC": {
+    "en": "10% chance to reflect projectiles.",
+    "zh": "10% 几率反射投射物。"
+  },
+  "MUTATION_EYES_900_DESC": {
+    "en": "Your basic attack has a 10% chance to inflict Slow.",
+    "zh": "你的基础攻击有 10% 的几率造成减速。"
+  },
+  "MUTATION_EYES_M2_DESC": {
+    "en": "Blind.",
+    "zh": "致盲。"
+  },
+  "MUTATION_EYES_704_DESC": {
+    "en": "10% miss chance.",
+    "zh": "10% 未命中率。"
+  },
+  "MUTATION_EYES_705_DESC": {
+    "en": "Gain 5% miss chance every turn.",
+    "zh": "每回合获得 5% 未命中率。"
+  },
+  "MUTATION_EYES_706_DESC": {
+    "en": "Start each battle with Confusion 2.",
+    "zh": "每场战斗开始时带有 2 层混乱。"
+  },
+  "MUTATION_EYES_1029_DESC": {
+    "en": "+5% crit chance.",
+    "zh": "+5% 暴击率。"
+  },
+  "MUTATION_EYES_313_DESC": {
+    "en": "Your basic attack creates water tiles.",
+    "zh": "你的基础攻击会产生水地块。"
+  },
+  "MUTATION_EYES_754_DESC": {
+    "en": "+1 range. Your basic attack is gravity element.",
+    "zh": "+1 射程。你的基础攻击是重力元素。"
+  },
+  "MUTATION_EYES_755_DESC": {
+    "en": "Your basic attack has a 15% chance to inflict Fear.",
+    "zh": "你的基础攻击有 15% 的几率造成恐惧。"
+  },
+  "MUTATION_HEAD_303_DESC": {
+    "en": "+1 Thorns.",
+    "zh": "+1 荆棘。"
+  },
+  "MUTATION_HEAD_304_DESC": {
+    "en": "+2 Health Regeneration +5% dodge chance.",
+    "zh": "+2 生命恢复 +5% 闪避率。"
+  },
+  "MUTATION_HEAD_307_DESC": {
+    "en": "Units that contact you get knocked back 1 tile.",
+    "zh": "接触你的单位会被击退 1 格。"
+  },
+  "MUTATION_HEAD_308_DESC": {
+    "en": "+1 movement range while wet. Water does not slow movement.",
+    "zh": "潮湿状态下 +1 移动距离。\n水不会减缓移动。"
+  },
+  "MUTATION_HEAD_311_DESC": {
+    "en": "Spawn a coin when you take damage.",
+    "zh": "当你受到伤害时，生成一枚金币。"
+  },
+  "MUTATION_HEAD_312_DESC": {
+    "en": "Your basic attack pulls units towards you.",
+    "zh": "你的基础攻击会将单位拉向你。"
+  },
+  "MUTATION_HEAD_313_DESC": {
+    "en": "Poop when you take damage.",
+    "zh": "受到伤害时排便。"
+  },
+  "MUTATION_HEAD_314_DESC": {
+    "en": "Gain +1 [img:int] at the end of each turn.",
+    "zh": "每回合结束时获得 +1 [img:int]。"
+  },
+  "MUTATION_HEAD_315_DESC": {
+    "en": "At the start of each battle, swap your highest and lowest stats.",
+    "zh": "每场战斗开始时，\n交换你的最高和最低属性。"
+  },
+  "MUTATION_HEAD_316_DESC": {
+    "en": "When you take damage from an attack, gain a random buff.",
+    "zh": "当你受到攻击伤害时，\n获得一个随机增益。"
+  },
+  "MUTATION_HEAD_317_DESC": {
+    "en": "+5% dodge chance.",
+    "zh": "+5% 闪避率。"
+  },
+  "MUTATION_HEAD_318_DESC": {
+    "en": "+1 range.",
+    "zh": "+1 射程。"
+  },
+  "MUTATION_HEAD_319_DESC": {
+    "en": "Gain +1 [img:int] permanently at the end of each battle. Start each battle with Bruise 2.",
+    "zh": "每场战斗结束时永久获得 +1 [img:int]。\n每场战斗开始时带有 2 层淤伤。"
+  },
+  "MUTATION_HEAD_320_DESC": {
+    "en": "Your basic attack has +2 Knockback.",
+    "zh": "你的基础攻击拥有 +2 击退。"
+  },
+  "MUTATION_HEAD_321_DESC": {
+    "en": "You have a 5% chance to inflict Fear on units who contact or attack you.",
+    "zh": "接触或攻击你的单位有 5% 的\n几率被施加恐惧。"
+  },
+  "MUTATION_HEAD_703_DESC": {
+    "en": "Attacks against your face count as backstabs.",
+    "zh": "针对你面部的攻击算作背刺。"
+  },
+  "MUTATION_HEAD_704_DESC": {
+    "en": "20% miss chance.\nYour spells cost 1 less mana.",
+    "zh": "20% 未命中率。\n你的法术法力消耗减少 1 点。"
+  },
+  "MUTATION_HEAD_706_DESC": {
+    "en": "Brace 1.",
+    "zh": "护甲 1。"
+  },
+  "MUTATION_HEAD_900_DESC": {
+    "en": "+1 range. +1 reach.",
+    "zh": "+1 射程。+1 近战范围。"
+  },
+  "MUTATION_HEAD_750_DESC": {
+    "en": "+1 Thorns.",
+    "zh": "+1 荆棘。"
+  },
+  "MUTATION_HEAD_753_DESC": {
+    "en": "You are immune to ice.",
+    "zh": "你对冰霜免疫。"
+  },
+  "MUTATION_HEAD_759_DESC": {
+    "en": "Take an extra turn at the start of the battle.",
+    "zh": "战斗开始时获得一个额外回合。"
+  },
+  "MUTATION_LEGS_300_DESC": {
+    "en": "+1 movement range while wet. Water does not slow movement.",
+    "zh": "潮湿状态下 +1 移动距离。\n水不会减缓移动。"
+  },
+  "MUTATION_LEGS_301_DESC": {
+    "en": "Your basic attack has a 5% chance to Stun.",
+    "zh": "你的基础攻击有 5% 的几率造成晕眩。"
+  },
+  "MUTATION_LEGS_302_DESC": {
+    "en": "Knockback immunity.",
+    "zh": "击退免疫。"
+  },
+  "MUTATION_LEGS_303_DESC": {
+    "en": "Your basic attack has a 5% chance to Immobilize.",
+    "zh": "你的基础攻击有 5% 的几率施加定身。"
+  },
+  "MUTATION_LEGS_305_DESC": {
+    "en": "+5% dodge chance.",
+    "zh": "+5% 闪避率。"
+  },
+  "MUTATION_LEGS_309_DESC": {
+    "en": "Your basic attack has a 10% chance to inflict Bleed 3.",
+    "zh": "你的基础攻击有 10% 的\n几率造成 3 层流血。"
+  },
+  "MUTATION_LEGS_310_DESC": {
+    "en": "Your movement action is a jump.",
+    "zh": "你的移动行动变为跳跃。"
+  },
+  "MUTATION_LEGS_312_DESC": {
+    "en": "Your basic attack has +1 Knockback.",
+    "zh": "你的基础攻击拥有 +1 击退。"
+  },
+  "MUTATION_LEGS_313_DESC": {
+    "en": "+1 reach.",
+    "zh": "+1 近战范围。"
+  },
+  "MUTATION_LEGS_314_DESC": {
+    "en": "Your weapons have +1 Damage.",
+    "zh": "你的武器拥有 +1 伤害。"
+  },
+  "MUTATION_LEGS_315_DESC": {
+    "en": "Ice immunity.",
+    "zh": "冰霜免疫。"
+  },
+  "MUTATION_LEGS_317_DESC": {
+    "en": "Your basic attack inflicts Bleed 1 if it's melee.",
+    "zh": "如果你的基础攻击是近战攻击，\n则施加 1 层流血。"
+  },
+  "MUTATION_LEGS_319_DESC": {
+    "en": "10% chance to gain a bonus move each turn.",
+    "zh": "每回合有 10% 几率获得一次奖励移动。"
+  },
+  "MUTATION_LEGS_320_DESC": {
+    "en": "10% chance to gain a bonus attack each turn.",
+    "zh": "每回合有 10% 几率获得一次奖励攻击。"
+  },
+  "MUTATION_LEGS_321_DESC": {
+    "en": "Moving through water tiles costs 0 movement.",
+    "zh": "在水地块上移动消耗 0 移动力。"
+  },
+  "MUTATION_LEGS_325_DESC": {
+    "en": "Collarless spells cost -1 mana.",
+    "zh": "无项圈法术消耗 -1 法力值。"
+  },
+  "MUTATION_LEGS_326_DESC": {
+    "en": "Your basic attack inflicts a random debuff.",
+    "zh": "你的基础攻击施加一种随机减益效果。"
+  },
+  "MUTATION_LEGS_327_DESC": {
+    "en": "Gain 2 random stat ups and 1 random stat down at the end of each turn.",
+    "zh": "在每回合结束时，\n获得 2 个随机属性提升和 \n1 个随机属性下降。"
+  },
+  "MUTATION_LEGS_328_DESC": {
+    "en": "Equip a temporary Bottles weapon at the start of the battle.",
+    "zh": "在战斗开始时，装备一件临时瓶子武器。"
+  },
+  "MUTATION_LEGS_329_DESC": {
+    "en": "Equip a temporary Water Bottle trinket at the start of the battle.",
+    "zh": "在战斗开始时，装备一个临时水瓶饰品。"
+  },
+  "MUTATION_LEGS_330_DESC": {
+    "en": "+1 Health Regeneration",
+    "zh": "+1 生命恢复"
+  },
+  "MUTATION_LEGS_331_DESC": {
+    "en": "+1 movement range. Your movement action is a jump.",
+    "zh": "+1 移动距离。你的移动行动变为跳跃。"
+  },
+  "MUTATION_LEGS_332_DESC": {
+    "en": "50% chance to spawn a pickup on an adjacent tile when you end your turn.",
+    "zh": "当你结束回合时，\n有 50% 几率在相邻地块生成一个掉落物。"
+  },
+  "MUTATION_LEGS_333_DESC": {
+    "en": "Your basic attack has wind element and +1 Knockback.",
+    "zh": "你的基础攻击拥有风元素和 +1 击退。"
+  },
+  "MUTATION_LEGS_334_DESC": {
+    "en": "Your basic attack tosses units into the air if it's melee.",
+    "zh": "如果你的基础攻击是近战攻击，\n则将单位抛向空中。"
+  },
+  "MUTATION_LEGS_335_DESC": {
+    "en": "+1 Bleed Thorns. Spawn glass when you take damage.",
+    "zh": "+1 流血荆棘。\n当你受到伤害时生成玻璃。"
+  },
+  "MUTATION_LEGS_336_DESC": {
+    "en": "Your basic attack inflicts Soul Link.",
+    "zh": "你的基础攻击施加灵魂链接。"
+  },
+  "MUTATION_LEGS_337_DESC": {
+    "en": "You are immune to tile effects.",
+    "zh": "你免疫地块效果。"
+  },
+  "MUTATION_LEGS_339_DESC": {
+    "en": "Fly away when hit.",
+    "zh": "受到攻击时飞走。"
+  },
+  "MUTATION_LEGS_340_DESC": {
+    "en": "When you take damage, gain +1 [img:lck].",
+    "zh": "当你受到伤害时，获得 +1 [img:lck] 。"
+  },
+  "MUTATION_LEGS_341_DESC": {
+    "en": "Your basic attack makes units face away from you.",
+    "zh": "你的基础攻击使单位背对于你。"
+  },
+  "MUTATION_LEGS_343_DESC": {
+    "en": "Spawn a Charmed Kitten familiar when you get downed.",
+    "zh": "当你倒地时，生成一只魅惑小猫使魔。"
+  },
+  "MUTATION_LEGS_900_DESC": {
+    "en": "Ignore the effects of tiles and traps.",
+    "zh": "无视地块和陷阱的效果。"
+  },
+  "MUTATION_LEGS_703_DESC": {
+    "en": "Water does not slow movement.",
+    "zh": "水不会减缓移动。"
+  },
+  "MUTATION_LEGS_705_DESC": {
+    "en": "Trample.",
+    "zh": "践踏。"
+  },
+  "MUTATION_LEGS_707_DESC": {
+    "en": "Permanently Slow.",
+    "zh": "永久减速。"
+  },
+  "MUTATION_LEGS_754_DESC": {
+    "en": "Your movement action is a jump. Your basic attack inflicts Bruise.",
+    "zh": "你的移动行动变为跳跃。\n你的基础攻击施加淤伤。"
+  },
+  "MUTATION_LEGS_757_DESC": {
+    "en": "Trample.",
+    "zh": "践踏。"
+  },
+  "MUTATION_LEGS_758_DESC": {
+    "en": "You have All Stats Up while wet.",
+    "zh": "处于潮湿状态时，你拥有全属性提升。"
+  },
+  "MUTATION_LEGS_759_DESC": {
+    "en": "You have All Stats Up while wet.",
+    "zh": "处于潮湿状态时，你拥有全属性提升。"
+  },
+  "MUTATION_LEGS_761_DESC": {
+    "en": "Your movement action is a jump. Your basic attack inflicts Bleed.",
+    "zh": "你的移动行动变为跳跃。\n你的基础攻击施加流血。"
+  },
+  "MUTATION_LEGS_762_DESC": {
+    "en": "Ignore the effects of tiles and traps.",
+    "zh": "无视地块和陷阱的效果。"
+  },
+  "MUTATION_LEGS_763_DESC": {
+    "en": "Ignore the effects of tiles and traps.",
+    "zh": "无视地块和陷阱的效果。"
+  },
+  "MUTATION_MOUTH_301_DESC": {
+    "en": "Gain 1 health when you deal damage.",
+    "zh": "当你造成伤害时获得 1 点生命值。"
+  },
+  "MUTATION_MOUTH_302_DESC": {
+    "en": "+1 Health Regeneration",
+    "zh": "+1 生命恢复"
+  },
+  "MUTATION_MOUTH_304_DESC": {
+    "en": "Your basic attack inflicts Poison.",
+    "zh": "你的基础攻击施加中毒。"
+  },
+  "MUTATION_MOUTH_305_DESC": {
+    "en": "+100 corpse health.",
+    "zh": "+100 尸体生命值。"
+  },
+  "MUTATION_MOUTH_306_DESC": {
+    "en": "10% chance to spawn a Fly when you take damage.",
+    "zh": "当你受到伤害时有 10% 几率生成一只苍蝇。"
+  },
+  "MUTATION_MOUTH_307_DESC": {
+    "en": "Your basic attack has a 1% chance to instakill.",
+    "zh": "你的基础攻击有 1% 几率秒杀。"
+  },
+  "MUTATION_MOUTH_308_DESC": {
+    "en": "+1 Health Regeneration",
+    "zh": "+1 生命恢复"
+  },
+  "MUTATION_MOUTH_309_DESC": {
+    "en": "Your basic attack has a 10% chance to inflict Fear.",
+    "zh": "你的基础攻击有 10% 几率施加恐惧。"
+  },
+  "MUTATION_MOUTH_311_DESC": {
+    "en": "Your basic attack inflicts Leech 1.",
+    "zh": "你的基础攻击施加 1 层水蛭。"
+  },
+  "MUTATION_MOUTH_312_DESC": {
+    "en": "Your basic attack has a 10% chance to inflict Immobile if it's melee.",
+    "zh": "如果你的基础攻击是近战攻击，\n则有 10% 几率施加定身。"
+  },
+  "MUTATION_MOUTH_313_DESC": {
+    "en": "At the end of each round, spit at an enemy .",
+    "zh": "在每回合结束时，向一名敌人吐口水。"
+  },
+  "MUTATION_MOUTH_314_DESC": {
+    "en": "Spawn 5-10 coins when downed.",
+    "zh": "倒地时生成 5-10 枚金币。"
+  },
+  "MUTATION_MOUTH_315_DESC": {
+    "en": "10% chance to gain a bonus attack each turn.",
+    "zh": "每回合有 10% 几率获得一次奖励攻击。"
+  },
+  "MUTATION_MOUTH_316_DESC": {
+    "en": "Your basic attack inflicts Bruise.",
+    "zh": "你的基础攻击施加淤伤。"
+  },
+  "MUTATION_MOUTH_317_DESC": {
+    "en": "Spawn glass when you take damage. +1 Bleed Thorns.",
+    "zh": "当你受到伤害时生成玻璃。\n+1 流血荆棘。"
+  },
+  "MUTATION_MOUTH_318_DESC": {
+    "en": "Your movement action is Dig.",
+    "zh": "你的移动行动变为挖掘。"
+  },
+  "MUTATION_MOUTH_319_DESC": {
+    "en": "Water does not slow movement. +1 Health Regeneration while wet.",
+    "zh": "水不会减缓移动。\n处于潮湿状态时 +1 生命恢复。"
+  },
+  "MUTATION_MOUTH_322_DESC": {
+    "en": "Your basic attack inflicts Bleed.",
+    "zh": "你的基础攻击施加流血。"
+  },
+  "MUTATION_MOUTH_323_DESC": {
+    "en": "+2 Health Regeneration while wet.",
+    "zh": "处于潮湿状态时 +2 生命恢复。"
+  },
+  "MUTATION_MOUTH_324_DESC": {
+    "en": "+1 range.",
+    "zh": "+1 射程。"
+  },
+  "MUTATION_MOUTH_326_DESC": {
+    "en": "Gain +1 Health Regeneration whenever you eat food.",
+    "zh": "每当你吃食物时，获得 +1 生命恢复。"
+  },
+  "MUTATION_MOUTH_327_DESC": {
+    "en": "You can reroll your options when you level up.",
+    "zh": "升级时你可以重掷选项。"
+  },
+  "MUTATION_MOUTH_328_DESC": {
+    "en": "Can't eat food, use consumables, or use musical abilities. +2 Health Regeneration",
+    "zh": "无法吃食物、使用消耗品或使用音乐技能。\n+2 生命恢复"
+  },
+  "MUTATION_MOUTH_900_DESC": {
+    "en": "Your basic attack has a 10% chance to inflict Fear.",
+    "zh": "你的基础攻击有 10% 几率施加恐惧。"
+  },
+  "MUTATION_MOUTH_1500_DESC": {
+    "en": "Your basic attack inflicts Poison.",
+    "zh": "你的基础攻击施加中毒。"
+  },
+  "MUTATION_MOUTH_1026_DESC": {
+    "en": "Your basic attack has a 10% chance to inflict Webbed.",
+    "zh": "你的基础攻击有 10% 几率施加蛛网。"
+  },
+  "MUTATION_MOUTH_M2_DESC": {
+    "en": "Can't eat food, use consumables, or use musical abilities.",
+    "zh": "无法吃食物、使用消耗品或使用音乐技能。"
+  },
+  "MUTATION_MOUTH_705_DESC": {
+    "en": "Your basic attack can be used two extra times each turn but is replaced with a 1-damage spit attack.",
+    "zh": "你的基础攻击每回合可额外使用两次，\n但会被替换为造成 1 点伤害的吐口水攻击。"
+  },
+  "MUTATION_MOUTH_750_DESC": {
+    "en": "Your basic attack destroys inanimate objects and turns tiles into dirt.",
+    "zh": "你的\n基础攻击会摧毁无生命物体并将地块变为泥土。"
+  },
+  "MUTATION_MOUTH_752_DESC": {
+    "en": "Your basic attack creates water tiles.",
+    "zh": "你的基础攻击会生成水地块。"
+  },
+  "MUTATION_MOUTH_754_DESC": {
+    "en": "Adjacent units get All Stats Down.",
+    "zh": "相邻单位获得全属性下降。"
+  },
+  "MUTATION_MOUTH_755_DESC": {
+    "en": "Ice Immunity.",
+    "zh": "冰霜免疫。"
+  },
+  "MUTATION_MOUTH_757_DESC": {
+    "en": "Your basic attack inflicts Bleed.",
+    "zh": "你的基础攻击施加流血。"
+  },
+  "MUTATION_MOUTH_760_DESC": {
+    "en": "When a food pickup spawns within 2 tiles of you, move to it.",
+    "zh": "当食物掉落物生成在你 2 格范围内时，\n移动向它。"
+  },
+  "MUTATION_TAIL_301_DESC": {
+    "en": "Poop when you take damage.",
+    "zh": "受到伤害时排便。"
+  },
+  "MUTATION_TAIL_302_DESC": {
+    "en": "Your basic attack inflicts Poison.",
+    "zh": "你的基础攻击施加中毒。"
+  },
+  "MUTATION_TAIL_303_DESC": {
+    "en": "Your basic attack has a 5% chance to Stun.",
+    "zh": "你的基础攻击有 5% 几率造成晕眩。"
+  },
+  "MUTATION_TAIL_305_DESC": {
+    "en": "+1 Thorns.",
+    "zh": "+1 荆棘。"
+  },
+  "MUTATION_TAIL_308_DESC": {
+    "en": "+5% dodge chance.",
+    "zh": "+5% 闪避率。"
+  },
+  "MUTATION_TAIL_310_DESC": {
+    "en": "Your basic attack has a 10% chance to repeat once.",
+    "zh": "你的基础攻击有 10% 几率重复一次。"
+  },
+  "MUTATION_TAIL_311_DESC": {
+    "en": "Thorns 1.",
+    "zh": "荆棘 1。"
+  },
+  "MUTATION_TAIL_313_DESC": {
+    "en": "Your basic attack creates water tiles.",
+    "zh": "你的基础攻击会生成水地块。"
+  },
+  "MUTATION_TAIL_314_DESC": {
+    "en": "Whenever you down a unit, you have a 10% chance to reanimate that unit with 50% HP.",
+    "zh": "每当你击倒一个单位时，\n有 10% 几率以 50% \n生命值复生该单位。"
+  },
+  "MUTATION_TAIL_315_DESC": {
+    "en": "20% chance to spawn a Maggot when hit.",
+    "zh": "被击中时有 20% 几率生成一只蛆虫。"
+  },
+  "MUTATION_TAIL_316_DESC": {
+    "en": "25% chance to spawn tall grass wherever you end your movement.",
+    "zh": "在你结束移动的地方有 25% 几率生成高草。"
+  },
+  "MUTATION_TAIL_317_DESC": {
+    "en": "When hit, fart a Poison 4 attack with Knockback behind you.",
+    "zh": "被击中时，\n向身后放一个造成 4 层中毒并带有击退效果的\n屁。"
+  },
+  "MUTATION_TAIL_318_DESC": {
+    "en": "Your basic attack inflicts Poison.",
+    "zh": "你的基础攻击施加中毒。"
+  },
+  "MUTATION_TAIL_319_DESC": {
+    "en": "Units who contact you get Poisoned.",
+    "zh": "接触你的单位会中毒。"
+  },
+  "MUTATION_TAIL_320_DESC": {
+    "en": "Bleed 1. Bleed Thorns 2.",
+    "zh": "流血 1。流血荆棘 2。"
+  },
+  "MUTATION_TAIL_322_DESC": {
+    "en": "Gain +1 [img:spd] each turn.",
+    "zh": "每回合获得 +1 [img:spd]。"
+  },
+  "MUTATION_TAIL_323_DESC": {
+    "en": "Your movement action is a jump.",
+    "zh": "你的移动行动变为跳跃。"
+  },
+  "MUTATION_TAIL_325_DESC": {
+    "en": "Units that contact you get knocked back 2 tiles.",
+    "zh": "接触你的单位会被击退 2 格。"
+  },
+  "MUTATION_TAIL_326_DESC": {
+    "en": "10% dodge chance. Bruise 1.",
+    "zh": "10% 闪避率。淤伤 1。"
+  },
+  "MUTATION_TAIL_327_DESC": {
+    "en": "If you don't move, gain 3 Charge at the end of the turn.",
+    "zh": "如果你不移动，\n回合结束时获得 3 层充能。"
+  },
+  "MUTATION_TAIL_329_DESC": {
+    "en": "You can unequip cursed items and parasites.",
+    "zh": "你可以卸下诅咒物品和寄生虫。"
+  },
+  "MUTATION_TAIL_331_DESC": {
+    "en": "You can reroll your options when you level up.",
+    "zh": "升级时你可以重掷选项。"
+  },
+  "MUTATION_TAIL_332_DESC": {
+    "en": "+25% chance to reflect projectiles.",
+    "zh": "+25% 几率反射投射物。"
+  },
+  "MUTATION_TAIL_334_DESC": {
+    "en": "Your basic attack inflicts Burn 1.",
+    "zh": "你的基础攻击施加 1 层燃烧。"
+  },
+  "MUTATION_TAIL_336_DESC": {
+    "en": "+1 Thorns.",
+    "zh": "+1 荆棘。"
+  },
+  "MUTATION_TAIL_337_DESC": {
+    "en": "Your basic attack is wind element.",
+    "zh": "你的基础攻击是风元素。"
+  },
+  "MUTATION_TAIL_338_DESC": {
+    "en": "Your basic attack inflicts Burn 1.",
+    "zh": "你的基础攻击施加 1 层燃烧。"
+  },
+  "MUTATION_TAIL_339_DESC": {
+    "en": "While at full mana, you have +2 Damage.",
+    "zh": "法力值满时，拥有 +2 伤害。"
+  },
+  "MUTATION_TAIL_341_DESC": {
+    "en": "Gain +1 Charge when you take damage.",
+    "zh": "受到伤害时获得 +1 充能。"
+  },
+  "MUTATION_TAIL_342_DESC": {
+    "en": "Spawn a Charmed Kitten familiar when you get downed.",
+    "zh": "当你倒地时，生成一只魅惑小猫使魔。"
+  },
+  "MUTATION_TAIL_703_DESC": {
+    "en": "Start each battle with Immobile 1.",
+    "zh": "每场战斗开始时带有 1 层定身。"
+  },
+  "MUTATION_TAIL_704_DESC": {
+    "en": "Hunter abilities are also offered when you level up.",
+    "zh": "升级时也会提供猎人技能。"
+  },
+  "MUTATION_TAIL_751_DESC": {
+    "en": "+1 Brace.",
+    "zh": "+1 护甲。"
+  },
+  "MUTATION_TAIL_754_DESC": {
+    "en": "+1 Thorns.",
+    "zh": "+1 荆棘。"
+  },
+  "MUTATION_TAIL_755_DESC": {
+    "en": "Water does not slow movement.",
+    "zh": "水不会减缓移动。"
+  },
+  "MUTATION_TAIL_756_DESC": {
+    "en": "+1 Bleed Thorns.",
+    "zh": "+1 流血荆棘。"
+  },
+  "MUTATION_TAIL_757_DESC": {
+    "en": "Your movement action is shadowstep.",
+    "zh": "你的移动行动变为暗影步。"
+  },
+  "MUTATION_TAIL_759_DESC": {
+    "en": "Start with +1 Bonus Attack.",
+    "zh": "初始拥有 +1 奖励攻击。"
+  },
+  "MUTATION_TAIL_760_DESC": {
+    "en": "Start with 2 backflips.",
+    "zh": "初始拥有 2 次后空翻。"
+  },
+  "MUTATION_TEXTURE_300_DESC": {
+    "en": "+1 Health Regeneration",
+    "zh": "+1 生命恢复"
+  },
+  "MUTATION_TEXTURE_301_DESC": {
+    "en": "+1 Health and Mana Regeneration while wet.",
+    "zh": "处于潮湿状态时，+1 生命和法力恢复。"
+  },
+  "MUTATION_TEXTURE_303_DESC": {
+    "en": "Start each battle with a random stat up.",
+    "zh": "每场战斗开始时获得一个随机属性提升。"
+  },
+  "MUTATION_TEXTURE_304_DESC": {
+    "en": "Units that contact or attack you have a 10% chance to become Confused.",
+    "zh": "接触或攻击你的单位有 10% 几率陷入混乱。"
+  },
+  "MUTATION_TEXTURE_307_DESC": {
+    "en": "+5% dodge chance.",
+    "zh": "+5% 闪避率。"
+  },
+  "MUTATION_TEXTURE_309_DESC": {
+    "en": "Your basic attack has a 5% chance to inflict Fear. You have a 5% chance to inflict Fear on units who contact or attack you.",
+    "zh": "你的基础攻击有 5% 几率施加恐惧。\n你有 5% 几率对接触或攻击你的\n单位施加恐惧。"
+  },
+  "MUTATION_TEXTURE_310_DESC": {
+    "en": "Gain double the effects of pickups you collect.",
+    "zh": "你收集的掉落物效果翻倍。"
+  },
+  "MUTATION_TEXTURE_702_DESC": {
+    "en": "Start each battle with Bleed 1.",
+    "zh": "每场战斗开始时带有 1 层流血。"
+  },
+  "MUTATION_TEXTURE_703_DESC": {
+    "en": "Mage abilities are also offered when you level up.",
+    "zh": "升级时也会提供法师技能。"
+  },
+  "MUTATION_TEXTURE_704_DESC": {
+    "en": "Fighter abilities are also offered when you level up.",
+    "zh": "升级时也会提供战士技能。"
+  },
+  "MUTATION_TEXTURE_705_DESC": {
+    "en": "Thief abilities are also offered when you level up.",
+    "zh": "升级时也会提供盗贼技能。"
+  },
+  "MUTATION_TEXTURE_706_DESC": {
+    "en": "10% dodge chance.",
+    "zh": "10% 闪避率。"
+  },
+  "MUTATION_TEXTURE_750_DESC": {
+    "en": "Units who contact you get Poison 2.",
+    "zh": "接触你的单位会获得 2 层中毒。"
+  }
+}

@@ -1,6 +1,6 @@
 ﻿mutation_id,part,display_name,part_label_en,part_label_zh,desc_en,desc_zh,stats,is_birth_defect,source_file
 300,body,Body 300: Rock Bod,Body Mutation,身体突变,,,"{""con"": 1}",False,data2/mutations/body.gon
-301,body,Body 301: Cactus Bod,Body Mutation,身体突变,+1 Thorns.,【尖刺】+1。,,False,data2/mutations/body.gon
+301,body,Body 301: Cactus Bod,Body Mutation,身体突变,+1 Thorns.,+1 荆棘。,,False,data2/mutations/body.gon
 302,body,Body 302: Turtle Bod,Body Mutation,身体突变,,,"{""spd"": -1, ""shield"": 5}",False,data2/mutations/body.gon
 303,body,Body 303: Snail Bod,Body Mutation,身体突变,,,"{""shield"": 10, ""spd"": -2}",False,data2/mutations/body.gon
 304,body,Body 304: Robot Body,Body Mutation,身体突变,,,"{""spd"": 1, ""int"": 1}",False,data2/mutations/body.gon
@@ -8,22 +8,25 @@
 306,body,Body 306: Skin & Bones,Body Mutation,身体突变,,,"{""shield"": 12, ""con"": -3}",False,data2/mutations/body.gon
 307,body,Body 307: Udders,Body Mutation,身体突变,,,"{""cha"": 1}",False,data2/mutations/body.gon
 308,body,Body 308: Beach Bod,Body Mutation,身体突变,,,"{""str"": 1, ""con"": 1, ""int"": -1}",False,data2/mutations/body.gon
-309,body,Body 309: Maggot Bod,Body Mutation,身体突变,Units that contact you get knocked back 2 tiles.,单位接触到你时，会被击退2个方格。,,False,data2/mutations/body.gon
+309,body,Body 309: Maggot Bod,Body Mutation,身体突变,Units that contact you get knocked back 2 tiles.,接触你的单位会被击退 2 格。,,False,data2/mutations/body.gon
 310,body,Body 310: Puffball Bod,Body Mutation,身体突变,,,"{""cha"": 1}",False,data2/mutations/body.gon
 311,body,Body 311: Square Bod,Body Mutation,身体突变,,,"{""con"": 1}",False,data2/mutations/body.gon
-312,body,Body 312: Money Bag Bod,Body Mutation,身体突变,Spawn a coin when you take damage.,你受到伤害时，产生1块钱。,,False,data2/mutations/body.gon
-313,body,Body 313: Spike Bod,Body Mutation,身体突变,+1 Kinetic Spikes.,【动能尖刺】+1。,,False,data2/mutations/body.gon
-314,body,Body 314: Porcupine,Body Mutation,身体突变,+2 Thorns.,【尖刺】+2。,"{""cha"": -1}",False,data2/mutations/body.gon
-315,body,Body 315: Carapace,Body Mutation,身体突变,+1 Brace.,【招架】+1。,,False,data2/mutations/body.gon
+312,body,Body 312: Money Bag Bod,Body Mutation,身体突变,Spawn a coin when you take damage.,当你受到伤害时，生成一枚金币。,,False,data2/mutations/body.gon
+313,body,Body 313: Spike Bod,Body Mutation,身体突变,+1 Kinetic Spikes.,+1 动能尖刺。,,False,data2/mutations/body.gon
+314,body,Body 314: Porcupine,Body Mutation,身体突变,+2 Thorns.,+2 荆棘。,"{""cha"": -1}",False,data2/mutations/body.gon
+315,body,Body 315: Carapace,Body Mutation,身体突变,+1 Brace.,+1 护甲。,,False,data2/mutations/body.gon
 316,body,Body 316: Pangolin,Body Mutation,身体突变,,,"{""shield"": 2}",False,data2/mutations/body.gon
-317,body,Body 317: Camel Hump,Body Mutation,身体突变,Immune to Heat Wave weather.,免疫“热浪”天气。,"{""con"": 1}",False,data2/mutations/body.gon
-318,body,Body 318: Egg Sack Back,Body Mutation,身体突变,25% chance to spawn a Charmed Fly each turn.,每个回合有25%的几率产生1个【洗脑】的苍蝇。,,False,data2/mutations/body.gon
-319,body,Body 319: Fractured Bod,Body Mutation,身体突变,"When you take damage from an attack, gain a random buff.",因攻击受到伤害时，随机获得1个增益。,,False,data2/mutations/body.gon
+317,body,Body 317: Camel Hump,Body Mutation,身体突变,Immune to Heat Wave weather.,免疫热浪天气。,"{""con"": 1}",False,data2/mutations/body.gon
+318,body,Body 318: Egg Sack Back,Body Mutation,身体突变,25% chance to spawn a Charmed Fly each turn.,每回合有 25% 的几率生成一只魅惑苍蝇。,,False,data2/mutations/body.gon
+319,body,Body 319: Fractured Bod,Body Mutation,身体突变,"When you take damage from an attack, gain a random buff.","当你受到攻击伤害时，
+获得一个随机增益。",,False,data2/mutations/body.gon
 320,body,Body 320: Brick Bod,Body Mutation,身体突变,,,"{""shield"": 1}",False,data2/mutations/body.gon
-321,body,Body 321: Kitten Bod,Body Mutation,身体突变,Spawn a Charmed Kitten familiar when you get downed.,你倒地时，产生1个【洗脑】的小猫跟班。,,False,data2/mutations/body.gon
-322,body,Body 322: Backpack,Body Mutation,身体突变,Gain an extra consumable item at the end of each battle.,每场战斗结束时，额外获得1件消耗品。,,False,data2/mutations/body.gon
-323,body,Body 323: Fatty,Body Mutation,身体突变,"Trample. When damaged, move 1 tile in a random direction.",横冲直撞。受到伤害时，随机移动1个方格。,"{""spd"": -3}",False,data2/mutations/body.gon
-324,body,Body 324: Eyeball,Body Mutation,身体突变,Gain +1 range when you get a kill.,杀死单位时，范围+1。,,False,data2/mutations/body.gon
+321,body,Body 321: Kitten Bod,Body Mutation,身体突变,Spawn a Charmed Kitten familiar when you get downed.,当你倒地时，生成一只魅惑小猫使魔。,,False,data2/mutations/body.gon
+322,body,Body 322: Backpack,Body Mutation,身体突变,Gain an extra consumable item at the end of each battle.,"在每场战斗结束时，
+获得一个额外消耗品。",,False,data2/mutations/body.gon
+323,body,Body 323: Fatty,Body Mutation,身体突变,"Trample. When damaged, move 1 tile in a random direction.","践踏。受到伤害时，
+向随机方向移动 1 格。","{""spd"": -3}",False,data2/mutations/body.gon
+324,body,Body 324: Eyeball,Body Mutation,身体突变,Gain +1 range when you get a kill.,当你造成击杀时，获得 +1 射程。,,False,data2/mutations/body.gon
 400,body,Body 400,Body Mutation,身体突变,,,"{""str"": 2, ""con"": -1}",False,data2/mutations/body.gon
 401,body,Body 401,Body Mutation,身体突变,,,"{""str"": 2, ""dex"": -1}",False,data2/mutations/body.gon
 402,body,Body 402,Body Mutation,身体突变,,,"{""str"": 2, ""cha"": -1}",False,data2/mutations/body.gon
@@ -70,56 +73,70 @@
 700,body,Body 700: Gastroschisis,Body Mutation,身体突变,,,"{""con"": -2}",True,data2/mutations/body.gon
 701,body,Body 701: Deformed Ribcage,Body Mutation,身体突变,,,"{""spd"": -2}",True,data2/mutations/body.gon
 702,body,Body 702: Malnurished,Body Mutation,身体突变,,,"{""con"": -1}",True,data2/mutations/body.gon
-703,body,Body 703: Body Welts,Body Mutation,身体突变,Start each battle with Bruise 1.,每场战斗开始时，自带1层【瘀伤】。,,True,data2/mutations/body.gon
+703,body,Body 703: Body Welts,Body Mutation,身体突变,Start each battle with Bruise 1.,每场战斗开始时带有 1 层淤伤。,,True,data2/mutations/body.gon
 704,body,Body 704: Conjoined Body,Body Mutation,身体突变,,,"{""spd"": -3, ""con"": 2}",True,data2/mutations/body.gon
-750,body,Body 750: spike body,Body Mutation,身体突变,+1 Thorns. ,【尖刺】+1。,,False,data2/mutations/body.gon
+750,body,Body 750: spike body,Body Mutation,身体突变,+1 Thorns. ,+1 荆棘。,,False,data2/mutations/body.gon
 753,body,Body 753: mermaid body,Body Mutation,身体突变,,,"{""shield"": 5}",False,data2/mutations/body.gon
-758,body,Body 758: human head body,Body Mutation,身体突变,Start with +1 Bonus Attack.,每场战斗开始时，自带1次奖励攻击。,"{""con"": 1}",False,data2/mutations/body.gon
+758,body,Body 758: human head body,Body Mutation,身体突变,Start with +1 Bonus Attack.,初始拥有 +1 奖励攻击。,"{""con"": 1}",False,data2/mutations/body.gon
 900,body,Body 900: slender,Body Mutation,身体突变,,,"{""con"": -2, ""spd"": 1}",False,data2/mutations/body.gon
 -2,ears,Ears -2: no ears (completely missing part) //TODO: deaf (unaffected by musical abilities),Ear Mutation,耳朵突变,,,"{""dex"": -2}",True,data2/mutations/ears.gon
 300,ears,Ears 300: horn,Ear Mutation,耳朵突变,,,"{""str"": 1}",False,data2/mutations/ears.gon
 301,ears,Ears 301: antenna,Ear Mutation,耳朵突变,,,"{""int"": 1}",False,data2/mutations/ears.gon
-302,ears,Ears 302: fishy,Ear Mutation,耳朵突变,+1 Health and Mana Regeneration while wet.,潮湿的时候，生命自然恢复和魔能自然恢复各+1。,,False,data2/mutations/ears.gon
-303,ears,Ears 303: bullhorn,Ear Mutation,耳朵突变,Adds +1 Knockback to your basic attack if it's melee.,如果你的普通攻击是近身攻击，那么击退+1。,"{""str"": 1}",False,data2/mutations/ears.gon
+302,ears,Ears 302: fishy,Ear Mutation,耳朵突变,+1 Health and Mana Regeneration while wet.,潮湿状态下 +1 生命恢复和法力恢复。,,False,data2/mutations/ears.gon
+303,ears,Ears 303: bullhorn,Ear Mutation,耳朵突变,Adds +1 Knockback to your basic attack if it's melee.,"如果你的基础攻击是近战攻击，
+增加 +1 击退。","{""str"": 1}",False,data2/mutations/ears.gon
 304,ears,Ears 304: pigtails,Ear Mutation,耳朵突变,,,"{""cha"": 1}",False,data2/mutations/ears.gon
 305,ears,Ears 305: boil,Ear Mutation,耳朵突变,,,"{""shield"": 1}",False,data2/mutations/ears.gon
 306,ears,Ears 306: bunny ear,Ear Mutation,耳朵突变,,,"{""spd"": 1}",False,data2/mutations/ears.gon
 307,ears,Ears 307: brains,Ear Mutation,耳朵突变,,,"{""int"": 1}",False,data2/mutations/ears.gon
 308,ears,Ears 308: shrek,Ear Mutation,耳朵突变,,,"{""str"": 1, ""cha"": -1}",False,data2/mutations/ears.gon
-309,ears,Ears 309: antlers,Ear Mutation,耳朵突变,Adds +1 Bleed to your basic attack.,你的普通攻击【出血】+1。,,False,data2/mutations/ears.gon
+309,ears,Ears 309: antlers,Ear Mutation,耳朵突变,Adds +1 Bleed to your basic attack.,为你的基础攻击增加 +1 流血。,,False,data2/mutations/ears.gon
 310,ears,Ears 310: human,Ear Mutation,耳朵突变,,,"{""int"": 1}",False,data2/mutations/ears.gon
-313,ears,Ears 313: Ram horns,Ear Mutation,耳朵突变,Adds +1 Knockback to your basic attack if it's melee.,如果你的普通攻击是近身攻击，那么击退+1。,"{""shield"": 1}",False,data2/mutations/ears.gon
-314,ears,Ears 314: Deer horns,Ear Mutation,耳朵突变,Thorns 1. Your basic attack inflicts Bleed if it's melee.,1层【尖刺】。如果普通攻击是近身攻击，那么造成【出血】。,,False,data2/mutations/ears.gon
-315,ears,Ears 315: Fly Ears,Ear Mutation,耳朵突变,50% chance to spawn a Charmed Fly each turn. Start with Poison 1.,每个回合有50%的几率产生1个【洗脑】的苍蝇。每场战斗开始时，自带1层【中毒】。,,False,data2/mutations/ears.gon
-316,ears,Ears 316: Bat Ears,Ear Mutation,耳朵突变,You can see hidden things. 5% dodge chance.,能看到隐藏的东西。闪避几率+5%。,,False,data2/mutations/ears.gon
-317,ears,Ears 317: Bone Ears,Ear Mutation,耳朵突变,"Whenever you down a unit, you have a 10% chance to reanimate that unit with 50% HP.",每当你击倒1个单位，都有10%的几率令它以50%的生命复苏。,,False,data2/mutations/ears.gon
-318,ears,Ears 318: Frog Eyes,Ear Mutation,耳朵突变,You have Brace 1 while wet.,潮湿的时候，拥有1层【招架】。,,False,data2/mutations/ears.gon
-319,ears,Ears 319: Pierced Ears,Ear Mutation,耳朵突变,Gain +1 Charge when you take damage.,你受到伤害时，【蓄能】+1。,,False,data2/mutations/ears.gon
-320,ears,Ears 320: Alien Ears,Ear Mutation,耳朵突变,+1 Kinetic Spikes.,【动能尖刺】+1。,,False,data2/mutations/ears.gon
-321,ears,Ears 321: Spring Ears,Ear Mutation,耳朵突变,Units that contact you get knocked back 1 tile.,单位接触到你时，会被击退1个方格。,,False,data2/mutations/ears.gon
+313,ears,Ears 313: Ram horns,Ear Mutation,耳朵突变,Adds +1 Knockback to your basic attack if it's melee.,"如果你的基础攻击是近战攻击，
+增加 +1 击退。","{""shield"": 1}",False,data2/mutations/ears.gon
+314,ears,Ears 314: Deer horns,Ear Mutation,耳朵突变,Thorns 1. Your basic attack inflicts Bleed if it's melee.,"荆棘 1。如果你的基础攻击是近战攻击，
+会造成流血效果。",,False,data2/mutations/ears.gon
+315,ears,Ears 315: Fly Ears,Ear Mutation,耳朵突变,50% chance to spawn a Charmed Fly each turn. Start with Poison 1.,"每回合有 50% 的几率生成一只魅惑苍蝇。
+初始带有 1 层中毒。",,False,data2/mutations/ears.gon
+316,ears,Ears 316: Bat Ears,Ear Mutation,耳朵突变,You can see hidden things. 5% dodge chance.,你可以看到隐藏之物。5% 闪避率。,,False,data2/mutations/ears.gon
+317,ears,Ears 317: Bone Ears,Ear Mutation,耳朵突变,"Whenever you down a unit, you have a 10% chance to reanimate that unit with 50% HP.","每当你击倒一个单位，
+有 10% 的
+几率将其复生并拥有 50% 生命值。",,False,data2/mutations/ears.gon
+318,ears,Ears 318: Frog Eyes,Ear Mutation,耳朵突变,You have Brace 1 while wet.,潮湿状态下拥有 1 层护甲。,,False,data2/mutations/ears.gon
+319,ears,Ears 319: Pierced Ears,Ear Mutation,耳朵突变,Gain +1 Charge when you take damage.,当你受到伤害时，获得 +1 充能。,,False,data2/mutations/ears.gon
+320,ears,Ears 320: Alien Ears,Ear Mutation,耳朵突变,+1 Kinetic Spikes.,+1 动能尖刺。,,False,data2/mutations/ears.gon
+321,ears,Ears 321: Spring Ears,Ear Mutation,耳朵突变,Units that contact you get knocked back 1 tile.,接触你的单位会被击退 1 格。,,False,data2/mutations/ears.gon
 322,ears,Ears 322: Lamb Ears,Ear Mutation,耳朵突变,,,"{""cha"": 1}",False,data2/mutations/ears.gon
-323,ears,Ears 323: Vamp Ears,Ear Mutation,耳朵突变,Gain 1 HP when your basic attack deals damage.,你普通攻击造成伤害时，恢复1点生命。,,False,data2/mutations/ears.gon
-325,ears,Ears 325: Tree Branch,Ear Mutation,耳朵突变,"If you're wet, gain +1 Charge and +1 [img:shield] at the end of your turn.",潮湿的时候，你在回合结束时【蓄能】和[img:shield]各+1。,,False,data2/mutations/ears.gon
-326,ears,Ears 326: Worm Ear,Ear Mutation,耳朵突变,5% chance to spawn a Maggot familiar each turn.,每个回合有5%的几率产生1个蛆跟班。,,False,data2/mutations/ears.gon
-327,ears,Ears 327: Ant Antenna,Ear Mutation,耳朵突变,An extra food pickup will spawn in each battle.,每场战斗会额外出现1份可以捡起的食物。,,False,data2/mutations/ears.gon
-328,ears,Ears 328: Snake Ears,Ear Mutation,耳朵突变,5% chance to Petrify on damage and when hit.,造成伤害或被击中时，有5%的几率令对方【石化】。,,False,data2/mutations/ears.gon
-329,ears,Ears 329: External Gills,Ear Mutation,耳朵突变,Your basic attack leaves water tiles.,你的普通攻击会产生水方格。,,False,data2/mutations/ears.gon
-330,ears,Ears 330: Hook Ears,Ear Mutation,耳朵突变,Thorns 1. 10% chance to inflict Immobile on units that contact you.,1层【尖刺】。单位接触到你时，有10%的几率移动受限。,,False,data2/mutations/ears.gon
-331,ears,Ears 331: Mace Ears,Ear Mutation,耳朵突变,Your basic attack has +1 Knockback.,你普通攻击的击退+1。,,False,data2/mutations/ears.gon
-332,ears,Ears 332: Blubber Lobes,Ear Mutation,耳朵突变,Brace 1.,1层【招架】。,,False,data2/mutations/ears.gon
+323,ears,Ears 323: Vamp Ears,Ear Mutation,耳朵突变,Gain 1 HP when your basic attack deals damage.,"当你的基础攻击造成伤害时，
+恢复 1 点生命值。",,False,data2/mutations/ears.gon
+325,ears,Ears 325: Tree Branch,Ear Mutation,耳朵突变,"If you're wet, gain +1 Charge and +1 [img:shield] at the end of your turn.","如果你处于潮湿状态，
+回合结束时获得 +1 充能和 +1 [img:shield]。",,False,data2/mutations/ears.gon
+326,ears,Ears 326: Worm Ear,Ear Mutation,耳朵突变,5% chance to spawn a Maggot familiar each turn.,每回合有 5% 的几率生成一只蛆虫使魔。,,False,data2/mutations/ears.gon
+327,ears,Ears 327: Ant Antenna,Ear Mutation,耳朵突变,An extra food pickup will spawn in each battle.,每场战斗中会生成一个额外的食物掉落物。,,False,data2/mutations/ears.gon
+328,ears,Ears 328: Snake Ears,Ear Mutation,耳朵突变,5% chance to Petrify on damage and when hit.,"造成伤害或受到攻击时有 5% 的
+几率施加石化。",,False,data2/mutations/ears.gon
+329,ears,Ears 329: External Gills,Ear Mutation,耳朵突变,Your basic attack leaves water tiles.,你的基础攻击会留下水地块。,,False,data2/mutations/ears.gon
+330,ears,Ears 330: Hook Ears,Ear Mutation,耳朵突变,Thorns 1. 10% chance to inflict Immobile on units that contact you.,"荆棘 1。
+接触你的单位有 10% 的几率被施加定身。",,False,data2/mutations/ears.gon
+331,ears,Ears 331: Mace Ears,Ear Mutation,耳朵突变,Your basic attack has +1 Knockback.,你的基础攻击拥有 +1 击退。,,False,data2/mutations/ears.gon
+332,ears,Ears 332: Blubber Lobes,Ear Mutation,耳朵突变,Brace 1.,护甲 1。,,False,data2/mutations/ears.gon
 333,ears,Ears 333: Metal Plate,Ear Mutation,耳朵突变,,,"{""shield"": 3}",False,data2/mutations/ears.gon
-334,ears,Ears 334: Metal Detector,Ear Mutation,耳朵突变,Spawn 1-3 more coins/scrap around the map on random tiles at the start of each battle.,每场战斗开始时，场景内随机多产生1-3个硬币/边角料。,,False,data2/mutations/ears.gon
-335,ears,Ears 335: Docked Ears,Ear Mutation,耳朵突变,Start with Bleed 1 and a bonus attack.,每场战斗开始时，自带1层【出血】和1次奖励攻击。,,False,data2/mutations/ears.gon
-336,ears,Ears 336: Large Leaves,Ear Mutation,耳朵突变,You gain 3 mana at the end of your turn if you didn't use your movement action.,如果你在自己的回合没有使用移动行动，那么你在回合结束时恢复3点魔能。,,False,data2/mutations/ears.gon
-337,ears,Ears 337: Burning ears,Ear Mutation,耳朵突变,Your basic attack inflicts Burn 1.,你的普通攻击会施加1层【灼烧】。,,False,data2/mutations/ears.gon
-338,ears,Ears 338: Frozen ears,Ear Mutation,耳朵突变,Your basic attack has a 15% chance to inflict Freeze.,你的普通攻击有15%的几率施加【冻住】。,,False,data2/mutations/ears.gon
-339,ears,Ears 339: Lightning Rods,Ear Mutation,耳朵突变,You have electric immunity.,你免疫电击。,,False,data2/mutations/ears.gon
+334,ears,Ears 334: Metal Detector,Ear Mutation,耳朵突变,Spawn 1-3 more coins/scrap around the map on random tiles at the start of each battle.,"每场战斗开始时，
+在地图上的
+随机地块生成额外 1-3 枚金币/废料。",,False,data2/mutations/ears.gon
+335,ears,Ears 335: Docked Ears,Ear Mutation,耳朵突变,Start with Bleed 1 and a bonus attack.,初始带有 1 层流血和一个奖励攻击。,,False,data2/mutations/ears.gon
+336,ears,Ears 336: Large Leaves,Ear Mutation,耳朵突变,You gain 3 mana at the end of your turn if you didn't use your movement action.,"如果你在回合结束时没有使用移动行动，
+获得 3 点法力值。",,False,data2/mutations/ears.gon
+337,ears,Ears 337: Burning ears,Ear Mutation,耳朵突变,Your basic attack inflicts Burn 1.,你的基础攻击造成 1 层燃烧。,,False,data2/mutations/ears.gon
+338,ears,Ears 338: Frozen ears,Ear Mutation,耳朵突变,Your basic attack has a 15% chance to inflict Freeze.,你的基础攻击有 15% 的几率造成冻结。,,False,data2/mutations/ears.gon
+339,ears,Ears 339: Lightning Rods,Ear Mutation,耳朵突变,You have electric immunity.,你拥有电击免疫。,,False,data2/mutations/ears.gon
 340,ears,Ears 340: Aura Ears,Ear Mutation,耳朵突变,,,"{""divine_shield"": 1}",False,data2/mutations/ears.gon
-341,ears,Ears 341: Large Ears,Ear Mutation,耳朵突变,10% chance to backflip when targeted.,你成为目标时，有10%的几率后空翻。,,False,data2/mutations/ears.gon
-342,ears,Ears 342: Infested Ears,Ear Mutation,耳朵突变,20% chance to spawn a Charmed Flea when damaged.,受到伤害时，有20%的几率产生1个【洗脑】的跳蚤。,"{""con"": -1}",False,data2/mutations/ears.gon
-343,ears,Ears 343: Long Antlers,Ear Mutation,耳朵突变,Thorns 1.,1层【尖刺】。,,False,data2/mutations/ears.gon
-344,ears,Ears 344: Kitten,Ear Mutation,耳朵突变,Spawn a Charmed Kitten familiar when you get downed.,你倒地时，产生1个【洗脑】的小猫跟班。,,False,data2/mutations/ears.gon
-345,ears,Ears 345: Mouse Ears,Ear Mutation,耳朵突变,Units that contact or attack you have a 15% chance to get Charmed.,单位接触或攻击到你时，有15%的几率被【洗脑】。,,False,data2/mutations/ears.gon
+341,ears,Ears 341: Large Ears,Ear Mutation,耳朵突变,10% chance to backflip when targeted.,被选中为目标时有 10% 的几率后空翻。,,False,data2/mutations/ears.gon
+342,ears,Ears 342: Infested Ears,Ear Mutation,耳朵突变,20% chance to spawn a Charmed Flea when damaged.,"受到伤害时有 20% 的
+几率生成一只魅惑跳蚤。","{""con"": -1}",False,data2/mutations/ears.gon
+343,ears,Ears 343: Long Antlers,Ear Mutation,耳朵突变,Thorns 1.,荆棘 1。,,False,data2/mutations/ears.gon
+344,ears,Ears 344: Kitten,Ear Mutation,耳朵突变,Spawn a Charmed Kitten familiar when you get downed.,当你倒地时，生成一只魅惑小猫使魔。,,False,data2/mutations/ears.gon
+345,ears,Ears 345: Mouse Ears,Ear Mutation,耳朵突变,Units that contact or attack you have a 15% chance to get Charmed.,接触或攻击你的单位有 15% 的几率被魅惑。,,False,data2/mutations/ears.gon
 400,ears,Ears 400,Ear Mutation,耳朵突变,,,"{""str"": 2, ""con"": -1}",False,data2/mutations/ears.gon
 401,ears,Ears 401,Ear Mutation,耳朵突变,,,"{""str"": 2, ""dex"": -1}",False,data2/mutations/ears.gon
 402,ears,Ears 402,Ear Mutation,耳朵突变,,,"{""str"": 2, ""cha"": -1}",False,data2/mutations/ears.gon
@@ -165,32 +182,36 @@
 700,ears,Ears 700: anotia,Ear Mutation,耳朵突变,,,"{""lck"": -2}",True,data2/mutations/ears.gon
 701,ears,Ears 701: turner syndrome,Ear Mutation,耳朵突变,,,"{""int"": -2}",True,data2/mutations/ears.gon
 702,ears,Ears 702: underdeveloped ears,Ear Mutation,耳朵突变,,,"{""cha"": -1}",True,data2/mutations/ears.gon
-703,ears,Ears 703: low ears,Ear Mutation,耳朵突变,Start each battle with Confusion 2.,每场战斗开始时，自带2层【混乱】。,,True,data2/mutations/ears.gon
-704,ears,Ears 704: wilted ears,Ear Mutation,耳朵突变,Start each battle with Immobile 1.,每场战斗开始时，自带1层【移动受限】。,,True,data2/mutations/ears.gon
-750,ears,Ears 750: Jackrabbit Ears,Ear Mutation,耳朵突变,Your movement action is a jump.,你的移动行动变成跳跃。,,False,data2/mutations/ears.gon
-751,ears,Ears 751: Folded Ears,Ear Mutation,耳朵突变,+10% dodge chance.,闪避几率+10%。,,False,data2/mutations/ears.gon
-752,ears,Ears 752: Fin Ears,Ear Mutation,耳朵突变,You have +2 Damage while wet.,潮湿的时候，你的伤害+2。,,False,data2/mutations/ears.gon
-753,ears,Ears 753: Goat Horns,Ear Mutation,耳朵突变,+1 Knockback damage. Your basic attack has +1 Knockback.,击退伤害+1。你普通攻击的击退+1。,,False,data2/mutations/ears.gon
-754,ears,Ears 754: Electric Ears,Ear Mutation,耳朵突变,Electric damage you deal is increased by 1.,你造成的电系伤害+1。,"{""spd"": 1}",False,data2/mutations/ears.gon
-755,ears,Ears 755: Head Ferns,Ear Mutation,耳朵突变,Gain +1 Charge every time you cast a spell.,你每次施放法术时，【蓄能】+1。,,False,data2/mutations/ears.gon
-900,ears,Ears 900: slender,Ear Mutation,耳朵突变,+10% dodge chance.,闪避几率+10%。,,False,data2/mutations/ears.gon
-1500,ears,Ears 1500: rat ears,Ear Mutation,耳朵突变,+2% dodge chance,闪避几率+2%,,False,data2/mutations/ears.gon
+703,ears,Ears 703: low ears,Ear Mutation,耳朵突变,Start each battle with Confusion 2.,每场战斗开始时带有 2 层混乱。,,True,data2/mutations/ears.gon
+704,ears,Ears 704: wilted ears,Ear Mutation,耳朵突变,Start each battle with Immobile 1.,每场战斗开始时带有 1 层定身。,,True,data2/mutations/ears.gon
+750,ears,Ears 750: Jackrabbit Ears,Ear Mutation,耳朵突变,Your movement action is a jump.,你的移动行动变为跳跃。,,False,data2/mutations/ears.gon
+751,ears,Ears 751: Folded Ears,Ear Mutation,耳朵突变,+10% dodge chance.,+10% 闪避率。,,False,data2/mutations/ears.gon
+752,ears,Ears 752: Fin Ears,Ear Mutation,耳朵突变,You have +2 Damage while wet.,潮湿状态下 +2 伤害。,,False,data2/mutations/ears.gon
+753,ears,Ears 753: Goat Horns,Ear Mutation,耳朵突变,+1 Knockback damage. Your basic attack has +1 Knockback.,"+1 击退伤害。
+你的基础攻击拥有 +1 击退。",,False,data2/mutations/ears.gon
+754,ears,Ears 754: Electric Ears,Ear Mutation,耳朵突变,Electric damage you deal is increased by 1.,你造成的电击伤害增加 1 点。,"{""spd"": 1}",False,data2/mutations/ears.gon
+755,ears,Ears 755: Head Ferns,Ear Mutation,耳朵突变,Gain +1 Charge every time you cast a spell.,每次施放法术获得 +1 充能。,,False,data2/mutations/ears.gon
+900,ears,Ears 900: slender,Ear Mutation,耳朵突变,+10% dodge chance.,+10% 闪避率。,,False,data2/mutations/ears.gon
+1500,ears,Ears 1500: rat ears,Ear Mutation,耳朵突变,+2% dodge chance,+2% 闪避率,,False,data2/mutations/ears.gon
 -2,eyebrows,Eyebrows -2: no eyebrows (completely missing part),Eyebrow Mutation,眉毛突变,,,"{""cha"": -2}",True,data2/mutations/eyebrows.gon
 300,eyebrows,Eyebrows 300: Bolt Brows,Eyebrow Mutation,眉毛突变,,,"{""spd"": 1}",False,data2/mutations/eyebrows.gon
-301,eyebrows,Eyebrows 301: Confusing Brows,Eyebrow Mutation,眉毛突变,You have a 10% chance to inflict Confusion on units who contact or attack you.,单位接触或攻击到你时，有10%的几率【混乱】。,,False,data2/mutations/eyebrows.gon
+301,eyebrows,Eyebrows 301: Confusing Brows,Eyebrow Mutation,眉毛突变,You have a 10% chance to inflict Confusion on units who contact or attack you.,"接触或攻击你的单位有 10% 的
+几率被施加混乱。",,False,data2/mutations/eyebrows.gon
 302,eyebrows,Eyebrows 302: Metal Brows,Eyebrow Mutation,眉毛突变,,,"{""shield"": 2}",False,data2/mutations/eyebrows.gon
 303,eyebrows,Eyebrows 303: Fancy Makeup,Eyebrow Mutation,眉毛突变,,,"{""cha"": 1}",False,data2/mutations/eyebrows.gon
 304,eyebrows,Eyebrows 304: Wolfy Brows,Eyebrow Mutation,眉毛突变,,,"{""dex"": 1}",False,data2/mutations/eyebrows.gon
 305,eyebrows,Eyebrows 305: Dotty Brows,Eyebrow Mutation,眉毛突变,,,"{""lck"": 1}",False,data2/mutations/eyebrows.gon
-306,eyebrows,Eyebrows 306: Clown Makeup,Eyebrow Mutation,眉毛突变,You have a 5% chance to inflict Fear on units who contact or attack you.,单位接触或攻击到你时，有5%的几率【害怕】。,,False,data2/mutations/eyebrows.gon
-307,eyebrows,Eyebrows 307: Antennae,Eyebrow Mutation,眉毛突变,+1 Mana Regeneration. +1 Health Regeneration.,魔能自动恢复+1，生命自然恢复+1。,,False,data2/mutations/eyebrows.gon
+306,eyebrows,Eyebrows 306: Clown Makeup,Eyebrow Mutation,眉毛突变,You have a 5% chance to inflict Fear on units who contact or attack you.,"接触或攻击你的单位有 5% 的
+几率被施加恐惧。",,False,data2/mutations/eyebrows.gon
+307,eyebrows,Eyebrows 307: Antennae,Eyebrow Mutation,眉毛突变,+1 Mana Regeneration. +1 Health Regeneration.,+1 法力恢复。+1 生命恢复。,,False,data2/mutations/eyebrows.gon
 308,eyebrows,Eyebrows 308: Long Lashes,Eyebrow Mutation,眉毛突变,,,"{""cha"": 1}",False,data2/mutations/eyebrows.gon
-309,eyebrows,Eyebrows 309: Spiny Brows,Eyebrow Mutation,眉毛突变,+1 Thorns.,【尖刺】+1。,,False,data2/mutations/eyebrows.gon
-310,eyebrows,Eyebrows 310: Extra Eye,Eyebrow Mutation,眉毛突变,+1 Range.,范围+1。,,False,data2/mutations/eyebrows.gon
-311,eyebrows,Eyebrows 311: Stacked Brows,Eyebrow Mutation,眉毛突变,"When you cast your third spell each turn, heal 2.",你每个回合施放第3个法术时，恢复2点生命。,,False,data2/mutations/eyebrows.gon
-313,eyebrows,Eyebrows 313: Square Glasses,Eyebrow Mutation,眉毛突变,Spawn 1-2 extra pickups in each battle.,每场战斗额外产生1-2个可以捡起的物品。,,False,data2/mutations/eyebrows.gon
-314,eyebrows,Eyebrows 314: Holy Brows,Eyebrow Mutation,眉毛突变,"When an allied cat dies, gain +2 Damage.",友方猫咪死亡时，伤害+2。,,False,data2/mutations/eyebrows.gon
-315,eyebrows,Eyebrows 315: Triangle Eyes,Eyebrow Mutation,眉毛突变,You can reroll your options when you level up.,升级时，你可以重掷选项。,,False,data2/mutations/eyebrows.gon
+309,eyebrows,Eyebrows 309: Spiny Brows,Eyebrow Mutation,眉毛突变,+1 Thorns.,+1 荆棘。,,False,data2/mutations/eyebrows.gon
+310,eyebrows,Eyebrows 310: Extra Eye,Eyebrow Mutation,眉毛突变,+1 Range.,+1 射程。,,False,data2/mutations/eyebrows.gon
+311,eyebrows,Eyebrows 311: Stacked Brows,Eyebrow Mutation,眉毛突变,"When you cast your third spell each turn, heal 2.","当你每回合施放第三个法术时，
+治疗 2 点生命值。",,False,data2/mutations/eyebrows.gon
+313,eyebrows,Eyebrows 313: Square Glasses,Eyebrow Mutation,眉毛突变,Spawn 1-2 extra pickups in each battle.,每场战斗生成 1-2 个额外掉落物。,,False,data2/mutations/eyebrows.gon
+314,eyebrows,Eyebrows 314: Holy Brows,Eyebrow Mutation,眉毛突变,"When an allied cat dies, gain +2 Damage.",当友方猫咪死亡时，获得 +2 伤害。,,False,data2/mutations/eyebrows.gon
+315,eyebrows,Eyebrows 315: Triangle Eyes,Eyebrow Mutation,眉毛突变,You can reroll your options when you level up.,升级时你可以重掷选项。,,False,data2/mutations/eyebrows.gon
 400,eyebrows,Eyebrows 400,Eyebrow Mutation,眉毛突变,,,"{""str"": 2, ""con"": -1}",False,data2/mutations/eyebrows.gon
 401,eyebrows,Eyebrows 401,Eyebrow Mutation,眉毛突变,,,"{""str"": 2, ""dex"": -1}",False,data2/mutations/eyebrows.gon
 402,eyebrows,Eyebrows 402,Eyebrow Mutation,眉毛突变,,,"{""str"": 2, ""cha"": -1}",False,data2/mutations/eyebrows.gon
@@ -236,56 +257,72 @@
 700,eyebrows,Eyebrows 700: bushy,Eyebrow Mutation,眉毛突变,,,"{""lck"": -1}",True,data2/mutations/eyebrows.gon
 701,eyebrows,Eyebrows 701: no eyebrows,Eyebrow Mutation,眉毛突变,,,"{""cha"": -1}",True,data2/mutations/eyebrows.gon
 702,eyebrows,Eyebrows 702: unibrow,Eyebrow Mutation,眉毛突变,,,"{""int"": -1}",True,data2/mutations/eyebrows.gon
-900,eyebrows,Eyebrows 900: slender,Eyebrow Mutation,眉毛突变,+5% dodge chance. Your basic attack has a 1% chance to inflict Freeze.,闪避几率+5%。普通攻击有1%的几率【冻住】目标。,,False,data2/mutations/eyebrows.gon
+900,eyebrows,Eyebrows 900: slender,Eyebrow Mutation,眉毛突变,+5% dodge chance. Your basic attack has a 1% chance to inflict Freeze.,"+5% 闪避率。
+你的基础攻击有 1% 的几率造成冻结。",,False,data2/mutations/eyebrows.gon
 -2,eyes,"Eyes -2: no eyes (frame 703, but completely missing parts are special and keyed in on -2)",Eye Mutation,眼睛突变,Blind.,【瞎眼】。,,True,data2/mutations/eyes.gon
-300,eyes,Eyes 300: Button Eyes,Eye Mutation,眼睛突变,Your basic attack has a 10% chance to inflict Fear.,你的普通攻击有10%的几率施加【害怕】。,,False,data2/mutations/eyes.gon
+300,eyes,Eyes 300: Button Eyes,Eye Mutation,眼睛突变,Your basic attack has a 10% chance to inflict Fear.,你的基础攻击有 10% 的几率造成恐惧。,,False,data2/mutations/eyes.gon
 301,eyes,Eyes 301: Demon Eyes,Eye Mutation,眼睛突变,,,"{""dex"": 1}",False,data2/mutations/eyes.gon
-302,eyes,Eyes 302: Pop Eyes,Eye Mutation,眼睛突变,+1 Thorns.,【尖刺】+1。,,False,data2/mutations/eyes.gon
+302,eyes,Eyes 302: Pop Eyes,Eye Mutation,眼睛突变,+1 Thorns.,+1 荆棘。,,False,data2/mutations/eyes.gon
 303,eyes,Eyes 303: Gem Eyes,Eye Mutation,眼睛突变,,,"{""int"": 1, ""cha"": 1}",False,data2/mutations/eyes.gon
-304,eyes,Eyes 304: Holes,Eye Mutation,眼睛突变,Take your turn later.,你的回合延后。,,False,data2/mutations/eyes.gon
+304,eyes,Eyes 304: Holes,Eye Mutation,眼睛突变,Take your turn later.,延后你的回合。,,False,data2/mutations/eyes.gon
 305,eyes,Eyes 305: Zen Eyes,Eye Mutation,眼睛突变,,,"{""str"": -1, ""dex"": -1, ""int"": 3}",False,data2/mutations/eyes.gon
-306,eyes,Eyes 306: Confusing Eyes,Eye Mutation,眼睛突变,Your basic attack has a 10% chance to inflict Confusion 3.,普通攻击有10%的几率施加3层【混乱】。,,False,data2/mutations/eyes.gon
-307,eyes,Eyes 307: Half Moon Eyes,Eye Mutation,眼睛突变,Gain 1 mana when anything dies.,只要有单位死亡，就获得1点魔能。,,False,data2/mutations/eyes.gon
-308,eyes,Eyes 308: Spider Eyes,Eye Mutation,眼睛突变,+5% dodge chance.,闪避几率+5%。,,False,data2/mutations/eyes.gon
-309,eyes,Eyes 309: Doll Eyes,Eye Mutation,眼睛突变,+2 corpse health.,尸体耐久+2。,,False,data2/mutations/eyes.gon
-310,eyes,Eyes 310: Octo Eyes,Eye Mutation,眼睛突变,+1 Health Regeneration,生命自然恢复+1。,,False,data2/mutations/eyes.gon
-311,eyes,Eyes 311: gecko eye,Eye Mutation,眼睛突变,You do not take extra damage from backstabs.,背刺不会对你造成额外的伤害。,,False,data2/mutations/eyes.gon
-312,eyes,Eyes 312: Metal Eyes,Eye Mutation,眼睛突变,+1 Brace.,【招架】+1。,"{""shield"": 1}",False,data2/mutations/eyes.gon
-313,eyes,Eyes 313: Issac's Eyes,Eye Mutation,眼睛突变,Your basic attack creates water tiles.,你的普通攻击会产生水方格。,"{""divine_shield"": 1}",False,data2/mutations/eyes.gon
-314,eyes,Eyes 314: Dead Eyes,Eye Mutation,眼睛突变,"When you are downed, spawn 3 Flies. +2 corpse health.",你倒地时产生3只苍蝇。尸体耐久+2。,,False,data2/mutations/eyes.gon
-315,eyes,Eyes 315: Kinetic eyes,Eye Mutation,眼睛突变,+1 Kinetic Spikes.,【动能尖刺】+1。,,False,data2/mutations/eyes.gon
-316,eyes,Eyes 316: Lightning eyes,Eye Mutation,眼睛突变,15% chance to counter attack with Chain Lightning when you get hit.,被击中时，有15%的几率用“连锁闪电”反击。,,False,data2/mutations/eyes.gon
-317,eyes,Eyes 317: Dice Eyes,Eye Mutation,眼睛突变,Gain a random stat up at the end of each turn.,每个回合结束时，随机有1项属性提升。,,False,data2/mutations/eyes.gon
-318,eyes,Eyes 318: Goat Eyes,Eye Mutation,眼睛突变,You can see hidden things. +1 Knockback damage.,能看到隐藏的东西。击退伤害+1。,,False,data2/mutations/eyes.gon
-319,eyes,Eyes 319: Horn Eyes,Eye Mutation,眼睛突变,Blind. +1 Damage. +1 Thorns.,【瞎眼】。伤害+1，【尖刺】+1。,,False,data2/mutations/eyes.gon
-324,eyes,Eyes 324: Treasure Eyes,Eye Mutation,眼睛突变,Spawn 2 extra coins each battle.,每场战斗额外出现2块钱。,,False,data2/mutations/eyes.gon
-325,eyes,Eyes 325: Nail Eyes,Eye Mutation,眼睛突变,Thorns 1.,1层【尖刺】。,,False,data2/mutations/eyes.gon
-326,eyes,Eyes 326: 4 Eyes,Eye Mutation,眼睛突变,Gain 2 Charge each time you cast 4 spells.,每当你施放4个法术，就获得2点【蓄能】。,,False,data2/mutations/eyes.gon
+306,eyes,Eyes 306: Confusing Eyes,Eye Mutation,眼睛突变,Your basic attack has a 10% chance to inflict Confusion 3.,"你的基础攻击有 10% 的
+几率造成 3 层混乱。",,False,data2/mutations/eyes.gon
+307,eyes,Eyes 307: Half Moon Eyes,Eye Mutation,眼睛突变,Gain 1 mana when anything dies.,"当任何单位死亡时，
+获得 1 点法力值。",,False,data2/mutations/eyes.gon
+308,eyes,Eyes 308: Spider Eyes,Eye Mutation,眼睛突变,+5% dodge chance.,+5% 闪避率。,,False,data2/mutations/eyes.gon
+309,eyes,Eyes 309: Doll Eyes,Eye Mutation,眼睛突变,+2 corpse health.,+2 尸体生命值。,,False,data2/mutations/eyes.gon
+310,eyes,Eyes 310: Octo Eyes,Eye Mutation,眼睛突变,+1 Health Regeneration,+1 生命恢复,,False,data2/mutations/eyes.gon
+311,eyes,Eyes 311: gecko eye,Eye Mutation,眼睛突变,You do not take extra damage from backstabs.,你不会受到额外的背刺伤害。,,False,data2/mutations/eyes.gon
+312,eyes,Eyes 312: Metal Eyes,Eye Mutation,眼睛突变,+1 Brace.,+1 护甲。,"{""shield"": 1}",False,data2/mutations/eyes.gon
+313,eyes,Eyes 313: Issac's Eyes,Eye Mutation,眼睛突变,Your basic attack creates water tiles.,你的基础攻击会产生水地块。,"{""divine_shield"": 1}",False,data2/mutations/eyes.gon
+314,eyes,Eyes 314: Dead Eyes,Eye Mutation,眼睛突变,"When you are downed, spawn 3 Flies. +2 corpse health.","当你倒地时，生成 3 只苍蝇。
++2 尸体生命值。",,False,data2/mutations/eyes.gon
+315,eyes,Eyes 315: Kinetic eyes,Eye Mutation,眼睛突变,+1 Kinetic Spikes.,+1 动能尖刺。,,False,data2/mutations/eyes.gon
+316,eyes,Eyes 316: Lightning eyes,Eye Mutation,眼睛突变,15% chance to counter attack with Chain Lightning when you get hit.,"受到攻击时有 15% 的
+几率用连锁闪电进行反击。",,False,data2/mutations/eyes.gon
+317,eyes,Eyes 317: Dice Eyes,Eye Mutation,眼睛突变,Gain a random stat up at the end of each turn.,每回合结束时获得一项随机属性提升。,,False,data2/mutations/eyes.gon
+318,eyes,Eyes 318: Goat Eyes,Eye Mutation,眼睛突变,You can see hidden things. +1 Knockback damage.,"你可以看到隐藏之物。
++1 击退伤害。",,False,data2/mutations/eyes.gon
+319,eyes,Eyes 319: Horn Eyes,Eye Mutation,眼睛突变,Blind. +1 Damage. +1 Thorns.,致盲。+1 伤害。+1 荆棘。,,False,data2/mutations/eyes.gon
+324,eyes,Eyes 324: Treasure Eyes,Eye Mutation,眼睛突变,Spawn 2 extra coins each battle.,每场战斗生成额外 2 枚金币。,,False,data2/mutations/eyes.gon
+325,eyes,Eyes 325: Nail Eyes,Eye Mutation,眼睛突变,Thorns 1.,荆棘 1。,,False,data2/mutations/eyes.gon
+326,eyes,Eyes 326: 4 Eyes,Eye Mutation,眼睛突变,Gain 2 Charge each time you cast 4 spells.,"每当你施放 4 个法术，
+获得 2 点充能。",,False,data2/mutations/eyes.gon
 327,eyes,Eyes 327: Baby Blue Eyes,Eye Mutation,眼睛突变,,,"{""cha"": 2}",False,data2/mutations/eyes.gon
-328,eyes,Eyes 328: Bull's Eye',Eye Mutation,眼睛突变,+10% crit chance.,暴击几率+10%。,,False,data2/mutations/eyes.gon
-329,eyes,Eyes 329: Spinning Eyes,Eye Mutation,眼睛突变,Your basic attack has a 15% chance to inflict Confusion.,普通攻击有15%的几率施加【混乱】。,,False,data2/mutations/eyes.gon
-331,eyes,Eyes 331: Glassy Eyes,Eye Mutation,眼睛突变,"At the start of each battle, gain a random temporary pill if your trinket slot is empty.",每场战斗开始时，如果小玩意儿的栏位是空的，就随机获得1粒临时胶囊。,,False,data2/mutations/eyes.gon
-332,eyes,Eyes 332: Bleeding Eyes,Eye Mutation,眼睛突变,Start each battle Bleeding. Gain 1 Charge each time you take damage.,每场战斗开始时，处于【出血】状态。每次受到伤害，都会获得1点【蓄能】。,,False,data2/mutations/eyes.gon
-333,eyes,Eyes 333: Huge Eyes,Eye Mutation,眼睛突变,Your basic attack can't miss.,你的普通攻击不会落空。,,False,data2/mutations/eyes.gon
-334,eyes,Eyes 334: Infested Eyes,Eye Mutation,眼睛突变,Blind. Spawn a Flea when you take damage. ,【瞎眼】。你受到伤害时产生1个跳蚤。,,False,data2/mutations/eyes.gon
-335,eyes,Eyes 335: Fake Eyelashes,Eye Mutation,眼睛突变,Your basic attack has a 10% chance to Charm.,你的普通攻击有10%的几率施加【洗脑】。,,False,data2/mutations/eyes.gon
-336,eyes,Eyes 336: Bolt Eyes,Eye Mutation,眼睛突变,Your basic attack is electric element and has a 5% chance to stun.,你的普通攻击是电系攻击，有5%的几率造成【眩晕】。,,False,data2/mutations/eyes.gon
-337,eyes,Eyes 337: Ice Eyes,Eye Mutation,眼睛突变,Your basic attack is ice element and inflicts Slow.,你的普通攻击是冰系攻击，会施加【迟缓】。,,False,data2/mutations/eyes.gon
-338,eyes,Eyes 338: Fire Eyes,Eye Mutation,眼睛突变,Your basic attack inflicts Burn.,你的普通攻击会施加【灼烧】。,,False,data2/mutations/eyes.gon
-339,eyes,Eyes 339: Water Eyes,Eye Mutation,眼睛突变,+1 Health Regeneration while wet. Your basic attack is water element.,潮湿的时候，生命自然恢复+1。你的普通攻击是水系攻击。,,False,data2/mutations/eyes.gon
-340,eyes,Eyes 340: Leech Eyes,Eye Mutation,眼睛突变,Your basic attack inflicts Leech.,你的普通攻击会施加【水蛭】。,,False,data2/mutations/eyes.gon
-341,eyes,Eyes 341: Flower Eyes,Eye Mutation,眼睛突变,Gain Charge 1 the first time you move each turn.,你每个回合第一次移动时，获得1点【蓄能】。,,False,data2/mutations/eyes.gon
-342,eyes,Eyes 342: Poison Eyes,Eye Mutation,眼睛突变,Your basic attack inflicts Poison 1. Start each battle Poisoned.,你的普通攻击会施加1层【中毒】。每场战斗开场，处于【中毒】状态。,,False,data2/mutations/eyes.gon
-343,eyes,Eyes 343: Clown Eyes,Eye Mutation,眼睛突变,You have a 5% chance to inflict Fear on units who contact or attack you.,单位接触或攻击到你时，有5%的几率【害怕】。,,False,data2/mutations/eyes.gon
-344,eyes,Eyes 344: Sun Eyes,Eye Mutation,眼睛突变,You have a 10% chance to Blind units who contact or attack you.,单位接触或攻击到你时，有10%的几率【瞎眼】。,,False,data2/mutations/eyes.gon
-345,eyes,Eyes 345: Evil Eyes,Eye Mutation,眼睛突变,Inflict a random debuff on units who contact you.,单位接触到你时，会随机获得1项减益。,,False,data2/mutations/eyes.gon
-346,eyes,Eyes 346: Rock Eyes,Eye Mutation,眼睛突变,Spawn a rock when damaged. ,受到伤害时产生1块石头。,"{""shield"": 1}",False,data2/mutations/eyes.gon
-347,eyes,Eyes 347: Hypno Eyes,Eye Mutation,眼睛突变,Your basic attack has a 15% chance to inflict Confusion 2.,你的普通攻击有15%的几率施加2层【混乱】。,,False,data2/mutations/eyes.gon
-348,eyes,Eyes 348: Pop Eyes,Eye Mutation,眼睛突变,"+1 range, +1 reach.",范围+1，近身距离+1。,,False,data2/mutations/eyes.gon
-349,eyes,Eyes 349: 8 Eyes,Eye Mutation,眼睛突变,Emit 4 Sparkles each time you cast 8 spells.,每当你施放8个法术，就放出4道【闪光】。,,False,data2/mutations/eyes.gon
-351,eyes,Eyes 351: Chaos Eyes,Eye Mutation,眼睛突变,Your bonus ability is a different random spell each battle.,你的奖励能力每场战斗会随机变成一种法术。,,False,data2/mutations/eyes.gon
-352,eyes,Eyes 352: Runny Mascara,Eye Mutation,眼睛突变,You have All Stats Up while Bleeding.,你在【出血】状态下所有属性提升。,,False,data2/mutations/eyes.gon
-353,eyes,Eyes 353: Chameleon Eyes,Eye Mutation,眼睛突变,You take no extra damage from backstabs.,背刺不会对你造成额外的伤害。,,False,data2/mutations/eyes.gon
+328,eyes,Eyes 328: Bull's Eye',Eye Mutation,眼睛突变,+10% crit chance.,+10% 暴击率。,,False,data2/mutations/eyes.gon
+329,eyes,Eyes 329: Spinning Eyes,Eye Mutation,眼睛突变,Your basic attack has a 15% chance to inflict Confusion.,你的基础攻击有 15% 的几率造成混乱。,,False,data2/mutations/eyes.gon
+331,eyes,Eyes 331: Glassy Eyes,Eye Mutation,眼睛突变,"At the start of each battle, gain a random temporary pill if your trinket slot is empty.","每场战斗开始时，如果你的饰品槽为空，
+获得一颗随机临时药丸。",,False,data2/mutations/eyes.gon
+332,eyes,Eyes 332: Bleeding Eyes,Eye Mutation,眼睛突变,Start each battle Bleeding. Gain 1 Charge each time you take damage.,"每场战斗开始时处于流血状态。
+每次受到伤害获得 1 点充能。",,False,data2/mutations/eyes.gon
+333,eyes,Eyes 333: Huge Eyes,Eye Mutation,眼睛突变,Your basic attack can't miss.,你的基础攻击必定命中。,,False,data2/mutations/eyes.gon
+334,eyes,Eyes 334: Infested Eyes,Eye Mutation,眼睛突变,Blind. Spawn a Flea when you take damage. ,致盲。受到伤害时生成一只跳蚤。,,False,data2/mutations/eyes.gon
+335,eyes,Eyes 335: Fake Eyelashes,Eye Mutation,眼睛突变,Your basic attack has a 10% chance to Charm.,你的基础攻击有 10% 的几率造成魅惑。,,False,data2/mutations/eyes.gon
+336,eyes,Eyes 336: Bolt Eyes,Eye Mutation,眼睛突变,Your basic attack is electric element and has a 5% chance to stun.,"你的基础攻击为电击元素，
+且有 5% 的几率造成击晕。",,False,data2/mutations/eyes.gon
+337,eyes,Eyes 337: Ice Eyes,Eye Mutation,眼睛突变,Your basic attack is ice element and inflicts Slow.,"你的基础攻击为冰元素，
+且造成减速效果。",,False,data2/mutations/eyes.gon
+338,eyes,Eyes 338: Fire Eyes,Eye Mutation,眼睛突变,Your basic attack inflicts Burn.,你的基础攻击造成燃烧效果。,,False,data2/mutations/eyes.gon
+339,eyes,Eyes 339: Water Eyes,Eye Mutation,眼睛突变,+1 Health Regeneration while wet. Your basic attack is water element.,"潮湿状态下 +1 生命恢复。
+你的基础攻击为水元素。",,False,data2/mutations/eyes.gon
+340,eyes,Eyes 340: Leech Eyes,Eye Mutation,眼睛突变,Your basic attack inflicts Leech.,你的基础攻击造成一层水蛭效果。,,False,data2/mutations/eyes.gon
+341,eyes,Eyes 341: Flower Eyes,Eye Mutation,眼睛突变,Gain Charge 1 the first time you move each turn.,每回合首次移动时获得 1 层充能。,,False,data2/mutations/eyes.gon
+342,eyes,Eyes 342: Poison Eyes,Eye Mutation,眼睛突变,Your basic attack inflicts Poison 1. Start each battle Poisoned.,"你的基础攻击造成 1 层中毒。
+每场战斗开始时处于中毒状态。",,False,data2/mutations/eyes.gon
+343,eyes,Eyes 343: Clown Eyes,Eye Mutation,眼睛突变,You have a 5% chance to inflict Fear on units who contact or attack you.,"接触或攻击你的单位有 5% 的
+几率被施加恐惧。",,False,data2/mutations/eyes.gon
+344,eyes,Eyes 344: Sun Eyes,Eye Mutation,眼睛突变,You have a 10% chance to Blind units who contact or attack you.,接触或攻击你的单位有 10% 的几率被致盲。,,False,data2/mutations/eyes.gon
+345,eyes,Eyes 345: Evil Eyes,Eye Mutation,眼睛突变,Inflict a random debuff on units who contact you.,对接触你的单位施加随机减益效果。,,False,data2/mutations/eyes.gon
+346,eyes,Eyes 346: Rock Eyes,Eye Mutation,眼睛突变,Spawn a rock when damaged. ,受到伤害时生成一块岩石。,"{""shield"": 1}",False,data2/mutations/eyes.gon
+347,eyes,Eyes 347: Hypno Eyes,Eye Mutation,眼睛突变,Your basic attack has a 15% chance to inflict Confusion 2.,"你的基础攻击有 15% 的
+几率造成 2 层混乱。",,False,data2/mutations/eyes.gon
+348,eyes,Eyes 348: Pop Eyes,Eye Mutation,眼睛突变,"+1 range, +1 reach.",+1 射程，+1 近战范围。,,False,data2/mutations/eyes.gon
+349,eyes,Eyes 349: 8 Eyes,Eye Mutation,眼睛突变,Emit 4 Sparkles each time you cast 8 spells.,"每当你施放 8 个法术，
+发出 4 道火花。",,False,data2/mutations/eyes.gon
+351,eyes,Eyes 351: Chaos Eyes,Eye Mutation,眼睛突变,Your bonus ability is a different random spell each battle.,每场战斗你的额外技能会是一个不同的随机法术。,,False,data2/mutations/eyes.gon
+352,eyes,Eyes 352: Runny Mascara,Eye Mutation,眼睛突变,You have All Stats Up while Bleeding.,你在流血状态下全属性提升。,,False,data2/mutations/eyes.gon
+353,eyes,Eyes 353: Chameleon Eyes,Eye Mutation,眼睛突变,You take no extra damage from backstabs.,你不会受到额外的背刺伤害。,,False,data2/mutations/eyes.gon
 400,eyes,Eyes 400,Eye Mutation,眼睛突变,,,"{""str"": 2, ""con"": -1}",False,data2/mutations/eyes.gon
 401,eyes,Eyes 401,Eye Mutation,眼睛突变,,,"{""str"": 2, ""dex"": -1}",False,data2/mutations/eyes.gon
 402,eyes,Eyes 402,Eye Mutation,眼睛突变,,,"{""str"": 2, ""cha"": -1}",False,data2/mutations/eyes.gon
@@ -328,18 +365,18 @@
 439,eyes,Eyes 439,Eye Mutation,眼睛突变,,,"{""spd"": 2, ""int"": -1}",False,data2/mutations/eyes.gon
 440,eyes,Eyes 440,Eye Mutation,眼睛突变,,,"{""spd"": 2, ""dex"": -1}",False,data2/mutations/eyes.gon
 441,eyes,Eyes 441,Eye Mutation,眼睛突变,,,"{""spd"": 2, ""lck"": -1}",False,data2/mutations/eyes.gon
-442,eyes,Eyes 442,Eye Mutation,眼睛突变,10% chance to reflect projectiles.,你有10%的几率反弹投射物。,,False,data2/mutations/eyes.gon
+442,eyes,Eyes 442,Eye Mutation,眼睛突变,10% chance to reflect projectiles.,10% 几率反射投射物。,,False,data2/mutations/eyes.gon
 700,eyes,Eyes 700: graves disease,Eye Mutation,眼睛突变,,,"{""cha"": -2}",True,data2/mutations/eyes.gon
 701,eyes,Eyes 701: anophthalmia,Eye Mutation,眼睛突变,,,"{""lck"": -2}",True,data2/mutations/eyes.gon
 702,eyes,Eyes 702,Eye Mutation,眼睛突变,,,"{""cha"": 1, ""int"": 1, ""con"": -2}",False,data2/mutations/eyes.gon
-704,eyes,Eyes 704: lazy eye,Eye Mutation,眼睛突变,10% miss chance.,落空几率+10%。,,True,data2/mutations/eyes.gon
-705,eyes,Eyes 705: cataracts,Eye Mutation,眼睛突变,Gain 5% miss chance every turn.,每个回合落空几率额外+5%。,,True,data2/mutations/eyes.gon
-706,eyes,Eyes 706: crossed eyes,Eye Mutation,眼睛突变,Start each battle with Confusion 2.,每场战斗开始时，自带2层【混乱】。,,True,data2/mutations/eyes.gon
+704,eyes,Eyes 704: lazy eye,Eye Mutation,眼睛突变,10% miss chance.,10% 未命中率。,,True,data2/mutations/eyes.gon
+705,eyes,Eyes 705: cataracts,Eye Mutation,眼睛突变,Gain 5% miss chance every turn.,每回合获得 5% 未命中率。,,True,data2/mutations/eyes.gon
+706,eyes,Eyes 706: crossed eyes,Eye Mutation,眼睛突变,Start each battle with Confusion 2.,每场战斗开始时带有 2 层混乱。,,True,data2/mutations/eyes.gon
 750,eyes,Eyes 750: glasses,Eye Mutation,眼睛突变,,,"{""int"": 1}",False,data2/mutations/eyes.gon
-754,eyes,Eyes 754: alien eyes,Eye Mutation,眼睛突变,+1 range. Your basic attack is gravity element.,范围+1。你的普通攻击是引力攻击。,,False,data2/mutations/eyes.gon
-755,eyes,Eyes 755: mothman eyes,Eye Mutation,眼睛突变,Your basic attack has a 15% chance to inflict Fear.,你的普通攻击有15%的几率施加【害怕】。,,False,data2/mutations/eyes.gon
-900,eyes,Eyes 900: slender,Eye Mutation,眼睛突变,Your basic attack has a 10% chance to inflict Slow.,你的普通攻击有10%的几率施加【迟缓】。,,False,data2/mutations/eyes.gon
-1029,eyes,Eyes 1029: spider eye,Eye Mutation,眼睛突变,+5% crit chance.,暴击几率+5%。,,False,data2/mutations/eyes.gon
+754,eyes,Eyes 754: alien eyes,Eye Mutation,眼睛突变,+1 range. Your basic attack is gravity element.,+1 射程。你的基础攻击是重力元素。,,False,data2/mutations/eyes.gon
+755,eyes,Eyes 755: mothman eyes,Eye Mutation,眼睛突变,Your basic attack has a 15% chance to inflict Fear.,你的基础攻击有 15% 的几率造成恐惧。,,False,data2/mutations/eyes.gon
+900,eyes,Eyes 900: slender,Eye Mutation,眼睛突变,Your basic attack has a 10% chance to inflict Slow.,你的基础攻击有 10% 的几率造成减速。,,False,data2/mutations/eyes.gon
+1029,eyes,Eyes 1029: spider eye,Eye Mutation,眼睛突变,+5% crit chance.,+5% 暴击率。,,False,data2/mutations/eyes.gon
 300,fur,Fur 300: Stitches,Fur Mutation,毛发突变,+1 Health Regeneration,生命自然恢复+1。,"{""cha"": -1}",False,data2/mutations/texture.gon
 301,fur,Fur 301: Fish Scales,Fur Mutation,毛发突变,+1 Health and Mana Regeneration while wet.,潮湿的时候，生命自然恢复和魔能自然恢复各+1。,,False,data2/mutations/texture.gon
 302,fur,Fur 302: Conjoined,Fur Mutation,毛发突变,,,"{""lck"": 1}",False,data2/mutations/texture.gon
@@ -404,25 +441,30 @@
 300,head,Head 300: Square head,Head Mutation,脑袋突变,,,"{""con"": 1}",False,data2/mutations/head.gon
 301,head,Head 301: Sloth head,Head Mutation,脑袋突变,,,"{""int"": -1, ""str"": 1, ""con"": 1}",False,data2/mutations/head.gon
 302,head,Head 302: Big brain,Head Mutation,脑袋突变,,,"{""int"": 2, ""con"": -1}",False,data2/mutations/head.gon
-303,head,Head 303: Spioke head,Head Mutation,脑袋突变,+1 Thorns.,【尖刺】+1。,,False,data2/mutations/head.gon
-304,head,Head 304: Sludge head,Head Mutation,脑袋突变,+2 Health Regeneration +5% dodge chance.,生命自然恢复+2。闪避几率+5%。,"{""cha"": -2}",False,data2/mutations/head.gon
+303,head,Head 303: Spioke head,Head Mutation,脑袋突变,+1 Thorns.,+1 荆棘。,,False,data2/mutations/head.gon
+304,head,Head 304: Sludge head,Head Mutation,脑袋突变,+2 Health Regeneration +5% dodge chance.,+2 生命恢复 +5% 闪避率。,"{""cha"": -2}",False,data2/mutations/head.gon
 305,head,Head 305: Strong Chin,Head Mutation,脑袋突变,,,"{""cha"": 1}",False,data2/mutations/head.gon
 306,head,Head 306: Alien head,Head Mutation,脑袋突变,,,"{""int"": 1}",False,data2/mutations/head.gon
-307,head,Head 307: Bump-on-the-head Head,Head Mutation,脑袋突变,Units that contact you get knocked back 1 tile.,单位接触到你时，会被击退1个方格。,"{""shield"": 1}",False,data2/mutations/head.gon
-308,head,Head 308: Frog Head,Head Mutation,脑袋突变,+1 movement range while wet. Water does not slow movement.,潮湿的时候，移动范围+1。水不会减缓移动。,,False,data2/mutations/head.gon
+307,head,Head 307: Bump-on-the-head Head,Head Mutation,脑袋突变,Units that contact you get knocked back 1 tile.,接触你的单位会被击退 1 格。,"{""shield"": 1}",False,data2/mutations/head.gon
+308,head,Head 308: Frog Head,Head Mutation,脑袋突变,+1 movement range while wet. Water does not slow movement.,"潮湿状态下 +1 移动距离。
+水不会减缓移动。",,False,data2/mutations/head.gon
 309,head,Head 309: half moon,Head Mutation,脑袋突变,,,"{""lck"": 2}",False,data2/mutations/head.gon
 310,head,Head 310: rock head,Head Mutation,脑袋突变,,,"{""shield"": 2}",False,data2/mutations/head.gon
-311,head,Head 311: Money Bag head,Head Mutation,脑袋突变,Spawn a coin when you take damage.,你受到伤害时，产生1块钱。,,False,data2/mutations/head.gon
-312,head,Head 312: Magnet Head,Head Mutation,脑袋突变,Your basic attack pulls units towards you.,你的普通攻击会把单位拉到自己身边。,,False,data2/mutations/head.gon
-313,head,Head 313: Poop Head,Head Mutation,脑袋突变,Poop when you take damage.,你受到伤害时会拉屎。,,False,data2/mutations/head.gon
-314,head,Head 314: Pyramid Head,Head Mutation,脑袋突变,Gain +1 [img:int] at the end of each turn.,每个回合结束时，[img:int]+1。,,False,data2/mutations/head.gon
-315,head,Head 315: Upside Down Head,Head Mutation,脑袋突变,"At the start of each battle, swap your highest and lowest stats.",每场战斗开始时，你最高的属性和最低的属性交换数值。,,False,data2/mutations/head.gon
-316,head,Head 316: Fractured Head,Head Mutation,脑袋突变,"When you take damage from an attack, gain a random buff.",你受到攻击所造成的伤害时，随机获得1个增益。,,False,data2/mutations/head.gon
-317,head,Head 317: Sideways Head,Head Mutation,脑袋突变,+5% dodge chance.,闪避几率+5%。,,False,data2/mutations/head.gon
-318,head,Head 318: Long Neck,Head Mutation,脑袋突变,+1 range.,范围+1。,,False,data2/mutations/head.gon
-319,head,Head 319: Exposed Brain,Head Mutation,脑袋突变,Gain +1 [img:int] permanently at the end of each battle. Start each battle with Bruise 2.,每场战斗结束时，[img:int]永久+1。每场战斗开始时，自带2层【瘀伤】。,,False,data2/mutations/head.gon
-320,head,Head 320: Bubble Head,Head Mutation,脑袋突变,Your basic attack has +2 Knockback.,你普通攻击的击退+2。,,False,data2/mutations/head.gon
-321,head,Head 321: Button Head,Head Mutation,脑袋突变,You have a 5% chance to inflict Fear on units who contact or attack you.,单位接触或攻击到你时，有5%的几率【害怕】。,,False,data2/mutations/head.gon
+311,head,Head 311: Money Bag head,Head Mutation,脑袋突变,Spawn a coin when you take damage.,当你受到伤害时，生成一枚金币。,,False,data2/mutations/head.gon
+312,head,Head 312: Magnet Head,Head Mutation,脑袋突变,Your basic attack pulls units towards you.,你的基础攻击会将单位拉向你。,,False,data2/mutations/head.gon
+313,head,Head 313: Poop Head,Head Mutation,脑袋突变,Poop when you take damage.,受到伤害时排便。,,False,data2/mutations/head.gon
+314,head,Head 314: Pyramid Head,Head Mutation,脑袋突变,Gain +1 [img:int] at the end of each turn.,每回合结束时获得 +1 [img:int]。,,False,data2/mutations/head.gon
+315,head,Head 315: Upside Down Head,Head Mutation,脑袋突变,"At the start of each battle, swap your highest and lowest stats.","每场战斗开始时，
+交换你的最高和最低属性。",,False,data2/mutations/head.gon
+316,head,Head 316: Fractured Head,Head Mutation,脑袋突变,"When you take damage from an attack, gain a random buff.","当你受到攻击伤害时，
+获得一个随机增益。",,False,data2/mutations/head.gon
+317,head,Head 317: Sideways Head,Head Mutation,脑袋突变,+5% dodge chance.,+5% 闪避率。,,False,data2/mutations/head.gon
+318,head,Head 318: Long Neck,Head Mutation,脑袋突变,+1 range.,+1 射程。,,False,data2/mutations/head.gon
+319,head,Head 319: Exposed Brain,Head Mutation,脑袋突变,Gain +1 [img:int] permanently at the end of each battle. Start each battle with Bruise 2.,"每场战斗结束时永久获得 +1 [img:int]。
+每场战斗开始时带有 2 层淤伤。",,False,data2/mutations/head.gon
+320,head,Head 320: Bubble Head,Head Mutation,脑袋突变,Your basic attack has +2 Knockback.,你的基础攻击拥有 +2 击退。,,False,data2/mutations/head.gon
+321,head,Head 321: Button Head,Head Mutation,脑袋突变,You have a 5% chance to inflict Fear on units who contact or attack you.,"接触或攻击你的单位有 5% 的
+几率被施加恐惧。",,False,data2/mutations/head.gon
 400,head,Head 400,Head Mutation,脑袋突变,,,"{""str"": 2, ""con"": -1}",False,data2/mutations/head.gon
 401,head,Head 401,Head Mutation,脑袋突变,,,"{""str"": 2, ""dex"": -1}",False,data2/mutations/head.gon
 402,head,Head 402,Head Mutation,脑袋突变,,,"{""str"": 2, ""cha"": -1}",False,data2/mutations/head.gon
@@ -468,58 +510,66 @@
 700,head,Head 700: microcephaly,Head Mutation,脑袋突变,,,"{""int"": -2}",True,data2/mutations/head.gon
 701,head,Head 701: macrocephaly,Head Mutation,脑袋突变,,,"{""int"": -2}",True,data2/mutations/head.gon
 702,head,Head 702: concave head,Head Mutation,脑袋突变,,,"{""int"": -1}",True,data2/mutations/head.gon
-703,head,Head 703: soft spot,Head Mutation,脑袋突变,Attacks against your face count as backstabs.,如果有单位攻击你正面，算作背刺。,,True,data2/mutations/head.gon
+703,head,Head 703: soft spot,Head Mutation,脑袋突变,Attacks against your face count as backstabs.,针对你面部的攻击算作背刺。,,True,data2/mutations/head.gon
 704,head,Head 704: cyclops,Head Mutation,脑袋突变,"20% miss chance.
-Your spells cost 1 less mana.","落空几率+20%。
-你的法术魔能耗费-1。",,True,data2/mutations/head.gon
+Your spells cost 1 less mana.","20% 未命中率。
+你的法术法力消耗减少 1 点。",,True,data2/mutations/head.gon
 705,head,Head 705: conjoined head,Head Mutation,脑袋突变,,,"{""cha"": -3, ""int"": 2}",True,data2/mutations/head.gon
-706,head,Head 706: sloth,Head Mutation,脑袋突变,Brace 1.,1层【招架】。,"{""cha"": -3}",True,data2/mutations/head.gon
-750,head,Head 750: spiked head,Head Mutation,脑袋突变,+1 Thorns.,【尖刺】+1。,,False,data2/mutations/head.gon
-753,head,Head 753: tyler head,Head Mutation,脑袋突变,You are immune to ice.,你免疫冰冻。,,False,data2/mutations/head.gon
+706,head,Head 706: sloth,Head Mutation,脑袋突变,Brace 1.,护甲 1。,"{""cha"": -3}",True,data2/mutations/head.gon
+750,head,Head 750: spiked head,Head Mutation,脑袋突变,+1 Thorns.,+1 荆棘。,,False,data2/mutations/head.gon
+753,head,Head 753: tyler head,Head Mutation,脑袋突变,You are immune to ice.,你对冰霜免疫。,,False,data2/mutations/head.gon
 757,head,Head 757: grey head,Head Mutation,脑袋突变,,,"{""int"": 2}",False,data2/mutations/head.gon
-759,head,Head 759: Human Head,Head Mutation,脑袋突变,Take an extra turn at the start of the battle.,战斗开始时，获得1个额外回合。,"{""spd"": -2}",False,data2/mutations/head.gon
-900,head,Head 900: slender,Head Mutation,脑袋突变,+1 range. +1 reach.,范围+1，近身距离+1。,"{""cha"": -1}",False,data2/mutations/head.gon
-300,legs,Legs 300: Frog legs,Leg Mutation,后腿突变,+1 movement range while wet. Water does not slow movement.,潮湿的时候，移动范围+1。水不会减缓移动。,,False,data2/mutations/legs.gon
-301,legs,Legs 301: Hooves,Leg Mutation,后腿突变,Your basic attack has a 5% chance to Stun.,你的普通攻击有5%的几率造成【眩晕】。,"{""spd"": 1}",False,data2/mutations/legs.gon
-302,legs,Legs 302: Tentacles,Leg Mutation,后腿突变,Knockback immunity.,你免疫击退。,,False,data2/mutations/legs.gon
-303,legs,Legs 303: Lobster Claws,Leg Mutation,后腿突变,Your basic attack has a 5% chance to Immobilize.,你的普通攻击有5%的几率施加【移动受限】。,,False,data2/mutations/legs.gon
+759,head,Head 759: Human Head,Head Mutation,脑袋突变,Take an extra turn at the start of the battle.,战斗开始时获得一个额外回合。,"{""spd"": -2}",False,data2/mutations/head.gon
+900,head,Head 900: slender,Head Mutation,脑袋突变,+1 range. +1 reach.,+1 射程。+1 近战范围。,"{""cha"": -1}",False,data2/mutations/head.gon
+300,legs,Legs 300: Frog legs,Leg Mutation,后腿突变,+1 movement range while wet. Water does not slow movement.,"潮湿状态下 +1 移动距离。
+水不会减缓移动。",,False,data2/mutations/legs.gon
+301,legs,Legs 301: Hooves,Leg Mutation,后腿突变,Your basic attack has a 5% chance to Stun.,你的基础攻击有 5% 的几率造成晕眩。,"{""spd"": 1}",False,data2/mutations/legs.gon
+302,legs,Legs 302: Tentacles,Leg Mutation,后腿突变,Knockback immunity.,击退免疫。,,False,data2/mutations/legs.gon
+303,legs,Legs 303: Lobster Claws,Leg Mutation,后腿突变,Your basic attack has a 5% chance to Immobilize.,你的基础攻击有 5% 的几率施加定身。,,False,data2/mutations/legs.gon
 304,legs,Legs 304: Muscular Legs,Leg Mutation,后腿突变,,,"{""str"": 1}",False,data2/mutations/legs.gon
-305,legs,Legs 305: Tar Legs,Leg Mutation,后腿突变,+5% dodge chance.,闪避几率+5%。,,False,data2/mutations/legs.gon
+305,legs,Legs 305: Tar Legs,Leg Mutation,后腿突变,+5% dodge chance.,+5% 闪避率。,,False,data2/mutations/legs.gon
 306,legs,Legs 306: Bug Legs,Leg Mutation,后腿突变,,,"{""dex"": 1}",False,data2/mutations/legs.gon
 307,legs,Legs 307: Tires,Leg Mutation,后腿突变,,,"{""spd"": 1}",False,data2/mutations/legs.gon
 308,legs,Legs 308: Human Legs,Leg Mutation,后腿突变,,,"{""lck"": 1}",False,data2/mutations/legs.gon
-309,legs,Legs 309: Knife Legs,Leg Mutation,后腿突变,Your basic attack has a 10% chance to inflict Bleed 3.,你的普通攻击有10%的几率施加3层【出血】。,,False,data2/mutations/legs.gon
-310,legs,Legs 310: Spring Legs,Leg Mutation,后腿突变,Your movement action is a jump.,你的移动行动变成跳跃。,,False,data2/mutations/legs.gon
+309,legs,Legs 309: Knife Legs,Leg Mutation,后腿突变,Your basic attack has a 10% chance to inflict Bleed 3.,"你的基础攻击有 10% 的
+几率造成 3 层流血。",,False,data2/mutations/legs.gon
+310,legs,Legs 310: Spring Legs,Leg Mutation,后腿突变,Your movement action is a jump.,你的移动行动变为跳跃。,,False,data2/mutations/legs.gon
 311,legs,Legs 311: Square Legs,Leg Mutation,后腿突变,,,"{""con"": 1}",False,data2/mutations/legs.gon
-312,legs,Legs 312: Balloon Legs,Leg Mutation,后腿突变,Your basic attack has +1 Knockback.,你普通攻击的击退+1。,,False,data2/mutations/legs.gon
-313,legs,Legs 313: Snake Legs,Leg Mutation,后腿突变,+1 reach.,近身距离+1。,,False,data2/mutations/legs.gon
-314,legs,Legs 314: Weapon Legs,Leg Mutation,后腿突变,Your weapons have +1 Damage.,你武器的伤害+1。,,False,data2/mutations/legs.gon
-315,legs,Legs 315: Socks,Leg Mutation,后腿突变,Ice immunity.,免疫冰冻。,,False,data2/mutations/legs.gon
-317,legs,Legs 317: Raptor Claws,Leg Mutation,后腿突变,Your basic attack inflicts Bleed 1 if it's melee.,如果你的普通攻击是近身攻击，就能施加1层【出血】。,,False,data2/mutations/legs.gon
+312,legs,Legs 312: Balloon Legs,Leg Mutation,后腿突变,Your basic attack has +1 Knockback.,你的基础攻击拥有 +1 击退。,,False,data2/mutations/legs.gon
+313,legs,Legs 313: Snake Legs,Leg Mutation,后腿突变,+1 reach.,+1 近战范围。,,False,data2/mutations/legs.gon
+314,legs,Legs 314: Weapon Legs,Leg Mutation,后腿突变,Your weapons have +1 Damage.,你的武器拥有 +1 伤害。,,False,data2/mutations/legs.gon
+315,legs,Legs 315: Socks,Leg Mutation,后腿突变,Ice immunity.,冰霜免疫。,,False,data2/mutations/legs.gon
+317,legs,Legs 317: Raptor Claws,Leg Mutation,后腿突变,Your basic attack inflicts Bleed 1 if it's melee.,"如果你的基础攻击是近战攻击，
+则施加 1 层流血。",,False,data2/mutations/legs.gon
 318,legs,Legs 318: Stigmata,Leg Mutation,后腿突变,,,"{""divine_shield"": 1}",False,data2/mutations/legs.gon
-319,legs,Legs 319: High Tops,Leg Mutation,后腿突变,10% chance to gain a bonus move each turn.,每个回合有10%的几率获得1次奖励移动。,,False,data2/mutations/legs.gon
-320,legs,Legs 320: Talons,Leg Mutation,后腿突变,10% chance to gain a bonus attack each turn.,每个回合有10%的几率获得1次奖励攻击。,,False,data2/mutations/legs.gon
-321,legs,Legs 321: Flippers,Leg Mutation,后腿突变,Moving through water tiles costs 0 movement.,走水方格不耗费移动次数。,,False,data2/mutations/legs.gon
+319,legs,Legs 319: High Tops,Leg Mutation,后腿突变,10% chance to gain a bonus move each turn.,每回合有 10% 几率获得一次奖励移动。,,False,data2/mutations/legs.gon
+320,legs,Legs 320: Talons,Leg Mutation,后腿突变,10% chance to gain a bonus attack each turn.,每回合有 10% 几率获得一次奖励攻击。,,False,data2/mutations/legs.gon
+321,legs,Legs 321: Flippers,Leg Mutation,后腿突变,Moving through water tiles costs 0 movement.,在水地块上移动消耗 0 移动力。,,False,data2/mutations/legs.gon
 322,legs,Legs 322: Bear Claws,Leg Mutation,后腿突变,,,"{""str"": 1, ""con"": 1}",False,data2/mutations/legs.gon
 323,legs,Legs 323: Beetle Feet,Leg Mutation,后腿突变,,,"{""spd"": 2}",False,data2/mutations/legs.gon
 324,legs,Legs 324: Branches,Leg Mutation,后腿突变,,,"{""con"": 1}",False,data2/mutations/legs.gon
-325,legs,Legs 325: Extra Head,Leg Mutation,后腿突变,Collarless spells cost -1 mana.,无色法术魔能耗费-1。,"{""spd"": -2}",False,data2/mutations/legs.gon
-326,legs,Legs 326: Needle Feet,Leg Mutation,后腿突变,Your basic attack inflicts a random debuff.,你的普通攻击会随机施加1个减益。,,False,data2/mutations/legs.gon
-327,legs,Legs 327: Mushroom Legs,Leg Mutation,后腿突变,Gain 2 random stat ups and 1 random stat down at the end of each turn.,每个回合结束时，随机有2项属性提升、1项属性降低。,,False,data2/mutations/legs.gon
-328,legs,Legs 328: Glass Bottle,Leg Mutation,后腿突变,Equip a temporary Bottles weapon at the start of the battle.,战斗开始时，装备临时武器“瓶子”。,,False,data2/mutations/legs.gon
-329,legs,Legs 329: Water Bottle,Leg Mutation,后腿突变,Equip a temporary Water Bottle trinket at the start of the battle.,战斗开始时，装备临时小玩意儿“水瓶”。,,False,data2/mutations/legs.gon
-330,legs,Legs 330: Sausage Legs,Leg Mutation,后腿突变,+1 Health Regeneration,生命自然恢复+1。,,False,data2/mutations/legs.gon
-331,legs,Legs 331: Jet Legs,Leg Mutation,后腿突变,+1 movement range. Your movement action is a jump.,移动范围+1。你的移动行动变成跳跃。,,False,data2/mutations/legs.gon
-332,legs,Legs 332: Peg Legs,Leg Mutation,后腿突变,50% chance to spawn a pickup on an adjacent tile when you end your turn. ,你结束回合时，前后左右相邻的1个方格有50%的几率出现1个可以捡起的物品。,"{""spd"": -1}",False,data2/mutations/legs.gon
-333,legs,Legs 333: Wing Legs,Leg Mutation,后腿突变,Your basic attack has wind element and +1 Knockback.,你的普通攻击是风系攻击，而且击退+1。,,False,data2/mutations/legs.gon
-334,legs,Legs 334: Ape Legs,Leg Mutation,后腿突变,Your basic attack tosses units into the air if it's melee.,如果你的普通攻击是近身攻击，能把目标打上天。,"{""str"": 1}",False,data2/mutations/legs.gon
-335,legs,Legs 335: Glass Legs,Leg Mutation,后腿突变,+1 Bleed Thorns. Spawn glass when you take damage.,【出血尖刺】+1。你受到伤害时产生玻璃。,,False,data2/mutations/legs.gon
-336,legs,Legs 336: Crow Legs,Leg Mutation,后腿突变,Your basic attack inflicts Soul Link.,你的普通攻击会施加【灵魂链接】。,,False,data2/mutations/legs.gon
-337,legs,Legs 337: Floating Legs,Leg Mutation,后腿突变,You are immune to tile effects.,你免疫方格效果。,,False,data2/mutations/legs.gon
-339,legs,Legs 339: Wing Legs 2,Leg Mutation,后腿突变,Fly away when hit.,被击中时会飞走。,"{""spd"": 2}",False,data2/mutations/legs.gon
-340,legs,Legs 340: Lucky Toe,Leg Mutation,后腿突变,"When you take damage, gain +1 [img:lck].",你受到伤害时，[img:lck]+1。,,False,data2/mutations/legs.gon
-341,legs,Legs 341: Whip Legs,Leg Mutation,后腿突变,Your basic attack makes units face away from you.,你的普通攻击会让单位背对你。,,False,data2/mutations/legs.gon
-343,legs,Legs 343: Kitten Legs,Leg Mutation,后腿突变,Spawn a Charmed Kitten familiar when you get downed.,你倒地时，产生1个【洗脑】的小猫跟班。,,False,data2/mutations/legs.gon
+325,legs,Legs 325: Extra Head,Leg Mutation,后腿突变,Collarless spells cost -1 mana.,无项圈法术消耗 -1 法力值。,"{""spd"": -2}",False,data2/mutations/legs.gon
+326,legs,Legs 326: Needle Feet,Leg Mutation,后腿突变,Your basic attack inflicts a random debuff.,你的基础攻击施加一种随机减益效果。,,False,data2/mutations/legs.gon
+327,legs,Legs 327: Mushroom Legs,Leg Mutation,后腿突变,Gain 2 random stat ups and 1 random stat down at the end of each turn.,"在每回合结束时，
+获得 2 个随机属性提升和 
+1 个随机属性下降。",,False,data2/mutations/legs.gon
+328,legs,Legs 328: Glass Bottle,Leg Mutation,后腿突变,Equip a temporary Bottles weapon at the start of the battle.,在战斗开始时，装备一件临时瓶子武器。,,False,data2/mutations/legs.gon
+329,legs,Legs 329: Water Bottle,Leg Mutation,后腿突变,Equip a temporary Water Bottle trinket at the start of the battle.,在战斗开始时，装备一个临时水瓶饰品。,,False,data2/mutations/legs.gon
+330,legs,Legs 330: Sausage Legs,Leg Mutation,后腿突变,+1 Health Regeneration,+1 生命恢复,,False,data2/mutations/legs.gon
+331,legs,Legs 331: Jet Legs,Leg Mutation,后腿突变,+1 movement range. Your movement action is a jump.,+1 移动距离。你的移动行动变为跳跃。,,False,data2/mutations/legs.gon
+332,legs,Legs 332: Peg Legs,Leg Mutation,后腿突变,50% chance to spawn a pickup on an adjacent tile when you end your turn. ,"当你结束回合时，
+有 50% 几率在相邻地块生成一个掉落物。","{""spd"": -1}",False,data2/mutations/legs.gon
+333,legs,Legs 333: Wing Legs,Leg Mutation,后腿突变,Your basic attack has wind element and +1 Knockback.,你的基础攻击拥有风元素和 +1 击退。,,False,data2/mutations/legs.gon
+334,legs,Legs 334: Ape Legs,Leg Mutation,后腿突变,Your basic attack tosses units into the air if it's melee.,"如果你的基础攻击是近战攻击，
+则将单位抛向空中。","{""str"": 1}",False,data2/mutations/legs.gon
+335,legs,Legs 335: Glass Legs,Leg Mutation,后腿突变,+1 Bleed Thorns. Spawn glass when you take damage.,"+1 流血荆棘。
+当你受到伤害时生成玻璃。",,False,data2/mutations/legs.gon
+336,legs,Legs 336: Crow Legs,Leg Mutation,后腿突变,Your basic attack inflicts Soul Link.,你的基础攻击施加灵魂链接。,,False,data2/mutations/legs.gon
+337,legs,Legs 337: Floating Legs,Leg Mutation,后腿突变,You are immune to tile effects.,你免疫地块效果。,,False,data2/mutations/legs.gon
+339,legs,Legs 339: Wing Legs 2,Leg Mutation,后腿突变,Fly away when hit.,受到攻击时飞走。,"{""spd"": 2}",False,data2/mutations/legs.gon
+340,legs,Legs 340: Lucky Toe,Leg Mutation,后腿突变,"When you take damage, gain +1 [img:lck].",当你受到伤害时，获得 +1 [img:lck] 。,,False,data2/mutations/legs.gon
+341,legs,Legs 341: Whip Legs,Leg Mutation,后腿突变,Your basic attack makes units face away from you.,你的基础攻击使单位背对于你。,,False,data2/mutations/legs.gon
+343,legs,Legs 343: Kitten Legs,Leg Mutation,后腿突变,Spawn a Charmed Kitten familiar when you get downed.,当你倒地时，生成一只魅惑小猫使魔。,,False,data2/mutations/legs.gon
 400,legs,Legs 400,Leg Mutation,后腿突变,,,"{""str"": 2, ""con"": -1}",False,data2/mutations/legs.gon
 401,legs,Legs 401,Leg Mutation,后腿突变,,,"{""str"": 2, ""dex"": -1}",False,data2/mutations/legs.gon
 402,legs,Legs 402,Leg Mutation,后腿突变,,,"{""str"": 2, ""cha"": -1}",False,data2/mutations/legs.gon
@@ -565,48 +615,54 @@ Your spells cost 1 less mana.","落空几率+20%。
 700,legs,Legs 700: lobster claw,Leg Mutation,后腿突变,,,"{""str"": -2}",True,data2/mutations/legs.gon
 701,legs,Legs 701: extra finger,Leg Mutation,后腿突变,,,"{""dex"": -2}",True,data2/mutations/legs.gon
 702,legs,Legs 702: club foot,Leg Mutation,后腿突变,,,"{""spd"": -2}",True,data2/mutations/legs.gon
-703,legs,Legs 703: syndactyly,Leg Mutation,后腿突变,Water does not slow movement.,水不会减慢你的移动。,"{""spd"": -2}",True,data2/mutations/legs.gon
+703,legs,Legs 703: syndactyly,Leg Mutation,后腿突变,Water does not slow movement.,水不会减缓移动。,"{""spd"": -2}",True,data2/mutations/legs.gon
 704,legs,Legs 704: curled paw,Leg Mutation,后腿突变,,,"{""str"": -1}",True,data2/mutations/legs.gon
-705,legs,Legs 705: club foot2,Leg Mutation,后腿突变,Trample.,横冲直撞。,"{""speed"": -4}",True,data2/mutations/legs.gon
+705,legs,Legs 705: club foot2,Leg Mutation,后腿突变,Trample.,践踏。,"{""speed"": -4}",True,data2/mutations/legs.gon
 706,legs,Legs 706: backwards knees,Leg Mutation,后腿突变,,,"{""spd"": -1}",True,data2/mutations/legs.gon
-707,legs,Legs 707: blob legs,Leg Mutation,后腿突变,Permanently Slow.,永久【迟缓】。,"{""str"": 1}",True,data2/mutations/legs.gon
-754,legs,Legs 754: Wing Hoof Legs,Leg Mutation,后腿突变,Your movement action is a jump. Your basic attack inflicts Bruise.,你的移动行动变成跳跃。你的普通攻击会施加【瘀伤】。,,False,data2/mutations/legs.gon
+707,legs,Legs 707: blob legs,Leg Mutation,后腿突变,Permanently Slow.,永久减速。,"{""str"": 1}",True,data2/mutations/legs.gon
+754,legs,Legs 754: Wing Hoof Legs,Leg Mutation,后腿突变,Your movement action is a jump. Your basic attack inflicts Bruise.,"你的移动行动变为跳跃。
+你的基础攻击施加淤伤。",,False,data2/mutations/legs.gon
 756,legs,Legs 756: Sonichu Legs,Leg Mutation,后腿突变,,,"{""spd"": 2}",False,data2/mutations/legs.gon
-757,legs,Legs 757: bigfoot Legs,Leg Mutation,后腿突变,Trample.,横冲直撞。,,False,data2/mutations/legs.gon
-758,legs,Legs 758: nessie Legs,Leg Mutation,后腿突变,You have All Stats Up while wet.,你身上潮湿时，所有属性提升。,,False,data2/mutations/legs.gon
-759,legs,Legs 759: nessie Legs,Leg Mutation,后腿突变,You have All Stats Up while wet.,你身上潮湿时，所有属性提升。,,False,data2/mutations/legs.gon
-761,legs,Legs 761: mothman Legs,Leg Mutation,后腿突变,Your movement action is a jump. Your basic attack inflicts Bleed.,你的移动行动变成跳跃。你的普通攻击会施加【出血】。,,False,data2/mutations/legs.gon
-762,legs,Legs 762: slender,Leg Mutation,后腿突变,Ignore the effects of tiles and traps.,无视方格和陷阱的效果。,,False,data2/mutations/legs.gon
-763,legs,Legs 763: slender,Leg Mutation,后腿突变,Ignore the effects of tiles and traps.,无视方格和陷阱的效果。,,False,data2/mutations/legs.gon
-900,legs,Legs 900: slender,Leg Mutation,后腿突变,Ignore the effects of tiles and traps.,无视方格和陷阱的效果。,,False,data2/mutations/legs.gon
+757,legs,Legs 757: bigfoot Legs,Leg Mutation,后腿突变,Trample.,践踏。,,False,data2/mutations/legs.gon
+758,legs,Legs 758: nessie Legs,Leg Mutation,后腿突变,You have All Stats Up while wet.,处于潮湿状态时，你拥有全属性提升。,,False,data2/mutations/legs.gon
+759,legs,Legs 759: nessie Legs,Leg Mutation,后腿突变,You have All Stats Up while wet.,处于潮湿状态时，你拥有全属性提升。,,False,data2/mutations/legs.gon
+761,legs,Legs 761: mothman Legs,Leg Mutation,后腿突变,Your movement action is a jump. Your basic attack inflicts Bleed.,"你的移动行动变为跳跃。
+你的基础攻击施加流血。",,False,data2/mutations/legs.gon
+762,legs,Legs 762: slender,Leg Mutation,后腿突变,Ignore the effects of tiles and traps.,无视地块和陷阱的效果。,,False,data2/mutations/legs.gon
+763,legs,Legs 763: slender,Leg Mutation,后腿突变,Ignore the effects of tiles and traps.,无视地块和陷阱的效果。,,False,data2/mutations/legs.gon
+900,legs,Legs 900: slender,Leg Mutation,后腿突变,Ignore the effects of tiles and traps.,无视地块和陷阱的效果。,,False,data2/mutations/legs.gon
 -2,mouth,Mouth -2: no mouth (frame 702),Mouth Mutation,嘴巴突变,"Can't eat food, use consumables, or use musical abilities.",不能吃食物，不能用消耗品，也不能用音乐能力。,,True,data2/mutations/mouth.gon
 300,mouth,Mouth 300: Sabertoothed,Mouth Mutation,嘴巴突变,,,"{""str"": 1}",False,data2/mutations/mouth.gon
-301,mouth,Mouth 301: Hippo Teeth,Mouth Mutation,嘴巴突变,Gain 1 health when you deal damage.,你造成伤害时，恢复1点生命。,,False,data2/mutations/mouth.gon
-302,mouth,Mouth 302: Flesh Kid,Mouth Mutation,嘴巴突变,+1 Health Regeneration,生命自然恢复+1。,,False,data2/mutations/mouth.gon
+301,mouth,Mouth 301: Hippo Teeth,Mouth Mutation,嘴巴突变,Gain 1 health when you deal damage.,当你造成伤害时获得 1 点生命值。,,False,data2/mutations/mouth.gon
+302,mouth,Mouth 302: Flesh Kid,Mouth Mutation,嘴巴突变,+1 Health Regeneration,+1 生命恢复,,False,data2/mutations/mouth.gon
 303,mouth,Mouth 303: Delerious,Mouth Mutation,嘴巴突变,,,"{""int"": 1}",False,data2/mutations/mouth.gon
-304,mouth,Mouth 304: Spider,Mouth Mutation,嘴巴突变,Your basic attack inflicts Poison.,你的普通攻击会施加【中毒】。,,False,data2/mutations/mouth.gon
-305,mouth,Mouth 305: Ash,Mouth Mutation,嘴巴突变,+100 corpse health.,尸体耐久+100。,,False,data2/mutations/mouth.gon
-306,mouth,Mouth 306: Famine,Mouth Mutation,嘴巴突变,10% chance to spawn a Fly when you take damage.,你受到伤害时，有10%的几率产生1个苍蝇。,,False,data2/mutations/mouth.gon
-307,mouth,Mouth 307: Alien Chomp,Mouth Mutation,嘴巴突变,Your basic attack has a 1% chance to instakill.,你的普通攻击有1%的几率一击必杀。,,False,data2/mutations/mouth.gon
-308,mouth,Mouth 308: Licky,Mouth Mutation,嘴巴突变,+1 Health Regeneration,生命自然恢复+1。,,False,data2/mutations/mouth.gon
-309,mouth,Mouth 309: Jacko,Mouth Mutation,嘴巴突变,Your basic attack has a 10% chance to inflict Fear.,你的普通攻击有10%的几率施加【害怕】。,,False,data2/mutations/mouth.gon
+304,mouth,Mouth 304: Spider,Mouth Mutation,嘴巴突变,Your basic attack inflicts Poison.,你的基础攻击施加中毒。,,False,data2/mutations/mouth.gon
+305,mouth,Mouth 305: Ash,Mouth Mutation,嘴巴突变,+100 corpse health.,+100 尸体生命值。,,False,data2/mutations/mouth.gon
+306,mouth,Mouth 306: Famine,Mouth Mutation,嘴巴突变,10% chance to spawn a Fly when you take damage.,当你受到伤害时有 10% 几率生成一只苍蝇。,,False,data2/mutations/mouth.gon
+307,mouth,Mouth 307: Alien Chomp,Mouth Mutation,嘴巴突变,Your basic attack has a 1% chance to instakill.,你的基础攻击有 1% 几率秒杀。,,False,data2/mutations/mouth.gon
+308,mouth,Mouth 308: Licky,Mouth Mutation,嘴巴突变,+1 Health Regeneration,+1 生命恢复,,False,data2/mutations/mouth.gon
+309,mouth,Mouth 309: Jacko,Mouth Mutation,嘴巴突变,Your basic attack has a 10% chance to inflict Fear.,你的基础攻击有 10% 几率施加恐惧。,,False,data2/mutations/mouth.gon
 310,mouth,Mouth 310: Lip Fillers,Mouth Mutation,嘴巴突变,,,"{""cha"": 1}",False,data2/mutations/mouth.gon
-311,mouth,Mouth 311: Leech Mouth,Mouth Mutation,嘴巴突变,Your basic attack inflicts Leech 1.,你的普通攻击施加1层【水蛭】。,,False,data2/mutations/mouth.gon
-312,mouth,Mouth 312: Bear Trap Mouth,Mouth Mutation,嘴巴突变,Your basic attack has a 10% chance to inflict Immobile if it's melee.,如果你的普通攻击是近身攻击，就有10%的几率施加【移动受限】。,"{""str"": 1}",False,data2/mutations/mouth.gon
-313,mouth,Mouth 313: Full Mouth,Mouth Mutation,嘴巴突变,"At the end of each round, spit at an enemy .",每轮结束时，朝1个敌人吐一次口水。,,False,data2/mutations/mouth.gon
-314,mouth,Mouth 314: Gold Tooth,Mouth Mutation,嘴巴突变,Spawn 5-10 coins when downed.,倒地时产生5-10块钱。,,False,data2/mutations/mouth.gon
-315,mouth,Mouth 315: Double Mouth,Mouth Mutation,嘴巴突变,10% chance to gain a bonus attack each turn.,每个回合有10%的几率获得1次奖励攻击。,,False,data2/mutations/mouth.gon
-316,mouth,Mouth 316: Horse Face,Mouth Mutation,嘴巴突变,Your basic attack inflicts Bruise.,你的普通攻击会施加【瘀伤】。,"{""cha"": -1}",False,data2/mutations/mouth.gon
-317,mouth,Mouth 317: Glass Teeth,Mouth Mutation,嘴巴突变,Spawn glass when you take damage. +1 Bleed Thorns. ,你受到伤害时产生玻璃。【出血尖刺】+1。,,False,data2/mutations/mouth.gon
-318,mouth,Mouth 318: mole mouth,Mouth Mutation,嘴巴突变,Your movement action is Dig.,你的移动行动变成“挖地”。,,False,data2/mutations/mouth.gon
-319,mouth,Mouth 319: Catfish Mouth,Mouth Mutation,嘴巴突变,Water does not slow movement. +1 Health Regeneration while wet.,水不会减慢移动。潮湿的时候生命自然恢复+1。,,False,data2/mutations/mouth.gon
+311,mouth,Mouth 311: Leech Mouth,Mouth Mutation,嘴巴突变,Your basic attack inflicts Leech 1.,你的基础攻击施加 1 层水蛭。,,False,data2/mutations/mouth.gon
+312,mouth,Mouth 312: Bear Trap Mouth,Mouth Mutation,嘴巴突变,Your basic attack has a 10% chance to inflict Immobile if it's melee.,"如果你的基础攻击是近战攻击，
+则有 10% 几率施加定身。","{""str"": 1}",False,data2/mutations/mouth.gon
+313,mouth,Mouth 313: Full Mouth,Mouth Mutation,嘴巴突变,"At the end of each round, spit at an enemy .",在每回合结束时，向一名敌人吐口水。,,False,data2/mutations/mouth.gon
+314,mouth,Mouth 314: Gold Tooth,Mouth Mutation,嘴巴突变,Spawn 5-10 coins when downed.,倒地时生成 5-10 枚金币。,,False,data2/mutations/mouth.gon
+315,mouth,Mouth 315: Double Mouth,Mouth Mutation,嘴巴突变,10% chance to gain a bonus attack each turn.,每回合有 10% 几率获得一次奖励攻击。,,False,data2/mutations/mouth.gon
+316,mouth,Mouth 316: Horse Face,Mouth Mutation,嘴巴突变,Your basic attack inflicts Bruise.,你的基础攻击施加淤伤。,"{""cha"": -1}",False,data2/mutations/mouth.gon
+317,mouth,Mouth 317: Glass Teeth,Mouth Mutation,嘴巴突变,Spawn glass when you take damage. +1 Bleed Thorns. ,"当你受到伤害时生成玻璃。
++1 流血荆棘。",,False,data2/mutations/mouth.gon
+318,mouth,Mouth 318: mole mouth,Mouth Mutation,嘴巴突变,Your movement action is Dig.,你的移动行动变为挖掘。,,False,data2/mutations/mouth.gon
+319,mouth,Mouth 319: Catfish Mouth,Mouth Mutation,嘴巴突变,Water does not slow movement. +1 Health Regeneration while wet.,"水不会减缓移动。
+处于潮湿状态时 +1 生命恢复。",,False,data2/mutations/mouth.gon
 321,mouth,Mouth 321: Zipper Mouth,Mouth Mutation,嘴巴突变,,,"{""shield"": 3}",False,data2/mutations/mouth.gon
-322,mouth,Mouth 322: Shark Mouth,Mouth Mutation,嘴巴突变,Your basic attack inflicts Bleed.,你的普通攻击会施加【出血】。,,False,data2/mutations/mouth.gon
-323,mouth,Mouth 323: Gills,Mouth Mutation,嘴巴突变,+2 Health Regeneration while wet.,潮湿的时候生命自然恢复+2。,,False,data2/mutations/mouth.gon
-324,mouth,Mouth 324: Eyeball,Mouth Mutation,嘴巴突变,+1 range.,范围+1。,,False,data2/mutations/mouth.gon
-326,mouth,Mouth 326: Double Mouth 2,Mouth Mutation,嘴巴突变,Gain +1 Health Regeneration whenever you eat food.,你每次吃食物时，生命自然恢复+1。,,False,data2/mutations/mouth.gon
-327,mouth,Mouth 327: Clown Lips,Mouth Mutation,嘴巴突变,You can reroll your options when you level up.,升级时，你可以重掷选项。,,False,data2/mutations/mouth.gon
-328,mouth,Mouth 328: Bandage Mouth,Mouth Mutation,嘴巴突变,"Can't eat food, use consumables, or use musical abilities. +2 Health Regeneration ",不能吃食物，不能用消耗品，也不能用音乐能力。生命自然恢复+2。,,False,data2/mutations/mouth.gon
+322,mouth,Mouth 322: Shark Mouth,Mouth Mutation,嘴巴突变,Your basic attack inflicts Bleed.,你的基础攻击施加流血。,,False,data2/mutations/mouth.gon
+323,mouth,Mouth 323: Gills,Mouth Mutation,嘴巴突变,+2 Health Regeneration while wet.,处于潮湿状态时 +2 生命恢复。,,False,data2/mutations/mouth.gon
+324,mouth,Mouth 324: Eyeball,Mouth Mutation,嘴巴突变,+1 range.,+1 射程。,,False,data2/mutations/mouth.gon
+326,mouth,Mouth 326: Double Mouth 2,Mouth Mutation,嘴巴突变,Gain +1 Health Regeneration whenever you eat food.,每当你吃食物时，获得 +1 生命恢复。,,False,data2/mutations/mouth.gon
+327,mouth,Mouth 327: Clown Lips,Mouth Mutation,嘴巴突变,You can reroll your options when you level up.,升级时你可以重掷选项。,,False,data2/mutations/mouth.gon
+328,mouth,Mouth 328: Bandage Mouth,Mouth Mutation,嘴巴突变,"Can't eat food, use consumables, or use musical abilities. +2 Health Regeneration ","无法吃食物、使用消耗品或使用音乐技能。
++2 生命恢复",,False,data2/mutations/mouth.gon
 400,mouth,Mouth 400,Mouth Mutation,嘴巴突变,,,"{""str"": 2, ""con"": -1}",False,data2/mutations/mouth.gon
 401,mouth,Mouth 401,Mouth Mutation,嘴巴突变,,,"{""str"": 2, ""dex"": -1}",False,data2/mutations/mouth.gon
 402,mouth,Mouth 402,Mouth Mutation,嘴巴突变,,,"{""str"": 2, ""cha"": -1}",False,data2/mutations/mouth.gon
@@ -653,57 +709,65 @@ Your spells cost 1 less mana.","落空几率+20%。
 701,mouth,Mouth 701: anodontia,Mouth Mutation,嘴巴突变,,,"{""str"": -1, ""dex"": -1}",True,data2/mutations/mouth.gon
 703,mouth,Mouth 703: underbite,Mouth Mutation,嘴巴突变,,,"{""int"": -2, ""con"": 1}",True,data2/mutations/mouth.gon
 704,mouth,Mouth 704: overbite,Mouth Mutation,嘴巴突变,,,"{""cha"": -2, ""str"": 1}",True,data2/mutations/mouth.gon
-705,mouth,Mouth 705: Fetus Mouth,Mouth Mutation,嘴巴突变,Your basic attack can be used two extra times each turn but is replaced with a 1-damage spit attack.,你的普通攻击每个回合可以额外用2次，但会换成1点伤害的吐口水攻击。,,False,data2/mutations/mouth.gon
-750,mouth,Mouth 750: beaver teeth,Mouth Mutation,嘴巴突变,Your basic attack destroys inanimate objects and turns tiles into dirt.,你的普通攻击会摧毁物体，还会把方格变成泥土。,,False,data2/mutations/mouth.gon
+705,mouth,Mouth 705: Fetus Mouth,Mouth Mutation,嘴巴突变,Your basic attack can be used two extra times each turn but is replaced with a 1-damage spit attack.,"你的基础攻击每回合可额外使用两次，
+但会被替换为造成 1 点伤害的吐口水攻击。",,False,data2/mutations/mouth.gon
+750,mouth,Mouth 750: beaver teeth,Mouth Mutation,嘴巴突变,Your basic attack destroys inanimate objects and turns tiles into dirt.,"你的
+基础攻击会摧毁无生命物体并将地块变为泥土。",,False,data2/mutations/mouth.gon
 751,mouth,Mouth 751: pig snout,Mouth Mutation,嘴巴突变,,,"{""con"": 2}",False,data2/mutations/mouth.gon
-752,mouth,Mouth 752: Dog tongue,Mouth Mutation,嘴巴突变,Your basic attack creates water tiles.,你的普通攻击会产生水方格。,,False,data2/mutations/mouth.gon
-754,mouth,Mouth 754: Isaacs mouth,Mouth Mutation,嘴巴突变,Adjacent units get All Stats Down.,前后左右相邻的单位所有属性下降。,,False,data2/mutations/mouth.gon
-755,mouth,Mouth 755: Edmund beard,Mouth Mutation,嘴巴突变,Ice Immunity.,免疫冰冻。,,False,data2/mutations/mouth.gon
+752,mouth,Mouth 752: Dog tongue,Mouth Mutation,嘴巴突变,Your basic attack creates water tiles.,你的基础攻击会生成水地块。,,False,data2/mutations/mouth.gon
+754,mouth,Mouth 754: Isaacs mouth,Mouth Mutation,嘴巴突变,Adjacent units get All Stats Down.,相邻单位获得全属性下降。,,False,data2/mutations/mouth.gon
+755,mouth,Mouth 755: Edmund beard,Mouth Mutation,嘴巴突变,Ice Immunity.,冰霜免疫。,,False,data2/mutations/mouth.gon
 756,mouth,Mouth 756: Tylers beard,Mouth Mutation,嘴巴突变,,,"{""int"": 1}",False,data2/mutations/mouth.gon
-757,mouth,Mouth 757: Mermaid mouth,Mouth Mutation,嘴巴突变,Your basic attack inflicts Bleed.,你的普通攻击会施加【出血】。,,False,data2/mutations/mouth.gon
-760,mouth,Mouth 760: bigfoot mouth,Mouth Mutation,嘴巴突变,"When a food pickup spawns within 2 tiles of you, move to it.",2格之内出现可以捡起的食物时，你会移动过去。,,False,data2/mutations/mouth.gon
-900,mouth,Mouth 900: Slender,Mouth Mutation,嘴巴突变,Your basic attack has a 10% chance to inflict Fear.,你的普通攻击有10%的几率施加【害怕】。,,False,data2/mutations/mouth.gon
-1026,mouth,Mouth 1026: spider mouth,Mouth Mutation,嘴巴突变,Your basic attack has a 10% chance to inflict Webbed.,你的普通攻击有10%的几率施加【网住】。,,False,data2/mutations/mouth.gon
-1500,mouth,Mouth 1500: rat mouth,Mouth Mutation,嘴巴突变,Your basic attack inflicts Poison.,你的普通攻击会施加【中毒】。,,False,data2/mutations/mouth.gon
+757,mouth,Mouth 757: Mermaid mouth,Mouth Mutation,嘴巴突变,Your basic attack inflicts Bleed.,你的基础攻击施加流血。,,False,data2/mutations/mouth.gon
+760,mouth,Mouth 760: bigfoot mouth,Mouth Mutation,嘴巴突变,"When a food pickup spawns within 2 tiles of you, move to it.","当食物掉落物生成在你 2 格范围内时，
+移动向它。",,False,data2/mutations/mouth.gon
+900,mouth,Mouth 900: Slender,Mouth Mutation,嘴巴突变,Your basic attack has a 10% chance to inflict Fear.,你的基础攻击有 10% 几率施加恐惧。,,False,data2/mutations/mouth.gon
+1026,mouth,Mouth 1026: spider mouth,Mouth Mutation,嘴巴突变,Your basic attack has a 10% chance to inflict Webbed.,你的基础攻击有 10% 几率施加蛛网。,,False,data2/mutations/mouth.gon
+1500,mouth,Mouth 1500: rat mouth,Mouth Mutation,嘴巴突变,Your basic attack inflicts Poison.,你的基础攻击施加中毒。,,False,data2/mutations/mouth.gon
 -2,tail,Tail -2: no tail (702),Tail Mutation,尾巴突变,,,"{""dex"": -1}",True,data2/mutations/tail.gon
 300,tail,Tail 300: Extra Paw,Tail Mutation,尾巴突变,,,"{""str"": 1}",False,data2/mutations/tail.gon
-301,tail,Tail 301: Turtle Head,Tail Mutation,尾巴突变,Poop when you take damage.,你受到伤害时会拉屎。,,False,data2/mutations/tail.gon
-302,tail,Tail 302: Scorpion Tail,Tail Mutation,尾巴突变,Your basic attack inflicts Poison.,你的普通攻击会施加【中毒】。,,False,data2/mutations/tail.gon
-303,tail,Tail 303: Rock Tail,Tail Mutation,尾巴突变,Your basic attack has a 5% chance to Stun.,你的普通攻击有5%的几率造成【眩晕】。,,False,data2/mutations/tail.gon
+301,tail,Tail 301: Turtle Head,Tail Mutation,尾巴突变,Poop when you take damage.,受到伤害时排便。,,False,data2/mutations/tail.gon
+302,tail,Tail 302: Scorpion Tail,Tail Mutation,尾巴突变,Your basic attack inflicts Poison.,你的基础攻击施加中毒。,,False,data2/mutations/tail.gon
+303,tail,Tail 303: Rock Tail,Tail Mutation,尾巴突变,Your basic attack has a 5% chance to Stun.,你的基础攻击有 5% 几率造成晕眩。,,False,data2/mutations/tail.gon
 304,tail,Tail 304: Monkey Tail,Tail Mutation,尾巴突变,,,"{""dex"": 1}",False,data2/mutations/tail.gon
-305,tail,Tail 305: Cacuts Tail,Tail Mutation,尾巴突变,+1 Thorns.,【尖刺】+1。,,False,data2/mutations/tail.gon
+305,tail,Tail 305: Cacuts Tail,Tail Mutation,尾巴突变,+1 Thorns.,+1 荆棘。,,False,data2/mutations/tail.gon
 306,tail,Tail 306: Big Lump Tail,Tail Mutation,尾巴突变,,,"{""con"": 1}",False,data2/mutations/tail.gon
 307,tail,Tail 307: Antenna Tail,Tail Mutation,尾巴突变,,,"{""spd"": 1}",False,data2/mutations/tail.gon
-308,tail,Tail 308: Baby Tail,Tail Mutation,尾巴突变,+5% dodge chance.,闪避几率+5%。,"{""lck"": 1}",False,data2/mutations/tail.gon
+308,tail,Tail 308: Baby Tail,Tail Mutation,尾巴突变,+5% dodge chance.,+5% 闪避率。,"{""lck"": 1}",False,data2/mutations/tail.gon
 309,tail,Tail 309: Baboon's' Ass,Tail Mutation,尾巴突变,,,"{""cha"": 1}",False,data2/mutations/tail.gon
-310,tail,Tail 310: Hand Tail,Tail Mutation,尾巴突变,Your basic attack has a 10% chance to repeat once.,你的普通攻击有10%的几率再发动一次。,,False,data2/mutations/tail.gon
-311,tail,Tail 311: Thorn Tail,Tail Mutation,尾巴突变,Thorns 1.,1层【尖刺】。,,False,data2/mutations/tail.gon
+310,tail,Tail 310: Hand Tail,Tail Mutation,尾巴突变,Your basic attack has a 10% chance to repeat once.,你的基础攻击有 10% 几率重复一次。,,False,data2/mutations/tail.gon
+311,tail,Tail 311: Thorn Tail,Tail Mutation,尾巴突变,Thorns 1.,荆棘 1。,,False,data2/mutations/tail.gon
 312,tail,Tail 312: Holy Tail,Tail Mutation,尾巴突变,,,"{""divine_shield"": 1}",False,data2/mutations/tail.gon
-313,tail,Tail 313: Hose Tail,Tail Mutation,尾巴突变,Your basic attack creates water tiles.,你的普通攻击会产生水方格。,,False,data2/mutations/tail.gon
-314,tail,Tail 314: Bone Tail,Tail Mutation,尾巴突变,"Whenever you down a unit, you have a 10% chance to reanimate that unit with 50% HP.",每当你击倒1个单位，都有10%的几率令它以50%的生命复苏。,,False,data2/mutations/tail.gon
-315,tail,Tail 315: Maggot Tail,Tail Mutation,尾巴突变,20% chance to spawn a Maggot when hit.,被击中时，有20%的几率产生1个蛆。,,False,data2/mutations/tail.gon
-316,tail,Tail 316: Grass Tail,Tail Mutation,尾巴突变,25% chance to spawn tall grass wherever you end your movement.,不论你移动停在哪里，都有25%的几率产生草丛。,,False,data2/mutations/tail.gon
-317,tail,Tail 317: Skunk Tail,Tail Mutation,尾巴突变,"When hit, fart a Poison 4 attack with Knockback behind you.",你被击中时，会朝身后放屁；这个攻击会击退，并造成4层【中毒】。,,False,data2/mutations/tail.gon
-318,tail,Tail 318: Rattle,Tail Mutation,尾巴突变,Your basic attack inflicts Poison.,你的普通攻击会施加【中毒】。,,False,data2/mutations/tail.gon
-319,tail,Tail 319: Snake Tail,Tail Mutation,尾巴突变,Units who contact you get Poisoned.,单位接触到你时，会【中毒】。,,False,data2/mutations/tail.gon
-320,tail,Tail 320: Glass Tail,Tail Mutation,尾巴突变,Bleed 1. Bleed Thorns 2.,1层【出血】。2层【出血尖刺】。,,False,data2/mutations/tail.gon
+313,tail,Tail 313: Hose Tail,Tail Mutation,尾巴突变,Your basic attack creates water tiles.,你的基础攻击会生成水地块。,,False,data2/mutations/tail.gon
+314,tail,Tail 314: Bone Tail,Tail Mutation,尾巴突变,"Whenever you down a unit, you have a 10% chance to reanimate that unit with 50% HP.","每当你击倒一个单位时，
+有 10% 几率以 50% 
+生命值复生该单位。",,False,data2/mutations/tail.gon
+315,tail,Tail 315: Maggot Tail,Tail Mutation,尾巴突变,20% chance to spawn a Maggot when hit.,被击中时有 20% 几率生成一只蛆虫。,,False,data2/mutations/tail.gon
+316,tail,Tail 316: Grass Tail,Tail Mutation,尾巴突变,25% chance to spawn tall grass wherever you end your movement.,在你结束移动的地方有 25% 几率生成高草。,,False,data2/mutations/tail.gon
+317,tail,Tail 317: Skunk Tail,Tail Mutation,尾巴突变,"When hit, fart a Poison 4 attack with Knockback behind you.","被击中时，
+向身后放一个造成 4 层中毒并带有击退效果的
+屁。",,False,data2/mutations/tail.gon
+318,tail,Tail 318: Rattle,Tail Mutation,尾巴突变,Your basic attack inflicts Poison.,你的基础攻击施加中毒。,,False,data2/mutations/tail.gon
+319,tail,Tail 319: Snake Tail,Tail Mutation,尾巴突变,Units who contact you get Poisoned.,接触你的单位会中毒。,,False,data2/mutations/tail.gon
+320,tail,Tail 320: Glass Tail,Tail Mutation,尾巴突变,Bleed 1. Bleed Thorns 2.,流血 1。流血荆棘 2。,,False,data2/mutations/tail.gon
 321,tail,Tail 321: Extra Head,Tail Mutation,尾巴突变,,,"{""int"": 1}",False,data2/mutations/tail.gon
-322,tail,Tail 322: Exhaust Pipe,Tail Mutation,尾巴突变,Gain +1 [img:spd] each turn.,每个回合[img:spd]+1。,,False,data2/mutations/tail.gon
-323,tail,Tail 323: Jetpack Tail,Tail Mutation,尾巴突变,Your movement action is a jump.,你的移动行动变成跳跃。,,False,data2/mutations/tail.gon
+322,tail,Tail 322: Exhaust Pipe,Tail Mutation,尾巴突变,Gain +1 [img:spd] each turn.,每回合获得 +1 [img:spd]。,,False,data2/mutations/tail.gon
+323,tail,Tail 323: Jetpack Tail,Tail Mutation,尾巴突变,Your movement action is a jump.,你的移动行动变为跳跃。,,False,data2/mutations/tail.gon
 324,tail,Tail 324: Wing Tail,Tail Mutation,尾巴突变,,,"{""spd"": 2}",False,data2/mutations/tail.gon
-325,tail,Tail 325: Spring Tail,Tail Mutation,尾巴突变,Units that contact you get knocked back 2 tiles.,单位接触到你时，会被击退2个方格。,,False,data2/mutations/tail.gon
-326,tail,Tail 326: Eyeball Tail,Tail Mutation,尾巴突变,10% dodge chance. Bruise 1.,闪避几率+10%。1层【瘀伤】。,,False,data2/mutations/tail.gon
-327,tail,Tail 327: Tree Branch Tail,Tail Mutation,尾巴突变,"If you don't move, gain 3 Charge at the end of the turn.",如果本回合没有移动，那么回合结束时就【蓄能】+3。,,False,data2/mutations/tail.gon
-329,tail,Tail 329: Mr. Worm,Tail Mutation,尾巴突变,You can unequip cursed items and parasites.,你能卸下诅咒物品和寄生虫。,,False,data2/mutations/tail.gon
-331,tail,Tail 331: Dice Tail,Tail Mutation,尾巴突变,You can reroll your options when you level up.,升级时，你可以重掷选项。,,False,data2/mutations/tail.gon
-332,tail,Tail 332: Tennis Racket,Tail Mutation,尾巴突变,+25% chance to reflect projectiles.,反弹投射物的几率+25%。,,False,data2/mutations/tail.gon
-334,tail,Tail 334: Fire Flower Tail,Tail Mutation,尾巴突变,Your basic attack inflicts Burn 1.,你的普通攻击会施加1层【灼烧】。,,False,data2/mutations/tail.gon
-336,tail,Tail 336: Horn Tail,Tail Mutation,尾巴突变,+1 Thorns.,【尖刺】+1。,,False,data2/mutations/tail.gon
-337,tail,Tail 337: Tail Feather,Tail Mutation,尾巴突变,Your basic attack is wind element.,你的普通攻击是风系攻击。,,False,data2/mutations/tail.gon
-338,tail,Tail 338: Flame Tail,Tail Mutation,尾巴突变,Your basic attack inflicts Burn 1.,你的普通攻击会施加1层【灼烧】。,,False,data2/mutations/tail.gon
-339,tail,Tail 339: Light Bulb,Tail Mutation,尾巴突变,"While at full mana, you have +2 Damage.",你的魔能满时，伤害+2。,,False,data2/mutations/tail.gon
-341,tail,Tail 341: Tongue Tail,Tail Mutation,尾巴突变,Gain +1 Charge when you take damage.,你受到伤害时，【蓄能】+1。,,False,data2/mutations/tail.gon
-342,tail,Tail 342: Kitten Tail,Tail Mutation,尾巴突变,Spawn a Charmed Kitten familiar when you get downed.,你倒地时，产生1个【洗脑】的小猫跟班。,,False,data2/mutations/tail.gon
+325,tail,Tail 325: Spring Tail,Tail Mutation,尾巴突变,Units that contact you get knocked back 2 tiles.,接触你的单位会被击退 2 格。,,False,data2/mutations/tail.gon
+326,tail,Tail 326: Eyeball Tail,Tail Mutation,尾巴突变,10% dodge chance. Bruise 1.,10% 闪避率。淤伤 1。,,False,data2/mutations/tail.gon
+327,tail,Tail 327: Tree Branch Tail,Tail Mutation,尾巴突变,"If you don't move, gain 3 Charge at the end of the turn.","如果你不移动，
+回合结束时获得 3 层充能。",,False,data2/mutations/tail.gon
+329,tail,Tail 329: Mr. Worm,Tail Mutation,尾巴突变,You can unequip cursed items and parasites.,你可以卸下诅咒物品和寄生虫。,,False,data2/mutations/tail.gon
+331,tail,Tail 331: Dice Tail,Tail Mutation,尾巴突变,You can reroll your options when you level up.,升级时你可以重掷选项。,,False,data2/mutations/tail.gon
+332,tail,Tail 332: Tennis Racket,Tail Mutation,尾巴突变,+25% chance to reflect projectiles.,+25% 几率反射投射物。,,False,data2/mutations/tail.gon
+334,tail,Tail 334: Fire Flower Tail,Tail Mutation,尾巴突变,Your basic attack inflicts Burn 1.,你的基础攻击施加 1 层燃烧。,,False,data2/mutations/tail.gon
+336,tail,Tail 336: Horn Tail,Tail Mutation,尾巴突变,+1 Thorns.,+1 荆棘。,,False,data2/mutations/tail.gon
+337,tail,Tail 337: Tail Feather,Tail Mutation,尾巴突变,Your basic attack is wind element.,你的基础攻击是风元素。,,False,data2/mutations/tail.gon
+338,tail,Tail 338: Flame Tail,Tail Mutation,尾巴突变,Your basic attack inflicts Burn 1.,你的基础攻击施加 1 层燃烧。,,False,data2/mutations/tail.gon
+339,tail,Tail 339: Light Bulb,Tail Mutation,尾巴突变,"While at full mana, you have +2 Damage.",法力值满时，拥有 +2 伤害。,,False,data2/mutations/tail.gon
+341,tail,Tail 341: Tongue Tail,Tail Mutation,尾巴突变,Gain +1 Charge when you take damage.,受到伤害时获得 +1 充能。,,False,data2/mutations/tail.gon
+342,tail,Tail 342: Kitten Tail,Tail Mutation,尾巴突变,Spawn a Charmed Kitten familiar when you get downed.,当你倒地时，生成一只魅惑小猫使魔。,,False,data2/mutations/tail.gon
 400,tail,Tail 400,Tail Mutation,尾巴突变,,,"{""str"": 2, ""con"": -1}",False,data2/mutations/tail.gon
 401,tail,Tail 401,Tail Mutation,尾巴突变,,,"{""str"": 2, ""dex"": -1}",False,data2/mutations/tail.gon
 402,tail,Tail 402,Tail Mutation,尾巴突变,,,"{""str"": 2, ""cha"": -1}",False,data2/mutations/tail.gon
@@ -748,16 +812,16 @@ Your spells cost 1 less mana.","落空几率+20%。
 441,tail,Tail 441,Tail Mutation,尾巴突变,,,"{""spd"": 2, ""lck"": -1}",False,data2/mutations/tail.gon
 700,tail,Tail 700: kinked tail,Tail Mutation,尾巴突变,,,"{""lck"": -2}",True,data2/mutations/tail.gon
 701,tail,Tail 701: lipoma,Tail Mutation,尾巴突变,,,"{""spd"": -1, ""cha"": -1}",True,data2/mutations/tail.gon
-703,tail,Tail 703: heavy tail,Tail Mutation,尾巴突变,Start each battle with Immobile 1.,每场战斗开始时，自带1层【移动受限】。,"{""con"": 1}",True,data2/mutations/tail.gon
-704,tail,Tail 704: forked tail,Tail Mutation,尾巴突变,Hunter abilities are also offered when you level up.,升级时还会出现猎手能力。,"{""lck"": -2}",True,data2/mutations/tail.gon
+703,tail,Tail 703: heavy tail,Tail Mutation,尾巴突变,Start each battle with Immobile 1.,每场战斗开始时带有 1 层定身。,"{""con"": 1}",True,data2/mutations/tail.gon
+704,tail,Tail 704: forked tail,Tail Mutation,尾巴突变,Hunter abilities are also offered when you level up.,升级时也会提供猎人技能。,"{""lck"": -2}",True,data2/mutations/tail.gon
 750,tail,Tail 750: Bunny Tail*,Tail Mutation,尾巴突变,,,"{""cha"": 1}",False,data2/mutations/tail.gon
-751,tail,Tail 751: Beaver Tail*,Tail Mutation,尾巴突变,+1 Brace.,【招架】+1。,,False,data2/mutations/tail.gon
+751,tail,Tail 751: Beaver Tail*,Tail Mutation,尾巴突变,+1 Brace.,+1 护甲。,,False,data2/mutations/tail.gon
 752,tail,Tail 752: Pig Tail*,Tail Mutation,尾巴突变,,,"{""con"": 1}",False,data2/mutations/tail.gon
-754,tail,Tail 754: Spiked Tail*,Tail Mutation,尾巴突变,+1 Thorns.,【尖刺】+1。,,False,data2/mutations/tail.gon
-755,tail,Tail 755: mermaid Tail*,Tail Mutation,尾巴突变,Water does not slow movement.,水不会减慢你的移动。,,False,data2/mutations/tail.gon
-756,tail,Tail 756: Devil Tail*,Tail Mutation,尾巴突变,+1 Bleed Thorns.,【出血尖刺】+1。,,False,data2/mutations/tail.gon
-757,tail,Tail 757: sonichu Tail*,Tail Mutation,尾巴突变,Your movement action is shadowstep.,你的移动行动变成【暗影步】。,,False,data2/mutations/tail.gon
-759,tail,Tail 759: slender Tail*,Tail Mutation,尾巴突变,Start with +1 Bonus Attack.,每场战斗开始时，自带1次奖励攻击。,,False,data2/mutations/tail.gon
-760,tail,Tail 760: human head tail,Tail Mutation,尾巴突变,Start with 2 backflips.,每场战斗开始时，自带2次后空翻。,,False,data2/mutations/tail.gon
+754,tail,Tail 754: Spiked Tail*,Tail Mutation,尾巴突变,+1 Thorns.,+1 荆棘。,,False,data2/mutations/tail.gon
+755,tail,Tail 755: mermaid Tail*,Tail Mutation,尾巴突变,Water does not slow movement.,水不会减缓移动。,,False,data2/mutations/tail.gon
+756,tail,Tail 756: Devil Tail*,Tail Mutation,尾巴突变,+1 Bleed Thorns.,+1 流血荆棘。,,False,data2/mutations/tail.gon
+757,tail,Tail 757: sonichu Tail*,Tail Mutation,尾巴突变,Your movement action is shadowstep.,你的移动行动变为暗影步。,,False,data2/mutations/tail.gon
+759,tail,Tail 759: slender Tail*,Tail Mutation,尾巴突变,Start with +1 Bonus Attack.,初始拥有 +1 奖励攻击。,,False,data2/mutations/tail.gon
+760,tail,Tail 760: human head tail,Tail Mutation,尾巴突变,Start with 2 backflips.,初始拥有 2 次后空翻。,,False,data2/mutations/tail.gon
 900,tail,Tail 900: slender,Tail Mutation,尾巴突变,,,"{""spd"": 1}",False,data2/mutations/tail.gon
 1500,tail,Tail 1500: rat tail,Tail Mutation,尾巴突变,,,"{""dex"": 1}",False,data2/mutations/tail.gon

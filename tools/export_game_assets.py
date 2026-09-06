@@ -6,6 +6,8 @@ import re
 from PIL import Image
 
 sys.stdout.reconfigure(encoding='utf-8')
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from mewgenics_core import get_canonical_passive_code, dedupe_catalog_items
 
 BASE_DIR = r"c:\Users\10107\Documents\github\meowcat"
 SWF_PATH = os.path.join(BASE_DIR, "ability_icons.swf")
@@ -296,16 +298,14 @@ def main():
                 'has_icon': True
             })
 
-    catalog_path = os.path.join(ASSETS_DIR, "abilities_catalog.json")
-    with open(catalog_path, 'w', encoding='utf-8') as f:
-        json.dump(abilities_catalog, f, indent=2, ensure_ascii=False)
-    print(f"✓ Saved {len(abilities_catalog)} rich ability catalog entries to {catalog_path}")
+    # 不要把全部 key 默认写成 Colorless：职业/通用分类以 gon 源文件为准。
+    print("Ability catalog: use tools/rebuild_abilities_catalog.py (skips enemy/item/AZ_ dump).")
 
-    # Build passives catalog
+    # Build passives catalog（术语表遗留 key 与 SWF 真名合并，避免 FighterSoul / 不可杀生 重复）
     passives_catalog = []
     seen_pas_keys = set()
     for pas in game_data.get('passives', []):
-        k = pas['key']
+        k = get_canonical_passive_code(pas['key'])
         if k in seen_pas_keys:
             continue
         seen_pas_keys.add(k)
@@ -323,18 +323,23 @@ def main():
         })
 
     for lbl in set(pas_labels.values()):
-        if lbl and lbl != 'unknown' and lbl not in seen_pas_keys:
-            seen_pas_keys.add(lbl)
-            n_key = f"PASSIVE_{lbl.upper()}_NAME"
-            d_key = f"PASSIVE_{lbl.upper()}_DESC"
-            passives_catalog.append({
-                'key': lbl,
-                'name': loc_dict.get(n_key, lbl),
-                'name_en': lbl,
-                'desc': loc_dict.get(d_key, ""),
-                'has_icon': True
-            })
+        if not lbl or lbl == 'unknown':
+            continue
+        k = get_canonical_passive_code(lbl)
+        if k in seen_pas_keys:
+            continue
+        seen_pas_keys.add(k)
+        n_key = f"PASSIVE_{k.upper()}_NAME"
+        d_key = f"PASSIVE_{k.upper()}_DESC"
+        passives_catalog.append({
+            'key': k,
+            'name': loc_dict.get(n_key, k),
+            'name_en': lbl,
+            'desc': loc_dict.get(d_key, ""),
+            'has_icon': True
+        })
 
+    passives_catalog = dedupe_catalog_items(passives_catalog, canonicalize=get_canonical_passive_code)
     pas_catalog_path = os.path.join(ASSETS_DIR, "passives_catalog.json")
     with open(pas_catalog_path, 'w', encoding='utf-8') as f:
         json.dump(passives_catalog, f, indent=2, ensure_ascii=False)

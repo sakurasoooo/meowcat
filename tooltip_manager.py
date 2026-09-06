@@ -2,6 +2,14 @@ import tkinter as tk
 import customtkinter as ctk
 from PIL import Image
 
+from attribute_renderer import (
+    create_stat_badges_bar,
+    extract_stats_from_item,
+    extract_core_stat_keys,
+    format_rich_description,
+    get_stat_icon,
+)
+
 class GameTooltip:
     _instance = None
 
@@ -28,11 +36,14 @@ class GameTooltip:
         self.current_widget = widget
         self.item_data = item_data
         self.get_icon_func = get_icon_func
-        # 120ms debounce delay for smooth UX
-        self.after_id = widget.after(120, lambda: self.show(event.x_root, event.y_root))
+        x, y = event.x_root, event.y_root
+        try:
+            self.after_id = widget.after(120, lambda: self.show(x, y))
+        except Exception:
+            self.after_id = None
 
     def on_motion(self, event):
-        if self.tip_window:
+        if self.tip_window and self._window_alive():
             self.position_window(event.x_root, event.y_root)
 
     def cancel_schedule(self):
@@ -41,24 +52,67 @@ class GameTooltip:
                 self.current_widget.after_cancel(self.after_id)
             except Exception:
                 pass
-            self.after_id = None
+        self.after_id = None
+
+    def _window_alive(self):
+        try:
+            return bool(self.tip_window and self.tip_window.winfo_exists())
+        except Exception:
+            return False
 
     def hide(self):
         self.cancel_schedule()
-        if self.tip_window:
+        if not self._window_alive():
+            self.tip_window = None
+            return
+        try:
+            self.tip_window.withdraw()
+            for child in self.tip_window.winfo_children():
+                child.destroy()
+        except Exception:
             try:
                 self.tip_window.destroy()
             except Exception:
                 pass
             self.tip_window = None
 
+    def _ensure_window(self, host):
+        """Reuse one Toplevel parented to the current grab/host window.
+
+        An orphan tk.Toplevel() plus a modal grab_set() deadlocks after a few
+        open/close cycles on Windows.
+        """
+        if self._window_alive() and self.tip_window.master is host:
+            return self.tip_window
+        if self._window_alive():
+            try:
+                self.tip_window.destroy()
+            except Exception:
+                pass
+        self.tip_window = tk.Toplevel(host)
+        self.tip_window.wm_overrideredirect(True)
+        self.tip_window.withdraw()
+        try:
+            self.tip_window.attributes("-topmost", True)
+        except Exception:
+            pass
+        return self.tip_window
+
     def show(self, x, y):
-        if not self.item_data or self.tip_window:
+        if not self.item_data:
+            return
+        try:
+            if self.current_widget and not self.current_widget.winfo_exists():
+                return
+            host = self.current_widget.winfo_toplevel() if self.current_widget else None
+            if host is None or not host.winfo_exists():
+                return
+        except Exception:
             return
 
-        self.tip_window = tk.Toplevel()
-        self.tip_window.wm_overrideredirect(True)
-        self.tip_window.attributes("-topmost", True)
+        win = self._ensure_window(host)
+        for child in win.winfo_children():
+            child.destroy()
         
         # Outer container frame (Gold/Cyberpunk border)
         border_color = "#38bdf8" if self.item_data.get('class') != 'None' else "#64748b"
@@ -112,35 +166,69 @@ class GameTooltip:
             badge = ctk.CTkLabel(f_titles, text=f"✦ {cls_name}", font=("Arial", 10, "bold"), text_color=c_color, anchor="w")
             badge.pack(anchor="w", pady=(2, 0))
 
-        # 2. Stats strip (Mana, Damage, Range)
+        core_stats = extract_core_stat_keys(self.item_data)
+        if core_stats:
+            f_core = ctk.CTkFrame(f_titles, fg_color="transparent")
+            f_core.pack(anchor="w", pady=(2, 0))
+            for sk in core_stats:
+                simg = get_stat_icon(sk, size=(16, 16))
+                if simg:
+                    ctk.CTkLabel(f_core, text="", image=simg, width=16, height=16).pack(side="left", padx=(0, 2))
+
+        # Item Rarity & Kind badge
+        rarity = self.item_data.get('rarity', '')
+        kind = self.item_data.get('kind', '')
+        if rarity or kind:
+            rarity_colors = {
+                'common': '#94a3b8',
+                'uncommon': '#22c55e',
+                'rare': '#38bdf8',
+                'very_rare': '#c084fc',
+                'epic': '#c084fc',
+                'quest': '#f59e0b',
+                'sidequest': '#f59e0b',
+            }
+            rc = rarity_colors.get(str(rarity).lower(), '#94a3b8')
+            tag_kind = f" · {kind.upper()}" if kind else ""
+            tag_text = f"✦ {str(rarity).upper()}{tag_kind}"
+            ctk.CTkLabel(f_titles, text=tag_text, font=("Arial", 10, "bold"), text_color=rc, anchor="w").pack(anchor="w", pady=(2, 0))
+
+        # Furniture Set badge
+        f_set = self.item_data.get('set', '')
+        if f_set and f_set != 'none':
+            ctk.CTkLabel(f_titles, text=f"🏠 套装: {str(f_set).title()}", font=("Arial", 10, "bold"), text_color="#38bdf8", anchor="w").pack(anchor="w", pady=(2, 0))
+
+        # 2. Stats strip (Mana, Damage, Range, Shield, Brace, Furniture Stats, etc.)
         mana = self.item_data.get('mana', 0)
         damage = self.item_data.get('damage', '')
         rng = self.item_data.get('range', 0)
-        
-        stats_present = (mana > 0 or damage or rng > 0)
-        if stats_present:
-            f_stats = ctk.CTkFrame(outer, fg_color="#1e293b", corner_radius=4)
-            f_stats.pack(fill="x", padx=12, pady=4)
-            
-            if mana > 0:
-                ctk.CTkLabel(f_stats, text=f"💧 消耗 {mana} 魔能", font=("Arial", 11, "bold"), text_color="#60a5fa").pack(side="left", padx=8, pady=3)
-            if damage:
-                dmg_text = f"⚔️ 伤害 {damage}"
-                ctk.CTkLabel(f_stats, text=dmg_text, font=("Arial", 11, "bold"), text_color="#f87171").pack(side="left", padx=8, pady=3)
-            if rng > 0:
-                ctk.CTkLabel(f_stats, text=f"🎯 射程 {rng}", font=("Arial", 11, "bold"), text_color="#fbbf24").pack(side="left", padx=8, pady=3)
+
+        extra_items = []
+        if mana > 0:
+            extra_items.append(('mana', f"消耗 {mana}"))
+        if damage:
+            extra_items.append(('damage', str(damage)))
+        if rng > 0:
+            extra_items.append(('range', str(rng)))
+
+        stats_list = extract_stats_from_item(self.item_data)
+
+        f_badges = create_stat_badges_bar(outer, stats_list, extra_items=extra_items, max_per_row=3)
+        if f_badges:
+            f_badges.pack(fill="x", padx=10, pady=(2, 4))
 
         # 3. Description Body
-        desc = self.item_data.get('desc', '').strip()
+        raw_desc = (self.item_data.get('desc') or '').strip()
+        desc = format_rich_description(raw_desc)
         if desc:
             f_desc = ctk.CTkFrame(outer, fg_color="transparent")
-            f_desc.pack(fill="x", padx=12, pady=(6, 8))
+            f_desc.pack(fill="x", padx=12, pady=(4, 8))
             ctk.CTkLabel(
                 f_desc,
                 text=desc,
                 font=("Arial", 11),
                 text_color="#e2e8f0",
-                wraplength=310,
+                wraplength=320,
                 justify="left",
                 anchor="w"
             ).pack(anchor="w")
@@ -154,9 +242,15 @@ class GameTooltip:
 
         self.tip_window.update_idletasks()
         self.position_window(x, y)
+        try:
+            self.tip_window.deiconify()
+            self.tip_window.lift()
+        except Exception:
+            pass
 
     def position_window(self, x, y):
-        if not self.tip_window:
+        if not self._window_alive():
+            self.tip_window = None
             return
         w = self.tip_window.winfo_width()
         h = self.tip_window.winfo_height()

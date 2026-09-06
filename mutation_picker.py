@@ -24,6 +24,7 @@ TILE_BG = '#1e293b'
 STAT_ZH = {'str': '力量', 'dex': '敏捷', 'con': '体质', 'int': '智力', 'spd': '速度', 'cha': '魅力', 'lck': '运气'}
 
 _font_cache = {}
+_MUT_TILE_CACHE = {}
 
 def _font(size, bold=True):
     key = (size, bold)
@@ -190,8 +191,6 @@ class MutationPicker(ctk.CTkToplevel):
         self.page = 0
         self.category = 'all'
         self.query = ''
-        self._tile_cache = {}
-        self._btn_images = []
 
         # 伪条目：无突变 / 部位缺失
         self.special_entries = [
@@ -216,10 +215,30 @@ class MutationPicker(ctk.CTkToplevel):
 
         self.grid_frame = ctk.CTkFrame(body, fg_color='#111827', corner_radius=8)
         self.grid_frame.pack(side='left', fill='both', expand=True, padx=(0, 8))
+        self._slots = []
+        for i in range(self.PER_PAGE):
+            btn = ctk.CTkButton(
+                self.grid_frame, text='', compound='top',
+                width=96, height=104, font=('Arial', 9),
+                fg_color='#1e293b', border_width=2, border_color='#64748b',
+                hover_color='#475569',
+            )
+            self._slots.append(btn)
 
         self.detail = ctk.CTkFrame(body, fg_color='#111827', corner_radius=8, width=270)
         self.detail.pack(side='right', fill='y')
         self.detail.pack_propagate(False)
+        self._d_hint = ctk.CTkLabel(self.detail, text='🖱 悬停查看详情\n点击图标直接选用',
+                                   font=('Arial', 12), text_color='#64748b', justify='center')
+        self._d_cat = ctk.CTkLabel(self.detail, text='', font=('Arial', 12, 'bold'))
+        self._d_img = ctk.CTkLabel(self.detail, text='')
+        self._d_name = ctk.CTkLabel(self.detail, text='', font=('Arial', 13, 'bold'),
+                                   text_color='#f8fafc', wraplength=240)
+        self._d_stat = ctk.CTkLabel(self.detail, text='', font=('Arial', 12, 'bold'), text_color='#fbbf24')
+        self._d_desc = ctk.CTkLabel(self.detail, text='', font=('Arial', 11), text_color='#cbd5e1',
+                                   wraplength=240, justify='left')
+        self._d_id = ctk.CTkLabel(self.detail, text='', font=('Arial', 10), text_color='#64748b')
+        self._detail_widgets = (self._d_cat, self._d_img, self._d_name, self._d_stat, self._d_desc, self._d_id)
 
         # ---- 底部翻页 ----
         nav = ctk.CTkFrame(self, fg_color='transparent')
@@ -253,7 +272,7 @@ class MutationPicker(ctk.CTkToplevel):
         q = self.query.strip().lower()
         if q:
             def hit(e):
-                hay = f"{e.get('id')} {e.get('name','')} {e.get('desc','')} {e.get('stat_str','')}".lower()
+                hay = f"{e.get('id')} {e.get('name','')} {e.get('name_en','')} {e.get('desc','')} {e.get('stat_str','')}".lower()
                 return q in hay
             items = [(e, c) for e, c in items if hit(e)]
         return items
@@ -261,9 +280,12 @@ class MutationPicker(ctk.CTkToplevel):
     # ---------- UI ----------
     def _tile(self, entry, category, size):
         key = (self.slot_key, entry.get('id'), category, size)
-        if key not in self._tile_cache:
-            self._tile_cache[key] = ctk.CTkImage(make_tile(entry, category, size, slot_key=self.slot_key), size=(size, size))
-        return self._tile_cache[key]
+        hit = _MUT_TILE_CACHE.get(key)
+        if hit is not None:
+            return hit
+        img = ctk.CTkImage(make_tile(entry, category, size, slot_key=self.slot_key), size=(size, size))
+        _MUT_TILE_CACHE[key] = img
+        return img
 
     def _on_filter(self):
         self.query = self.search_var.get()
@@ -282,57 +304,59 @@ class MutationPicker(ctk.CTkToplevel):
         self._refresh()
 
     def _refresh(self):
-        for w in self.grid_frame.winfo_children():
-            w.destroy()
-        self._btn_images.clear()
-
         items = self._filtered()
         max_page = max(0, (len(items) - 1) // self.PER_PAGE)
         self.page = min(self.page, max_page)
         page_items = items[self.page * self.PER_PAGE : (self.page + 1) * self.PER_PAGE]
 
-        for i, (e, cat) in enumerate(page_items):
-            r, c = divmod(i, self.COLS)
+        for i, btn in enumerate(self._slots):
+            if i >= len(page_items):
+                btn.grid_remove()
+                continue
+            e, cat = page_items[i]
             is_cur = (e.get('id') == self.current_id)
             short = e.get('name', '')[:14]
             if e.get('id', 0) >= 300:
                 short = f"#{e['id']} {short.split(':', 1)[-1].strip()}"[:18]
-            btn = ctk.CTkButton(
-                self.grid_frame, text=short, image=self._tile(e, cat, 56),
-                compound='top', width=96, height=104, font=('Arial', 9),
+            btn.configure(
+                text=short, image=self._tile(e, cat, 56),
                 fg_color='#334155' if is_cur else '#1e293b',
-                border_width=2, border_color='#f8fafc' if is_cur else CATEGORY_COLORS.get(cat, '#64748b'),
-                hover_color='#475569',
+                border_color='#f8fafc' if is_cur else CATEGORY_COLORS.get(cat, '#64748b'),
                 command=lambda ent=e: self._pick(ent),
             )
-            btn.grid(row=r, column=c, padx=5, pady=5, sticky='n')
+            btn.unbind('<Enter>')
             btn.bind('<Enter>', lambda ev, ent=e, cc=cat: self._show_detail(ent, cc))
+            r, c = divmod(i, self.COLS)
+            btn.grid(row=r, column=c, padx=5, pady=5, sticky='n')
 
         self.lbl_page.configure(text=f'{self.page + 1}/{max_page + 1} 页  (共 {len(items)} 项)')
         self.btn_prev.configure(state='normal' if self.page > 0 else 'disabled')
         self.btn_next.configure(state='normal' if self.page < max_page else 'disabled')
 
     def _show_detail(self, e, cat=None):
-        for w in self.detail.winfo_children():
-            w.destroy()
+        for w in self._detail_widgets:
+            w.pack_forget()
+        self._d_hint.pack_forget()
         if not e:
-            ctk.CTkLabel(self.detail, text='🖱 悬停查看详情\n点击图标直接选用', font=('Arial', 12), text_color='#64748b', justify='center').pack(expand=True)
+            self._d_hint.pack(expand=True)
             return
         cat = cat or e.get('_cat') or classify_mutation(e, self.defect_ids)
-        ctk.CTkLabel(self.detail, text=CATEGORY_LABELS.get(cat, cat), font=('Arial', 12, 'bold'),
-                     text_color=CATEGORY_COLORS.get(cat, '#94a3b8')).pack(pady=(14, 2))
-        img_lbl = ctk.CTkLabel(self.detail, text='', image=self._tile(e, cat, 108))
-        img_lbl.pack(pady=4)
-        ctk.CTkLabel(self.detail, text=e.get('name', '?'), font=('Arial', 13, 'bold'), text_color='#f8fafc',
-                     wraplength=240).pack(pady=(2, 0))
+        self._d_cat.configure(text=CATEGORY_LABELS.get(cat, cat),
+                             text_color=CATEGORY_COLORS.get(cat, '#94a3b8'))
+        self._d_cat.pack(pady=(14, 2))
+        self._d_img.configure(image=self._tile(e, cat, 108))
+        self._d_img.pack(pady=4)
+        self._d_name.configure(text=e.get('name', '?'))
+        self._d_name.pack(pady=(2, 0))
         stat_str = e.get('stat_str') or ''
         if stat_str:
-            ctk.CTkLabel(self.detail, text=stat_str, font=('Arial', 12, 'bold'), text_color='#fbbf24').pack(pady=(2, 0))
-        desc = (e.get('desc') or '').strip() or '（无特殊效果）'
-        ctk.CTkLabel(self.detail, text=desc, font=('Arial', 11), text_color='#cbd5e1',
-                     wraplength=240, justify='left').pack(padx=12, pady=(8, 4), anchor='w')
+            self._d_stat.configure(text=stat_str)
+            self._d_stat.pack(pady=(2, 0))
+        self._d_desc.configure(text=(e.get('desc') or '').strip() or '（无特殊效果）')
+        self._d_desc.pack(padx=12, pady=(8, 4), anchor='w')
         if e.get('id', 0) >= 300:
-            ctk.CTkLabel(self.detail, text=f"ID: #{e['id']}", font=('Arial', 10), text_color='#64748b').pack(pady=(4, 10))
+            self._d_id.configure(text=f"ID: #{e['id']}")
+            self._d_id.pack(pady=(4, 10))
 
     def _pick(self, e):
         try:
