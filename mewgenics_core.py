@@ -420,17 +420,135 @@ class CatRecord:
 
 class MewgenicsSaveManager:
     @classmethod
-    def find_default_save(cls):
+    def get_saves_dir(cls):
         base_dir = os.path.expandvars(r"%APPDATA%\Glaiel Games\Mewgenics")
-        target_name = "steamcampaign01.sav"
-        p1 = os.path.join(base_dir, "76561198096981781", "saves", target_name)
-        if os.path.exists(p1):
-            return p1
         if os.path.exists(base_dir):
             for root, dirs, files in os.walk(base_dir):
-                if target_name in files:
-                    return os.path.join(root, target_name)
+                if os.path.basename(root) == "saves":
+                    return root
+        return os.path.join(base_dir, "76561198096981781", "saves")
+
+    @classmethod
+    def find_default_save(cls):
+        s_dir = cls.get_saves_dir()
+        p1 = os.path.join(s_dir, "steamcampaign01.sav")
+        if os.path.exists(p1):
+            return p1
+        if os.path.exists(s_dir):
+            for f in os.listdir(s_dir):
+                if f.endswith(".sav") and "campaign" in f:
+                    return os.path.join(s_dir, f)
         return p1
+
+    @classmethod
+    def get_slot_info(cls, file_path, slot_num=1):
+        if not file_path or not os.path.exists(file_path):
+            return {
+                'slot': slot_num,
+                'exists': False,
+                'path': file_path,
+                'has_data': False,
+                'title': '无数据',
+                'location': '无数据',
+                'percent': 0,
+                'time_str': '00:00:00',
+                'day': 0,
+                'gold': 0,
+                'food': 0,
+                'cat_count': 0,
+                'mtime_str': '--'
+            }
+        try:
+            conn = sqlite3.connect(file_path)
+            cur = conn.cursor()
+            cur.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='properties'")
+            if not cur.fetchone():
+                conn.close()
+                return {
+                    'slot': slot_num,
+                    'exists': True,
+                    'path': file_path,
+                    'has_data': False,
+                    'title': '无数据',
+                    'location': '无数据',
+                    'percent': 0,
+                    'time_str': '00:00:00',
+                    'day': 0,
+                    'gold': 0,
+                    'food': 0,
+                    'cat_count': 0,
+                    'mtime_str': '--'
+                }
+
+            cur.execute("SELECT key, data FROM properties")
+            props = dict(cur.fetchall())
+
+            cur.execute("SELECT COUNT(*) FROM cats")
+            cat_count = cur.fetchone()[0]
+            conn.close()
+
+            loc_code = props.get('savescumlocation', 0)
+            loc_map = {0: "家", 1: "小巷", 2: "下水道", 3: "沙漠", 4: "废料场", 5: "乱葬岗", 6: "地堡", 7: "洞穴", 8: "地心", 9: "陨石坑", 10: "血肉世界", 11: "月球"}
+            location_str = loc_map.get(loc_code, f"区域 {loc_code}") if loc_code is not None else "家"
+
+            percent = props.get('save_file_percent', 0)
+            timer_frames = props.get('savefile_timer', 0)
+            total_sec = int(timer_frames / 60)
+            hh = total_sec // 3600
+            mm = (total_sec % 3600) // 60
+            ss = total_sec % 60
+            time_str = f"{hh:02d}:{mm:02d}:{ss:02d}"
+
+            day = props.get('current_day', 0)
+            gold = props.get('house_gold', 0)
+            food = props.get('house_food', 0)
+
+            from datetime import datetime
+            mtime = os.path.getmtime(file_path)
+            mtime_str = datetime.fromtimestamp(mtime).strftime("%Y-%m-%d %H:%M")
+
+            has_data = (cat_count > 0 or timer_frames > 0 or day > 0)
+            return {
+                'slot': slot_num,
+                'exists': True,
+                'path': file_path,
+                'has_data': has_data,
+                'title': location_str if has_data else '无数据',
+                'location': location_str if has_data else '无数据',
+                'percent': percent if has_data else 0,
+                'time_str': time_str if has_data else '00:00:00',
+                'day': day,
+                'gold': gold,
+                'food': food,
+                'cat_count': cat_count,
+                'mtime_str': mtime_str
+            }
+        except Exception:
+            return {
+                'slot': slot_num,
+                'exists': True,
+                'path': file_path,
+                'has_data': False,
+                'title': '无数据',
+                'location': '无数据',
+                'percent': 0,
+                'time_str': '00:00:00',
+                'day': 0,
+                'gold': 0,
+                'food': 0,
+                'cat_count': 0,
+                'mtime_str': '--'
+            }
+
+    @classmethod
+    def get_all_slots_info(cls):
+        s_dir = cls.get_saves_dir()
+        slots = []
+        for i in range(1, 4):
+            fn = f"steamcampaign0{i}.sav"
+            fp = os.path.join(s_dir, fn)
+            slots.append(cls.get_slot_info(fp, slot_num=i))
+        return slots
 
     def __init__(self, file_path=None):
         self.file_path = file_path or self.find_default_save()

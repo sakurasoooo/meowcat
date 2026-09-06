@@ -23,6 +23,228 @@ def get_resource_path(relative_path):
         return p
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), relative_path)
 
+class SaveSlotDialog(ctk.CTkToplevel):
+    def __init__(self, parent, on_select_callback=None):
+        super().__init__(parent)
+        self.parent = parent
+        self.on_select_callback = on_select_callback
+        self.selected_path = None
+
+        self.title("Mewgenics 战役存档选择 (Campaign Save Slots)")
+        self.geometry("960x620")
+        self.minsize(900, 580)
+        self.resizable(False, False)
+
+        # Modal configuration
+        self.transient(parent)
+        self.grab_set()
+
+        # Center on parent
+        self.update_idletasks()
+        try:
+            px = parent.winfo_x()
+            py = parent.winfo_y()
+            pw = parent.winfo_width()
+            ph = parent.winfo_height()
+            x = px + (pw - 960) // 2
+            y = py + (ph - 620) // 2
+            self.geometry(f"+{max(50, x)}+{max(50, y)}")
+        except Exception:
+            pass
+
+        self.init_ui()
+
+    def init_ui(self):
+        # 1. Header
+        header = ctk.CTkFrame(self, fg_color="transparent")
+        header.pack(fill="x", padx=25, pady=(20, 10))
+        
+        ctk.CTkLabel(header, text="🧪 喵星人战役存档槽位选择", font=("Arial", 20, "bold"), text_color="#f8fafc").pack(anchor="w")
+        ctk.CTkLabel(
+            header, 
+            text="仿游戏原版培养皿存档界面，请选择要载入的战役槽位，或点击底部选择外部任意存档文件", 
+            font=("Arial", 12), 
+            text_color="#94a3b8"
+        ).pack(anchor="w", pady=(3, 0))
+
+        # 2. Main 3 Slots Container
+        slots_container = ctk.CTkFrame(self, fg_color="transparent")
+        slots_container.pack(fill="both", expand=True, padx=20, pady=5)
+        slots_container.grid_columnconfigure((0, 1, 2), weight=1, uniform="slot")
+        slots_container.grid_rowconfigure(0, weight=1)
+
+        slots_info = MewgenicsSaveManager.get_all_slots_info()
+
+        themes = [
+            {
+                'name': '槽位 1 (Slot 1)',
+                'accent': '#f43f5e',
+                'accent_hover': '#e11d48',
+                'bg_card': '#1f1523',
+                'tube_border': '#f43f5e',
+                'tube_bg': '#2b1428',
+                'glow_text': '#fda4af'
+            },
+            {
+                'name': '槽位 2 (Slot 2)',
+                'accent': '#eab308',
+                'accent_hover': '#ca8a04',
+                'bg_card': '#1c1917',
+                'tube_border': '#eab308',
+                'tube_bg': '#292211',
+                'glow_text': '#fef08a'
+            },
+            {
+                'name': '槽位 3 (Slot 3)',
+                'accent': '#0ea5e9',
+                'accent_hover': '#0284c7',
+                'bg_card': '#0f172a',
+                'tube_border': '#0ea5e9',
+                'tube_bg': '#12263a',
+                'glow_text': '#bae6fd'
+            }
+        ]
+
+        for i in range(3):
+            info = slots_info[i] if i < len(slots_info) else {'has_data': False}
+            th = themes[i]
+            self.build_slot_card(slots_container, col=i, info=info, theme=th)
+
+        # 3. Bottom Action Bar
+        bottom_bar = ctk.CTkFrame(self, fg_color="#1e293b", height=60, corner_radius=10)
+        bottom_bar.pack(fill="x", padx=25, pady=(10, 20))
+
+        btn_browse = ctk.CTkButton(
+            bottom_bar, 
+            text="📂 手动浏览选择外部存档 (.sav)...", 
+            font=("Arial", 12, "bold"),
+            fg_color="#0284c7", 
+            hover_color="#0369a1",
+            height=36,
+            command=self.on_browse_external
+        )
+        btn_browse.pack(side="left", padx=15, pady=12)
+
+        saves_dir = MewgenicsSaveManager.get_saves_dir()
+        ctk.CTkLabel(
+            bottom_bar, 
+            text=f"默认目录: {saves_dir if len(saves_dir) < 45 else '...' + saves_dir[-42:]}", 
+            font=("Arial", 11), 
+            text_color="#64748b"
+        ).pack(side="left", padx=5)
+
+        btn_close = ctk.CTkButton(
+            bottom_bar, 
+            text="保持当前 / 关闭", 
+            font=("Arial", 12),
+            fg_color="#334155", 
+            hover_color="#475569",
+            height=36,
+            width=120,
+            command=self.destroy
+        )
+        btn_close.pack(side="right", padx=15, pady=12)
+
+    def build_slot_card(self, parent, col, info, theme):
+        card = ctk.CTkFrame(parent, fg_color=theme['bg_card'], corner_radius=12, border_width=1, border_color="#334155")
+        card.grid(row=0, column=col, sticky="nsew", padx=8, pady=5)
+
+        has_data = info.get('has_data', False)
+
+        # 1. Retro TV Screen Frame
+        tv_frame = ctk.CTkFrame(card, fg_color="#090d16", corner_radius=8, border_width=2, border_color="#475569")
+        tv_frame.pack(fill="x", padx=12, pady=(12, 8))
+
+        screen = ctk.CTkFrame(tv_frame, fg_color="#f1f5f9" if has_data else "#e2e8f0", corner_radius=6)
+        screen.pack(fill="both", expand=True, padx=6, pady=6)
+
+        if has_data:
+            # Game style text: Location / Completion% / Timer
+            ctk.CTkLabel(screen, text=info.get('location', '家'), font=("Arial", 17, "bold"), text_color="#0f172a").pack(pady=(6, 1))
+            ctk.CTkLabel(screen, text=f"完成度 {info.get('percent', 0)}%", font=("Arial", 13, "bold"), text_color="#334155").pack(pady=1)
+            ctk.CTkLabel(screen, text=info.get('time_str', '00:00:00'), font=("Arial", 13, "bold"), text_color="#1e293b").pack(pady=(1, 6))
+        else:
+            ctk.CTkLabel(screen, text="无数据", font=("Arial", 16, "bold"), text_color="#64748b").pack(pady=22)
+
+        # 2. Incubator Tube (Capsule) Frame
+        tube_border = theme['tube_border'] if has_data else "#334155"
+        tube_bg = theme['tube_bg'] if has_data else "#141b26"
+        tube = ctk.CTkFrame(card, fg_color=tube_bg, corner_radius=10, border_width=2, border_color=tube_border)
+        tube.pack(fill="both", expand=True, padx=12, pady=6)
+
+        if has_data:
+            # Floating cat icon & stats
+            ctk.CTkLabel(tube, text="🐱 🫧", font=("Arial", 30)).pack(pady=(6, 2))
+            
+            stats_frame = ctk.CTkFrame(tube, fg_color="transparent")
+            stats_frame.pack(fill="x", padx=10, pady=2)
+
+            def add_stat_line(f, left, right):
+                r = ctk.CTkFrame(f, fg_color="transparent")
+                r.pack(fill="x", pady=2)
+                ctk.CTkLabel(r, text=left, font=("Arial", 11), text_color="#94a3b8", width=70, anchor="w").pack(side="left")
+                ctk.CTkLabel(r, text=right, font=("Arial", 11, "bold"), text_color="#f8fafc", anchor="w").pack(side="left")
+
+            add_stat_line(stats_frame, "游戏天数:", f"第 {info.get('day', 0)} 天")
+            add_stat_line(stats_frame, "猫咪总数:", f"{info.get('cat_count', 0)} 只")
+            add_stat_line(stats_frame, "家园资源:", f"🪙 {info.get('gold', 0)}  🍖 {info.get('food', 0)}")
+            add_stat_line(stats_frame, "最后修改:", f"{info.get('mtime_str', '--')}")
+
+            ctk.CTkLabel(
+                tube, 
+                text=f"steamcampaign0{info.get('slot', 1)}.sav", 
+                font=("Arial", 10), 
+                text_color=theme['glow_text']
+            ).pack(pady=(4, 2))
+
+        else:
+            # Empty tube placeholder
+            ctk.CTkLabel(tube, text="🧪", font=("Arial", 32)).pack(pady=(18, 4))
+            ctk.CTkLabel(tube, text="槽位未启用", font=("Arial", 13, "bold"), text_color="#64748b").pack(pady=2)
+            ctk.CTkLabel(tube, text="无存档数据\n可在游戏内开启新战役建立", font=("Arial", 11), text_color="#475569", justify="center").pack(pady=4)
+
+        # 3. Bottom Button for Slot
+        btn_frame = ctk.CTkFrame(card, fg_color="transparent")
+        btn_frame.pack(fill="x", padx=12, pady=(8, 12))
+
+        if has_data:
+            btn = ctk.CTkButton(
+                btn_frame,
+                text=f"▶ 载入此战役 (槽位 {info.get('slot', col+1)})",
+                font=("Arial", 12, "bold"),
+                fg_color=theme['accent'],
+                hover_color=theme['accent_hover'],
+                height=34,
+                command=lambda p=info['path']: self.select_path(p)
+            )
+            btn.pack(fill="x")
+        else:
+            btn = ctk.CTkButton(
+                btn_frame,
+                text="无数据 (槽位未激活)",
+                font=("Arial", 11),
+                fg_color="#242c38",
+                text_color_disabled="#64748b",
+                state="disabled",
+                height=34
+            )
+            btn.pack(fill="x")
+
+    def select_path(self, path):
+        self.selected_path = path
+        if self.on_select_callback:
+            self.on_select_callback(path)
+        self.destroy()
+
+    def on_browse_external(self):
+        f = filedialog.askopenfilename(
+            title="选择 Mewgenics 战役存档文件 (.sav)",
+            filetypes=[("Mewgenics Save (*.sav)", "*.sav"), ("All Files (*.*)", "*.*")],
+            initialdir=MewgenicsSaveManager.get_saves_dir()
+        )
+        if f:
+            self.select_path(f)
+
 class MewgenicsApp(ctk.CTk):
     def __init__(self):
         super().__init__()
@@ -55,9 +277,13 @@ class MewgenicsApp(ctk.CTk):
 
         self.init_ui()
         self.populate_cat_list()
+        self.update_save_header_info()
 
         if not self.save_mgr.file_path or not os.path.exists(self.save_mgr.file_path):
-            self.status_bar.configure(text="提示: 未检测到默认存档，请点击左上方「浏览选择存档...」手动选择 steamcampaign01.sav", text_color="#f59e0b")
+            self.status_bar.configure(text="提示: 未检测到默认存档，请点击上方「切换战役槽位...」或「浏览...」手动选择存档", text_color="#f59e0b")
+
+        if not getattr(sys, '_running_test', False):
+            self.after(120, self.open_slot_selector)
 
     def load_game_data(self):
         json_path = get_resource_path("mewgenics_game_data.json")
@@ -76,16 +302,39 @@ class MewgenicsApp(ctk.CTk):
         self.top_frame = ctk.CTkFrame(self, height=50)
         self.top_frame.pack(fill="x", padx=10, pady=(10, 5))
 
-        self.lbl_path = ctk.CTkLabel(self.top_frame, text=f"存档路径: {self.save_mgr.file_path}", font=("Arial", 12))
-        self.lbl_path.pack(side="left", padx=10)
+        self.btn_switch_slot = ctk.CTkButton(
+            self.top_frame, 
+            text="🔄 切换战役槽位...", 
+            width=140, 
+            fg_color="#6366f1", 
+            hover_color="#4f46e5", 
+            font=("Arial", 12, "bold"),
+            command=self.open_slot_selector
+        )
+        self.btn_switch_slot.pack(side="left", padx=(10, 4))
 
-        self.btn_browse = ctk.CTkButton(self.top_frame, text="浏览选择存档...", width=110, command=self.on_browse)
-        self.btn_browse.pack(side="left", padx=5)
+        self.lbl_slot_badge = ctk.CTkLabel(
+            self.top_frame, 
+            text="[槽位 1]", 
+            font=("Arial", 12, "bold"), 
+            text_color="#38bdf8",
+            fg_color="#1e293b",
+            corner_radius=6,
+            padx=8,
+            pady=3
+        )
+        self.lbl_slot_badge.pack(side="left", padx=4)
 
-        self.btn_reload = ctk.CTkButton(self.top_frame, text="重新加载", width=90, fg_color="#444", command=self.on_reload)
-        self.btn_reload.pack(side="left", padx=5)
+        self.lbl_path = ctk.CTkLabel(self.top_frame, text=f"路径: {self.save_mgr.file_path}", font=("Arial", 11), text_color="#94a3b8")
+        self.lbl_path.pack(side="left", padx=6)
 
-        self.btn_save_all = ctk.CTkButton(self.top_frame, text="保存所有更改 (自动备份)", width=170, fg_color="#28a745", hover_color="#218838", command=self.on_save)
+        self.btn_browse = ctk.CTkButton(self.top_frame, text="浏览...", width=65, command=self.on_browse)
+        self.btn_browse.pack(side="left", padx=3)
+
+        self.btn_reload = ctk.CTkButton(self.top_frame, text="重新加载", width=75, fg_color="#334155", command=self.on_reload)
+        self.btn_reload.pack(side="left", padx=3)
+
+        self.btn_save_all = ctk.CTkButton(self.top_frame, text="保存所有更改 (自动备份)", width=170, fg_color="#28a745", hover_color="#218838", font=("Arial", 12, "bold"), command=self.on_save)
         self.btn_save_all.pack(side="right", padx=10)
 
         # 2. Main Body (Split Pane: Left Sidebar & Right Content)
@@ -1468,27 +1717,61 @@ class MewgenicsApp(ctk.CTk):
             self.show_empty_state()
             self.status_bar.configure(text=f"已删除猫咪 #{cat_id}", text_color="#ef4444")
 
-    def on_browse(self):
-        f = filedialog.askopenfilename(
-            title="选择 Mewgenics 存档文件 (.sav)",
-            filetypes=[("Mewgenics Save (*.sav)", "*.sav"), ("All Files (*.*)", "*.*")],
-            initialdir=os.path.dirname(self.save_mgr.file_path)
-        )
-        if f:
-            self.save_mgr = MewgenicsSaveManager(f)
-            self.lbl_path.configure(text=f"存档路径: {f}")
+    def update_save_header_info(self):
+        fp = getattr(self.save_mgr, 'file_path', '') or ''
+        fn = os.path.basename(fp)
+        
+        m = re.search(r'steamcampaign0([1-3])\.sav', fn)
+        if m:
+            slot_num = int(m.group(1))
+            info = MewgenicsSaveManager.get_slot_info(fp, slot_num=slot_num)
+            if info.get('has_data'):
+                badge_text = f"🧪 槽位 {slot_num}: {info.get('location', '家')} ({info.get('percent', 0)}%)"
+            else:
+                badge_text = f"🧪 槽位 {slot_num}: 空白"
+        else:
+            badge_text = f"📂 外部: {fn}" if fn else "未选择存档"
+
+        if hasattr(self, 'lbl_slot_badge'):
+            self.lbl_slot_badge.configure(text=badge_text)
+        
+        if hasattr(self, 'lbl_path'):
+            short_fp = fp if len(fp) <= 45 else "..." + fp[-42:]
+            self.lbl_path.configure(text=f"路径: {short_fp}")
+
+        if hasattr(self, 'entry_gold') and hasattr(self, 'entry_food') and hasattr(self, 'entry_day'):
             self.entry_gold.delete(0, "end")
             self.entry_gold.insert(0, str(self.save_mgr.properties.get('house_gold', 0)))
             self.entry_food.delete(0, "end")
             self.entry_food.insert(0, str(self.save_mgr.properties.get('house_food', 0)))
             self.entry_day.delete(0, "end")
             self.entry_day.insert(0, str(self.save_mgr.properties.get('current_day', 0)))
-            self.populate_cat_list()
-            self.show_empty_state()
-            self.status_bar.configure(text=f"已成功加载外部存档: {f}", text_color="#10b981")
+
+    def switch_to_save(self, file_path):
+        if not file_path or not os.path.exists(file_path):
+            return
+        self.save_mgr = MewgenicsSaveManager(file_path)
+        self.update_save_header_info()
+        self.populate_cat_list()
+        self.show_empty_state()
+        fn = os.path.basename(file_path)
+        self.status_bar.configure(text=f"已成功加载战役存档: {fn}", text_color="#10b981")
+
+    def open_slot_selector(self):
+        SaveSlotDialog(self, on_select_callback=self.switch_to_save)
+
+    def on_browse(self):
+        f = filedialog.askopenfilename(
+            title="选择 Mewgenics 存档文件 (.sav)",
+            filetypes=[("Mewgenics Save (*.sav)", "*.sav"), ("All Files (*.*)", "*.*")],
+            initialdir=MewgenicsSaveManager.get_saves_dir()
+        )
+        if f:
+            self.switch_to_save(f)
 
     def on_reload(self):
         self.save_mgr.load()
+        self.update_save_header_info()
         self.populate_cat_list()
         self.show_empty_state()
         self.status_bar.configure(text="已重新从磁盘加载存档数据！", text_color="#38bdf8")
