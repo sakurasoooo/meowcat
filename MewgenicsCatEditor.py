@@ -42,6 +42,16 @@ class MewgenicsApp(ctk.CTk):
         self.mutation_combos = {}
         self.recessive_combos = {}
         self.mutation_badge_labels = {}
+        self.active_combos = []
+        self.upgrade_combos = []
+        self.class_passive_combos = []
+        self.disorder_combos = []
+        self.passive_combos = []
+        self.class_passive_lookup = {}
+        self.class_passive_key_to_str = {}
+        self.disorder_lookup = {}
+        self.disorder_key_to_str = {}
+        self.disorder_display_list = []
 
         self.init_ui()
         self.populate_cat_list()
@@ -495,7 +505,7 @@ class MewgenicsApp(ctk.CTk):
         f_class = ctk.CTkFrame(f_ident, fg_color="transparent")
         f_class.pack(fill="x", padx=15, pady=4)
         ctk.CTkLabel(f_class, text="职业 (Class):", width=140, anchor="w", font=("Arial", 12, "bold")).pack(side="left")
-        self.combo_class = ctk.CTkComboBox(f_class, width=280, values=self.game_data.get('classes', []))
+        self.combo_class = ctk.CTkComboBox(f_class, width=280, values=self.game_data.get('classes', []), command=self.on_class_changed)
         self.combo_class.pack(side="left", padx=5)
 
         # Voice / Gender
@@ -526,12 +536,11 @@ class MewgenicsApp(ctk.CTk):
         container.pack(fill="both", expand=True, padx=10, pady=5)
 
         ab_names = sorted(list(set([a['key'] for a in self.game_data.get('abilities', [])]))) or ['BasicMelee', 'DefaultMove']
-        pass_names = sorted(list(set([p['key'] for p in self.game_data.get('passives', [])]))) or ['SelfAssured']
 
-        # Basic Attack & Move
+        # 1. Basic Attack & Move
         f_base = ctk.CTkFrame(container, fg_color="#1e293b", corner_radius=8)
         f_base.pack(fill="x", padx=10, pady=6)
-        ctk.CTkLabel(f_base, text="⚔️ 基础行动与攻击 (Basic Moves & Attack)", font=("Arial", 13, "bold"), text_color="#38bdf8").pack(anchor="w", padx=15, pady=(8, 4))
+        ctk.CTkLabel(f_base, text="⚔️ 基础行动与普通攻击 (Basic Moves & Attack)", font=("Arial", 13, "bold"), text_color="#38bdf8").pack(anchor="w", padx=15, pady=(8, 4))
 
         f_atk = ctk.CTkFrame(f_base, fg_color="transparent")
         f_atk.pack(fill="x", padx=15, pady=3)
@@ -545,33 +554,192 @@ class MewgenicsApp(ctk.CTk):
         self.combo_move = ctk.CTkComboBox(f_mov, width=320, values=['DefaultMove'] + ab_names)
         self.combo_move.pack(side="left", padx=5)
 
-        # 4 Active Abilities
+        # 2. 4 Active Abilities + 4 Ability Upgrades
         f_acts = ctk.CTkFrame(container, fg_color="#1e293b", corner_radius=8)
         f_acts.pack(fill="x", padx=10, pady=6)
-        ctk.CTkLabel(f_acts, text="🔮 主动战斗技能 (Active Spells 1 - 4):", font=("Arial", 13, "bold"), text_color="#a855f7").pack(anchor="w", padx=15, pady=(8, 4))
+        ctk.CTkLabel(f_acts, text="🔮 主动战斗技能与进阶附魔 (Active Spells & Ability Upgrades 1 - 4):", font=("Arial", 13, "bold"), text_color="#a855f7").pack(anchor="w", padx=15, pady=(8, 4))
 
         self.active_combos = []
+        self.upgrade_combos = []
         for i in range(4):
-            f_act = ctk.CTkFrame(f_acts, fg_color="transparent")
-            f_act.pack(fill="x", padx=15, pady=3)
-            ctk.CTkLabel(f_act, text=f"主动技能槽位 {i+1}:", width=180, anchor="w").pack(side="left")
-            cb = ctk.CTkComboBox(f_act, width=320, values=['None'] + ab_names)
-            cb.pack(side="left", padx=5)
-            self.active_combos.append(cb)
+            f_row = ctk.CTkFrame(f_acts, fg_color="transparent")
+            f_row.pack(fill="x", padx=15, pady=3)
+            ctk.CTkLabel(f_row, text=f"主动法术 {i+1}:", width=95, anchor="w", font=("Arial", 12)).pack(side="left")
+            cb_act = ctk.CTkComboBox(f_row, width=250, values=['None'] + ab_names)
+            cb_act.pack(side="left", padx=(0, 15))
+            self.active_combos.append(cb_act)
 
-        # 8 Passives
-        f_pass = ctk.CTkFrame(container, fg_color="#1e293b", corner_radius=8)
-        f_pass.pack(fill="x", padx=10, pady=(6, 12))
-        ctk.CTkLabel(f_pass, text="🧬 被动特性与突变特质 (Passives 1 - 8):", font=("Arial", 13, "bold"), text_color="#10b981").pack(anchor="w", padx=15, pady=(8, 4))
+            ctk.CTkLabel(f_row, text=f"进阶附魔 {i+1}:", width=95, anchor="w", font=("Arial", 12)).pack(side="left")
+            cb_upg = ctk.CTkComboBox(f_row, width=250, values=['None'] + ab_names)
+            cb_upg.pack(side="left", padx=(0, 5))
+            self.upgrade_combos.append(cb_upg)
 
-        self.passive_combos = []
-        for i in range(8):
-            f_pas = ctk.CTkFrame(f_pass, fg_color="transparent")
-            f_pas.pack(fill="x", padx=15, pady=3)
-            ctk.CTkLabel(f_pas, text=f"被动特质槽位 {i+1}:", width=180, anchor="w").pack(side="left")
-            cb = ctk.CTkComboBox(f_pas, width=320, values=['None'] + pass_names)
+        # 3. 2 Class Passives (正面职业被动)
+        f_cp = ctk.CTkFrame(container, fg_color="#1e293b", corner_radius=8)
+        f_cp.pack(fill="x", padx=10, pady=6)
+
+        f_cp_head = ctk.CTkFrame(f_cp, fg_color="transparent")
+        f_cp_head.pack(fill="x", padx=15, pady=(8, 4))
+        ctk.CTkLabel(f_cp_head, text="🌟 职业正面被动特性 (Class Passives - 2 Slots):", font=("Arial", 13, "bold"), text_color="#10b981").pack(side="left")
+        ctk.CTkButton(f_cp_head, text="✨ 自动满配本职业极品被动", height=26, fg_color="#059669", hover_color="#047857", command=self.on_apply_best_class_passives).pack(side="right")
+
+        self.class_passive_combos = []
+        for i in range(2):
+            f_row = ctk.CTkFrame(f_cp, fg_color="transparent")
+            f_row.pack(fill="x", padx=15, pady=3)
+            ctk.CTkLabel(f_row, text=f"职业被动 {i+1}:", width=100, anchor="w", font=("Arial", 12, "bold")).pack(side="left")
+            cb = ctk.CTkComboBox(f_row, width=580, values=['None (无被动)'])
             cb.pack(side="left", padx=5)
-            self.passive_combos.append(cb)
+            self.class_passive_combos.append(cb)
+
+        # 4. 2 Disorders / Negative Passives (疾病/心理缺陷)
+        f_dis = ctk.CTkFrame(container, fg_color="#1e293b", corner_radius=8)
+        f_dis.pack(fill="x", padx=10, pady=(6, 12))
+
+        f_dis_head = ctk.CTkFrame(f_dis, fg_color="transparent")
+        f_dis_head.pack(fill="x", padx=15, pady=(8, 4))
+        ctk.CTkLabel(f_dis_head, text="🦠 生理与心理疾病缺陷 (Disorders - 2 Slots):", font=("Arial", 13, "bold"), text_color="#f87171").pack(side="left")
+        
+        ctk.CTkButton(f_dis_head, text="✨ 搭配特化变异疾病", height=26, fg_color="#8b5cf6", hover_color="#7c3aed", command=self.on_apply_synergistic_disorders).pack(side="right", padx=5)
+        ctk.CTkButton(f_dis_head, text="🧼 一键祛除全部疾病 (健康)", height=26, fg_color="#10b981", hover_color="#059669", command=self.on_cure_all_disorders).pack(side="right")
+
+        self.disorder_combos = []
+        self.init_disorder_options()
+
+        for i in range(2):
+            f_row = ctk.CTkFrame(f_dis, fg_color="transparent")
+            f_row.pack(fill="x", padx=15, pady=3)
+            ctk.CTkLabel(f_row, text=f"疾病槽位 {i+1}:", width=100, anchor="w", font=("Arial", 12, "bold")).pack(side="left")
+            cb = ctk.CTkComboBox(f_row, width=580, values=self.disorder_display_list)
+            cb.pack(side="left", padx=5)
+            self.disorder_combos.append(cb)
+
+        # Compatibility alias
+        self.passive_combos = self.upgrade_combos + self.class_passive_combos + self.disorder_combos
+
+    def init_disorder_options(self):
+        self.disorder_lookup = {}
+        self.disorder_key_to_str = {}
+        self.disorder_display_list = ["None (无疾病 - 身体健康)"]
+        self.disorder_lookup["None (无疾病 - 身体健康)"] = "None"
+        self.disorder_lookup["None"] = "None"
+        self.disorder_key_to_str["None"] = "None (无疾病 - 身体健康)"
+
+        disorders = self.game_data.get('disorders', [])
+        for d in disorders:
+            k = d['key']
+            name = d.get('name', k)
+            raw_desc = d.get('desc', '').strip('"\r\n\t ')
+            clean_desc = raw_desc.replace('\r', ' ').replace('\n', ' ')
+            if len(clean_desc) > 35:
+                clean_desc = clean_desc[:35] + "..."
+            disp = f"{name} ({k}) - {clean_desc}" if clean_desc else f"{name} ({k})"
+            self.disorder_display_list.append(disp)
+            self.disorder_lookup[disp] = k
+            self.disorder_lookup[k] = k
+            self.disorder_key_to_str[k] = disp
+
+    def update_class_passive_options(self, cat_class):
+        self.class_passive_lookup = {}
+        self.class_passive_key_to_str = {}
+        
+        none_str = "None (无被动)"
+        display_list = [none_str]
+        self.class_passive_lookup[none_str] = "None"
+        self.class_passive_lookup["None"] = "None"
+        self.class_passive_key_to_str["None"] = none_str
+
+        all_cp = self.game_data.get('class_passives', {})
+        # Put current class passives first with special indicator
+        current_list = all_cp.get(cat_class, [])
+        for p in current_list:
+            k = p['key']
+            name = p.get('name', k)
+            raw_desc = p.get('desc', '').strip('"\r\n\t ')
+            clean_desc = raw_desc.replace('\r', ' ').replace('\n', ' ')
+            if len(clean_desc) > 32:
+                clean_desc = clean_desc[:32] + "..."
+            disp = f"★ [{cat_class}] {name} ({k}) - {clean_desc}"
+            display_list.append(disp)
+            self.class_passive_lookup[disp] = k
+            self.class_passive_lookup[k] = k
+            self.class_passive_key_to_str[k] = disp
+
+        # Then passives from other classes
+        for other_cls, o_list in all_cp.items():
+            if other_cls == cat_class:
+                continue
+            for p in o_list:
+                k = p['key']
+                if k in self.class_passive_key_to_str:
+                    continue
+                name = p.get('name', k)
+                raw_desc = p.get('desc', '').strip('"\r\n\t ')
+                clean_desc = raw_desc.replace('\r', ' ').replace('\n', ' ')
+                if len(clean_desc) > 30:
+                    clean_desc = clean_desc[:30] + "..."
+                disp = f"[{other_cls}] {name} ({k}) - {clean_desc}"
+                display_list.append(disp)
+                self.class_passive_lookup[disp] = k
+                self.class_passive_lookup[k] = k
+                self.class_passive_key_to_str[k] = disp
+
+        for cb in self.class_passive_combos:
+            cb.configure(values=display_list)
+
+    def get_class_passive_key_from_val(self, val):
+        if not val or val.startswith("None"):
+            return "None"
+        if val in self.class_passive_lookup:
+            return self.class_passive_lookup[val]
+        m = re.search(r'\(([^)]+)\)', val)
+        if m:
+            return m.group(1).strip()
+        return val.strip()
+
+    def get_disorder_key_from_val(self, val):
+        if not val or val.startswith("None"):
+            return "None"
+        if val in self.disorder_lookup:
+            return self.disorder_lookup[val]
+        m = re.search(r'\(([^)]+)\)', val)
+        if m:
+            return m.group(1).strip()
+        return val.strip()
+
+    def on_cure_all_disorders(self):
+        if not self.current_cat:
+            return
+        self.current_cat.cure_all_disorders()
+        none_disp = self.disorder_key_to_str.get('None', 'None (无疾病 - 身体健康)')
+        for cb in self.disorder_combos:
+            cb.set(none_disp)
+        self.status_bar.configure(text=f"已一键清除猫咪 #{self.current_cat.key} ({self.current_cat.name}) 的所有疾病缺陷，完全恢复健康！", text_color="#10b981")
+
+    def on_apply_synergistic_disorders(self):
+        if not self.current_cat:
+            return
+        self.current_cat.apply_synergistic_disorders()
+        for i in range(2):
+            k = self.current_cat.disorders[i]
+            disp = self.disorder_key_to_str.get(k, k)
+            self.disorder_combos[i].set(disp)
+        self.status_bar.configure(text=f"已为猫咪 #{self.current_cat.key} ({self.current_cat.name}) 智能搭配适合 [{self.current_cat.cat_class}] 的特化变异疾病！", text_color="#a855f7")
+
+    def on_apply_best_class_passives(self):
+        if not self.current_cat:
+            return
+        self.current_cat.apply_best_class_passives()
+        for i in range(2):
+            k = self.current_cat.class_passives[i]
+            disp = self.class_passive_key_to_str.get(k, k)
+            self.class_passive_combos[i].set(disp)
+        self.status_bar.configure(text=f"已为猫咪 #{self.current_cat.key} ({self.current_cat.name}) 自动满配 [{self.current_cat.cat_class}] 的顶级正面被动特性！", text_color="#10b981")
+
+    def on_class_changed(self, new_class):
+        if self.current_cat:
+            self.current_cat.cat_class = new_class
+        self.update_class_passive_options(new_class)
 
     def populate_cat_list(self, filter_text=""):
         # Clear existing buttons
@@ -738,9 +906,21 @@ class MewgenicsApp(ctk.CTk):
             val = cat.active_abilities[i] if i < len(cat.active_abilities) else 'None'
             self.active_combos[i].set(val)
 
-        for i in range(8):
-            val = cat.passives[i] if i < len(cat.passives) else 'None'
-            self.passive_combos[i].set(val)
+        for i in range(4):
+            val = cat.ability_upgrades[i] if i < len(cat.ability_upgrades) else 'None'
+            self.upgrade_combos[i].set(val)
+
+        self.update_class_passive_options(cat.cat_class)
+
+        for i in range(2):
+            k = cat.class_passives[i] if i < len(cat.class_passives) else 'None'
+            disp = self.class_passive_key_to_str.get(k, k)
+            self.class_passive_combos[i].set(disp)
+
+        for i in range(2):
+            k = cat.disorders[i] if i < len(cat.disorders) else 'None'
+            disp = self.disorder_key_to_str.get(k, k)
+            self.disorder_combos[i].set(disp)
 
         self.status_bar.configure(text=f"已选中猫咪 #{cat.key}: {cat.name} - 可直接修改各项属性", text_color="#38bdf8")
 
@@ -794,8 +974,18 @@ class MewgenicsApp(ctk.CTk):
         for i in range(4):
             cat.active_abilities[i] = self.active_combos[i].get()
 
-        for i in range(8):
-            cat.passives[i] = self.passive_combos[i].get()
+        for i in range(4):
+            cat.ability_upgrades[i] = self.upgrade_combos[i].get()
+
+        for i in range(2):
+            raw = self.class_passive_combos[i].get()
+            cat.class_passives[i] = self.get_class_passive_key_from_val(raw)
+
+        for i in range(2):
+            raw = self.disorder_combos[i].get()
+            cat.disorders[i] = self.get_disorder_key_from_val(raw)
+
+        cat.sync_legacy_passives()
 
         # Ensure dominant mutations are synced
         for slot_key, slot_cn, off1, off2 in MUTATION_SLOTS:
@@ -1207,7 +1397,10 @@ class MewgenicsApp(ctk.CTk):
         clone_cat.attack_ability = src.attack_ability
         clone_cat.move_ability = getattr(src, 'move_ability', 'DefaultMove')
         clone_cat.active_abilities = list(src.active_abilities)
-        clone_cat.passives = list(src.passives)
+        clone_cat.ability_upgrades = list(src.ability_upgrades)
+        clone_cat.class_passives = list(src.class_passives)
+        clone_cat.disorders = list(src.disorders)
+        clone_cat.sync_legacy_passives()
         
         self.populate_cat_list()
         self.select_cat(clone_cat.key)

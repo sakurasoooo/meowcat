@@ -131,12 +131,29 @@ class CatRecord:
         while len(self.active_abilities) < 4:
             self.active_abilities.append('None')
             
-        # Passives (up to 8)
-        self.passives = []
-        for i in range(7, min(15, len(str_vals))):
-            self.passives.append(str_vals[i])
-        while len(self.passives) < 8:
-            self.passives.append('None')
+        # Active ability upgrades / enchantments (up to 4)
+        self.ability_upgrades = []
+        for i in range(7, min(11, len(str_vals))):
+            self.ability_upgrades.append(str_vals[i])
+        while len(self.ability_upgrades) < 4:
+            self.ability_upgrades.append('None')
+
+        # 2 Class Passives (职业专属正面被动)
+        self.class_passives = []
+        for i in range(11, min(13, len(str_vals))):
+            self.class_passives.append(str_vals[i])
+        while len(self.class_passives) < 2:
+            self.class_passives.append('None')
+
+        # 2 Disorder Passives (疾病/心理缺陷负面被动)
+        self.disorders = []
+        for i in range(13, min(15, len(str_vals))):
+            self.disorders.append(str_vals[i])
+        while len(self.disorders) < 2:
+            self.disorders.append('None')
+
+        # Legacy passives list (8 items) for full backward compatibility
+        self.passives = self.ability_upgrades + self.class_passives + self.disorders
             
         # Class (usually the last string or 15th)
         self.cat_class = str_vals[-1] if len(str_vals) >= 16 else 'Colorless'
@@ -247,6 +264,66 @@ class CatRecord:
         for sk, mid in god_preset.items():
             self.set_mutation(sk, mid, sync_recessive=True)
 
+    def cure_all_disorders(self):
+        self.disorders = ['None', 'None']
+        self.sync_legacy_passives()
+        self.is_modified = True
+
+    def apply_synergistic_disorders(self):
+        cls = self.cat_class
+        if cls in ('Necromancer', 'Butcher'):
+            self.disorders = ['Cannibal', 'Autism']
+        elif cls in ('Mage', 'Psychic'):
+            self.disorders = ['Autism', 'HeadTrauma']
+        elif cls in ('Fighter', 'Monk', 'Tank'):
+            self.disorders = ['Cannibal', 'FlamingFists']
+        elif cls in ('Hunter', 'Thief', 'Tinkerer'):
+            self.disorders = ['Anxiety', 'FrozenKnee']
+        else:
+            self.disorders = ['Cannibal', 'WilliamsSyndrome']
+        self.sync_legacy_passives()
+        self.is_modified = True
+
+    def apply_best_class_passives(self):
+        best_preset = {
+            'Necromancer': ['CorpseConnoisseur', 'RelentlessDead'],
+            'Mage': ['Micronaps', 'HolyMantel'],
+            'Fighter': ['BloodLust', 'Avenger'],
+            'Hunter': ['TakeAim', 'HuntersBoon'],
+            'Tank': ['Thorns', 'HeavyHanded'],
+            'Medic': ['HealingAura', 'NaturalHealer'],
+            'Thief': ['Backstabber', 'GoldenClaws'],
+            'Butcher': ['Putrefy', 'NeverFull'],
+            'Druid': ['SuperCrow', 'NaturesGuidance'],
+            'Monk': ['SafeSwitching', 'Mixup'],
+            'Psychic': ['Flying', 'SoulShatter'],
+            'Tinkerer': ['VersionTwo', 'WeaponProficiency'],
+            'Jester': ['SuperLuck', 'Goofball'],
+            'Colorless': ['SelfAssured', 'LuckDrain']
+        }
+        if self.cat_class in best_preset:
+            self.class_passives = list(best_preset[self.cat_class])
+        else:
+            gd = get_game_data_cache()
+            cp = gd.get('class_passives', {}).get(self.cat_class, [])
+            if len(cp) >= 2:
+                self.class_passives = [cp[0]['key'], cp[1]['key']]
+            elif len(cp) == 1:
+                self.class_passives = [cp[0]['key'], 'None']
+            else:
+                self.class_passives = ['None', 'None']
+        self.sync_legacy_passives()
+        self.is_modified = True
+
+    def sync_legacy_passives(self):
+        while len(self.ability_upgrades) < 4:
+            self.ability_upgrades.append('None')
+        while len(self.class_passives) < 2:
+            self.class_passives.append('None')
+        while len(self.disorders) < 2:
+            self.disorders.append('None')
+        self.passives = self.ability_upgrades[:4] + self.class_passives[:2] + self.disorders[:2]
+
     def build_bytes(self):
         buf = bytearray()
         buf.extend(struct.pack('<I', self.version))
@@ -299,17 +376,24 @@ class CatRecord:
             buf.extend(struct.pack('<Q', len(act_enc)))
             buf.extend(act_enc)
             
-        # Passives
-        for pas in self.passives[:4]:
-            pas_enc = pas.encode('ascii')
-            buf.extend(struct.pack('<Q', len(pas_enc)))
-            buf.extend(pas_enc)
+        # 4 Ability Upgrades / Enchantments
+        for upg in self.ability_upgrades[:4]:
+            upg_enc = upg.encode('ascii')
+            buf.extend(struct.pack('<Q', len(upg_enc)))
+            buf.extend(upg_enc)
             
-        # Extra passives (with 4-byte rank ints)
-        for pas in self.passives[4:8]:
+        # 2 Class Passives (with 4-byte rank ints)
+        for pas in self.class_passives[:2]:
             pas_enc = pas.encode('ascii')
             buf.extend(struct.pack('<Q', len(pas_enc)))
             buf.extend(pas_enc)
+            buf.extend(struct.pack('<i', 1)) # rank 1
+
+        # 2 Disorders (with 4-byte rank ints)
+        for dis in self.disorders[:2]:
+            dis_enc = dis.encode('ascii')
+            buf.extend(struct.pack('<Q', len(dis_enc)))
+            buf.extend(dis_enc)
             buf.extend(struct.pack('<i', 1)) # rank 1
             
         # Pre-class flags

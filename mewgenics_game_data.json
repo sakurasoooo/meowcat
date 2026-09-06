@@ -18328,5 +18328,3391 @@
         "display": "#900 slender (无视方格和陷阱的效果。)"
       }
     ]
+  },
+  "disorders": [
+    {
+      "key": "Rabies",
+      "name": "狂犬病",
+      "desc": "\"Your basic attack is a melee attack. You can't equip face armor.",
+      "display": "狂犬病 (Rabies) - \"Your basic attack is a m"
+    },
+    {
+      "key": "Boils",
+      "name": "疖子",
+      "desc": "\"+1 Brace.",
+      "display": "疖子 (Boils) - \"+1 Brace."
+    },
+    {
+      "key": "Depression",
+      "name": "抑郁症",
+      "desc": "前后左右相邻的单位所有属性下降2。",
+      "display": "抑郁症 (Depression) - 前后左右相邻的单位所有属性下降2。"
+    },
+    {
+      "key": "BrokenLimb",
+      "name": "断肢",
+      "desc": "你不能装备小玩意儿和消耗品。【尖刺】+2。",
+      "display": "断肢 (BrokenLimb) - 你不能装备小玩意儿和消耗品。【尖刺】+2。"
+    },
+    {
+      "key": "WrenchedNeck",
+      "name": "脖子扭伤",
+      "desc": "你不能装备颈部防具。头部防具效果增强1倍。",
+      "display": "脖子扭伤 (WrenchedNeck) - 你不能装备颈部防具。头部防具效果增强1倍。"
+    },
+    {
+      "key": "Declawed",
+      "name": "去爪",
+      "desc": "你不能装备武器。",
+      "display": "去爪 (Declawed) - 你不能装备武器。"
+    },
+    {
+      "key": "HeadTrauma",
+      "name": "头部受伤",
+      "desc": "你不能装备头部防具，无色法术的魔能耗费-2。",
+      "display": "头部受伤 (HeadTrauma) - 你不能装备头部防具，无色法术的魔能耗费-2。"
+    },
+    {
+      "key": "DeepCut",
+      "name": "切割伤",
+      "desc": "\"Bleed 1.",
+      "display": "切割伤 (DeepCut) - \"Bleed 1."
+    },
+    {
+      "key": "PuncturedEye",
+      "name": "眼球穿刺伤",
+      "desc": "\"+10% miss chance.",
+      "display": "眼球穿刺伤 (PuncturedEye) - \"+10% miss chance."
+    },
+    {
+      "key": "OCD",
+      "name": "强迫性神经官能症",
+      "desc": "\"Bonus Ability: Groom",
+      "display": "强迫性神经官能症 (OCD) - \"Bonus Ability: Groom"
+    },
+    {
+      "key": "Distemper",
+      "name": "猫瘟",
+      "desc": "and +5% miss chance. Permanently.",
+      "display": "猫瘟 (Distemper) - and +5% miss chance. Perm"
+    },
+    {
+      "key": "BrainDamage",
+      "name": "脑损伤",
+      "desc": "你不能使用物品行动。【招架】+2。",
+      "display": "脑损伤 (BrainDamage) - 你不能使用物品行动。【招架】+2。"
+    },
+    {
+      "key": "SeveredThumb",
+      "name": "断指",
+      "desc": "你不能装备武器。每场战斗开始时，生成1份可以捡起的食物",
+      "display": "断指 (SeveredThumb) - 你不能装备武器。每场战斗开始时，生成1份可以捡起的"
+    },
+    {
+      "key": "PTSD",
+      "name": "创伤后应激障碍",
+      "desc": "你受到伤害时，获得【害怕】，同时伤害+2。",
+      "display": "创伤后应激障碍 (PTSD) - 你受到伤害时，获得【害怕】，同时伤害+2。"
+    },
+    {
+      "key": "IBS",
+      "name": "肠易激综合征",
+      "desc": "你受到伤害时会拉屎。",
+      "display": "肠易激综合征 (IBS) - 你受到伤害时会拉屎。"
+    },
+    {
+      "key": "Dyskinesia",
+      "name": "运动障碍",
+      "desc": "你结束移动时，把前后左右相邻的所有单位击退1格。",
+      "display": "运动障碍 (Dyskinesia) - 你结束移动时，把前后左右相邻的所有单位击退1格。"
+    },
+    {
+      "key": "Anemia",
+      "name": "贫血症",
+      "desc": "you have a 10% chance to gain Bleed 1.",
+      "display": "贫血症 (Anemia) - you have a 10% chance to "
+    },
+    {
+      "key": "Empath",
+      "name": "过度共情",
+      "desc": "\"Take 1 damage when you deal damage.",
+      "display": "过度共情 (Empath) - \"Take 1 damage when you d"
+    },
+    {
+      "key": "Infestation",
+      "name": "生虫",
+      "desc": "你的回合开始时，有50%的几率生成1个蛆跟班，15%的几率生成1个敌方跳蚤。",
+      "display": "生虫 (Infestation) - 你的回合开始时，有50%的几率生成1个蛆跟班，15"
+    },
+    {
+      "key": "Leprosy",
+      "name": "麻风病",
+      "desc": "2层【瘀伤】。你被击中时，生成1份可以捡起的食物。",
+      "display": "麻风病 (Leprosy) - 2层【瘀伤】。你被击中时，生成1份可以捡起的食物。"
+    },
+    {
+      "key": "ASRFight",
+      "name": "急性应激反应：战斗",
+      "desc": "你生命不大于5时，[img:str]+6。",
+      "display": "急性应激反应：战斗 (ASRFight) - 你生命不大于5时，[img:str]+6。"
+    },
+    {
+      "key": "ASRFlight",
+      "name": "急性应激反应：逃跑",
+      "desc": "你生命不大于5时，[img:spd]+6。",
+      "display": "急性应激反应：逃跑 (ASRFlight) - 你生命不大于5时，[img:spd]+6。"
+    },
+    {
+      "key": "BloodFrenzy",
+      "name": "嗜血狂热",
+      "desc": "你击杀单位时，带着【癫狂】获得1个额外回合。",
+      "display": "嗜血狂热 (BloodFrenzy) - 你击杀单位时，带着【癫狂】获得1个额外回合。"
+    },
+    {
+      "key": "Shunned",
+      "name": "受到排挤",
+      "desc": "\"Take your turn last.",
+      "display": "受到排挤 (Shunned) - \"Take your turn last."
+    },
+    {
+      "key": "Dysentery",
+      "name": "痢疾",
+      "desc": "你的回合结束时，有50%的几率在自己身后生成1坨燃烧的大便。",
+      "display": "痢疾 (Dysentery) - 你的回合结束时，有50%的几率在自己身后生成1坨燃"
+    },
+    {
+      "key": "Anxiety",
+      "name": "焦虑症",
+      "desc": "闪避几率+10%。你受到伤害时，远离伤害来源。",
+      "display": "焦虑症 (Anxiety) - 闪避几率+10%。你受到伤害时，远离伤害来源。"
+    },
+    {
+      "key": "Kamikazee",
+      "name": "神风",
+      "desc": "你倒地时会爆炸。",
+      "display": "神风 (Kamikazee) - 你倒地时会爆炸。"
+    },
+    {
+      "key": "Traumatophobia",
+      "name": "外伤恐惧症",
+      "desc": "你每次受到伤害时，向远离伤害来源的方向移动1格。",
+      "display": "外伤恐惧症 (Traumatophobia) - 你每次受到伤害时，向远离伤害来源的方向移动1格。"
+    },
+    {
+      "key": "StockholmSyndrome",
+      "name": "斯德哥尔摩综合征",
+      "desc": "你每次受到伤害时，向着伤害来源的方向移动。",
+      "display": "斯德哥尔摩综合征 (StockholmSyndrome) - 你每次受到伤害时，向着伤害来源的方向移动。"
+    },
+    {
+      "key": "ViolentOutbursts",
+      "name": "暴躁症",
+      "desc": "你的回合结束时，向前突进2格，发起可以击退的攻击，同时受到1点伤害。",
+      "display": "暴躁症 (ViolentOutbursts) - 你的回合结束时，向前突进2格，发起可以击退的攻击，"
+    },
+    {
+      "key": "GamblingAddict",
+      "name": "赌博成瘾",
+      "desc": "\"+33% miss chance.",
+      "display": "赌博成瘾 (GamblingAddict) - \"+33% miss chance."
+    },
+    {
+      "key": "Scleroderma",
+      "name": "硬皮病",
+      "desc": "每场战斗开始时，你只留1点生命，但是失去多少生命，就获得多少[img:shield]。",
+      "display": "硬皮病 (Scleroderma) - 每场战斗开始时，你只留1点生命，但是失去多少生命，"
+    },
+    {
+      "key": "Pacifist",
+      "name": "爱好和平",
+      "desc": "你不能击杀单位。你的回合结束时，如果这个回合没有使用普通攻击，那么魔能+7。",
+      "display": "爱好和平 (Pacifist) - 你不能击杀单位。你的回合结束时，如果这个回合没有使"
+    },
+    {
+      "key": "Gigachad",
+      "name": "究极猛男",
+      "desc": "",
+      "display": "究极猛男 (Gigachad)"
+    },
+    {
+      "key": "ImposterSyndrome",
+      "name": "冒名顶替综合征",
+      "desc": "你看起来很可疑……",
+      "display": "冒名顶替综合征 (ImposterSyndrome) - 你看起来很可疑……"
+    },
+    {
+      "key": "Vegan",
+      "name": "纯素主义",
+      "desc": "你不吃肉。",
+      "display": "纯素主义 (Vegan) - 你不吃肉。"
+    },
+    {
+      "key": "FrozenKnee",
+      "name": "疯跑",
+      "desc": "你的移动行动变成突进攻击。",
+      "display": "疯跑 (FrozenKnee) - 你的移动行动变成突进攻击。"
+    },
+    {
+      "key": "SchrodingerDisorder",
+      "name": "薛定谔综合征",
+      "desc": "每场战斗开始时，有50%的几率已经死亡，还有50%的几率活着，满血，所有属性提升2点，而且获得1个额外回合。",
+      "display": "薛定谔综合征 (SchrodingerDisorder) - 每场战斗开始时，有50%的几率已经死亡，还有50%"
+    },
+    {
+      "key": "ScalyScabs",
+      "name": "猫癣",
+      "desc": "",
+      "display": "猫癣 (ScalyScabs)"
+    },
+    {
+      "key": "FattyLiver",
+      "name": "脂肪肝",
+      "desc": "你每次损失生命时，[img:con]永久-1。",
+      "display": "脂肪肝 (FattyLiver) - 你每次损失生命时，[img:con]永久-1。"
+    },
+    {
+      "key": "CommonCold",
+      "name": "普通感冒",
+      "desc": "战斗开始时，所有属性下降。每轮结束时，有30%的几率痊愈。可以传染。",
+      "display": "普通感冒 (CommonCold) - 战斗开始时，所有属性下降。每轮结束时，有30%的几"
+    },
+    {
+      "key": "Pox",
+      "name": "牛痘",
+      "desc": "有10%的几率因为抓痒跳过回合。你的普通攻击有50%的几率施加1层【中毒】。每轮结束时，有5%的几率痊愈。可以传染。",
+      "display": "牛痘 (Pox) - 有10%的几率因为抓痒跳过回合。你的普通攻击有50"
+    },
+    {
+      "key": "Psychosis",
+      "name": "精神错乱",
+      "desc": "你第一个回合之后，永久【癫狂】。",
+      "display": "精神错乱 (Psychosis) - 你第一个回合之后，永久【癫狂】。"
+    },
+    {
+      "key": "Necrosis",
+      "name": "坏死",
+      "desc": "你受到伤害时，[img:con]-1、[img:str]-1，同时生成有毒的食物。",
+      "display": "坏死 (Necrosis) - 你受到伤害时，[img:con]-1、[img:s"
+    },
+    {
+      "key": "Touched",
+      "name": "魔怔",
+      "desc": "你自身不能恢复生命。",
+      "display": "魔怔 (Touched) - 你自身不能恢复生命。"
+    },
+    {
+      "key": "Charred",
+      "name": "烧焦",
+      "desc": "1层【瘀伤】。你不会被【灼烧】。",
+      "display": "烧焦 (Charred) - 1层【瘀伤】。你不会被【灼烧】。"
+    },
+    {
+      "key": "Invincible",
+      "name": "不朽",
+      "desc": "\"All damage you take is reduced to 1.",
+      "display": "不朽 (Invincible) - \"All damage you take is r"
+    },
+    {
+      "key": "ExplosiveGas",
+      "name": "臭屁",
+      "desc": "每场战斗第一轮，你会最后行动。你那次行动之前会进行一次超级屁攻击，施加2层【中毒】。",
+      "display": "臭屁 (ExplosiveGas) - 每场战斗第一轮，你会最后行动。你那次行动之前会进行"
+    },
+    {
+      "key": "Toxoplasmosis",
+      "name": "弓形虫病",
+      "desc": "每场战斗开始时，自带1个老鼠跟班。你的普通攻击会【洗脑】敌方老鼠。",
+      "display": "弓形虫病 (Toxoplasmosis) - 每场战斗开始时，自带1个老鼠跟班。你的普通攻击会【"
+    },
+    {
+      "key": "Ebola",
+      "name": "埃博拉",
+      "desc": "\"Start each battle with Bleed 3. Your basic attack inflicts Bleed 2.",
+      "display": "埃博拉 (Ebola) - \"Start each battle with B"
+    },
+    {
+      "key": "Fidgety",
+      "name": "躁动",
+      "desc": "你的回合结束时，免费随机对范围内的1个单位自动使用武器。",
+      "display": "躁动 (Fidgety) - 你的回合结束时，免费随机对范围内的1个单位自动使用"
+    },
+    {
+      "key": "Narcolepsy",
+      "name": "发作性睡病",
+      "desc": "你的回合结束时，入睡，恢复10点生命，同时魔能+7。",
+      "display": "发作性睡病 (Narcolepsy) - 你的回合结束时，入睡，恢复10点生命，同时魔能+7"
+    },
+    {
+      "key": "Paranoia",
+      "name": "妄想症",
+      "desc": "有单位在你的正后方结束移动时，攻击它，同时获得【害怕】。",
+      "display": "妄想症 (Paranoia) - 有单位在你的正后方结束移动时，攻击它，同时获得【害"
+    },
+    {
+      "key": "EatingDisorder",
+      "name": "进食障碍",
+      "desc": "消耗品的效果增强1倍，但你不知道该怎么吃。",
+      "display": "进食障碍 (EatingDisorder) - 消耗品的效果增强1倍，但你不知道该怎么吃。"
+    },
+    {
+      "key": "Gastritis",
+      "name": "胃炎",
+      "desc": "你的回合结束时，放屁，同时令前后左右相邻的单位【中毒】。",
+      "display": "胃炎 (Gastritis) - 你的回合结束时，放屁，同时令前后左右相邻的单位【中"
+    },
+    {
+      "key": "Hypomania",
+      "name": "轻躁狂",
+      "desc": "每场战斗开始时，自带3个额外回合，之后不再行动。",
+      "display": "轻躁狂 (Hypomania) - 每场战斗开始时，自带3个额外回合，之后不再行动。"
+    },
+    {
+      "key": "Hypersomnia",
+      "name": "嗜睡症",
+      "desc": "每场战斗开始时，满血，处于睡眠状态。",
+      "display": "嗜睡症 (Hypersomnia) - 每场战斗开始时，满血，处于睡眠状态。"
+    },
+    {
+      "key": "KidneyStones",
+      "name": "肾结石",
+      "desc": "你的回合结束时，受到1点伤害，同时排出1颗肾结石。",
+      "display": "肾结石 (KidneyStones) - 你的回合结束时，受到1点伤害，同时排出1颗肾结石。"
+    },
+    {
+      "key": "Cancer",
+      "name": "癌症",
+      "desc": "每场战斗结束时，随机永久失去3点属性，同时随机获得1项突变。",
+      "display": "癌症 (Cancer) - 每场战斗结束时，随机永久失去3点属性，同时随机获得"
+    },
+    {
+      "key": "Stinky",
+      "name": "臭烘烘",
+      "desc": "前后左右相邻的单位在自己回合开始时，会向远离你的方向移动。",
+      "display": "臭烘烘 (Stinky) - 前后左右相邻的单位在自己回合开始时，会向远离你的方"
+    },
+    {
+      "key": "Incontinence",
+      "name": "失禁",
+      "desc": "你受到伤害时会尿尿。",
+      "display": "失禁 (Incontinence) - 你受到伤害时会尿尿。"
+    },
+    {
+      "key": "Fossilized",
+      "name": "化石化",
+      "desc": "【招架】+2。你每次被击中时，像石头一样滑动。",
+      "display": "化石化 (Fossilized) - 【招架】+2。你每次被击中时，像石头一样滑动。"
+    },
+    {
+      "key": "Triskaidekaphobia",
+      "name": "十三恐惧症",
+      "desc": "你法术的魔能耗费为0。每段冒险期间，你第13次施放的法术会害死自己，而且摧毁你的尸体。",
+      "display": "十三恐惧症 (Triskaidekaphobia) - 你法术的魔能耗费为0。每段冒险期间，你第13次施放"
+    },
+    {
+      "key": "Autism",
+      "name": "自闭症",
+      "desc": "出生自带的法术魔能耗费-2，其他法术的魔能耗费+1。",
+      "display": "自闭症 (Autism) - 出生自带的法术魔能耗费-2，其他法术的魔能耗费+1"
+    },
+    {
+      "key": "Tourettes",
+      "name": "抽动秽语综合征",
+      "desc": "你的回合开始时，你有33%的几率随机对1个目标免费施放你的1个法术。",
+      "display": "抽动秽语综合征 (Tourettes) - 你的回合开始时，你有33%的几率随机对1个目标免费"
+    },
+    {
+      "key": "Albinism",
+      "name": "白化病",
+      "desc": "\"Fire damage you take inflicts +3 Burn.",
+      "display": "白化病 (Albinism) - \"Fire damage you take inf"
+    },
+    {
+      "key": "SleepParalysis",
+      "name": "鬼压床",
+      "desc": "a Sleep Paralysis Demon with Madness spawns! You can't wake up until it's killed.",
+      "display": "鬼压床 (SleepParalysis) - a Sleep Paralysis Demon w"
+    },
+    {
+      "key": "Diabetes",
+      "name": "糖尿病",
+      "desc": "你的回合结束时，如果没有吃过食物，那么所有属性下降，同时获得1层【混乱】。你每次吃食物时，清除自身所有减益，同时[img:int]+1。",
+      "display": "糖尿病 (Diabetes) - 你的回合结束时，如果没有吃过食物，那么所有属性下降"
+    },
+    {
+      "key": "Bipolar",
+      "name": "双相障碍",
+      "desc": "\"Start each battle with either",
+      "display": "双相障碍 (Bipolar) - \"Start each battle with e"
+    },
+    {
+      "key": "Soulless",
+      "name": "无魂",
+      "desc": "你免疫所有增益和减益。死亡时不会留下尸体。",
+      "display": "无魂 (Soulless) - 你免疫所有增益和减益。死亡时不会留下尸体。"
+    },
+    {
+      "key": "Premonitions",
+      "name": "闪灵",
+      "desc": "\"Your attacks can't miss.",
+      "display": "闪灵 (Premonitions) - \"Your attacks can't miss."
+    },
+    {
+      "key": "PillPopper",
+      "name": "药物成瘾",
+      "desc": "\"Start each battle with All Stats Down 2.",
+      "display": "药物成瘾 (PillPopper) - \"Start each battle with A"
+    },
+    {
+      "key": "BorrowedTime",
+      "name": "赊命",
+      "desc": "闪避几率+50%。3层【必死无疑】。",
+      "display": "赊命 (BorrowedTime) - 闪避几率+50%。3层【必死无疑】。"
+    },
+    {
+      "key": "Brave",
+      "name": "勇敢",
+      "desc": "\"Take your turn earlier.",
+      "display": "勇敢 (Brave) - \"Take your turn earlier."
+    },
+    {
+      "key": "Scatological",
+      "name": "嗜粪癖",
+      "desc": "\"Heal 5 HP when you damage poop.",
+      "display": "嗜粪癖 (Scatological) - \"Heal 5 HP when you damag"
+    },
+    {
+      "key": "Cannibal",
+      "name": "食尸癖",
+      "desc": "你的回合开始时，如果附近有尸体，你会移动过去，把它吃掉，所有属性提升，同时恢复4点生命。",
+      "display": "食尸癖 (Cannibal) - 你的回合开始时，如果附近有尸体，你会移动过去，把它"
+    },
+    {
+      "key": "CrohnsDisease",
+      "name": "克罗恩病",
+      "desc": "你的回合结束时，有20%的几率到处拉屎！",
+      "display": "克罗恩病 (CrohnsDisease) - 你的回合结束时，有20%的几率到处拉屎！"
+    },
+    {
+      "key": "Pica",
+      "name": "异食癖",
+      "desc": "你捡起钱或边角料时，改为恢复生命而不是获得物品原本的效果。",
+      "display": "异食癖 (Pica) - 你捡起钱或边角料时，改为恢复生命而不是获得物品原本"
+    },
+    {
+      "key": "FelineAids",
+      "name": "猫艾滋",
+      "desc": "\"Your basic attack inflicts Poison 3 and Weakness 1.",
+      "display": "猫艾滋 (FelineAids) - \"Your basic attack inflic"
+    },
+    {
+      "key": "Dyslexia",
+      "name": "阅读障碍",
+      "desc": "战斗期间，法术的魔能耗费和伤害数值里的数字3和5对调，数字6和9也会对调。",
+      "display": "阅读障碍 (Dyslexia) - 战斗期间，法术的魔能耗费和伤害数值里的数字3和5对"
+    },
+    {
+      "key": "Covid",
+      "name": "新冠",
+      "desc": "and Weakness 1.",
+      "display": "新冠 (Covid) - and Weakness 1."
+    },
+    {
+      "key": "Flu",
+      "name": "流感",
+      "desc": "\"Start each battle with Slow 5 and Weakness 5.",
+      "display": "流感 (Flu) - \"Start each battle with S"
+    },
+    {
+      "key": "BirdFlu",
+      "name": "禽流感",
+      "desc": "\"Start each battle in Mockingbird Form.",
+      "display": "禽流感 (BirdFlu) - \"Start each battle in Moc"
+    },
+    {
+      "key": "Nudist",
+      "name": "裸体主义",
+      "desc": "\"+50% dodge chance.",
+      "display": "裸体主义 (Nudist) - \"+50% dodge chance."
+    },
+    {
+      "key": "Elephantiasis",
+      "name": "象皮病",
+      "desc": "每场战斗结束时，永久[img:spd]-1，开场[img:shield]+2。8场战斗之后，获得横冲直撞。",
+      "display": "象皮病 (Elephantiasis) - 每场战斗结束时，永久[img:spd]-1，开场["
+    },
+    {
+      "key": "Gigantism",
+      "name": "巨人症",
+      "desc": "横冲直撞。",
+      "display": "巨人症 (Gigantism) - 横冲直撞。"
+    },
+    {
+      "key": "Dwarfism",
+      "name": "侏儒症",
+      "desc": "闪避几率+10%。",
+      "display": "侏儒症 (Dwarfism) - 闪避几率+10%。"
+    },
+    {
+      "key": "PrimordialDwarf",
+      "name": "原始侏儒症",
+      "desc": "",
+      "display": "原始侏儒症 (PrimordialDwarf)"
+    },
+    {
+      "key": "Sociopathy",
+      "name": "反社会",
+      "desc": "你第一个回合获得【癫狂】。",
+      "display": "反社会 (Sociopathy) - 你第一个回合获得【癫狂】。"
+    },
+    {
+      "key": "SkillShare_Disorder",
+      "name": "代理型孟乔森综合征",
+      "desc": "如果你存在2种毛病，那么队中其他猫咪在每场战斗开始时会出现你的第2种毛病。",
+      "display": "代理型孟乔森综合征 (SkillShare_Disorder) - 如果你存在2种毛病，那么队中其他猫咪在每场战斗开始"
+    },
+    {
+      "key": "Schizophrenia",
+      "name": "精神分裂症",
+      "desc": "你的回合结束时，生成1个【癫狂】的幻觉，会攻击除你以外的单位，然后在自身回合结束后消失。",
+      "display": "精神分裂症 (Schizophrenia) - 你的回合结束时，生成1个【癫狂】的幻觉，会攻击除你"
+    },
+    {
+      "key": "Lycanthropy",
+      "name": "狼化病",
+      "desc": "你的回合开始时，有33%的几率变成狼。",
+      "display": "狼化病 (Lycanthropy) - 你的回合开始时，有33%的几率变成狼。"
+    },
+    {
+      "key": "WobblyCat",
+      "name": "摇摆猫综合征",
+      "desc": "有25%的几率挡住攻击，改为被击退10格。",
+      "display": "摇摆猫综合征 (WobblyCat) - 有25%的几率挡住攻击，改为被击退10格。"
+    },
+    {
+      "key": "Singleton",
+      "name": "归一症",
+      "desc": "\"Your max HP and mana are reduced to 1.",
+      "display": "归一症 (Singleton) - \"Your max HP and mana are"
+    },
+    {
+      "key": "Insomnia",
+      "name": "失眠症",
+      "desc": "\"You can't fall asleep.",
+      "display": "失眠症 (Insomnia) - \"You can't fall asleep."
+    },
+    {
+      "key": "Phony",
+      "name": "冒牌货",
+      "desc": "\"Start each battle with full mana.",
+      "display": "冒牌货 (Phony) - \"Start each battle with f"
+    },
+    {
+      "key": "AcidReflux",
+      "name": "胃酸反流",
+      "desc": "你的普通攻击变成抛射攻击，会造成溅射伤害，但会对自身造成2点伤害。",
+      "display": "胃酸反流 (AcidReflux) - 你的普通攻击变成抛射攻击，会造成溅射伤害，但会对自"
+    },
+    {
+      "key": "SpontaneousCombustion",
+      "name": "生体自燃",
+      "desc": "你受到能力的伤害时，有15%的几率对自己和前后左右相邻的单位施加5层【灼烧】。",
+      "display": "生体自燃 (SpontaneousCombustion) - 你受到能力的伤害时，有15%的几率对自己和前后左右"
+    },
+    {
+      "key": "TheHunger",
+      "name": "饥饿",
+      "desc": "\"Your basic attack has lifesteal.",
+      "display": "饥饿 (TheHunger) - \"Your basic attack has li"
+    },
+    {
+      "key": "Paralyzed",
+      "name": "截瘫",
+      "desc": "and jump abilities are capped at 1 unless they teleport.",
+      "display": "截瘫 (Paralyzed) - and jump abilities are ca"
+    },
+    {
+      "key": "GlassBones",
+      "name": "成骨不全症",
+      "desc": "and +2 Thorns.",
+      "display": "成骨不全症 (GlassBones) - and +2 Thorns."
+    },
+    {
+      "key": "Gargantuan",
+      "name": "巨型",
+      "desc": "你永久【移动受限】。",
+      "display": "巨型 (Gargantuan) - 你永久【移动受限】。"
+    },
+    {
+      "key": "BrainDead",
+      "name": "脑死亡",
+      "desc": "你升级时，获得的属性增加1倍。升级时，重掷次数+1。",
+      "display": "脑死亡 (BrainDead) - 你升级时，获得的属性增加1倍。升级时，重掷次数+1"
+    },
+    {
+      "key": "TamperedGenes",
+      "name": "基因污染",
+      "desc": "每场战斗结束时，随机获得1项突变。你倒地时，尸体会被摧毁。",
+      "display": "基因污染 (TamperedGenes) - 每场战斗结束时，随机获得1项突变。你倒地时，尸体会"
+    },
+    {
+      "key": "SensoryOverloadFace",
+      "name": "感官过载",
+      "desc": "除了脸部以外，其他栏位全部上锁。脸部物品效果增强2倍！",
+      "display": "感官过载 (SensoryOverloadFace) - 除了脸部以外，其他栏位全部上锁。脸部物品效果增强2"
+    },
+    {
+      "key": "SensoryOverloadTrinket",
+      "name": "感官过载",
+      "desc": "\"All but your trinket slot is locked. Your trinket's effects are tripled!",
+      "display": "感官过载 (SensoryOverloadTrinket) - \"All but your trinket slo"
+    },
+    {
+      "key": "SensoryOverloadHead",
+      "name": "感官过载",
+      "desc": "\"All but your head slot is locked. Your head item's effects are tripled!",
+      "display": "感官过载 (SensoryOverloadHead) - \"All but your head slot i"
+    },
+    {
+      "key": "SensoryOverloadNeck",
+      "name": "感官过载",
+      "desc": "\"All but your neck slot is locked. Your neck item's effects are tripled!",
+      "display": "感官过载 (SensoryOverloadNeck) - \"All but your neck slot i"
+    },
+    {
+      "key": "SensoryOverloadWeapon",
+      "name": "感官过载",
+      "desc": "\"All but your weapon slot is locked. Your weapon's effects are tripled!",
+      "display": "感官过载 (SensoryOverloadWeapon) - \"All but your weapon slot"
+    },
+    {
+      "key": "EternalYouth",
+      "name": "永葆青春",
+      "desc": "\"You are a kitten... forever!",
+      "display": "永葆青春 (EternalYouth) - \"You are a kitten... fore"
+    },
+    {
+      "key": "DejaVu",
+      "name": "既视感",
+      "desc": "\"10% chance to cancel actions.",
+      "display": "既视感 (DejaVu) - \"10% chance to cancel act"
+    },
+    {
+      "key": "DownsSyndrome",
+      "name": "唐氏综合征",
+      "desc": "",
+      "display": "唐氏综合征 (DownsSyndrome)"
+    },
+    {
+      "key": "Tachysensia",
+      "name": "视物显快症",
+      "desc": "",
+      "display": "视物显快症 (Tachysensia)"
+    },
+    {
+      "key": "SavantSyndrome",
+      "name": "学者综合征",
+      "desc": "",
+      "display": "学者综合征 (SavantSyndrome)"
+    },
+    {
+      "key": "WilliamsSyndrome",
+      "name": "威廉姆斯综合征",
+      "desc": "你的攻击可能造成【洗脑】。",
+      "display": "威廉姆斯综合征 (WilliamsSyndrome) - 你的攻击可能造成【洗脑】。"
+    },
+    {
+      "key": "SpinaBifida",
+      "name": "脊柱裂",
+      "desc": "",
+      "display": "脊柱裂 (SpinaBifida)"
+    },
+    {
+      "key": "DarkOne",
+      "name": "黑暗之子",
+      "desc": "\"ターン終了時、すべてのユニットに1ダメージを与え、与えたダメージと同じだけ自分の体力を回復する。",
+      "display": "黑暗之子 (DarkOne) - \"ターン終了時、すべてのユニットに1ダメージを与え"
+    },
+    {
+      "key": "ADHD",
+      "name": "多动症",
+      "desc": "你只有5秒钟的时间做决定，5秒不做决定，猫就会自己行动。",
+      "display": "多动症 (ADHD) - 你只有5秒钟的时间做决定，5秒不做决定，猫就会自己"
+    },
+    {
+      "key": "FlamingFists",
+      "name": "焰拳",
+      "desc": "你的普通攻击会施加1层【灼烧】。每场战斗开始时，自带1层【灼烧】。",
+      "display": "焰拳 (FlamingFists) - 你的普通攻击会施加1层【灼烧】。每场战斗开始时，自"
+    },
+    {
+      "key": "IntestinalProlapse",
+      "name": "脱肛",
+      "desc": "你受到的身后伤害增大1倍。",
+      "display": "脱肛 (IntestinalProlapse) - 你受到的身后伤害增大1倍。"
+    },
+    {
+      "key": "BlessingOfGlorg",
+      "name": "格洛格的祝福",
+      "desc": "你可以卸下受到诅咒的物品。",
+      "display": "格洛格的祝福 (BlessingOfGlorg) - 你可以卸下受到诅咒的物品。"
+    },
+    {
+      "key": "BlackFetin",
+      "name": "黑费汀",
+      "desc": "\"You have a 10% to be AI controlled each turn.",
+      "display": "黑费汀 (BlackFetin) - \"You have a 10% to be AI "
+    },
+    {
+      "key": "OrangeFetin",
+      "name": "橙费汀",
+      "desc": "\"You have a 10% to be AI controlled each turn.",
+      "display": "橙费汀 (OrangeFetin) - \"You have a 10% to be AI "
+    },
+    {
+      "key": "PurpleFetin",
+      "name": "紫费汀",
+      "desc": "\"You have a 10% to be AI controlled each turn.",
+      "display": "紫费汀 (PurpleFetin) - \"You have a 10% to be AI "
+    },
+    {
+      "key": "Chungus",
+      "name": "大春哥",
+      "desc": "",
+      "display": "大春哥 (Chungus)"
+    }
+  ],
+  "class_passives": {
+    "Necromancer": [
+      {
+        "key": "Vampirism",
+        "name": "吸血猫",
+        "class": "Necromancer",
+        "desc": "你的普通攻击带【吸血】。",
+        "display": "[Necromancer] 吸血猫 (Vampirism) - 你的普通攻击带【吸血】。"
+      },
+      {
+        "key": "OneWithNothing",
+        "name": "无何有",
+        "class": "Necromancer",
+        "desc": "你的回合结束时，如果你的魔能为0，那么你的魔能自然恢复增加1倍。",
+        "display": "[Necromancer] 无何有 (OneWithNothing) - 你的回合结束时，如果你的魔能为0，那么你的魔能自然"
+      },
+      {
+        "key": "BedBugs",
+        "name": "臭虫",
+        "class": "Necromancer",
+        "desc": "战斗开始时，自带2个健壮的水蛭跟班。",
+        "display": "[Necromancer] 臭虫 (BedBugs) - 战斗开始时，自带2个健壮的水蛭跟班。"
+      },
+      {
+        "key": "WormLord",
+        "name": "肉虫王",
+        "class": "Necromancer",
+        "desc": "你受到伤害时，生成1个水蛭跟班。",
+        "display": "[Necromancer] 肉虫王 (WormLord) - 你受到伤害时，生成1个水蛭跟班。"
+      },
+      {
+        "key": "InfiniteRebirth",
+        "name": "借尸还魂",
+        "class": "Necromancer",
+        "desc": "每轮结束时，如果地图上有尸体，而且你处于倒地状态，那么你会在那个方格复活，生命为1，同时速度临时+10。如果那个尸体是队友，那么你改为满血复活。",
+        "display": "[Necromancer] 借尸还魂 (InfiniteRebirth) - 每轮结束时，如果地图上有尸体，而且你处于倒地状态，"
+      },
+      {
+        "key": "SacrificialLamb",
+        "name": "祭祀羔羊",
+        "class": "Necromancer",
+        "desc": "你倒地时，友方所有属性提升，同时获得1个额外回合。",
+        "display": "[Necromancer] 祭祀羔羊 (SacrificialLamb) - 你倒地时，友方所有属性提升，同时获得1个额外回合。"
+      },
+      {
+        "key": "DeathIncarnate",
+        "name": "死神奴仆",
+        "class": "Necromancer",
+        "desc": "每场战斗开始时，随机消灭不是头目的1个敌人。",
+        "display": "[Necromancer] 死神奴仆 (DeathIncarnate) - 每场战斗开始时，随机消灭不是头目的1个敌人。"
+      },
+      {
+        "key": "OffloadPain",
+        "name": "转移疼痛",
+        "class": "Necromancer",
+        "desc": "你恢复生命时，对每个敌人造成1点伤害。",
+        "display": "[Necromancer] 转移疼痛 (OffloadPain) - 你恢复生命时，对每个敌人造成1点伤害。"
+      },
+      {
+        "key": "CambionConception",
+        "name": "恶魔受胎",
+        "class": "Necromancer",
+        "desc": "你倒地时，生成1个恶魔小猫跟班。",
+        "display": "[Necromancer] 恶魔受胎 (CambionConception) - 你倒地时，生成1个恶魔小猫跟班。"
+      },
+      {
+        "key": "Leechmother",
+        "name": "水蛭母体",
+        "class": "Necromancer",
+        "desc": "你的普通攻击会生成1个水蛭跟班。",
+        "display": "[Necromancer] 水蛭母体 (Leechmother) - 你的普通攻击会生成1个水蛭跟班。"
+      },
+      {
+        "key": "Infected",
+        "name": "感染",
+        "class": "Necromancer",
+        "desc": "你击倒单位时，会令它以50%的生命复苏。",
+        "display": "[Necromancer] 感染 (Infected) - 你击倒单位时，会令它以50%的生命复苏。"
+      },
+      {
+        "key": "LastGasp",
+        "name": "垂死一搏",
+        "class": "Necromancer",
+        "desc": "deal 6 damage to each enemy and heal 6 HP to all allies.",
+        "display": "[Necromancer] 垂死一搏 (LastGasp) - deal 6 damage to each ene"
+      },
+      {
+        "key": "RelentlessDead",
+        "name": "亡者不休",
+        "class": "Necromancer",
+        "desc": "每轮结束时，随机方格生成1个僵尸小猫跟班。",
+        "display": "[Necromancer] 亡者不休 (RelentlessDead) - 每轮结束时，随机方格生成1个僵尸小猫跟班。"
+      },
+      {
+        "key": "ChainsOfGuilt",
+        "name": "罪的锁链",
+        "class": "Necromancer",
+        "desc": "如果敌人击倒了你，而且它不是头目，那么它会永久进入你的队伍。",
+        "display": "[Necromancer] 罪的锁链 (ChainsOfGuilt) - 如果敌人击倒了你，而且它不是头目，那么它会永久进入"
+      },
+      {
+        "key": "DarkPriest",
+        "name": "黑暗祭司",
+        "class": "Necromancer",
+        "desc": "每场战斗开始时，如果你没有武器，那么获得一把临时武器“灵魂匕首”。",
+        "display": "[Necromancer] 黑暗祭司 (DarkPriest) - 每场战斗开始时，如果你没有武器，那么获得一把临时武"
+      },
+      {
+        "key": "Undeath",
+        "name": "不死",
+        "class": "Necromancer",
+        "desc": "你倒地时，令每个友方以33%的生命复苏。（每场战斗限一次。）",
+        "display": "[Necromancer] 不死 (Undeath) - 你倒地时，令每个友方以33%的生命复苏。（每场战斗"
+      },
+      {
+        "key": "NumbingLeeches",
+        "name": "麻痹水蛭",
+        "class": "Necromancer",
+        "desc": "你的普通攻击造成0点伤害，但它施加的状态和命中效果增强2倍。",
+        "display": "[Necromancer] 麻痹水蛭 (NumbingLeeches) - 你的普通攻击造成0点伤害，但它施加的状态和命中效果"
+      },
+      {
+        "key": "EternalHealth",
+        "name": "不朽之身",
+        "class": "Necromancer",
+        "desc": "你倒地时只会获得“触霉头了”。队伍取得胜利时，如果你处于倒地状态，那么生命回满。",
+        "display": "[Necromancer] 不朽之身 (EternalHealth) - 你倒地时只会获得“触霉头了”。队伍取得胜利时，如果"
+      },
+      {
+        "key": "Torpor",
+        "name": "蛰伏",
+        "class": "Necromancer",
+        "desc": "你倒地期间，你的普通攻击变成【侵扰】。你的尸体耐久+6。",
+        "display": "[Necromancer] 蛰伏 (Torpor) - 你倒地期间，你的普通攻击变成【侵扰】。你的尸体耐久"
+      },
+      {
+        "key": "SoulBound",
+        "name": "灵魂联结",
+        "class": "Necromancer",
+        "desc": "你的普通攻击会施加【灵魂链接】。",
+        "display": "[Necromancer] 灵魂联结 (SoulBound) - 你的普通攻击会施加【灵魂链接】。"
+      },
+      {
+        "key": "Superstition",
+        "name": "迷信",
+        "class": "Necromancer",
+        "desc": "\"Your basic attack inflicts -1[img:lck].",
+        "display": "[Necromancer] 迷信 (Superstition) - \"Your basic attack inflic"
+      },
+      {
+        "key": "ImmortalLeeches",
+        "name": "不朽水蛭",
+        "class": "Necromancer",
+        "desc": "你施加过水蛭的单位死亡或失去水蛭时，你下一次普通攻击会额外施加等量的水蛭。",
+        "display": "[Necromancer] 不朽水蛭 (ImmortalLeeches) - 你施加过水蛭的单位死亡或失去水蛭时，你下一次普通攻"
+      },
+      {
+        "key": "CorpseConnoisseur",
+        "name": "尸体鉴赏家",
+        "class": "Necromancer",
+        "desc": "\"Start each battle with 2-3 corpses near you.",
+        "display": "[Necromancer] 尸体鉴赏家 (CorpseConnoisseur) - \"Start each battle with 2"
+      },
+      {
+        "key": "Parasitic",
+        "name": "寄生",
+        "class": "Necromancer",
+        "desc": "你获得生命时，生成1个水蛭跟班。",
+        "display": "[Necromancer] 寄生 (Parasitic) - 你获得生命时，生成1个水蛭跟班。"
+      },
+      {
+        "key": "SpreadSorrow",
+        "name": "散播悲痛",
+        "class": "Necromancer",
+        "desc": "你对敌人施加减益时，会把同样的减益随机施加给另外1个敌人。",
+        "display": "[Necromancer] 散播悲痛 (SpreadSorrow) - 你对敌人施加减益时，会把同样的减益随机施加给另外1"
+      }
+    ],
+    "Mage": [
+      {
+        "key": "Micronaps",
+        "name": "合成",
+        "class": "Mage",
+        "desc": "每个回合开始时，[img:int]+1。",
+        "display": "[Mage] 合成 (Micronaps) - 每个回合开始时，[img:int]+1。"
+      },
+      {
+        "key": "HolyMantel",
+        "name": "力场",
+        "class": "Mage",
+        "desc": "3个回合一个周期，每个周期第3个回合开始时，[img:divineshield]+1。",
+        "display": "[Mage] 力场 (HolyMantel) - 3个回合一个周期，每个周期第3个回合开始时，[im"
+      },
+      {
+        "key": "Shrapnel",
+        "name": "溅射伤害",
+        "class": "Mage",
+        "desc": "你的普通攻击会造成2点魔法溅射伤害。",
+        "display": "[Mage] 溅射伤害 (Shrapnel) - 你的普通攻击会造成2点魔法溅射伤害。"
+      },
+      {
+        "key": "BurningPaws",
+        "name": "烈焰爪",
+        "class": "Mage",
+        "desc": "你的基础行动会施加2层【灼烧】。",
+        "display": "[Mage] 烈焰爪 (BurningPaws) - 你的基础行动会施加2层【灼烧】。"
+      },
+      {
+        "key": "LightningPaws",
+        "name": "闪电爪",
+        "class": "Mage",
+        "desc": "你普通攻击的电系伤害+2，同时有15%的几率施加【眩晕】。",
+        "display": "[Mage] 闪电爪 (LightningPaws) - 你普通攻击的电系伤害+2，同时有15%的几率施加【"
+      },
+      {
+        "key": "IcePaws",
+        "name": "寒冰爪",
+        "class": "Mage",
+        "desc": "Lenteur&nbsp;+2&nbsp;et a 20&nbsp;% d'infliger Gel.",
+        "display": "[Mage] 寒冰爪 (IcePaws) - Lenteur&nbsp;+2&nbsp;et a"
+      },
+      {
+        "key": "PawMissile",
+        "name": "猫爪飞弹",
+        "class": "Mage",
+        "desc": "\"Your basic attack is Magic Missile.",
+        "display": "[Mage] 猫爪飞弹 (PawMissile) - \"Your basic attack is Mag"
+      },
+      {
+        "key": "Overload",
+        "name": "过载",
+        "class": "Mage",
+        "desc": "你施放法术时，对前后左右相邻的方格造成3点伤害，元素随机。",
+        "display": "[Mage] 过载 (Overload) - 你施放法术时，对前后左右相邻的方格造成3点伤害，元"
+      },
+      {
+        "key": "ChargeUp",
+        "name": "积蓄",
+        "class": "Mage",
+        "desc": "你的回合结束时，如果你的魔能是0，那么下一次施放的法术不耗费魔能",
+        "display": "[Mage] 积蓄 (ChargeUp) - 你的回合结束时，如果你的魔能是0，那么下一次施放的"
+      },
+      {
+        "key": "DeathChill",
+        "name": "死亡寒意",
+        "class": "Mage",
+        "desc": "倒地时，【冻住】所有敌人和地图其他区域。",
+        "display": "[Mage] 死亡寒意 (DeathChill) - 倒地时，【冻住】所有敌人和地图其他区域。"
+      },
+      {
+        "key": "Recharged",
+        "name": "顿悟",
+        "class": "Mage",
+        "desc": "\"+5 starting mana. +5 Mana Regeneration.",
+        "display": "[Mage] 顿悟 (Recharged) - \"+5 starting mana. +5 Man"
+      },
+      {
+        "key": "EnergyStorm",
+        "name": "叁",
+        "class": "Mage",
+        "desc": "一个回合之内，3个法术为一个周期，每个周期的第3个法术施放两次",
+        "display": "[Mage] 叁 (EnergyStorm) - 一个回合之内，3个法术为一个周期，每个周期的第3个"
+      },
+      {
+        "key": "FireArmor",
+        "name": "火焰附加",
+        "class": "Mage",
+        "desc": "\"Fire immunity.",
+        "display": "[Mage] 火焰附加 (FireArmor) - \"Fire immunity."
+      },
+      {
+        "key": "IceArmor",
+        "name": "冰霜附加",
+        "class": "Mage",
+        "desc": "\"Ice immunity. You can damage frozen units.",
+        "display": "[Mage] 冰霜附加 (IceArmor) - \"Ice immunity. You can da"
+      },
+      {
+        "key": "Resonance",
+        "name": "共鸣",
+        "class": "Mage",
+        "desc": "施放法术之后，这个回合魔法伤害+1",
+        "display": "[Mage] 共鸣 (Resonance) - 施放法术之后，这个回合魔法伤害+1"
+      },
+      {
+        "key": "LearnFromMe",
+        "name": "向我学习",
+        "class": "Mage",
+        "desc": "你施放法术时，这个法术会进入所有友方猫咪的奖励栏位。",
+        "display": "[Mage] 向我学习 (LearnFromMe) - 你施放法术时，这个法术会进入所有友方猫咪的奖励栏位"
+      },
+      {
+        "key": "LightningArmor",
+        "name": "雷电附加",
+        "class": "Mage",
+        "desc": "\"Electric immunity.",
+        "display": "[Mage] 雷电附加 (LightningArmor) - \"Electric immunity."
+      },
+      {
+        "key": "LongCast",
+        "name": "远距离施法",
+        "class": "Mage",
+        "desc": "以方格为目标的法术范围+5。",
+        "display": "[Mage] 远距离施法 (LongCast) - 以方格为目标的法术范围+5。"
+      },
+      {
+        "key": "LightUpTheStage",
+        "name": "照亮舞台",
+        "class": "Mage",
+        "desc": "你的回合结束时，你每行动过1个回合，就放出2道【闪光】。",
+        "display": "[Mage] 照亮舞台 (LightUpTheStage) - 你的回合结束时，你每行动过1个回合，就放出2道【闪"
+      },
+      {
+        "key": "ElementalAttunement",
+        "name": "元素调谐",
+        "class": "Mage",
+        "desc": "你施放什么元素的法术，你的普通攻击本场战斗期间就会获得什么元素和相应的效果。",
+        "display": "[Mage] 元素调谐 (ElementalAttunement) - 你施放什么元素的法术，你的普通攻击本场战斗期间就会"
+      },
+      {
+        "key": "LatentEnergy",
+        "name": "潜能",
+        "class": "Mage",
+        "desc": "友方耗费魔能时，你在自己下次使用魔法之前魔法伤害+2。",
+        "display": "[Mage] 潜能 (LatentEnergy) - 友方耗费魔能时，你在自己下次使用魔法之前魔法伤害+"
+      },
+      {
+        "key": "Five",
+        "name": "伍",
+        "class": "Mage",
+        "desc": "你的回合结束时，如果魔能或生命刚好是5点，那么[img:shield]+5，而且你在下一回合结束之前【动能尖刺】临时+5。",
+        "display": "[Mage] 伍 (Five) - 你的回合结束时，如果魔能或生命刚好是5点，那么[i"
+      },
+      {
+        "key": "MagicGuru",
+        "name": "魔法大师",
+        "class": "Mage",
+        "desc": "你的友方魔能自然恢复+1。如果友方施放了魔能耗费不低于7的法术，那么它所有属性提升。",
+        "display": "[Mage] 魔法大师 (MagicGuru) - 你的友方魔能自然恢复+1。如果友方施放了魔能耗费不"
+      },
+      {
+        "key": "One",
+        "name": "壹",
+        "class": "Mage",
+        "desc": "你的回合结束时，如果这个回合施放了刚好1个法术，那么下面1个法术会施放2次。",
+        "display": "[Mage] 壹 (One) - 你的回合结束时，如果这个回合施放了刚好1个法术，那"
+      },
+      {
+        "key": "Two",
+        "name": "贰",
+        "class": "Mage",
+        "desc": "gain +1 Bonus Attack.",
+        "display": "[Mage] 贰 (Two) - gain +1 Bonus Attack."
+      },
+      {
+        "key": "Four",
+        "name": "肆",
+        "class": "Mage",
+        "desc": "你的回合结束时，如果魔能或生命刚好是4点，那么[img:int]+1、魔法伤害+1",
+        "display": "[Mage] 肆 (Four) - 你的回合结束时，如果魔能或生命刚好是4点，那么[i"
+      }
+    ],
+    "Fighter": [
+      {
+        "key": "BloodLust",
+        "name": "狂乱",
+        "class": "Fighter",
+        "desc": "你击倒单位时，[img:str]+2。",
+        "display": "[Fighter] 狂乱 (BloodLust) - 你击倒单位时，[img:str]+2。"
+      },
+      {
+        "key": "Avenger",
+        "name": "复仇",
+        "class": "Fighter",
+        "desc": "友方猫咪倒地时，你所有属性提升2，同时恢复8点生命。",
+        "display": "[Fighter] 复仇 (Avenger) - 友方猫咪倒地时，你所有属性提升2，同时恢复8点生命"
+      },
+      {
+        "key": "Scars",
+        "name": "伤疤",
+        "class": "Fighter",
+        "desc": "【招架】+1。",
+        "display": "[Fighter] 伤疤 (Scars) - 【招架】+1。"
+      },
+      {
+        "key": "FasterWhenHit",
+        "name": "胡克回击",
+        "class": "Fighter",
+        "desc": "你受到伤害时，[img:spd]+2。",
+        "display": "[Fighter] 胡克回击 (FasterWhenHit) - 你受到伤害时，[img:spd]+2。"
+      },
+      {
+        "key": "KillsHeal",
+        "name": "热情",
+        "class": "Fighter",
+        "desc": "你击倒1个单位时，恢复5点生命。",
+        "display": "[Fighter] 热情 (KillsHeal) - 你击倒1个单位时，恢复5点生命。"
+      },
+      {
+        "key": "Vengeful",
+        "name": "记仇",
+        "class": "Fighter",
+        "desc": "如果敌方单位伤害过你，那么你对它的普通攻击一定暴击。",
+        "display": "[Fighter] 记仇 (Vengeful) - 如果敌方单位伤害过你，那么你对它的普通攻击一定暴击"
+      },
+      {
+        "key": "HamsterStyle",
+        "name": "仓鼠功",
+        "class": "Fighter",
+        "desc": "\"+1 Health Regeneration.",
+        "display": "[Fighter] 仓鼠功 (HamsterStyle) - \"+1 Health Regeneration."
+      },
+      {
+        "key": "WeaponMaster",
+        "name": "武器大师",
+        "class": "Fighter",
+        "desc": "\"武器とアイテムのアビリティで与えるダメージが2アップし、クリティカル率が+25%アップする。",
+        "display": "[Fighter] 武器大师 (WeaponMaster) - \"武器とアイテムのアビリティで与えるダメージが2ア"
+      },
+      {
+        "key": "ShoulderCheck",
+        "name": "路过",
+        "class": "Fighter",
+        "desc": "你移动后，如果面向1个单位，就自动攻击它一次（33%的伤害）。",
+        "display": "[Fighter] 路过 (ShoulderCheck) - 你移动后，如果面向1个单位，就自动攻击它一次（33"
+      },
+      {
+        "key": "SkullSmash",
+        "name": "碎颅",
+        "class": "Fighter",
+        "desc": "你的普通攻击会施加【瘀伤】。",
+        "display": "[Fighter] 碎颅 (SkullSmash) - 你的普通攻击会施加【瘀伤】。"
+      },
+      {
+        "key": "TurtleStyle",
+        "name": "龟式",
+        "class": "Fighter",
+        "desc": "",
+        "display": "[Fighter] 龟式 (TurtleStyle)"
+      },
+      {
+        "key": "Overpowered",
+        "name": "超模！！！",
+        "class": "Fighter",
+        "desc": "你如果造成溢出伤害，会令目标爆炸，溢出的伤害会施加给目标周围的单位（不包括你）。",
+        "display": "[Fighter] 超模！！！ (Overpowered) - 你如果造成溢出伤害，会令目标爆炸，溢出的伤害会施加"
+      },
+      {
+        "key": "FightMe",
+        "name": "逆风",
+        "class": "Fighter",
+        "desc": "前后左右每有1个敌方和你相邻，就[img:str]+2，【招架】+1。",
+        "display": "[Fighter] 逆风 (FightMe) - 前后左右每有1个敌方和你相邻，就[img:str]"
+      },
+      {
+        "key": "HighAsYouCanCount",
+        "name": "数学？",
+        "class": "Fighter",
+        "desc": "你的法术耗费3点魔能，但每个法术每个回合只能施放1次。",
+        "display": "[Fighter] 数学？ (HighAsYouCanCount) - 你的法术耗费3点魔能，但每个法术每个回合只能施放1"
+      },
+      {
+        "key": "DumbMuscle",
+        "name": "肌壮无脑",
+        "class": "Fighter",
+        "desc": "\"Lose 1 [img:int] each time you take damage.",
+        "display": "[Fighter] 肌壮无脑 (DumbMuscle) - \"Lose 1 [img:int] each ti"
+      },
+      {
+        "key": "ThickSkull",
+        "name": "榆木脑袋",
+        "class": "Fighter",
+        "desc": "\"All injuries you get are Concussions.",
+        "display": "[Fighter] 榆木脑袋 (ThickSkull) - \"All injuries you get are"
+      },
+      {
+        "key": "MostValuableCat",
+        "name": "最有价值猫咪",
+        "class": "Fighter",
+        "desc": "they become the Alpha.",
+        "display": "[Fighter] 最有价值猫咪 (MostValuableCat) - they become the Alpha."
+      },
+      {
+        "key": "RatStyle",
+        "name": "老鼠功",
+        "class": "Fighter",
+        "desc": "闪避几率+10%。",
+        "display": "[Fighter] 老鼠功 (RatStyle) - 闪避几率+10%。"
+      },
+      {
+        "key": "Boned",
+        "name": "有骨气",
+        "class": "Fighter",
+        "desc": "你击杀单位时，如果没有武器，那么获得1根骨头棒。",
+        "display": "[Fighter] 有骨气 (Boned) - 你击杀单位时，如果没有武器，那么获得1根骨头棒。"
+      },
+      {
+        "key": "DualWield",
+        "name": "武器双持",
+        "class": "Fighter",
+        "desc": "你使用武器时，会免费自动再用1次。",
+        "display": "[Fighter] 武器双持 (DualWield) - 你使用武器时，会免费自动再用1次。"
+      },
+      {
+        "key": "ReflexPunch",
+        "name": "膝跳反射",
+        "class": "Fighter",
+        "desc": "有单位伤害你时，反击，造成1点伤害，同时施加【瘀伤】。",
+        "display": "[Fighter] 膝跳反射 (ReflexPunch) - 有单位伤害你时，反击，造成1点伤害，同时施加【瘀伤"
+      },
+      {
+        "key": "HitMe",
+        "name": "打我！",
+        "class": "Fighter",
+        "desc": "basic attack in the direction you're facing.",
+        "display": "[Fighter] 打我！ (HitMe) - basic attack in the direc"
+      },
+      {
+        "key": "Smash",
+        "name": "我砸！",
+        "class": "Fighter",
+        "desc": "but they always break when you use them.",
+        "display": "[Fighter] 我砸！ (Smash) - but they always break whe"
+      },
+      {
+        "key": "PunchFace",
+        "name": "打脸",
+        "class": "Fighter",
+        "desc": "你的普通攻击如果命中单位正面，就一定暴击。",
+        "display": "[Fighter] 打脸 (PunchFace) - 你的普通攻击如果命中单位正面，就一定暴击。"
+      },
+      {
+        "key": "Recoil",
+        "name": "无情",
+        "class": "Fighter",
+        "desc": "gain +2 [img:shield] and refresh your movement action.",
+        "display": "[Fighter] 无情 (Recoil) - gain +2 [img:shield] and "
+      }
+    ],
+    "Hunter": [
+      {
+        "key": "TakeAim",
+        "name": "瞄准",
+        "class": "Hunter",
+        "desc": "每个回合开始时，范围和伤害各+1。你一移动就会失去这个效果。",
+        "display": "[Hunter] 瞄准 (TakeAim) - 每个回合开始时，范围和伤害各+1。你一移动就会失去"
+      },
+      {
+        "key": "TowerDefense",
+        "name": "塔防",
+        "class": "Hunter",
+        "desc": "敌人停在你的范围之内时，对它射击，造成1点伤害。",
+        "display": "[Hunter] 塔防 (TowerDefense) - 敌人停在你的范围之内时，对它射击，造成1点伤害。"
+      },
+      {
+        "key": "HuntersBoon",
+        "name": "猎手恩赐",
+        "class": "Hunter",
+        "desc": "每个回合你第一次击杀单位时，获得5点魔能。",
+        "display": "[Hunter] 猎手恩赐 (HuntersBoon) - 每个回合你第一次击杀单位时，获得5点魔能。"
+      },
+      {
+        "key": "BroodMother",
+        "name": "育母",
+        "class": "Hunter",
+        "desc": "你的跟班和你【洗脑】的单位伤害+2、生命+5。",
+        "display": "[Hunter] 育母 (BroodMother) - 你的跟班和你【洗脑】的单位伤害+2、生命+5。"
+      },
+      {
+        "key": "TaintedMother",
+        "name": "腐化之母",
+        "class": "Hunter",
+        "desc": "你的跟班和你【洗脑】的单位[img:spd]+4，而且会施加【中毒】和【出血】。",
+        "display": "[Hunter] 腐化之母 (TaintedMother) - 你的跟班和你【洗脑】的单位[img:spd]+4，"
+      },
+      {
+        "key": "Quiver",
+        "name": "箭袋",
+        "class": "Hunter",
+        "desc": "没有使用的普通攻击可以留到以后的回合使用。",
+        "display": "[Hunter] 箭袋 (Quiver) - 没有使用的普通攻击可以留到以后的回合使用。"
+      },
+      {
+        "key": "SplitShot",
+        "name": "分裂箭",
+        "class": "Hunter",
+        "desc": "你普通攻击的区域+1，但伤害降低50%。",
+        "display": "[Hunter] 分裂箭 (SplitShot) - 你普通攻击的区域+1，但伤害降低50%。"
+      },
+      {
+        "key": "Hazardous",
+        "name": "危险环境",
+        "class": "Hunter",
+        "desc": "方格伤害和方格效果增强1倍。",
+        "display": "[Hunter] 危险环境 (Hazardous) - 方格伤害和方格效果增强1倍。"
+      },
+      {
+        "key": "ThornArrows",
+        "name": "尖刺箭",
+        "class": "Hunter",
+        "desc": "你的普通攻击会生成灌木。",
+        "display": "[Hunter] 尖刺箭 (ThornArrows) - 你的普通攻击会生成灌木。"
+      },
+      {
+        "key": "Traps",
+        "name": "夹子",
+        "class": "Hunter",
+        "desc": "\"Your basic attack spawns a bear trap if you shoot an empty tile.",
+        "display": "[Hunter] 夹子 (Traps) - \"Your basic attack spawns"
+      },
+      {
+        "key": "CatchProjectiles",
+        "name": "接球手",
+        "class": "Hunter",
+        "desc": "有33%的几率格挡敌方的投射物，有100%的几率格挡友方的投射物。每当你挡住投射物，就奖励攻击+1。",
+        "display": "[Hunter] 接球手 (CatchProjectiles) - 有33%的几率格挡敌方的投射物，有100%的几率格"
+      },
+      {
+        "key": "TrickyTraps",
+        "name": "阴险夹子",
+        "class": "Hunter",
+        "desc": "你夹子的伤害和效果增强1倍。",
+        "display": "[Hunter] 阴险夹子 (TrickyTraps) - 你夹子的伤害和效果增强1倍。"
+      },
+      {
+        "key": "GravityFalls",
+        "name": "重力加持",
+        "class": "Hunter",
+        "desc": "如果你普通攻击的箭飞到3格之外，那么每超出1格，伤害+1。",
+        "display": "[Hunter] 重力加持 (GravityFalls) - 如果你普通攻击的箭飞到3格之外，那么每超出1格，伤"
+      },
+      {
+        "key": "HawkEye",
+        "name": "正中靶心",
+        "class": "Hunter",
+        "desc": "\"Your ranged attacks never miss.",
+        "display": "[Hunter] 正中靶心 (HawkEye) - \"Your ranged attacks neve"
+      },
+      {
+        "key": "Spotters",
+        "name": "点位支援",
+        "class": "Hunter",
+        "desc": "你的普通攻击可以瞄准友方前后左右相邻的方格。",
+        "display": "[Hunter] 点位支援 (Spotters) - 你的普通攻击可以瞄准友方前后左右相邻的方格。"
+      },
+      {
+        "key": "LuckSwing",
+        "name": "赌一棒",
+        "class": "Hunter",
+        "desc": "暴击几率+50%，但有25%的几率落空。",
+        "display": "[Hunter] 赌一棒 (LuckSwing) - 暴击几率+50%，但有25%的几率落空。"
+      },
+      {
+        "key": "Host",
+        "name": "宿主",
+        "class": "Hunter",
+        "desc": "每场战斗开始时，自带2个小小蜘蛛跟班。背包会多1个寄生体“蜘蛛卵”。寄生体可以自由取下。",
+        "display": "[Hunter] 宿主 (Host) - 每场战斗开始时，自带2个小小蜘蛛跟班。背包会多1个"
+      },
+      {
+        "key": "Sniper",
+        "name": "狙击手",
+        "class": "Hunter",
+        "desc": "暴击伤害+100%，有25%的几率施加【眩晕】。",
+        "display": "[Hunter] 狙击手 (Sniper) - 暴击伤害+100%，有25%的几率施加【眩晕】。"
+      },
+      {
+        "key": "RubberArrows",
+        "name": "橡胶箭",
+        "class": "Hunter",
+        "desc": "你的投射物命中之后会弹到3格之内另一个敌人身上。",
+        "display": "[Hunter] 橡胶箭 (RubberArrows) - 你的投射物命中之后会弹到3格之内另一个敌人身上。"
+      },
+      {
+        "key": "TalkToAnimals",
+        "name": "动物交谈",
+        "class": "Hunter",
+        "desc": "你每场战斗第一次普通攻击会施加5层【洗脑】。",
+        "display": "[Hunter] 动物交谈 (TalkToAnimals) - 你每场战斗第一次普通攻击会施加5层【洗脑】。"
+      },
+      {
+        "key": "AnimalControl",
+        "name": "动物控制",
+        "class": "Hunter",
+        "desc": "你的普通攻击会令单位立刻攻击它范围内的1个敌人。",
+        "display": "[Hunter] 动物控制 (AnimalControl) - 你的普通攻击会令单位立刻攻击它范围内的1个敌人。"
+      },
+      {
+        "key": "SleepDarts",
+        "name": "麻醉飞镖",
+        "class": "Hunter",
+        "desc": "每场战斗开始时，你和没有武器的友方都会获得一支临时的麻醉飞镖。",
+        "display": "[Hunter] 麻醉飞镖 (SleepDarts) - 每场战斗开始时，你和没有武器的友方都会获得一支临时"
+      },
+      {
+        "key": "Survivalist",
+        "name": "求生高手",
+        "class": "Hunter",
+        "desc": "\"6 healing consumables and a full water bottle are added to your inventory.",
+        "display": "[Hunter] 求生高手 (Survivalist) - \"6 healing consumables an"
+      },
+      {
+        "key": "Fleabag",
+        "name": "邋遢",
+        "class": "Hunter",
+        "desc": "你的回合结束时，生成跳蚤跟班，数量等于自身这场战斗击杀的敌人。",
+        "display": "[Hunter] 邋遢 (Fleabag) - 你的回合结束时，生成跳蚤跟班，数量等于自身这场战斗"
+      },
+      {
+        "key": "ThrillOfTheHunt",
+        "name": "狩猎快感",
+        "class": "Hunter",
+        "desc": "每场战斗结束时，如果你击杀了至少3个敌人，那么[img:dex]永久+1，同时随机获得1个消耗品。",
+        "display": "[Hunter] 狩猎快感 (ThrillOfTheHunt) - 每场战斗结束时，如果你击杀了至少3个敌人，那么[i"
+      }
+    ],
+    "Tank": [
+      {
+        "key": "Thorns",
+        "name": "尖刺",
+        "class": "Tank",
+        "desc": "2层【尖刺】。",
+        "display": "[Tank] 尖刺 (Thorns) - 2层【尖刺】。"
+      },
+      {
+        "key": "HeavyHanded",
+        "name": "下重爪",
+        "class": "Tank",
+        "desc": "击退伤害+2。",
+        "display": "[Tank] 下重爪 (HeavyHanded) - 击退伤害+2。"
+      },
+      {
+        "key": "SlackOff",
+        "name": "摸鱼",
+        "class": "Tank",
+        "desc": "回合结束时，如果你还有移动行动没有用，那么恢复8点生命。",
+        "display": "[Tank] 摸鱼 (SlackOff) - 回合结束时，如果你还有移动行动没有用，那么恢复8点"
+      },
+      {
+        "key": "Scabs",
+        "name": "结痂",
+        "class": "Tank",
+        "desc": "你受到能力的伤害时，[img:shield]+2。",
+        "display": "[Tank] 结痂 (Scabs) - 你受到能力的伤害时，[img:shield]+2。"
+      },
+      {
+        "key": "EyeCatchin",
+        "name": "EyeCatchin",
+        "class": "Tank",
+        "desc": "",
+        "display": "[Tank] EyeCatchin"
+      },
+      {
+        "key": "ThunderThighs",
+        "name": "雷霆大腿",
+        "class": "Tank",
+        "desc": "横冲直撞。",
+        "display": "[Tank] 雷霆大腿 (ThunderThighs) - 横冲直撞。"
+      },
+      {
+        "key": "Plow",
+        "name": "破土",
+        "class": "Tank",
+        "desc": "你击退单位时，在它原来的位置留下1块石头。",
+        "display": "[Tank] 破土 (Plow) - 你击退单位时，在它原来的位置留下1块石头。"
+      },
+      {
+        "key": "PetRocks",
+        "name": "宠物石头",
+        "class": "Tank",
+        "desc": "\"Rocks you spawn are alive!!",
+        "display": "[Tank] 宠物石头 (PetRocks) - \"Rocks you spawn are aliv"
+      },
+      {
+        "key": "ToadStyle",
+        "name": "蛤蟆功",
+        "class": "Tank",
+        "desc": "你的移动行动变成跳跃。落在单位身上会造成伤害并把它挤开。",
+        "display": "[Tank] 蛤蟆功 (ToadStyle) - 你的移动行动变成跳跃。落在单位身上会造成伤害并把它"
+      },
+      {
+        "key": "ChainKnockback",
+        "name": "连锁击退",
+        "class": "Tank",
+        "desc": "\"Your basic attack gains +1 Knockback.",
+        "display": "[Tank] 连锁击退 (ChainKnockback) - \"Your basic attack gains "
+      },
+      {
+        "key": "ProtectiveAura",
+        "name": "保护欲",
+        "class": "Tank",
+        "desc": "你的友方拥有1层【招架】。",
+        "display": "[Tank] 保护欲 (ProtectiveAura) - 你的友方拥有1层【招架】。"
+      },
+      {
+        "key": "Wrestlemaniac",
+        "name": "摔角狂喵",
+        "class": "Tank",
+        "desc": "\"Your basic attack becomes Suplex when adjacent to enemies.",
+        "display": "[Tank] 摔角狂喵 (Wrestlemaniac) - \"Your basic attack become"
+      },
+      {
+        "key": "MountainForm",
+        "name": "成山",
+        "class": "Tank",
+        "desc": "\"Knockback immunity.",
+        "display": "[Tank] 成山 (MountainForm) - \"Knockback immunity."
+      },
+      {
+        "key": "HomeRun",
+        "name": "本垒打",
+        "class": "Tank",
+        "desc": "你造成的击退距离+10。",
+        "display": "[Tank] 本垒打 (HomeRun) - 你造成的击退距离+10。"
+      },
+      {
+        "key": "RockAspect",
+        "name": "岩相",
+        "class": "Tank",
+        "desc": "攻击或接触到你的单位有10%的几率【石化】。",
+        "display": "[Tank] 岩相 (RockAspect) - 攻击或接触到你的单位有10%的几率【石化】。"
+      },
+      {
+        "key": "WideLoad",
+        "name": "宽载",
+        "class": "Tank",
+        "desc": "前后左右相邻的友方成为敌人的目标时，你和这个友方调换位置。",
+        "display": "[Tank] 宽载 (WideLoad) - 前后左右相邻的友方成为敌人的目标时，你和这个友方调"
+      },
+      {
+        "key": "HardHead",
+        "name": "铁头功",
+        "class": "Tank",
+        "desc": "你会格挡正面的攻击。",
+        "display": "[Tank] 铁头功 (HardHead) - 你会格挡正面的攻击。"
+      },
+      {
+        "key": "MyLeg",
+        "name": "我的腿！",
+        "class": "Tank",
+        "desc": "\"All injuries you get are Broken Legs.",
+        "display": "[Tank] 我的腿！ (MyLeg) - \"All injuries you get are"
+      },
+      {
+        "key": "Hardy",
+        "name": "强韧",
+        "class": "Tank",
+        "desc": "每场战斗开始时，生命完全恢复。",
+        "display": "[Tank] 强韧 (Hardy) - 每场战斗开始时，生命完全恢复。"
+      },
+      {
+        "key": "SlowAndSteady",
+        "name": "稳扎稳打",
+        "class": "Tank",
+        "desc": "每个回合结束时，[img:spd]-2，范围+1。如果你的[img:spd]为0，那么每个回合获得1次奖励攻击。",
+        "display": "[Tank] 稳扎稳打 (SlowAndSteady) - 每个回合结束时，[img:spd]-2，范围+1。"
+      },
+      {
+        "key": "FollowUp",
+        "name": "乘胜追击",
+        "class": "Tank",
+        "desc": "你使用普通攻击后，尽可能向前突进。",
+        "display": "[Tank] 乘胜追击 (FollowUp) - 你使用普通攻击后，尽可能向前突进。"
+      },
+      {
+        "key": "CatAPult",
+        "name": "投喵猫",
+        "class": "Tank",
+        "desc": "在前后左右相邻的友方回合期间，你可以把他们扔出去，最远4格，不消耗他们的移动行动。",
+        "display": "[Tank] 投喵猫 (CatAPult) - 在前后左右相邻的友方回合期间，你可以把他们扔出去，"
+      },
+      {
+        "key": "ShovingMatch",
+        "name": "推搡大战",
+        "class": "Tank",
+        "desc": "that ally uses their basic attack on the other unit.",
+        "display": "[Tank] 推搡大战 (ShovingMatch) - that ally uses their basi"
+      },
+      {
+        "key": "Stoic",
+        "name": "隐忍",
+        "class": "Tank",
+        "desc": "你的回合结束时，如果还有移动行动没有用，那么奖励移动+2。",
+        "display": "[Tank] 隐忍 (Stoic) - 你的回合结束时，如果还有移动行动没有用，那么奖励移"
+      },
+      {
+        "key": "PriorityTarget",
+        "name": "显眼包",
+        "class": "Tank",
+        "desc": "敌人如果能攻击你，就会优先打你，而不是打你的友方。",
+        "display": "[Tank] 显眼包 (PriorityTarget) - 敌人如果能攻击你，就会优先打你，而不是打你的友方。"
+      },
+      {
+        "key": "Bouncer",
+        "name": "夜店保安",
+        "class": "Tank",
+        "desc": "有友方受到伤害时，向伤害来源的方向移动3格，然后如果能攻击它，就进行攻击。",
+        "display": "[Tank] 夜店保安 (Bouncer) - 有友方受到伤害时，向伤害来源的方向移动3格，然后如"
+      }
+    ],
+    "Medic": [
+      {
+        "key": "HealingAura",
+        "name": "治疗光环",
+        "class": "Medic",
+        "desc": "\"+1 Health Regeneration",
+        "display": "[Medic] 治疗光环 (HealingAura) - \"+1 Health Regeneration"
+      },
+      {
+        "key": "NaturalHealer",
+        "name": "疗愈天赋",
+        "class": "Medic",
+        "desc": "你发起的治疗效果+2。",
+        "display": "[Medic] 疗愈天赋 (NaturalHealer) - 你发起的治疗效果+2。"
+      },
+      {
+        "key": "Eternal",
+        "name": "永恒",
+        "class": "Medic",
+        "desc": "每场战斗，你第一次倒地不会落下伤残，而且会以半血复活。",
+        "display": "[Medic] 永恒 (Eternal) - 每场战斗，你第一次倒地不会落下伤残，而且会以半血复"
+      },
+      {
+        "key": "Blessed",
+        "name": "蒙福",
+        "class": "Medic",
+        "desc": "每个回合开始时，随机2项属性分别+1。",
+        "display": "[Medic] 蒙福 (Blessed) - 每个回合开始时，随机2项属性分别+1。"
+      },
+      {
+        "key": "EvilPatron",
+        "name": "邪恶庇护主",
+        "class": "Medic",
+        "desc": "\"Your healing abilities deal damage to enemies.",
+        "display": "[Medic] 邪恶庇护主 (EvilPatron) - \"Your healing abilities d"
+      },
+      {
+        "key": "AngelicInspiration",
+        "name": "天使启迪",
+        "class": "Medic",
+        "desc": "你治疗友方时，对方魔能+2。",
+        "display": "[Medic] 天使启迪 (AngelicInspiration) - 你治疗友方时，对方魔能+2。"
+      },
+      {
+        "key": "TopOff",
+        "name": "加满",
+        "class": "Medic",
+        "desc": "你的治疗令另一个单位生命超过上限时，你们双方分别[img:shield]+1。",
+        "display": "[Medic] 加满 (TopOff) - 你的治疗令另一个单位生命超过上限时，你们双方分别["
+      },
+      {
+        "key": "SharingIsCaring",
+        "name": "有福同享",
+        "class": "Medic",
+        "desc": "如果你捡起的物品不是钱，友方就获得同样的效果。",
+        "display": "[Medic] 有福同享 (SharingIsCaring) - 如果你捡起的物品不是钱，友方就获得同样的效果。"
+      },
+      {
+        "key": "Caretaker",
+        "name": "照顾",
+        "class": "Medic",
+        "desc": "你治疗其他单位时，也会令自己恢复生命，幅度等于这次治疗效果的一半。",
+        "display": "[Medic] 照顾 (Caretaker) - 你治疗其他单位时，也会令自己恢复生命，幅度等于这次"
+      },
+      {
+        "key": "MoraleBoost",
+        "name": "提振士气",
+        "class": "Medic",
+        "desc": "每当你击杀单位，友方就所有属性提升。",
+        "display": "[Medic] 提振士气 (MoraleBoost) - 每当你击杀单位，友方就所有属性提升。"
+      },
+      {
+        "key": "RangedMedic",
+        "name": "远程军医",
+        "class": "Medic",
+        "desc": "你的普通攻击变成远程抛射攻击，会治疗友方，对敌人造成伤害。",
+        "display": "[Medic] 远程军医 (RangedMedic) - 你的普通攻击变成远程抛射攻击，会治疗友方，对敌人造"
+      },
+      {
+        "key": "Godspeed",
+        "name": "神速",
+        "class": "Medic",
+        "desc": "你治疗单位时，[img:spd]+2。",
+        "display": "[Medic] 神速 (Godspeed) - 你治疗单位时，[img:spd]+2。"
+      },
+      {
+        "key": "GodWarrior",
+        "name": "神的战士",
+        "class": "Medic",
+        "desc": "你击杀敌人时，[img:divineshield]+1。",
+        "display": "[Medic] 神的战士 (GodWarrior) - 你击杀敌人时，[img:divineshield]"
+      },
+      {
+        "key": "BreathOfLife",
+        "name": "生命之息",
+        "class": "Medic",
+        "desc": "你治疗倒地的单位时，令它复活。",
+        "display": "[Medic] 生命之息 (BreathOfLife) - 你治疗倒地的单位时，令它复活。"
+      },
+      {
+        "key": "ThouShaltNotKill",
+        "name": "不可杀生",
+        "class": "Medic",
+        "desc": "敌人击倒其他单位时，它会受到10点神圣伤害。",
+        "display": "[Medic] 不可杀生 (ThouShaltNotKill) - 敌人击倒其他单位时，它会受到10点神圣伤害。"
+      },
+      {
+        "key": "ThouShaltNotCovet",
+        "name": "不可贪恋",
+        "class": "Medic",
+        "desc": "敌人受到能力伤害时，它会随机掉落1件可以捡起的物品。",
+        "display": "[Medic] 不可贪恋 (ThouShaltNotCovet) - 敌人受到能力伤害时，它会随机掉落1件可以捡起的物品"
+      },
+      {
+        "key": "BlessingOfHolyFire",
+        "name": "圣火福佑",
+        "class": "Medic",
+        "desc": "\"Holy-element spells deal double damage to enemies instead of healing and inflict Burn 2.",
+        "display": "[Medic] 圣火福佑 (BlessingOfHolyFire) - \"Holy-element spells deal"
+      },
+      {
+        "key": "AlmsForThePoor",
+        "name": "施舍穷苦",
+        "class": "Medic",
+        "desc": "你获得钱时，所有友方恢复1点生命，而且[img:lck]+1。",
+        "display": "[Medic] 施舍穷苦 (AlmsForThePoor) - 你获得钱时，所有友方恢复1点生命，而且[img:l"
+      },
+      {
+        "key": "Purifier",
+        "name": "净化者",
+        "class": "Medic",
+        "desc": "你的普通攻击会移除友方身上的减益。",
+        "display": "[Medic] 净化者 (Purifier) - 你的普通攻击会移除友方身上的减益。"
+      },
+      {
+        "key": "VeneratedTouch",
+        "name": "尊崇之触",
+        "class": "Medic",
+        "desc": "你的普通攻击会对敌人施加2层【混乱】，同时令友方[img:shield]+2。",
+        "display": "[Medic] 尊崇之触 (VeneratedTouch) - 你的普通攻击会对敌人施加2层【混乱】，同时令友方["
+      },
+      {
+        "key": "ProtectTheWeak",
+        "name": "保护弱小",
+        "class": "Medic",
+        "desc": "生命不超过5的友方闪避几率+50%。",
+        "display": "[Medic] 保护弱小 (ProtectTheWeak) - 生命不超过5的友方闪避几率+50%。"
+      },
+      {
+        "key": "ThouShaltObey",
+        "name": "不可违抗",
+        "class": "Medic",
+        "desc": "每轮结束时，随机对前后左右相邻的1个敌人施加【洗脑】。",
+        "display": "[Medic] 不可违抗 (ThouShaltObey) - 每轮结束时，随机对前后左右相邻的1个敌人施加【洗脑"
+      },
+      {
+        "key": "EnchantedRelic",
+        "name": "附魔遗物",
+        "class": "Medic",
+        "desc": "你小玩意儿的被动效果和主动效果增强1倍。",
+        "display": "[Medic] 附魔遗物 (EnchantedRelic) - 你小玩意儿的被动效果和主动效果增强1倍。"
+      },
+      {
+        "key": "BlessingOfSpirit",
+        "name": "圣灵福佑",
+        "class": "Medic",
+        "desc": "你的回合结束时，你和所有友方恢复2点生命和2点魔能。你施放法术会失去这个福佑。",
+        "display": "[Medic] 圣灵福佑 (BlessingOfSpirit) - 你的回合结束时，你和所有友方恢复2点生命和2点魔能"
+      },
+      {
+        "key": "Heathens",
+        "name": "异教徒！",
+        "class": "Medic",
+        "desc": "战斗开始时，对所有敌人施加3层【虚弱】。",
+        "display": "[Medic] 异教徒！ (Heathens) - 战斗开始时，对所有敌人施加3层【虚弱】。"
+      }
+    ],
+    "Thief": [
+      {
+        "key": "Backstabber",
+        "name": "背刺专家",
+        "class": "Thief",
+        "desc": "你的背刺一定暴击。",
+        "display": "[Thief] 背刺专家 (Backstabber) - 你的背刺一定暴击。"
+      },
+      {
+        "key": "GoldenClaws",
+        "name": "金爪子",
+        "class": "Thief",
+        "desc": "你每捡到1块钱，伤害+1。",
+        "display": "[Thief] 金爪子 (GoldenClaws) - 你每捡到1块钱，伤害+1。"
+      },
+      {
+        "key": "Shadow",
+        "name": "隐匿",
+        "class": "Thief",
+        "desc": "每场战斗开始时处于【隐匿】状态。",
+        "display": "[Thief] 隐匿 (Shadow) - 每场战斗开始时处于【隐匿】状态。"
+      },
+      {
+        "key": "PoisonTips",
+        "name": "涂毒",
+        "class": "Thief",
+        "desc": "你的普通攻击会施加1层【中毒】。",
+        "display": "[Thief] 涂毒 (PoisonTips) - 你的普通攻击会施加1层【中毒】。"
+      },
+      {
+        "key": "Burgle",
+        "name": "偷钱",
+        "class": "Thief",
+        "desc": "你普通攻击造成伤害时，获得1块钱。",
+        "display": "[Thief] 偷钱 (Burgle) - 你普通攻击造成伤害时，获得1块钱。"
+      },
+      {
+        "key": "SwiftKiller",
+        "name": "再来！",
+        "class": "Thief",
+        "desc": "你击杀单位时，你的移动行动刷新。",
+        "display": "[Thief] 再来！ (SwiftKiller) - 你击杀单位时，你的移动行动刷新。"
+      },
+      {
+        "key": "LongStrider",
+        "name": "大步流星",
+        "class": "Thief",
+        "desc": "移动范围+1。",
+        "display": "[Thief] 大步流星 (LongStrider) - 移动范围+1。"
+      },
+      {
+        "key": "DoubleThrow",
+        "name": "子母钉",
+        "class": "Thief",
+        "desc": "你的普通攻击会打2下，每下只有1/2伤害。",
+        "display": "[Thief] 子母钉 (DoubleThrow) - 你的普通攻击会打2下，每下只有1/2伤害。"
+      },
+      {
+        "key": "BountyHunter",
+        "name": "赏金猎手",
+        "class": "Thief",
+        "desc": "你的回合期间，随机有1个敌人头顶赏金。",
+        "display": "[Thief] 赏金猎手 (BountyHunter) - 你的回合期间，随机有1个敌人头顶赏金。"
+      },
+      {
+        "key": "RazorClaws",
+        "name": "锐利之爪",
+        "class": "Thief",
+        "desc": "你的普通攻击会施加1层【出血】。",
+        "display": "[Thief] 锐利之爪 (RazorClaws) - 你的普通攻击会施加1层【出血】。"
+      },
+      {
+        "key": "Looter",
+        "name": "闪电扒手",
+        "class": "Thief",
+        "desc": "refresh your movement action.",
+        "display": "[Thief] 闪电扒手 (Looter) - refresh your movement act"
+      },
+      {
+        "key": "AlphaStrike",
+        "name": "先爪",
+        "class": "Thief",
+        "desc": "战斗开始时获得1个额外回合。",
+        "display": "[Thief] 先爪 (AlphaStrike) - 战斗开始时获得1个额外回合。"
+      },
+      {
+        "key": "Zip",
+        "name": "咻！",
+        "class": "Thief",
+        "desc": "你的移动行动变成【暗影步】。",
+        "display": "[Thief] 咻！ (Zip) - 你的移动行动变成【暗影步】。"
+      },
+      {
+        "key": "WeakSpot",
+        "name": "弱点洞悉",
+        "class": "Thief",
+        "desc": "你的普通攻击无视护盾，同时施加1层【虚弱】。",
+        "display": "[Thief] 弱点洞悉 (WeakSpot) - 你的普通攻击无视护盾，同时施加1层【虚弱】。"
+      },
+      {
+        "key": "Penetrate",
+        "name": "贯穿",
+        "class": "Thief",
+        "desc": "你的普通攻击会穿过单位并无视护盾。范围+1。",
+        "display": "[Thief] 贯穿 (Penetrate) - 你的普通攻击会穿过单位并无视护盾。范围+1。"
+      },
+      {
+        "key": "AfterImage",
+        "name": "残影",
+        "class": "Thief",
+        "desc": "你移动时，会在离开的地方生成1个影子。影子会模仿你的基础行动，但会在你的回合结束时消散。",
+        "display": "[Thief] 残影 (AfterImage) - 你移动时，会在离开的地方生成1个影子。影子会模仿你"
+      },
+      {
+        "key": "Shiv",
+        "name": "小刀",
+        "class": "Thief",
+        "desc": "你对近身范围的单位发动普通攻击时，伤害+2、暴击几率+25%，同时施加1层【出血】。",
+        "display": "[Thief] 小刀 (Shiv) - 你对近身范围的单位发动普通攻击时，伤害+2、暴击几"
+      },
+      {
+        "key": "Critical",
+        "name": "暴击",
+        "class": "Thief",
+        "desc": "你的暴击伤害+100%。你只要暴击，就[img:lck]+1。",
+        "display": "[Thief] 暴击 (Critical) - 你的暴击伤害+100%。你只要暴击，就[img:l"
+      },
+      {
+        "key": "LootHoarder",
+        "name": "战利品贮藏者",
+        "class": "Thief",
+        "desc": "战斗结束时，如果你没有倒地，那么自动捡起所有可以捡起的物品。",
+        "display": "[Thief] 战利品贮藏者 (LootHoarder) - 战斗结束时，如果你没有倒地，那么自动捡起所有可以捡"
+      },
+      {
+        "key": "Cripple",
+        "name": "打残",
+        "class": "Thief",
+        "desc": "你的暴击会施加【移动受限】和2层【虚弱】。",
+        "display": "[Thief] 打残 (Cripple) - 你的暴击会施加【移动受限】和2层【虚弱】。"
+      },
+      {
+        "key": "Agile",
+        "name": "灵活",
+        "class": "Thief",
+        "desc": "移动范围+2。如果你移动的格数少于自己的移动范围上限，那么你可以再移动1次，用完剩余的移动范围。",
+        "display": "[Thief] 灵活 (Agile) - 移动范围+2。如果你移动的格数少于自己的移动范围上"
+      },
+      {
+        "key": "Shank",
+        "name": "身后刀",
+        "class": "Thief",
+        "desc": "你在敌人身后而且跟对方相邻时，你的普通攻击变成近身攻击，可以连打2次。",
+        "display": "[Thief] 身后刀 (Shank) - 你在敌人身后而且跟对方相邻时，你的普通攻击变成近身"
+      },
+      {
+        "key": "FlipACoin",
+        "name": "抛硬币",
+        "class": "Thief",
+        "desc": "你获得钱时，有50%的几率随机在1个方格生成1块钱，有50%的几率[img:spd]+2、[img:lck]+2。",
+        "display": "[Thief] 抛硬币 (FlipACoin) - 你获得钱时，有50%的几率随机在1个方格生成1块钱"
+      },
+      {
+        "key": "ShakeDown",
+        "name": "勒索",
+        "class": "Thief",
+        "desc": "你的暴击会生成1块钱和随机1件可以捡起的物品。",
+        "display": "[Thief] 勒索 (ShakeDown) - 你的暴击会生成1块钱和随机1件可以捡起的物品。"
+      },
+      {
+        "key": "SweetSpot",
+        "name": "最佳位置",
+        "class": "Thief",
+        "desc": "范围+1。你离目标越远，普通攻击的伤害越高。",
+        "display": "[Thief] 最佳位置 (SweetSpot) - 范围+1。你离目标越远，普通攻击的伤害越高。"
+      },
+      {
+        "key": "Pinpoint",
+        "name": "精准定位",
+        "class": "Thief",
+        "desc": "你的暴击会施加【标记】。",
+        "display": "[Thief] 精准定位 (Pinpoint) - 你的暴击会施加【标记】。"
+      }
+    ],
+    "Butcher": [
+      {
+        "key": "Putrefy",
+        "name": "腐化",
+        "class": "Butcher",
+        "desc": "你的普通攻击会施加1层【腐烂】。",
+        "display": "[Butcher] 腐化 (Putrefy) - 你的普通攻击会施加1层【腐烂】。"
+      },
+      {
+        "key": "NeverFull",
+        "name": "无底胃",
+        "class": "Butcher",
+        "desc": "\"You can heal over your max HP.",
+        "display": "[Butcher] 无底胃 (NeverFull) - \"You can heal over your m"
+      },
+      {
+        "key": "MainCourse",
+        "name": "大号的我！",
+        "class": "Butcher",
+        "desc": "你产生的可以捡起的食物和边角料份量变大。",
+        "display": "[Butcher] 大号的我！ (MainCourse) - 你产生的可以捡起的食物和边角料份量变大。"
+      },
+      {
+        "key": "FreshMeat",
+        "name": "鲜肉",
+        "class": "Butcher",
+        "desc": "你吃食物时，[img:str]+1。",
+        "display": "[Butcher] 鲜肉 (FreshMeat) - 你吃食物时，[img:str]+1。"
+      },
+      {
+        "key": "Masochist",
+        "name": "受虐狂",
+        "class": "Butcher",
+        "desc": "你受到伤害时，[img:str]、[img:con]或[img:spd]随机1项+1。",
+        "display": "[Butcher] 受虐狂 (Masochist) - 你受到伤害时，[img:str]、[img:con"
+      },
+      {
+        "key": "Glutton",
+        "name": "贪食",
+        "class": "Butcher",
+        "desc": "2格之内出现可以捡起的食物时，你会移动过去。",
+        "display": "[Butcher] 贪食 (Glutton) - 2格之内出现可以捡起的食物时，你会移动过去。"
+      },
+      {
+        "key": "Hooked",
+        "name": "用钩成瘾",
+        "class": "Butcher",
+        "desc": "你的回合期间，你的钩子可以额外使用2次。",
+        "display": "[Butcher] 用钩成瘾 (Hooked) - 你的回合期间，你的钩子可以额外使用2次。"
+      },
+      {
+        "key": "Stompy",
+        "name": "我踩！",
+        "class": "Butcher",
+        "desc": "\"You have Trample.",
+        "display": "[Butcher] 我踩！ (Stompy) - \"You have Trample."
+      },
+      {
+        "key": "Barbed",
+        "name": "倒钩",
+        "class": "Butcher",
+        "desc": "你钩子的伤害+1，还会施加【出血】。",
+        "display": "[Butcher] 倒钩 (Barbed) - 你钩子的伤害+1，还会施加【出血】。"
+      },
+      {
+        "key": "GrapplingHook",
+        "name": "钩爪",
+        "class": "Butcher",
+        "desc": "你的钩子会把你拉向免疫击退的物体。",
+        "display": "[Butcher] 钩爪 (GrapplingHook) - 你的钩子会把你拉向免疫击退的物体。"
+      },
+      {
+        "key": "PainGain",
+        "name": "忿恨",
+        "class": "Butcher",
+        "desc": "你受到伤害时，临时伤害+2。",
+        "display": "[Butcher] 忿恨 (PainGain) - 你受到伤害时，临时伤害+2。"
+      },
+      {
+        "key": "WideSwing",
+        "name": "转就完事",
+        "class": "Butcher",
+        "desc": "你的普通攻击变成3×3的旋转攻击，会施加狠剁。",
+        "display": "[Butcher] 转就完事 (WideSwing) - 你的普通攻击变成3×3的旋转攻击，会施加狠剁。"
+      },
+      {
+        "key": "Confrontational",
+        "name": "硬刚",
+        "class": "Butcher",
+        "desc": "你受到伤害时，向着伤害来源的方向横冲直撞1个方格。",
+        "display": "[Butcher] 硬刚 (Confrontational) - 你受到伤害时，向着伤害来源的方向横冲直撞1个方格。"
+      },
+      {
+        "key": "HeaveHook",
+        "name": "猛拽",
+        "class": "Butcher",
+        "desc": "\"Your hook can target tiles.",
+        "display": "[Butcher] 猛拽 (HeaveHook) - \"Your hook can target til"
+      },
+      {
+        "key": "Harpooner",
+        "name": "鱼叉手",
+        "class": "Butcher",
+        "desc": "敌人移动进入你的范围时，钩住它。",
+        "display": "[Butcher] 鱼叉手 (Harpooner) - 敌人移动进入你的范围时，钩住它。"
+      },
+      {
+        "key": "LordOfTheFlies",
+        "name": "蝇王",
+        "class": "Butcher",
+        "desc": "\"All flies are Charmed and get +1 Damage.",
+        "display": "[Butcher] 蝇王 (LordOfTheFlies) - \"All flies are Charmed an"
+      },
+      {
+        "key": "Schadenfreude",
+        "name": "幸灾乐祸",
+        "class": "Butcher",
+        "desc": "队里成员每有1种毛病，你的[img:str]和[img:con]就分别+2。",
+        "display": "[Butcher] 幸灾乐祸 (Schadenfreude) - 队里成员每有1种毛病，你的[img:str]和[i"
+      },
+      {
+        "key": "Gurgitator",
+        "name": "大胃王",
+        "class": "Butcher",
+        "desc": "每当你恢复的生命超出生命上限，[img:str]+1。",
+        "display": "[Butcher] 大胃王 (Gurgitator) - 每当你恢复的生命超出生命上限，[img:str]+"
+      },
+      {
+        "key": "LooseMeat",
+        "name": "掉肉",
+        "class": "Butcher",
+        "desc": "你受到伤害时，生成1份可以捡起的食物。",
+        "display": "[Butcher] 掉肉 (LooseMeat) - 你受到伤害时，生成1份可以捡起的食物。"
+      },
+      {
+        "key": "Hack",
+        "name": "开罐",
+        "class": "Butcher",
+        "desc": "\"Your basic attack is always critical against enemies with [img:shield].",
+        "display": "[Butcher] 开罐 (Hack) - \"Your basic attack is alw"
+      },
+      {
+        "key": "BowlingBall",
+        "name": "保龄球",
+        "class": "Butcher",
+        "desc": "前后左右和斜前后左右相邻的友方猫咪获得奖励能力【滚球】。",
+        "display": "[Butcher] 保龄球 (BowlingBall) - 前后左右和斜前后左右相邻的友方猫咪获得奖励能力【滚"
+      },
+      {
+        "key": "Testy",
+        "name": "暴躁",
+        "class": "Butcher",
+        "desc": "你受到伤害后，在你的回合结束之前移动范围+1。",
+        "display": "[Butcher] 暴躁 (Testy) - 你受到伤害后，在你的回合结束之前移动范围+1。"
+      },
+      {
+        "key": "Indigestion",
+        "name": "消化不良",
+        "class": "Butcher",
+        "desc": "每当你恢复的生命超出生命上限，你就会放屁，对前后左右相邻的单位施加3层【中毒】。",
+        "display": "[Butcher] 消化不良 (Indigestion) - 每当你恢复的生命超出生命上限，你就会放屁，对前后左"
+      },
+      {
+        "key": "Incubator",
+        "name": "温床",
+        "class": "Butcher",
+        "desc": "每当你恢复的生命超出生命上限，就产生1个腐烂苍蝇。",
+        "display": "[Butcher] 温床 (Incubator) - 每当你恢复的生命超出生命上限，就产生1个腐烂苍蝇。"
+      },
+      {
+        "key": "DukeOfFlies",
+        "name": "苍蝇公爵",
+        "class": "Butcher",
+        "desc": "all food pickups become allied flies.",
+        "display": "[Butcher] 苍蝇公爵 (DukeOfFlies) - all food pickups become a"
+      }
+    ],
+    "Druid": [
+      {
+        "key": "SuperCrow",
+        "name": "超级乌鸦！",
+        "class": "Druid",
+        "desc": "你乌鸦的能力会强化。",
+        "display": "[Druid] 超级乌鸦！ (SuperCrow) - 你乌鸦的能力会强化。"
+      },
+      {
+        "key": "NaturesGuidance",
+        "name": "自然的指引",
+        "class": "Druid",
+        "desc": "友方跟班免疫方格、击退、【尖刺】、横冲直撞造成的伤害。",
+        "display": "[Druid] 自然的指引 (NaturesGuidance) - 友方跟班免疫方格、击退、【尖刺】、横冲直撞造成的伤"
+      },
+      {
+        "key": "PoisonIvy",
+        "name": "毒藤",
+        "class": "Druid",
+        "desc": "你和你召唤的跟班都【带毒】。",
+        "display": "[Druid] 毒藤 (PoisonIvy) - 你和你召唤的跟班都【带毒】。"
+      },
+      {
+        "key": "Pathfinder",
+        "name": "探路先锋",
+        "class": "Druid",
+        "desc": "你和你召唤的跟班在草地的移动不会迟缓。你走到哪里，草就长到哪里。",
+        "display": "[Druid] 探路先锋 (Pathfinder) - 你和你召唤的跟班在草地的移动不会迟缓。你走到哪里，"
+      },
+      {
+        "key": "EmptyVessels",
+        "name": "空容器",
+        "class": "Druid",
+        "desc": "你召唤的跟班生命自然恢复+3，生命上限+10。",
+        "display": "[Druid] 空容器 (EmptyVessels) - 你召唤的跟班生命自然恢复+3，生命上限+10。"
+      },
+      {
+        "key": "WildAnimals",
+        "name": "野生动物",
+        "class": "Druid",
+        "desc": "你召唤的跟班在生成时会随机攻击范围内的1个敌人。",
+        "display": "[Druid] 野生动物 (WildAnimals) - 你召唤的跟班在生成时会随机攻击范围内的1个敌人。"
+      },
+      {
+        "key": "BarkSkin",
+        "name": "树肤术",
+        "class": "Druid",
+        "desc": "\"+1 Brace.",
+        "display": "[Druid] 树肤术 (BarkSkin) - \"+1 Brace."
+      },
+      {
+        "key": "SoothingSong",
+        "name": "情歌",
+        "class": "Druid",
+        "desc": "你基础行动的区域+2，同时可以额外恢复1点生命。",
+        "display": "[Druid] 情歌 (SoothingSong) - 你基础行动的区域+2，同时可以额外恢复1点生命。"
+      },
+      {
+        "key": "Teamwork",
+        "name": "众志成城",
+        "class": "Druid",
+        "desc": "你的跟班击杀单位时，所有友方伤害+1。",
+        "display": "[Druid] 众志成城 (Teamwork) - 你的跟班击杀单位时，所有友方伤害+1。"
+      },
+      {
+        "key": "Bouquet",
+        "name": "花束",
+        "class": "Druid",
+        "desc": "你的回合结束时，你的脚下生成一格花丛。",
+        "display": "[Druid] 花束 (Bouquet) - 你的回合结束时，你的脚下生成一格花丛。"
+      },
+      {
+        "key": "GoodVibrations",
+        "name": "美妙振动",
+        "class": "Druid",
+        "desc": "友方生命自然恢复+1，魔能自然恢复+1。",
+        "display": "[Druid] 美妙振动 (GoodVibrations) - 友方生命自然恢复+1，魔能自然恢复+1。"
+      },
+      {
+        "key": "VersatileVocalist",
+        "name": "全能歌手",
+        "class": "Druid",
+        "desc": "and inflicts temporary -1 Damage. Your basic attack wont apply debuffs to allies or buffs to enemies.",
+        "display": "[Druid] 全能歌手 (VersatileVocalist) - and inflicts temporary -1"
+      },
+      {
+        "key": "LikeAFish",
+        "name": "像条鱼",
+        "class": "Druid",
+        "desc": "\"Water tiles don't slow you down.",
+        "display": "[Druid] 像条鱼 (LikeAFish) - \"Water tiles don't slow y"
+      },
+      {
+        "key": "Encore",
+        "name": "安可",
+        "class": "Druid",
+        "desc": "你使用音乐能力后，你的基础行动刷新。",
+        "display": "[Druid] 安可 (Encore) - 你使用音乐能力后，你的基础行动刷新。"
+      },
+      {
+        "key": "SpecialFriends",
+        "name": "超级伙伴",
+        "class": "Druid",
+        "desc": "法术召唤的跟班所有属性提升2点，但这些跟班死亡之前，那个法术不能施放。",
+        "display": "[Druid] 超级伙伴 (SpecialFriends) - 法术召唤的跟班所有属性提升2点，但这些跟班死亡之前"
+      },
+      {
+        "key": "SneakAttack",
+        "name": "偷袭",
+        "class": "Druid",
+        "desc": "\"Your spells that spawn familiars cost -3 mana.",
+        "display": "[Druid] 偷袭 (SneakAttack) - \"Your spells that spawn f"
+      },
+      {
+        "key": "WildStyle",
+        "name": "狂野变身",
+        "class": "Druid",
+        "desc": "每个回合你第一次变形时，获得1个额外回合。",
+        "display": "[Druid] 狂野变身 (WildStyle) - 每个回合你第一次变形时，获得1个额外回合。"
+      },
+      {
+        "key": "BuddySystem",
+        "name": "伙伴系统",
+        "class": "Druid",
+        "desc": "你失去[img:divineshield]时，你的乌鸦[img:divineshield]+1。你的乌鸦失去[img:divineshield]时，你[img:divineshield]+1。",
+        "display": "[Druid] 伙伴系统 (BuddySystem) - 你失去[img:divineshield]时，你的"
+      },
+      {
+        "key": "FlowerPower",
+        "name": "花的力量",
+        "class": "Druid",
+        "desc": "单位站在花格上时，[img:str]+2，【招架】+2。你移动时，离开的地方会长出花来。",
+        "display": "[Druid] 花的力量 (FlowerPower) - 单位站在花格上时，[img:str]+2，【招架】"
+      },
+      {
+        "key": "SuicideSquad",
+        "name": "自杀小队",
+        "class": "Druid",
+        "desc": "你控制的跟班获得奖励能力【自毁】。",
+        "display": "[Druid] 自杀小队 (SuicideSquad) - 你控制的跟班获得奖励能力【自毁】。"
+      },
+      {
+        "key": "Feral",
+        "name": "野性",
+        "class": "Druid",
+        "desc": "你的奖励能力是【野性攻击】。",
+        "display": "[Druid] 野性 (Feral) - 你的奖励能力是【野性攻击】。"
+      },
+      {
+        "key": "RapGod",
+        "name": "说唱之神",
+        "class": "Druid",
+        "desc": "你的基础行动还会令[img:spd]临时+4。",
+        "display": "[Druid] 说唱之神 (RapGod) - 你的基础行动还会令[img:spd]临时+4。"
+      },
+      {
+        "key": "Animalistic",
+        "name": "兽性",
+        "class": "Druid",
+        "desc": "\"Familiars you spawn gain +2 Damage.",
+        "display": "[Druid] 兽性 (Animalistic) - \"Familiars you spawn gain"
+      },
+      {
+        "key": "Maestro",
+        "name": "大师",
+        "class": "Druid",
+        "desc": "你音乐法术的魔能耗费减少50%。",
+        "display": "[Druid] 大师 (Maestro) - 你音乐法术的魔能耗费减少50%。"
+      },
+      {
+        "key": "MegaMinions",
+        "name": "超级跟班",
+        "class": "Druid",
+        "desc": "3个跟班为一个周期，你每个周期召唤的第3个跟班会是勇士级别。",
+        "display": "[Druid] 超级跟班 (MegaMinions) - 3个跟班为一个周期，你每个周期召唤的第3个跟班会是"
+      }
+    ],
+    "Monk": [
+      {
+        "key": "SafeSwitching",
+        "name": "安全切换",
+        "class": "Monk",
+        "desc": "你切换架势时，[img:shield]+2。",
+        "display": "[Monk] 安全切换 (SafeSwitching) - 你切换架势时，[img:shield]+2。"
+      },
+      {
+        "key": "Mixup",
+        "name": "择",
+        "class": "Monk",
+        "desc": "你切换架势时，这个回合下1次普通攻击一定暴击。",
+        "display": "[Monk] 择 (Mixup) - 你切换架势时，这个回合下1次普通攻击一定暴击。"
+      },
+      {
+        "key": "Turnabout",
+        "name": "望身后",
+        "class": "Monk",
+        "desc": "你的基础近身攻击会施加1层【混乱】，同时令目标背对你。",
+        "display": "[Monk] 望身后 (Turnabout) - 你的基础近身攻击会施加1层【混乱】，同时令目标背对"
+      },
+      {
+        "key": "MonkeyStyle",
+        "name": "猴拳",
+        "class": "Monk",
+        "desc": "有15%的几率格挡伤害，同时反击。",
+        "display": "[Monk] 猴拳 (MonkeyStyle) - 有15%的几率格挡伤害，同时反击。"
+      },
+      {
+        "key": "BrickSkin",
+        "name": "皮糙肉厚",
+        "class": "Monk",
+        "desc": "每当你获得[img:shield]，[img:shield]额外+2。",
+        "display": "[Monk] 皮糙肉厚 (BrickSkin) - 每当你获得[img:shield]，[img:sh"
+      },
+      {
+        "key": "JaggedEdges",
+        "name": "锯齿边缘",
+        "class": "Monk",
+        "desc": "你失去[img:shield]时，【尖刺】+1。",
+        "display": "[Monk] 锯齿边缘 (JaggedEdges) - 你失去[img:shield]时，【尖刺】+1。"
+      },
+      {
+        "key": "MindBreaker",
+        "name": "智灭",
+        "class": "Monk",
+        "desc": "你的普通攻击会施加1层【魔法克制】。",
+        "display": "[Monk] 智灭 (MindBreaker) - 你的普通攻击会施加1层【魔法克制】。"
+      },
+      {
+        "key": "CobraStyle",
+        "name": "蛇式",
+        "class": "Monk",
+        "desc": "敌人移动到前后左右相邻的方格时，对它进行1次较弱的近身攻击。",
+        "display": "[Monk] 蛇式 (CobraStyle) - 敌人移动到前后左右相邻的方格时，对它进行1次较弱的"
+      },
+      {
+        "key": "Tenderize",
+        "name": "敲肉",
+        "class": "Monk",
+        "desc": "你的基础近身攻击会施加1层【瘀伤】。",
+        "display": "[Monk] 敲肉 (Tenderize) - 你的基础近身攻击会施加1层【瘀伤】。"
+      },
+      {
+        "key": "LongArms",
+        "name": "通臂",
+        "class": "Monk",
+        "desc": "范围+1，近身距离+1。",
+        "display": "[Monk] 通臂 (LongArms) - 范围+1，近身距离+1。"
+      },
+      {
+        "key": "SpreadThePain",
+        "name": "传播痛苦",
+        "class": "Monk",
+        "desc": "每个回合对1个单位第一次造成伤害时，伤害额外+2。",
+        "display": "[Monk] 传播痛苦 (SpreadThePain) - 每个回合对1个单位第一次造成伤害时，伤害额外+2。"
+      },
+      {
+        "key": "Harden",
+        "name": "变硬",
+        "class": "Monk",
+        "desc": "你获得[img:shield]时，同时获得1层临时【招架】。",
+        "display": "[Monk] 变硬 (Harden) - 你获得[img:shield]时，同时获得1层临时"
+      },
+      {
+        "key": "IronSkin",
+        "name": "铁布衫",
+        "class": "Monk",
+        "desc": "你造成暴击时，[img:shield]+2。暴击几率+10%。",
+        "display": "[Monk] 铁布衫 (IronSkin) - 你造成暴击时，[img:shield]+2。暴击几"
+      },
+      {
+        "key": "JetFists",
+        "name": "拳风",
+        "class": "Monk",
+        "desc": "你的近身攻击和能力会掀起一阵风，刮过命中的方格。",
+        "display": "[Monk] 拳风 (JetFists) - 你的近身攻击和能力会掀起一阵风，刮过命中的方格。"
+      },
+      {
+        "key": "EnergyFists",
+        "name": "气拳",
+        "class": "Monk",
+        "desc": "你使用普通攻击时，会发出1道【闪光】。",
+        "display": "[Monk] 气拳 (EnergyFists) - 你使用普通攻击时，会发出1道【闪光】。"
+      },
+      {
+        "key": "Unstoppable",
+        "name": "势不可挡！",
+        "class": "Monk",
+        "desc": "免疫击退、【眩晕】、【迟缓】等移动减益。",
+        "display": "[Monk] 势不可挡！ (Unstoppable) - 免疫击退、【眩晕】、【迟缓】等移动减益。"
+      },
+      {
+        "key": "UnburdenedMotion",
+        "name": "行无碍",
+        "class": "Monk",
+        "desc": "每有1个防具栏位空着，就[img:spd]+1，闪避几率+10%。如果所有防具栏位都空着，那么你就可以额外移动1次。",
+        "display": "[Monk] 行无碍 (UnburdenedMotion) - 每有1个防具栏位空着，就[img:spd]+1，闪"
+      },
+      {
+        "key": "UnburdenedStrikes",
+        "name": "身无累",
+        "class": "Monk",
+        "desc": "每有1个防具栏位空着，就暴击几率+10%，暴击伤害+25%。如果所有防具栏位都空着，那么你只要被打到就会反击。",
+        "display": "[Monk] 身无累 (UnburdenedStrikes) - 每有1个防具栏位空着，就暴击几率+10%，暴击伤害"
+      },
+      {
+        "key": "UnburdenedThoughts",
+        "name": "心无羁",
+        "class": "Monk",
+        "desc": "每有1个防具栏位空着，就[img:int]+1，[img:cha]+1。如果所有防具栏位都空着，那么你法术的魔能耗费-1。",
+        "display": "[Monk] 心无羁 (UnburdenedThoughts) - 每有1个防具栏位空着，就[img:int]+1，["
+      },
+      {
+        "key": "RunningJab",
+        "name": "跑动冲拳",
+        "class": "Monk",
+        "desc": "你结束移动时，如果范围内有敌人，会自动进行1次普通攻击。",
+        "display": "[Monk] 跑动冲拳 (RunningJab) - 你结束移动时，如果范围内有敌人，会自动进行1次普通"
+      },
+      {
+        "key": "PerfectTechnique",
+        "name": "出神入化",
+        "class": "Monk",
+        "desc": "远程架势期间，范围+1，魔法伤害+2。近身架势期间，【招架】+1。",
+        "display": "[Monk] 出神入化 (PerfectTechnique) - 远程架势期间，范围+1，魔法伤害+2。近身架势期间"
+      },
+      {
+        "key": "RapidFlow",
+        "name": "行云流水",
+        "class": "Monk",
+        "desc": "你切换架势时，会进行1次旋转攻击，命中前后左右相邻的所有单位。",
+        "display": "[Monk] 行云流水 (RapidFlow) - 你切换架势时，会进行1次旋转攻击，命中前后左右相邻"
+      },
+      {
+        "key": "CounterBarrage",
+        "name": "借力打力",
+        "class": "Monk",
+        "desc": "敌人攻击对你造成伤害时，你奖励攻击+1。",
+        "display": "[Monk] 借力打力 (CounterBarrage) - 敌人攻击对你造成伤害时，你奖励攻击+1。"
+      },
+      {
+        "key": "FlowState",
+        "name": "心流",
+        "class": "Monk",
+        "desc": "你对另一个单位造成伤害后，这个回合结束之前，[img:str]+1，[img:dex]+2。",
+        "display": "[Monk] 心流 (FlowState) - 你对另一个单位造成伤害后，这个回合结束之前，[im"
+      },
+      {
+        "key": "DancingLights",
+        "name": "舞光术",
+        "class": "Monk",
+        "desc": "你切换架势时，每有1个防具栏位空着，就放出1道【闪光】。如果所有防具栏位都空着，那么随机1项属性+1。",
+        "display": "[Monk] 舞光术 (DancingLights) - 你切换架势时，每有1个防具栏位空着，就放出1道【闪"
+      }
+    ],
+    "Psychic": [
+      {
+        "key": "Flying",
+        "name": "反重力",
+        "class": "Psychic",
+        "desc": "\"You have Flying Movement. When you use a Gravity element ability gain +1 [img:spd].",
+        "display": "[Psychic] 反重力 (Flying) - \"You have Flying Movement"
+      },
+      {
+        "key": "SoulShatter",
+        "name": "灵魂碎裂",
+        "class": "Psychic",
+        "desc": "你击杀单位时，对所有敌人造成1点伤害",
+        "display": "[Psychic] 灵魂碎裂 (SoulShatter) - 你击杀单位时，对所有敌人造成1点伤害"
+      },
+      {
+        "key": "Glow",
+        "name": "发光",
+        "class": "Psychic",
+        "desc": "你的普通攻击会施加【瞎眼】。",
+        "display": "[Psychic] 发光 (Glow) - 你的普通攻击会施加【瞎眼】。"
+      },
+      {
+        "key": "Blink",
+        "name": "闪现术",
+        "class": "Psychic",
+        "desc": "你成为敌人的目标时，有33%的几率随机传送到其他方格。",
+        "display": "[Psychic] 闪现术 (Blink) - 你成为敌人的目标时，有33%的几率随机传送到其他方"
+      },
+      {
+        "key": "FullPower",
+        "name": "功力全开",
+        "class": "Psychic",
+        "desc": "魔能全满时，你的普通攻击会造成3倍伤害，同时击退距离+3。",
+        "display": "[Psychic] 功力全开 (FullPower) - 魔能全满时，你的普通攻击会造成3倍伤害，同时击退距"
+      },
+      {
+        "key": "RealityShatter",
+        "name": "现实碎裂",
+        "class": "Psychic",
+        "desc": "引力系能力会生成浮空玻璃。",
+        "display": "[Psychic] 现实碎裂 (RealityShatter) - 引力系能力会生成浮空玻璃。"
+      },
+      {
+        "key": "MentalStorm",
+        "name": "精神风暴",
+        "class": "Psychic",
+        "desc": "你施放法术时，【蓄能】+1。",
+        "display": "[Psychic] 精神风暴 (MentalStorm) - 你施放法术时，【蓄能】+1。"
+      },
+      {
+        "key": "Wither",
+        "name": "凋零",
+        "class": "Psychic",
+        "desc": "引力系能力对敌人使用时，会随机施加1个减益。",
+        "display": "[Psychic] 凋零 (Wither) - 引力系能力对敌人使用时，会随机施加1个减益。"
+      },
+      {
+        "key": "Flourish",
+        "name": "茁壮",
+        "class": "Psychic",
+        "desc": "引力系能力不会伤害友方。引力系能力对友方使用时，会随机给1个增益。你施加增益时，施加的层数+1。",
+        "display": "[Psychic] 茁壮 (Flourish) - 引力系能力不会伤害友方。引力系能力对友方使用时，会"
+      },
+      {
+        "key": "PsySmack",
+        "name": "念力重拍",
+        "class": "Psychic",
+        "desc": "你和友方造成的击退伤害增大1倍。",
+        "display": "[Psychic] 念力重拍 (PsySmack) - 你和友方造成的击退伤害增大1倍。"
+      },
+      {
+        "key": "Beckon",
+        "name": "招手",
+        "class": "Psychic",
+        "desc": "你普通攻击的击退距离+4。",
+        "display": "[Psychic] 招手 (Beckon) - 你普通攻击的击退距离+4。"
+      },
+      {
+        "key": "MindTempest",
+        "name": "心灵风暴",
+        "class": "Psychic",
+        "desc": "6个法术一个周期，每个周期当你施放第6个法术时，所有属性提升，同时魔法伤害+1。",
+        "display": "[Psychic] 心灵风暴 (MindTempest) - 6个法术一个周期，每个周期当你施放第6个法术时，所"
+      },
+      {
+        "key": "Overflow",
+        "name": "溢出",
+        "class": "Psychic",
+        "desc": "魔能全满时，【招架】+2，同时可以飞行移动。你的魔能没有上限。",
+        "display": "[Psychic] 溢出 (Overflow) - 魔能全满时，【招架】+2，同时可以飞行移动。你的魔"
+      },
+      {
+        "key": "Omniscience",
+        "name": "全知",
+        "class": "Psychic",
+        "desc": "你能看到一切，无视所有视线限制",
+        "display": "[Psychic] 全知 (Omniscience) - 你能看到一切，无视所有视线限制"
+      },
+      {
+        "key": "PsionicRepel",
+        "name": "念力排斥",
+        "class": "Psychic",
+        "desc": "攻击或接触你的单位会被击退10格。",
+        "display": "[Psychic] 念力排斥 (PsionicRepel) - 攻击或接触你的单位会被击退10格。"
+      },
+      {
+        "key": "Enlightened",
+        "name": "开悟",
+        "class": "Psychic",
+        "desc": "魔能全满时，你每个回合第一次施放法术不耗费魔能。",
+        "display": "[Psychic] 开悟 (Enlightened) - 魔能全满时，你每个回合第一次施放法术不耗费魔能。"
+      },
+      {
+        "key": "MadVisage",
+        "name": "面容癫狂",
+        "class": "Psychic",
+        "desc": "\"All injuries you get are Disfigured.",
+        "display": "[Psychic] 面容癫狂 (MadVisage) - \"All injuries you get are"
+      },
+      {
+        "key": "PowerUp",
+        "name": "功力增强",
+        "class": "Psychic",
+        "desc": "你的魔能超出上限时，魔法伤害+1，[img:int]+1。",
+        "display": "[Psychic] 功力增强 (PowerUp) - 你的魔能超出上限时，魔法伤害+1，[img:int"
+      },
+      {
+        "key": "TrueSight",
+        "name": "真视",
+        "class": "Psychic",
+        "desc": "你和友方攻击你视线内的敌人不会落空。",
+        "display": "[Psychic] 真视 (TrueSight) - 你和友方攻击你视线内的敌人不会落空。"
+      },
+      {
+        "key": "Radiation",
+        "name": "脑力跃泉",
+        "class": "Psychic",
+        "desc": "你的魔能超出上限时，放出【闪光】，数量等于超出上限的魔能。",
+        "display": "[Psychic] 脑力跃泉 (Radiation) - 你的魔能超出上限时，放出【闪光】，数量等于超出上限"
+      },
+      {
+        "key": "GravityWell",
+        "name": "引力井",
+        "class": "Psychic",
+        "desc": "单位被击退时，如果经过你前后左右相邻的方格，会被拦下并【眩晕】。",
+        "display": "[Psychic] 引力井 (GravityWell) - 单位被击退时，如果经过你前后左右相邻的方格，会被拦"
+      },
+      {
+        "key": "Drag",
+        "name": "拖拽",
+        "class": "Psychic",
+        "desc": "单位如果被你击退，那么击退几个方格，就受到几点伤害。",
+        "display": "[Psychic] 拖拽 (Drag) - 单位如果被你击退，那么击退几个方格，就受到几点伤害"
+      },
+      {
+        "key": "Twiddle",
+        "name": "摆弄",
+        "class": "Psychic",
+        "desc": "你的普通攻击造成0伤害，但每个回合可以额外使用2次。",
+        "display": "[Psychic] 摆弄 (Twiddle) - 你的普通攻击造成0伤害，但每个回合可以额外使用2次"
+      },
+      {
+        "key": "RepressedMemories",
+        "name": "尘封回忆",
+        "class": "Psychic",
+        "desc": "你耗费魔能时，会随机施放灵能士的1个法术，前提是这个法术的魔能耗费少于这次耗费的魔能。",
+        "display": "[Psychic] 尘封回忆 (RepressedMemories) - 你耗费魔能时，会随机施放灵能士的1个法术，前提是这"
+      },
+      {
+        "key": "EldritchVisage",
+        "name": "面容邪异",
+        "class": "Psychic",
+        "desc": "你的回合开始时，对视线内所有敌人施加1层【魔法克制】。",
+        "display": "[Psychic] 面容邪异 (EldritchVisage) - 你的回合开始时，对视线内所有敌人施加1层【魔法克制"
+      }
+    ],
+    "Tinkerer": [
+      {
+        "key": "VersionTwo",
+        "name": "2.0版本",
+        "class": "Tinkerer",
+        "desc": "\"Start with 1 Tech.",
+        "display": "[Tinkerer] 2.0版本 (VersionTwo) - \"Start with 1 Tech."
+      },
+      {
+        "key": "WeaponProficiency",
+        "name": "武器精通",
+        "class": "Tinkerer",
+        "desc": "你武器的伤害会随你的属性提高，而且算作普通攻击。",
+        "display": "[Tinkerer] 武器精通 (WeaponProficiency) - 你武器的伤害会随你的属性提高，而且算作普通攻击。"
+      },
+      {
+        "key": "LivingBattery",
+        "name": "活体电池",
+        "class": "Tinkerer",
+        "desc": "前后左右相邻的友方耗费魔能时，你获得等量的魔能。",
+        "display": "[Tinkerer] 活体电池 (LivingBattery) - 前后左右相邻的友方耗费魔能时，你获得等量的魔能。"
+      },
+      {
+        "key": "FuzzyFeet",
+        "name": "毛脚爪",
+        "class": "Tinkerer",
+        "desc": "你结束移动时，对前后左右相邻的所有单位分别造成电系伤害，移动了几格，就造成几点伤害。",
+        "display": "[Tinkerer] 毛脚爪 (FuzzyFeet) - 你结束移动时，对前后左右相邻的所有单位分别造成电系"
+      },
+      {
+        "key": "ArmorSpecialist",
+        "name": "防护专家",
+        "class": "Tinkerer",
+        "desc": "你的装备被动效果增强1倍。",
+        "display": "[Tinkerer] 防护专家 (ArmorSpecialist) - 你的装备被动效果增强1倍。"
+      },
+      {
+        "key": "EMP",
+        "name": "电磁脉冲",
+        "class": "Tinkerer",
+        "desc": "\"Your explosions are Electric element and deal +2 damage.",
+        "display": "[Tinkerer] 电磁脉冲 (EMP) - \"Your explosions are Elec"
+      },
+      {
+        "key": "MrMega",
+        "name": "大爆弹先生",
+        "class": "Tinkerer",
+        "desc": "\"Your explosions are larger and deal +3 damage.",
+        "display": "[Tinkerer] 大爆弹先生 (MrMega) - \"Your explosions are larg"
+      },
+      {
+        "key": "EscapeSequence",
+        "name": "逃生程序",
+        "class": "Tinkerer",
+        "desc": "你受到伤害时会爆炸，然后随机飞到1个方格。这次爆炸不会对你造成伤害。",
+        "display": "[Tinkerer] 逃生程序 (EscapeSequence) - 你受到伤害时会爆炸，然后随机飞到1个方格。这次爆炸"
+      },
+      {
+        "key": "ItemProxy",
+        "name": "套装代打",
+        "class": "Tinkerer",
+        "desc": "你触发套装加成所需的装备数量-1。",
+        "display": "[Tinkerer] 套装代打 (ItemProxy) - 你触发套装加成所需的装备数量-1。"
+      },
+      {
+        "key": "LightningRod",
+        "name": "避雷针",
+        "class": "Tinkerer",
+        "desc": "\"You have Electric immunity and are conductive.",
+        "display": "[Tinkerer] 避雷针 (LightningRod) - \"You have Electric immuni"
+      },
+      {
+        "key": "ItsAlive",
+        "name": "它活了！",
+        "class": "Tinkerer",
+        "desc": "用电系伤害命中尸体会令它以1点生命复活。复活的尸体会被【洗脑】，获得1个额外回合，然后死亡。",
+        "display": "[Tinkerer] 它活了！ (ItsAlive) - 用电系伤害命中尸体会令它以1点生命复活。复活的尸体"
+      },
+      {
+        "key": "Energizer",
+        "name": "蓄能器",
+        "class": "Tinkerer",
+        "desc": "你施放法术时，你武器的伤害+1。",
+        "display": "[Tinkerer] 蓄能器 (Energizer) - 你施放法术时，你武器的伤害+1。"
+      },
+      {
+        "key": "ReactiveArmor",
+        "name": "反应装甲",
+        "class": "Tinkerer",
+        "desc": "你受到伤害时，制作1件工匠武器或防具，然后装备到空的栏位。",
+        "display": "[Tinkerer] 反应装甲 (ReactiveArmor) - 你受到伤害时，制作1件工匠武器或防具，然后装备到空"
+      },
+      {
+        "key": "Nanobots",
+        "name": "纳米机器人",
+        "class": "Tinkerer",
+        "desc": "你每次受到攻击或法术的伤害时，获得2层递减的生命自然恢复。",
+        "display": "[Tinkerer] 纳米机器人 (Nanobots) - 你每次受到攻击或法术的伤害时，获得2层递减的生命自"
+      },
+      {
+        "key": "Scrapper",
+        "name": "破烂王",
+        "class": "Tinkerer",
+        "desc": "\"Find an extra consumable item at the end of each battle.",
+        "display": "[Tinkerer] 破烂王 (Scrapper) - \"Find an extra consumable"
+      },
+      {
+        "key": "DemoMan",
+        "name": "爆破手",
+        "class": "Tinkerer",
+        "desc": "\"Always craft a bomb at Tech 1 or less.",
+        "display": "[Tinkerer] 爆破手 (DemoMan) - \"Always craft a bomb at T"
+      },
+      {
+        "key": "DuctTape",
+        "name": "防水胶带",
+        "class": "Tinkerer",
+        "desc": "战斗结束时，你制作的物品会保留，但会受到诅咒。",
+        "display": "[Tinkerer] 防水胶带 (DuctTape) - 战斗结束时，你制作的物品会保留，但会受到诅咒。"
+      },
+      {
+        "key": "ArmoredPlating",
+        "name": "装甲板",
+        "class": "Tinkerer",
+        "desc": "你生成的机器人会获得属性和[img:shield]，和你所装备的防具相同。",
+        "display": "[Tinkerer] 装甲板 (ArmoredPlating) - 你生成的机器人会获得属性和[img:shield]"
+      },
+      {
+        "key": "BoobyTrap",
+        "name": "诡雷",
+        "class": "Tinkerer",
+        "desc": "你装备的物品损坏时会爆炸！",
+        "display": "[Tinkerer] 诡雷 (BoobyTrap) - 你装备的物品损坏时会爆炸！"
+      },
+      {
+        "key": "RobotArms",
+        "name": "机械臂",
+        "class": "Tinkerer",
+        "desc": "你的武器每个回合可以额外使用1次。",
+        "display": "[Tinkerer] 机械臂 (RobotArms) - 你的武器每个回合可以额外使用1次。"
+      },
+      {
+        "key": "Conductor",
+        "name": "导体",
+        "class": "Tinkerer",
+        "desc": "\"Electric damage you deal is increased by 2 for each piece of metal armor you have equipped.",
+        "display": "[Tinkerer] 导体 (Conductor) - \"Electric damage you deal"
+      },
+      {
+        "key": "Napalm",
+        "name": "凝固汽油弹",
+        "class": "Tinkerer",
+        "desc": "\"Your explosions inflict Burn 3 and light tiles on fire.",
+        "display": "[Tinkerer] 凝固汽油弹 (Napalm) - \"Your explosions inflict "
+      },
+      {
+        "key": "Ingenuity",
+        "name": "心灵手巧",
+        "class": "Tinkerer",
+        "desc": "捡起的物品除了原本的效果，还会令你【科技】+1。",
+        "display": "[Tinkerer] 心灵手巧 (Ingenuity) - 捡起的物品除了原本的效果，还会令你【科技】+1。"
+      },
+      {
+        "key": "Shrapnel_Tinkerer",
+        "name": "弹片",
+        "class": "Tinkerer",
+        "desc": "你有物品损坏时，【尖刺】+1。",
+        "display": "[Tinkerer] 弹片 (Shrapnel_Tinkerer) - 你有物品损坏时，【尖刺】+1。"
+      },
+      {
+        "key": "Blacksmith",
+        "name": "铁匠",
+        "class": "Tinkerer",
+        "desc": "如果你有武器，那么你的普通攻击变成【锤炼】。",
+        "display": "[Tinkerer] 铁匠 (Blacksmith) - 如果你有武器，那么你的普通攻击变成【锤炼】。"
+      }
+    ],
+    "Jester": [
+      {
+        "key": "SuperLuck",
+        "name": "超幸运",
+        "class": "Jester",
+        "desc": "",
+        "display": "[Jester] 超幸运 (SuperLuck)"
+      },
+      {
+        "key": "Goofball",
+        "name": "活宝",
+        "class": "Jester",
+        "desc": "每轮开始时，获得1个额外回合。",
+        "display": "[Jester] 活宝 (Goofball) - 每轮开始时，获得1个额外回合。"
+      }
+    ],
+    "Colorless": [
+      {
+        "key": "SelfAssured",
+        "name": "自信满满",
+        "class": "Colorless",
+        "desc": "你每次击倒1个单位时，随机有1项属性提升。",
+        "display": "[Colorless] 自信满满 (SelfAssured) - 你每次击倒1个单位时，随机有1项属性提升。"
+      },
+      {
+        "key": "LuckDrain",
+        "name": "吸走好运",
+        "class": "Colorless",
+        "desc": "每次有单位倒地，就[img:lck]+1。",
+        "display": "[Colorless] 吸走好运 (LuckDrain) - 每次有单位倒地，就[img:lck]+1。"
+      },
+      {
+        "key": "Infested",
+        "name": "滋生",
+        "class": "Colorless",
+        "desc": "你的回合结束时，有50%的几率召唤1个跳蚤跟班。",
+        "display": "[Colorless] 滋生 (Infested) - 你的回合结束时，有50%的几率召唤1个跳蚤跟班。"
+      },
+      {
+        "key": "Worms",
+        "name": "肉虫",
+        "class": "Colorless",
+        "desc": "你的回合结束时，有50%的几率召唤1个蛆虫跟班。",
+        "display": "[Colorless] 肉虫 (Worms) - 你的回合结束时，有50%的几率召唤1个蛆虫跟班。"
+      },
+      {
+        "key": "Amped",
+        "name": "亢奋",
+        "class": "Colorless",
+        "desc": "你的回合结束时，[img:spd]+1。",
+        "display": "[Colorless] 亢奋 (Amped) - 你的回合结束时，[img:spd]+1。"
+      },
+      {
+        "key": "Furious",
+        "name": "狂怒",
+        "class": "Colorless",
+        "desc": "\"Gain +1 Damage each time you land a critical hit.",
+        "display": "[Colorless] 狂怒 (Furious) - \"Gain +1 Damage each time"
+      },
+      {
+        "key": "Deathless",
+        "name": "不死",
+        "class": "Colorless",
+        "desc": "尸体耐久+3",
+        "display": "[Colorless] 不死 (Deathless) - 尸体耐久+3"
+      },
+      {
+        "key": "MetalDetector",
+        "name": "金属探测器",
+        "class": "Colorless",
+        "desc": "你走过1个方格时，有5%的几率生成1块钱。",
+        "display": "[Colorless] 金属探测器 (MetalDetector) - 你走过1个方格时，有5%的几率生成1块钱。"
+      },
+      {
+        "key": "DeathProof",
+        "name": "金刚不坏",
+        "class": "Colorless",
+        "desc": "你倒地期间，每轮结束时有25%的几率以1点生命复活。",
+        "display": "[Colorless] 金刚不坏 (DeathProof) - 你倒地期间，每轮结束时有25%的几率以1点生命复活"
+      },
+      {
+        "key": "Leader",
+        "name": "领袖",
+        "class": "Colorless",
+        "desc": "前后左右相邻的友方伤害+1，范围+1。",
+        "display": "[Colorless] 领袖 (Leader) - 前后左右相邻的友方伤害+1，范围+1。"
+      },
+      {
+        "key": "Mange",
+        "name": "疥癣",
+        "class": "Colorless",
+        "desc": "接触到你的单位会获得1层【中毒】。",
+        "display": "[Colorless] 疥癣 (Mange) - 接触到你的单位会获得1层【中毒】。"
+      },
+      {
+        "key": "ETank",
+        "name": "E罐",
+        "class": "Colorless",
+        "desc": "每场战斗开始时，生命上限+20（生命不补满）。",
+        "display": "[Colorless] E罐 (ETank) - 每场战斗开始时，生命上限+20（生命不补满）。"
+      },
+      {
+        "key": "Careful",
+        "name": "小心谨慎",
+        "class": "Colorless",
+        "desc": "你对友方造成的伤害变成0。",
+        "display": "[Colorless] 小心谨慎 (Careful) - 你对友方造成的伤害变成0。"
+      },
+      {
+        "key": "DirtyClaws",
+        "name": "脏爪子",
+        "class": "Colorless",
+        "desc": "如果敌人已经【中毒】或者【出血】，你的物理攻击会令其【中毒】+1和/或【出血】+1。",
+        "display": "[Colorless] 脏爪子 (DirtyClaws) - 如果敌人已经【中毒】或者【出血】，你的物理攻击会令"
+      },
+      {
+        "key": "LateBloomer",
+        "name": "大器晚成",
+        "class": "Colorless",
+        "desc": "你到第5回合时，所有属性提升3点。",
+        "display": "[Colorless] 大器晚成 (LateBloomer) - 你到第5回合时，所有属性提升3点。"
+      },
+      {
+        "key": "Study",
+        "name": "研究",
+        "class": "Colorless",
+        "desc": "你的攻击或能力命中新的一类单位时，[img:int]+1。",
+        "display": "[Colorless] 研究 (Study) - 你的攻击或能力命中新的一类单位时，[img:int"
+      },
+      {
+        "key": "SkillShare",
+        "name": "技能共享",
+        "class": "Colorless",
+        "desc": "每场战斗开始时，你另一个被动能力会共享给队里其他猫咪。",
+        "display": "[Colorless] 技能共享 (SkillShare) - 每场战斗开始时，你另一个被动能力会共享给队里其他猫"
+      },
+      {
+        "key": "NaturalHealing",
+        "name": "自然愈合",
+        "class": "Colorless",
+        "desc": "生命自然恢复+1",
+        "display": "[Colorless] 自然愈合 (NaturalHealing) - 生命自然恢复+1"
+      },
+      {
+        "key": "LongShot",
+        "name": "远射",
+        "class": "Colorless",
+        "desc": "范围+1。",
+        "display": "[Colorless] 远射 (LongShot) - 范围+1。"
+      },
+      {
+        "key": "FastFooted",
+        "name": "猫步灵活",
+        "class": "Colorless",
+        "desc": "免疫负面的方格效果。",
+        "display": "[Colorless] 猫步灵活 (FastFooted) - 免疫负面的方格效果。"
+      },
+      {
+        "key": "Slugger",
+        "name": "强力击",
+        "class": "Colorless",
+        "desc": "伤害+1。",
+        "display": "[Colorless] 强力击 (Slugger) - 伤害+1。"
+      },
+      {
+        "key": "Pulp",
+        "name": "绞肉",
+        "class": "Colorless",
+        "desc": "你击杀单位或摧毁尸体时，它会变成肉。",
+        "display": "[Colorless] 绞肉 (Pulp) - 你击杀单位或摧毁尸体时，它会变成肉。"
+      },
+      {
+        "key": "Amplify",
+        "name": "增效",
+        "class": "Colorless",
+        "desc": "魔法伤害+1。",
+        "display": "[Colorless] 增效 (Amplify) - 魔法伤害+1。"
+      },
+      {
+        "key": "DeathBoon",
+        "name": "死亡恩赐",
+        "class": "Colorless",
+        "desc": "你倒地时，全体友方所有属性提升。",
+        "display": "[Colorless] 死亡恩赐 (DeathBoon) - 你倒地时，全体友方所有属性提升。"
+      },
+      {
+        "key": "SantaSangre",
+        "name": "圣血",
+        "class": "Colorless",
+        "desc": "你倒地时，友方恢复12点生命。溢出的治疗效果转化成护盾。",
+        "display": "[Colorless] 圣血 (SantaSangre) - 你倒地时，友方恢复12点生命。溢出的治疗效果转化成"
+      },
+      {
+        "key": "Untouched",
+        "name": "毫毛无伤",
+        "class": "Colorless",
+        "desc": "满生命时，暴击几率是100%。",
+        "display": "[Colorless] 毫毛无伤 (Untouched) - 满生命时，暴击几率是100%。"
+      },
+      {
+        "key": "Daunt",
+        "name": "威慑",
+        "class": "Colorless",
+        "desc": "小型敌人不会攻击你。",
+        "display": "[Colorless] 威慑 (Daunt) - 小型敌人不会攻击你。"
+      },
+      {
+        "key": "AnimalHandler",
+        "name": "驯兽",
+        "class": "Colorless",
+        "desc": "每场战斗开始时，你会随机带1个虫子跟班（伤害和生命提升）。",
+        "display": "[Colorless] 驯兽 (AnimalHandler) - 每场战斗开始时，你会随机带1个虫子跟班（伤害和生命"
+      },
+      {
+        "key": "WhipCracker",
+        "name": "督工",
+        "class": "Colorless",
+        "desc": "你伤害到友方时，友方伤害+1。",
+        "display": "[Colorless] 督工 (WhipCracker) - 你伤害到友方时，友方伤害+1。"
+      },
+      {
+        "key": "PressurePoints",
+        "name": "弱者之力",
+        "class": "Colorless",
+        "desc": "如果你造成的伤害不大于2，那么一定暴击。",
+        "display": "[Colorless] 弱者之力 (PressurePoints) - 如果你造成的伤害不大于2，那么一定暴击。"
+      },
+      {
+        "key": "Gassy",
+        "name": "胀气",
+        "class": "Colorless",
+        "desc": "你每次受到伤害时，击退前后左右相邻的所有单位。",
+        "display": "[Colorless] 胀气 (Gassy) - 你每次受到伤害时，击退前后左右相邻的所有单位。"
+      },
+      {
+        "key": "Dealer",
+        "name": "药贩子",
+        "class": "Colorless",
+        "desc": "你可以对其他单位使用消耗品。",
+        "display": "[Colorless] 药贩子 (Dealer) - 你可以对其他单位使用消耗品。"
+      },
+      {
+        "key": "Patience",
+        "name": "耐心",
+        "class": "Colorless",
+        "desc": "如果你不行动直接结束回合，那么可以在一轮结束时获得1个额外回合。如果你跳过原始回合，那么额外回合魔能不会自然恢复。",
+        "display": "[Colorless] 耐心 (Patience) - 如果你不行动直接结束回合，那么可以在一轮结束时获得"
+      },
+      {
+        "key": "Wiggly",
+        "name": "扭来扭去",
+        "class": "Colorless",
+        "desc": "闪避几率+25%。",
+        "display": "[Colorless] 扭来扭去 (Wiggly) - 闪避几率+25%。"
+      },
+      {
+        "key": "MiniMe",
+        "name": "迷你我",
+        "class": "Colorless",
+        "desc": "召唤1个半大的分身，属性是你的50%，AI控制。",
+        "display": "[Colorless] 迷你我 (MiniMe) - 召唤1个半大的分身，属性是你的50%，AI控制。"
+      },
+      {
+        "key": "BareMinimum",
+        "name": "保底",
+        "class": "Colorless",
+        "desc": "你的属性不会低于5。",
+        "display": "[Colorless] 保底 (BareMinimum) - 你的属性不会低于5。"
+      },
+      {
+        "key": "Unrestricted",
+        "name": "无拘无束",
+        "class": "Colorless",
+        "desc": "如果一个行动原本每场战斗可以用1次，现在改为每个回合能用一次。",
+        "display": "[Colorless] 无拘无束 (Unrestricted) - 如果一个行动原本每场战斗可以用1次，现在改为每个回"
+      },
+      {
+        "key": "DeathsDoor",
+        "name": "鬼门关",
+        "class": "Colorless",
+        "desc": "你生命只剩1点时，你的所有法术耗费1点魔能，但每个回合只能施放1次。",
+        "display": "[Colorless] 鬼门关 (DeathsDoor) - 你生命只剩1点时，你的所有法术耗费1点魔能，但每个"
+      },
+      {
+        "key": "OverConfident",
+        "name": "自负",
+        "class": "Colorless",
+        "desc": "满生命时，法术的耗费-2，但你所受伤害增大1倍。魔能耗费最低降到1。",
+        "display": "[Colorless] 自负 (OverConfident) - 满生命时，法术的耗费-2，但你所受伤害增大1倍。魔"
+      },
+      {
+        "key": "SerialKiller",
+        "name": "连环杀手",
+        "class": "Colorless",
+        "desc": "你击杀3个单位之后，[img:spd]+6，而且背刺暴击几率100%。",
+        "display": "[Colorless] 连环杀手 (SerialKiller) - 你击杀3个单位之后，[img:spd]+6，而且背"
+      },
+      {
+        "key": "StrengthInNumbers",
+        "name": "气势占优",
+        "class": "Colorless",
+        "desc": "你每多1个跟班，你的跟班就伤害+1。",
+        "display": "[Colorless] 气势占优 (StrengthInNumbers) - 你每多1个跟班，你的跟班就伤害+1。"
+      },
+      {
+        "key": "FightersSoul",
+        "name": "战士之魂",
+        "class": "Colorless",
+        "desc": "升级时还会出现战士能力。",
+        "display": "[Colorless] 战士之魂 (FightersSoul) - 升级时还会出现战士能力。"
+      },
+      {
+        "key": "HuntersSoul",
+        "name": "猎手之魂",
+        "class": "Colorless",
+        "desc": "升级时还会出现猎手能力。",
+        "display": "[Colorless] 猎手之魂 (HuntersSoul) - 升级时还会出现猎手能力。"
+      },
+      {
+        "key": "MagesSoul",
+        "name": "法师之魂",
+        "class": "Colorless",
+        "desc": "升级时还会出现法师能力。",
+        "display": "[Colorless] 法师之魂 (MagesSoul) - 升级时还会出现法师能力。"
+      },
+      {
+        "key": "ClericsSoul",
+        "name": "牧师之魂",
+        "class": "Colorless",
+        "desc": "升级时还会出现牧师能力。",
+        "display": "[Colorless] 牧师之魂 (ClericsSoul) - 升级时还会出现牧师能力。"
+      },
+      {
+        "key": "TanksSoul",
+        "name": "坦克之魂",
+        "class": "Colorless",
+        "desc": "升级时还会出现坦克能力。",
+        "display": "[Colorless] 坦克之魂 (TanksSoul) - 升级时还会出现坦克能力。"
+      },
+      {
+        "key": "ThiefsSoul",
+        "name": "盗贼之魂",
+        "class": "Colorless",
+        "desc": "升级时还会出现盗贼能力。",
+        "display": "[Colorless] 盗贼之魂 (ThiefsSoul) - 升级时还会出现盗贼能力。"
+      },
+      {
+        "key": "MonksSoul",
+        "name": "武僧之魂",
+        "class": "Colorless",
+        "desc": "升级时还会出现武僧能力。",
+        "display": "[Colorless] 武僧之魂 (MonksSoul) - 升级时还会出现武僧能力。"
+      },
+      {
+        "key": "ButchersSoul",
+        "name": "屠户之魂",
+        "class": "Colorless",
+        "desc": "升级时还会出现屠户能力。",
+        "display": "[Colorless] 屠户之魂 (ButchersSoul) - 升级时还会出现屠户能力。"
+      },
+      {
+        "key": "DruidsSoul",
+        "name": "德鲁伊之魂",
+        "class": "Colorless",
+        "desc": "升级时还会出现德鲁伊能力。",
+        "display": "[Colorless] 德鲁伊之魂 (DruidsSoul) - 升级时还会出现德鲁伊能力。"
+      },
+      {
+        "key": "TinkerersSoul",
+        "name": "工匠之魂",
+        "class": "Colorless",
+        "desc": "升级时还会出现工匠能力。",
+        "display": "[Colorless] 工匠之魂 (TinkerersSoul) - 升级时还会出现工匠能力。"
+      },
+      {
+        "key": "NecromancersSoul",
+        "name": "死灵法师之魂",
+        "class": "Colorless",
+        "desc": "升级时还会出现死灵法师能力。",
+        "display": "[Colorless] 死灵法师之魂 (NecromancersSoul) - 升级时还会出现死灵法师能力。"
+      },
+      {
+        "key": "PsychicsSoul",
+        "name": "灵能士之魂",
+        "class": "Colorless",
+        "desc": "升级时还会出现灵能士能力。",
+        "display": "[Colorless] 灵能士之魂 (PsychicsSoul) - 升级时还会出现灵能士能力。"
+      },
+      {
+        "key": "Charming",
+        "name": "洗脑",
+        "class": "Colorless",
+        "desc": "伤害你的单位有25%的几率被你【洗脑】。",
+        "display": "[Colorless] 洗脑 (Charming) - 伤害你的单位有25%的几率被你【洗脑】。"
+      },
+      {
+        "key": "FirstImpression",
+        "name": "迎头一击",
+        "class": "Colorless",
+        "desc": "每场战斗开始时，奖励攻击+1。",
+        "display": "[Colorless] 迎头一击 (FirstImpression) - 每场战斗开始时，奖励攻击+1。"
+      },
+      {
+        "key": "Scavenger",
+        "name": "觅食",
+        "class": "Colorless",
+        "desc": "如果你的小玩意儿栏位是空的，那么每场战斗开始时自动装备一小份食物消耗品。",
+        "display": "[Colorless] 觅食 (Scavenger) - 如果你的小玩意儿栏位是空的，那么每场战斗开始时自动"
+      },
+      {
+        "key": "ZenkaiBoost",
+        "name": "界限突破",
+        "class": "Colorless",
+        "desc": "如果你结束战斗时只有1点生命，那么随机1项属性永久+1，而且下一场战斗开始时，生命全满，同时所有属性提升3。",
+        "display": "[Colorless] 界限突破 (ZenkaiBoost) - 如果你结束战斗时只有1点生命，那么随机1项属性永久"
+      },
+      {
+        "key": "Protection",
+        "name": "保护",
+        "class": "Colorless",
+        "desc": "",
+        "display": "[Colorless] 保护 (Protection)"
+      },
+      {
+        "key": "Rockin",
+        "name": "滚石团",
+        "class": "Colorless",
+        "desc": "每场战斗开始时，召唤4颗小石头。",
+        "display": "[Colorless] 滚石团 (Rockin) - 每场战斗开始时，召唤4颗小石头。"
+      },
+      {
+        "key": "Mania",
+        "name": "躁狂",
+        "class": "Colorless",
+        "desc": "你的回合开始时，魔能有10%的几率回满。",
+        "display": "[Colorless] 躁狂 (Mania) - 你的回合开始时，魔能有10%的几率回满。"
+      },
+      {
+        "key": "Lucky",
+        "name": "幸运",
+        "class": "Colorless",
+        "desc": "",
+        "display": "[Colorless] 幸运 (Lucky)"
+      },
+      {
+        "key": "OneEighty",
+        "name": "180度转身",
+        "class": "Colorless",
+        "desc": "你使用普通攻击之后，转身再用一次。",
+        "display": "[Colorless] 180度转身 (OneEighty) - 你使用普通攻击之后，转身再用一次。"
+      },
+      {
+        "key": "JestersSoul",
+        "name": "小丑之魂",
+        "class": "Colorless",
+        "desc": "\"Abilities from any class are offered when you level up.",
+        "display": "[Colorless] 小丑之魂 (JestersSoul) - \"Abilities from any class"
+      },
+      {
+        "key": "HotBlooded",
+        "name": "热血",
+        "class": "Colorless",
+        "desc": "你施加的【灼烧】层数+1。",
+        "display": "[Colorless] 热血 (HotBlooded) - 你施加的【灼烧】层数+1。"
+      },
+      {
+        "key": "ToxicBlooded",
+        "name": "毒血",
+        "class": "Colorless",
+        "desc": "你施加的【中毒】层数+1。",
+        "display": "[Colorless] 毒血 (ToxicBlooded) - 你施加的【中毒】层数+1。"
+      },
+      {
+        "key": "BloodBlooded",
+        "name": "血血",
+        "class": "Colorless",
+        "desc": "你施加的【出血】层数+1。",
+        "display": "[Colorless] 血血 (BloodBlooded) - 你施加的【出血】层数+1。"
+      },
+      {
+        "key": "VoidSoul",
+        "name": "虚空之魂",
+        "class": "Colorless",
+        "desc": "升级时只有强化的无色能力可以选择。",
+        "display": "[Colorless] 虚空之魂 (VoidSoul) - 升级时只有强化的无色能力可以选择。"
+      }
+    ]
   }
 }
