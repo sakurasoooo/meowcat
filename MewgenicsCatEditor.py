@@ -823,12 +823,20 @@ class MewgenicsApp(ctk.CTk):
         self.lbl_pitch_val = ctk.CTkLabel(f_pitch, text="1.00", width=45)
         self.lbl_pitch_val.pack(side="left", padx=3)
 
-        # Boon
-        f_boon = ctk.CTkFrame(f_ident, fg_color="transparent")
-        f_boon.pack(fill="x", padx=15, pady=(4, 12))
+        # 3. 出生天赋标记 (Boon) —— 独立栏：疑似废弃机制，仅作展示/收藏
+        f_boon_sec = ctk.CTkFrame(container, fg_color="#29221e", corner_radius=8)
+        f_boon_sec.pack(fill="x", padx=10, pady=(0, 10))
+
+        ctk.CTkLabel(f_boon_sec, text="🎲 出生天赋标记 (Boon) - ⚠️ 疑似废弃机制", font=("Arial", 13, "bold"), text_color="#f59e0b").pack(anchor="w", padx=15, pady=(10, 4))
+
+        f_boon = ctk.CTkFrame(f_boon_sec, fg_color="transparent")
+        f_boon.pack(fill="x", padx=15, pady=(2, 4))
         ctk.CTkLabel(f_boon, text="偏好属性 (Boon):", width=140, anchor="w", font=("Arial", 12, "bold")).pack(side="left")
         self.combo_boon = ctk.CTkComboBox(f_boon, width=280, values=['none', 'str', 'dex', 'con', 'int', 'spd', 'cha', 'lck'])
         self.combo_boon.pack(side="left", padx=5)
+
+        ctk.CTkLabel(f_boon_sec, text="⚠️ 出生时的随机天赋标记：不遗传、不影响升级属性成长，游戏内无明显实际效果（逆向分析判定为疑似废弃机制）。修改它仅改变存档记录，不会让猫变得更强。",
+                     font=("Arial", 11), text_color="#94a3b8", wraplength=1000, justify="left").pack(anchor="w", padx=15, pady=(0, 10))
 
     def build_abilities_tab(self):
         container = ctk.CTkScrollableFrame(self.tab_abilities)

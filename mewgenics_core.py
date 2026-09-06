@@ -360,11 +360,15 @@ class CatRecord:
         base = base_from_act
         
         # Check if innate is locked to combat base
-        is_locked = (innate == base or innate == 'None')
-        display_innate = base if is_locked else innate
+        # IMPORTANT: innate=='None' means "learned after birth, no birth gene" — NOT locked!
+        # Only truly locked when innate exactly matches the combat base form.
+        is_locked = (innate == base)
+        display_innate = innate  # Always show the real value from save
         return base, is_tier2, display_innate, is_locked
 
-    def set_spell_state(self, slot_idx, base_spell, is_upgraded=False, innate_skill=None):
+    _INNATE_UNSET = object()  # sentinel: caller didn't specify innate
+
+    def set_spell_state(self, slot_idx, base_spell, is_upgraded=False, innate_skill=_INNATE_UNSET):
         while len(self.active_abilities) <= slot_idx:
             self.active_abilities.append('None')
         while len(self.ability_upgrades) <= slot_idx:
@@ -372,7 +376,7 @@ class CatRecord:
             
         if not base_spell or base_spell == 'None':
             self.active_abilities[slot_idx] = 'None'
-            if innate_skill and innate_skill != 'None':
+            if innate_skill is not self._INNATE_UNSET and innate_skill and innate_skill != 'None':
                 self.ability_upgrades[slot_idx] = innate_skill
             else:
                 self.ability_upgrades[slot_idx] = 'None'
@@ -383,10 +387,15 @@ class CatRecord:
             else:
                 self.active_abilities[slot_idx] = base_spell
                 
-            if innate_skill and innate_skill != 'None':
+            if innate_skill is self._INNATE_UNSET:
+                # Not specified — default to base_spell (legacy behavior)
+                self.ability_upgrades[slot_idx] = base_spell
+            elif innate_skill and innate_skill != 'None':
+                # Explicit custom innate gene
                 self.ability_upgrades[slot_idx] = innate_skill
             else:
-                self.ability_upgrades[slot_idx] = base_spell
+                # Explicitly set to 'None' — skill learned after birth, preserve empty gene
+                self.ability_upgrades[slot_idx] = 'None'
                 
         self.innate_abilities = self.ability_upgrades
         self.sync_legacy_passives()
