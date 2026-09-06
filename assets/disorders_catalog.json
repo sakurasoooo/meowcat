@@ -1,0 +1,1127 @@
+[
+  {
+    "key": "Rabies",
+    "name": "狂犬病",
+    "name_en": "Rabies",
+    "desc": "Your basic attack is a melee attack. You can't equip face armor.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Boils",
+    "name": "疖子",
+    "name_en": "Boils",
+    "desc": "+1 Brace.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Depression",
+    "name": "抑郁症",
+    "name_en": "Depression",
+    "desc": "前后左右相邻的单位所有属性下降2。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "BrokenLimb",
+    "name": "断肢",
+    "name_en": "BrokenLimb",
+    "desc": "你不能装备小玩意儿和消耗品。【尖刺】+2。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "WrenchedNeck",
+    "name": "脖子扭伤",
+    "name_en": "WrenchedNeck",
+    "desc": "你不能装备颈部防具。头部防具效果增强1倍。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Declawed",
+    "name": "去爪",
+    "name_en": "Declawed",
+    "desc": "你不能装备武器。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "HeadTrauma",
+    "name": "头部受伤",
+    "name_en": "HeadTrauma",
+    "desc": "你不能装备头部防具，无色法术的魔能耗费-2。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "DeepCut",
+    "name": "切割伤",
+    "name_en": "DeepCut",
+    "desc": "Bleed 1.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "PuncturedEye",
+    "name": "眼球穿刺伤",
+    "name_en": "PuncturedEye",
+    "desc": "+10% miss chance.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "OCD",
+    "name": "强迫性神经官能症",
+    "name_en": "OCD",
+    "desc": "Bonus Ability: Groom",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Distemper",
+    "name": "猫瘟",
+    "name_en": "Distemper",
+    "desc": "and +5% miss chance. Permanently.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "BrainDamage",
+    "name": "脑损伤",
+    "name_en": "BrainDamage",
+    "desc": "你不能使用物品行动。【招架】+2。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "SeveredThumb",
+    "name": "断指",
+    "name_en": "SeveredThumb",
+    "desc": "你不能装备武器。每场战斗开始时，生成1份可以捡起的食物",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "PTSD",
+    "name": "创伤后应激障碍",
+    "name_en": "PTSD",
+    "desc": "你受到伤害时，获得【害怕】，同时伤害+2。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "IBS",
+    "name": "肠易激综合征",
+    "name_en": "IBS",
+    "desc": "你受到伤害时会拉屎。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Dyskinesia",
+    "name": "运动障碍",
+    "name_en": "Dyskinesia",
+    "desc": "你结束移动时，把前后左右相邻的所有单位击退1格。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Anemia",
+    "name": "贫血症",
+    "name_en": "Anemia",
+    "desc": "you have a 10% chance to gain Bleed 1.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Empath",
+    "name": "过度共情",
+    "name_en": "Empath",
+    "desc": "Take 1 damage when you deal damage.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Infestation",
+    "name": "生虫",
+    "name_en": "Infestation",
+    "desc": "你的回合开始时，有50%的几率生成1个蛆跟班，15%的几率生成1个敌方跳蚤。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Leprosy",
+    "name": "麻风病",
+    "name_en": "Leprosy",
+    "desc": "2层【瘀伤】。你被击中时，生成1份可以捡起的食物。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "ASRFight",
+    "name": "急性应激反应：战斗",
+    "name_en": "ASRFight",
+    "desc": "你生命不大于5时，[img:str]+6。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "ASRFlight",
+    "name": "急性应激反应：逃跑",
+    "name_en": "ASRFlight",
+    "desc": "你生命不大于5时，[img:spd]+6。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "BloodFrenzy",
+    "name": "嗜血狂热",
+    "name_en": "BloodFrenzy",
+    "desc": "你击杀单位时，带着【癫狂】获得1个额外回合。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Shunned",
+    "name": "受到排挤",
+    "name_en": "Shunned",
+    "desc": "Take your turn last.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Dysentery",
+    "name": "痢疾",
+    "name_en": "Dysentery",
+    "desc": "你的回合结束时，有50%的几率在自己身后生成1坨燃烧的大便。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Anxiety",
+    "name": "焦虑症",
+    "name_en": "Anxiety",
+    "desc": "闪避几率+10%。你受到伤害时，远离伤害来源。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Kamikazee",
+    "name": "神风",
+    "name_en": "Kamikazee",
+    "desc": "你倒地时会爆炸。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Traumatophobia",
+    "name": "外伤恐惧症",
+    "name_en": "Traumatophobia",
+    "desc": "你每次受到伤害时，向远离伤害来源的方向移动1格。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "StockholmSyndrome",
+    "name": "斯德哥尔摩综合征",
+    "name_en": "StockholmSyndrome",
+    "desc": "你每次受到伤害时，向着伤害来源的方向移动。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "ViolentOutbursts",
+    "name": "暴躁症",
+    "name_en": "ViolentOutbursts",
+    "desc": "你的回合结束时，向前突进2格，发起可以击退的攻击，同时受到1点伤害。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "GamblingAddict",
+    "name": "赌博成瘾",
+    "name_en": "GamblingAddict",
+    "desc": "+33% miss chance.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Scleroderma",
+    "name": "硬皮病",
+    "name_en": "Scleroderma",
+    "desc": "每场战斗开始时，你只留1点生命，但是失去多少生命，就获得多少[img:shield]。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Pacifist",
+    "name": "爱好和平",
+    "name_en": "Pacifist",
+    "desc": "你不能击杀单位。你的回合结束时，如果这个回合没有使用普通攻击，那么魔能+7。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Gigachad",
+    "name": "究极猛男",
+    "name_en": "Gigachad",
+    "desc": "",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "ImposterSyndrome",
+    "name": "冒名顶替综合征",
+    "name_en": "ImposterSyndrome",
+    "desc": "你看起来很可疑……",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Vegan",
+    "name": "纯素主义",
+    "name_en": "Vegan",
+    "desc": "你不吃肉。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "FrozenKnee",
+    "name": "疯跑",
+    "name_en": "FrozenKnee",
+    "desc": "你的移动行动变成突进攻击。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "SchrodingerDisorder",
+    "name": "薛定谔综合征",
+    "name_en": "SchrodingerDisorder",
+    "desc": "每场战斗开始时，有50%的几率已经死亡，还有50%的几率活着，满血，所有属性提升2点，而且获得1个额外回合。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "ScalyScabs",
+    "name": "猫癣",
+    "name_en": "ScalyScabs",
+    "desc": "",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "FattyLiver",
+    "name": "脂肪肝",
+    "name_en": "FattyLiver",
+    "desc": "你每次损失生命时，[img:con]永久-1。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "CommonCold",
+    "name": "普通感冒",
+    "name_en": "CommonCold",
+    "desc": "战斗开始时，所有属性下降。每轮结束时，有30%的几率痊愈。可以传染。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Pox",
+    "name": "牛痘",
+    "name_en": "Pox",
+    "desc": "有10%的几率因为抓痒跳过回合。你的普通攻击有50%的几率施加1层【中毒】。每轮结束时，有5%的几率痊愈。可以传染。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Psychosis",
+    "name": "精神错乱",
+    "name_en": "Psychosis",
+    "desc": "你第一个回合之后，永久【癫狂】。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Necrosis",
+    "name": "坏死",
+    "name_en": "Necrosis",
+    "desc": "你受到伤害时，[img:con]-1、[img:str]-1，同时生成有毒的食物。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Touched",
+    "name": "魔怔",
+    "name_en": "Touched",
+    "desc": "你自身不能恢复生命。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Charred",
+    "name": "烧焦",
+    "name_en": "Charred",
+    "desc": "1层【瘀伤】。你不会被【灼烧】。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Invincible",
+    "name": "不朽",
+    "name_en": "Invincible",
+    "desc": "All damage you take is reduced to 1.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "ExplosiveGas",
+    "name": "臭屁",
+    "name_en": "ExplosiveGas",
+    "desc": "每场战斗第一轮，你会最后行动。你那次行动之前会进行一次超级屁攻击，施加2层【中毒】。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Toxoplasmosis",
+    "name": "弓形虫病",
+    "name_en": "Toxoplasmosis",
+    "desc": "每场战斗开始时，自带1个老鼠跟班。你的普通攻击会【洗脑】敌方老鼠。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Ebola",
+    "name": "埃博拉",
+    "name_en": "Ebola",
+    "desc": "Start each battle with Bleed 3. Your basic attack inflicts Bleed 2.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Fidgety",
+    "name": "躁动",
+    "name_en": "Fidgety",
+    "desc": "你的回合结束时，免费随机对范围内的1个单位自动使用武器。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Narcolepsy",
+    "name": "发作性睡病",
+    "name_en": "Narcolepsy",
+    "desc": "你的回合结束时，入睡，恢复10点生命，同时魔能+7。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Paranoia",
+    "name": "妄想症",
+    "name_en": "Paranoia",
+    "desc": "有单位在你的正后方结束移动时，攻击它，同时获得【害怕】。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "EatingDisorder",
+    "name": "进食障碍",
+    "name_en": "EatingDisorder",
+    "desc": "消耗品的效果增强1倍，但你不知道该怎么吃。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Gastritis",
+    "name": "胃炎",
+    "name_en": "Gastritis",
+    "desc": "你的回合结束时，放屁，同时令前后左右相邻的单位【中毒】。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Hypomania",
+    "name": "轻躁狂",
+    "name_en": "Hypomania",
+    "desc": "每场战斗开始时，自带3个额外回合，之后不再行动。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Hypersomnia",
+    "name": "嗜睡症",
+    "name_en": "Hypersomnia",
+    "desc": "每场战斗开始时，满血，处于睡眠状态。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "KidneyStones",
+    "name": "肾结石",
+    "name_en": "KidneyStones",
+    "desc": "你的回合结束时，受到1点伤害，同时排出1颗肾结石。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Cancer",
+    "name": "癌症",
+    "name_en": "Cancer",
+    "desc": "每场战斗结束时，随机永久失去3点属性，同时随机获得1项突变。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Stinky",
+    "name": "臭烘烘",
+    "name_en": "Stinky",
+    "desc": "前后左右相邻的单位在自己回合开始时，会向远离你的方向移动。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Incontinence",
+    "name": "失禁",
+    "name_en": "Incontinence",
+    "desc": "你受到伤害时会尿尿。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Fossilized",
+    "name": "化石化",
+    "name_en": "Fossilized",
+    "desc": "【招架】+2。你每次被击中时，像石头一样滑动。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Triskaidekaphobia",
+    "name": "十三恐惧症",
+    "name_en": "Triskaidekaphobia",
+    "desc": "你法术的魔能耗费为0。每段冒险期间，你第13次施放的法术会害死自己，而且摧毁你的尸体。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Autism",
+    "name": "自闭症",
+    "name_en": "Autism",
+    "desc": "出生自带的法术魔能耗费-2，其他法术的魔能耗费+1。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Tourettes",
+    "name": "抽动秽语综合征",
+    "name_en": "Tourettes",
+    "desc": "你的回合开始时，你有33%的几率随机对1个目标免费施放你的1个法术。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Albinism",
+    "name": "白化病",
+    "name_en": "Albinism",
+    "desc": "Fire damage you take inflicts +3 Burn.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "SleepParalysis",
+    "name": "鬼压床",
+    "name_en": "SleepParalysis",
+    "desc": "a Sleep Paralysis Demon with Madness spawns! You can't wake up until it's killed.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Diabetes",
+    "name": "糖尿病",
+    "name_en": "Diabetes",
+    "desc": "你的回合结束时，如果没有吃过食物，那么所有属性下降，同时获得1层【混乱】。你每次吃食物时，清除自身所有减益，同时[img:int]+1。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Bipolar",
+    "name": "双相障碍",
+    "name_en": "Bipolar",
+    "desc": "Start each battle with either",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Soulless",
+    "name": "无魂",
+    "name_en": "Soulless",
+    "desc": "你免疫所有增益和减益。死亡时不会留下尸体。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Premonitions",
+    "name": "闪灵",
+    "name_en": "Premonitions",
+    "desc": "Your attacks can't miss.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "PillPopper",
+    "name": "药物成瘾",
+    "name_en": "PillPopper",
+    "desc": "Start each battle with All Stats Down 2.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "BorrowedTime",
+    "name": "赊命",
+    "name_en": "BorrowedTime",
+    "desc": "闪避几率+50%。3层【必死无疑】。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Brave",
+    "name": "勇敢",
+    "name_en": "Brave",
+    "desc": "Take your turn earlier.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Scatological",
+    "name": "嗜粪癖",
+    "name_en": "Scatological",
+    "desc": "Heal 5 HP when you damage poop.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Cannibal",
+    "name": "食尸癖",
+    "name_en": "Cannibal",
+    "desc": "你的回合开始时，如果附近有尸体，你会移动过去，把它吃掉，所有属性提升，同时恢复4点生命。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "CrohnsDisease",
+    "name": "克罗恩病",
+    "name_en": "CrohnsDisease",
+    "desc": "你的回合结束时，有20%的几率到处拉屎！",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Pica",
+    "name": "异食癖",
+    "name_en": "Pica",
+    "desc": "你捡起钱或边角料时，改为恢复生命而不是获得物品原本的效果。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "FelineAids",
+    "name": "猫艾滋",
+    "name_en": "FelineAids",
+    "desc": "Your basic attack inflicts Poison 3 and Weakness 1.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Dyslexia",
+    "name": "阅读障碍",
+    "name_en": "Dyslexia",
+    "desc": "战斗期间，法术的魔能耗费和伤害数值里的数字3和5对调，数字6和9也会对调。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Covid",
+    "name": "新冠",
+    "name_en": "Covid",
+    "desc": "and Weakness 1.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Flu",
+    "name": "流感",
+    "name_en": "Flu",
+    "desc": "Start each battle with Slow 5 and Weakness 5.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "BirdFlu",
+    "name": "禽流感",
+    "name_en": "BirdFlu",
+    "desc": "Start each battle in Mockingbird Form.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Nudist",
+    "name": "裸体主义",
+    "name_en": "Nudist",
+    "desc": "+50% dodge chance.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Elephantiasis",
+    "name": "象皮病",
+    "name_en": "Elephantiasis",
+    "desc": "每场战斗结束时，永久[img:spd]-1，开场[img:shield]+2。8场战斗之后，获得横冲直撞。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Gigantism",
+    "name": "巨人症",
+    "name_en": "Gigantism",
+    "desc": "横冲直撞。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Dwarfism",
+    "name": "侏儒症",
+    "name_en": "Dwarfism",
+    "desc": "闪避几率+10%。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "PrimordialDwarf",
+    "name": "原始侏儒症",
+    "name_en": "PrimordialDwarf",
+    "desc": "",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Sociopathy",
+    "name": "反社会",
+    "name_en": "Sociopathy",
+    "desc": "你第一个回合获得【癫狂】。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "SkillShare_Disorder",
+    "name": "代理型孟乔森综合征",
+    "name_en": "SkillShare_Disorder",
+    "desc": "如果你存在2种毛病，那么队中其他猫咪在每场战斗开始时会出现你的第2种毛病。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Schizophrenia",
+    "name": "精神分裂症",
+    "name_en": "Schizophrenia",
+    "desc": "你的回合结束时，生成1个【癫狂】的幻觉，会攻击除你以外的单位，然后在自身回合结束后消失。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Lycanthropy",
+    "name": "狼化病",
+    "name_en": "Lycanthropy",
+    "desc": "你的回合开始时，有33%的几率变成狼。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "WobblyCat",
+    "name": "摇摆猫综合征",
+    "name_en": "WobblyCat",
+    "desc": "有25%的几率挡住攻击，改为被击退10格。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Singleton",
+    "name": "归一症",
+    "name_en": "Singleton",
+    "desc": "Your max HP and mana are reduced to 1.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Insomnia",
+    "name": "失眠症",
+    "name_en": "Insomnia",
+    "desc": "You can't fall asleep.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Phony",
+    "name": "冒牌货",
+    "name_en": "Phony",
+    "desc": "Start each battle with full mana.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "AcidReflux",
+    "name": "胃酸反流",
+    "name_en": "AcidReflux",
+    "desc": "你的普通攻击变成抛射攻击，会造成溅射伤害，但会对自身造成2点伤害。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "SpontaneousCombustion",
+    "name": "生体自燃",
+    "name_en": "SpontaneousCombustion",
+    "desc": "你受到能力的伤害时，有15%的几率对自己和前后左右相邻的单位施加5层【灼烧】。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "TheHunger",
+    "name": "饥饿",
+    "name_en": "TheHunger",
+    "desc": "Your basic attack has lifesteal.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Paralyzed",
+    "name": "截瘫",
+    "name_en": "Paralyzed",
+    "desc": "and jump abilities are capped at 1 unless they teleport.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "GlassBones",
+    "name": "成骨不全症",
+    "name_en": "GlassBones",
+    "desc": "and +2 Thorns.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Gargantuan",
+    "name": "巨型",
+    "name_en": "Gargantuan",
+    "desc": "你永久【移动受限】。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "BrainDead",
+    "name": "脑死亡",
+    "name_en": "BrainDead",
+    "desc": "你升级时，获得的属性增加1倍。升级时，重掷次数+1。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "TamperedGenes",
+    "name": "基因污染",
+    "name_en": "TamperedGenes",
+    "desc": "每场战斗结束时，随机获得1项突变。你倒地时，尸体会被摧毁。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "SensoryOverloadFace",
+    "name": "感官过载",
+    "name_en": "SensoryOverloadFace",
+    "desc": "除了脸部以外，其他栏位全部上锁。脸部物品效果增强2倍！",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "SensoryOverloadTrinket",
+    "name": "感官过载",
+    "name_en": "SensoryOverloadTrinket",
+    "desc": "All but your trinket slot is locked. Your trinket's effects are tripled!",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "SensoryOverloadHead",
+    "name": "感官过载",
+    "name_en": "SensoryOverloadHead",
+    "desc": "All but your head slot is locked. Your head item's effects are tripled!",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "SensoryOverloadNeck",
+    "name": "感官过载",
+    "name_en": "SensoryOverloadNeck",
+    "desc": "All but your neck slot is locked. Your neck item's effects are tripled!",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "SensoryOverloadWeapon",
+    "name": "感官过载",
+    "name_en": "SensoryOverloadWeapon",
+    "desc": "All but your weapon slot is locked. Your weapon's effects are tripled!",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "EternalYouth",
+    "name": "永葆青春",
+    "name_en": "EternalYouth",
+    "desc": "You are a kitten... forever!",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "DejaVu",
+    "name": "既视感",
+    "name_en": "DejaVu",
+    "desc": "10% chance to cancel actions.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "DownsSyndrome",
+    "name": "唐氏综合征",
+    "name_en": "DownsSyndrome",
+    "desc": "",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Tachysensia",
+    "name": "视物显快症",
+    "name_en": "Tachysensia",
+    "desc": "",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "SavantSyndrome",
+    "name": "学者综合征",
+    "name_en": "SavantSyndrome",
+    "desc": "",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "WilliamsSyndrome",
+    "name": "威廉姆斯综合征",
+    "name_en": "WilliamsSyndrome",
+    "desc": "你的攻击可能造成【洗脑】。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "SpinaBifida",
+    "name": "脊柱裂",
+    "name_en": "SpinaBifida",
+    "desc": "",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "DarkOne",
+    "name": "黑暗之子",
+    "name_en": "DarkOne",
+    "desc": "ターン終了時、すべてのユニットに1ダメージを与え、与えたダメージと同じだけ自分の体力を回復する。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "ADHD",
+    "name": "多动症",
+    "name_en": "ADHD",
+    "desc": "你只有5秒钟的时间做决定，5秒不做决定，猫就会自己行动。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "FlamingFists",
+    "name": "焰拳",
+    "name_en": "FlamingFists",
+    "desc": "你的普通攻击会施加1层【灼烧】。每场战斗开始时，自带1层【灼烧】。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "IntestinalProlapse",
+    "name": "脱肛",
+    "name_en": "IntestinalProlapse",
+    "desc": "你受到的身后伤害增大1倍。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "BlessingOfGlorg",
+    "name": "格洛格的祝福",
+    "name_en": "BlessingOfGlorg",
+    "desc": "你可以卸下受到诅咒的物品。",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "BlackFetin",
+    "name": "黑费汀",
+    "name_en": "BlackFetin",
+    "desc": "You have a 10% to be AI controlled each turn.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "OrangeFetin",
+    "name": "橙费汀",
+    "name_en": "OrangeFetin",
+    "desc": "You have a 10% to be AI controlled each turn.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "PurpleFetin",
+    "name": "紫费汀",
+    "name_en": "PurpleFetin",
+    "desc": "You have a 10% to be AI controlled each turn.",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  },
+  {
+    "key": "Chungus",
+    "name": "大春哥",
+    "name_en": "Chungus",
+    "desc": "",
+    "class": "Disorder",
+    "class_name": "疾病缺陷",
+    "has_icon": true
+  }
+]

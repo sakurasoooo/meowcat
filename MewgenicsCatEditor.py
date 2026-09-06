@@ -1014,12 +1014,22 @@ class MewgenicsApp(ctk.CTk):
             f_row = ctk.CTkFrame(f_dis, fg_color="transparent")
             f_row.pack(fill="x", padx=15, pady=3)
             ctk.CTkLabel(f_row, text=f"疾病槽位 {i+1}:", width=100, anchor="w", font=("Arial", 12, "bold")).pack(side="left")
-            cb = ctk.CTkComboBox(f_row, width=580, values=self.disorder_display_list)
+            cb = SkillCardWidget(
+                f_row,
+                catalog_type="disorder",
+                width=580,
+                height=48,
+                command=lambda val, idx=i: self.on_disorder_changed(idx, val)
+            )
             cb.pack(side="left", padx=5)
             self.disorder_combos.append(cb)
 
         # Compatibility alias
         self.passive_combos = self.upgrade_combos + self.class_passive_combos + self.disorder_combos
+
+    def on_disorder_changed(self, idx, val):
+        if self.current_cat:
+            self.save_current_cat_fields()
 
     def on_active_spell_changed(self, idx, val):
         val = val.strip()
@@ -1252,12 +1262,11 @@ class MewgenicsApp(ctk.CTk):
             elif self.filter_mode == "history" and is_in_house:
                 continue
 
-            # 2. Search filter
+            # 2. Search filter（支持中文职业名/房间名）
             if ft:
-                if (ft not in cat.name.lower() and 
-                    ft not in str(k) and 
-                    ft not in cat.cat_class.lower() and 
-                    ft not in room_str.lower()):
+                match_pool = [cat.name.lower(), str(k), cat.cat_class.lower(), room_str.lower(),
+                              self._class_zh(cat.cat_class).lower(), self._room_zh(room_str).lower()]
+                if not any(ft in s for s in match_pool):
                     continue
 
             # Limit display to max 100 items when showing all to guarantee silky smooth performance
@@ -1271,14 +1280,15 @@ class MewgenicsApp(ctk.CTk):
                 more_lbl.pack(pady=6)
                 break
 
-            # Card text & styling
+            # Card text & styling（职业/房间显示官方中文）
+            cls_disp = self._class_zh(cat.cat_class)
             if is_in_house:
-                room_display = f" [{cat.house_room}]" if cat.house_room else " [在生]"
-                card_text = f"#{k:3d}  {cat.name:<8} [{cat.cat_class}]{room_display}"
+                room_disp = self._room_zh(cat.house_room) if cat.house_room else "在生"
+                card_text = f"#{k:3d}  {cat.name:<8} [{cls_disp}] [{room_disp}]"
                 btn_fg = "#143026"
                 btn_hover = "#1b4d3e"
             else:
-                card_text = f"#{k:3d}  {cat.name:<8} [{cat.cat_class}] [历史]"
+                card_text = f"#{k:3d}  {cat.name:<8} [{cls_disp}] [历史]"
                 btn_fg = "#1e293b"
                 btn_hover = "#334155"
 
@@ -1584,7 +1594,7 @@ class MewgenicsApp(ctk.CTk):
                         else:
                             entry = {'id': mid, 'name': f'#{mid}', 'stats': {}}
                     cat = classify_mutation(entry, CatRecord.get_birth_defect_ids())
-                    img = ctk.CTkImage(make_tile(entry, cat, 44), size=(24, 24))
+                    img = ctk.CTkImage(make_tile(entry, cat, 44, slot_key=slot_key), size=(24, 24))
                 except Exception:
                     img = None
             self._mut_btn_img_cache[key] = img
@@ -1625,7 +1635,7 @@ class MewgenicsApp(ctk.CTk):
                 text_color="#a855f7" if sd == 'left' else "#c084fc")
 
         MutationPicker(self, f"选择突变 - {slot_cn} ({side_label})",
-                       entries, CatRecord.get_birth_defect_ids(), current, norm_id, on_pick)
+                       entries, CatRecord.get_birth_defect_ids(), current, norm_id, on_pick, slot_key=slot_key)
 
     def on_apply_god_mutations(self):
         if not self.current_cat:
@@ -2094,12 +2104,30 @@ class MewgenicsApp(ctk.CTk):
         'BasementUpgrade4': '地下室4层', 'BasementUpgrade5': '地下室5层',
     }
 
+    def _item_is_quest(self, it_or_code):
+        """任务道具（主线/支线）判定：wiki items.csv 的 rarity ∈ {'quest', 'sidequest'}
+        （如 ScaldingOrb=quest、Stopwatch=sidequest）。
+        任务道具存放在仓库 blob 中但不占用普通容量格子（游戏内实测）。"""
+        code = it_or_code if isinstance(it_or_code, str) else getattr(it_or_code, 'name', '')
+        row = self.items_db.get(code, {})
+        return row.get('rarity', '') in ('quest', 'sidequest')
+
+    def _storage_counts(self):
+        """返回 (普通道具数, 任务道具数)——只有普通道具占仓库容量。"""
+        blob = self.save_mgr.inventories.get('storage')
+        items = blob.items if blob else []
+        normal = sum(1 for it in items if not self._item_is_quest(it))
+        quest = len(items) - normal
+        return normal, quest
+
     def refresh_shop_progress(self):
         """刷新商店与家园升级进度卡（只读信息）。"""
         sp = get_shop_progress(self.save_mgr.properties, self.save_mgr.npc_records, self.save_mgr.house_unlocks)
-        used = len(self.save_mgr.inventories['storage'].items)
+        used, quest_n = self._storage_counts()
         cap = sp['storage_capacity']
         usage = f"{used}/{cap}" + (" ⚠️ 已超容量！" if used > cap else "")
+        if quest_n:
+            usage += f"（另有任务道具 {quest_n} 件，不占格子）"
         house = [self.HOUSE_UNLOCK_ZH.get(h) for h in sp['house_unlocks']]
         house = [h for h in house if h] or ['初始小屋']
         tink = '、'.join(self.TINK_SERVICE_ZH.get(k, k) for k in sp['tink_unlocks']) or '无'
@@ -2136,20 +2164,36 @@ class MewgenicsApp(ctk.CTk):
         items = blob.items if blob else []
         if box == 'storage':
             cap = storage_capacity(self.save_mgr.properties.get('house_storage_upgrades', 0))
-            self.item_list.configure(label_text=f"道具列表（{len(items)}/{cap} 件 · 仓库容量上限）")
+            normal, quest_n = self._storage_counts()
+            self.item_list.configure(label_text=f"道具列表（普通 {normal}/{cap} 件 · 任务 {quest_n} 件）")
+            groups = [
+                (f"🎒 普通道具（占容量格，{normal}/{cap}）", "#38bdf8",
+                 [(i, it) for i, it in enumerate(items) if not self._item_is_quest(it)]),
+                (f"📜 任务道具（主线/支线，不占格子，{quest_n} 件）", "#f59e0b",
+                 [(i, it) for i, it in enumerate(items) if self._item_is_quest(it)]),
+            ]
         else:
             self.item_list.configure(label_text=f"道具列表（{len(items)} 件）")
-        for idx, it in enumerate(items):
-            row_db = self.items_db.get(it.name, {})
-            zh = row_db.get('name_zh') or row_db.get('name_en') or it.name
-            icon = self.get_wiki_icon(row_db)
-            dur = self._durability_text(it, row_db)
-            btn = ctk.CTkButton(
-                self.item_list, text=f"{zh}  [{it.name}]  #{it.serial}  ·{dur}",
-                image=icon, compound="left", anchor="w",
-                font=("Arial", 12), fg_color="#1e293b", hover_color="#334155",
-                command=lambda b=box, i=idx: self.on_select_item(b, i))
-            btn.pack(fill="x", padx=4, pady=2)
+            groups = [("📦 全部道具", "#38bdf8", list(enumerate(items)))]
+
+        for title, color, group_items in groups:
+            if not group_items:
+                continue
+            section = ctk.CTkFrame(self.item_list, fg_color="transparent")
+            section.pack(fill="x", padx=2, pady=(8, 0))
+            ctk.CTkLabel(section, text=title, font=("Arial", 12, "bold"), text_color=color,
+                         fg_color="#0f172a", corner_radius=6, anchor="w").pack(fill="x", padx=4, pady=(0, 2))
+            for idx, it in group_items:
+                row_db = self.items_db.get(it.name, {})
+                zh = row_db.get('name_zh') or row_db.get('name_en') or it.name
+                icon = self.get_wiki_icon(row_db)
+                dur = self._durability_text(it, row_db)
+                btn = ctk.CTkButton(
+                    section, text=f"{zh}  [{it.name}]  #{it.serial}  ·{dur}",
+                    image=icon, compound="left", anchor="w",
+                    font=("Arial", 12), fg_color="#1e293b", hover_color="#334155",
+                    command=lambda b=box, i=idx: self.on_select_item(b, i))
+                btn.pack(fill="x", padx=4, pady=2)
 
     def on_select_item(self, box, index):
         blob = self.save_mgr.inventories.get(box)
@@ -2219,15 +2263,15 @@ class MewgenicsApp(ctk.CTk):
             self.status_bar.configure(text="请选择要添加的道具类型！", text_color="#f59e0b")
             return
         box = self._current_box_key()
-        if box == 'storage':
+        if box == 'storage' and not self._item_is_quest(code):
             lv = self.save_mgr.properties.get('house_storage_upgrades', 0)
             cap = storage_capacity(lv)
-            cur = len(self.save_mgr.inventories['storage'].items)
+            cur, quest_n = self._storage_counts()
             if cur >= cap:
                 messagebox.showwarning(
                     "仓库已满",
-                    f"仓库等级 Lv.{lv} 的最大容量为 {cap} 件，当前已有 {cur} 件。\n\n"
-                    "请先在游戏中找 Butch 升级仓库，或删除部分道具后再添加。")
+                    f"仓库等级 Lv.{lv} 的最大容量为 {cap} 件，当前已有 {cur} 件普通道具。\n\n"
+                    "（任务道具不占容量）请先在游戏中找 Butch 升级仓库，或删除部分道具后再添加。")
                 self.status_bar.configure(text=f"添加被拒绝：仓库容量已满（{cur}/{cap}）", text_color="#ef4444")
                 return
         it = self.save_mgr.inventories[box].add_item(code)
@@ -2504,6 +2548,18 @@ class MewgenicsApp(ctk.CTk):
         'core': ('🌋', '地核'), 'jurassic': ('🦖', '侏罗纪'), 'theend': ('💥', '终点'),
         'meatworld': ('🥩', '搏动领域'), 'dimensionx': ('🌀', '裂隙'), 'endoftime': ('⏳', '无限界'),
     }
+
+    ROOM_ZH = {
+        'Floor1_Large': '一层大厅', 'Floor1_Small': '一层侧卧', 'Attic': '阁楼',
+        'Floor2_Large': '二层大厅', 'Floor2_Small': '二层小房间',
+        'Basement0': '地下0层', 'Basement1': '地下1层', 'Basement2': '地下2层',
+        'Basement3': '地下3层', 'Basement4': '地下4层',
+    }
+
+    def _room_zh(self, room):
+        if not room:
+            return ''
+        return self.ROOM_ZH.get(room, room)
 
     def _official_text(self):
         """懒加载游戏官方文本 combined.csv，返回 {key: (en, zh)}；不可用时返回 {}。

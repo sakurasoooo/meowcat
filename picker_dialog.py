@@ -67,7 +67,12 @@ class UniversalGridPickerDialog(ctk.CTkToplevel):
         self.locate_current_value()
 
     def load_catalog(self):
-        cat_fn = "abilities_catalog.json" if self.catalog_type == "ability" else "passives_catalog.json"
+        if self.catalog_type == "disorder":
+            cat_fn = "disorders_catalog.json"
+        elif self.catalog_type == "ability":
+            cat_fn = "abilities_catalog.json"
+        else:
+            cat_fn = "passives_catalog.json"
         cat_path = os.path.join(self.assets_dir, cat_fn)
         if os.path.exists(cat_path):
             try:
@@ -147,7 +152,7 @@ class UniversalGridPickerDialog(ctk.CTkToplevel):
             }
         else:
             self.categories = ['全部']
-            cat_cn = {'全部': '🌟 全部被动'}
+            cat_cn = {'全部': '🦠 全部疾病缺陷' if self.catalog_type == "disorder" else '🌟 全部被动'}
 
         self.cat_buttons = {}
         self.current_category = '全部'

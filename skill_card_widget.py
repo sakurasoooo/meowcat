@@ -37,7 +37,12 @@ class SkillCardWidget(ctk.CTkFrame):
         self.fallback_path = os.path.join(self.assets_dir, "icons", "fallback.png")
 
         # Load catalog dict for quick lookup
-        cat_fn = "abilities_catalog.json" if catalog_type == "ability" else "passives_catalog.json"
+        if catalog_type == "disorder":
+            cat_fn = "disorders_catalog.json"
+        elif catalog_type == "ability":
+            cat_fn = "abilities_catalog.json"
+        else:
+            cat_fn = "passives_catalog.json"
         cat_path = os.path.join(self.assets_dir, cat_fn)
         self.catalog_map = {}
         if os.path.exists(cat_path):
@@ -140,6 +145,11 @@ class SkillCardWidget(ctk.CTkFrame):
         if kwargs:
             super().configure(**kwargs)
 
+    def cget(self, attribute_name):
+        if attribute_name == 'state':
+            return self.state
+        return super().cget(attribute_name)
+
     def update_display(self):
         k = self.current_value
         if not k or k == "None":
@@ -181,7 +191,7 @@ class SkillCardWidget(ctk.CTkFrame):
         if self.get_current_class_func:
             cat_class = self.get_current_class_func()
 
-        title = "选择战斗法术" if self.catalog_type == "ability" else "选择被动特质"
+        title = "选择战斗法术" if self.catalog_type == "ability" else ("选择疾病缺陷 (Disorder)" if self.catalog_type == "disorder" else "选择被动特质")
         dlg = UniversalGridPickerDialog(
             parent_win,
             title=title,

@@ -16,6 +16,11 @@ game_assets/
 tools/jre/
 tools/ffdec/
 tools/ruffle/
+_extractor/
+_test_heads/
+_temp_mut_dump/
+_dump_*.txt
+_extract_assets/
 extracted_sprites/
 test_icons/
 *.swf
