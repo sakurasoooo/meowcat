@@ -157,6 +157,7 @@ class CatRecord:
             self.ability_upgrades.append(str_vals[i])
         while len(self.ability_upgrades) < 4:
             self.ability_upgrades.append('None')
+        self.innate_abilities = self.ability_upgrades
 
         # 2 Class Passives (职业专属正面被动)
         self.class_passives = []
@@ -346,25 +347,24 @@ class CatRecord:
 
     def get_spell_state(self, slot_idx):
         if slot_idx >= len(self.active_abilities):
-            return 'None', False, 'None'
+            return 'None', False, 'None', True
         act = self.active_abilities[slot_idx]
-        upg = self.ability_upgrades[slot_idx] if slot_idx < len(self.ability_upgrades) else 'None'
+        innate = self.ability_upgrades[slot_idx] if slot_idx < len(self.ability_upgrades) else 'None'
         if not act or act == 'None':
-            return 'None', False, 'None'
+            # Active is empty
+            is_locked = (innate == 'None')
+            return 'None', False, innate, is_locked
         
         base_from_act = get_base_ability(act)
-        upg_target = get_ability_upgrade(base_from_act)
-        is_tier2 = (act != base_from_act) or (upg == upg_target) or (upg.endswith('2'))
+        is_tier2 = (act != base_from_act) or (act.endswith('2'))
         base = base_from_act
         
-        # Check custom/divergent enchantment
-        if upg != 'None' and upg != base and upg != upg_target:
-            custom_enchant = upg
-        else:
-            custom_enchant = 'None'
-        return base, is_tier2, custom_enchant
+        # Check if innate is locked to combat base
+        is_locked = (innate == base or innate == 'None')
+        display_innate = base if is_locked else innate
+        return base, is_tier2, display_innate, is_locked
 
-    def set_spell_state(self, slot_idx, base_spell, is_upgraded=False, custom_enchant='None'):
+    def set_spell_state(self, slot_idx, base_spell, is_upgraded=False, innate_skill=None):
         while len(self.active_abilities) <= slot_idx:
             self.active_abilities.append('None')
         while len(self.ability_upgrades) <= slot_idx:
@@ -372,7 +372,10 @@ class CatRecord:
             
         if not base_spell or base_spell == 'None':
             self.active_abilities[slot_idx] = 'None'
-            self.ability_upgrades[slot_idx] = 'None'
+            if innate_skill and innate_skill != 'None':
+                self.ability_upgrades[slot_idx] = innate_skill
+            else:
+                self.ability_upgrades[slot_idx] = 'None'
         else:
             upg_target = get_ability_upgrade(base_spell)
             if is_upgraded:
@@ -380,11 +383,12 @@ class CatRecord:
             else:
                 self.active_abilities[slot_idx] = base_spell
                 
-            if custom_enchant and custom_enchant != 'None' and custom_enchant != base_spell:
-                self.ability_upgrades[slot_idx] = custom_enchant
+            if innate_skill and innate_skill != 'None':
+                self.ability_upgrades[slot_idx] = innate_skill
             else:
                 self.ability_upgrades[slot_idx] = base_spell
                 
+        self.innate_abilities = self.ability_upgrades
         self.sync_legacy_passives()
         self.is_modified = True
 

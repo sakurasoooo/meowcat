@@ -266,10 +266,10 @@ class MewgenicsApp(ctk.CTk):
         self.mutation_badge_labels = {}
         self.active_combos = []
         self.upgrade_checkboxes = []
-        self.custom_enchant_frames = []
-        self.custom_enchant_combos = []
-        self.custom_enchant_btns = []
-        self.upgrade_combos = []
+        self.innate_combos = []
+        self.innate_lock_btns = []
+        self.innate_locked = [True, True, True, True]
+        self.upgrade_combos = self.innate_combos
         self.class_passive_combos = []
         self.disorder_combos = []
         self.passive_combos = []
@@ -853,48 +853,64 @@ class MewgenicsApp(ctk.CTk):
         self.combo_move = ctk.CTkComboBox(f_mov, width=320, values=['DefaultMove'] + ab_names)
         self.combo_move.pack(side="left", padx=5)
 
-        # 2. 4 Active Abilities + 4 Ability Upgrades (with 1-to-1 Tier 2 Checkbox)
+        # 2. 4 Active Abilities + 4 Innate Genetic Abilities (Double-Line Mini-Cards)
         f_acts = ctk.CTkFrame(container, fg_color="#1e293b", corner_radius=8)
         f_acts.pack(fill="x", padx=10, pady=6)
         
         f_act_head = ctk.CTkFrame(f_acts, fg_color="transparent")
-        f_act_head.pack(fill="x", padx=15, pady=(8, 4))
-        ctk.CTkLabel(f_act_head, text="🔮 主动战斗法术与进阶强化 (Active Spells & Tier 2 Upgrades 1 - 4):", font=("Arial", 13, "bold"), text_color="#a855f7").pack(side="left")
-        ctk.CTkLabel(f_act_head, text="💡 勾选直接升阶；主动法术为空时进阶自动禁用", font=("Arial", 11), text_color="#94a3b8").pack(side="right")
+        f_act_head.pack(fill="x", padx=15, pady=(10, 4))
+        
+        f_head_left = ctk.CTkFrame(f_act_head, fg_color="transparent")
+        f_head_left.pack(side="left")
+        ctk.CTkLabel(f_head_left, text="🔮 战斗法术与先天遗传底表 (Active Spells & Innate Genetic Abilities):", font=("Arial", 13, "bold"), text_color="#a855f7").pack(anchor="w")
+        ctk.CTkLabel(f_head_left, text="💡 战斗仅执行【战斗法术】；配种繁育时，后代从【遗传底表】中抽取继承技能", font=("Arial", 11), text_color="#94a3b8").pack(anchor="w", pady=(2, 0))
+
+        f_head_right = ctk.CTkFrame(f_act_head, fg_color="transparent")
+        f_head_right.pack(side="right", padx=5)
+        ctk.CTkButton(f_head_right, text="🔄 全槽位与基础技能同步", height=26, font=("Arial", 11), fg_color="#0284c7", hover_color="#0369a1", command=self.sync_all_innate_to_combat).pack(side="right", padx=3)
+        ctk.CTkButton(f_head_right, text="✨ 一键神级育种基因", height=26, font=("Arial", 11), fg_color="#8b5cf6", hover_color="#7c3aed", command=self.apply_god_innate_preset).pack(side="right", padx=3)
 
         self.active_combos = []
         self.upgrade_checkboxes = []
-        self.custom_enchant_frames = []
-        self.custom_enchant_combos = []
-        self.custom_enchant_btns = []
-        self.upgrade_combos = []
+        self.innate_combos = []
+        self.innate_lock_btns = []
+        self.innate_locked = [True, True, True, True]
+        self.upgrade_combos = self.innate_combos
 
         for i in range(4):
-            f_row = ctk.CTkFrame(f_acts, fg_color="transparent")
-            f_row.pack(fill="x", padx=15, pady=3)
+            # Mini-Card container
+            f_card = ctk.CTkFrame(f_acts, fg_color="#182234", corner_radius=6)
+            f_card.pack(fill="x", padx=15, pady=4)
 
-            ctk.CTkLabel(f_row, text=f"主动法术 {i+1}:", width=85, anchor="w", font=("Arial", 12)).pack(side="left")
-            cb_act = ctk.CTkComboBox(f_row, width=230, values=['None'] + ab_names, command=lambda val, idx=i: self.on_active_spell_changed(idx, val))
-            cb_act.pack(side="left", padx=(0, 10))
+            # Row 1: Combat active spell + Tier 2 upgrade checkbox
+            f_r1 = ctk.CTkFrame(f_card, fg_color="transparent")
+            f_r1.pack(fill="x", padx=12, pady=(6, 2))
+
+            ctk.CTkLabel(f_r1, text=f"⚔️ 战斗法术 {i+1}:", width=95, anchor="w", font=("Arial", 12, "bold")).pack(side="left")
+            cb_act = ctk.CTkComboBox(f_r1, width=240, values=['None'] + ab_names, command=lambda val, idx=i: self.on_active_spell_changed(idx, val))
+            cb_act.pack(side="left", padx=(0, 15))
             self.active_combos.append(cb_act)
 
-            chk_upg = ctk.CTkCheckBox(f_row, text="进阶强化 (未选择法术)", width=240, font=("Arial", 12), text_color="#64748b", fg_color="#a855f7", hover_color="#9333ea", command=lambda idx=i: self.on_upgrade_checkbox_toggled(idx))
+            chk_upg = ctk.CTkCheckBox(f_r1, text="进阶强化 (未选择法术)", font=("Arial", 12), text_color="#64748b", fg_color="#a855f7", hover_color="#9333ea", command=lambda idx=i: self.on_upgrade_checkbox_toggled(idx))
             chk_upg.pack(side="left", padx=(0, 10))
             chk_upg.configure(state="disabled")
             self.upgrade_checkboxes.append(chk_upg)
 
-            f_custom = ctk.CTkFrame(f_row, fg_color="transparent")
-            f_custom.pack(side="left", padx=0)
-            self.custom_enchant_frames.append(f_custom)
+            # Row 2: Innate genetic abilities base table
+            f_r2 = ctk.CTkFrame(f_card, fg_color="transparent")
+            f_r2.pack(fill="x", padx=12, pady=(2, 6))
 
-            cb_custom = ctk.CTkComboBox(f_custom, width=190, values=['None (默认附魔)'] + ab_names, font=("Arial", 11), command=lambda val, idx=i: self.on_custom_enchant_changed(idx, val))
-            cb_custom.set('None (默认附魔)')
-            self.custom_enchant_combos.append(cb_custom)
-            self.upgrade_combos.append(cb_custom)
+            ctk.CTkLabel(f_r2, text=f"🧬 遗传底表 {i+1}:", width=95, anchor="w", font=("Arial", 12), text_color="#38bdf8").pack(side="left")
+            cb_innate = ctk.CTkComboBox(f_r2, width=240, values=['None'] + ab_names, font=("Arial", 11), command=lambda val, idx=i: self.on_innate_changed(idx, val))
+            cb_innate.set('None')
+            cb_innate.pack(side="left", padx=(0, 15))
+            self.innate_combos.append(cb_innate)
 
-            btn_custom = ctk.CTkButton(f_row, text="⚙️ 附魔", width=55, height=24, font=("Arial", 11), fg_color="#334155", hover_color="#475569", command=lambda idx=i: self.toggle_custom_enchant(idx))
-            btn_custom.pack(side="left", padx=2)
-            self.custom_enchant_btns.append(btn_custom)
+            btn_lock = ctk.CTkButton(f_r2, text="🔒 默认与基础技能同步", width=195, height=24, font=("Arial", 11), fg_color="#334155", hover_color="#475569", command=lambda idx=i: self.toggle_innate_lock(idx))
+            btn_lock.pack(side="left", padx=(0, 10))
+            self.innate_lock_btns.append(btn_lock)
+
+            ctk.CTkLabel(f_r2, text="[繁育遗传基因池]", font=("Arial", 11), text_color="#64748b").pack(side="left")
 
         # 3. 2 Class Passives (正面职业被动)
         f_cp = ctk.CTkFrame(container, fg_color="#1e293b", corner_radius=8)
@@ -945,11 +961,17 @@ class MewgenicsApp(ctk.CTk):
         if val == 'None':
             chk.deselect()
             chk.configure(state="disabled", text="进阶强化 (未选择法术)", text_color="#64748b")
-            self.show_custom_enchant(idx, show=False)
-            self.custom_enchant_combos[idx].set('None (默认附魔)')
+            if self.innate_locked[idx]:
+                self.innate_combos[idx].configure(state="normal")
+                self.innate_combos[idx].set('None')
+                self.innate_combos[idx].configure(state="disabled")
         else:
             upg_target = get_ability_upgrade(val)
             chk.configure(state="normal", text=f"✨ 进阶强化 (Tier 2: {upg_target})", text_color="#e2e8f0")
+            if self.innate_locked[idx]:
+                self.innate_combos[idx].configure(state="normal")
+                self.innate_combos[idx].set(val)
+                self.innate_combos[idx].configure(state="disabled")
         if self.current_cat:
             self.save_current_cat_fields()
 
@@ -957,30 +979,52 @@ class MewgenicsApp(ctk.CTk):
         if self.current_cat:
             self.save_current_cat_fields()
 
-    def on_custom_enchant_changed(self, idx, val):
+    def on_innate_changed(self, idx, val):
         if self.current_cat:
             self.save_current_cat_fields()
 
-    def toggle_custom_enchant(self, idx):
-        cb = self.custom_enchant_combos[idx]
-        btn = self.custom_enchant_btns[idx]
-        if cb.winfo_ismapped():
-            cb.pack_forget()
-            btn.configure(fg_color="#334155")
-        else:
-            cb.pack(side="left", padx=2)
-            btn.configure(fg_color="#6366f1")
+    def toggle_innate_lock(self, idx):
+        self.innate_locked[idx] = not self.innate_locked[idx]
+        if self.innate_locked[idx]:
+            combat_base = get_base_ability(self.active_combos[idx].get())
+            self.innate_combos[idx].configure(state="normal")
+            self.innate_combos[idx].set(combat_base)
+        self.update_innate_lock_ui(idx)
+        if self.current_cat:
+            self.save_current_cat_fields()
 
-    def show_custom_enchant(self, idx, show=True):
-        cb = self.custom_enchant_combos[idx]
-        btn = self.custom_enchant_btns[idx]
-        if show:
-            if not cb.winfo_ismapped():
-                cb.pack(side="left", padx=2)
-            btn.configure(fg_color="#6366f1")
+    def update_innate_lock_ui(self, idx):
+        is_locked = self.innate_locked[idx]
+        btn = self.innate_lock_btns[idx]
+        cb = self.innate_combos[idx]
+        if is_locked:
+            btn.configure(text="🔒 默认与基础技能同步", fg_color="#334155", hover_color="#475569")
+            cb.configure(state="disabled")
         else:
-            cb.pack_forget()
-            btn.configure(fg_color="#334155")
+            btn.configure(text="🔓 已解锁: 自由定制后代遗传", fg_color="#6366f1", hover_color="#4f46e5")
+            cb.configure(state="normal")
+
+    def sync_all_innate_to_combat(self):
+        for i in range(4):
+            self.innate_locked[i] = True
+            combat_base = get_base_ability(self.active_combos[i].get())
+            self.innate_combos[i].configure(state="normal")
+            self.innate_combos[i].set(combat_base)
+            self.update_innate_lock_ui(i)
+        if self.current_cat:
+            self.save_current_cat_fields()
+        self.status_bar.configure(text="已将全部 4 个遗传底表槽位与当前战斗技能基础形态重置同步", text_color="#38bdf8")
+
+    def apply_god_innate_preset(self):
+        god_genes = ['DivineProtection', 'HolyLight', 'CircleOfProtection', 'MeteorStorm']
+        for i in range(4):
+            self.innate_locked[i] = False
+            self.innate_combos[i].configure(state="normal")
+            self.innate_combos[i].set(god_genes[i])
+            self.update_innate_lock_ui(i)
+        if self.current_cat:
+            self.save_current_cat_fields()
+        self.status_bar.configure(text="已一键为猫咪装配神级繁育基因库 [神圣守护/神圣之光/守护之圈/流星风暴]，后代将以此为基因模板！", text_color="#10b981")
 
     def init_disorder_options(self):
         self.disorder_lookup = {}
@@ -1274,15 +1318,13 @@ class MewgenicsApp(ctk.CTk):
         self.combo_atk.set(cat.attack_ability)
         self.combo_move.set(getattr(cat, 'move_ability', 'DefaultMove'))
         for i in range(4):
-            base_spell, is_tier2, custom_enchant = cat.get_spell_state(i)
+            base_spell, is_tier2, innate_skill, is_locked = cat.get_spell_state(i)
             self.active_combos[i].set(base_spell)
 
             chk = self.upgrade_checkboxes[i]
             if base_spell == 'None':
                 chk.deselect()
                 chk.configure(state="disabled", text="进阶强化 (未选择法术)", text_color="#64748b")
-                self.show_custom_enchant(i, show=False)
-                self.custom_enchant_combos[i].set('None (默认附魔)')
             else:
                 upg_target = get_ability_upgrade(base_spell)
                 chk.configure(state="normal", text=f"✨ 进阶强化 (Tier 2: {upg_target})", text_color="#e2e8f0")
@@ -1291,12 +1333,10 @@ class MewgenicsApp(ctk.CTk):
                 else:
                     chk.deselect()
 
-                if custom_enchant != 'None':
-                    self.show_custom_enchant(i, show=True)
-                    self.custom_enchant_combos[i].set(custom_enchant)
-                else:
-                    self.show_custom_enchant(i, show=False)
-                    self.custom_enchant_combos[i].set('None (默认附魔)')
+            self.innate_locked[i] = is_locked
+            self.innate_combos[i].configure(state="normal")
+            self.innate_combos[i].set(innate_skill)
+            self.update_innate_lock_ui(i)
 
         self.update_class_passive_options(cat.cat_class)
 
@@ -1362,12 +1402,11 @@ class MewgenicsApp(ctk.CTk):
         for i in range(4):
             base_spell = self.active_combos[i].get()
             is_upg = (self.upgrade_checkboxes[i].get() == 1) if base_spell != 'None' else False
-            custom_val = self.custom_enchant_combos[i].get()
-            if 'None' in custom_val:
-                custom_enchant = 'None'
+            if self.innate_locked[i]:
+                innate_val = base_spell if base_spell != 'None' else 'None'
             else:
-                custom_enchant = custom_val
-            cat.set_spell_state(i, base_spell, is_upgraded=is_upg, custom_enchant=custom_enchant)
+                innate_val = self.innate_combos[i].get()
+            cat.set_spell_state(i, base_spell, is_upgraded=is_upg, innate_skill=innate_val)
 
         for i in range(2):
             raw = self.class_passive_combos[i].get()
