@@ -1,0 +1,6183 @@
+[
+  {
+    "key": "SELFASSURED",
+    "name": "自信满满",
+    "name_en": "Self-Assured",
+    "desc": "你每次击倒1个单位时，随机有1项属性提升。",
+    "has_icon": true
+  },
+  {
+    "key": "LUCKDRAIN",
+    "name": "吸走好运",
+    "name_en": "Luck Drain",
+    "desc": "每次有单位倒地，就【幸运】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "INFESTED",
+    "name": "滋生",
+    "name_en": "Infested",
+    "desc": "你的回合结束时，有50%的几率召唤1个跳蚤跟班。",
+    "has_icon": true
+  },
+  {
+    "key": "WORMS",
+    "name": "肉虫",
+    "name_en": "Worms",
+    "desc": "你的回合结束时，有50%的几率召唤1个蛆虫跟班。",
+    "has_icon": true
+  },
+  {
+    "key": "AMPED",
+    "name": "亢奋",
+    "name_en": "Amped",
+    "desc": "你的回合结束时，【速度】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "FURIOUS",
+    "name": "狂怒",
+    "name_en": "Furious",
+    "desc": "你每次打出暴击时，伤害+1。\n暴击几率+5%。",
+    "has_icon": true
+  },
+  {
+    "key": "DEATHLESS",
+    "name": "不死",
+    "name_en": "Deathless",
+    "desc": "尸体耐久+3",
+    "has_icon": true
+  },
+  {
+    "key": "METALDETECTOR",
+    "name": "金属探测器",
+    "name_en": "Metal Detector",
+    "desc": "你走过1个方格时，有5%的几率生成1块钱。",
+    "has_icon": true
+  },
+  {
+    "key": "DEATHPROOF",
+    "name": "金刚不坏",
+    "name_en": "Deathproof",
+    "desc": "你倒地期间，每轮结束时有25%的几率以1点生命复活。",
+    "has_icon": true
+  },
+  {
+    "key": "LEADER",
+    "name": "领袖",
+    "name_en": "Leader",
+    "desc": "前后左右相邻的友方伤害+1，范围+1。",
+    "has_icon": true
+  },
+  {
+    "key": "MANGE",
+    "name": "疥癣",
+    "name_en": "Mange",
+    "desc": "接触到你的单位会获得1层【中毒】。",
+    "has_icon": true
+  },
+  {
+    "key": "ETANK",
+    "name": "E罐",
+    "name_en": "E-Tank",
+    "desc": "每场战斗开始时，生命上限+20（生命不补满）。",
+    "has_icon": true
+  },
+  {
+    "key": "CAREFUL",
+    "name": "小心谨慎",
+    "name_en": "Careful",
+    "desc": "你对友方造成的伤害变成0。",
+    "has_icon": true
+  },
+  {
+    "key": "DIRTYCLAWS",
+    "name": "脏爪子",
+    "name_en": "Dirty Claws",
+    "desc": "如果敌人已经【中毒】或者【出血】，你的物理攻击会令其【中毒】+1和/或【出血】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "LATEBLOOMER",
+    "name": "大器晚成",
+    "name_en": "Late Bloomer",
+    "desc": "你到第5回合时，所有属性提升3点。",
+    "has_icon": true
+  },
+  {
+    "key": "STUDY",
+    "name": "研究",
+    "name_en": "Study",
+    "desc": "你的攻击或能力命中新的一类单位时，【智力】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "SKILLSHARE",
+    "name": "技能共享",
+    "name_en": "Skill Share",
+    "desc": "每场战斗开始时，你另一个被动能力会共享给队里其他猫咪。",
+    "has_icon": true
+  },
+  {
+    "key": "NATURALHEALING",
+    "name": "自然愈合",
+    "name_en": "Natural Healing",
+    "desc": "生命自然恢复+1",
+    "has_icon": true
+  },
+  {
+    "key": "LONGSHOT",
+    "name": "远射",
+    "name_en": "Longshot",
+    "desc": "范围+1。",
+    "has_icon": true
+  },
+  {
+    "key": "FASTFOOTED",
+    "name": "猫步灵活",
+    "name_en": "Fast Footsies",
+    "desc": "免疫负面的方格效果。",
+    "has_icon": true
+  },
+  {
+    "key": "SLUGGER",
+    "name": "强力击",
+    "name_en": "Slugger",
+    "desc": "伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "PULP",
+    "name": "绞肉",
+    "name_en": "Pulp",
+    "desc": "你击杀单位或摧毁尸体时，它会变成肉。",
+    "has_icon": true
+  },
+  {
+    "key": "AMPLIFY",
+    "name": "增效",
+    "name_en": "Amplify",
+    "desc": "魔法伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "DEATHBOON",
+    "name": "死亡恩赐",
+    "name_en": "Death Boon",
+    "desc": "你倒地时，全体友方所有属性提升。",
+    "has_icon": true
+  },
+  {
+    "key": "SANTASANGRE",
+    "name": "圣血",
+    "name_en": "Santa Sangre",
+    "desc": "你倒地时，友方恢复12点生命。溢出的治疗效果转化成护盾。",
+    "has_icon": true
+  },
+  {
+    "key": "UNSCARRED",
+    "name": "毫毛无伤",
+    "name_en": "Unscarred",
+    "desc": "满生命时，暴击几率是100%。",
+    "has_icon": false
+  },
+  {
+    "key": "DAUNT",
+    "name": "威慑",
+    "name_en": "Daunt",
+    "desc": "小型敌人不会攻击你。",
+    "has_icon": true
+  },
+  {
+    "key": "ANIMALHANDLER",
+    "name": "驯兽",
+    "name_en": "Animal Handler",
+    "desc": "每场战斗开始时，你会随机带1个虫子跟班（伤害和生命提升）。",
+    "has_icon": true
+  },
+  {
+    "key": "WHIPCRACKER",
+    "name": "督工",
+    "name_en": "Whipcracker",
+    "desc": "你伤害到友方时，友方伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "PRESSUREPOINTS",
+    "name": "弱者之力",
+    "name_en": "Might of the Meek",
+    "desc": "如果你造成的伤害不大于2，那么一定暴击。",
+    "has_icon": true
+  },
+  {
+    "key": "GASSY",
+    "name": "胀气",
+    "name_en": "Gassy",
+    "desc": "你每次受到伤害时，击退前后左右相邻的所有单位。",
+    "has_icon": true
+  },
+  {
+    "key": "DEALER",
+    "name": "药贩子",
+    "name_en": "Dealer",
+    "desc": "你可以对其他单位使用消耗品。",
+    "has_icon": true
+  },
+  {
+    "key": "PATIENCE",
+    "name": "耐心",
+    "name_en": "Patience",
+    "desc": "如果你不行动直接结束回合，那么可以在一轮结束时获得1个额外回合。如果你跳过原始回合，那么额外回合魔能不会自然恢复。",
+    "has_icon": true
+  },
+  {
+    "key": "WIGGLY",
+    "name": "扭来扭去",
+    "name_en": "Wiggly",
+    "desc": "闪避几率+25%。",
+    "has_icon": true
+  },
+  {
+    "key": "MINIME",
+    "name": "迷你我",
+    "name_en": "Mini-Me",
+    "desc": "召唤1个半大的分身，属性是你的50%，AI控制。",
+    "has_icon": true
+  },
+  {
+    "key": "BAREMINIMUM",
+    "name": "保底",
+    "name_en": "Bare Minimum",
+    "desc": "你的属性不会低于5。",
+    "has_icon": true
+  },
+  {
+    "key": "UNRESTRICTED",
+    "name": "无拘无束",
+    "name_en": "Unrestricted",
+    "desc": "如果一个行动原本每场战斗可以用1次，现在改为每个回合能用一次。",
+    "has_icon": true
+  },
+  {
+    "key": "DEATHSDOOR",
+    "name": "鬼门关",
+    "name_en": "Death's Door",
+    "desc": "你生命只剩1点时，你的所有法术耗费1点魔能，但每个回合只能施放1次。",
+    "has_icon": true
+  },
+  {
+    "key": "OVERCONFIDENT",
+    "name": "自负",
+    "name_en": "Overconfident",
+    "desc": "满生命时，法术的耗费-2，但你所受伤害增大1倍。魔能耗费最低降到1。",
+    "has_icon": true
+  },
+  {
+    "key": "SERIALKILLER",
+    "name": "连环杀手",
+    "name_en": "Serial Killer",
+    "desc": "你击杀3个单位之后，【速度】+6，而且背刺暴击几率100%。",
+    "has_icon": true
+  },
+  {
+    "key": "STRENGTHINNUMBERS",
+    "name": "气势占优",
+    "name_en": "Strength in Numbers",
+    "desc": "你每多1个跟班，你的跟班就伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "FIGHTERSOUL",
+    "name": "战士之魂",
+    "name_en": "Fighter's Soul",
+    "desc": "升级时还会出现战士能力。",
+    "has_icon": false
+  },
+  {
+    "key": "HUNTERSOUL",
+    "name": "猎手之魂",
+    "name_en": "Hunter's Soul",
+    "desc": "升级时还会出现猎手能力。",
+    "has_icon": false
+  },
+  {
+    "key": "MAGESOUL",
+    "name": "法师之魂",
+    "name_en": "Mage's Soul",
+    "desc": "升级时还会出现法师能力。",
+    "has_icon": false
+  },
+  {
+    "key": "CLERICSOUL",
+    "name": "牧师之魂",
+    "name_en": "Cleric's Soul",
+    "desc": "升级时还会出现牧师能力。",
+    "has_icon": false
+  },
+  {
+    "key": "TANKSOUL",
+    "name": "坦克之魂",
+    "name_en": "Tank's Soul",
+    "desc": "升级时还会出现坦克能力。",
+    "has_icon": false
+  },
+  {
+    "key": "THIEFSOUL",
+    "name": "盗贼之魂",
+    "name_en": "Thief's Soul",
+    "desc": "升级时还会出现盗贼能力。",
+    "has_icon": false
+  },
+  {
+    "key": "MONKSOUL",
+    "name": "武僧之魂",
+    "name_en": "Monk's Soul",
+    "desc": "升级时还会出现武僧能力。",
+    "has_icon": false
+  },
+  {
+    "key": "BUTCHERSOUL",
+    "name": "屠户之魂",
+    "name_en": "Butcher's Soul",
+    "desc": "升级时还会出现屠户能力。",
+    "has_icon": false
+  },
+  {
+    "key": "DRUIDSOUL",
+    "name": "德鲁伊之魂",
+    "name_en": "Druid's Soul",
+    "desc": "升级时还会出现德鲁伊能力。",
+    "has_icon": false
+  },
+  {
+    "key": "TINKERERSOUL",
+    "name": "工匠之魂",
+    "name_en": "Tinkerer's Soul",
+    "desc": "升级时还会出现工匠能力。",
+    "has_icon": false
+  },
+  {
+    "key": "NECROMANCERSOUL",
+    "name": "死灵法师之魂",
+    "name_en": "Necromancer's Soul",
+    "desc": "升级时还会出现死灵法师能力。",
+    "has_icon": false
+  },
+  {
+    "key": "PSYCHICSOUL",
+    "name": "灵能士之魂",
+    "name_en": "Psychic's Soul",
+    "desc": "升级时还会出现灵能士能力。",
+    "has_icon": false
+  },
+  {
+    "key": "VOIDSOUL",
+    "name": "虚空之魂",
+    "name_en": "Void Soul",
+    "desc": "升级时只有强化的无色能力可以选择。",
+    "has_icon": true
+  },
+  {
+    "key": "CHARMING",
+    "name": "洗脑",
+    "name_en": "Charming",
+    "desc": "伤害你的单位有25%的几率被你【洗脑】。",
+    "has_icon": true
+  },
+  {
+    "key": "FIRSTIMPRESSION",
+    "name": "迎头一击",
+    "name_en": "First Impression",
+    "desc": "每场战斗开始时，奖励攻击+1。",
+    "has_icon": true
+  },
+  {
+    "key": "SCAVENGER",
+    "name": "觅食",
+    "name_en": "Scavenger",
+    "desc": "如果你的小玩意儿栏位是空的，那么每场战斗开始时自动装备一小份食物消耗品。",
+    "has_icon": true
+  },
+  {
+    "key": "ZENKAIBOOST",
+    "name": "界限突破",
+    "name_en": "Zenkai Boost",
+    "desc": "如果你结束战斗时只有1点生命，那么随机1项属性永久+1，而且下一场战斗开始时，生命全满，同时所有属性提升3。",
+    "has_icon": true
+  },
+  {
+    "key": "PROTECTION",
+    "name": "保护",
+    "name_en": "Protection",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "ROCKIN",
+    "name": "滚石团",
+    "name_en": "Rockin'",
+    "desc": "每场战斗开始时，召唤4颗小石头。",
+    "has_icon": true
+  },
+  {
+    "key": "MANIA",
+    "name": "躁狂",
+    "name_en": "Mania",
+    "desc": "你的回合开始时，魔能有10%的几率回满。",
+    "has_icon": true
+  },
+  {
+    "key": "LUCKY",
+    "name": "幸运",
+    "name_en": "Lucky",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "180",
+    "name": "180度转身",
+    "name_en": "180",
+    "desc": "你使用普通攻击之后，转身再用一次。",
+    "has_icon": false
+  },
+  {
+    "key": "JESTERSSOUL",
+    "name": "小丑之魂",
+    "name_en": "Jester's Soul",
+    "desc": "升级时还会出现任意职业的能力。\n升级时的能力选项你可以刷新两次。",
+    "has_icon": true
+  },
+  {
+    "key": "HOTBLOODED",
+    "name": "热血",
+    "name_en": "Hot-Blooded",
+    "desc": "你施加的【灼烧】层数+1。",
+    "has_icon": true
+  },
+  {
+    "key": "TOXICBLOODED",
+    "name": "毒血",
+    "name_en": "Toxic-Blooded",
+    "desc": "你施加的【中毒】层数+1。",
+    "has_icon": true
+  },
+  {
+    "key": "BLOODBLOODED",
+    "name": "血血",
+    "name_en": "Blood-Blooded",
+    "desc": "你施加的【出血】层数+1。",
+    "has_icon": true
+  },
+  {
+    "key": "SAFESWITCHING",
+    "name": "安全切换",
+    "name_en": "Safe Switching",
+    "desc": "你切换架势时，【护盾】+2。",
+    "has_icon": true
+  },
+  {
+    "key": "MIXUP",
+    "name": "择",
+    "name_en": "Mixup",
+    "desc": "你切换架势时，这个回合下1次普通攻击一定暴击。",
+    "has_icon": true
+  },
+  {
+    "key": "TURNABOUT",
+    "name": "望身后",
+    "name_en": "Turnabout",
+    "desc": "你的基础近身攻击会施加1层【混乱】，同时令目标背对你。",
+    "has_icon": true
+  },
+  {
+    "key": "MONKEYSTYLE",
+    "name": "猴拳",
+    "name_en": "Monkey Style",
+    "desc": "有15%的几率格挡伤害，同时反击。",
+    "has_icon": true
+  },
+  {
+    "key": "BRICKSKIN",
+    "name": "皮糙肉厚",
+    "name_en": "Brick Skin",
+    "desc": "每当你获得【护盾】，【护盾】额外+2。",
+    "has_icon": true
+  },
+  {
+    "key": "JAGGEDEDGE",
+    "name": "锯齿边缘",
+    "name_en": "Jagged Edges",
+    "desc": "你失去【护盾】时，【尖刺】+1。",
+    "has_icon": false
+  },
+  {
+    "key": "MINDBREAKER",
+    "name": "智灭",
+    "name_en": "Mind Breaker",
+    "desc": "你的普通攻击会施加1层【魔法克制】。",
+    "has_icon": true
+  },
+  {
+    "key": "COBRASTYLE",
+    "name": "蛇式",
+    "name_en": "Cobra Style",
+    "desc": "敌人移动到前后左右相邻的方格时，对它进行1次较弱的近身攻击。",
+    "has_icon": true
+  },
+  {
+    "key": "TENDERIZE",
+    "name": "敲肉",
+    "name_en": "Tenderize",
+    "desc": "你的基础近身攻击会施加1层【瘀伤】。",
+    "has_icon": true
+  },
+  {
+    "key": "LONGARMS",
+    "name": "通臂",
+    "name_en": "Long Arms",
+    "desc": "范围+1，近身距离+1。",
+    "has_icon": true
+  },
+  {
+    "key": "SPREADTHEPAIN",
+    "name": "传播痛苦",
+    "name_en": "Spread the Pain",
+    "desc": "每个回合对1个单位第一次造成伤害时，伤害额外+2。",
+    "has_icon": true
+  },
+  {
+    "key": "HARDEN",
+    "name": "变硬",
+    "name_en": "Harden",
+    "desc": "你获得【护盾】时，同时获得1层临时【招架】。",
+    "has_icon": true
+  },
+  {
+    "key": "IRONSKINTECHNIQUE",
+    "name": "铁布衫",
+    "name_en": "Iron Skin Technique",
+    "desc": "你造成暴击时，【护盾】+2。暴击几率+10%。",
+    "has_icon": false
+  },
+  {
+    "key": "JETFISTS",
+    "name": "拳风",
+    "name_en": "Jet Fists",
+    "desc": "你的近身攻击和能力会掀起一阵风，刮过命中的方格。",
+    "has_icon": true
+  },
+  {
+    "key": "ENERGYFISTS",
+    "name": "气拳",
+    "name_en": "Energy Fists",
+    "desc": "你使用普通攻击时，会发出1道【闪光】。",
+    "has_icon": true
+  },
+  {
+    "key": "UNSTOPPABLE",
+    "name": "势不可挡！",
+    "name_en": "Unstoppable!",
+    "desc": "免疫击退、【眩晕】、【迟缓】等移动减益。",
+    "has_icon": true
+  },
+  {
+    "key": "UNBURDENEDMOTION",
+    "name": "行无碍",
+    "name_en": "Unburdened Motion",
+    "desc": "每有1个防具栏位空着，就【速度】+1，闪避几率+10%。如果所有防具栏位都空着，那么你就可以额外移动1次。",
+    "has_icon": true
+  },
+  {
+    "key": "UNBURDENEDSTRIKES",
+    "name": "身无累",
+    "name_en": "Unburdened Strikes",
+    "desc": "每有1个防具栏位空着，就暴击几率+10%，暴击伤害+25%。如果所有防具栏位都空着，那么你只要被打到就会反击。",
+    "has_icon": true
+  },
+  {
+    "key": "UNBURDENEDTHOUGHTS",
+    "name": "心无羁",
+    "name_en": "Unburdened Thoughts",
+    "desc": "每有1个防具栏位空着，就【智力】+1，【魅力】+1。如果所有防具栏位都空着，那么你法术的魔能耗费-1。",
+    "has_icon": true
+  },
+  {
+    "key": "RUNNINGJAB",
+    "name": "跑动冲拳",
+    "name_en": "Running Jab",
+    "desc": "你结束移动时，如果范围内有敌人，会自动进行1次普通攻击。",
+    "has_icon": true
+  },
+  {
+    "key": "PERFECTTECHNIQUE",
+    "name": "出神入化",
+    "name_en": "Perfect Technique",
+    "desc": "远程架势期间，范围+1，魔法伤害+2。近身架势期间，【招架】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "RAPIDFLOW",
+    "name": "行云流水",
+    "name_en": "Rapid Flow",
+    "desc": "你切换架势时，会进行1次旋转攻击，命中前后左右相邻的所有单位。",
+    "has_icon": true
+  },
+  {
+    "key": "COUNTERBARRAGE",
+    "name": "借力打力",
+    "name_en": "Counter Barrage",
+    "desc": "敌人攻击对你造成伤害时，你奖励攻击+1。",
+    "has_icon": true
+  },
+  {
+    "key": "FLOWSTATE",
+    "name": "心流",
+    "name_en": "Flow State",
+    "desc": "你对另一个单位造成伤害后，这个回合结束之前，【力量】+1，【敏捷】+2。",
+    "has_icon": true
+  },
+  {
+    "key": "DANCINGLIGHTS",
+    "name": "舞光术",
+    "name_en": "Dancing Lights",
+    "desc": "你切换架势时，每有1个防具栏位空着，就放出1道【闪光】。如果所有防具栏位都空着，那么随机1项属性+1。",
+    "has_icon": true
+  },
+  {
+    "key": "PUTREFY",
+    "name": "腐化",
+    "name_en": "Putrefy",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "NEVERFULL",
+    "name": "无底胃",
+    "name_en": "Never Full",
+    "desc": "生命恢复可以超出上限。\n超出上限的生命会在战斗结束时消失。",
+    "has_icon": true
+  },
+  {
+    "key": "MAINCOURSE",
+    "name": "大号的我！",
+    "name_en": "Supersize Me!",
+    "desc": "你产生的可以捡起的食物和边角料份量变大。",
+    "has_icon": true
+  },
+  {
+    "key": "FRESHMEAT",
+    "name": "鲜肉",
+    "name_en": "Fresh Meat",
+    "desc": "你吃食物时，【力量】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "MASOCHIST",
+    "name": "受虐狂",
+    "name_en": "Masochist",
+    "desc": "你受到伤害时，【力量】、【体质】或【速度】随机1项+1。",
+    "has_icon": true
+  },
+  {
+    "key": "GLUTTON",
+    "name": "贪食",
+    "name_en": "Glutton",
+    "desc": "2格之内出现可以捡起的食物时，你会移动过去。",
+    "has_icon": true
+  },
+  {
+    "key": "HOOKED",
+    "name": "用钩成瘾",
+    "name_en": "Hooked",
+    "desc": "你的回合期间，你的钩子可以额外使用2次。",
+    "has_icon": true
+  },
+  {
+    "key": "STOMPY",
+    "name": "我踩！",
+    "name_en": "Stompy!",
+    "desc": "你拥有横冲直撞。\n你横冲直撞的伤害会造成狠剁。",
+    "has_icon": true
+  },
+  {
+    "key": "BARBED",
+    "name": "倒钩",
+    "name_en": "Barbed",
+    "desc": "你钩子的伤害+1，还会施加【出血】。",
+    "has_icon": true
+  },
+  {
+    "key": "GRAPPLINGHOOK",
+    "name": "钩爪",
+    "name_en": "Grappling Hook",
+    "desc": "你的钩子会把你拉向免疫击退的物体。",
+    "has_icon": true
+  },
+  {
+    "key": "PAINGAIN",
+    "name": "忿恨",
+    "name_en": "Rankle",
+    "desc": "你受到伤害时，临时伤害+2。",
+    "has_icon": true
+  },
+  {
+    "key": "WIDESWING",
+    "name": "转就完事",
+    "name_en": "Spin to Win",
+    "desc": "你的普通攻击变成3×3的旋转攻击，会施加狠剁。",
+    "has_icon": true
+  },
+  {
+    "key": "CONFRONTATIONAL",
+    "name": "硬刚",
+    "name_en": "Confrontational",
+    "desc": "你受到伤害时，向着伤害来源的方向横冲直撞1个方格。",
+    "has_icon": true
+  },
+  {
+    "key": "HEAVEHOOK",
+    "name": "猛拽",
+    "name_en": "Heave Hook",
+    "desc": "你的钩子能以方格为目标。\n单位被你钩住拖拽时，获得横冲直撞。",
+    "has_icon": true
+  },
+  {
+    "key": "HARPOONER",
+    "name": "鱼叉手",
+    "name_en": "Harpooner",
+    "desc": "敌人移动进入你的范围时，钩住它。",
+    "has_icon": true
+  },
+  {
+    "key": "LORDOFTHEFLIES",
+    "name": "蝇王",
+    "name_en": "Lord of the Flies",
+    "desc": "所有苍蝇都会被【洗脑】，同时伤害+1。\n你每次施加【腐烂】时，额外施加1层。",
+    "has_icon": true
+  },
+  {
+    "key": "SCHADENFREUDE",
+    "name": "幸灾乐祸",
+    "name_en": "Schadenfreude",
+    "desc": "队里成员每有1种毛病，你的【力量】和【体质】就分别+2。",
+    "has_icon": true
+  },
+  {
+    "key": "GURGITATOR",
+    "name": "大胃王",
+    "name_en": "Gurgitator",
+    "desc": "每当你恢复的生命超出生命上限，【力量】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "LOOSEMEAT",
+    "name": "掉肉",
+    "name_en": "Loose Meat",
+    "desc": "你受到伤害时，生成1份可以捡起的食物。",
+    "has_icon": true
+  },
+  {
+    "key": "HACK",
+    "name": "开罐",
+    "name_en": "Hack",
+    "desc": "如果敌人有【护盾】，你对它进行普通攻击一定暴击。\n你的普通攻击暴击会移除单位身上的增益。",
+    "has_icon": true
+  },
+  {
+    "key": "BOWLINGBALL",
+    "name": "保龄球",
+    "name_en": "Bowling Ball",
+    "desc": "前后左右和斜前后左右相邻的友方猫咪获得奖励能力【滚球】。",
+    "has_icon": true
+  },
+  {
+    "key": "TESTY",
+    "name": "暴躁",
+    "name_en": "Testy",
+    "desc": "你受到伤害后，在你的回合结束之前移动范围+1。",
+    "has_icon": true
+  },
+  {
+    "key": "INDIGESTION",
+    "name": "消化不良",
+    "name_en": "Indigestion",
+    "desc": "每当你恢复的生命超出生命上限，你就会放屁，对前后左右相邻的单位施加3层【中毒】。",
+    "has_icon": true
+  },
+  {
+    "key": "INCUBATOR",
+    "name": "温床",
+    "name_en": "Incubator",
+    "desc": "每当你恢复的生命超出生命上限，就产生1个腐烂苍蝇。",
+    "has_icon": true
+  },
+  {
+    "key": "DUKEOFFLIES",
+    "name": "苍蝇公爵",
+    "name_en": "Duke of Flies",
+    "desc": "战斗结束时，所有可以捡起的食物会变成你的友方苍蝇。\n即便战斗结束，友方苍蝇也会跟着你参加后面的战斗。",
+    "has_icon": true
+  },
+  {
+    "key": "FRENZY",
+    "name": "狂乱",
+    "name_en": "Frenzy",
+    "desc": "你击倒单位时，【力量】+2。",
+    "has_icon": false
+  },
+  {
+    "key": "AVENGER",
+    "name": "复仇",
+    "name_en": "Avenger",
+    "desc": "友方猫咪倒地时，你所有属性提升2，同时恢复8点生命。",
+    "has_icon": true
+  },
+  {
+    "key": "SCARS",
+    "name": "伤疤",
+    "name_en": "Scars",
+    "desc": "【招架】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "HULKUP",
+    "name": "胡克回击",
+    "name_en": "Hulk Up",
+    "desc": "你受到伤害时，【速度】+2。",
+    "has_icon": false
+  },
+  {
+    "key": "FERVOR",
+    "name": "热情",
+    "name_en": "Fervor",
+    "desc": "你击倒1个单位时，恢复5点生命。",
+    "has_icon": false
+  },
+  {
+    "key": "VENGEFUL",
+    "name": "记仇",
+    "name_en": "Vengeful",
+    "desc": "如果敌方单位伤害过你，那么你对它的普通攻击一定暴击。",
+    "has_icon": true
+  },
+  {
+    "key": "HAMSTERSTYLE",
+    "name": "仓鼠功",
+    "name_en": "Hamster Style",
+    "desc": "生命自然恢复+1。\n每场战斗开始时，自带2次奖励移动。",
+    "has_icon": true
+  },
+  {
+    "key": "WEAPONMASTER",
+    "name": "武器大师",
+    "name_en": "Weapon Master",
+    "desc": "你武器和物品能力的伤害+2、暴击几率+25%。你背包多一根管子。",
+    "has_icon": true
+  },
+  {
+    "key": "SHOULDERCHECK",
+    "name": "路过",
+    "name_en": "Shoulder Check",
+    "desc": "你移动后，如果面向1个单位，就自动攻击它一次（33%的伤害）。",
+    "has_icon": true
+  },
+  {
+    "key": "SKULLSMASH",
+    "name": "碎颅",
+    "name_en": "Skullcrack",
+    "desc": "你的普通攻击会施加【瘀伤】。",
+    "has_icon": true
+  },
+  {
+    "key": "TURTLESTYLE",
+    "name": "龟式",
+    "name_en": "Turtle Style",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "OVERPOWERED",
+    "name": "超模！！！",
+    "name_en": "OVERPOWERED!!!",
+    "desc": "你如果造成溢出伤害，会令目标爆炸，溢出的伤害会施加给目标周围的单位（不包括你）。",
+    "has_icon": true
+  },
+  {
+    "key": "FIGHTME",
+    "name": "逆风",
+    "name_en": "Underdog",
+    "desc": "前后左右每有1个敌方和你相邻，就【力量】+2，【招架】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "MATHQ",
+    "name": "数学？",
+    "name_en": "Math?",
+    "desc": "你的法术耗费3点魔能，但每个法术每个回合只能施放1次。",
+    "has_icon": false
+  },
+  {
+    "key": "DUMBMUSCLE",
+    "name": "肌壮无脑",
+    "name_en": "Dumb Muscle",
+    "desc": "你每次受到伤害时，【智力】-1。\n如果你的【智力】小于等于4，那么【力量】+2，而且普通攻击会施加【瘀伤】。【智力】为0时，暴击几率+100%。",
+    "has_icon": true
+  },
+  {
+    "key": "THICKSKULL",
+    "name": "榆木脑袋",
+    "name_en": "Thick Skull",
+    "desc": "你获得的所有伤残都会变成脑震荡。\n你每有1个脑震荡，就【护盾】+3（【护盾】最多30）。",
+    "has_icon": true
+  },
+  {
+    "key": "MOSTVALUABLECAT",
+    "name": "最有价值猫咪",
+    "name_en": "Most Valuable Cat",
+    "desc": "你或友方击倒单位，就会成为头猫。\n如果你是头猫，那么每轮结束时获得1个额外回合。",
+    "has_icon": true
+  },
+  {
+    "key": "RATSTYLE",
+    "name": "老鼠功",
+    "name_en": "Rat Style",
+    "desc": "闪避几率+10%。",
+    "has_icon": true
+  },
+  {
+    "key": "BONED",
+    "name": "有骨气",
+    "name_en": "Boned",
+    "desc": "你击杀单位时，如果没有武器，那么获得1根骨头棒。",
+    "has_icon": true
+  },
+  {
+    "key": "DUALWIELD",
+    "name": "武器双持",
+    "name_en": "Dual Wield",
+    "desc": "你使用武器时，会免费自动再用1次。",
+    "has_icon": true
+  },
+  {
+    "key": "PATELLARREFLEX",
+    "name": "膝跳反射",
+    "name_en": "Patellar Reflex",
+    "desc": "有单位伤害你时，反击，造成1点伤害，同时施加【瘀伤】。",
+    "has_icon": false
+  },
+  {
+    "key": "HITME",
+    "name": "打我！",
+    "name_en": "Hit Me",
+    "desc": "你受到友方的伤害时，向你面朝的方向普通攻击1次。\n你受到的友方伤害降为1。",
+    "has_icon": true
+  },
+  {
+    "key": "SMASH",
+    "name": "我砸！",
+    "name_en": "Smash!",
+    "desc": "你武器的伤害增大2倍，但只要使用就会损坏。\n你背包里会多3根树枝。",
+    "has_icon": true
+  },
+  {
+    "key": "PUNCHFACE",
+    "name": "打脸",
+    "name_en": "Punch Face",
+    "desc": "你的普通攻击如果命中单位正面，就一定暴击。",
+    "has_icon": true
+  },
+  {
+    "key": "MERCILESS",
+    "name": "无情",
+    "name_en": "Merciless",
+    "desc": "你单次伤害不低于10点时，【护盾】+2，同时你的移动行动刷新。\n（在你移动行动期间不会触发）",
+    "has_icon": false
+  },
+  {
+    "key": "SUPERCROW",
+    "name": "超级乌鸦！",
+    "name_en": "Super Crow!",
+    "desc": "你乌鸦的能力会强化。",
+    "has_icon": true
+  },
+  {
+    "key": "NATUREGUIDANCE",
+    "name": "自然的指引",
+    "name_en": "Nature's Guidance",
+    "desc": "友方跟班免疫方格、击退、【尖刺】、横冲直撞造成的伤害。",
+    "has_icon": false
+  },
+  {
+    "key": "POISONIVY",
+    "name": "毒藤",
+    "name_en": "Poison Ivy",
+    "desc": "你和你召唤的跟班都【带毒】。",
+    "has_icon": true
+  },
+  {
+    "key": "PATHFINDER",
+    "name": "探路先锋",
+    "name_en": "Pathfinder",
+    "desc": "你和你召唤的跟班在草地的移动不会迟缓。你走到哪里，草就长到哪里。",
+    "has_icon": true
+  },
+  {
+    "key": "EMPTYVESSEL",
+    "name": "空容器",
+    "name_en": "Empty Vessels",
+    "desc": "你召唤的跟班生命自然恢复+3，生命上限+10。",
+    "has_icon": false
+  },
+  {
+    "key": "WILDANIMALS",
+    "name": "野生动物",
+    "name_en": "Wild Animals",
+    "desc": "你召唤的跟班在生成时会随机攻击范围内的1个敌人。",
+    "has_icon": true
+  },
+  {
+    "key": "BARKSKIN",
+    "name": "树肤术",
+    "name_en": "Bark Skin",
+    "desc": "【招架】+1。\n你受到伤害时，临时【招架】+1，持续到你下一回合开始。",
+    "has_icon": true
+  },
+  {
+    "key": "LOVESONG",
+    "name": "情歌",
+    "name_en": "Love Song",
+    "desc": "你基础行动的区域+2，同时可以额外恢复1点生命。",
+    "has_icon": false
+  },
+  {
+    "key": "TEAMWORK",
+    "name": "众志成城",
+    "name_en": "Teamwork",
+    "desc": "你的跟班击杀单位时，所有友方伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "BOUQUET",
+    "name": "花束",
+    "name_en": "Bouquet",
+    "desc": "你的回合结束时，你的脚下生成一格花丛。",
+    "has_icon": true
+  },
+  {
+    "key": "GOODVIBRATIONS",
+    "name": "美妙振动",
+    "name_en": "Good Vibrations",
+    "desc": "友方生命自然恢复+1，魔能自然恢复+1。",
+    "has_icon": true
+  },
+  {
+    "key": "VERSATILEVOLCALIST",
+    "name": "全能歌手",
+    "name_en": "Versatile Vocalist",
+    "desc": "你的基础行动会对敌人造成1点伤害，同时临时施加“伤害-1”。你的普通攻击不会对友方施加减益，也不会对敌人施加增益。",
+    "has_icon": false
+  },
+  {
+    "key": "LIKEAFISH",
+    "name": "像条鱼",
+    "name_en": "Like a Fish",
+    "desc": "你在水格移动不会额外消耗移动次数。\n如果你身上潮湿而且没有圣盾，那么回合结束时圣盾+1。\n你召唤的跟班也拥有这个被动。",
+    "has_icon": true
+  },
+  {
+    "key": "ENCORE",
+    "name": "安可",
+    "name_en": "Encore",
+    "desc": "你使用音乐能力后，你的基础行动刷新。",
+    "has_icon": true
+  },
+  {
+    "key": "SUPERFRIENDS",
+    "name": "超级伙伴",
+    "name_en": "Super Friends",
+    "desc": "法术召唤的跟班所有属性提升2点，但这些跟班死亡之前，那个法术不能施放。",
+    "has_icon": false
+  },
+  {
+    "key": "SNEAKATTACK",
+    "name": "偷袭",
+    "name_en": "Sneak Attack",
+    "desc": "你召唤跟班的法术魔能耗费-3。\n你用法术召唤的跟班伤害+2、移动+2，但会在它的第一个回合结束后死亡。",
+    "has_icon": true
+  },
+  {
+    "key": "WILDSTYLE",
+    "name": "狂野变身",
+    "name_en": "Wild Style",
+    "desc": "每个回合你第一次变形时，获得1个额外回合。",
+    "has_icon": true
+  },
+  {
+    "key": "BUDDYSYSTEM",
+    "name": "伙伴系统",
+    "name_en": "Buddy System",
+    "desc": "你失去时，你的乌鸦+1。你的乌鸦失去时，你+1。",
+    "has_icon": true
+  },
+  {
+    "key": "FLOWERPOWER",
+    "name": "花的力量",
+    "name_en": "Flower Power",
+    "desc": "单位站在花格上时，【力量】+2，【招架】+2。你移动时，离开的地方会长出花来。",
+    "has_icon": true
+  },
+  {
+    "key": "SUICIDESQUAD",
+    "name": "自杀小队",
+    "name_en": "Suicide Squad",
+    "desc": "你控制的跟班获得奖励能力【自毁】。",
+    "has_icon": true
+  },
+  {
+    "key": "FERAL",
+    "name": "野性",
+    "name_en": "Feral",
+    "desc": "你的奖励能力是【野性攻击】。",
+    "has_icon": true
+  },
+  {
+    "key": "RAPGOD",
+    "name": "说唱之神",
+    "name_en": "Rap God",
+    "desc": "你的基础行动还会令【速度】临时+4。",
+    "has_icon": true
+  },
+  {
+    "key": "ANIMALISTIC",
+    "name": "兽性",
+    "name_en": "Animalistic",
+    "desc": "你召唤的跟班伤害+2。\n你变形时，伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "MAESTRO",
+    "name": "大师",
+    "name_en": "Maestro",
+    "desc": "你音乐法术的魔能耗费减少50%。",
+    "has_icon": true
+  },
+  {
+    "key": "MEGAMINIONS",
+    "name": "超级跟班",
+    "name_en": "Mega Minions",
+    "desc": "3个跟班为一个周期，你每个周期召唤的第3个跟班会是勇士级别。",
+    "has_icon": true
+  },
+  {
+    "key": "THORNS",
+    "name": "尖刺",
+    "name_en": "Thorns",
+    "desc": "2层【尖刺】。",
+    "has_icon": true
+  },
+  {
+    "key": "HEAVYHANDED",
+    "name": "下重爪",
+    "name_en": "Heavy Handed",
+    "desc": "击退伤害+2。",
+    "has_icon": true
+  },
+  {
+    "key": "SLACKOFF",
+    "name": "摸鱼",
+    "name_en": "Slack Off",
+    "desc": "回合结束时，如果你还有移动行动没有用，那么恢复8点生命。",
+    "has_icon": true
+  },
+  {
+    "key": "SCABS",
+    "name": "结痂",
+    "name_en": "Scabs",
+    "desc": "你受到能力的伤害时，【护盾】+2。",
+    "has_icon": true
+  },
+  {
+    "key": "THUNDERTHIGHS",
+    "name": "雷霆大腿",
+    "name_en": "Thunder Thighs",
+    "desc": "横冲直撞。",
+    "has_icon": true
+  },
+  {
+    "key": "PLOW",
+    "name": "破土",
+    "name_en": "Plow",
+    "desc": "你击退单位时，在它原来的位置留下1块石头。",
+    "has_icon": true
+  },
+  {
+    "key": "PETROCKS",
+    "name": "宠物石头",
+    "name_en": "Pet Rocks",
+    "desc": "你召唤的石头是活的！！\n……而且它们生命+3。战斗开始时召唤1块石头。",
+    "has_icon": true
+  },
+  {
+    "key": "TOADSTYLE",
+    "name": "蛤蟆功",
+    "name_en": "Toad Style",
+    "desc": "你的移动行动变成跳跃。落在单位身上会造成伤害并把它挤开。",
+    "has_icon": true
+  },
+  {
+    "key": "CHAINKNOCKBACK",
+    "name": "连锁击退",
+    "name_en": "Chain Knockback",
+    "desc": "你普通攻击的击退距离+1。\n你击退的单位也会击退其他单位。",
+    "has_icon": true
+  },
+  {
+    "key": "PROTECTIVE",
+    "name": "保护欲",
+    "name_en": "Protective",
+    "desc": "你的友方拥有1层【招架】。",
+    "has_icon": false
+  },
+  {
+    "key": "WRESTLEMANIAC",
+    "name": "摔角狂喵",
+    "name_en": "Wrestlemaniac",
+    "desc": "前后左右有敌人和你相邻时，你的普通攻击变成【背摔】。\n你获得能力【我丢】。",
+    "has_icon": true
+  },
+  {
+    "key": "MOUNTAINFORM",
+    "name": "成山",
+    "name_en": "Mountain Form",
+    "desc": "你免疫击退。\n你走过的方格会变成泥地，同时可能生成石头。",
+    "has_icon": true
+  },
+  {
+    "key": "HOMERUN",
+    "name": "本垒打",
+    "name_en": "Home Run",
+    "desc": "你造成的击退距离+10。",
+    "has_icon": true
+  },
+  {
+    "key": "ROCKASPECT",
+    "name": "岩相",
+    "name_en": "Rock Aspect",
+    "desc": "攻击或接触到你的单位有10%的几率【石化】。",
+    "has_icon": true
+  },
+  {
+    "key": "WIDELOAD",
+    "name": "宽载",
+    "name_en": "Wide Load",
+    "desc": "前后左右相邻的友方成为敌人的目标时，你和这个友方调换位置。",
+    "has_icon": true
+  },
+  {
+    "key": "HARDHEAD",
+    "name": "铁头功",
+    "name_en": "Hard Head",
+    "desc": "你会格挡正面的攻击。",
+    "has_icon": true
+  },
+  {
+    "key": "MYLEG",
+    "name": "我的腿！",
+    "name_en": "My Leg!",
+    "desc": "你获得的所有伤残都变成“腿断了”。\n如果你断了四条腿，那么【尖刺】+4，获得横冲直撞，而且前后左右相邻的友方获得奖励能力【我丢】。",
+    "has_icon": true
+  },
+  {
+    "key": "HARDY",
+    "name": "强韧",
+    "name_en": "Hardy",
+    "desc": "每场战斗开始时，生命完全恢复。",
+    "has_icon": true
+  },
+  {
+    "key": "SLOWANDSTEADY",
+    "name": "稳扎稳打",
+    "name_en": "Slow and Steady",
+    "desc": "每个回合结束时，【速度】-2，范围+1。如果你的【速度】为0，那么每个回合获得1次奖励攻击。",
+    "has_icon": true
+  },
+  {
+    "key": "FOLLOWUP",
+    "name": "乘胜追击",
+    "name_en": "Follow Up",
+    "desc": "你使用普通攻击后，尽可能向前突进。",
+    "has_icon": true
+  },
+  {
+    "key": "CATAPULT",
+    "name": "投喵猫",
+    "name_en": "Cat-A-Pult",
+    "desc": "在前后左右相邻的友方回合期间，你可以把他们扔出去，最远4格，不消耗他们的移动行动。",
+    "has_icon": true
+  },
+  {
+    "key": "SHOVINGMATCH",
+    "name": "推搡大战",
+    "name_en": "Shoving Match",
+    "desc": "你把单位撞到友方身上或把友方撞到敌人身上时，这个友方会对那个单位使用普通攻击。\n你普通攻击的击退距离+1。",
+    "has_icon": true
+  },
+  {
+    "key": "STOIC",
+    "name": "隐忍",
+    "name_en": "Stoic",
+    "desc": "你的回合结束时，如果还有移动行动没有用，那么奖励移动+2。",
+    "has_icon": true
+  },
+  {
+    "key": "PRIORITYTARGET",
+    "name": "显眼包",
+    "name_en": "Priority Target",
+    "desc": "敌人如果能攻击你，就会优先打你，而不是打你的友方。",
+    "has_icon": true
+  },
+  {
+    "key": "BOUNCER",
+    "name": "夜店保安",
+    "name_en": "Bouncer",
+    "desc": "有友方受到伤害时，向伤害来源的方向移动3格，然后如果能攻击它，就进行攻击。",
+    "has_icon": true
+  },
+  {
+    "key": "VAMPIRISM",
+    "name": "吸血猫",
+    "name_en": "Vampirism",
+    "desc": "你的普通攻击带【吸血】。",
+    "has_icon": true
+  },
+  {
+    "key": "ONEWITHNOTHING",
+    "name": "无何有",
+    "name_en": "One With Nothing",
+    "desc": "你的回合结束时，如果你的魔能为0，那么你的魔能自然恢复增加1倍。",
+    "has_icon": true
+  },
+  {
+    "key": "BEDBUGS",
+    "name": "臭虫",
+    "name_en": "Bed Bugs",
+    "desc": "战斗开始时，自带2个健壮的水蛭跟班。",
+    "has_icon": true
+  },
+  {
+    "key": "WORMLORD",
+    "name": "肉虫王",
+    "name_en": "Worm Lord",
+    "desc": "你受到伤害时，生成1个水蛭跟班。",
+    "has_icon": true
+  },
+  {
+    "key": "INFINITEREBIRTH",
+    "name": "借尸还魂",
+    "name_en": "Infinite Rebirth",
+    "desc": "每轮结束时，如果地图上有尸体，而且你处于倒地状态，那么你会在那个方格复活，生命为1，同时速度临时+10。如果那个尸体是队友，那么你改为满血复活。",
+    "has_icon": true
+  },
+  {
+    "key": "SACRIFICIALLAMB",
+    "name": "祭祀羔羊",
+    "name_en": "Sacrificial Lamb",
+    "desc": "你倒地时，友方所有属性提升，同时获得1个额外回合。",
+    "has_icon": true
+  },
+  {
+    "key": "SERVUSMORTEM",
+    "name": "死神奴仆",
+    "name_en": "Servus Mortem",
+    "desc": "每场战斗开始时，随机消灭不是头目的1个敌人。",
+    "has_icon": false
+  },
+  {
+    "key": "OFFLOADPAIN",
+    "name": "转移疼痛",
+    "name_en": "Offload Pain",
+    "desc": "你恢复生命时，对每个敌人造成1点伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "CAMBIONCONCEPTION",
+    "name": "恶魔受胎",
+    "name_en": "Cambion Conception",
+    "desc": "你倒地时，生成1个恶魔小猫跟班。",
+    "has_icon": true
+  },
+  {
+    "key": "LEECHMOTHER",
+    "name": "水蛭母体",
+    "name_en": "Leech Mother",
+    "desc": "你的普通攻击会生成1个水蛭跟班。",
+    "has_icon": true
+  },
+  {
+    "key": "INFECTED",
+    "name": "感染",
+    "name_en": "Infected",
+    "desc": "你击倒单位时，会令它以50%的生命复苏。",
+    "has_icon": true
+  },
+  {
+    "key": "LASTGRASP",
+    "name": "垂死一搏",
+    "name_en": "Last Grasp",
+    "desc": "你倒地时，对每个敌人造成6点伤害，同时令所有友方恢复6点生命。\n奖励能力：切腹",
+    "has_icon": false
+  },
+  {
+    "key": "RELENTLESSDEAD",
+    "name": "亡者不休",
+    "name_en": "Relentless Dead",
+    "desc": "每轮结束时，随机方格生成1个僵尸小猫跟班。",
+    "has_icon": true
+  },
+  {
+    "key": "CHAINSOFGUILT",
+    "name": "罪的锁链",
+    "name_en": "Chains of Guilt",
+    "desc": "如果敌人击倒了你，而且它不是头目，那么它会永久进入你的队伍。",
+    "has_icon": true
+  },
+  {
+    "key": "DARKPRIEST",
+    "name": "黑暗祭司",
+    "name_en": "Dark Priest",
+    "desc": "每场战斗开始时，如果你没有武器，那么获得一把临时武器“灵魂匕首”。",
+    "has_icon": true
+  },
+  {
+    "key": "UNDEATH",
+    "name": "不死",
+    "name_en": "Undeath",
+    "desc": "你倒地时，令每个友方以33%的生命复苏。（每场战斗限一次。）",
+    "has_icon": true
+  },
+  {
+    "key": "NUMBINGLEECHES",
+    "name": "麻痹水蛭",
+    "name_en": "Numbing Leeches",
+    "desc": "你的普通攻击造成0点伤害，但它施加的状态和命中效果增强2倍。",
+    "has_icon": true
+  },
+  {
+    "key": "ETERNALHEALTH",
+    "name": "不朽之身",
+    "name_en": "Eternal Health",
+    "desc": "你倒地时只会获得“触霉头了”。队伍取得胜利时，如果你处于倒地状态，那么生命回满。",
+    "has_icon": true
+  },
+  {
+    "key": "TORPOR",
+    "name": "蛰伏",
+    "name_en": "Torpor",
+    "desc": "你倒地期间，你的普通攻击变成【侵扰】。你的尸体耐久+6。",
+    "has_icon": true
+  },
+  {
+    "key": "SOULBOND",
+    "name": "灵魂联结",
+    "name_en": "Soul Bond",
+    "desc": "你的普通攻击会施加【灵魂链接】。",
+    "has_icon": false
+  },
+  {
+    "key": "SUPERSTITION",
+    "name": "迷信",
+    "name_en": "Superstition",
+    "desc": "你的普通攻击会施加“【幸运】-1”。\n有单位伤害你时，对它施加“【幸运】-1”。",
+    "has_icon": true
+  },
+  {
+    "key": "IMMORTALLEECHES",
+    "name": "不朽水蛭",
+    "name_en": "Immortal Leeches",
+    "desc": "你施加过水蛭的单位死亡或失去水蛭时，你下一次普通攻击会额外施加等量的水蛭。",
+    "has_icon": true
+  },
+  {
+    "key": "CORPSECONNOISSEUR",
+    "name": "尸体鉴赏家",
+    "name_en": "Corpse Connoisseur",
+    "desc": "每场战斗开始时，你附近会出现2-3具尸体。\n你摧毁尸体时，恢复2点生命，同时生成1份可以捡起的食物。",
+    "has_icon": true
+  },
+  {
+    "key": "PARASITIC",
+    "name": "寄生",
+    "name_en": "Parasitic",
+    "desc": "你获得生命时，生成1个水蛭跟班。",
+    "has_icon": true
+  },
+  {
+    "key": "SPREADSORROW",
+    "name": "散播悲痛",
+    "name_en": "Spread Sorrow",
+    "desc": "你对敌人施加减益时，会把同样的减益随机施加给另外1个敌人。",
+    "has_icon": true
+  },
+  {
+    "key": "BACKSTABBER",
+    "name": "背刺专家",
+    "name_en": "Backstabber",
+    "desc": "你的背刺一定暴击。",
+    "has_icon": true
+  },
+  {
+    "key": "GOLDENCLAWS",
+    "name": "金爪子",
+    "name_en": "Golden Claws",
+    "desc": "你每捡到1块钱，伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "STEALTHED",
+    "name": "隐匿",
+    "name_en": "Stealthed",
+    "desc": "每场战斗开始时处于【隐匿】状态。",
+    "has_icon": false
+  },
+  {
+    "key": "POISONTIPS",
+    "name": "涂毒",
+    "name_en": "Poison Tips",
+    "desc": "你的普通攻击会施加1层【中毒】。",
+    "has_icon": true
+  },
+  {
+    "key": "BURGLE",
+    "name": "偷钱",
+    "name_en": "Burgle",
+    "desc": "你普通攻击造成伤害时，获得1块钱。",
+    "has_icon": true
+  },
+  {
+    "key": "SWIFTKILLER",
+    "name": "再来！",
+    "name_en": "More!",
+    "desc": "你击杀单位时，你的移动行动刷新。",
+    "has_icon": true
+  },
+  {
+    "key": "LONGSTRIDER",
+    "name": "大步流星",
+    "name_en": "Long Stride",
+    "desc": "移动范围+1。",
+    "has_icon": false
+  },
+  {
+    "key": "DOUBLETHROW",
+    "name": "子母钉",
+    "name_en": "Double Throw",
+    "desc": "你的普通攻击会打2下，每下只有1/2伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "BOUNTYHUNTER",
+    "name": "赏金猎手",
+    "name_en": "Bounty Hunter",
+    "desc": "你的回合期间，随机有1个敌人头顶赏金。",
+    "has_icon": true
+  },
+  {
+    "key": "RAZORCLAWS",
+    "name": "锐利之爪",
+    "name_en": "Razor Claws",
+    "desc": "你的普通攻击会施加1层【出血】。",
+    "has_icon": true
+  },
+  {
+    "key": "SWIFTLOOTER",
+    "name": "闪电扒手",
+    "name_en": "Swift Looter",
+    "desc": "你捡起钱时，你的移动行动刷新。\n每场战斗会额外生成1–2块钱。",
+    "has_icon": false
+  },
+  {
+    "key": "ALPHASTRIKE",
+    "name": "先爪",
+    "name_en": "First Strike",
+    "desc": "战斗开始时获得1个额外回合。",
+    "has_icon": true
+  },
+  {
+    "key": "ZIP",
+    "name": "咻！",
+    "name_en": "ZIP!",
+    "desc": "你的移动行动变成【暗影步】。",
+    "has_icon": true
+  },
+  {
+    "key": "WEAKSPOT",
+    "name": "弱点洞悉",
+    "name_en": "Weak Spot",
+    "desc": "你的普通攻击无视护盾，同时施加1层【虚弱】。",
+    "has_icon": true
+  },
+  {
+    "key": "PENETRATE",
+    "name": "贯穿",
+    "name_en": "Penetrate",
+    "desc": "你的普通攻击会穿过单位并无视护盾。范围+1。",
+    "has_icon": true
+  },
+  {
+    "key": "AFTERIMAGE",
+    "name": "残影",
+    "name_en": "After Image",
+    "desc": "你移动时，会在离开的地方生成1个影子。影子会模仿你的基础行动，但会在你的回合结束时消散。",
+    "has_icon": true
+  },
+  {
+    "key": "SHIV",
+    "name": "小刀",
+    "name_en": "Shiv",
+    "desc": "你对近身范围的单位发动普通攻击时，伤害+2、暴击几率+25%，同时施加1层【出血】。",
+    "has_icon": true
+  },
+  {
+    "key": "CRITICAL",
+    "name": "暴击",
+    "name_en": "Critical",
+    "desc": "你的暴击伤害+100%。你只要暴击，就【幸运】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "LOOTHOARDER",
+    "name": "战利品贮藏者",
+    "name_en": "Loot Hoarder",
+    "desc": "战斗结束时，如果你没有倒地，那么自动捡起所有可以捡起的物品。",
+    "has_icon": true
+  },
+  {
+    "key": "CRIPPLE",
+    "name": "打残",
+    "name_en": "Cripple",
+    "desc": "你的暴击会施加【移动受限】和2层【虚弱】。",
+    "has_icon": true
+  },
+  {
+    "key": "AGILE",
+    "name": "灵活",
+    "name_en": "Agile",
+    "desc": "移动范围+2。如果你移动的格数少于自己的移动范围上限，那么你可以再移动1次，用完剩余的移动范围。",
+    "has_icon": true
+  },
+  {
+    "key": "SHANK",
+    "name": "身后刀",
+    "name_en": "Shank",
+    "desc": "你在敌人身后而且跟对方相邻时，你的普通攻击变成近身攻击，可以连打2次。",
+    "has_icon": true
+  },
+  {
+    "key": "FLIPACOIN",
+    "name": "抛硬币",
+    "name_en": "Flip a Coin",
+    "desc": "你获得钱时，有50%的几率随机在1个方格生成1块钱，有50%的几率【速度】+2、【幸运】+2。",
+    "has_icon": true
+  },
+  {
+    "key": "SHAKEDOWN",
+    "name": "勒索",
+    "name_en": "Shake Down",
+    "desc": "你的暴击会生成1块钱和随机1件可以捡起的物品。",
+    "has_icon": true
+  },
+  {
+    "key": "SWEETSPOT",
+    "name": "最佳位置",
+    "name_en": "Sweetspot",
+    "desc": "范围+1。你离目标越远，普通攻击的伤害越高。",
+    "has_icon": true
+  },
+  {
+    "key": "PINPOINT",
+    "name": "精准定位",
+    "name_en": "Pinpoint",
+    "desc": "你的暴击会施加【标记】。",
+    "has_icon": true
+  },
+  {
+    "key": "TAKEAIM",
+    "name": "瞄准",
+    "name_en": "Take Aim",
+    "desc": "每个回合开始时，范围和伤害各+1。你一移动就会失去这个效果。",
+    "has_icon": true
+  },
+  {
+    "key": "TOWERDEFENSE",
+    "name": "塔防",
+    "name_en": "Tower Defense",
+    "desc": "敌人停在你的范围之内时，对它射击，造成1点伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "HUNTERSBOON",
+    "name": "猎手恩赐",
+    "name_en": "Hunter's Boon",
+    "desc": "每个回合你第一次击杀单位时，获得5点魔能。",
+    "has_icon": true
+  },
+  {
+    "key": "BROODMOTHER",
+    "name": "育母",
+    "name_en": "Brood Mother",
+    "desc": "你的跟班和你【洗脑】的单位伤害+2、生命+5。",
+    "has_icon": true
+  },
+  {
+    "key": "TAINTEDMOTHER",
+    "name": "腐化之母",
+    "name_en": "Tainted Mother",
+    "desc": "你的跟班和你【洗脑】的单位【速度】+4，而且会施加【中毒】和【出血】。",
+    "has_icon": true
+  },
+  {
+    "key": "QUIVER",
+    "name": "箭袋",
+    "name_en": "Quiver",
+    "desc": "没有使用的普通攻击可以留到以后的回合使用。",
+    "has_icon": true
+  },
+  {
+    "key": "SPLITSHOT",
+    "name": "分裂箭",
+    "name_en": "Split Shot",
+    "desc": "你普通攻击的区域+1，但伤害降低50%。",
+    "has_icon": true
+  },
+  {
+    "key": "HAZARDOUS",
+    "name": "危险环境",
+    "name_en": "Hazardous",
+    "desc": "方格伤害和方格效果增强1倍。",
+    "has_icon": true
+  },
+  {
+    "key": "THORNARROWS",
+    "name": "尖刺箭",
+    "name_en": "Thorn Arrows",
+    "desc": "你的普通攻击会生成灌木。",
+    "has_icon": true
+  },
+  {
+    "key": "TRAPS",
+    "name": "夹子",
+    "name_en": "Traps",
+    "desc": "如果你向空格进行普通攻击，那么生成1个捕兽夹。\n每当你的夹子触发，就【敏捷】+2。",
+    "has_icon": true
+  },
+  {
+    "key": "CATCHPROJECTILES",
+    "name": "接球手",
+    "name_en": "Catch Projectiles",
+    "desc": "有33%的几率格挡敌方的投射物，有100%的几率格挡友方的投射物。每当你挡住投射物，就奖励攻击+1。",
+    "has_icon": true
+  },
+  {
+    "key": "TRICKYTRAPS",
+    "name": "阴险夹子",
+    "name_en": "Tricky Traps",
+    "desc": "你夹子的伤害和效果增强1倍。",
+    "has_icon": true
+  },
+  {
+    "key": "GRAVITYFALLS",
+    "name": "重力加持",
+    "name_en": "Gravity Falls",
+    "desc": "如果你普通攻击的箭飞到3格之外，那么每超出1格，伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "BULLSEYE",
+    "name": "正中靶心",
+    "name_en": "Bullseye",
+    "desc": "你的远程攻击不会落空。\n暴击几率+25%。",
+    "has_icon": false
+  },
+  {
+    "key": "SPOTTERS",
+    "name": "点位支援",
+    "name_en": "Spotters",
+    "desc": "你的普通攻击可以瞄准友方前后左右相邻的方格。",
+    "has_icon": true
+  },
+  {
+    "key": "LUCKSWING",
+    "name": "赌一棒",
+    "name_en": "Luck Swing",
+    "desc": "暴击几率+50%，但有25%的几率落空。",
+    "has_icon": true
+  },
+  {
+    "key": "HOST",
+    "name": "宿主",
+    "name_en": "Host",
+    "desc": "每场战斗开始时，自带2个小小蜘蛛跟班。背包会多1个寄生体“蜘蛛卵”。寄生体可以自由取下。",
+    "has_icon": true
+  },
+  {
+    "key": "SNIPER",
+    "name": "狙击手",
+    "name_en": "Sniper",
+    "desc": "暴击伤害+100%，有25%的几率施加【眩晕】。",
+    "has_icon": true
+  },
+  {
+    "key": "RUBBERARROWS",
+    "name": "橡胶箭",
+    "name_en": "Rubber Arrows",
+    "desc": "你的投射物命中之后会弹到3格之内另一个敌人身上。",
+    "has_icon": true
+  },
+  {
+    "key": "TALKTOANIMALS",
+    "name": "动物交谈",
+    "name_en": "Talk to Animals",
+    "desc": "你每场战斗第一次普通攻击会施加5层【洗脑】。",
+    "has_icon": true
+  },
+  {
+    "key": "ANIMALCONTROL",
+    "name": "动物控制",
+    "name_en": "Animal Control",
+    "desc": "你的普通攻击会令单位立刻攻击它范围内的1个敌人。",
+    "has_icon": true
+  },
+  {
+    "key": "SLEEPDARTS",
+    "name": "麻醉飞镖",
+    "name_en": "Sleep Darts",
+    "desc": "每场战斗开始时，你和没有武器的友方都会获得一支临时的麻醉飞镖。",
+    "has_icon": true
+  },
+  {
+    "key": "SURVIVALIST",
+    "name": "求生高手",
+    "name_en": "Survivalist",
+    "desc": "背包增加6份治疗消耗品和满满1瓶水。\n你可以对友方使用消耗品。\n每场战斗结束时，食物+2。",
+    "has_icon": true
+  },
+  {
+    "key": "FLEABAG",
+    "name": "邋遢",
+    "name_en": "Fleabag",
+    "desc": "你的回合结束时，生成跳蚤跟班，数量等于自身这场战斗击杀的敌人。",
+    "has_icon": true
+  },
+  {
+    "key": "THRILLOFTHEHUNT",
+    "name": "狩猎快感",
+    "name_en": "Thrill of the Hunt",
+    "desc": "每场战斗结束时，如果你击杀了至少3个敌人，那么【敏捷】永久+1，同时随机获得1个消耗品。",
+    "has_icon": true
+  },
+  {
+    "key": "VERSIONTWO",
+    "name": "2.0版本",
+    "name_en": "v2.0",
+    "desc": "每场战斗开始时，自带1点【科技】。\n你的【科技】不会低于1。",
+    "has_icon": true
+  },
+  {
+    "key": "WEAPONPROFICIENCY",
+    "name": "武器精通",
+    "name_en": "Weapon Proficiency",
+    "desc": "你武器的伤害会随你的属性提高，而且算作普通攻击。",
+    "has_icon": true
+  },
+  {
+    "key": "LIVINGBATTERY",
+    "name": "活体电池",
+    "name_en": "Living Battery",
+    "desc": "前后左右相邻的友方耗费魔能时，你获得等量的魔能。",
+    "has_icon": true
+  },
+  {
+    "key": "FUZZYFEET",
+    "name": "毛脚爪",
+    "name_en": "Fuzzy Feet",
+    "desc": "你结束移动时，对前后左右相邻的所有单位分别造成电系伤害，移动了几格，就造成几点伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "ARMORSPECIALIST",
+    "name": "防护专家",
+    "name_en": "Armor Specialist",
+    "desc": "你的装备被动效果增强1倍。",
+    "has_icon": true
+  },
+  {
+    "key": "EMP",
+    "name": "电磁脉冲",
+    "name_en": "EMP",
+    "desc": "你的爆炸属于电元素，而且伤害+2。\n爆炸不再击退，而是有一定几率施加【眩晕】。\n冲击抗性+2。",
+    "has_icon": true
+  },
+  {
+    "key": "MRMEGA",
+    "name": "大爆弹先生",
+    "name_en": "Mr. Mega",
+    "desc": "你的爆炸范围更大，伤害+3。\n冲击抗性+3。",
+    "has_icon": true
+  },
+  {
+    "key": "ESCAPESEQUENCE",
+    "name": "逃生程序",
+    "name_en": "Escape Sequence",
+    "desc": "你受到伤害时会爆炸，然后随机飞到1个方格。这次爆炸不会对你造成伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "ITEMPROXY",
+    "name": "套装代打",
+    "name_en": "Item Proxy",
+    "desc": "你触发套装加成所需的装备数量-1。",
+    "has_icon": true
+  },
+  {
+    "key": "LIGHTNINGROD",
+    "name": "避雷针",
+    "name_en": "Lightning Rod",
+    "desc": "你免疫电击，但是可以导电。\n你造成的电系伤害+1。你被电系伤害命中时，获得1点【科技】。",
+    "has_icon": true
+  },
+  {
+    "key": "ITSALIVE",
+    "name": "它活了！",
+    "name_en": "IT'S ALIVE!",
+    "desc": "用电系伤害命中尸体会令它以1点生命复活。复活的尸体会被【洗脑】，获得1个额外回合，然后死亡。",
+    "has_icon": true
+  },
+  {
+    "key": "ENERGIZER",
+    "name": "蓄能器",
+    "name_en": "Energizer",
+    "desc": "你施放法术时，你武器的伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "REACTIVEARMOR",
+    "name": "反应装甲",
+    "name_en": "Reactive Armor",
+    "desc": "你受到伤害时，制作1件工匠武器或防具，然后装备到空的栏位。",
+    "has_icon": true
+  },
+  {
+    "key": "NANOBOTS",
+    "name": "纳米机器人",
+    "name_en": "Nanobots",
+    "desc": "你每次受到攻击或法术的伤害时，获得2层递减的生命自然恢复。",
+    "has_icon": true
+  },
+  {
+    "key": "SCRAPPER",
+    "name": "破烂王",
+    "name_en": "Scrapper",
+    "desc": "每场战斗结束时，额外获得1个消耗品。\n你用光1个消耗品或小玩意儿时，如果背包里还有消耗品，就自动再装备1个。",
+    "has_icon": true
+  },
+  {
+    "key": "DEMOMAN",
+    "name": "爆破手",
+    "name_en": "Demo Man",
+    "desc": "【科技】小于等于1时，每次都会制作炸弹。\n冲击抗性+2。",
+    "has_icon": true
+  },
+  {
+    "key": "DUCTTAPE",
+    "name": "防水胶带",
+    "name_en": "Duct Tape",
+    "desc": "战斗结束时，你制作的物品会保留，但会受到诅咒。",
+    "has_icon": true
+  },
+  {
+    "key": "ARMOREDPLATING",
+    "name": "装甲板",
+    "name_en": "Armored Plating",
+    "desc": "你生成的机器人会获得属性和【护盾】，和你所装备的防具相同。",
+    "has_icon": true
+  },
+  {
+    "key": "BOOBYTRAP",
+    "name": "诡雷",
+    "name_en": "Booby Trap",
+    "desc": "你装备的物品损坏时会爆炸！",
+    "has_icon": true
+  },
+  {
+    "key": "ROBOTARMS",
+    "name": "机械臂",
+    "name_en": "Robot Arms",
+    "desc": "你的武器每个回合可以额外使用1次。",
+    "has_icon": true
+  },
+  {
+    "key": "CONDUCTOR",
+    "name": "导体",
+    "name_en": "Conductor",
+    "desc": "你每装备了1件金属防具，你造成的电系伤害就+2。\n如果你装备了金属防具，那么你的武器会造成电系伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "NAPALM",
+    "name": "凝固汽油弹",
+    "name_en": "Napalm",
+    "desc": "你的爆炸会施加3层灼烧，同时点燃方格。\n冲击抗性+2。",
+    "has_icon": true
+  },
+  {
+    "key": "INGENUITY",
+    "name": "心灵手巧",
+    "name_en": "Ingenuity",
+    "desc": "捡起的物品除了原本的效果，还会令你【科技】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "SHRAPNEL_TINKERER",
+    "name": "弹片",
+    "name_en": "Shrapnel",
+    "desc": "你有物品损坏时，【尖刺】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "BLACKSMITH",
+    "name": "铁匠",
+    "name_en": "Blacksmith",
+    "desc": "如果你有武器，那么你的普通攻击变成【锤炼】。",
+    "has_icon": true
+  },
+  {
+    "key": "HEALINGAURA",
+    "name": "治疗光环",
+    "name_en": "Healing Aura",
+    "desc": "生命自然恢复+1\n你的生命自然恢复也会对友方生效。",
+    "has_icon": true
+  },
+  {
+    "key": "NATURALHEALER",
+    "name": "疗愈天赋",
+    "name_en": "Natural Healer",
+    "desc": "你发起的治疗效果+2。",
+    "has_icon": true
+  },
+  {
+    "key": "ETERNAL",
+    "name": "永恒",
+    "name_en": "Eternal",
+    "desc": "每场战斗，你第一次倒地不会落下伤残，而且会以半血复活。",
+    "has_icon": true
+  },
+  {
+    "key": "BLESSED",
+    "name": "蒙福",
+    "name_en": "Blessed",
+    "desc": "每个回合开始时，随机2项属性分别+1。",
+    "has_icon": true
+  },
+  {
+    "key": "EVILPATRON",
+    "name": "邪恶庇护主",
+    "name_en": "Evil Patron",
+    "desc": "你的治疗能力会对敌人造成伤害。\n你以方格为目标的治疗法术范围+2。",
+    "has_icon": true
+  },
+  {
+    "key": "ANGELICINSPIRATION",
+    "name": "天使启迪",
+    "name_en": "Angelic Inspiration",
+    "desc": "你治疗友方时，对方魔能+2。",
+    "has_icon": true
+  },
+  {
+    "key": "TOPOFF",
+    "name": "加满",
+    "name_en": "Top Off",
+    "desc": "你的治疗令另一个单位生命超过上限时，你们双方分别【护盾】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "SHARINGISCARING",
+    "name": "有福同享",
+    "name_en": "Sharing is Caring",
+    "desc": "如果你捡起的物品不是钱，友方就获得同样的效果。",
+    "has_icon": true
+  },
+  {
+    "key": "CARETAKER",
+    "name": "照顾",
+    "name_en": "Caretaker",
+    "desc": "你治疗其他单位时，也会令自己恢复生命，幅度等于这次治疗效果的一半。",
+    "has_icon": true
+  },
+  {
+    "key": "MORALEBOOST",
+    "name": "提振士气",
+    "name_en": "Morale Boost",
+    "desc": "每当你击杀单位，友方就所有属性提升。",
+    "has_icon": true
+  },
+  {
+    "key": "RANGEDMEDIC",
+    "name": "远程军医",
+    "name_en": "Ranged Medic",
+    "desc": "你的普通攻击变成远程抛射攻击，会治疗友方，对敌人造成伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "GODSPEED",
+    "name": "神速",
+    "name_en": "Godspeed",
+    "desc": "你治疗单位时，【速度】+2。",
+    "has_icon": true
+  },
+  {
+    "key": "GODWARRIOR",
+    "name": "神的战士",
+    "name_en": "God Warrior",
+    "desc": "你击杀敌人时，+1。",
+    "has_icon": true
+  },
+  {
+    "key": "BREATHOFLIFE",
+    "name": "生命之息",
+    "name_en": "Breath of Life",
+    "desc": "你治疗倒地的单位时，令它复活。",
+    "has_icon": true
+  },
+  {
+    "key": "THOUSHALTNOTKILL",
+    "name": "不可杀生",
+    "name_en": "Thou Shalt Not Kill",
+    "desc": "敌人击倒其他单位时，它会受到10点神圣伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "THOUSHALTNOTCOVET",
+    "name": "不可贪恋",
+    "name_en": "Thou Shalt Not Covet",
+    "desc": "敌人受到能力伤害时，它会随机掉落1件可以捡起的物品。",
+    "has_icon": true
+  },
+  {
+    "key": "BLESSINGOFHOLYFIRE",
+    "name": "圣火福佑",
+    "name_en": "Blessing of Holy Fire",
+    "desc": "神圣系法术不会治疗敌人，而是对敌人造成双倍伤害、施加2层【灼烧】。\n你击杀单位时会失去这个福佑。",
+    "has_icon": true
+  },
+  {
+    "key": "ALMSFORTHEPOOR",
+    "name": "施舍穷苦",
+    "name_en": "Alms for the Poor",
+    "desc": "你获得钱时，所有友方恢复1点生命，而且【幸运】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "PURIFIER",
+    "name": "净化者",
+    "name_en": "Purifier",
+    "desc": "你的普通攻击会移除友方身上的减益。",
+    "has_icon": true
+  },
+  {
+    "key": "VENERATEDTOUCH",
+    "name": "尊崇之触",
+    "name_en": "Venerated Touch",
+    "desc": "你的普通攻击会对敌人施加2层【混乱】，同时令友方【护盾】+2。",
+    "has_icon": true
+  },
+  {
+    "key": "PROTECTTHEWEAK",
+    "name": "保护弱小",
+    "name_en": "Protect the Weak",
+    "desc": "生命不超过5的友方闪避几率+50%。",
+    "has_icon": true
+  },
+  {
+    "key": "THOUSHALTOBEY",
+    "name": "不可违抗",
+    "name_en": "Thou Shalt Obey",
+    "desc": "每轮结束时，随机对前后左右相邻的1个敌人施加【洗脑】。",
+    "has_icon": true
+  },
+  {
+    "key": "ENCHANTEDRELIC",
+    "name": "附魔遗物",
+    "name_en": "Enchanted Relic",
+    "desc": "你小玩意儿的被动效果和主动效果增强1倍。",
+    "has_icon": true
+  },
+  {
+    "key": "BLESSINGOFSPIRIT",
+    "name": "圣灵福佑",
+    "name_en": "Blessing of Spirit",
+    "desc": "你的回合结束时，你和所有友方恢复2点生命和2点魔能。你施放法术会失去这个福佑。",
+    "has_icon": true
+  },
+  {
+    "key": "HEATHENS",
+    "name": "异教徒！",
+    "name_en": "Heathens!",
+    "desc": "战斗开始时，对所有敌人施加3层【虚弱】。",
+    "has_icon": true
+  },
+  {
+    "key": "SYNTHESIZE",
+    "name": "合成",
+    "name_en": "Synthesize",
+    "desc": "每个回合开始时，【智力】+1。",
+    "has_icon": false
+  },
+  {
+    "key": "FORCEFIELD",
+    "name": "力场",
+    "name_en": "Force Field",
+    "desc": "3个回合一个周期，每个周期第3个回合开始时，+1。",
+    "has_icon": false
+  },
+  {
+    "key": "SHRAPNEL",
+    "name": "溅射伤害",
+    "name_en": "Splash Damage",
+    "desc": "你的普通攻击会造成2点魔法溅射伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "BURNINGPAWS",
+    "name": "烈焰爪",
+    "name_en": "Burning Paws",
+    "desc": "你的基础行动会施加2层【灼烧】。",
+    "has_icon": true
+  },
+  {
+    "key": "LIGHTNINGPAWS",
+    "name": "闪电爪",
+    "name_en": "Lightning Paws",
+    "desc": "你普通攻击的电系伤害+2，同时有15%的几率施加【眩晕】。",
+    "has_icon": true
+  },
+  {
+    "key": "ICEPAWS",
+    "name": "寒冰爪",
+    "name_en": "Ice Paws",
+    "desc": "你的普通攻击会造成冰冻伤害，施加2层【迟缓】，同时有20%的几率【冻住】目标。你可以对冻住的单位造成伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "PAWMISSILE",
+    "name": "猫爪飞弹",
+    "name_en": "Paw Missile",
+    "desc": "你的普通攻击变成【魔法飞弹】。\n（伤害随【智力】变化）",
+    "has_icon": true
+  },
+  {
+    "key": "OVERLOAD",
+    "name": "过载",
+    "name_en": "Overload",
+    "desc": "你施放法术时，对前后左右相邻的方格造成3点伤害，元素随机。",
+    "has_icon": true
+  },
+  {
+    "key": "CHARGEUP",
+    "name": "积蓄",
+    "name_en": "Charge Up",
+    "desc": "你的回合结束时，如果你的魔能是0，那么下一次施放的法术不耗费魔能",
+    "has_icon": true
+  },
+  {
+    "key": "DEATHCHILL",
+    "name": "死亡寒意",
+    "name_en": "Death Chill",
+    "desc": "倒地时，【冻住】所有敌人和地图其他区域。",
+    "has_icon": false
+  },
+  {
+    "key": "RECHARGED",
+    "name": "顿悟",
+    "name_en": "Epiphany",
+    "desc": "开场魔能+5，魔能自然恢复+5。\n每当你的回合结束，就失去剩余所有魔能",
+    "has_icon": true
+  },
+  {
+    "key": "ENERGYSTORM",
+    "name": "叁",
+    "name_en": "Three",
+    "desc": "一个回合之内，3个法术为一个周期，每个周期的第3个法术施放两次",
+    "has_icon": true
+  },
+  {
+    "key": "FIREASPECT",
+    "name": "火焰附加",
+    "name_en": "Fire Aspect",
+    "desc": "免疫火烧。\n接触你的单位会获得1层【灼烧】。\n你造成的火系伤害+1，同时额外施加1层【灼烧】",
+    "has_icon": false
+  },
+  {
+    "key": "ICEASPECT",
+    "name": "冰霜附加",
+    "name_en": "Ice Aspect",
+    "desc": "免疫冰冻。你可以伤害【冻住】的单位。\n接触你的单位受到1点冰冻伤害，获得2层【迟缓】，同时有5%的几率被【冻住】",
+    "has_icon": false
+  },
+  {
+    "key": "RESONANCE",
+    "name": "共鸣",
+    "name_en": "Resonance",
+    "desc": "施放法术之后，这个回合魔法伤害+1",
+    "has_icon": true
+  },
+  {
+    "key": "LEARNFROMME",
+    "name": "向我学习",
+    "name_en": "Learn From Me",
+    "desc": "你施放法术时，这个法术会进入所有友方猫咪的奖励栏位。",
+    "has_icon": true
+  },
+  {
+    "key": "LIGHTNINGASPECT",
+    "name": "雷电附加",
+    "name_en": "Lightning Aspect",
+    "desc": "免疫电击。\n造成电系伤害时，【蓄能】+1。",
+    "has_icon": false
+  },
+  {
+    "key": "LONGCAST",
+    "name": "远距离施法",
+    "name_en": "Long Cast",
+    "desc": "以方格为目标的法术范围+5。",
+    "has_icon": true
+  },
+  {
+    "key": "LIGHTUPTHESTAGE",
+    "name": "照亮舞台",
+    "name_en": "Light Up the Stage",
+    "desc": "你的回合结束时，你每行动过1个回合，就放出2道【闪光】。",
+    "has_icon": true
+  },
+  {
+    "key": "ELEMENTALATTUNEMENT",
+    "name": "元素调谐",
+    "name_en": "Elemental Attunement",
+    "desc": "你施放什么元素的法术，你的普通攻击本场战斗期间就会获得什么元素和相应的效果。",
+    "has_icon": true
+  },
+  {
+    "key": "LATENTENERGY",
+    "name": "潜能",
+    "name_en": "Latent Energy",
+    "desc": "友方耗费魔能时，你在自己下次使用魔法之前魔法伤害+2。",
+    "has_icon": true
+  },
+  {
+    "key": "FIVE",
+    "name": "伍",
+    "name_en": "Five",
+    "desc": "你的回合结束时，如果魔能或生命刚好是5点，那么【护盾】+5，而且你在下一回合结束之前【动能尖刺】临时+5。",
+    "has_icon": true
+  },
+  {
+    "key": "MAGICGURU",
+    "name": "魔法大师",
+    "name_en": "Magic Guru",
+    "desc": "你的友方魔能自然恢复+1。如果友方施放了魔能耗费不低于7的法术，那么它所有属性提升。",
+    "has_icon": true
+  },
+  {
+    "key": "ONE",
+    "name": "壹",
+    "name_en": "One",
+    "desc": "你的回合结束时，如果这个回合施放了刚好1个法术，那么下面1个法术会施放2次。",
+    "has_icon": true
+  },
+  {
+    "key": "TWO",
+    "name": "贰",
+    "name_en": "Two",
+    "desc": "你的回合结束时，如果这个回合施放了刚好2个法术，那么奖励攻击+1。\n你的回合结束时，如果魔能刚好是2点，那么奖励攻击+1。",
+    "has_icon": true
+  },
+  {
+    "key": "FOUR",
+    "name": "肆",
+    "name_en": "Four",
+    "desc": "你的回合结束时，如果魔能或生命刚好是4点，那么【智力】+1、魔法伤害+1",
+    "has_icon": true
+  },
+  {
+    "key": "FLYING",
+    "name": "反重力",
+    "name_en": "Antigravity",
+    "desc": "你可以飞行移动。你使用引力系能力时，【速度】+1。\n引力系法术的魔能耗费-1。",
+    "has_icon": true
+  },
+  {
+    "key": "SOULSHATTER",
+    "name": "灵魂碎裂",
+    "name_en": "Soul Shatter",
+    "desc": "你击杀单位时，对所有敌人造成1点伤害",
+    "has_icon": true
+  },
+  {
+    "key": "GLOW",
+    "name": "发光",
+    "name_en": "Glow",
+    "desc": "你的普通攻击会施加【瞎眼】。",
+    "has_icon": true
+  },
+  {
+    "key": "BLINK",
+    "name": "闪现术",
+    "name_en": "Blink",
+    "desc": "你成为敌人的目标时，有33%的几率随机传送到其他方格。",
+    "has_icon": true
+  },
+  {
+    "key": "FULLPOWER",
+    "name": "功力全开",
+    "name_en": "Full Power",
+    "desc": "魔能全满时，你的普通攻击会造成3倍伤害，同时击退距离+3。",
+    "has_icon": true
+  },
+  {
+    "key": "REALITYSHATTER",
+    "name": "现实碎裂",
+    "name_en": "Reality Shatter",
+    "desc": "引力系能力会生成浮空玻璃。",
+    "has_icon": true
+  },
+  {
+    "key": "MENTALSTORM",
+    "name": "精神风暴",
+    "name_en": "Mental Storm",
+    "desc": "你施放法术时，【蓄能】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "WITHER",
+    "name": "凋零",
+    "name_en": "Wither",
+    "desc": "引力系能力对敌人使用时，会随机施加1个减益。",
+    "has_icon": true
+  },
+  {
+    "key": "FLOURISH",
+    "name": "茁壮",
+    "name_en": "Flourish",
+    "desc": "引力系能力不会伤害友方。引力系能力对友方使用时，会随机给1个增益。你施加增益时，施加的层数+1。",
+    "has_icon": true
+  },
+  {
+    "key": "PSYSMACK",
+    "name": "念力重拍",
+    "name_en": "Psy Smack",
+    "desc": "你和友方造成的击退伤害增大1倍。",
+    "has_icon": true
+  },
+  {
+    "key": "BECKON",
+    "name": "招手",
+    "name_en": "Beckon",
+    "desc": "你普通攻击的击退距离+4。",
+    "has_icon": true
+  },
+  {
+    "key": "MINDTEMPEST",
+    "name": "心灵风暴",
+    "name_en": "Mind Tempest",
+    "desc": "6个法术一个周期，每个周期当你施放第6个法术时，所有属性提升，同时魔法伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "OVERFLOW",
+    "name": "溢出",
+    "name_en": "Overflow",
+    "desc": "魔能全满时，【招架】+2，同时可以飞行移动。你的魔能没有上限。",
+    "has_icon": true
+  },
+  {
+    "key": "OMNISCIENCE",
+    "name": "全知",
+    "name_en": "Omniscience",
+    "desc": "你能看到一切，无视所有视线限制",
+    "has_icon": true
+  },
+  {
+    "key": "PSIONICREPEL",
+    "name": "念力排斥",
+    "name_en": "Psionic Repel",
+    "desc": "攻击或接触你的单位会被击退10格。",
+    "has_icon": true
+  },
+  {
+    "key": "ENLIGHTENED",
+    "name": "开悟",
+    "name_en": "Enlightened",
+    "desc": "魔能全满时，你每个回合第一次施放法术不耗费魔能。",
+    "has_icon": true
+  },
+  {
+    "key": "MADVISAGE",
+    "name": "面容癫狂",
+    "name_en": "Mad Visage",
+    "desc": "你获得的所有伤残都会是毁容。\n魔能全满时，你的基础行动会施加【癫狂】。\n你的【魅力】不高于0时，每个回合获得1次奖励攻击。",
+    "has_icon": true
+  },
+  {
+    "key": "POWERUP",
+    "name": "功力增强",
+    "name_en": "Power Up",
+    "desc": "你的魔能超出上限时，魔法伤害+1，【智力】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "TRUESIGHT",
+    "name": "真视",
+    "name_en": "True Sight",
+    "desc": "你和友方攻击你视线内的敌人不会落空。",
+    "has_icon": true
+  },
+  {
+    "key": "BRAINGEYSER",
+    "name": "脑力跃泉",
+    "name_en": "Braingeyser",
+    "desc": "你的魔能超出上限时，放出【闪光】，数量等于超出上限的魔能。",
+    "has_icon": false
+  },
+  {
+    "key": "GRAVITYWELL",
+    "name": "引力井",
+    "name_en": "Gravity Well",
+    "desc": "单位被击退时，如果经过你前后左右相邻的方格，会被拦下并【眩晕】。",
+    "has_icon": true
+  },
+  {
+    "key": "DRAG",
+    "name": "拖拽",
+    "name_en": "Drag",
+    "desc": "单位如果被你击退，那么击退几个方格，就受到几点伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "TWIDDLE",
+    "name": "摆弄",
+    "name_en": "Twiddle",
+    "desc": "你的普通攻击造成0伤害，但每个回合可以额外使用2次。",
+    "has_icon": true
+  },
+  {
+    "key": "REPRESSEDMEMORIES",
+    "name": "尘封回忆",
+    "name_en": "Repressed Memories",
+    "desc": "你耗费魔能时，会随机施放灵能士的1个法术，前提是这个法术的魔能耗费少于这次耗费的魔能。",
+    "has_icon": true
+  },
+  {
+    "key": "ELDRITCHVISAGE",
+    "name": "面容邪异",
+    "name_en": "Eldritch Visage",
+    "desc": "你的回合开始时，对视线内所有敌人施加1层【魔法克制】。",
+    "has_icon": true
+  },
+  {
+    "key": "SUPERLUCK",
+    "name": "超幸运",
+    "name_en": "Super Luck",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "GOOFBALL",
+    "name": "活宝",
+    "name_en": "Goofball",
+    "desc": "每轮开始时，获得1个额外回合。",
+    "has_icon": true
+  },
+  {
+    "key": "STARTER_PLACEHOLDER",
+    "name": "？？？",
+    "name_en": "???",
+    "desc": "",
+    "has_icon": false
+  },
+  {
+    "key": "Cannibal",
+    "name": "Cannibal",
+    "name_en": "Cannibal",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Unrestricted",
+    "name": "无拘无束",
+    "name_en": "Unrestricted",
+    "desc": "如果一个行动原本每场战斗可以用1次，现在改为每个回合能用一次。",
+    "has_icon": true
+  },
+  {
+    "key": "ThrillOfTheHunt",
+    "name": "狩猎快感",
+    "name_en": "ThrillOfTheHunt",
+    "desc": "每场战斗结束时，如果你击杀了至少3个敌人，那么【敏捷】永久+1，同时随机获得1个消耗品。",
+    "has_icon": true
+  },
+  {
+    "key": "TinkerersSoul",
+    "name": "TinkerersSoul",
+    "name_en": "TinkerersSoul",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "SelfAssured",
+    "name": "自信满满",
+    "name_en": "SelfAssured",
+    "desc": "你每次击倒1个单位时，随机有1项属性提升。",
+    "has_icon": true
+  },
+  {
+    "key": "ArmoredPlating",
+    "name": "装甲板",
+    "name_en": "ArmoredPlating",
+    "desc": "你生成的机器人会获得属性和【护盾】，和你所装备的防具相同。",
+    "has_icon": true
+  },
+  {
+    "key": "ThouShaltNotCovet",
+    "name": "不可贪恋",
+    "name_en": "ThouShaltNotCovet",
+    "desc": "敌人受到能力伤害时，它会随机掉落1件可以捡起的物品。",
+    "has_icon": true
+  },
+  {
+    "key": "SpontaneousCombustion",
+    "name": "SpontaneousCombustion",
+    "name_en": "SpontaneousCombustion",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "EatingDisorder",
+    "name": "EatingDisorder",
+    "name_en": "EatingDisorder",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "EnergyFists",
+    "name": "气拳",
+    "name_en": "EnergyFists",
+    "desc": "你使用普通攻击时，会发出1道【闪光】。",
+    "has_icon": true
+  },
+  {
+    "key": "Incubator",
+    "name": "温床",
+    "name_en": "Incubator",
+    "desc": "每当你恢复的生命超出生命上限，就产生1个腐烂苍蝇。",
+    "has_icon": true
+  },
+  {
+    "key": "Harden",
+    "name": "变硬",
+    "name_en": "Harden",
+    "desc": "你获得【护盾】时，同时获得1层临时【招架】。",
+    "has_icon": true
+  },
+  {
+    "key": "Wither",
+    "name": "凋零",
+    "name_en": "Wither",
+    "desc": "引力系能力对敌人使用时，会随机施加1个减益。",
+    "has_icon": true
+  },
+  {
+    "key": "LikeAFish",
+    "name": "像条鱼",
+    "name_en": "LikeAFish",
+    "desc": "你在水格移动不会额外消耗移动次数。\n如果你身上潮湿而且没有圣盾，那么回合结束时圣盾+1。\n你召唤的跟班也拥有这个被动。",
+    "has_icon": true
+  },
+  {
+    "key": "Lycanthropy",
+    "name": "Lycanthropy",
+    "name_en": "Lycanthropy",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Nudist",
+    "name": "Nudist",
+    "name_en": "Nudist",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "BrainDamage",
+    "name": "BrainDamage",
+    "name_en": "BrainDamage",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Hazardous",
+    "name": "危险环境",
+    "name_en": "Hazardous",
+    "desc": "方格伤害和方格效果增强1倍。",
+    "has_icon": true
+  },
+  {
+    "key": "Kamikazee",
+    "name": "Kamikazee",
+    "name_en": "Kamikazee",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "UnburdenedThoughts",
+    "name": "心无羁",
+    "name_en": "UnburdenedThoughts",
+    "desc": "每有1个防具栏位空着，就【智力】+1，【魅力】+1。如果所有防具栏位都空着，那么你法术的魔能耗费-1。",
+    "has_icon": true
+  },
+  {
+    "key": "EvilPatron",
+    "name": "邪恶庇护主",
+    "name_en": "EvilPatron",
+    "desc": "你的治疗能力会对敌人造成伤害。\n你以方格为目标的治疗法术范围+2。",
+    "has_icon": true
+  },
+  {
+    "key": "DancingLights",
+    "name": "舞光术",
+    "name_en": "DancingLights",
+    "desc": "你切换架势时，每有1个防具栏位空着，就放出1道【闪光】。如果所有防具栏位都空着，那么随机1项属性+1。",
+    "has_icon": true
+  },
+  {
+    "key": "RepressedMemories",
+    "name": "尘封回忆",
+    "name_en": "RepressedMemories",
+    "desc": "你耗费魔能时，会随机施放灵能士的1个法术，前提是这个法术的魔能耗费少于这次耗费的魔能。",
+    "has_icon": true
+  },
+  {
+    "key": "WrenchedNeck",
+    "name": "WrenchedNeck",
+    "name_en": "WrenchedNeck",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Autism",
+    "name": "Autism",
+    "name_en": "Autism",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "SensoryOverloadHead",
+    "name": "SensoryOverloadHead",
+    "name_en": "SensoryOverloadHead",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Thorns",
+    "name": "尖刺",
+    "name_en": "Thorns",
+    "desc": "2层【尖刺】。",
+    "has_icon": true
+  },
+  {
+    "key": "Hooked",
+    "name": "用钩成瘾",
+    "name_en": "Hooked",
+    "desc": "你的回合期间，你的钩子可以额外使用2次。",
+    "has_icon": true
+  },
+  {
+    "key": "WeaponProficiency",
+    "name": "武器精通",
+    "name_en": "WeaponProficiency",
+    "desc": "你武器的伤害会随你的属性提高，而且算作普通攻击。",
+    "has_icon": true
+  },
+  {
+    "key": "Invincible",
+    "name": "Invincible",
+    "name_en": "Invincible",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Bouquet",
+    "name": "花束",
+    "name_en": "Bouquet",
+    "desc": "你的回合结束时，你的脚下生成一格花丛。",
+    "has_icon": true
+  },
+  {
+    "key": "Overpowered",
+    "name": "超模！！！",
+    "name_en": "Overpowered",
+    "desc": "你如果造成溢出伤害，会令目标爆炸，溢出的伤害会施加给目标周围的单位（不包括你）。",
+    "has_icon": true
+  },
+  {
+    "key": "Napalm",
+    "name": "凝固汽油弹",
+    "name_en": "Napalm",
+    "desc": "你的爆炸会施加3层灼烧，同时点燃方格。\n冲击抗性+2。",
+    "has_icon": true
+  },
+  {
+    "key": "Mange",
+    "name": "疥癣",
+    "name_en": "Mange",
+    "desc": "接触到你的单位会获得1层【中毒】。",
+    "has_icon": true
+  },
+  {
+    "key": "Overload",
+    "name": "过载",
+    "name_en": "Overload",
+    "desc": "你施放法术时，对前后左右相邻的方格造成3点伤害，元素随机。",
+    "has_icon": true
+  },
+  {
+    "key": "Omniscience",
+    "name": "全知",
+    "name_en": "Omniscience",
+    "desc": "你能看到一切，无视所有视线限制",
+    "has_icon": true
+  },
+  {
+    "key": "HuntersSoul",
+    "name": "HuntersSoul",
+    "name_en": "HuntersSoul",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Pathfinder",
+    "name": "探路先锋",
+    "name_en": "Pathfinder",
+    "desc": "你和你召唤的跟班在草地的移动不会迟缓。你走到哪里，草就长到哪里。",
+    "has_icon": true
+  },
+  {
+    "key": "Boils",
+    "name": "Boils",
+    "name_en": "Boils",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "ThornArrows",
+    "name": "尖刺箭",
+    "name_en": "ThornArrows",
+    "desc": "你的普通攻击会生成灌木。",
+    "has_icon": true
+  },
+  {
+    "key": "SavantSyndrome",
+    "name": "SavantSyndrome",
+    "name_en": "SavantSyndrome",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "WeakSpot",
+    "name": "弱点洞悉",
+    "name_en": "WeakSpot",
+    "desc": "你的普通攻击无视护盾，同时施加1层【虚弱】。",
+    "has_icon": true
+  },
+  {
+    "key": "Scavenger",
+    "name": "觅食",
+    "name_en": "Scavenger",
+    "desc": "如果你的小玩意儿栏位是空的，那么每场战斗开始时自动装备一小份食物消耗品。",
+    "has_icon": true
+  },
+  {
+    "key": "SpecialFriends",
+    "name": "SpecialFriends",
+    "name_en": "SpecialFriends",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Empath",
+    "name": "Empath",
+    "name_en": "Empath",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Purifier",
+    "name": "净化者",
+    "name_en": "Purifier",
+    "desc": "你的普通攻击会移除友方身上的减益。",
+    "has_icon": true
+  },
+  {
+    "key": "Five",
+    "name": "伍",
+    "name_en": "Five",
+    "desc": "你的回合结束时，如果魔能或生命刚好是5点，那么【护盾】+5，而且你在下一回合结束之前【动能尖刺】临时+5。",
+    "has_icon": true
+  },
+  {
+    "key": "STARTER_PLACEHOLDER_Psychic",
+    "name": "STARTER_PLACEHOLDER_Psychic",
+    "name_en": "STARTER_PLACEHOLDER_Psychic",
+    "desc": "在你锁定队伍的项圈时，随机变成灵能士的被动。",
+    "has_icon": true
+  },
+  {
+    "key": "PuncturedEye",
+    "name": "PuncturedEye",
+    "name_en": "PuncturedEye",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Dealer",
+    "name": "药贩子",
+    "name_en": "Dealer",
+    "desc": "你可以对其他单位使用消耗品。",
+    "has_icon": true
+  },
+  {
+    "key": "MagesSoul",
+    "name": "MagesSoul",
+    "name_en": "MagesSoul",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "TheHunger",
+    "name": "TheHunger",
+    "name_en": "TheHunger",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "OneWithNothing",
+    "name": "无何有",
+    "name_en": "OneWithNothing",
+    "desc": "你的回合结束时，如果你的魔能为0，那么你的魔能自然恢复增加1倍。",
+    "has_icon": true
+  },
+  {
+    "key": "SwiftKiller",
+    "name": "再来！",
+    "name_en": "SwiftKiller",
+    "desc": "你击杀单位时，你的移动行动刷新。",
+    "has_icon": true
+  },
+  {
+    "key": "ScalyScabs",
+    "name": "ScalyScabs",
+    "name_en": "ScalyScabs",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Amped",
+    "name": "亢奋",
+    "name_en": "Amped",
+    "desc": "你的回合结束时，【速度】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "Enlightened",
+    "name": "开悟",
+    "name_en": "Enlightened",
+    "desc": "魔能全满时，你每个回合第一次施放法术不耗费魔能。",
+    "has_icon": true
+  },
+  {
+    "key": "RapidFlow",
+    "name": "行云流水",
+    "name_en": "RapidFlow",
+    "desc": "你切换架势时，会进行1次旋转攻击，命中前后左右相邻的所有单位。",
+    "has_icon": true
+  },
+  {
+    "key": "PressurePoints",
+    "name": "弱者之力",
+    "name_en": "PressurePoints",
+    "desc": "如果你造成的伤害不大于2，那么一定暴击。",
+    "has_icon": true
+  },
+  {
+    "key": "STARTER_PLACEHOLDER_Tinkerer",
+    "name": "STARTER_PLACEHOLDER_Tinkerer",
+    "name_en": "STARTER_PLACEHOLDER_Tinkerer",
+    "desc": "在你锁定队伍的项圈时，随机变成工匠的被动。",
+    "has_icon": true
+  },
+  {
+    "key": "BorrowedTime",
+    "name": "BorrowedTime",
+    "name_en": "BorrowedTime",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "EternalYouth",
+    "name": "EternalYouth",
+    "name_en": "EternalYouth",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Stoic",
+    "name": "隐忍",
+    "name_en": "Stoic",
+    "desc": "你的回合结束时，如果还有移动行动没有用，那么奖励移动+2。",
+    "has_icon": true
+  },
+  {
+    "key": "GravityFalls",
+    "name": "重力加持",
+    "name_en": "GravityFalls",
+    "desc": "如果你普通攻击的箭飞到3格之外，那么每超出1格，伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "FightersSoul",
+    "name": "FightersSoul",
+    "name_en": "FightersSoul",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "OffloadPain",
+    "name": "转移疼痛",
+    "name_en": "OffloadPain",
+    "desc": "你恢复生命时，对每个敌人造成1点伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "BoobyTrap",
+    "name": "诡雷",
+    "name_en": "BoobyTrap",
+    "desc": "你装备的物品损坏时会爆炸！",
+    "has_icon": true
+  },
+  {
+    "key": "ElementalAttunement",
+    "name": "元素调谐",
+    "name_en": "ElementalAttunement",
+    "desc": "你施放什么元素的法术，你的普通攻击本场战斗期间就会获得什么元素和相应的效果。",
+    "has_icon": true
+  },
+  {
+    "key": "SplitShot",
+    "name": "分裂箭",
+    "name_en": "SplitShot",
+    "desc": "你普通攻击的区域+1，但伤害降低50%。",
+    "has_icon": true
+  },
+  {
+    "key": "LightningArmor",
+    "name": "LightningArmor",
+    "name_en": "LightningArmor",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "MetalDetector",
+    "name": "金属探测器",
+    "name_en": "MetalDetector",
+    "desc": "你走过1个方格时，有5%的几率生成1块钱。",
+    "has_icon": true
+  },
+  {
+    "key": "MostValuableCat",
+    "name": "最有价值猫咪",
+    "name_en": "MostValuableCat",
+    "desc": "你或友方击倒单位，就会成为头猫。\n如果你是头猫，那么每轮结束时获得1个额外回合。",
+    "has_icon": true
+  },
+  {
+    "key": "Glow",
+    "name": "发光",
+    "name_en": "Glow",
+    "desc": "你的普通攻击会施加【瞎眼】。",
+    "has_icon": true
+  },
+  {
+    "key": "Smash",
+    "name": "我砸！",
+    "name_en": "Smash",
+    "desc": "你武器的伤害增大2倍，但只要使用就会损坏。\n你背包里会多3根树枝。",
+    "has_icon": true
+  },
+  {
+    "key": "LightningRod",
+    "name": "避雷针",
+    "name_en": "LightningRod",
+    "desc": "你免疫电击，但是可以导电。\n你造成的电系伤害+1。你被电系伤害命中时，获得1点【科技】。",
+    "has_icon": true
+  },
+  {
+    "key": "EscapeSequence",
+    "name": "逃生程序",
+    "name_en": "EscapeSequence",
+    "desc": "你受到伤害时会爆炸，然后随机飞到1个方格。这次爆炸不会对你造成伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "FireArmor",
+    "name": "FireArmor",
+    "name_en": "FireArmor",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "STARTER_PLACEHOLDER_Tank",
+    "name": "STARTER_PLACEHOLDER_Tank",
+    "name_en": "STARTER_PLACEHOLDER_Tank",
+    "desc": "在你锁定队伍的项圈时，随机变成坦克的被动。",
+    "has_icon": true
+  },
+  {
+    "key": "ZenkaiBoost",
+    "name": "界限突破",
+    "name_en": "ZenkaiBoost",
+    "desc": "如果你结束战斗时只有1点生命，那么随机1项属性永久+1，而且下一场战斗开始时，生命全满，同时所有属性提升3。",
+    "has_icon": true
+  },
+  {
+    "key": "MentalStorm",
+    "name": "精神风暴",
+    "name_en": "MentalStorm",
+    "desc": "你施放法术时，【蓄能】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "RealityShatter",
+    "name": "现实碎裂",
+    "name_en": "RealityShatter",
+    "desc": "引力系能力会生成浮空玻璃。",
+    "has_icon": true
+  },
+  {
+    "key": "Sniper",
+    "name": "狙击手",
+    "name_en": "Sniper",
+    "desc": "暴击伤害+100%，有25%的几率施加【眩晕】。",
+    "has_icon": true
+  },
+  {
+    "key": "LivingBattery",
+    "name": "活体电池",
+    "name_en": "LivingBattery",
+    "desc": "前后左右相邻的友方耗费魔能时，你获得等量的魔能。",
+    "has_icon": true
+  },
+  {
+    "key": "PainGain",
+    "name": "忿恨",
+    "name_en": "PainGain",
+    "desc": "你受到伤害时，临时伤害+2。",
+    "has_icon": true
+  },
+  {
+    "key": "Ebola",
+    "name": "Ebola",
+    "name_en": "Ebola",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "ViolentOutbursts",
+    "name": "ViolentOutbursts",
+    "name_en": "ViolentOutbursts",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Spotters",
+    "name": "点位支援",
+    "name_en": "Spotters",
+    "desc": "你的普通攻击可以瞄准友方前后左右相邻的方格。",
+    "has_icon": true
+  },
+  {
+    "key": "Singleton",
+    "name": "Singleton",
+    "name_en": "Singleton",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Gigantism",
+    "name": "Gigantism",
+    "name_en": "Gigantism",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Fleabag",
+    "name": "邋遢",
+    "name_en": "Fleabag",
+    "desc": "你的回合结束时，生成跳蚤跟班，数量等于自身这场战斗击杀的敌人。",
+    "has_icon": true
+  },
+  {
+    "key": "LightningPaws",
+    "name": "闪电爪",
+    "name_en": "LightningPaws",
+    "desc": "你普通攻击的电系伤害+2，同时有15%的几率施加【眩晕】。",
+    "has_icon": true
+  },
+  {
+    "key": "ExplosiveGas",
+    "name": "ExplosiveGas",
+    "name_en": "ExplosiveGas",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "LearnFromMe",
+    "name": "向我学习",
+    "name_en": "LearnFromMe",
+    "desc": "你施放法术时，这个法术会进入所有友方猫咪的奖励栏位。",
+    "has_icon": true
+  },
+  {
+    "key": "NaturalHealer",
+    "name": "疗愈天赋",
+    "name_en": "NaturalHealer",
+    "desc": "你发起的治疗效果+2。",
+    "has_icon": true
+  },
+  {
+    "key": "Micronaps",
+    "name": "Micronaps",
+    "name_en": "Micronaps",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "CommonCold",
+    "name": "CommonCold",
+    "name_en": "CommonCold",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Gassy",
+    "name": "胀气",
+    "name_en": "Gassy",
+    "desc": "你每次受到伤害时，击退前后左右相邻的所有单位。",
+    "has_icon": true
+  },
+  {
+    "key": "STARTER_PLACEHOLDER_Colorless",
+    "name": "STARTER_PLACEHOLDER_Colorless",
+    "name_en": "STARTER_PLACEHOLDER_Colorless",
+    "desc": "在你锁定队伍的项圈时，随机变成无色被动。",
+    "has_icon": true
+  },
+  {
+    "key": "PriorityTarget",
+    "name": "显眼包",
+    "name_en": "PriorityTarget",
+    "desc": "敌人如果能攻击你，就会优先打你，而不是打你的友方。",
+    "has_icon": true
+  },
+  {
+    "key": "RunningJab",
+    "name": "跑动冲拳",
+    "name_en": "RunningJab",
+    "desc": "你结束移动时，如果范围内有敌人，会自动进行1次普通攻击。",
+    "has_icon": true
+  },
+  {
+    "key": "Boned",
+    "name": "有骨气",
+    "name_en": "Boned",
+    "desc": "你击杀单位时，如果没有武器，那么获得1根骨头棒。",
+    "has_icon": true
+  },
+  {
+    "key": "Harpooner",
+    "name": "鱼叉手",
+    "name_en": "Harpooner",
+    "desc": "敌人移动进入你的范围时，钩住它。",
+    "has_icon": true
+  },
+  {
+    "key": "Pulp",
+    "name": "绞肉",
+    "name_en": "Pulp",
+    "desc": "你击杀单位或摧毁尸体时，它会变成肉。",
+    "has_icon": true
+  },
+  {
+    "key": "Declawed",
+    "name": "Declawed",
+    "name_en": "Declawed",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "MindTempest",
+    "name": "心灵风暴",
+    "name_en": "MindTempest",
+    "desc": "6个法术一个周期，每个周期当你施放第6个法术时，所有属性提升，同时魔法伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "EldritchVisage",
+    "name": "面容邪异",
+    "name_en": "EldritchVisage",
+    "desc": "你的回合开始时，对视线内所有敌人施加1层【魔法克制】。",
+    "has_icon": true
+  },
+  {
+    "key": "STARTER_PLACEHOLDER_Mage",
+    "name": "STARTER_PLACEHOLDER_Mage",
+    "name_en": "STARTER_PLACEHOLDER_Mage",
+    "desc": "在你锁定队伍的项圈时，随机变成法师的被动。",
+    "has_icon": true
+  },
+  {
+    "key": "STARTER_PLACEHOLDER_Fighter",
+    "name": "STARTER_PLACEHOLDER_Fighter",
+    "name_en": "STARTER_PLACEHOLDER_Fighter",
+    "desc": "在你锁定队伍的项圈时，随机变成战士的被动。",
+    "has_icon": true
+  },
+  {
+    "key": "AlmsForThePoor",
+    "name": "施舍穷苦",
+    "name_en": "AlmsForThePoor",
+    "desc": "你获得钱时，所有友方恢复1点生命，而且【幸运】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "IcePaws",
+    "name": "寒冰爪",
+    "name_en": "IcePaws",
+    "desc": "你的普通攻击会造成冰冻伤害，施加2层【迟缓】，同时有20%的几率【冻住】目标。你可以对冻住的单位造成伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "Beckon",
+    "name": "招手",
+    "name_en": "Beckon",
+    "desc": "你普通攻击的击退距离+4。",
+    "has_icon": true
+  },
+  {
+    "key": "ClericsSoul",
+    "name": "ClericsSoul",
+    "name_en": "ClericsSoul",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "EternalHealth",
+    "name": "不朽之身",
+    "name_en": "EternalHealth",
+    "desc": "你倒地时只会获得“触霉头了”。队伍取得胜利时，如果你处于倒地状态，那么生命回满。",
+    "has_icon": true
+  },
+  {
+    "key": "OneEighty",
+    "name": "OneEighty",
+    "name_en": "OneEighty",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "MainCourse",
+    "name": "大号的我！",
+    "name_en": "MainCourse",
+    "desc": "你产生的可以捡起的食物和边角料份量变大。",
+    "has_icon": true
+  },
+  {
+    "key": "Soulless",
+    "name": "Soulless",
+    "name_en": "Soulless",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "JestersSoul",
+    "name": "小丑之魂",
+    "name_en": "JestersSoul",
+    "desc": "升级时还会出现任意职业的能力。\n升级时的能力选项你可以刷新两次。",
+    "has_icon": true
+  },
+  {
+    "key": "Sociopathy",
+    "name": "Sociopathy",
+    "name_en": "Sociopathy",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "SuicideSquad",
+    "name": "自杀小队",
+    "name_en": "SuicideSquad",
+    "desc": "你控制的跟班获得奖励能力【自毁】。",
+    "has_icon": true
+  },
+  {
+    "key": "NeverFull",
+    "name": "无底胃",
+    "name_en": "NeverFull",
+    "desc": "生命恢复可以超出上限。\n超出上限的生命会在战斗结束时消失。",
+    "has_icon": true
+  },
+  {
+    "key": "SerialKiller",
+    "name": "连环杀手",
+    "name_en": "SerialKiller",
+    "desc": "你击杀3个单位之后，【速度】+6，而且背刺暴击几率100%。",
+    "has_icon": true
+  },
+  {
+    "key": "SlowAndSteady",
+    "name": "稳扎稳打",
+    "name_en": "SlowAndSteady",
+    "desc": "每个回合结束时，【速度】-2，范围+1。如果你的【速度】为0，那么每个回合获得1次奖励攻击。",
+    "has_icon": true
+  },
+  {
+    "key": "AnimalHandler",
+    "name": "驯兽",
+    "name_en": "AnimalHandler",
+    "desc": "每场战斗开始时，你会随机带1个虫子跟班（伤害和生命提升）。",
+    "has_icon": true
+  },
+  {
+    "key": "Flu",
+    "name": "Flu",
+    "name_en": "Flu",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "DeathProof",
+    "name": "金刚不坏",
+    "name_en": "DeathProof",
+    "desc": "你倒地期间，每轮结束时有25%的几率以1点生命复活。",
+    "has_icon": true
+  },
+  {
+    "key": "PetRocks",
+    "name": "宠物石头",
+    "name_en": "PetRocks",
+    "desc": "你召唤的石头是活的！！\n……而且它们生命+3。战斗开始时召唤1块石头。",
+    "has_icon": true
+  },
+  {
+    "key": "Host",
+    "name": "宿主",
+    "name_en": "Host",
+    "desc": "每场战斗开始时，自带2个小小蜘蛛跟班。背包会多1个寄生体“蜘蛛卵”。寄生体可以自由取下。",
+    "has_icon": true
+  },
+  {
+    "key": "Scrapper",
+    "name": "破烂王",
+    "name_en": "Scrapper",
+    "desc": "每场战斗结束时，额外获得1个消耗品。\n你用光1个消耗品或小玩意儿时，如果背包里还有消耗品，就自动再装备1个。",
+    "has_icon": true
+  },
+  {
+    "key": "ETank",
+    "name": "E罐",
+    "name_en": "ETank",
+    "desc": "每场战斗开始时，生命上限+20（生命不补满）。",
+    "has_icon": true
+  },
+  {
+    "key": "Survivalist",
+    "name": "求生高手",
+    "name_en": "Survivalist",
+    "desc": "背包增加6份治疗消耗品和满满1瓶水。\n你可以对友方使用消耗品。\n每场战斗结束时，食物+2。",
+    "has_icon": true
+  },
+  {
+    "key": "AlphaStrike",
+    "name": "先爪",
+    "name_en": "AlphaStrike",
+    "desc": "战斗开始时获得1个额外回合。",
+    "has_icon": true
+  },
+  {
+    "key": "Hack",
+    "name": "开罐",
+    "name_en": "Hack",
+    "desc": "如果敌人有【护盾】，你对它进行普通攻击一定暴击。\n你的普通攻击暴击会移除单位身上的增益。",
+    "has_icon": true
+  },
+  {
+    "key": "ADHD",
+    "name": "ADHD",
+    "name_en": "ADHD",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Stompy",
+    "name": "我踩！",
+    "name_en": "Stompy",
+    "desc": "你拥有横冲直撞。\n你横冲直撞的伤害会造成狠剁。",
+    "has_icon": true
+  },
+  {
+    "key": "Plow",
+    "name": "破土",
+    "name_en": "Plow",
+    "desc": "你击退单位时，在它原来的位置留下1块石头。",
+    "has_icon": true
+  },
+  {
+    "key": "WildAnimals",
+    "name": "野生动物",
+    "name_en": "WildAnimals",
+    "desc": "你召唤的跟班在生成时会随机攻击范围内的1个敌人。",
+    "has_icon": true
+  },
+  {
+    "key": "SkullSmash",
+    "name": "碎颅",
+    "name_en": "SkullSmash",
+    "desc": "你的普通攻击会施加【瘀伤】。",
+    "has_icon": true
+  },
+  {
+    "key": "NumbingLeeches",
+    "name": "麻痹水蛭",
+    "name_en": "NumbingLeeches",
+    "desc": "你的普通攻击造成0点伤害，但它施加的状态和命中效果增强2倍。",
+    "has_icon": true
+  },
+  {
+    "key": "Schizophrenia",
+    "name": "Schizophrenia",
+    "name_en": "Schizophrenia",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Anemia",
+    "name": "Anemia",
+    "name_en": "Anemia",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "NaturesGuidance",
+    "name": "NaturesGuidance",
+    "name_en": "NaturesGuidance",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "ShakeDown",
+    "name": "勒索",
+    "name_en": "ShakeDown",
+    "desc": "你的暴击会生成1块钱和随机1件可以捡起的物品。",
+    "has_icon": true
+  },
+  {
+    "key": "Hypersomnia",
+    "name": "Hypersomnia",
+    "name_en": "Hypersomnia",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Indigestion",
+    "name": "消化不良",
+    "name_en": "Indigestion",
+    "desc": "每当你恢复的生命超出生命上限，你就会放屁，对前后左右相邻的单位施加3层【中毒】。",
+    "has_icon": true
+  },
+  {
+    "key": "CobraStyle",
+    "name": "蛇式",
+    "name_en": "CobraStyle",
+    "desc": "敌人移动到前后左右相邻的方格时，对它进行1次较弱的近身攻击。",
+    "has_icon": true
+  },
+  {
+    "key": "ThouShaltNotKill",
+    "name": "不可杀生",
+    "name_en": "ThouShaltNotKill",
+    "desc": "敌人击倒其他单位时，它会受到10点神圣伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "PillPopper",
+    "name": "PillPopper",
+    "name_en": "PillPopper",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "ToxicBlooded",
+    "name": "毒血",
+    "name_en": "ToxicBlooded",
+    "desc": "你施加的【中毒】层数+1。",
+    "has_icon": true
+  },
+  {
+    "key": "IntestinalProlapse",
+    "name": "IntestinalProlapse",
+    "name_en": "IntestinalProlapse",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Avenger",
+    "name": "复仇",
+    "name_en": "Avenger",
+    "desc": "友方猫咪倒地时，你所有属性提升2，同时恢复8点生命。",
+    "has_icon": true
+  },
+  {
+    "key": "FlowState",
+    "name": "心流",
+    "name_en": "FlowState",
+    "desc": "你对另一个单位造成伤害后，这个回合结束之前，【力量】+1，【敏捷】+2。",
+    "has_icon": true
+  },
+  {
+    "key": "RazorClaws",
+    "name": "锐利之爪",
+    "name_en": "RazorClaws",
+    "desc": "你的普通攻击会施加1层【出血】。",
+    "has_icon": true
+  },
+  {
+    "key": "FasterWhenHit",
+    "name": "FasterWhenHit",
+    "name_en": "FasterWhenHit",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "SpinaBifida",
+    "name": "SpinaBifida",
+    "name_en": "SpinaBifida",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "StockholmSyndrome",
+    "name": "StockholmSyndrome",
+    "name_en": "StockholmSyndrome",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Goofball",
+    "name": "活宝",
+    "name_en": "Goofball",
+    "desc": "每轮开始时，获得1个额外回合。",
+    "has_icon": true
+  },
+  {
+    "key": "CounterBarrage",
+    "name": "借力打力",
+    "name_en": "CounterBarrage",
+    "desc": "敌人攻击对你造成伤害时，你奖励攻击+1。",
+    "has_icon": true
+  },
+  {
+    "key": "Distemper",
+    "name": "Distemper",
+    "name_en": "Distemper",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "DuctTape",
+    "name": "防水胶带",
+    "name_en": "DuctTape",
+    "desc": "战斗结束时，你制作的物品会保留，但会受到诅咒。",
+    "has_icon": true
+  },
+  {
+    "key": "BrokenLimb",
+    "name": "BrokenLimb",
+    "name_en": "BrokenLimb",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Insomnia",
+    "name": "Insomnia",
+    "name_en": "Insomnia",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "IronSkin",
+    "name": "IronSkin",
+    "name_en": "IronSkin",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "BreathOfLife",
+    "name": "生命之息",
+    "name_en": "BreathOfLife",
+    "desc": "你治疗倒地的单位时，令它复活。",
+    "has_icon": true
+  },
+  {
+    "key": "DualWield",
+    "name": "武器双持",
+    "name_en": "DualWield",
+    "desc": "你使用武器时，会免费自动再用1次。",
+    "has_icon": true
+  },
+  {
+    "key": "MonkeyStyle",
+    "name": "猴拳",
+    "name_en": "MonkeyStyle",
+    "desc": "有15%的几率格挡伤害，同时反击。",
+    "has_icon": true
+  },
+  {
+    "key": "ThunderThighs",
+    "name": "雷霆大腿",
+    "name_en": "ThunderThighs",
+    "desc": "横冲直撞。",
+    "has_icon": true
+  },
+  {
+    "key": "TopOff",
+    "name": "加满",
+    "name_en": "TopOff",
+    "desc": "你的治疗令另一个单位生命超过上限时，你们双方分别【护盾】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "WhipCracker",
+    "name": "督工",
+    "name_en": "WhipCracker",
+    "desc": "你伤害到友方时，友方伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "ToadStyle",
+    "name": "蛤蟆功",
+    "name_en": "ToadStyle",
+    "desc": "你的移动行动变成跳跃。落在单位身上会造成伤害并把它挤开。",
+    "has_icon": true
+  },
+  {
+    "key": "PunchFace",
+    "name": "打脸",
+    "name_en": "PunchFace",
+    "desc": "你的普通攻击如果命中单位正面，就一定暴击。",
+    "has_icon": true
+  },
+  {
+    "key": "Untouched",
+    "name": "Untouched",
+    "name_en": "Untouched",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "MoraleBoost",
+    "name": "提振士气",
+    "name_en": "MoraleBoost",
+    "desc": "每当你击杀单位，友方就所有属性提升。",
+    "has_icon": true
+  },
+  {
+    "key": "Patience",
+    "name": "耐心",
+    "name_en": "Patience",
+    "desc": "如果你不行动直接结束回合，那么可以在一轮结束时获得1个额外回合。如果你跳过原始回合，那么额外回合魔能不会自然恢复。",
+    "has_icon": true
+  },
+  {
+    "key": "HeavyHanded",
+    "name": "下重爪",
+    "name_en": "HeavyHanded",
+    "desc": "击退伤害+2。",
+    "has_icon": true
+  },
+  {
+    "key": "Twiddle",
+    "name": "摆弄",
+    "name_en": "Twiddle",
+    "desc": "你的普通攻击造成0伤害，但每个回合可以额外使用2次。",
+    "has_icon": true
+  },
+  {
+    "key": "Rockin",
+    "name": "滚石团",
+    "name_en": "Rockin",
+    "desc": "每场战斗开始时，召唤4颗小石头。",
+    "has_icon": true
+  },
+  {
+    "key": "Shunned",
+    "name": "Shunned",
+    "name_en": "Shunned",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Psychosis",
+    "name": "Psychosis",
+    "name_en": "Psychosis",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Blacksmith",
+    "name": "铁匠",
+    "name_en": "Blacksmith",
+    "desc": "如果你有武器，那么你的普通攻击变成【锤炼】。",
+    "has_icon": true
+  },
+  {
+    "key": "TrueSight",
+    "name": "真视",
+    "name_en": "TrueSight",
+    "desc": "你和友方攻击你视线内的敌人不会落空。",
+    "has_icon": true
+  },
+  {
+    "key": "Nanobots",
+    "name": "纳米机器人",
+    "name_en": "Nanobots",
+    "desc": "你每次受到攻击或法术的伤害时，获得2层递减的生命自然恢复。",
+    "has_icon": true
+  },
+  {
+    "key": "STARTER_PLACEHOLDER_Medic",
+    "name": "STARTER_PLACEHOLDER_Medic",
+    "name_en": "STARTER_PLACEHOLDER_Medic",
+    "desc": "在你锁定队伍的项圈时，随机变成牧师的被动。",
+    "has_icon": true
+  },
+  {
+    "key": "Superstition",
+    "name": "迷信",
+    "name_en": "Superstition",
+    "desc": "你的普通攻击会施加“【幸运】-1”。\n有单位伤害你时，对它施加“【幸运】-1”。",
+    "has_icon": true
+  },
+  {
+    "key": "LordOfTheFlies",
+    "name": "蝇王",
+    "name_en": "LordOfTheFlies",
+    "desc": "所有苍蝇都会被【洗脑】，同时伤害+1。\n你每次施加【腐烂】时，额外施加1层。",
+    "has_icon": true
+  },
+  {
+    "key": "Brave",
+    "name": "Brave",
+    "name_en": "Brave",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "ASRFlight",
+    "name": "ASRFlight",
+    "name_en": "ASRFlight",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Traps",
+    "name": "夹子",
+    "name_en": "Traps",
+    "desc": "如果你向空格进行普通攻击，那么生成1个捕兽夹。\n每当你的夹子触发，就【敏捷】+2。",
+    "has_icon": true
+  },
+  {
+    "key": "Bipolar",
+    "name": "Bipolar",
+    "name_en": "Bipolar",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "DukeOfFlies",
+    "name": "苍蝇公爵",
+    "name_en": "DukeOfFlies",
+    "desc": "战斗结束时，所有可以捡起的食物会变成你的友方苍蝇。\n即便战斗结束，友方苍蝇也会跟着你参加后面的战斗。",
+    "has_icon": true
+  },
+  {
+    "key": "EnergyStorm",
+    "name": "叁",
+    "name_en": "EnergyStorm",
+    "desc": "一个回合之内，3个法术为一个周期，每个周期的第3个法术施放两次",
+    "has_icon": true
+  },
+  {
+    "key": "SoothingSong",
+    "name": "SoothingSong",
+    "name_en": "SoothingSong",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "SacrificialLamb",
+    "name": "祭祀羔羊",
+    "name_en": "SacrificialLamb",
+    "desc": "你倒地时，友方所有属性提升，同时获得1个额外回合。",
+    "has_icon": true
+  },
+  {
+    "key": "LootHoarder",
+    "name": "战利品贮藏者",
+    "name_en": "LootHoarder",
+    "desc": "战斗结束时，如果你没有倒地，那么自动捡起所有可以捡起的物品。",
+    "has_icon": true
+  },
+  {
+    "key": "Scatological",
+    "name": "Scatological",
+    "name_en": "Scatological",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Drag",
+    "name": "拖拽",
+    "name_en": "Drag",
+    "desc": "单位如果被你击退，那么击退几个方格，就受到几点伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "BroodMother",
+    "name": "育母",
+    "name_en": "BroodMother",
+    "desc": "你的跟班和你【洗脑】的单位伤害+2、生命+5。",
+    "has_icon": true
+  },
+  {
+    "key": "Gigachad",
+    "name": "Gigachad",
+    "name_en": "Gigachad",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Tenderize",
+    "name": "敲肉",
+    "name_en": "Tenderize",
+    "desc": "你的基础近身攻击会施加1层【瘀伤】。",
+    "has_icon": true
+  },
+  {
+    "key": "UnburdenedStrikes",
+    "name": "身无累",
+    "name_en": "UnburdenedStrikes",
+    "desc": "每有1个防具栏位空着，就暴击几率+10%，暴击伤害+25%。如果所有防具栏位都空着，那么你只要被打到就会反击。",
+    "has_icon": true
+  },
+  {
+    "key": "Teamwork",
+    "name": "众志成城",
+    "name_en": "Teamwork",
+    "desc": "你的跟班击杀单位时，所有友方伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "PerfectTechnique",
+    "name": "出神入化",
+    "name_en": "PerfectTechnique",
+    "desc": "远程架势期间，范围+1，魔法伤害+2。近身架势期间，【招架】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "RelentlessDead",
+    "name": "亡者不休",
+    "name_en": "RelentlessDead",
+    "desc": "每轮结束时，随机方格生成1个僵尸小猫跟班。",
+    "has_icon": true
+  },
+  {
+    "key": "Mania",
+    "name": "躁狂",
+    "name_en": "Mania",
+    "desc": "你的回合开始时，魔能有10%的几率回满。",
+    "has_icon": true
+  },
+  {
+    "key": "BlessingOfGlorg",
+    "name": "BlessingOfGlorg",
+    "name_en": "BlessingOfGlorg",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "JetFists",
+    "name": "拳风",
+    "name_en": "JetFists",
+    "desc": "你的近身攻击和能力会掀起一阵风，刮过命中的方格。",
+    "has_icon": true
+  },
+  {
+    "key": "Leader",
+    "name": "领袖",
+    "name_en": "Leader",
+    "desc": "前后左右相邻的友方伤害+1，范围+1。",
+    "has_icon": true
+  },
+  {
+    "key": "BarkSkin",
+    "name": "树肤术",
+    "name_en": "BarkSkin",
+    "desc": "【招架】+1。\n你受到伤害时，临时【招架】+1，持续到你下一回合开始。",
+    "has_icon": true
+  },
+  {
+    "key": "Quiver",
+    "name": "箭袋",
+    "name_en": "Quiver",
+    "desc": "没有使用的普通攻击可以留到以后的回合使用。",
+    "has_icon": true
+  },
+  {
+    "key": "Triskaidekaphobia",
+    "name": "Triskaidekaphobia",
+    "name_en": "Triskaidekaphobia",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "ProtectTheWeak",
+    "name": "保护弱小",
+    "name_en": "ProtectTheWeak",
+    "desc": "生命不超过5的友方闪避几率+50%。",
+    "has_icon": true
+  },
+  {
+    "key": "Bouncer",
+    "name": "夜店保安",
+    "name_en": "Bouncer",
+    "desc": "有友方受到伤害时，向伤害来源的方向移动3格，然后如果能攻击它，就进行攻击。",
+    "has_icon": true
+  },
+  {
+    "key": "DeepCut",
+    "name": "DeepCut",
+    "name_en": "DeepCut",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "ThiefsSoul",
+    "name": "ThiefsSoul",
+    "name_en": "ThiefsSoul",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "JaggedEdges",
+    "name": "JaggedEdges",
+    "name_en": "JaggedEdges",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "PoisonTips",
+    "name": "涂毒",
+    "name_en": "PoisonTips",
+    "desc": "你的普通攻击会施加1层【中毒】。",
+    "has_icon": true
+  },
+  {
+    "key": "Parasitic",
+    "name": "寄生",
+    "name_en": "Parasitic",
+    "desc": "你获得生命时，生成1个水蛭跟班。",
+    "has_icon": true
+  },
+  {
+    "key": "KidneyStones",
+    "name": "KidneyStones",
+    "name_en": "KidneyStones",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "STARTER_PLACEHOLDER_Hunter",
+    "name": "STARTER_PLACEHOLDER_Hunter",
+    "name_en": "STARTER_PLACEHOLDER_Hunter",
+    "desc": "在你锁定队伍的项圈时，随机变成猎手的被动。",
+    "has_icon": true
+  },
+  {
+    "key": "DejaVu2",
+    "name": "DejaVu2",
+    "name_en": "DejaVu2",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "DirtyClaws",
+    "name": "脏爪子",
+    "name_en": "DirtyClaws",
+    "desc": "如果敌人已经【中毒】或者【出血】，你的物理攻击会令其【中毒】+1和/或【出血】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "HotBlooded",
+    "name": "热血",
+    "name_en": "HotBlooded",
+    "desc": "你施加的【灼烧】层数+1。",
+    "has_icon": true
+  },
+  {
+    "key": "DeathIncarnate",
+    "name": "DeathIncarnate",
+    "name_en": "DeathIncarnate",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "TamperedGenes",
+    "name": "TamperedGenes",
+    "name_en": "TamperedGenes",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Testy",
+    "name": "暴躁",
+    "name_en": "Testy",
+    "desc": "你受到伤害后，在你的回合结束之前移动范围+1。",
+    "has_icon": true
+  },
+  {
+    "key": "ASRFight",
+    "name": "ASRFight",
+    "name_en": "ASRFight",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "SoulBound",
+    "name": "SoulBound",
+    "name_en": "SoulBound",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Schadenfreude",
+    "name": "幸灾乐祸",
+    "name_en": "Schadenfreude",
+    "desc": "队里成员每有1种毛病，你的【力量】和【体质】就分别+2。",
+    "has_icon": true
+  },
+  {
+    "key": "HardHead",
+    "name": "铁头功",
+    "name_en": "HardHead",
+    "desc": "你会格挡正面的攻击。",
+    "has_icon": true
+  },
+  {
+    "key": "Cripple",
+    "name": "打残",
+    "name_en": "Cripple",
+    "desc": "你的暴击会施加【移动受限】和2层【虚弱】。",
+    "has_icon": true
+  },
+  {
+    "key": "Blink",
+    "name": "闪现术",
+    "name_en": "Blink",
+    "desc": "你成为敌人的目标时，有33%的几率随机传送到其他方格。",
+    "has_icon": true
+  },
+  {
+    "key": "Backstabber",
+    "name": "背刺专家",
+    "name_en": "Backstabber",
+    "desc": "你的背刺一定暴击。",
+    "has_icon": true
+  },
+  {
+    "key": "VoidSoul",
+    "name": "虚空之魂",
+    "name_en": "VoidSoul",
+    "desc": "升级时只有强化的无色能力可以选择。",
+    "has_icon": true
+  },
+  {
+    "key": "Godspeed",
+    "name": "神速",
+    "name_en": "Godspeed",
+    "desc": "你治疗单位时，【速度】+2。",
+    "has_icon": true
+  },
+  {
+    "key": "FlipACoin",
+    "name": "抛硬币",
+    "name_en": "FlipACoin",
+    "desc": "你获得钱时，有50%的几率随机在1个方格生成1块钱，有50%的几率【速度】+2、【幸运】+2。",
+    "has_icon": true
+  },
+  {
+    "key": "RapGod",
+    "name": "说唱之神",
+    "name_en": "RapGod",
+    "desc": "你的基础行动还会令【速度】临时+4。",
+    "has_icon": true
+  },
+  {
+    "key": "BlackFetin",
+    "name": "BlackFetin",
+    "name_en": "BlackFetin",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "DarkOne",
+    "name": "DarkOne",
+    "name_en": "DarkOne",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "BedBugs",
+    "name": "臭虫",
+    "name_en": "BedBugs",
+    "desc": "战斗开始时，自带2个健壮的水蛭跟班。",
+    "has_icon": true
+  },
+  {
+    "key": "Mixup",
+    "name": "择",
+    "name_en": "Mixup",
+    "desc": "你切换架势时，这个回合下1次普通攻击一定暴击。",
+    "has_icon": true
+  },
+  {
+    "key": "Shank",
+    "name": "身后刀",
+    "name_en": "Shank",
+    "desc": "你在敌人身后而且跟对方相邻时，你的普通攻击变成近身攻击，可以连打2次。",
+    "has_icon": true
+  },
+  {
+    "key": "Flourish",
+    "name": "茁壮",
+    "name_en": "Flourish",
+    "desc": "引力系能力不会伤害友方。引力系能力对友方使用时，会随机给1个增益。你施加增益时，施加的层数+1。",
+    "has_icon": true
+  },
+  {
+    "key": "ImposterSyndrome",
+    "name": "ImposterSyndrome",
+    "name_en": "ImposterSyndrome",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "EnchantedRelic",
+    "name": "附魔遗物",
+    "name_en": "EnchantedRelic",
+    "desc": "你小玩意儿的被动效果和主动效果增强1倍。",
+    "has_icon": true
+  },
+  {
+    "key": "LongArms",
+    "name": "通臂",
+    "name_en": "LongArms",
+    "desc": "范围+1，近身距离+1。",
+    "has_icon": true
+  },
+  {
+    "key": "HuntersBoon",
+    "name": "猎手恩赐",
+    "name_en": "HuntersBoon",
+    "desc": "每个回合你第一次击杀单位时，获得5点魔能。",
+    "has_icon": true
+  },
+  {
+    "key": "Shrapnel",
+    "name": "溅射伤害",
+    "name_en": "Shrapnel",
+    "desc": "你的普通攻击会造成2点魔法溅射伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "Four",
+    "name": "肆",
+    "name_en": "Four",
+    "desc": "你的回合结束时，如果魔能或生命刚好是4点，那么【智力】+1、魔法伤害+1",
+    "has_icon": true
+  },
+  {
+    "key": "ItsAlive",
+    "name": "它活了！",
+    "name_en": "ItsAlive",
+    "desc": "用电系伤害命中尸体会令它以1点生命复活。复活的尸体会被【洗脑】，获得1个额外回合，然后死亡。",
+    "has_icon": true
+  },
+  {
+    "key": "Dwarfism",
+    "name": "Dwarfism",
+    "name_en": "Dwarfism",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "FullPower",
+    "name": "功力全开",
+    "name_en": "FullPower",
+    "desc": "魔能全满时，你的普通攻击会造成3倍伤害，同时击退距离+3。",
+    "has_icon": true
+  },
+  {
+    "key": "Furious",
+    "name": "狂怒",
+    "name_en": "Furious",
+    "desc": "你每次打出暴击时，伤害+1。\n暴击几率+5%。",
+    "has_icon": true
+  },
+  {
+    "key": "PsySmack",
+    "name": "念力重拍",
+    "name_en": "PsySmack",
+    "desc": "你和友方造成的击退伤害增大1倍。",
+    "has_icon": true
+  },
+  {
+    "key": "Confrontational",
+    "name": "硬刚",
+    "name_en": "Confrontational",
+    "desc": "你受到伤害时，向着伤害来源的方向横冲直撞1个方格。",
+    "has_icon": true
+  },
+  {
+    "key": "Scars",
+    "name": "伤疤",
+    "name_en": "Scars",
+    "desc": "【招架】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "SantaSangre",
+    "name": "圣血",
+    "name_en": "SantaSangre",
+    "desc": "你倒地时，友方恢复12点生命。溢出的治疗效果转化成护盾。",
+    "has_icon": true
+  },
+  {
+    "key": "DarkPriest",
+    "name": "黑暗祭司",
+    "name_en": "DarkPriest",
+    "desc": "每场战斗开始时，如果你没有武器，那么获得一把临时武器“灵魂匕首”。",
+    "has_icon": true
+  },
+  {
+    "key": "MadVisage",
+    "name": "面容癫狂",
+    "name_en": "MadVisage",
+    "desc": "你获得的所有伤残都会是毁容。\n魔能全满时，你的基础行动会施加【癫狂】。\n你的【魅力】不高于0时，每个回合获得1次奖励攻击。",
+    "has_icon": true
+  },
+  {
+    "key": "Pacifist",
+    "name": "Pacifist",
+    "name_en": "Pacifist",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "STARTER_PLACEHOLDER_Necromancer",
+    "name": "STARTER_PLACEHOLDER_Necromancer",
+    "name_en": "STARTER_PLACEHOLDER_Necromancer",
+    "desc": "在你锁定队伍的项圈时，随机变成死灵法师的被动。",
+    "has_icon": true
+  },
+  {
+    "key": "SensoryOverloadTrinket",
+    "name": "SensoryOverloadTrinket",
+    "name_en": "SensoryOverloadTrinket",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "MagicGuru",
+    "name": "魔法大师",
+    "name_en": "MagicGuru",
+    "desc": "你的友方魔能自然恢复+1。如果友方施放了魔能耗费不低于7的法术，那么它所有属性提升。",
+    "has_icon": true
+  },
+  {
+    "key": "Charming",
+    "name": "洗脑",
+    "name_en": "Charming",
+    "desc": "伤害你的单位有25%的几率被你【洗脑】。",
+    "has_icon": true
+  },
+  {
+    "key": "ThouShaltObey",
+    "name": "不可违抗",
+    "name_en": "ThouShaltObey",
+    "desc": "每轮结束时，随机对前后左右相邻的1个敌人施加【洗脑】。",
+    "has_icon": true
+  },
+  {
+    "key": "RobotArms",
+    "name": "机械臂",
+    "name_en": "RobotArms",
+    "desc": "你的武器每个回合可以额外使用1次。",
+    "has_icon": true
+  },
+  {
+    "key": "BlessingOfHolyFire",
+    "name": "圣火福佑",
+    "name_en": "BlessingOfHolyFire",
+    "desc": "神圣系法术不会治疗敌人，而是对敌人造成双倍伤害、施加2层【灼烧】。\n你击杀单位时会失去这个福佑。",
+    "has_icon": true
+  },
+  {
+    "key": "HitMe",
+    "name": "打我！",
+    "name_en": "HitMe",
+    "desc": "你受到友方的伤害时，向你面朝的方向普通攻击1次。\n你受到的友方伤害降为1。",
+    "has_icon": true
+  },
+  {
+    "key": "Radiation",
+    "name": "Radiation",
+    "name_en": "Radiation",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Slugger",
+    "name": "强力击",
+    "name_en": "Slugger",
+    "desc": "伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "FlowerPower",
+    "name": "花的力量",
+    "name_en": "FlowerPower",
+    "desc": "单位站在花格上时，【力量】+2，【招架】+2。你移动时，离开的地方会长出花来。",
+    "has_icon": true
+  },
+  {
+    "key": "Vengeful",
+    "name": "记仇",
+    "name_en": "Vengeful",
+    "desc": "如果敌方单位伤害过你，那么你对它的普通攻击一定暴击。",
+    "has_icon": true
+  },
+  {
+    "key": "Dyskinesia",
+    "name": "Dyskinesia",
+    "name_en": "Dyskinesia",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Cancer",
+    "name": "Cancer",
+    "name_en": "Cancer",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "RubberArrows",
+    "name": "橡胶箭",
+    "name_en": "RubberArrows",
+    "desc": "你的投射物命中之后会弹到3格之内另一个敌人身上。",
+    "has_icon": true
+  },
+  {
+    "key": "Narcolepsy",
+    "name": "Narcolepsy",
+    "name_en": "Narcolepsy",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "AfterImage",
+    "name": "残影",
+    "name_en": "AfterImage",
+    "desc": "你移动时，会在离开的地方生成1个影子。影子会模仿你的基础行动，但会在你的回合结束时消散。",
+    "has_icon": true
+  },
+  {
+    "key": "RockAspect",
+    "name": "岩相",
+    "name_en": "RockAspect",
+    "desc": "攻击或接触到你的单位有10%的几率【石化】。",
+    "has_icon": true
+  },
+  {
+    "key": "FastFooted",
+    "name": "猫步灵活",
+    "name_en": "FastFooted",
+    "desc": "免疫负面的方格效果。",
+    "has_icon": true
+  },
+  {
+    "key": "LongShot",
+    "name": "远射",
+    "name_en": "LongShot",
+    "desc": "范围+1。",
+    "has_icon": true
+  },
+  {
+    "key": "Infected",
+    "name": "感染",
+    "name_en": "Infected",
+    "desc": "你击倒单位时，会令它以50%的生命复苏。",
+    "has_icon": true
+  },
+  {
+    "key": "Phony",
+    "name": "Phony",
+    "name_en": "Phony",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "PoisonIvy",
+    "name": "毒藤",
+    "name_en": "PoisonIvy",
+    "desc": "你和你召唤的跟班都【带毒】。",
+    "has_icon": true
+  },
+  {
+    "key": "Conductor",
+    "name": "导体",
+    "name_en": "Conductor",
+    "desc": "你每装备了1件金属防具，你造成的电系伤害就+2。\n如果你装备了金属防具，那么你的武器会造成电系伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "Covid",
+    "name": "Covid",
+    "name_en": "Covid",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Eternal",
+    "name": "永恒",
+    "name_en": "Eternal",
+    "desc": "每场战斗，你第一次倒地不会落下伤残，而且会以半血复活。",
+    "has_icon": true
+  },
+  {
+    "key": "Pica",
+    "name": "Pica",
+    "name_en": "Pica",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Turnabout",
+    "name": "望身后",
+    "name_en": "Turnabout",
+    "desc": "你的基础近身攻击会施加1层【混乱】，同时令目标背对你。",
+    "has_icon": true
+  },
+  {
+    "key": "FirstImpression",
+    "name": "迎头一击",
+    "name_en": "FirstImpression",
+    "desc": "每场战斗开始时，奖励攻击+1。",
+    "has_icon": true
+  },
+  {
+    "key": "Agile",
+    "name": "灵活",
+    "name_en": "Agile",
+    "desc": "移动范围+2。如果你移动的格数少于自己的移动范围上限，那么你可以再移动1次，用完剩余的移动范围。",
+    "has_icon": true
+  },
+  {
+    "key": "DoubleThrow",
+    "name": "子母钉",
+    "name_en": "DoubleThrow",
+    "desc": "你的普通攻击会打2下，每下只有1/2伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "SpreadSorrow",
+    "name": "散播悲痛",
+    "name_en": "SpreadSorrow",
+    "desc": "你对敌人施加减益时，会把同样的减益随机施加给另外1个敌人。",
+    "has_icon": true
+  },
+  {
+    "key": "SoulShatter",
+    "name": "灵魂碎裂",
+    "name_en": "SoulShatter",
+    "desc": "你击杀单位时，对所有敌人造成1点伤害",
+    "has_icon": true
+  },
+  {
+    "key": "MountainForm",
+    "name": "成山",
+    "name_en": "MountainForm",
+    "desc": "你免疫击退。\n你走过的方格会变成泥地，同时可能生成石头。",
+    "has_icon": true
+  },
+  {
+    "key": "Dysentery",
+    "name": "Dysentery",
+    "name_en": "Dysentery",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "SkillShare_Disorder",
+    "name": "SkillShare_Disorder",
+    "name_en": "SkillShare_Disorder",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "NecromancersSoul",
+    "name": "NecromancersSoul",
+    "name_en": "NecromancersSoul",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "PTSD",
+    "name": "PTSD",
+    "name_en": "PTSD",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Zip",
+    "name": "咻！",
+    "name_en": "Zip",
+    "desc": "你的移动行动变成【暗影步】。",
+    "has_icon": true
+  },
+  {
+    "key": "HighAsYouCanCount",
+    "name": "HighAsYouCanCount",
+    "name_en": "HighAsYouCanCount",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "LatentEnergy",
+    "name": "潜能",
+    "name_en": "LatentEnergy",
+    "desc": "友方耗费魔能时，你在自己下次使用魔法之前魔法伤害+2。",
+    "has_icon": true
+  },
+  {
+    "key": "PawMissile",
+    "name": "猫爪飞弹",
+    "name_en": "PawMissile",
+    "desc": "你的普通攻击变成【魔法飞弹】。\n（伤害随【智力】变化）",
+    "has_icon": true
+  },
+  {
+    "key": "ShoulderCheck",
+    "name": "路过",
+    "name_en": "ShoulderCheck",
+    "desc": "你移动后，如果面向1个单位，就自动攻击它一次（33%的伤害）。",
+    "has_icon": true
+  },
+  {
+    "key": "BrickSkin",
+    "name": "皮糙肉厚",
+    "name_en": "BrickSkin",
+    "desc": "每当你获得【护盾】，【护盾】额外+2。",
+    "has_icon": true
+  },
+  {
+    "key": "Tachysensia",
+    "name": "Tachysensia",
+    "name_en": "Tachysensia",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "PsionicRepel",
+    "name": "念力排斥",
+    "name_en": "PsionicRepel",
+    "desc": "攻击或接触你的单位会被击退10格。",
+    "has_icon": true
+  },
+  {
+    "key": "SafeSwitching",
+    "name": "安全切换",
+    "name_en": "SafeSwitching",
+    "desc": "你切换架势时，【护盾】+2。",
+    "has_icon": true
+  },
+  {
+    "key": "MrMega",
+    "name": "大爆弹先生",
+    "name_en": "MrMega",
+    "desc": "你的爆炸范围更大，伤害+3。\n冲击抗性+3。",
+    "has_icon": true
+  },
+  {
+    "key": "LastGasp",
+    "name": "LastGasp",
+    "name_en": "LastGasp",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Amplify",
+    "name": "增效",
+    "name_en": "Amplify",
+    "desc": "魔法伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "OverConfident",
+    "name": "自负",
+    "name_en": "OverConfident",
+    "desc": "满生命时，法术的耗费-2，但你所受伤害增大1倍。魔能耗费最低降到1。",
+    "has_icon": true
+  },
+  {
+    "key": "OrangeFetin",
+    "name": "OrangeFetin",
+    "name_en": "OrangeFetin",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Caretaker",
+    "name": "照顾",
+    "name_en": "Caretaker",
+    "desc": "你治疗其他单位时，也会令自己恢复生命，幅度等于这次治疗效果的一半。",
+    "has_icon": true
+  },
+  {
+    "key": "Infested",
+    "name": "滋生",
+    "name_en": "Infested",
+    "desc": "你的回合结束时，有50%的几率召唤1个跳蚤跟班。",
+    "has_icon": true
+  },
+  {
+    "key": "EmptyVessels",
+    "name": "EmptyVessels",
+    "name_en": "EmptyVessels",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Shrapnel_Tinkerer",
+    "name": "弹片",
+    "name_en": "Shrapnel_Tinkerer",
+    "desc": "你有物品损坏时，【尖刺】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "WildStyle",
+    "name": "狂野变身",
+    "name_en": "WildStyle",
+    "desc": "每个回合你第一次变形时，获得1个额外回合。",
+    "has_icon": true
+  },
+  {
+    "key": "Paranoia",
+    "name": "Paranoia",
+    "name_en": "Paranoia",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "WideLoad",
+    "name": "宽载",
+    "name_en": "WideLoad",
+    "desc": "前后左右相邻的友方成为敌人的目标时，你和这个友方调换位置。",
+    "has_icon": true
+  },
+  {
+    "key": "SpreadThePain",
+    "name": "传播痛苦",
+    "name_en": "SpreadThePain",
+    "desc": "每个回合对1个单位第一次造成伤害时，伤害额外+2。",
+    "has_icon": true
+  },
+  {
+    "key": "SensoryOverloadWeapon",
+    "name": "SensoryOverloadWeapon",
+    "name_en": "SensoryOverloadWeapon",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "STARTER_PLACEHOLDER_Thief",
+    "name": "STARTER_PLACEHOLDER_Thief",
+    "name_en": "STARTER_PLACEHOLDER_Thief",
+    "desc": "在你锁定队伍的项圈时，随机变成盗贼的被动。",
+    "has_icon": true
+  },
+  {
+    "key": "Heathens",
+    "name": "异教徒！",
+    "name_en": "Heathens",
+    "desc": "战斗开始时，对所有敌人施加3层【虚弱】。",
+    "has_icon": true
+  },
+  {
+    "key": "STARTER_PLACEHOLDER_Druid",
+    "name": "STARTER_PLACEHOLDER_Druid",
+    "name_en": "STARTER_PLACEHOLDER_Druid",
+    "desc": "在你锁定队伍的项圈时，随机变成德鲁伊的被动。",
+    "has_icon": true
+  },
+  {
+    "key": "Touched",
+    "name": "Touched",
+    "name_en": "Touched",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Careful",
+    "name": "小心谨慎",
+    "name_en": "Careful",
+    "desc": "你对友方造成的伤害变成0。",
+    "has_icon": true
+  },
+  {
+    "key": "Premonitions",
+    "name": "Premonitions",
+    "name_en": "Premonitions",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Undeath",
+    "name": "不死",
+    "name_en": "Undeath",
+    "desc": "你倒地时，令每个友方以33%的生命复苏。（每场战斗限一次。）",
+    "has_icon": true
+  },
+  {
+    "key": "AngelicInspiration",
+    "name": "天使启迪",
+    "name_en": "AngelicInspiration",
+    "desc": "你治疗友方时，对方魔能+2。",
+    "has_icon": true
+  },
+  {
+    "key": "WideSwing",
+    "name": "转就完事",
+    "name_en": "WideSwing",
+    "desc": "你的普通攻击变成3×3的旋转攻击，会施加狠剁。",
+    "has_icon": true
+  },
+  {
+    "key": "InfiniteRebirth",
+    "name": "借尸还魂",
+    "name_en": "InfiniteRebirth",
+    "desc": "每轮结束时，如果地图上有尸体，而且你处于倒地状态，那么你会在那个方格复活，生命为1，同时速度临时+10。如果那个尸体是队友，那么你改为满血复活。",
+    "has_icon": true
+  },
+  {
+    "key": "Energizer",
+    "name": "蓄能器",
+    "name_en": "Energizer",
+    "desc": "你施放法术时，你武器的伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "MindBreaker",
+    "name": "智灭",
+    "name_en": "MindBreaker",
+    "desc": "你的普通攻击会施加1层【魔法克制】。",
+    "has_icon": true
+  },
+  {
+    "key": "STARTER_PLACEHOLDER_Jester",
+    "name": "STARTER_PLACEHOLDER_Jester",
+    "name_en": "STARTER_PLACEHOLDER_Jester",
+    "desc": "在你锁定队伍的项圈时，随机变成任意职业的被动。",
+    "has_icon": true
+  },
+  {
+    "key": "Diabetes",
+    "name": "Diabetes",
+    "name_en": "Diabetes",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Maestro",
+    "name": "大师",
+    "name_en": "Maestro",
+    "desc": "你音乐法术的魔能耗费减少50%。",
+    "has_icon": true
+  },
+  {
+    "key": "ReflexPunch",
+    "name": "ReflexPunch",
+    "name_en": "ReflexPunch",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Pinpoint",
+    "name": "精准定位",
+    "name_en": "Pinpoint",
+    "desc": "你的暴击会施加【标记】。",
+    "has_icon": true
+  },
+  {
+    "key": "SuperLuck",
+    "name": "超幸运",
+    "name_en": "SuperLuck",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Encore",
+    "name": "安可",
+    "name_en": "Encore",
+    "desc": "你使用音乐能力后，你的基础行动刷新。",
+    "has_icon": true
+  },
+  {
+    "key": "DruidsSoul",
+    "name": "DruidsSoul",
+    "name_en": "DruidsSoul",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Gastritis",
+    "name": "Gastritis",
+    "name_en": "Gastritis",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "FelineAids",
+    "name": "FelineAids",
+    "name_en": "FelineAids",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "VersionTwo",
+    "name": "2.0版本",
+    "name_en": "VersionTwo",
+    "desc": "每场战斗开始时，自带1点【科技】。\n你的【科技】不会低于1。",
+    "has_icon": true
+  },
+  {
+    "key": "anxiety",
+    "name": "anxiety",
+    "name_en": "anxiety",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Protection",
+    "name": "保护",
+    "name_en": "Protection",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "IBS",
+    "name": "IBS",
+    "name_en": "IBS",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Flying",
+    "name": "反重力",
+    "name_en": "Flying",
+    "desc": "你可以飞行移动。你使用引力系能力时，【速度】+1。\n引力系法术的魔能耗费-1。",
+    "has_icon": true
+  },
+  {
+    "key": "Resonance",
+    "name": "共鸣",
+    "name_en": "Resonance",
+    "desc": "施放法术之后，这个回合魔法伤害+1",
+    "has_icon": true
+  },
+  {
+    "key": "BareMinimum",
+    "name": "保底",
+    "name_en": "BareMinimum",
+    "desc": "你的属性不会低于5。",
+    "has_icon": true
+  },
+  {
+    "key": "Overflow",
+    "name": "溢出",
+    "name_en": "Overflow",
+    "desc": "魔能全满时，【招架】+2，同时可以飞行移动。你的魔能没有上限。",
+    "has_icon": true
+  },
+  {
+    "key": "Critical",
+    "name": "暴击",
+    "name_en": "Critical",
+    "desc": "你的暴击伤害+100%。你只要暴击，就【幸运】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "Scleroderma",
+    "name": "Scleroderma",
+    "name_en": "Scleroderma",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "LuckSwing",
+    "name": "赌一棒",
+    "name_en": "LuckSwing",
+    "desc": "暴击几率+50%，但有25%的几率落空。",
+    "has_icon": true
+  },
+  {
+    "key": "Albinism",
+    "name": "Albinism",
+    "name_en": "Albinism",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "UnburdenedMotion",
+    "name": "行无碍",
+    "name_en": "UnburdenedMotion",
+    "desc": "每有1个防具栏位空着，就【速度】+1，闪避几率+10%。如果所有防具栏位都空着，那么你就可以额外移动1次。",
+    "has_icon": true
+  },
+  {
+    "key": "BrainDead",
+    "name": "BrainDead",
+    "name_en": "BrainDead",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Unstoppable",
+    "name": "势不可挡！",
+    "name_en": "Unstoppable",
+    "desc": "免疫击退、【眩晕】、【迟缓】等移动减益。",
+    "has_icon": true
+  },
+  {
+    "key": "FollowUp",
+    "name": "乘胜追击",
+    "name_en": "FollowUp",
+    "desc": "你使用普通攻击后，尽可能向前突进。",
+    "has_icon": true
+  },
+  {
+    "key": "Recoil",
+    "name": "Recoil",
+    "name_en": "Recoil",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "BowlingBall",
+    "name": "保龄球",
+    "name_en": "BowlingBall",
+    "desc": "前后左右和斜前后左右相邻的友方猫咪获得奖励能力【滚球】。",
+    "has_icon": true
+  },
+  {
+    "key": "BurningPaws",
+    "name": "烈焰爪",
+    "name_en": "BurningPaws",
+    "desc": "你的基础行动会施加2层【灼烧】。",
+    "has_icon": true
+  },
+  {
+    "key": "DejaVu3",
+    "name": "DejaVu3",
+    "name_en": "DejaVu3",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Lucky",
+    "name": "幸运",
+    "name_en": "Lucky",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "AnimalControl",
+    "name": "动物控制",
+    "name_en": "AnimalControl",
+    "desc": "你的普通攻击会令单位立刻攻击它范围内的1个敌人。",
+    "has_icon": true
+  },
+  {
+    "key": "Wrestlemaniac",
+    "name": "摔角狂喵",
+    "name_en": "Wrestlemaniac",
+    "desc": "前后左右有敌人和你相邻时，你的普通攻击变成【背摔】。\n你获得能力【我丢】。",
+    "has_icon": true
+  },
+  {
+    "key": "Ingenuity",
+    "name": "心灵手巧",
+    "name_en": "Ingenuity",
+    "desc": "捡起的物品除了原本的效果，还会令你【科技】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "KillsHeal",
+    "name": "KillsHeal",
+    "name_en": "KillsHeal",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "CatchProjectiles",
+    "name": "接球手",
+    "name_en": "CatchProjectiles",
+    "desc": "有33%的几率格挡敌方的投射物，有100%的几率格挡友方的投射物。每当你挡住投射物，就奖励攻击+1。",
+    "has_icon": true
+  },
+  {
+    "key": "Pox",
+    "name": "Pox",
+    "name_en": "Pox",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "DownsSyndrome",
+    "name": "DownsSyndrome",
+    "name_en": "DownsSyndrome",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "GamblingAddict",
+    "name": "GamblingAddict",
+    "name_en": "GamblingAddict",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Torpor",
+    "name": "蛰伏",
+    "name_en": "Torpor",
+    "desc": "你倒地期间，你的普通攻击变成【侵扰】。你的尸体耐久+6。",
+    "has_icon": true
+  },
+  {
+    "key": "SuperCrow",
+    "name": "超级乌鸦！",
+    "name_en": "SuperCrow",
+    "desc": "你乌鸦的能力会强化。",
+    "has_icon": true
+  },
+  {
+    "key": "Rabies",
+    "name": "Rabies",
+    "name_en": "Rabies",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "DeathBoon",
+    "name": "死亡恩赐",
+    "name_en": "DeathBoon",
+    "desc": "你倒地时，全体友方所有属性提升。",
+    "has_icon": true
+  },
+  {
+    "key": "Traumatophobia",
+    "name": "Traumatophobia",
+    "name_en": "Traumatophobia",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "StrengthInNumbers",
+    "name": "气势占优",
+    "name_en": "StrengthInNumbers",
+    "desc": "你每多1个跟班，你的跟班就伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "BloodLust",
+    "name": "BloodLust",
+    "name_en": "BloodLust",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "STARTER_PLACEHOLDER_Monk",
+    "name": "STARTER_PLACEHOLDER_Monk",
+    "name_en": "STARTER_PLACEHOLDER_Monk",
+    "desc": "在你锁定队伍的项圈时，随机变成武僧的被动。",
+    "has_icon": true
+  },
+  {
+    "key": "SensoryOverloadFace",
+    "name": "SensoryOverloadFace",
+    "name_en": "SensoryOverloadFace",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Dyslexia",
+    "name": "Dyslexia",
+    "name_en": "Dyslexia",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "NaturalHealing",
+    "name": "自然愈合",
+    "name_en": "NaturalHealing",
+    "desc": "生命自然恢复+1",
+    "has_icon": true
+  },
+  {
+    "key": "TurtleStyle",
+    "name": "龟式",
+    "name_en": "TurtleStyle",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "TanksSoul",
+    "name": "TanksSoul",
+    "name_en": "TanksSoul",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "IceArmor",
+    "name": "IceArmor",
+    "name_en": "IceArmor",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Animalistic",
+    "name": "兽性",
+    "name_en": "Animalistic",
+    "desc": "你召唤的跟班伤害+2。\n你变形时，伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "SkillShare",
+    "name": "技能共享",
+    "name_en": "SkillShare",
+    "desc": "每场战斗开始时，你另一个被动能力会共享给队里其他猫咪。",
+    "has_icon": true
+  },
+  {
+    "key": "GrapplingHook",
+    "name": "钩爪",
+    "name_en": "GrapplingHook",
+    "desc": "你的钩子会把你拉向免疫击退的物体。",
+    "has_icon": true
+  },
+  {
+    "key": "Infestation",
+    "name": "Infestation",
+    "name_en": "Infestation",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Vegan",
+    "name": "Vegan",
+    "name_en": "Vegan",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "ThickSkull",
+    "name": "榆木脑袋",
+    "name_en": "ThickSkull",
+    "desc": "你获得的所有伤残都会变成脑震荡。\n你每有1个脑震荡，就【护盾】+3（【护盾】最多30）。",
+    "has_icon": true
+  },
+  {
+    "key": "PowerUp",
+    "name": "功力增强",
+    "name_en": "PowerUp",
+    "desc": "你的魔能超出上限时，魔法伤害+1，【智力】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "BloodBlooded",
+    "name": "血血",
+    "name_en": "BloodBlooded",
+    "desc": "你施加的【出血】层数+1。",
+    "has_icon": true
+  },
+  {
+    "key": "SensoryOverloadNeck",
+    "name": "SensoryOverloadNeck",
+    "name_en": "SensoryOverloadNeck",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "GodWarrior",
+    "name": "神的战士",
+    "name_en": "GodWarrior",
+    "desc": "你击杀敌人时，+1。",
+    "has_icon": true
+  },
+  {
+    "key": "DeathsDoor",
+    "name": "鬼门关",
+    "name_en": "DeathsDoor",
+    "desc": "你生命只剩1点时，你的所有法术耗费1点魔能，但每个回合只能施放1次。",
+    "has_icon": true
+  },
+  {
+    "key": "Gurgitator",
+    "name": "大胃王",
+    "name_en": "Gurgitator",
+    "desc": "每当你恢复的生命超出生命上限，【力量】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "ArmorSpecialist",
+    "name": "防护专家",
+    "name_en": "ArmorSpecialist",
+    "desc": "你的装备被动效果增强1倍。",
+    "has_icon": true
+  },
+  {
+    "key": "GravityWell",
+    "name": "引力井",
+    "name_en": "GravityWell",
+    "desc": "单位被击退时，如果经过你前后左右相邻的方格，会被拦下并【眩晕】。",
+    "has_icon": true
+  },
+  {
+    "key": "BloodFrenzy",
+    "name": "BloodFrenzy",
+    "name_en": "BloodFrenzy",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Two",
+    "name": "贰",
+    "name_en": "Two",
+    "desc": "你的回合结束时，如果这个回合施放了刚好2个法术，那么奖励攻击+1。\n你的回合结束时，如果魔能刚好是2点，那么奖励攻击+1。",
+    "has_icon": true
+  },
+  {
+    "key": "FuzzyFeet",
+    "name": "毛脚爪",
+    "name_en": "FuzzyFeet",
+    "desc": "你结束移动时，对前后左右相邻的所有单位分别造成电系伤害，移动了几格，就造成几点伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "Deathless",
+    "name": "不死",
+    "name_en": "Deathless",
+    "desc": "尸体耐久+3",
+    "has_icon": true
+  },
+  {
+    "key": "PsychicsSoul",
+    "name": "PsychicsSoul",
+    "name_en": "PsychicsSoul",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "HeaveHook",
+    "name": "猛拽",
+    "name_en": "HeaveHook",
+    "desc": "你的钩子能以方格为目标。\n单位被你钩住拖拽时，获得横冲直撞。",
+    "has_icon": true
+  },
+  {
+    "key": "Hardy",
+    "name": "强韧",
+    "name_en": "Hardy",
+    "desc": "每场战斗开始时，生命完全恢复。",
+    "has_icon": true
+  },
+  {
+    "key": "TalkToAnimals",
+    "name": "动物交谈",
+    "name_en": "TalkToAnimals",
+    "desc": "你每场战斗第一次普通攻击会施加5层【洗脑】。",
+    "has_icon": true
+  },
+  {
+    "key": "MegaMinions",
+    "name": "超级跟班",
+    "name_en": "MegaMinions",
+    "desc": "3个跟班为一个周期，你每个周期召唤的第3个跟班会是勇士级别。",
+    "has_icon": true
+  },
+  {
+    "key": "MyLeg",
+    "name": "我的腿！",
+    "name_en": "MyLeg",
+    "desc": "你获得的所有伤残都变成“腿断了”。\n如果你断了四条腿，那么【尖刺】+4，获得横冲直撞，而且前后左右相邻的友方获得奖励能力【我丢】。",
+    "has_icon": true
+  },
+  {
+    "key": "GlassBones",
+    "name": "GlassBones",
+    "name_en": "GlassBones",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "FattyLiver",
+    "name": "FattyLiver",
+    "name_en": "FattyLiver",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Burgle",
+    "name": "偷钱",
+    "name_en": "Burgle",
+    "desc": "你普通攻击造成伤害时，获得1块钱。",
+    "has_icon": true
+  },
+  {
+    "key": "Daunt",
+    "name": "威慑",
+    "name_en": "Daunt",
+    "desc": "小型敌人不会攻击你。",
+    "has_icon": true
+  },
+  {
+    "key": "FreshMeat",
+    "name": "鲜肉",
+    "name_en": "FreshMeat",
+    "desc": "你吃食物时，【力量】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "DejaVu",
+    "name": "DejaVu",
+    "name_en": "DejaVu",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "STARTER_PLACEHOLDER_Butcher",
+    "name": "STARTER_PLACEHOLDER_Butcher",
+    "name_en": "STARTER_PLACEHOLDER_Butcher",
+    "desc": "在你锁定队伍的项圈时，随机变成屠户的被动。",
+    "has_icon": true
+  },
+  {
+    "key": "Scabs",
+    "name": "结痂",
+    "name_en": "Scabs",
+    "desc": "你受到能力的伤害时，【护盾】+2。",
+    "has_icon": true
+  },
+  {
+    "key": "VersatileVocalist",
+    "name": "VersatileVocalist",
+    "name_en": "VersatileVocalist",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "OCD",
+    "name": "OCD",
+    "name_en": "OCD",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Blessed",
+    "name": "蒙福",
+    "name_en": "Blessed",
+    "desc": "每个回合开始时，随机2项属性分别+1。",
+    "has_icon": true
+  },
+  {
+    "key": "HomeRun",
+    "name": "本垒打",
+    "name_en": "HomeRun",
+    "desc": "你造成的击退距离+10。",
+    "has_icon": true
+  },
+  {
+    "key": "BountyHunter",
+    "name": "赏金猎手",
+    "name_en": "BountyHunter",
+    "desc": "你的回合期间，随机有1个敌人头顶赏金。",
+    "has_icon": true
+  },
+  {
+    "key": "BlessingOfSpirit",
+    "name": "圣灵福佑",
+    "name_en": "BlessingOfSpirit",
+    "desc": "你的回合结束时，你和所有友方恢复2点生命和2点魔能。你施放法术会失去这个福佑。",
+    "has_icon": true
+  },
+  {
+    "key": "Penetrate",
+    "name": "贯穿",
+    "name_en": "Penetrate",
+    "desc": "你的普通攻击会穿过单位并无视护盾。范围+1。",
+    "has_icon": true
+  },
+  {
+    "key": "CatAPult",
+    "name": "投喵猫",
+    "name_en": "CatAPult",
+    "desc": "在前后左右相邻的友方回合期间，你可以把他们扔出去，最远4格，不消耗他们的移动行动。",
+    "has_icon": true
+  },
+  {
+    "key": "LongCast",
+    "name": "远距离施法",
+    "name_en": "LongCast",
+    "desc": "以方格为目标的法术范围+5。",
+    "has_icon": true
+  },
+  {
+    "key": "Kamikaze",
+    "name": "Kamikaze",
+    "name_en": "Kamikaze",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "SchrodingerDisorder",
+    "name": "SchrodingerDisorder",
+    "name_en": "SchrodingerDisorder",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "HamsterStyle",
+    "name": "仓鼠功",
+    "name_en": "HamsterStyle",
+    "desc": "生命自然恢复+1。\n每场战斗开始时，自带2次奖励移动。",
+    "has_icon": true
+  },
+  {
+    "key": "Anxiety",
+    "name": "Anxiety",
+    "name_en": "Anxiety",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Worms",
+    "name": "肉虫",
+    "name_en": "Worms",
+    "desc": "你的回合结束时，有50%的几率召唤1个蛆虫跟班。",
+    "has_icon": true
+  },
+  {
+    "key": "AcidReflux",
+    "name": "AcidReflux",
+    "name_en": "AcidReflux",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Tourettes",
+    "name": "Tourettes",
+    "name_en": "Tourettes",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "LuckDrain",
+    "name": "吸走好运",
+    "name_en": "LuckDrain",
+    "desc": "每次有单位倒地，就【幸运】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "SleepDarts",
+    "name": "麻醉飞镖",
+    "name_en": "SleepDarts",
+    "desc": "每场战斗开始时，你和没有武器的友方都会获得一支临时的麻醉飞镖。",
+    "has_icon": true
+  },
+  {
+    "key": "Looter",
+    "name": "Looter",
+    "name_en": "Looter",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "LightUpTheStage",
+    "name": "照亮舞台",
+    "name_en": "LightUpTheStage",
+    "desc": "你的回合结束时，你每行动过1个回合，就放出2道【闪光】。",
+    "has_icon": true
+  },
+  {
+    "key": "Depression",
+    "name": "Depression",
+    "name_en": "Depression",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "TaintedMother",
+    "name": "腐化之母",
+    "name_en": "TaintedMother",
+    "desc": "你的跟班和你【洗脑】的单位【速度】+4，而且会施加【中毒】和【出血】。",
+    "has_icon": true
+  },
+  {
+    "key": "TrickyTraps",
+    "name": "阴险夹子",
+    "name_en": "TrickyTraps",
+    "desc": "你夹子的伤害和效果增强1倍。",
+    "has_icon": true
+  },
+  {
+    "key": "GoodVibrations",
+    "name": "美妙振动",
+    "name_en": "GoodVibrations",
+    "desc": "友方生命自然恢复+1，魔能自然恢复+1。",
+    "has_icon": true
+  },
+  {
+    "key": "Feral",
+    "name": "野性",
+    "name_en": "Feral",
+    "desc": "你的奖励能力是【野性攻击】。",
+    "has_icon": true
+  },
+  {
+    "key": "FightMe",
+    "name": "逆风",
+    "name_en": "FightMe",
+    "desc": "前后左右每有1个敌方和你相邻，就【力量】+2，【招架】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "TowerDefense",
+    "name": "塔防",
+    "name_en": "TowerDefense",
+    "desc": "敌人停在你的范围之内时，对它射击，造成1点伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "BuddySystem",
+    "name": "伙伴系统",
+    "name_en": "BuddySystem",
+    "desc": "你失去时，你的乌鸦+1。你的乌鸦失去时，你+1。",
+    "has_icon": true
+  },
+  {
+    "key": "Putrefy",
+    "name": "腐化",
+    "name_en": "Putrefy",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "ShovingMatch",
+    "name": "推搡大战",
+    "name_en": "ShovingMatch",
+    "desc": "你把单位撞到友方身上或把友方撞到敌人身上时，这个友方会对那个单位使用普通攻击。\n你普通攻击的击退距离+1。",
+    "has_icon": true
+  },
+  {
+    "key": "Gargantuan",
+    "name": "Gargantuan",
+    "name_en": "Gargantuan",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "MiniMe",
+    "name": "迷你我",
+    "name_en": "MiniMe",
+    "desc": "召唤1个半大的分身，属性是你的50%，AI控制。",
+    "has_icon": true
+  },
+  {
+    "key": "WobblyCat",
+    "name": "WobblyCat",
+    "name_en": "WobblyCat",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "MonksSoul",
+    "name": "MonksSoul",
+    "name_en": "MonksSoul",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Wiggly",
+    "name": "扭来扭去",
+    "name_en": "Wiggly",
+    "desc": "闪避几率+25%。",
+    "has_icon": true
+  },
+  {
+    "key": "Glutton",
+    "name": "贪食",
+    "name_en": "Glutton",
+    "desc": "2格之内出现可以捡起的食物时，你会移动过去。",
+    "has_icon": true
+  },
+  {
+    "key": "WeaponMaster",
+    "name": "武器大师",
+    "name_en": "WeaponMaster",
+    "desc": "你武器和物品能力的伤害+2、暴击几率+25%。你背包多一根管子。",
+    "has_icon": true
+  },
+  {
+    "key": "Masochist",
+    "name": "受虐狂",
+    "name_en": "Masochist",
+    "desc": "你受到伤害时，【力量】、【体质】或【速度】随机1项+1。",
+    "has_icon": true
+  },
+  {
+    "key": "Elephantiasis",
+    "name": "Elephantiasis",
+    "name_en": "Elephantiasis",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "TakeAim",
+    "name": "瞄准",
+    "name_en": "TakeAim",
+    "desc": "每个回合开始时，范围和伤害各+1。你一移动就会失去这个效果。",
+    "has_icon": true
+  },
+  {
+    "key": "RatStyle",
+    "name": "老鼠功",
+    "name_en": "RatStyle",
+    "desc": "闪避几率+10%。",
+    "has_icon": true
+  },
+  {
+    "key": "HawkEye",
+    "name": "HawkEye",
+    "name_en": "HawkEye",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "ButchersSoul",
+    "name": "ButchersSoul",
+    "name_en": "ButchersSoul",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "ItemProxy",
+    "name": "套装代打",
+    "name_en": "ItemProxy",
+    "desc": "你触发套装加成所需的装备数量-1。",
+    "has_icon": true
+  },
+  {
+    "key": "HolyMantel",
+    "name": "HolyMantel",
+    "name_en": "HolyMantel",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Necrosis",
+    "name": "Necrosis",
+    "name_en": "Necrosis",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "ProtectiveAura",
+    "name": "ProtectiveAura",
+    "name_en": "ProtectiveAura",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "WormLord",
+    "name": "肉虫王",
+    "name_en": "WormLord",
+    "desc": "你受到伤害时，生成1个水蛭跟班。",
+    "has_icon": true
+  },
+  {
+    "key": "DemoMan",
+    "name": "爆破手",
+    "name_en": "DemoMan",
+    "desc": "【科技】小于等于1时，每次都会制作炸弹。\n冲击抗性+2。",
+    "has_icon": true
+  },
+  {
+    "key": "BirdFlu",
+    "name": "BirdFlu",
+    "name_en": "BirdFlu",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Hypomania",
+    "name": "Hypomania",
+    "name_en": "Hypomania",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "ReactiveArmor",
+    "name": "反应装甲",
+    "name_en": "ReactiveArmor",
+    "desc": "你受到伤害时，制作1件工匠武器或防具，然后装备到空的栏位。",
+    "has_icon": true
+  },
+  {
+    "key": "CambionConception",
+    "name": "恶魔受胎",
+    "name_en": "CambionConception",
+    "desc": "你倒地时，生成1个恶魔小猫跟班。",
+    "has_icon": true
+  },
+  {
+    "key": "DumbMuscle",
+    "name": "肌壮无脑",
+    "name_en": "DumbMuscle",
+    "desc": "你每次受到伤害时，【智力】-1。\n如果你的【智力】小于等于4，那么【力量】+2，而且普通攻击会施加【瘀伤】。【智力】为0时，暴击几率+100%。",
+    "has_icon": true
+  },
+  {
+    "key": "Stinky",
+    "name": "Stinky",
+    "name_en": "Stinky",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Charred",
+    "name": "Charred",
+    "name_en": "Charred",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Chungus",
+    "name": "Chungus",
+    "name_en": "Chungus",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "LooseMeat",
+    "name": "掉肉",
+    "name_en": "LooseMeat",
+    "desc": "你受到伤害时，生成1份可以捡起的食物。",
+    "has_icon": true
+  },
+  {
+    "key": "SneakAttack",
+    "name": "偷袭",
+    "name_en": "SneakAttack",
+    "desc": "你召唤跟班的法术魔能耗费-3。\n你用法术召唤的跟班伤害+2、移动+2，但会在它的第一个回合结束后死亡。",
+    "has_icon": true
+  },
+  {
+    "key": "Fidgety",
+    "name": "Fidgety",
+    "name_en": "Fidgety",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "ImmortalLeeches",
+    "name": "不朽水蛭",
+    "name_en": "ImmortalLeeches",
+    "desc": "你施加过水蛭的单位死亡或失去水蛭时，你下一次普通攻击会额外施加等量的水蛭。",
+    "has_icon": true
+  },
+  {
+    "key": "HealingAura",
+    "name": "治疗光环",
+    "name_en": "HealingAura",
+    "desc": "生命自然恢复+1\n你的生命自然恢复也会对友方生效。",
+    "has_icon": true
+  },
+  {
+    "key": "Paralyzed",
+    "name": "Paralyzed",
+    "name_en": "Paralyzed",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "SeveredThumb",
+    "name": "SeveredThumb",
+    "name_en": "SeveredThumb",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "PurpleFetin",
+    "name": "PurpleFetin",
+    "name_en": "PurpleFetin",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Shadow",
+    "name": "Shadow",
+    "name_en": "Shadow",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "ChainsOfGuilt",
+    "name": "罪的锁链",
+    "name_en": "ChainsOfGuilt",
+    "desc": "如果敌人击倒了你，而且它不是头目，那么它会永久进入你的队伍。",
+    "has_icon": true
+  },
+  {
+    "key": "Fossilized",
+    "name": "Fossilized",
+    "name_en": "Fossilized",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Barbed",
+    "name": "倒钩",
+    "name_en": "Barbed",
+    "desc": "你钩子的伤害+1，还会施加【出血】。",
+    "has_icon": true
+  },
+  {
+    "key": "Leprosy",
+    "name": "Leprosy",
+    "name_en": "Leprosy",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "CrohnsDisease",
+    "name": "CrohnsDisease",
+    "name_en": "CrohnsDisease",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "ChargeUp",
+    "name": "积蓄",
+    "name_en": "ChargeUp",
+    "desc": "你的回合结束时，如果你的魔能是0，那么下一次施放的法术不耗费魔能",
+    "has_icon": true
+  },
+  {
+    "key": "CorpseConnoisseur",
+    "name": "尸体鉴赏家",
+    "name_en": "CorpseConnoisseur",
+    "desc": "每场战斗开始时，你附近会出现2-3具尸体。\n你摧毁尸体时，恢复2点生命，同时生成1份可以捡起的食物。",
+    "has_icon": true
+  },
+  {
+    "key": "SweetSpot",
+    "name": "最佳位置",
+    "name_en": "SweetSpot",
+    "desc": "范围+1。你离目标越远，普通攻击的伤害越高。",
+    "has_icon": true
+  },
+  {
+    "key": "One",
+    "name": "壹",
+    "name_en": "One",
+    "desc": "你的回合结束时，如果这个回合施放了刚好1个法术，那么下面1个法术会施放2次。",
+    "has_icon": true
+  },
+  {
+    "key": "SleepParalysis",
+    "name": "SleepParalysis",
+    "name_en": "SleepParalysis",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "WilliamsSyndrome",
+    "name": "WilliamsSyndrome",
+    "name_en": "WilliamsSyndrome",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "GoldenClaws",
+    "name": "金爪子",
+    "name_en": "GoldenClaws",
+    "desc": "你每捡到1块钱，伤害+1。",
+    "has_icon": true
+  },
+  {
+    "key": "Recharged",
+    "name": "顿悟",
+    "name_en": "Recharged",
+    "desc": "开场魔能+5，魔能自然恢复+5。\n每当你的回合结束，就失去剩余所有魔能",
+    "has_icon": true
+  },
+  {
+    "key": "FrozenKnee",
+    "name": "FrozenKnee",
+    "name_en": "FrozenKnee",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "ChainKnockback",
+    "name": "连锁击退",
+    "name_en": "ChainKnockback",
+    "desc": "你普通攻击的击退距离+1。\n你击退的单位也会击退其他单位。",
+    "has_icon": true
+  },
+  {
+    "key": "Incontinence",
+    "name": "Incontinence",
+    "name_en": "Incontinence",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "HeadTrauma",
+    "name": "HeadTrauma",
+    "name_en": "HeadTrauma",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "RangedMedic",
+    "name": "远程军医",
+    "name_en": "RangedMedic",
+    "desc": "你的普通攻击变成远程抛射攻击，会治疗友方，对敌人造成伤害。",
+    "has_icon": true
+  },
+  {
+    "key": "Shiv",
+    "name": "小刀",
+    "name_en": "Shiv",
+    "desc": "你对近身范围的单位发动普通攻击时，伤害+2、暴击几率+25%，同时施加1层【出血】。",
+    "has_icon": true
+  },
+  {
+    "key": "LateBloomer",
+    "name": "大器晚成",
+    "name_en": "LateBloomer",
+    "desc": "你到第5回合时，所有属性提升3点。",
+    "has_icon": true
+  },
+  {
+    "key": "Study",
+    "name": "研究",
+    "name_en": "Study",
+    "desc": "你的攻击或能力命中新的一类单位时，【智力】+1。",
+    "has_icon": true
+  },
+  {
+    "key": "FlamingFists",
+    "name": "FlamingFists",
+    "name_en": "FlamingFists",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "SharingIsCaring",
+    "name": "有福同享",
+    "name_en": "SharingIsCaring",
+    "desc": "如果你捡起的物品不是钱，友方就获得同样的效果。",
+    "has_icon": true
+  },
+  {
+    "key": "Leechmother",
+    "name": "水蛭母体",
+    "name_en": "Leechmother",
+    "desc": "你的普通攻击会生成1个水蛭跟班。",
+    "has_icon": true
+  },
+  {
+    "key": "PrimordialDwarf",
+    "name": "PrimordialDwarf",
+    "name_en": "PrimordialDwarf",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Toxoplasmosis",
+    "name": "Toxoplasmosis",
+    "name_en": "Toxoplasmosis",
+    "desc": "",
+    "has_icon": true
+  },
+  {
+    "key": "Vampirism",
+    "name": "吸血猫",
+    "name_en": "Vampirism",
+    "desc": "你的普通攻击带【吸血】。",
+    "has_icon": true
+  },
+  {
+    "key": "SlackOff",
+    "name": "摸鱼",
+    "name_en": "SlackOff",
+    "desc": "回合结束时，如果你还有移动行动没有用，那么恢复8点生命。",
+    "has_icon": true
+  },
+  {
+    "key": "VeneratedTouch",
+    "name": "尊崇之触",
+    "name_en": "VeneratedTouch",
+    "desc": "你的普通攻击会对敌人施加2层【混乱】，同时令友方【护盾】+2。",
+    "has_icon": true
+  }
+]
