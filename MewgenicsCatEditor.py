@@ -6,7 +6,7 @@ import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 import customtkinter as ctk
 
-from mewgenics_core import MewgenicsSaveManager, CatRecord, MUTATION_SLOTS
+from mewgenics_core import MewgenicsSaveManager, CatRecord, MUTATION_SLOTS, get_ability_upgrade, get_base_ability
 
 # Set CustomTkinter theme
 ctk.set_appearance_mode("Dark")
@@ -265,6 +265,10 @@ class MewgenicsApp(ctk.CTk):
         self.recessive_combos = {}
         self.mutation_badge_labels = {}
         self.active_combos = []
+        self.upgrade_checkboxes = []
+        self.custom_enchant_frames = []
+        self.custom_enchant_combos = []
+        self.custom_enchant_btns = []
         self.upgrade_combos = []
         self.class_passive_combos = []
         self.disorder_combos = []
@@ -849,25 +853,48 @@ class MewgenicsApp(ctk.CTk):
         self.combo_move = ctk.CTkComboBox(f_mov, width=320, values=['DefaultMove'] + ab_names)
         self.combo_move.pack(side="left", padx=5)
 
-        # 2. 4 Active Abilities + 4 Ability Upgrades
+        # 2. 4 Active Abilities + 4 Ability Upgrades (with 1-to-1 Tier 2 Checkbox)
         f_acts = ctk.CTkFrame(container, fg_color="#1e293b", corner_radius=8)
         f_acts.pack(fill="x", padx=10, pady=6)
-        ctk.CTkLabel(f_acts, text="🔮 主动战斗技能与进阶附魔 (Active Spells & Ability Upgrades 1 - 4):", font=("Arial", 13, "bold"), text_color="#a855f7").pack(anchor="w", padx=15, pady=(8, 4))
+        
+        f_act_head = ctk.CTkFrame(f_acts, fg_color="transparent")
+        f_act_head.pack(fill="x", padx=15, pady=(8, 4))
+        ctk.CTkLabel(f_act_head, text="🔮 主动战斗法术与进阶强化 (Active Spells & Tier 2 Upgrades 1 - 4):", font=("Arial", 13, "bold"), text_color="#a855f7").pack(side="left")
+        ctk.CTkLabel(f_act_head, text="💡 勾选直接升阶；主动法术为空时进阶自动禁用", font=("Arial", 11), text_color="#94a3b8").pack(side="right")
 
         self.active_combos = []
+        self.upgrade_checkboxes = []
+        self.custom_enchant_frames = []
+        self.custom_enchant_combos = []
+        self.custom_enchant_btns = []
         self.upgrade_combos = []
+
         for i in range(4):
             f_row = ctk.CTkFrame(f_acts, fg_color="transparent")
             f_row.pack(fill="x", padx=15, pady=3)
-            ctk.CTkLabel(f_row, text=f"主动法术 {i+1}:", width=95, anchor="w", font=("Arial", 12)).pack(side="left")
-            cb_act = ctk.CTkComboBox(f_row, width=250, values=['None'] + ab_names)
-            cb_act.pack(side="left", padx=(0, 15))
+
+            ctk.CTkLabel(f_row, text=f"主动法术 {i+1}:", width=85, anchor="w", font=("Arial", 12)).pack(side="left")
+            cb_act = ctk.CTkComboBox(f_row, width=230, values=['None'] + ab_names, command=lambda val, idx=i: self.on_active_spell_changed(idx, val))
+            cb_act.pack(side="left", padx=(0, 10))
             self.active_combos.append(cb_act)
 
-            ctk.CTkLabel(f_row, text=f"进阶附魔 {i+1}:", width=95, anchor="w", font=("Arial", 12)).pack(side="left")
-            cb_upg = ctk.CTkComboBox(f_row, width=250, values=['None'] + ab_names)
-            cb_upg.pack(side="left", padx=(0, 5))
-            self.upgrade_combos.append(cb_upg)
+            chk_upg = ctk.CTkCheckBox(f_row, text="进阶强化 (未选择法术)", width=240, font=("Arial", 12), text_color="#64748b", fg_color="#a855f7", hover_color="#9333ea", command=lambda idx=i: self.on_upgrade_checkbox_toggled(idx))
+            chk_upg.pack(side="left", padx=(0, 10))
+            chk_upg.configure(state="disabled")
+            self.upgrade_checkboxes.append(chk_upg)
+
+            f_custom = ctk.CTkFrame(f_row, fg_color="transparent")
+            f_custom.pack(side="left", padx=0)
+            self.custom_enchant_frames.append(f_custom)
+
+            cb_custom = ctk.CTkComboBox(f_custom, width=190, values=['None (默认附魔)'] + ab_names, font=("Arial", 11), command=lambda val, idx=i: self.on_custom_enchant_changed(idx, val))
+            cb_custom.set('None (默认附魔)')
+            self.custom_enchant_combos.append(cb_custom)
+            self.upgrade_combos.append(cb_custom)
+
+            btn_custom = ctk.CTkButton(f_row, text="⚙️ 附魔", width=55, height=24, font=("Arial", 11), fg_color="#334155", hover_color="#475569", command=lambda idx=i: self.toggle_custom_enchant(idx))
+            btn_custom.pack(side="left", padx=2)
+            self.custom_enchant_btns.append(btn_custom)
 
         # 3. 2 Class Passives (正面职业被动)
         f_cp = ctk.CTkFrame(container, fg_color="#1e293b", corner_radius=8)
@@ -911,6 +938,49 @@ class MewgenicsApp(ctk.CTk):
 
         # Compatibility alias
         self.passive_combos = self.upgrade_combos + self.class_passive_combos + self.disorder_combos
+
+    def on_active_spell_changed(self, idx, val):
+        val = val.strip()
+        chk = self.upgrade_checkboxes[idx]
+        if val == 'None':
+            chk.deselect()
+            chk.configure(state="disabled", text="进阶强化 (未选择法术)", text_color="#64748b")
+            self.show_custom_enchant(idx, show=False)
+            self.custom_enchant_combos[idx].set('None (默认附魔)')
+        else:
+            upg_target = get_ability_upgrade(val)
+            chk.configure(state="normal", text=f"✨ 进阶强化 (Tier 2: {upg_target})", text_color="#e2e8f0")
+        if self.current_cat:
+            self.save_current_cat_fields()
+
+    def on_upgrade_checkbox_toggled(self, idx):
+        if self.current_cat:
+            self.save_current_cat_fields()
+
+    def on_custom_enchant_changed(self, idx, val):
+        if self.current_cat:
+            self.save_current_cat_fields()
+
+    def toggle_custom_enchant(self, idx):
+        cb = self.custom_enchant_combos[idx]
+        btn = self.custom_enchant_btns[idx]
+        if cb.winfo_ismapped():
+            cb.pack_forget()
+            btn.configure(fg_color="#334155")
+        else:
+            cb.pack(side="left", padx=2)
+            btn.configure(fg_color="#6366f1")
+
+    def show_custom_enchant(self, idx, show=True):
+        cb = self.custom_enchant_combos[idx]
+        btn = self.custom_enchant_btns[idx]
+        if show:
+            if not cb.winfo_ismapped():
+                cb.pack(side="left", padx=2)
+            btn.configure(fg_color="#6366f1")
+        else:
+            cb.pack_forget()
+            btn.configure(fg_color="#334155")
 
     def init_disorder_options(self):
         self.disorder_lookup = {}
@@ -1204,12 +1274,29 @@ class MewgenicsApp(ctk.CTk):
         self.combo_atk.set(cat.attack_ability)
         self.combo_move.set(getattr(cat, 'move_ability', 'DefaultMove'))
         for i in range(4):
-            val = cat.active_abilities[i] if i < len(cat.active_abilities) else 'None'
-            self.active_combos[i].set(val)
+            base_spell, is_tier2, custom_enchant = cat.get_spell_state(i)
+            self.active_combos[i].set(base_spell)
 
-        for i in range(4):
-            val = cat.ability_upgrades[i] if i < len(cat.ability_upgrades) else 'None'
-            self.upgrade_combos[i].set(val)
+            chk = self.upgrade_checkboxes[i]
+            if base_spell == 'None':
+                chk.deselect()
+                chk.configure(state="disabled", text="进阶强化 (未选择法术)", text_color="#64748b")
+                self.show_custom_enchant(i, show=False)
+                self.custom_enchant_combos[i].set('None (默认附魔)')
+            else:
+                upg_target = get_ability_upgrade(base_spell)
+                chk.configure(state="normal", text=f"✨ 进阶强化 (Tier 2: {upg_target})", text_color="#e2e8f0")
+                if is_tier2:
+                    chk.select()
+                else:
+                    chk.deselect()
+
+                if custom_enchant != 'None':
+                    self.show_custom_enchant(i, show=True)
+                    self.custom_enchant_combos[i].set(custom_enchant)
+                else:
+                    self.show_custom_enchant(i, show=False)
+                    self.custom_enchant_combos[i].set('None (默认附魔)')
 
         self.update_class_passive_options(cat.cat_class)
 
@@ -1273,10 +1360,14 @@ class MewgenicsApp(ctk.CTk):
         cat.attack_ability = self.combo_atk.get()
         cat.move_ability = self.combo_move.get()
         for i in range(4):
-            cat.active_abilities[i] = self.active_combos[i].get()
-
-        for i in range(4):
-            cat.ability_upgrades[i] = self.upgrade_combos[i].get()
+            base_spell = self.active_combos[i].get()
+            is_upg = (self.upgrade_checkboxes[i].get() == 1) if base_spell != 'None' else False
+            custom_val = self.custom_enchant_combos[i].get()
+            if 'None' in custom_val:
+                custom_enchant = 'None'
+            else:
+                custom_enchant = custom_val
+            cat.set_spell_state(i, base_spell, is_upgraded=is_upg, custom_enchant=custom_enchant)
 
         for i in range(2):
             raw = self.class_passive_combos[i].get()

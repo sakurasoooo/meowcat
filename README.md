@@ -1,4 +1,4 @@
-﻿# Mewgenics Cat Editor & Save Modifier (meowcat / 喵星人猫咪修改器)
+# Mewgenics Cat Editor & Save Modifier (meowcat / 喵星人猫咪修改器)
 
 A modern, comprehensive graphical cat editor, save modifier, and trainer for **Mewgenics** by Edmund McMillen & Tyler Glaiel. Built with CustomTkinter, reverse-engineered from the game engine and binary assets.
 
@@ -38,9 +38,12 @@ A modern, comprehensive graphical cat editor, save modifier, and trainer for **M
 - **猫咪中文命名**：UTF-16LE 编码原生无损支持中英文。
 - **偏好属性 (Boon)**：设定升级成长偏好资质（力量/灵巧/体质/智力/速度/魅力/运气）。
 
-### 4. 🔮 技能、移动与外观
+### 4. 🔮 技能、被动与外观
 - 攻击能力（Basic Attack）与移动方式（Move Ability）自由选配。
-- 4 槽位主动技能（830+ 全量法术库）与 8 槽位被动特性（370+ 全量特质库）。
+- 4 槽位主动技能（830+ 全量法术库），每槽位支持技能升级（Ability Upgrades）强化。
+- 被动系统三分支：
+  - 🎖️ **职业被动（Class Passives）**：按 14 大职业分类装配专属被动。
+  - 😵 **失调（Disorders）**：内置 125 条全量失调数据库，支持协同预设（Synergy Presets）一键搭配。
 
 ### 5. 💰 全局家园资源
 - 实时修改家园金币、食物储备、天数，支持一键满资源 (+999,999)。
@@ -86,6 +89,10 @@ meowcat/
 ├── Mewgenics_Reverse_Engineering_Reference.md # 完整的游戏 C++ 原生引擎逆向开发参考文档
 ├── 启动猫咪修改器.bat                    # Windows 快速启动脚本
 ├── requirements.txt                     # Python 依赖清单
+├── AGENT.md                             # AI 编程代理开发指南（架构、约定、注意事项）
+├── WIKI_INTEGRATION.md                  # Wiki 图鉴数据与游戏贴图整合指南
+├── game_assets/                         # resources.gpak 解包产物：贴图/SWF/GON（1.6GB，不入库）
+├── wiki_data/                           # mewcodex wiki 爬取：15 个 JSON 数据库 + 4092 张图标 + 打标签 CSV
 ├── .gitignore                           # Git 忽略配置
 └── tools/                               # 逆向工程、符号分析、二进制解包工具脚本集 (~110 个脚本)
 ```

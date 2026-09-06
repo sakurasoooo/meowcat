@@ -27,6 +27,26 @@ def get_game_data_cache():
             _GAME_DATA_CACHE = {}
     return _GAME_DATA_CACHE
 
+def get_ability_upgrade(base_code):
+    if not base_code or base_code == 'None':
+        return 'None'
+    gd = get_game_data_cache()
+    upg_map = gd.get('ability_upgrade_map', {})
+    if base_code in upg_map:
+        return upg_map[base_code]
+    return f"{base_code}2"
+
+def get_base_ability(code):
+    if not code or code == 'None':
+        return 'None'
+    gd = get_game_data_cache()
+    down_map = gd.get('ability_downgrade_map', {})
+    if code in down_map:
+        return down_map[code]
+    if code.endswith('2'):
+        return code[:-1]
+    return code
+
 MUTATION_SLOTS = [
     ('body', '身体突变', 100 + 4, None),
     ('eyebrows', '眉毛突变', 280 + 4, 300 + 4),
@@ -323,6 +343,50 @@ class CatRecord:
         while len(self.disorders) < 2:
             self.disorders.append('None')
         self.passives = self.ability_upgrades[:4] + self.class_passives[:2] + self.disorders[:2]
+
+    def get_spell_state(self, slot_idx):
+        if slot_idx >= len(self.active_abilities):
+            return 'None', False, 'None'
+        act = self.active_abilities[slot_idx]
+        upg = self.ability_upgrades[slot_idx] if slot_idx < len(self.ability_upgrades) else 'None'
+        if not act or act == 'None':
+            return 'None', False, 'None'
+        
+        base_from_act = get_base_ability(act)
+        upg_target = get_ability_upgrade(base_from_act)
+        is_tier2 = (act != base_from_act) or (upg == upg_target) or (upg.endswith('2'))
+        base = base_from_act
+        
+        # Check custom/divergent enchantment
+        if upg != 'None' and upg != base and upg != upg_target:
+            custom_enchant = upg
+        else:
+            custom_enchant = 'None'
+        return base, is_tier2, custom_enchant
+
+    def set_spell_state(self, slot_idx, base_spell, is_upgraded=False, custom_enchant='None'):
+        while len(self.active_abilities) <= slot_idx:
+            self.active_abilities.append('None')
+        while len(self.ability_upgrades) <= slot_idx:
+            self.ability_upgrades.append('None')
+            
+        if not base_spell or base_spell == 'None':
+            self.active_abilities[slot_idx] = 'None'
+            self.ability_upgrades[slot_idx] = 'None'
+        else:
+            upg_target = get_ability_upgrade(base_spell)
+            if is_upgraded:
+                self.active_abilities[slot_idx] = upg_target
+            else:
+                self.active_abilities[slot_idx] = base_spell
+                
+            if custom_enchant and custom_enchant != 'None' and custom_enchant != base_spell:
+                self.ability_upgrades[slot_idx] = custom_enchant
+            else:
+                self.ability_upgrades[slot_idx] = base_spell
+                
+        self.sync_legacy_passives()
+        self.is_modified = True
 
     def build_bytes(self):
         buf = bytearray()

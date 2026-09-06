@@ -1,0 +1,26 @@
+﻿table,quest_key,purpose,ref_type,ref_code,extra
+box_unlocks,difficulty_0,unlock,item,TheBoxCardboard,"{""difficulty"": 0, ""refs"": [{""type"": ""item"", ""code"": ""TheBoxCardboard""}]}"
+box_unlocks,difficulty_1,unlock,item,TheBoxChest,"{""difficulty"": 1, ""refs"": [{""type"": ""item"", ""code"": ""TheBoxChest""}]}"
+box_unlocks,difficulty_2,unlock,item,TheBox,"{""difficulty"": 2, ""refs"": [{""type"": ""item"", ""code"": ""TheBox""}]}"
+box_unlocks,difficulty_3,unlock,item,TheBlackBox,"{""difficulty"": 3, ""refs"": [{""type"": ""item"", ""code"": ""TheBlackBox""}]}"
+boss_unlocks,guillotina_1,mixed,item,ThrobbingGristle,"{""refs"": [{""type"": ""item"", ""code"": ""ThrobbingGristle""}]}"
+boss_unlocks,guillotina_2,mixed,item,PutridLeech,"{""refs"": [{""type"": ""item"", ""code"": ""PutridLeech""}]}"
+boss_unlocks,guillotina_3,mixed,item,GuillotinasHead,"{""refs"": [{""type"": ""item"", ""code"": ""GuillotinasHead""}]}"
+boss_unlocks,pyrophina,mixed,item,ScaldingOrb,"{""refs"": [{""type"": ""item"", ""code"": ""ScaldingOrb""}]}"
+boss_unlocks,zaratana,mixed,item,BlackShard,"{""refs"": [{""type"": ""item"", ""code"": ""BlackShard""}, {""type"": ""item"", ""code"": ""BlackShard_Glowing""}]}"
+boss_unlocks,zaratana,mixed,item,BlackShard_Glowing,"{""refs"": [{""type"": ""item"", ""code"": ""BlackShard""}, {""type"": ""item"", ""code"": ""BlackShard_Glowing""}]}"
+boss_unlocks,pyrophina_vs_zaratana,mixed,item,PyrophinasCollar,"{""refs"": [{""type"": ""item"", ""code"": ""PyrophinasCollar""}, {""type"": ""item"", ""code"": ""ZaratanasCollar""}]}"
+boss_unlocks,pyrophina_vs_zaratana,mixed,item,ZaratanasCollar,"{""refs"": [{""type"": ""item"", ""code"": ""PyrophinasCollar""}, {""type"": ""item"", ""code"": ""ZaratanasCollar""}]}"
+boss_unlocks,terminator_1,mixed,item,ReceiverAntenna,"{""refs"": [{""type"": ""item"", ""code"": ""ReceiverAntenna""}]}"
+boss_unlocks,terminator_2,mixed,item,TransmitterAntenna,"{""refs"": [{""type"": ""item"", ""code"": ""TransmitterAntenna""}]}"
+boss_unlocks,terminator_3,mixed,item,SignalAmplifier,"{""refs"": [{""type"": ""item"", ""code"": ""SignalAmplifier""}]}"
+other_main_quests,other_main_quests,acquisition,item,CryogenicTimeChamber_Empty,
+other_main_quests,other_main_quests,acquisition,item,CryogenicTimeChamber_Full,
+other_main_quests,other_main_quests,acquisition,item,JarOfRadiation,
+other_main_quests,other_main_quests,acquisition,item,JarOfRadiatedBlood,
+other_main_quests,other_main_quests,acquisition,item,JarOfChaos,
+other_main_quests,other_main_quests,acquisition,item,JarOfNothing,
+other_main_quests,other_main_quests,acquisition,item,Nuke,
+beanies_quests,refs,main_pool,,,"[{""type"": ""item"", ""code"": ""ChaosDevice""}, {""type"": ""item"", ""code"": ""MagicMirror""}, {""type"": ""item"", ""code"": ""MeStone""}, {""type"": ""item"", ""code"": ""AngryFace""}, {""type"": ""item"", ""code"": ""FartFace""}, {""type"": ""item"", ""code"": ""SpiderInjector""}, {""type"": ""item"", ""code"": ""PartyDetonator""}, {""type"": ""item"", ""code"": ""AirHorn""}, {""type"": ""item"", ""code"": ""TheLoner""}, {""type"": ""item"", ""code"": ""GlassCannon""}, {""type"": ""item"", ""code"": ""PrincessHat""}, {""type"": ""item"", ""code"": ""HardPill""}, {""type"": ""item"", ""code"": ""BubbleBoy""}, {""type"": ""item"", ""code"": ""Redacted""}, {""type"": ""item"", ""code"": ""Stopwatch""}, {""type"": ""item"", ""code"": ""StorageLocker""}, {""type"": ""item"", ""code"": ""MysteriousDice""}, {""type"": ""item"", ""code"": ""ExperimentalTreatment""}, {""type"": ""item"", ""code"": ""UltraVision3000""}, {""type"": ""item"", ""code"": ""NuclearKnife""}]"
+beanies_quests,reward_overrides_0,reward_overrides,,,"{""quest_ref"": {""type"": ""item"", ""code"": ""PersuasionDevice""}, ""reward_ref"": {""type"": ""item"", ""code"": ""PersuasionDevice_Fixed""}}"
+beanies_quests,extra_quest_icons,icons,,,

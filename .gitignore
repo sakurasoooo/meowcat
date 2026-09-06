@@ -1,4 +1,4 @@
-﻿__pycache__/
+__pycache__/
 *.pyc
 build/
 dist/
@@ -8,3 +8,10 @@ venv/
 *.backup_*
 verify_temp_save.sav
 test_campaign.sav
+
+# Unpacked game resources (1.6 GB, regenerate via tools/extract_gpak_assets.py)
+game_assets/
+
+# Wiki-crawled icons (regenerate via tools/crawl_wiki_assets.py)
+wiki_data/images/
+gpak_manifest.json

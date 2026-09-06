@@ -1,0 +1,975 @@
+﻿passive_code,passive_class,name_en,name_zh,desc_en,desc_zh,desc_upgraded_en,desc_upgraded_zh,has_upgrade,frame_number,icon_url,icon_local
+Putrefy,Butcher,Putrefy,腐化,Your basic attack inflicts Rot 1.,你的普通攻击会施加1层【腐烂】。,Your basic attack inflicts permanent Rot.,你的普通攻击会施加永久【腐烂】。,True,191,PassiveIcon/191.png,images\PassiveIcon\191.png
+NeverFull,Butcher,Never Full,无底胃,"You can heal over your max HP.
+Excess HP is lost between battles.","生命恢复可以超出上限。
+超出上限的生命会在战斗结束时消失。","You can heal over your max HP.
+Excess HP is lost between battles.
+Gain +1 [img:str] for every 5 HP you have over max HP.","生命恢复可以超出上限。
+超出上限的生命会在战斗结束时消失。
+生命每超出上限5点，[img:str]就+1。",True,192,PassiveIcon/192.png,images\PassiveIcon\192.png
+MainCourse,Butcher,Supersize Me!,大号的我！,Food and scrap pickups you spawn are bigger.,你产生的可以捡起的食物和边角料份量变大。,Food and scrap pickups you spawn are max size.,你产生的可以捡起的食物和边角料份量变成最大。,True,193,PassiveIcon/193.png,images\PassiveIcon\193.png
+FreshMeat,Butcher,Fresh Meat,鲜肉,"When you eat food, gain +1 [img:str].",你吃食物时，[img:str]+1。,"When you eat food, gain +1 [img:str] and +1 to a random stat.",你吃食物时，[img:str]+1，同时随机1项属性+1。,True,194,PassiveIcon/194.png,images\PassiveIcon\194.png
+Masochist,Butcher,Masochist,受虐狂,"When you take damage, gain +1 [img:str], [img:con], or [img:spd] at random.",你受到伤害时，[img:str]、[img:con]或[img:spd]随机1项+1。,"When you take damage, you get +1 [img:str], [img:con], and [img:spd].",你受到伤害时，[img:str]+1，[img:con]+1，[img:spd]+1。,True,195,PassiveIcon/195.png,images\PassiveIcon\195.png
+Glutton,Butcher,Glutton,贪食,"When a food pickup spawns within 2 tiles of you, move to it.",2格之内出现可以捡起的食物时，你会移动过去。,"When a food pickup spawns within 2 tiles of you, move to it with trample.",你周围2格之内出现可以捡起的食物时，你会横冲直撞移动过去。,True,196,PassiveIcon/196.png,images\PassiveIcon\196.png
+Hooked,Butcher,Hooked,用钩成瘾,You can use your hook 2 additional times on your turn.,你的回合期间，你的钩子可以额外使用2次。,"You can use your hook 2 additional times on your turn.
+Your hook deals +1 damage and has Cleave.","你的回合期间，你的钩子可以额外使用2次。
+你的钩子伤害+1，会施加狠剁。",True,197,PassiveIcon/197.png,images\PassiveIcon\197.png
+Stompy,Butcher,Stompy!,我踩！,"You have Trample.
+Trample damage you deal has Cleave.","你拥有横冲直撞。
+你横冲直撞的伤害会造成狠剁。","You have Trample and +2 Bonus Moves.
+Trample damage you deal has Cleave.","你拥有横冲直撞，奖励移动+2。
+你横冲直撞的伤害会造成狠剁。",True,198,PassiveIcon/198.png,images\PassiveIcon\198.png
+Barbed,Butcher,Barbed,倒钩,Your hook deals +1 damage and inflicts Bleed.,你钩子的伤害+1，还会施加【出血】。,Your hook deals +5 damage and inflicts Bleed.,你钩子的伤害+5，还会施加【出血】。,True,199,PassiveIcon/199.png,images\PassiveIcon\199.png
+GrapplingHook,Butcher,Grappling Hook,钩爪,Your hook pulls you toward knockback-immune objects.,你的钩子会把你拉向免疫击退的物体。,Your hook pulls you toward knockback-immune objects. Refresh your movement action when you use your hook. ,你的钩子会把你拉向免疫击退的物体。你使用钩子后，你的移动行动刷新。,True,200,PassiveIcon/200.png,images\PassiveIcon\200.png
+PainGain,Butcher,Rankle,忿恨,"When you take damage, gain +2 Temp Damage.",你受到伤害时，临时伤害+2。,"When you take damage, gain +1 Damage and +1 Temp Damage.
+",你受到伤害时，伤害+1，临时伤害+1。,True,201,PassiveIcon/201.png,images\PassiveIcon\201.png
+WideSwing,Butcher,Spin to Win,转就完事,Your basic attack is a 3x3 tile spin attack with Cleave.,你的普通攻击变成3×3的旋转攻击，会施加狠剁。,Your basic attack is a 3x3 tile double spin attack with Cleave.,你的普通攻击变成3×3的双重旋转攻击，会施加狠剁。,True,202,PassiveIcon/202.png,images\PassiveIcon\202.png
+Confrontational,Butcher,Confrontational,硬刚,"When you take damage, trample one tile towards the source of damage.",你受到伤害时，向着伤害来源的方向横冲直撞1个方格。,"When you take damage, trample all the way to the source of damage.",你受到伤害时，一路横冲直撞冲向伤害来源。,True,203,PassiveIcon/203.png,images\PassiveIcon\203.png
+HeaveHook,Butcher,Heave Hook,猛拽,"Your hook can target tiles.
+Units pulled by your hook gain trample while being hooked.
+","你的钩子能以方格为目标。
+单位被你钩住拖拽时，获得横冲直撞。","Your hook can target tiles.
+Units pulled by your hook gain trample while being hooked, this trample damage is doubled.
+","你的钩子能以方格为目标。
+单位被你钩住拖拽时，获得横冲直撞，这次横冲直撞的伤害增大1倍。",True,204,PassiveIcon/204.png,images\PassiveIcon\204.png
+Harpooner,Butcher,Harpooner,鱼叉手,"When an enemy moves in range, hook it.",敌人移动进入你的范围时，钩住它。,"When an enemy moves in range, hook it. Your hook deals +2 Damage.",敌人移动进入你的范围时，钩住它。你的钩子伤害+2。,True,205,PassiveIcon/205.png,images\PassiveIcon\205.png
+LordOfTheFlies,Butcher,Lord of the Flies,蝇王,"All flies are Charmed and get +1 Damage.
+Whenever you inflict Rot, you inflict +1 Rot.","所有苍蝇都会被【洗脑】，同时伤害+1。
+你每次施加【腐烂】时，额外施加1层。","All flies are Charmed and get +4 Damage.
+Whenever you inflict Rot, you inflict +1 Rot.","所有苍蝇都会被【洗脑】，同时伤害+4。
+你每次施加【腐烂】时，额外施加1层。",True,206,PassiveIcon/206.png,images\PassiveIcon\206.png
+Schadenfreude,Butcher,Schadenfreude,幸灾乐祸,Your [img:str] and [img:con] are increased by 2 for each disorder your party has.,队里成员每有1种毛病，你的[img:str]和[img:con]就分别+2。,All of your stats are increased by 2 for each disorder your party has.,队里成员每有1种毛病，你的属性就分别+2。,True,209,PassiveIcon/209.png,images\PassiveIcon\209.png
+Gurgitator,Butcher,Gurgitator,大胃王,"Whenever you heal over your max HP, gain +1 [img:str].",每当你恢复的生命超出生命上限，[img:str]+1。,"Whenever you heal over your max HP, gain +1 [img:str] and +1 Weapon Damage.",每当你恢复的生命超出生命上限，[img:str]+1，武器伤害+1。,True,208,PassiveIcon/208.png,images\PassiveIcon\208.png
+LooseMeat,Butcher,Loose Meat,掉肉,"When you take damage, spawn a food pickup.",你受到伤害时，生成1份可以捡起的食物。,"When you take damage or move, spawn a food pickup.",你移动或受到伤害时，生成1份可以捡起的食物。,True,207,PassiveIcon/207.png,images\PassiveIcon\207.png
+Hack,Butcher,Hack,开罐,"Your basic attack is always critical against enemies with [img:shield].
+Your basic attack's critical hits remove buffs from units.","如果敌人有[img:shield]，你对它进行普通攻击一定暴击。
+你的普通攻击暴击会移除单位身上的增益。","Your basic attack is always critical against enemies with [img:shield].
+Your basic attack's critical hits remove buffs from units.
+Your critical hits deal +100% damage.","如果敌人有[img:shield]，你对它进行普通攻击一定暴击。
+你的普通攻击暴击会移除单位身上的增益。
+你的暴击伤害+100%。",True,212,PassiveIcon/212.png,images\PassiveIcon\212.png
+BowlingBall,Butcher,Bowling Ball,保龄球,Adjacent and diagonal allied cats get the bonus ability Bowl.,前后左右和斜前后左右相邻的友方猫咪获得奖励能力【滚球】。,Adjacent and diagonal allied cats get the bonus ability Bowl+.,前后左右和斜前后左右相邻的友方猫咪获得奖励能力【滚球+】。,True,211,PassiveIcon/211.png,images\PassiveIcon\211.png
+Testy,Butcher,Testy,暴躁,"When you take damage, gain +1 movement range until the end of your turn.",你受到伤害后，在你的回合结束之前移动范围+1。,"When you take damage, gain +1 movement range.",你受到伤害后，移动范围+1。,True,210,PassiveIcon/210.png,images\PassiveIcon\210.png
+Indigestion,Butcher,Indigestion,消化不良,"Whenever you heal over your max HP, fart and inflict Poison 3 on adjacent units.",每当你恢复的生命超出生命上限，你就会放屁，对前后左右相邻的单位施加3层【中毒】。,"Whenever you heal over your max HP, fart and inflict Poison 3 and Burn 3 on adjacent units.",每当你恢复的生命超出生命上限，你就会放屁，对前后左右相邻的单位施加3层【中毒】和3层【灼烧】。,True,215,PassiveIcon/215.png,images\PassiveIcon\215.png
+Incubator,Butcher,Incubator,温床,"Whenever you heal over your max HP, spawn a rot fly.",每当你恢复的生命超出生命上限，就产生1个腐烂苍蝇。,"Whenever you heal over your max HP, spawn a rot fly with HP and damage equal to the excess healing.",每当你恢复的生命超出生命上限，就产生1个腐烂苍蝇，它的生命和伤害等于你恢复超出的数值。,True,214,PassiveIcon/214.png,images\PassiveIcon\214.png
+DukeOfFlies,Butcher,Duke of Flies,苍蝇公爵,"At the end of the battle, all food pickups become allied flies.
+Allied flies stay with you between battles.","战斗结束时，所有可以捡起的食物会变成你的友方苍蝇。
+即便战斗结束，友方苍蝇也会跟着你参加后面的战斗。","At the end of the battle, all food pickups become allied flies.
+Allied flies stay with you between battles.
+Your basic attack spawns flies.","战斗结束时，所有可以捡起的食物会变成你的友方苍蝇。
+即便战斗结束，友方苍蝇也会跟着你参加后面的战斗。
+你普通攻击会产生苍蝇。",True,213,PassiveIcon/213.png,images\PassiveIcon\213.png
+SelfAssured,Colorless,Self-Assured,自信满满,Gain a random stat up whenever you down a unit.,你每次击倒1个单位时，随机有1项属性提升。,Gain All Stats Up whenever you down a unit.,你每次击倒1个单位时，所有属性就提升1次。,True,337,PassiveIcon/337.png,images\PassiveIcon\337.png
+LuckDrain,Colorless,Luck Drain,吸走好运,Gain +1 [img:lck] whenever a unit is downed.,每次有单位倒地，就[img:lck]+1。,"Gain +1 [img:lck] whenever a unit is downed.
+Gain an extra +2 [img:lck] whenever YOU down a unit.","每次有单位倒地，就[img:lck]+1。
+如果是你击倒的，那么[img:lck]额外+2。",True,338,PassiveIcon/338.png,images\PassiveIcon\338.png
+Infested,Colorless,Infested,滋生,50% chance to spawn a flea familiar when you end your turn.,你的回合结束时，有50%的几率召唤1个跳蚤跟班。,"Spawn 2-3 fleas at the start of each battle.
+50% chance to spawn a flea familiar when you end your turn.","每场战斗开始时，召唤2–3个跳蚤。
+你的回合结束时，有50%的几率召唤1个跳蚤跟班。",True,339,PassiveIcon/339.png,images\PassiveIcon\339.png
+Worms,Colorless,Worms,肉虫,50% chance to spawn a maggot familiar when you end your turn.,你的回合结束时，有50%的几率召唤1个蛆虫跟班。,50% chance to spawn a mutated maggot familiar when you end your turn.,你的回合结束时，有50%的几率召唤1个突变的蛆虫跟班。,True,340,PassiveIcon/340.png,images\PassiveIcon\340.png
+Amped,Colorless,Amped,亢奋,Gain +1 [img:spd] at the end of your turn.,你的回合结束时，[img:spd]+1。,"Gain +1 [img:spd] at the end of your turn.
+You can move an extra time each turn.","你的回合结束时，[img:spd]+1。
+每个回合可以额外移动1次。",True,341,PassiveIcon/341.png,images\PassiveIcon\341.png
+Furious,Colorless,Furious,狂怒,"Gain +1 Damage each time you land a critical hit.
++5% critical hit chance.","你每次打出暴击时，伤害+1。
+暴击几率+5%。","Gain +1 Damage and +5% critical hit chance each time you land a critical hit.
++5% critical hit chance.","你每次打出暴击时，伤害+1，暴击几率+5%。
+暴击几率+5%。",True,342,PassiveIcon/342.png,images\PassiveIcon\342.png
+Deathless,Colorless,Deathless,不死,+3 Corpse HP,尸体耐久+3,,,True,343,PassiveIcon/343.png,images\PassiveIcon\343.png
+MetalDetector,Colorless,Metal Detector,金属探测器,5% chance to spawn a coin when you move over a tile.,你走过1个方格时，有5%的几率生成1块钱。,10% chance to spawn a coin when you move over a tile.,你走过1个方格时，有10%的几率生成1块钱。,True,344,PassiveIcon/344.png,images\PassiveIcon\344.png
+DeathProof,Colorless,Deathproof,金刚不坏,"While downed, you have a 25% chance to revive with 1 HP at the end of each round.",你倒地期间，每轮结束时有25%的几率以1点生命复活。,"While downed, you have a 33% chance to revive with 10 HP and All Stats Up at the end of each round.",你倒地期间，每轮结束时有33%的几率以10点生命复活，然后所有属性提升。,True,345,PassiveIcon/345.png,images\PassiveIcon\345.png
+Leader,Colorless,Leader,领袖,Adjacent allies have +1 Damage and +1 Range.,前后左右相邻的友方伤害+1，范围+1。,All allies have +1 Damage and +1 Range.,所有友方伤害+1，范围+1。,True,346,PassiveIcon/346.png,images\PassiveIcon\346.png
+Mange,Colorless,Mange,疥癣,Inflict Poison 1 on units that contact you.,接触到你的单位会获得1层【中毒】。,"Inflict 1 Poison, Bleed, Bruise, Weakness, and Leech on units that contact you.",接触到你的单位会获得1层【中毒】、1层【出血】、1层【瘀伤】、1层【虚弱】、1层【水蛭】。,True,347,PassiveIcon/347.png,images\PassiveIcon\347.png
+ETank,Colorless,E-Tank,E罐,Start each battle with +20 unfilled max health.,每场战斗开始时，生命上限+20（生命不补满）。,Start each battle with +50 unfilled max health.,每场战斗开始时，生命上限+50（生命不补满）。,True,348,PassiveIcon/348.png,images\PassiveIcon\348.png
+Careful,Colorless,Careful,小心谨慎,Damage you deal to other allies is reduced to 0.,你对友方造成的伤害变成0。,"Damage you deal to other allies is reduced to 0. You cannot inflict debuffs on other allies.
+You are careful in many other ways too.","你对友方造成的伤害变成0。你也不会对友方施加减益。
+而且你其他很多事情也都很小心。",True,349,PassiveIcon/349.png,images\PassiveIcon\349.png
+DirtyClaws,Colorless,Dirty Claws,脏爪子,Your physical attacks on Poisoned or Bleeding enemies inflict +1 Poison and/or Bleed.,如果敌人已经【中毒】或者【出血】，你的物理攻击会令其【中毒】+1和/或【出血】+1。,"Your basic attack inflicts Poison 1 and Bleed 1. 
+Your physical attacks on Poisoned or Bleeding enemies inflict +1 Poison and/or Bleed.","你的普通攻击会施加1层【中毒】和1层【出血】。
+如果敌人已经【中毒】或者【出血】，你的物理攻击会令其【中毒】+1和/或【出血】+1。",True,350,PassiveIcon/350.png,images\PassiveIcon\350.png
+LateBloomer,Colorless,Late Bloomer,大器晚成,"On your 5th turn, you gain All Stats Up 3.",你到第5回合时，所有属性提升3点。,"On your 3rd turn, you gain All Stats Up 3.",你到第3回合时，所有属性提升3点。,True,351,PassiveIcon/351.png,images\PassiveIcon\351.png
+Study,Colorless,Study,研究,Gain +1 [img:int] whenever you hit a new type of unit with an attack or ability.,你的攻击或能力命中新的一类单位时，[img:int]+1。,Gain +1 [img:int] whenever you hit a new type of unit with an attack or ability. All enemies of that type become Marked.,你的攻击或能力命中新的一类单位时，[img:int]+1。这类敌人全都会获得【标记】。,True,352,PassiveIcon/352.png,images\PassiveIcon\352.png
+SkillShare,Colorless,Skill Share,技能共享,Your other passive ability is shared with the other cats in your party at the start of each battle.,每场战斗开始时，你另一个被动能力会共享给队里其他猫咪。,"Your other passive ability is shared with the other cats in your party at the start of each battle. When breeding, your children will always inherit your other passive.",每场战斗开始时，你另一个被动能力会共享给队里其他猫咪。交配时，后代一定会遗传你的另一个被动。,True,353,PassiveIcon/353.png,images\PassiveIcon\353.png
+NaturalHealing,Colorless,Natural Healing,自然愈合,You have +1 Health Regeneration,生命自然恢复+1,"You have +2 Health Regeneration
+Adjacent allies gain +1 Health Regeneration","生命自然恢复+2
+前后左右相邻的友方生命自然恢复+1",True,354,PassiveIcon/354.png,images\PassiveIcon\354.png
+LongShot,Colorless,Longshot,远射,+1 Range.,范围+1。,"+2 Range.
+Your ranged attacks have +25% critical hit chance.","范围+2。
+你远程攻击的暴击几率+25%。",True,3,PassiveIcon/3.png,images\PassiveIcon\3.png
+FastFooted,Colorless,Fast Footsies,猫步灵活,You are immune to negative tile effects.,免疫负面的方格效果。,"You are immune to negative tile effects.
+You can move through units and objects.","免疫负面的方格效果。
+你可以穿过单位和物体。",True,5,PassiveIcon/5.png,images\PassiveIcon\5.png
+Slugger,Colorless,Slugger,强力击,+1 Damage.,伤害+1。,+3 Damage.,伤害+3。,True,355,PassiveIcon/355.png,images\PassiveIcon\355.png
+Pulp,Colorless,Pulp,绞肉,"When you kill a unit or destroy a corpse, it becomes meat.",你击杀单位或摧毁尸体时，它会变成肉。,"+4 Damage.
+When you kill a unit or destroy a corpse, it becomes meat.","伤害+4。
+你击杀单位或摧毁尸体时，它会变成肉。",True,356,PassiveIcon/356.png,images\PassiveIcon\356.png
+Amplify,Colorless,Amplify,增效,+1 Magic Damage.,魔法伤害+1。,+1 Magic Damage for every 3 [img:cha] you have.,每有3点[img:cha]，魔法伤害就+1。,True,357,PassiveIcon/357.png,images\PassiveIcon\357.png
+DeathBoon,Colorless,Death Boon,死亡恩赐,"When you're downed, all allies gain All Stats Up.",你倒地时，全体友方所有属性提升。,"When you're downed, all allies gain All Stats Up 2.",你倒地时，全体友方所有属性提升2点。,True,358,PassiveIcon/358.png,images\PassiveIcon\358.png
+SantaSangre,Colorless,Santa Sangre,圣血,"When you're downed, allies heal 12 HP. Excess healing is converted to Shield.",你倒地时，友方恢复12点生命。溢出的治疗效果转化成护盾。,"When you're downed, allies heal 20 HP. Excess healing is converted to Shield.",你倒地时，友方恢复20点生命。溢出的治疗效果转化成护盾。,True,359,PassiveIcon/359.png,images\PassiveIcon\359.png
+Untouched,Colorless,Unscarred,毫毛无伤,While at full hp you have 100% critical hit chance.,满生命时，暴击几率是100%。,"While at full hp you have 100% critical hit chance, +5 Mana Regeneration  and +1 All Stats Up.",满生命时，暴击几率是100%，魔能自然恢复+5，同时所有属性提升1。,True,360,PassiveIcon/360.png,images\PassiveIcon\360.png
+Daunt,Colorless,Daunt,威慑,Small enemies won't attack you.,小型敌人不会攻击你。,"Small enemies won't attack you.
+Inflict Fear 1 on units that contact or attack you.","小型敌人不会攻击你。
+攻击或接触到你的单位会获得1层【害怕】。",True,361,PassiveIcon/361.png,images\PassiveIcon\361.png
+AnimalHandler,Colorless,Animal Handler,驯兽,You start each battle with a random vermin familiar with boosted damage and health.,每场战斗开始时，你会随机带1个虫子跟班（伤害和生命提升）。,You start each battle with 3 random vermin familiars with boosted damage and health.,每场战斗开始时，你会随机带3个虫子跟班（伤害和生命提升）。,True,7,PassiveIcon/7.png,images\PassiveIcon\7.png
+WhipCracker,Colorless,Whipcracker,督工,When you damage an ally they gain +1 Damage.,你伤害到友方时，友方伤害+1。,When you damage an ally they gain +1 Damage and +1 [img:spd].,你伤害到友方时，友方伤害+1，[img:spd]+1。,True,363,PassiveIcon/363.png,images\PassiveIcon\363.png
+PressurePoints,Colorless,Might of the Meek,弱者之力,Damage you deal that's 2 or less is always critical.,如果你造成的伤害不大于2，那么一定暴击。,Damage you deal that's 3 or less is always critical. +50% Crit Damage.,如果你造成的伤害不大于3，那么一定暴击。暴击伤害+50%。,True,364,PassiveIcon/364.png,images\PassiveIcon\364.png
+Gassy,Colorless,Gassy,胀气,"Whenever you take damage, knock back all adjacent units.",你每次受到伤害时，击退前后左右相邻的所有单位。,"Whenever you take damage, poison all adjacent units and knock them back 10 tiles.",你每次受到伤害时，令前后左右相邻的所有单位【中毒】，同时把他们击退10格。,True,365,PassiveIcon/365.png,images\PassiveIcon\365.png
+Dealer,Colorless,Dealer,药贩子,You can use consumables on other units.,你可以对其他单位使用消耗品。,"You can use consumables on other units.
+Consumables you use have double the effect.","你可以对其他单位使用消耗品。
+你使用的消耗品效果增强1倍。",True,370,PassiveIcon/370.png,images\PassiveIcon\370.png
+Patience,Colorless,Patience,耐心,"If you end your turn without taking any actions, gain an extra turn at the end of the round. You don't regenerate mana on your main turn if you pass it.",如果你不行动直接结束回合，那么可以在一轮结束时获得1个额外回合。如果你跳过原始回合，那么额外回合魔能不会自然恢复。,"If you end your turn without taking any actions, gain an extra turn at the end of the round.",如果你不行动直接结束回合，那么可以在一轮结束时获得1个额外回合。,True,369,PassiveIcon/369.png,images\PassiveIcon\369.png
+Wiggly,Colorless,Wiggly,扭来扭去,+25% dodge chance.,闪避几率+25%。,+25% dodge chance and +25% critical hit chance.,闪避几率+25%，暴击几率+25%。,True,368,PassiveIcon/368.png,images\PassiveIcon\368.png
+MiniMe,Colorless,Mini-Me,迷你我,Gain a half-sized copy of yourself that has 50% of your stats. The copy is AI controlled.,召唤1个半大的分身，属性是你的50%，AI控制。,Gain a half-sized copy of yourself that has 50% of your stats and quarter-sized copy that has 25% of your stats. The copies are AI controlled.,召唤1个半大的分身，属性是你的50%，还有1个四分之一大的分身，属性是你的25%。都是AI控制。,True,367,PassiveIcon/367.png,images\PassiveIcon\367.png
+BareMinimum,Colorless,Bare Minimum,保底,Your stats can't go below 5.,你的属性不会低于5。,Your stats can't go below 7.,你的属性不会低于7。,True,366,PassiveIcon/366.png,images\PassiveIcon\366.png
+Unrestricted,Colorless,Unrestricted,无拘无束,Actions with a once per battle restriction can be cast once per turn instead.,如果一个行动原本每场战斗可以用1次，现在改为每个回合能用一次。,"Actions with a once per battle restriction can be cast once per turn instead.
+Actions with a once per turn restriction have a 50% chance to be castable again.","如果一个行动原本每场战斗可以用1次，现在改为每个回合能用一次。
+如果一个行动原本每个回合只能用一次，现在有50%的几率再使用一次。",True,371,PassiveIcon/371.png,images\PassiveIcon\371.png
+DeathsDoor,Colorless,Death's Door,鬼门关,"While you're at 1 HP, your spells cost 1 mana, but can only be cast once per turn.",你生命只剩1点时，你的所有法术耗费1点魔能，但每个回合只能施放1次。,"While you're at 5 or fewer HP, your spells cost 1 mana, but can only be cast once per turn.",你生命不多于5点时，你的所有法术耗费1点魔能，但每个回合只能施放1次。,True,375,PassiveIcon/375.png,images\PassiveIcon\375.png
+OverConfident,Colorless,Overconfident,自负,"While at full HP, reduce the cost of your spells by 2, but take double damage. This can't reduce mana costs to less than 1.",满生命时，法术的耗费-2，但你所受伤害增大1倍。魔能耗费最低降到1。,"While at full HP, reduce the cost of your spells by 2, but take double damage.  This can't reduce mana costs to less than 1. When you cast a spell, heal 1 HP.",满生命时，法术的耗费-2，但你受到的伤害增大1倍。魔能耗费最低降到1。你施放法术时，恢复1点生命。,True,374,PassiveIcon/374.png,images\PassiveIcon\374.png
+SerialKiller,Colorless,Serial Killer,连环杀手,"After you kill 3 units, gain +6 [img:spd] and backstabs have 100% crit chance.",你击杀3个单位之后，[img:spd]+6，而且背刺暴击几率100%。,"After you kill 3 units, gain +6 [img:spd], backstabs have 100% crit chance, and gain an extra basic attack each turn.",你击杀3个单位之后，[img:spd]+6，背刺暴击几率100%，而且每个回合可以额外普通攻击1次。,True,373,PassiveIcon/373.png,images\PassiveIcon\373.png
+StrengthInNumbers,Colorless,Strength in Numbers,气势占优,Your familiars have +1 Damage for each other familiar you have.,你每多1个跟班，你的跟班就伤害+1。,You and your familiars have +1 Damage for each other familiar you have.,你每多1个跟班，你和你的跟班就伤害+1。,True,372,PassiveIcon/372.png,images\PassiveIcon\372.png
+FightersSoul,Colorless,Fighter's Soul,战士之魂,Fighter abilities are offered when you level up.,升级时还会出现战士能力。,Fighter abilities are offered when you level up.,升级时还会出现战士能力。,True,395,PassiveIcon/395.png,images\PassiveIcon\395.png
+HuntersSoul,Colorless,Hunter's Soul,猎手之魂,Hunter abilities are offered when you level up.,升级时还会出现猎手能力。,Hunter abilities are offered when you level up.,升级时还会出现猎手能力。,True,394,PassiveIcon/394.png,images\PassiveIcon\394.png
+MagesSoul,Colorless,Mage's Soul,法师之魂,Mage abilities are offered when you level up.,升级时还会出现法师能力。,Mage abilities are offered when you level up.,升级时还会出现法师能力。,True,393,PassiveIcon/393.png,images\PassiveIcon\393.png
+ClericsSoul,Colorless,Cleric's Soul,牧师之魂,Cleric abilities are offered when you level up.,升级时还会出现牧师能力。,Cleric abilities are offered when you level up.,升级时还会出现牧师能力。,True,392,PassiveIcon/392.png,images\PassiveIcon\392.png
+TanksSoul,Colorless,Tank's Soul,坦克之魂,Tank abilities are offered when you level up.,升级时还会出现坦克能力。,Tank abilities are offered when you level up.,升级时还会出现坦克能力。,True,391,PassiveIcon/391.png,images\PassiveIcon\391.png
+ThiefsSoul,Colorless,Thief's Soul,盗贼之魂,Thief abilities are offered when you level up.,升级时还会出现盗贼能力。,Thief abilities are offered when you level up.,升级时还会出现盗贼能力。,True,390,PassiveIcon/390.png,images\PassiveIcon\390.png
+MonksSoul,Colorless,Monk's Soul,武僧之魂,Monk abilities are offered when you level up.,升级时还会出现武僧能力。,Monk abilities are offered when you level up.,升级时还会出现武僧能力。,True,389,PassiveIcon/389.png,images\PassiveIcon\389.png
+ButchersSoul,Colorless,Butcher's Soul,屠户之魂,Butcher abilities are offered when you level up.,升级时还会出现屠户能力。,Butcher abilities are offered when you level up.,升级时还会出现屠户能力。,True,388,PassiveIcon/388.png,images\PassiveIcon\388.png
+DruidsSoul,Colorless,Druid's Soul,德鲁伊之魂,Druid abilities are offered when you level up.,升级时还会出现德鲁伊能力。,Druid abilities are offered when you level up.,升级时还会出现德鲁伊能力。,True,387,PassiveIcon/387.png,images\PassiveIcon\387.png
+TinkerersSoul,Colorless,Tinkerer's Soul,工匠之魂,Tinkerer abilities are offered when you level up.,升级时还会出现工匠能力。,Tinkerer abilities are offered when you level up.,升级时还会出现工匠能力。,True,386,PassiveIcon/386.png,images\PassiveIcon\386.png
+NecromancersSoul,Colorless,Necromancer's Soul,死灵法师之魂,Necromancer abilities are offered when you level up.,升级时还会出现死灵法师能力。,Necromancer abilities are offered when you level up.,升级时还会出现死灵法师能力。,True,385,PassiveIcon/385.png,images\PassiveIcon\385.png
+PsychicsSoul,Colorless,Psychic's Soul,灵能士之魂,Psychic abilities are offered when you level up.,升级时还会出现灵能士能力。,Psychic abilities are offered when you level up.,升级时还会出现灵能士能力。,True,384,PassiveIcon/384.png,images\PassiveIcon\384.png
+Charming,Colorless,Charming,洗脑,You have a 25% chance to inflict Charm on units that damage you.,伤害你的单位有25%的几率被你【洗脑】。,You have a 40% chance to inflict Charm on units that damage you.,伤害你的单位有40%的几率被你【洗脑】。,True,383,PassiveIcon/383.png,images\PassiveIcon\383.png
+FirstImpression,Colorless,First Impression,迎头一击,Start each battle with +1 Bonus Attack.,每场战斗开始时，奖励攻击+1。,Start each battle with +2 Bonus Attacks and +2 Bonus Moves.,每场战斗开始时，奖励攻击+2，奖励移动+2。,True,382,PassiveIcon/382.png,images\PassiveIcon\382.png
+Scavenger,Colorless,Scavenger,觅食,"If your trinket slot is empty, equip a small consumable food item at the start of each battle.",如果你的小玩意儿栏位是空的，那么每场战斗开始时自动装备一小份食物消耗品。,"If your trinket slot is empty, equip a big consumable food item at the start of each battle.",如果你的小玩意儿栏位是空的，那么每场战斗开始时自动装备一大份食物消耗品。,True,381,PassiveIcon/381.png,images\PassiveIcon\381.png
+ZenkaiBoost,Colorless,Zenkai Boost,界限突破,"If you end battle with 1 HP, gain +1 to a random stat permanently and start the next battle at full HP with All Stats Up 3.",如果你结束战斗时只有1点生命，那么随机1项属性永久+1，而且下一场战斗开始时，生命全满，同时所有属性提升3。,"If you end battle with 1 HP, gain +1 to 3 random stats permanently and start the next battle at full HP with All Stats Up 3.",如果你结束战斗时只有1点生命，那么随机3项属性永久+1，而且下一场战斗开始时，生命全满，同时所有属性提升3。,True,380,PassiveIcon/380.png,images\PassiveIcon\380.png
+Protection,Colorless,Protection,保护,,,,,True,379,PassiveIcon/379.png,images\PassiveIcon\379.png
+Rockin,Colorless,Rockin',滚石团,Spawn 4 small rocks at the start of each battle.,每场战斗开始时，召唤4颗小石头。,Spawn 4 small rocks and 4 boulders at the start of each battle.,每场战斗开始时，召唤4颗小石头和4块大石头。,True,378,PassiveIcon/378.png,images\PassiveIcon\378.png
+Mania,Colorless,Mania,躁狂,10% chance to restore all your mana at the start of your turn.,你的回合开始时，魔能有10%的几率回满。,25% chance to restore all your mana at the start of your turn.,你的回合开始时，魔能有25%的几率回满。,True,377,PassiveIcon/377.png,images\PassiveIcon\377.png
+Lucky,Colorless,Lucky,幸运,,,,,True,376,PassiveIcon/376.png,images\PassiveIcon\376.png
+OneEighty,Colorless,180,180度转身,"When you use your basic attack, turn around and use it again.",你使用普通攻击之后，转身再用一次。,"When you use your basic attack, turn around and use it again.
+Your basic attack inflicts Confusion 1.","你使用普通攻击之后，转身再用一次。
+你的普通攻击会造成1层【混乱】。",True,160,PassiveIcon/160.png,images\PassiveIcon\160.png
+JestersSoul,Colorless,Jester's Soul,小丑之魂,"Abilities from any class are offered when you level up.
+You can reroll your level up options twice.","升级时还会出现任意职业的能力。
+升级时的能力选项你可以刷新两次。","Abilities from any class are offered when you level up.
+You can reroll your level up options twice.","升级时还会出现任意职业的能力。
+升级时的能力选项你可以刷新两次。",True,396,PassiveIcon/396.png,images\PassiveIcon\396.png
+HotBlooded,Colorless,Hot-Blooded,热血,Burn you inflict is increased by 1.,你施加的【灼烧】层数+1。,Burn you inflict is increased by 2.,你施加的【灼烧】层数+2。,True,397,PassiveIcon/397.png,images\PassiveIcon\397.png
+ToxicBlooded,Colorless,Toxic-Blooded,毒血,Poison you inflict is increased by 1.,你施加的【中毒】层数+1。,Poison you inflict is increased by 2.,你施加的【中毒】层数+2。,True,399,PassiveIcon/399.png,images\PassiveIcon\399.png
+BloodBlooded,Colorless,Blood-Blooded,血血,Bleed you inflict is increased by 1.,你施加的【出血】层数+1。,Bleed you inflict is increased by 2.,你施加的【出血】层数+2。,True,398,PassiveIcon/398.png,images\PassiveIcon\398.png
+VoidSoul,,Void Soul,虚空之魂,Only upgraded Collarless abilities are offered when you level up,升级时只有强化的无色能力可以选择。,Only upgraded Collarless abilities are offered when you level up. Collarless spells cost 1 less mana.,升级时只有强化的无色能力可以选择。无色法术的魔能耗费-1。,True,400,PassiveIcon/400.png,images\PassiveIcon\400.png
+Rabies,Disorder,Rabies,狂犬病,"Your basic attack is a melee attack. You can't equip face armor.
+After each battle, gain +2 [img:str] and -1 [img:int].
+If your [img:int] is 0 or less, you have Madness.","你的普通攻击变成近身攻击，你不能装备脸部防具。
+每场战斗之后，[img:str]+2、[img:int]-1。
+如果你的[img:int]不高于0，那么获得【癫狂】。",,,False,784,PassiveIcon/784.png,images\PassiveIcon\784.png
+Boils,Disorder,Boils,疖子,"+1 Brace.
+You spawn a puddle of creep whenever you get hit. You can't equip face armor.","【招架】+1。
+你每次被击中时，生成一滩黏液。你不能装备脸部防具。",,,False,785,PassiveIcon/785.png,images\PassiveIcon\785.png
+Depression,Disorder,Depression,抑郁症,Adjacent units get All Stats Down 2.,前后左右相邻的单位所有属性下降2。,,,False,787,PassiveIcon/787.png,images\PassiveIcon\787.png
+BrokenLimb,Disorder,Broken Limb,断肢,You can't equip trinkets or consumables. +2 Thorns.,你不能装备小玩意儿和消耗品。【尖刺】+2。,,,False,789,PassiveIcon/789.png,images\PassiveIcon\789.png
+WrenchedNeck,Disorder,Wrenched Neck,脖子扭伤,You can't equip neck armor. Double the effects of your head armor.,你不能装备颈部防具。头部防具效果增强1倍。,,,False,790,PassiveIcon/790.png,images\PassiveIcon\790.png
+Declawed,Disorder,Declawed,去爪,You can't equip weapons.,你不能装备武器。,,,False,791,PassiveIcon/791.png,images\PassiveIcon\791.png
+HeadTrauma,Disorder,Head Trauma,头部受伤,You can't equip head armor. Your Collarless spells cost -2 mana.,你不能装备头部防具，无色法术的魔能耗费-2。,,,False,792,PassiveIcon/792.png,images\PassiveIcon\792.png
+DeepCut,Disorder,Deep Cut,切割伤,"Bleed 1.
+You can't equip trinkets or consumables. 
+Bonus ability: Bloodzerk.","1层【出血】。
+你不能装备小玩意儿和消耗品。
+奖励能力：嗜血狂暴。",,,False,793,PassiveIcon/793.png,images\PassiveIcon\793.png
+PuncturedEye,Disorder,Punctured Eye,眼球穿刺伤,"+10% miss chance.
+You can't equip face armor. Gain an eyeball trinket.","落空几率+10%。
+你不能装备脸部防具，获得1个眼球小玩意儿",,,False,794,PassiveIcon/794.png,images\PassiveIcon\794.png
+OCD,Disorder,Obsessive Compulsive Disorder,强迫性神经官能症,"Bonus Ability: Groom
+At the end of your turn, if you didn't use Groom, take 2 damage.","奖励能力：理毛。
+你的回合结束时，如果这个回合没有理毛，那么受到2点伤害。",,,False,788,PassiveIcon/788.png,images\PassiveIcon\788.png
+Distemper,Disorder,Distemper,猫瘟,"At the end of each battle gain +10% crit chance, +25% crit damage, and +5% miss chance. Permanently.
+You can't equip face armor.","每场战斗结束时，暴击几率+10%、暴击伤害+25%、落空几率+5%，永久有效。
+你不能装备脸部防具。",,,True,786,PassiveIcon/786.png,images\PassiveIcon\786.png
+BrainDamage,Disorder,Brain Damage,脑损伤,You can't use item actions. +2 Brace.,你不能使用物品行动。【招架】+2。,,,False,795,PassiveIcon/795.png,images\PassiveIcon\795.png
+SeveredThumb,Disorder,Severed Thumb,断指,You can't equip weapons. Spawn a Food pickup at the start of each battle.,你不能装备武器。每场战斗开始时，生成1份可以捡起的食物,,,False,796,PassiveIcon/796.png,images\PassiveIcon\796.png
+PTSD,Disorder,Post-Traumatic Stress Disorder,创伤后应激障碍,"When you take damage, gain Fear and +2 Damage.",你受到伤害时，获得【害怕】，同时伤害+2。,,,False,797,PassiveIcon/797.png,images\PassiveIcon\797.png
+IBS,Disorder,Irritable Bowel Syndrome,肠易激综合征,"When you take damage, poop.",你受到伤害时会拉屎。,,,False,798,PassiveIcon/798.png,images\PassiveIcon\798.png
+Dyskinesia,Disorder,Dyskinesia,运动障碍,"When you end your movement, knockback all adjacent units 1 tile.",你结束移动时，把前后左右相邻的所有单位击退1格。,,,False,799,PassiveIcon/799.png,images\PassiveIcon\799.png
+Anemia,Disorder,Anemia,贫血症,"When you take damage, you have a 10% chance to gain Bleed 1.
+Gain 2 Charge for each damage you take from Bleed.","你受到伤害时，有10%的几率获得1层【出血】。
+每次因为【出血】受到伤害时，【蓄能】+2。",,,False,800,PassiveIcon/800.png,images\PassiveIcon\800.png
+Empath,Disorder,Empath,过度共情,"Take 1 damage when you deal damage.
+Your heals heal for 1 extra.","你造成伤害时，自身受到1点伤害。
+你发起的治疗效果+1。",,,False,802,PassiveIcon/802.png,images\PassiveIcon\802.png
+Infestation,Disorder,Infestation,生虫,"At the start of your turn, you have a 50% chance to spawn a Maggot Familiar and 15% chance to spawn an enemy Flea.",你的回合开始时，有50%的几率生成1个蛆跟班，15%的几率生成1个敌方跳蚤。,,,False,807,PassiveIcon/807.png,images\PassiveIcon\807.png
+Leprosy,Disorder,Leprosy,麻风病,"Bruise 2. When you get hit, spawn a food pickup.",2层【瘀伤】。你被击中时，生成1份可以捡起的食物。,,,False,809,PassiveIcon/809.png,images\PassiveIcon\809.png
+ASRFight,Disorder,Acute Stress Reaction: Fight,急性应激反应：战斗,Gain +6 [img:str] while you have 5 or fewer HP.,你生命不大于5时，[img:str]+6。,,,False,806,PassiveIcon/806.png,images\PassiveIcon\806.png
+ASRFlight,Disorder,Acute Stress Reaction: Flight,急性应激反应：逃跑,Gain +6 [img:spd] while you have 5 or fewer HP.,你生命不大于5时，[img:spd]+6。,,,False,805,PassiveIcon/805.png,images\PassiveIcon\805.png
+BloodFrenzy,Disorder,Blood Frenzy,嗜血狂热,"When you kill a unit, take an extra turn with Madness.",你击杀单位时，带着【癫狂】获得1个额外回合。,,,False,811,PassiveIcon/811.png,images\PassiveIcon\811.png
+Shunned,Disorder,Shunned,受到排挤,"Take your turn last.
+Your heals heal for 2 less. +15% dodge chance.","你最后行动。
+你发起的治疗效果-2。闪避几率+15%。",,,False,812,PassiveIcon/812.png,images\PassiveIcon\812.png
+Dysentery,Disorder,Dysentery,痢疾,50% chance to make a burning poop directly behind you when you end your turn.,你的回合结束时，有50%的几率在自己身后生成1坨燃烧的大便。,,,False,813,PassiveIcon/813.png,images\PassiveIcon\813.png
+Anxiety,Disorder,Anxiety,焦虑症,"+10% Dodge chance. When you take damage, run away from the source.",闪避几率+10%。你受到伤害时，远离伤害来源。,,,False,885,PassiveIcon/885.png,images\PassiveIcon\885.png
+Kamikazee,Disorder,Kamikaze,神风,You explode when you are downed. ,你倒地时会爆炸。,,,False,884,PassiveIcon/884.png,images\PassiveIcon\884.png
+Traumatophobia,Disorder,Traumatophobia,外伤恐惧症,"Whenever you take damage, move 1 tile away from the source.",你每次受到伤害时，向远离伤害来源的方向移动1格。,,,False,803,PassiveIcon/803.png,images\PassiveIcon\803.png
+StockholmSyndrome,Disorder,Stockholm Syndrome,斯德哥尔摩综合征,"Whenever you take damage, move toward the source.",你每次受到伤害时，向着伤害来源的方向移动。,,,False,804,PassiveIcon/804.png,images\PassiveIcon\804.png
+ViolentOutbursts,Disorder,Violent Outbursts,暴躁症,"When you end your turn, dash forward 2 tiles, attack with Knockback, and take 1 damage.",你的回合结束时，向前突进2格，发起可以击退的攻击，同时受到1点伤害。,,,False,808,PassiveIcon/808.png,images\PassiveIcon\808.png
+GamblingAddict,Disorder,Gambling Addiction,赌博成瘾,"+33% miss chance.
+100% critical hit chance.","落空几率+33%。
+暴击几率100%。",,,False,810,PassiveIcon/810.png,images\PassiveIcon\810.png
+Scleroderma,Disorder,Scleroderma,硬皮病,"At the start of each battle, you lose all but 1 HP, but gain that much [img:shield].",每场战斗开始时，你只留1点生命，但是失去多少生命，就获得多少[img:shield]。,,,False,815,PassiveIcon/815.png,images\PassiveIcon\815.png
+Pacifist,Disorder,Pacifist,爱好和平,You can't kill units. If you end your turn without using your basic attack gain 7 mana.,你不能击杀单位。你的回合结束时，如果这个回合没有使用普通攻击，那么魔能+7。,,,False,816,PassiveIcon/816.png,images\PassiveIcon\816.png
+Gigachad,Disorder,GIGACHAD,究极猛男,,,,,False,822,PassiveIcon/822.png,images\PassiveIcon\822.png
+ImposterSyndrome,Disorder,Impostor Syndrome,冒名顶替综合征,You're quite suspicious…,你看起来很可疑……,,,False,823,PassiveIcon/823.png,images\PassiveIcon\823.png
+Vegan,Disorder,Vegan,纯素主义,You don't eat meat.,你不吃肉。,,,False,818,PassiveIcon/818.png,images\PassiveIcon\818.png
+FrozenKnee,Disorder,The Zoomies,疯跑,Your movement action is a dash attack.,你的移动行动变成突进攻击。,,,False,821,PassiveIcon/821.png,images\PassiveIcon\821.png
+SchrodingerDisorder,Disorder,Schrödinger's Syndrome,薛定谔综合征,"50% chance to start each battle dead, or alive with max hp and All Stats Up 2 and an extra turn at the start of the battle.",每场战斗开始时，有50%的几率已经死亡，还有50%的几率活着，满血，所有属性提升2点，而且获得1个额外回合。,,,False,820,PassiveIcon/820.png,images\PassiveIcon\820.png
+ScalyScabs,Disorder,Scaly Scabs,猫癣,,,,,False,814,PassiveIcon/814.png,images\PassiveIcon\814.png
+FattyLiver,Disorder,Fatty Liver,脂肪肝,"Whenever you lose HP, you permanently lose 1 [img:con].",你每次损失生命时，[img:con]永久-1。,,,False,817,PassiveIcon/817.png,images\PassiveIcon\817.png
+CommonCold,Disorder,The Common Cold,普通感冒,Start each battle with All Stats Down. 30% chance of recovering at the end of each round. Contagious.,战斗开始时，所有属性下降。每轮结束时，有30%的几率痊愈。可以传染。,,,False,825,PassiveIcon/825.png,images\PassiveIcon\825.png
+Pox,Disorder,Pox,牛痘,10% chance to skip your turn to scratch yourself. Your basic attack has a 50% chance to inflict Poison 1. 5% chance of recovering at the end of each round. Contagious.,有10%的几率因为抓痒跳过回合。你的普通攻击有50%的几率施加1层【中毒】。每轮结束时，有5%的几率痊愈。可以传染。,,,False,824,PassiveIcon/824.png,images\PassiveIcon\824.png
+Psychosis,Disorder,Psychosis,精神错乱,"After your first turn, you have permanent madness.",你第一个回合之后，永久【癫狂】。,,,False,826,PassiveIcon/826.png,images\PassiveIcon\826.png
+Necrosis,Disorder,Necrosis,坏死,"When you take damage, you get -1 [img:con], -1 [img:str], and spawn poisoned food.",你受到伤害时，[img:con]-1、[img:str]-1，同时生成有毒的食物。,,,False,827,PassiveIcon/827.png,images\PassiveIcon\827.png
+Touched,Disorder,Touched,魔怔,You can no longer heal HP.,你自身不能恢复生命。,,,False,828,PassiveIcon/828.png,images\PassiveIcon\828.png
+Charred,Disorder,Charred,烧焦,Bruise 1. You cannot be Burned.,1层【瘀伤】。你不会被【灼烧】。,,,False,829,PassiveIcon/829.png,images\PassiveIcon\829.png
+Invincible,Disorder,Immortal,不朽,"All damage you take is reduced to 1.
+When you take damage, suffer a random injury.","你受到的所有伤害都减为1。
+你受到伤害时，随机获得1处伤残。",,,False,830,PassiveIcon/830.png,images\PassiveIcon\830.png
+ExplosiveGas,Disorder,Bad Gas,臭屁,"On the first round, take your turn last. At the start of that turn, do a Mega Fart attack that inflicts Poison 2. ",每场战斗第一轮，你会最后行动。你那次行动之前会进行一次超级屁攻击，施加2层【中毒】。,,,False,831,PassiveIcon/831.png,images\PassiveIcon\831.png
+Toxoplasmosis,Disorder,Toxoplasmosis,弓形虫病,Start each battle with a Rat Familiar. Your basic attack charms Rat enemies.,每场战斗开始时，自带1个老鼠跟班。你的普通攻击会【洗脑】敌方老鼠。,,,False,832,PassiveIcon/832.png,images\PassiveIcon\832.png
+Ebola,Disorder,Ebola,埃博拉,"Start each battle with Bleed 3. Your basic attack inflicts Bleed 2.
+5% chance of recovering at the end of each round. Contagious.","每场战斗开始时，自带3层【出血】。你的普通攻击会施加2层【出血】。
+每轮结束时，有5%的几率痊愈。可以传染。",,,False,833,PassiveIcon/833.png,images\PassiveIcon\833.png
+Fidgety,Disorder,Fidgety,躁动,"When you end your turn, automatically use your weapon on a random unit in range, for free.",你的回合结束时，免费随机对范围内的1个单位自动使用武器。,,,False,834,PassiveIcon/834.png,images\PassiveIcon\834.png
+Narcolepsy,Disorder,Narcolepsy,发作性睡病,"At the end of your turn, fall asleep, heal 10 HP and gain 7 mana.",你的回合结束时，入睡，恢复10点生命，同时魔能+7。,,,False,835,PassiveIcon/835.png,images\PassiveIcon\835.png
+Paranoia,Disorder,Paranoia,妄想症,"When a unit ends its movement directly behind you, attack it and gain Fear. ",有单位在你的正后方结束移动时，攻击它，同时获得【害怕】。,,,False,836,PassiveIcon/836.png,images\PassiveIcon\836.png
+EatingDisorder,Disorder,Eating Disorder,进食障碍,Double the effects of your consumables but you are confused on how to eat them.,消耗品的效果增强1倍，但你不知道该怎么吃。,,,False,837,PassiveIcon/837.png,images\PassiveIcon\837.png
+Gastritis,Disorder,Gastritis,胃炎,"At the end of your turn, fart and Poison all adjacent units.",你的回合结束时，放屁，同时令前后左右相邻的单位【中毒】。,,,False,838,PassiveIcon/838.png,images\PassiveIcon\838.png
+Hypomania,Disorder,Hypomania,轻躁狂,"Start each battle with 3 bonus turns, then never take a turn.",每场战斗开始时，自带3个额外回合，之后不再行动。,,,False,839,PassiveIcon/839.png,images\PassiveIcon\839.png
+Hypersomnia,Disorder,Hypersomnia,嗜睡症,Start each battle asleep and with full health.,每场战斗开始时，满血，处于睡眠状态。,,,False,840,PassiveIcon/840.png,images\PassiveIcon\840.png
+KidneyStones,Disorder,Kidney Stone,肾结石,When you end your turn take 1 damage and pass a kidney stone.,你的回合结束时，受到1点伤害，同时排出1颗肾结石。,,,False,841,PassiveIcon/841.png,images\PassiveIcon\841.png
+Cancer,Disorder,Cancer,癌症,"At the end of each battle, lose 3 random stats permanently and gain a random mutation.",每场战斗结束时，随机永久失去3点属性，同时随机获得1项突变。,,,False,842,PassiveIcon/842.png,images\PassiveIcon\842.png
+Stinky,Disorder,Stinky,臭烘烘,Adjacent units move away from you at the start of their turns.,前后左右相邻的单位在自己回合开始时，会向远离你的方向移动。,,,False,843,PassiveIcon/843.png,images\PassiveIcon\843.png
+Incontinence,Disorder,Incontinence,失禁,"When you take damage, pee yourself.",你受到伤害时会尿尿。,,,False,844,PassiveIcon/844.png,images\PassiveIcon\844.png
+Fossilized,Disorder,Fossilized,化石化,+2 Brace. Slide like a rock whenever you get hit.,【招架】+2。你每次被击中时，像石头一样滑动。,,,False,845,PassiveIcon/845.png,images\PassiveIcon\845.png
+Triskaidekaphobia,Disorder,Triskaidekaphobia,十三恐惧症,Your spells cost 0 mana. The 13th spell you cast on an adventure kills you and destroys your body.,你法术的魔能耗费为0。每段冒险期间，你第13次施放的法术会害死自己，而且摧毁你的尸体。,,,False,846,PassiveIcon/846.png,images\PassiveIcon\846.png
+Autism,Disorder,Autism,自闭症,Spells you were born with cost -2 mana. Other spells cost +1 mana.,出生自带的法术魔能耗费-2，其他法术的魔能耗费+1。,,,False,847,PassiveIcon/847.png,images\PassiveIcon\847.png
+Tourettes,Disorder,Tourette's Syndrome,抽动秽语综合征,"At the start of your turn, you have a 33% chance to cast one of your spells at a random target for free.",你的回合开始时，你有33%的几率随机对1个目标免费施放你的1个法术。,,,False,848,PassiveIcon/848.png,images\PassiveIcon\848.png
+Albinism,Disorder,Albinism,白化病,"Fire damage you take inflicts +3 Burn.
+Your basic attack has a 25% chance to inflict Fear.","你受到的火系伤害会额外施加3层【灼烧】。
+你的普通攻击有25%的几率施加【害怕】",,,False,849,PassiveIcon/849.png,images\PassiveIcon\849.png
+SleepParalysis,Disorder,Sleep Paralysis,鬼压床,"When you fall asleep, a Sleep Paralysis Demon with Madness spawns! You can't wake up until it's killed.
+Learn the spell Rest (if you have a free spell slot).","你入睡时，会生成1个【癫狂】的梦魇！这个梦魇击杀之前，你会始终处于【睡着】状态。
+学会法术【睡觉】。（前提是还有空闲的法术栏位）",,,False,850,PassiveIcon/850.png,images\PassiveIcon\850.png
+Diabetes,Disorder,Diabetes,糖尿病,"When you end your turn, if you haven't eaten food, gain All Stats Down and Confusion 1. Each time you eat food, cleanse all your debuffs and gain +1 [img:int].",你的回合结束时，如果没有吃过食物，那么所有属性下降，同时获得1层【混乱】。你每次吃食物时，清除自身所有减益，同时[img:int]+1。,,,False,851,PassiveIcon/851.png,images\PassiveIcon\851.png
+Bipolar,Disorder,Bipolar Disorder,双相障碍,"Start each battle with either
+ +5 [img:int], +5 [img:cha], and +5 [img:spd]
+or 
+All Stats Down 2.","每场战斗开始时：
+[img:int]+5、[img:cha]+5、[img:spd]+5
+或
+所有属性-2。",,,False,852,PassiveIcon/852.png,images\PassiveIcon\852.png
+Soulless,Disorder,Soulless,无魂,"You are immune to buffs and debuffs. When you die, you don't leave a corpse.",你免疫所有增益和减益。死亡时不会留下尸体。,,,False,854,PassiveIcon/854.png,images\PassiveIcon\854.png
+Premonitions,Disorder,The Shining,闪灵,"Your attacks can't miss.
++15% dodge chance and +15% chance to gain Fear at the start of each turn.","你的攻击不会落空。
+每个回合开始时，闪避几率+15%，【害怕】的几率+15%。",,,False,853,PassiveIcon/853.png,images\PassiveIcon\853.png
+PillPopper,Disorder,Addict,药物成瘾,"Start each battle with All Stats Down 2.
+Gain All Stats Up 3 whenever you eat a pill.
+You have a 50% chance to find a pill at the end of each battle.","每场战斗开始时，所有属性-2。
+每当你吃药时，所有属性+3。
+每场战斗结束时，你有50%的几率得到1粒药。",,,False,855,PassiveIcon/855.png,images\PassiveIcon\855.png
+BorrowedTime,Disorder,Borrowed Time,赊命,+50% dodge chance. Doomed 3.,闪避几率+50%。3层【必死无疑】。,,,False,856,PassiveIcon/856.png,images\PassiveIcon\856.png
+Brave,Disorder,Brave,勇敢,"Take your turn earlier.
+Immune to Fear and Madness.
+Attacks against you never miss.","你的回合提前。
+免疫【害怕】和【癫狂】。
+你受到的攻击不会落空。",,,False,857,PassiveIcon/857.png,images\PassiveIcon\857.png
+Scatological,Disorder,Scatological,嗜粪癖,"Heal 5 HP when you damage poop.
+At the start of your turn, if you're near poop, you automatically move toward it and eat it.","你对粪便造成伤害时，恢复5点生命。
+你的回合开始时，如果附近有粪便，会自动移动过去，把它吃掉。",,,False,858,PassiveIcon/858.png,images\PassiveIcon\858.png
+Cannibal,Disorder,Necrophage,食尸癖,"At the start of your turn, if there's a dead body near you, move towards it and eat it to gain All Stats Up and heal 4 HP.",你的回合开始时，如果附近有尸体，你会移动过去，把它吃掉，所有属性提升，同时恢复4点生命。,,,False,859,PassiveIcon/859.png,images\PassiveIcon\859.png
+CrohnsDisease,Disorder,Crohn's Disease,克罗恩病,"At the end of your turn, you have a 20% chance to poop all over the place!",你的回合结束时，有20%的几率到处拉屎！,,,False,860,PassiveIcon/860.png,images\PassiveIcon\860.png
+Pica,Disorder,Pica,异食癖,"When you collect a coin or scrap pickup, heal instead of gaining the pickup's normal effect.",你捡起钱或边角料时，改为恢复生命而不是获得物品原本的效果。,,,False,861,PassiveIcon/861.png,images\PassiveIcon\861.png
+FelineAids,Disorder,Feline Aids,猫艾滋,"Your basic attack inflicts Poison 3 and Weakness 1.
+Inflict Poison 3 and Weakness 1 on units that contact you.
+Gain -1 [img:con] and -1 [img:spd] at the end of each battle permanently.","你的普通攻击会施加3层【中毒】和1层【虚弱】。
+接触你的单位会获得3层【中毒】和1层【虚弱】。
+每场战斗结束时，永久[img:con]-1，[img:spd]-1。",,,False,862,PassiveIcon/862.png,images\PassiveIcon\862.png
+Dyslexia,Disorder,Dyslexia,阅读障碍,Swap 3's and 5's in the mana costs and damage values of your spells while in a battle. 6's and 9's are also swapped.,战斗期间，法术的魔能耗费和伤害数值里的数字3和5对调，数字6和9也会对调。,,,False,863,PassiveIcon/863.png,images\PassiveIcon\863.png
+Covid,Disorder,Covid,新冠,"Start each battle with All Stats Down, Poison 1, and Weakness 1.
+Your basic attack inflicts Poison 1 and Weakness 1.
+15% chance of recovering at the end of each round. Contagious.","战斗开始时，所有属性下降，获得1层【中毒】和1层【虚弱】。
+你普通攻击会施加1层【中毒】和1层【虚弱】。
+每轮结束时，有15%的几率痊愈。可以传染。",,,False,864,PassiveIcon/864.png,images\PassiveIcon\864.png
+Flu,Disorder,The Flu,流感,"Start each battle with Slow 5 and Weakness 5.
+Your basic attack inflicts Slow 1 and Weakness 1.
+20% chance of recovering at the end of each round. Contagious.
+","战斗开始时，获得5层【迟缓】和5层【虚弱】。
+你普通攻击会施加1层【迟缓】和1层【虚弱】。
+每轮结束时，有20%的几率痊愈。可以传染。",,,False,865,PassiveIcon/865.png,images\PassiveIcon\865.png
+BirdFlu,Disorder,Bird Flu,禽流感,"Start each battle in Mockingbird Form.
+You have a 20% chance to recover at the end of each battle.
+Contagious.","每场战斗开始时，变成反舌鸟。
+每场战斗结束时，你有20%的几率痊愈。
+可以传染。",,,False,866,PassiveIcon/866.png,images\PassiveIcon\866.png
+Nudist,Disorder,Nudist,裸体主义,"+50% dodge chance.
+You can't wear armor.","闪避几率+50%。
+你不能穿戴防具。",,,False,867,PassiveIcon/867.png,images\PassiveIcon\867.png
+Elephantiasis,Disorder,Elephantiasis,象皮病,"At the end of each battle, gain -1 [img:spd] and +2 starting [img:shield] permanently. After 8 battles, gain Trample.",每场战斗结束时，永久[img:spd]-1，开场[img:shield]+2。8场战斗之后，获得横冲直撞。,,,False,868,PassiveIcon/868.png,images\PassiveIcon\868.png
+Gigantism,Disorder,Gigantism,巨人症,Trample.,横冲直撞。,,,False,907,PassiveIcon/907.png,images\PassiveIcon\907.png
+Dwarfism,Disorder,Dwarfism,侏儒症,+10% dodge chance.,闪避几率+10%。,,,False,869,PassiveIcon/869.png,images\PassiveIcon\869.png
+PrimordialDwarf,Disorder,Primordial Dwarf,原始侏儒症,,,,,False,870,PassiveIcon/870.png,images\PassiveIcon\870.png
+Sociopathy,Disorder,Sociopathy,反社会,You have Madness on your first turn.,你第一个回合获得【癫狂】。,,,False,871,PassiveIcon/871.png,images\PassiveIcon\871.png
+SkillShare_Disorder,Disorder,Munchausen by Proxy,代理型孟乔森综合征,"If you have a 2nd disorder, all other cats in your party gain it at the start of each battle.",如果你存在2种毛病，那么队中其他猫咪在每场战斗开始时会出现你的第2种毛病。,,,False,872,PassiveIcon/872.png,images\PassiveIcon\872.png
+Schizophrenia,Disorder,Schizophrenia,精神分裂症,"At the end of your turn, spawn a hallucination. It has Madness, attacks any unit except you, and fades after its turn.",你的回合结束时，生成1个【癫狂】的幻觉，会攻击除你以外的单位，然后在自身回合结束后消失。,,,False,873,PassiveIcon/873.png,images\PassiveIcon\873.png
+Lycanthropy,Disorder,Lycanthropy,狼化病,33% chance to enter Wolf Form at the start of your turn.,你的回合开始时，有33%的几率变成狼。,,,False,874,PassiveIcon/874.png,images\PassiveIcon\874.png
+WobblyCat,Disorder,Wobbly Cat Syndrome,摇摆猫综合征,25% chance to block attacks and get knocked back 10 tiles instead.,有25%的几率挡住攻击，改为被击退10格。,,,False,875,PassiveIcon/875.png,images\PassiveIcon\875.png
+Singleton,Disorder,Singleton,归一症,"Your max HP and mana are reduced to 1.
+Damage you take is reduced to 1.
+Your spells cost 1 mana.","你的生命上限和魔能上限都变成1。
+你受到的伤害减为1。
+你的法术耗费1点魔能。",,,False,876,PassiveIcon/876.png,images\PassiveIcon\876.png
+Insomnia,Disorder,Insomnia,失眠症,"You can't fall asleep.
+You can move an extra time each turn. Exhaustion sets in on round 3.","你不能入睡。
+你每个回合获得1次奖励移动。第3轮开始逐渐【累瘫】。",,,False,877,PassiveIcon/877.png,images\PassiveIcon\877.png
+Phony,Disorder,Phony,冒牌货,"Start each battle with full mana.
+You can't regenerate mana.","每场战斗开始时，魔能全满。
+你的魔能不能自然恢复。",,,False,878,PassiveIcon/878.png,images\PassiveIcon\878.png
+AcidReflux,Disorder,Acid Reflux,胃酸反流,Your basic attack becomes a lobbed shot with splash damage but deals 2 damage to you.,你的普通攻击变成抛射攻击，会造成溅射伤害，但会对自身造成2点伤害。,,,False,879,PassiveIcon/879.png,images\PassiveIcon\879.png
+SpontaneousCombustion,Disorder,Spontaneous Combustion,生体自燃,"When you take damage from an ability, you have a 15% chance to inflict Burn 5 on yourself and adjacent units.",你受到能力的伤害时，有15%的几率对自己和前后左右相邻的单位施加5层【灼烧】。,,,False,880,PassiveIcon/880.png,images\PassiveIcon\880.png
+TheHunger,Disorder,The Hunger,饥饿,"Your basic attack has lifesteal.
+If you don't deal damage to a unit on your turn, gain Madness 1.","你的普通攻击带有【吸血】。
+如果你没在自己回合伤害任何单位，那么获得1层【癫狂】。",,,False,881,PassiveIcon/881.png,images\PassiveIcon\881.png
+Paralyzed,Disorder,Paraplegic,截瘫,"The range of all your movement, dash, and jump abilities are capped at 1 unless they teleport.
+Enemies won't prioritize attacking you.","你所有移动、突进和跳跃能力的范围上限变成1，传送除外。
+敌人不会优先攻击你。",,,False,882,PassiveIcon/882.png,images\PassiveIcon\882.png
+GlassBones,Disorder,Osteogenesis Imperfecta,成骨不全症,"+2 Bruise, +2 Bleed Thorns, and +2 Thorns.
+When you're downed, you get injured an extra time.","【瘀伤】+2、【出血尖刺】+2、【尖刺】+2。
+你倒地时，会额外获得1处伤残。",,,False,883,PassiveIcon/883.png,images\PassiveIcon\883.png
+Gargantuan,Disorder,Gargantuan,巨型,You are permanently immobile.,你永久【移动受限】。,,,False,895,PassiveIcon/895.png,images\PassiveIcon\895.png
+BrainDead,Disorder,Brain Dead,脑死亡,Gain twice as many stats when you level up. +1 Reroll when leveling up.,你升级时，获得的属性增加1倍。升级时，重掷次数+1。,,,False,896,PassiveIcon/896.png,images\PassiveIcon\896.png
+TamperedGenes,Disorder,Tainted Genes,基因污染,"At the end of each battle gain a random mutation. When you're downed, your corpse is destroyed.",每场战斗结束时，随机获得1项突变。你倒地时，尸体会被摧毁。,,,False,897,PassiveIcon/897.png,images\PassiveIcon\897.png
+SensoryOverloadFace,Disorder,Sensory Overload,感官过载,All but your face slot is locked. Your face item's effects are tripled!,除了脸部以外，其他栏位全部上锁。脸部物品效果增强2倍！,,,False,898,PassiveIcon/898.png,images\PassiveIcon\898.png
+SensoryOverloadTrinket,Disorder,Sensory Overload,感官过载,"All but your trinket slot is locked. Your trinket's effects are tripled!
+",除了小玩意儿以外，其他栏位全部上锁。小玩意儿效果增强2倍！,,,False,899,PassiveIcon/899.png,images\PassiveIcon\899.png
+SensoryOverloadHead,Disorder,Sensory Overload,感官过载,"All but your head slot is locked. Your head item's effects are tripled!
+",除了头部以外，其他栏位全部上锁。头部物品效果增强2倍！,,,False,900,PassiveIcon/900.png,images\PassiveIcon\900.png
+SensoryOverloadNeck,Disorder,Sensory Overload,感官过载,"All but your neck slot is locked. Your neck item's effects are tripled!
+",除了颈部以外，其他栏位全部上锁。颈部物品效果增强2倍！,,,False,901,PassiveIcon/901.png,images\PassiveIcon\901.png
+SensoryOverloadWeapon,Disorder,Sensory Overload,感官过载,"All but your weapon slot is locked. Your weapon's effects are tripled!
+",除了武器以外，其他栏位全部上锁。你的武器效果增强2倍！,,,False,902,PassiveIcon/902.png,images\PassiveIcon\902.png
+EternalYouth,Disorder,Eternal Youth,永葆青春,"You are a kitten... forever!
++1 [img:comfort], +1 [img:stimulation], +1 [img:appeal]","你变成了小猫……永远都是小猫！
+[img:comfort]+1、[img:stimulation]+1、[img:appeal]+1",,,False,903,PassiveIcon/903.png,images\PassiveIcon\903.png
+DejaVu,Disorder,Deja Vu,既视感,,,"10% chance to cancel actions.
+[s:.7]Deja Vu will go away when this cat returns to the house.[/s]","你的行动有10%的几率被取消。
+[s:.7]这只猫回家之后，既视感会消失。[/s]",True,891,PassiveIcon/891.png,images\PassiveIcon\891.png
+DownsSyndrome,Disorder,Down's Syndrome,唐氏综合征,,,,,False,886,PassiveIcon/886.png,images\PassiveIcon\886.png
+Tachysensia,Disorder,Tachysensia,视物显快症,,,,,False,887,PassiveIcon/887.png,images\PassiveIcon\887.png
+SavantSyndrome,Disorder,Savant Syndrome,学者综合征,,,,,False,888,PassiveIcon/888.png,images\PassiveIcon\888.png
+WilliamsSyndrome,Disorder,Williams Syndrome,威廉姆斯综合征,Your attacks may Charm.,你的攻击可能造成【洗脑】。,,,False,889,PassiveIcon/889.png,images\PassiveIcon\889.png
+SpinaBifida,Disorder,Spina Bifida,脊柱裂,,,,,False,890,PassiveIcon/890.png,images\PassiveIcon\890.png
+DarkOne,Disorder,Dark One,黑暗之子,"At end of your turn, deal 1 damage to all units and heal for the damage dealt. Whenever you down an ally gain All Stats Up.",你的回合结束时，对所有单位造成1点伤害，造成多少伤害，就恢复多少生命。你每次击倒友方时，所有属性提升。,,,False,908,PassiveIcon/908.png,images\PassiveIcon\908.png
+ADHD,Disorder,ADHD,多动症,"You have 5 seconds to make decisions, or else this cat acts on its own.",你只有5秒钟的时间做决定，5秒不做决定，猫就会自己行动。,,,False,894,PassiveIcon/894.png,images\PassiveIcon\894.png
+FlamingFists,Disorder,Flaming Fists,焰拳,Your basic attacks inflict Burn 1. Start with Burn 1.,你的普通攻击会施加1层【灼烧】。每场战斗开始时，自带1层【灼烧】。,,,False,,,
+IntestinalProlapse,Disorder,Intestinal Prolapse,脱肛,You receive double damage from behind.,你受到的身后伤害增大1倍。,,,False,904,PassiveIcon/904.png,images\PassiveIcon\904.png
+BlessingOfGlorg,Disorder,Blessing of Glorg,格洛格的祝福,You can unequip cursed items.,你可以卸下受到诅咒的物品。,,,False,906,PassiveIcon/906.png,images\PassiveIcon\906.png
+BlackFetin,Disorder,Black Fetin,黑费汀,"You have a 10% to be AI controlled each turn.
+When an ally cat is downed, restore all your mana. ","你每个回合有10%的几率被AI控制。
+友方猫咪倒地时，你魔能全部恢复。",,,False,911,PassiveIcon/911.png,images\PassiveIcon\911.png
+OrangeFetin,Disorder,Orange Fetin,橙费汀,"You have a 10% to be AI controlled each turn.
+When you kill an enemy, gain 3 mana and heal 2 hp.","你每个回合有10%的几率被AI控制。
+你击杀敌人时，魔能+3，同时恢复2点生命。",,,False,909,PassiveIcon/909.png,images\PassiveIcon\909.png
+PurpleFetin,Disorder,Purple Fetin,紫费汀,"You have a 10% to be AI controlled each turn.
+You can reroll your level up options 3 times.","你每个回合有10%的几率被AI控制。
+你升级时，可以重掷3次。",,,False,910,PassiveIcon/910.png,images\PassiveIcon\910.png
+Chungus,Disorder,Chungus,大春哥,,,,,False,912,PassiveIcon/912.png,images\PassiveIcon\912.png
+SuperCrow,Druid,Super Crow!,超级乌鸦！,Your crow has its abilities upgraded.,你乌鸦的能力会强化。,Your crow has its abilities upgraded… Twice!,你乌鸦的能力会强化……两次！,True,217,PassiveIcon/217.png,images\PassiveIcon\217.png
+NaturesGuidance,Druid,Nature's Guidance,自然的指引,"Allied familiars are immune to damage from tiles, knockback, thorns, and trample.",友方跟班免疫方格、击退、【尖刺】、横冲直撞造成的伤害。,"Allied familiars are immune to damage from tiles, knockback, thorns, and trample.
+Familiars you spawn gain +1 Holy Shield.","友方跟班免疫方格、击退、【尖刺】、横冲直撞造成的伤害。
+你召唤的跟班圣盾+1。",True,218,PassiveIcon/218.png,images\PassiveIcon\218.png
+PoisonIvy,Druid,Poison Ivy,毒藤,You and familiar you spawn are Poisonous.,你和你召唤的跟班都【带毒】。,"You and familiar you spawn have Poisonous 2.
+",你和你召唤的跟班都有2层【带毒】。,True,219,PassiveIcon/219.png,images\PassiveIcon\219.png
+Pathfinder,Druid,Pathfinder,探路先锋,Grass tiles are free to move through for you and familiars you spawn. Plant grass as you walk.,你和你召唤的跟班在草地的移动不会迟缓。你走到哪里，草就长到哪里。,Grass tiles are free to move through for you and familiars you spawn. Gain +1 HP when moving through grass tiles. Plant grass as you walk.,你和你召唤的跟班在草地的移动不会迟缓。穿过草方格时，生命+1。你走到哪里，草就长到哪里。,True,220,PassiveIcon/220.png,images\PassiveIcon\220.png
+EmptyVessels,Druid,Empty Vessels,空容器,Familiars you spawn have +3 Health Regeneration and +10 max health.,你召唤的跟班生命自然恢复+3，生命上限+10。,Familiars you spawn have +3 Health Regeneration and uncapped HP.,你召唤的跟班生命自然恢复+3，生命上限不封顶。,True,221,PassiveIcon/221.png,images\PassiveIcon\221.png
+WildAnimals,Druid,Wild Animals,野生动物,Familiars you spawn attack a random enemy within their range when they are spawned.,你召唤的跟班在生成时会随机攻击范围内的1个敌人。,"Familiars you spawn attack a random enemy within their range when they're spawned, then they take an extra turn.",你召唤的跟班在生成时会随机攻击范围内的1个敌人，然后获得1个额外回合。,True,222,PassiveIcon/222.png,images\PassiveIcon\222.png
+BarkSkin,Druid,Bark Skin,树肤术,"+1 Brace.
+When you take damage, you get +1 temporary Brace until the start of your next turn.","【招架】+1。
+你受到伤害时，临时【招架】+1，持续到你下一回合开始。","+1 Brace.
+When you take damage, gain +2 temporary Brace and +2 temporary Thorns until the start of your next turn.","【招架】+1。
+你受到伤害时，临时【招架】+2、临时【尖刺】+2，持续到你下一回合开始。",True,223,PassiveIcon/223.png,images\PassiveIcon\223.png
+SoothingSong,Druid,Love Song,情歌,"Your basic action has +2 area, and heals 1 additional HP.",你基础行动的区域+2，同时可以额外恢复1点生命。,"Your basic action has +2 area, and heals 2 additional HP. The Damage your basic action grants lasts until the end of the battle.",你基础行动的区域+2，同时可以额外恢复2点生命。你基础行动提供的伤害加成会持续到战斗结束。,True,224,PassiveIcon/224.png,images\PassiveIcon\224.png
+Teamwork,Druid,Teamwork,众志成城,"When one of your familiars kills something, all allies get +1 Damage.",你的跟班击杀单位时，所有友方伤害+1。,"When one of your familiars kills something, all allies get +1 Damage and heal 5 health.",你的跟班击杀单位时，所有友方伤害+1，同时恢复5点生命。,True,225,PassiveIcon/225.png,images\PassiveIcon\225.png
+Bouquet,Druid,Bouquet,花束,Spawn a tall flower tile under you at the end of your turn.,你的回合结束时，你的脚下生成一格花丛。,Spawn tall flower tiles under and around you at the end of your turn.,你的回合结束时，你的脚下和周围生成花丛。,True,226,PassiveIcon/226.png,images\PassiveIcon\226.png
+GoodVibrations,Druid,Good Vibrations,美妙振动,Allies have +1 Health Regeneration and +1 Mana Regeneration.,友方生命自然恢复+1，魔能自然恢复+1。,Allies have +2 Health Regeneration and +2 Mana Regeneration.,友方生命自然恢复+2，魔能自然恢复+2。,True,227,PassiveIcon/227.png,images\PassiveIcon\227.png
+VersatileVocalist,Druid,Versatile Vocalist,全能歌手,"Your basic action deals 1 damage to enemies, and inflicts temporary -1 Damage. Your basic attack wont apply debuffs to allies or buffs to enemies.
+",你的基础行动会对敌人造成1点伤害，同时临时施加“伤害-1”。你的普通攻击不会对友方施加减益，也不会对敌人施加增益。,"Your basic action has +1 area, deals 1 damage to enemies, and inflicts temporary -1 Damage. Your basic attack wont apply debuffs to allies or buffs to enemies.
+",你基础行动的区域+1，会对敌人造成1点伤害，同时临时施加“伤害-1”。你的普通攻击不会对友方施加减益，也不会对敌人施加增益。,True,228,PassiveIcon/228.png,images\PassiveIcon\228.png
+LikeAFish,Druid,Like a Fish,像条鱼,"Water tiles don't slow you down.
+Gain +1 Holy Shield at the end of the turn if you're wet and have no Holy Shield.
+Familiars you spawn also have this passive.","你在水格移动不会额外消耗移动次数。
+如果你身上潮湿而且没有圣盾，那么回合结束时圣盾+1。
+你召唤的跟班也拥有这个被动。","Water tiles don't slow you down.
+Gain +1 Holy Shield at the end of the turn if you're wet and have no Holy Shield.  Gain +1 Health Regeneration.
+Familiars you spawn also have this passive.","你在水格移动不会额外消耗移动次数。
+如果你身上潮湿而且没有圣盾，那么回合结束时圣盾+1。生命自然恢复+1。
+你召唤的跟班也拥有这个被动。",True,229,PassiveIcon/229.png,images\PassiveIcon\229.png
+Encore,Druid,Encore,安可,"When you use a musical ability, refresh your basic action.",你使用音乐能力后，你的基础行动刷新。,"Your musical spells cost 1 less mana. When you use a musical ability, refresh your basic action.",你音乐法术的魔能耗费-1。你使用音乐能力后，你的基础行动刷新。,True,230,PassiveIcon/230.png,images\PassiveIcon\230.png
+SpecialFriends,Druid,Super Friends,超级伙伴,"Familiars spawned by spells gain All Stats Up 2, but that spell gets disabled until the spawned familiars die.",法术召唤的跟班所有属性提升2点，但这些跟班死亡之前，那个法术不能施放。,"Familiars spawned by spells gain All Stats Up 2, but that spell gets disabled until the spawned familiars die.
+Your spawning spells cost 50% less mana.","法术召唤的跟班所有属性提升2点，但这些跟班死亡之前，那个法术不能施放。
+你的召唤法术魔能耗费减少50%。",True,231,PassiveIcon/231.png,images\PassiveIcon\231.png
+SneakAttack,Druid,Sneak Attack,偷袭,"Your spells that spawn familiars cost -3 mana.
+Familiars spawned by your spells gain +2 Damage and +2 Movement, but die after their first turn.","你召唤跟班的法术魔能耗费-3。
+你用法术召唤的跟班伤害+2、移动+2，但会在它的第一个回合结束后死亡。","Your spells that spawn familiars cost -3 mana.
+Familiars spawned by your spells gain +4 Damage and +4 Movement, but die after their first turn.","你召唤跟班的法术魔能耗费-3。
+你用法术召唤的跟班伤害+4、移动+4，但会在它的第一个回合结束后死亡。",True,232,PassiveIcon/232.png,images\PassiveIcon\232.png
+WildStyle,Druid,Wild Style,狂野变身,"The first time you shapeshift each turn, gain an extra turn.",每个回合你第一次变形时，获得1个额外回合。,"The first time you shapeshift each turn, gain All Stats Up and an extra turn.",每个回合你第一次变形时，所有属性提升，同时获得1个额外回合。,True,235,PassiveIcon/235.png,images\PassiveIcon\235.png
+BuddySystem,Druid,Buddy System,伙伴系统,"When you lose [img:divineshield], your crow gains +1 [img:divineshield]. When your crow loses [img:divineshield], gain +1 [img:divineshield].",你失去[img:divineshield]时，你的乌鸦[img:divineshield]+1。你的乌鸦失去[img:divineshield]时，你[img:divineshield]+1。,"When you lose [img:divineshield], all your familiars gain +1 [img:divineshield]. When your crow loses [img:divineshield], gain +1 [img:divineshield].",你失去[img:divineshield]时，你所有跟班[img:divineshield]+1。你的乌鸦失去[img:divineshield]时，你[img:divineshield]+1。,True,234,PassiveIcon/234.png,images\PassiveIcon\234.png
+FlowerPower,Druid,Flower Power,花的力量,"Units on flower tiles have +2 [img:str] and +2 Brace. When you move, plant flowers on the tile you moved from.",单位站在花格上时，[img:str]+2，【招架】+2。你移动时，离开的地方会长出花来。,"Units on flower tiles have +2 [img:str] and +2 Brace. When you move, plant flowers on all tiles you move through.",单位站在花格上时，[img:str]+2，【招架】+2。你移动时，经过的方格会长出花来。,True,233,PassiveIcon/233.png,images\PassiveIcon\233.png
+SuicideSquad,Druid,Suicide Squad,自杀小队,Your controllable familiars gain Self Destruct as their bonus ability.,你控制的跟班获得奖励能力【自毁】。,Your controllable familiars gain Self Destruct+ as their bonus ability.,你控制的跟班获得奖励能力【自毁+】。,True,238,PassiveIcon/238.png,images\PassiveIcon\238.png
+Feral,Druid,Feral,野性,Your bonus ability is Feral Attack.,你的奖励能力是【野性攻击】。,Your bonus ability is Feral Attack.,你的奖励能力是【野性攻击】。,True,237,PassiveIcon/237.png,images\PassiveIcon\237.png
+RapGod,Druid,Rap God,说唱之神,Your basic action also gives temporary +4 [img:spd].,你的基础行动还会令[img:spd]临时+4。,"Your basic action also gives temporary +4 [img:spd], enemies gain Confusion 2 instead.",你的基础行动还会令[img:spd]临时+4；如果目标是敌人，则改为令其获得2层【混乱】。,True,236,PassiveIcon/236.png,images\PassiveIcon\236.png
+Animalistic,Druid,Animalistic,兽性,"Familiars you spawn gain +2 Damage.
+When you shapeshift, gain +1 Damage.","你召唤的跟班伤害+2。
+你变形时，伤害+1。","Familiars you spawn gain +2 Damage and a Bonus Attack.
+When you shapeshift, gain +1 Damage and refresh your basic attack.","你召唤的跟班伤害+2，同时获得1次奖励攻击。
+你变形时，伤害+1，同时刷新你的普通攻击。",True,241,PassiveIcon/241.png,images\PassiveIcon\241.png
+Maestro,Druid,Maestro,大师,Your musical spells cost 50% less mana.,你音乐法术的魔能耗费减少50%。,"Your musical spells cost 50% less mana.
+When you use a musical spell, heal 1 HP and gain +1 to a random stat.","你音乐法术的魔能耗费减少50%。
+你使用音乐法术时，恢复1点生命，同时随机1项属性+1。",True,240,PassiveIcon/240.png,images\PassiveIcon\240.png
+MegaMinions,Druid,Mega Minions,超级跟班,Every 3rd familiar you spawn is upgraded into a Champion.,3个跟班为一个周期，你每个周期召唤的第3个跟班会是勇士级别。,"The 1st and every 3rd familiar you spawn are upgraded into a Champion.
+[s:.7](The first familiar you spawn is likely your Crow.)[/s]","你召唤的第1个跟班会是勇士级别。此外，3个跟班为一个周期，你每个周期召唤的第3个跟班也会是勇士级别。
+[s:.7]（你召唤的第1个跟班很有可能是你的乌鸦。）[/s]",True,239,PassiveIcon/239.png,images\PassiveIcon\239.png
+BloodLust,Fighter,Frenzy,狂乱,"When you down a unit, gain +2 [img:str].",你击倒单位时，[img:str]+2。,"When you down a unit, gain +2 [img:str] and +2 [img:spd].",你击倒单位时，[img:str]+2，[img:spd]+2。,True,138,PassiveIcon/138.png,images\PassiveIcon\138.png
+Avenger,Fighter,Avenger,复仇,"When an allied cat is downed, gain All Stats Up 2 and heal 8.",友方猫咪倒地时，你所有属性提升2，同时恢复8点生命。,"When an allied cat is downed, gain All Stats Up 2, heal 50% of your max HP, and take an extra turn.",友方猫咪倒地时，你所有属性提升2，同时恢复生命上限50%的生命，然后获得1个额外回合。,True,140,PassiveIcon/140.png,images\PassiveIcon\140.png
+Scars,Fighter,Scars,伤疤,+1 Brace.,【招架】+1。,+3 Brace.,【招架】+3。,True,142,PassiveIcon/142.png,images\PassiveIcon\142.png
+FasterWhenHit,Fighter,Hulk Up,胡克回击,"When you take damage, gain +2 [img:spd].",你受到伤害时，[img:spd]+2。,"When you take damage, gain +2 [img:spd] and +10% dodge. This caps at 50%.",你受到伤害时，[img:spd]+2，闪避几率+10%（最多50%）。,True,139,PassiveIcon/139.png,images\PassiveIcon\139.png
+KillsHeal,Fighter,Fervor,热情,"When you down a unit, you heal 5 HP.",你击倒1个单位时，恢复5点生命。,"When you down a unit, you heal 50% of your HP.",你击倒1个单位时，恢复50%的生命。,True,137,PassiveIcon/137.png,images\PassiveIcon\137.png
+Vengeful,Fighter,Vengeful,记仇,Your basic attack is always critical on enemies that have damaged you.,如果敌方单位伤害过你，那么你对它的普通攻击一定暴击。,"Your basic attack is always critical on enemies units that have damaged you.
+Inflict Marked on units that contact or attack you.","如果敌方单位伤害过你，那么你对它的普通攻击一定暴击。
+如果1个单位攻击或接触过你，那么对它施加【标记】。",True,143,PassiveIcon/143.png,images\PassiveIcon\143.png
+HamsterStyle,Fighter,Hamster Style,仓鼠功,"+1 Health Regeneration.
+Start with 2 Bonus Moves.","生命自然恢复+1。
+每场战斗开始时，自带2次奖励移动。","+2 Health Regeneration.
+Start with 2 Bonus Moves.
+Your basic attack has a chance to attack multiple times.","生命自然恢复+2。
+每场战斗开始时，自带2次奖励移动。
+你的普通攻击有一定几率多次攻击。",True,146,PassiveIcon/146.png,images\PassiveIcon\146.png
+WeaponMaster,Fighter,Weapon Master,武器大师,Your weapon and item abilities deal +2 Damage and get +25% critical chance. A pipe is added to your inventory.,你武器和物品能力的伤害+2、暴击几率+25%。你背包多一根管子。,"Your weapon and item abilities deal +3 Damage and get +50% critical chance.
+If you don't have a weapon, gain a random temporary weapon at the beginning of the battle.","你武器和物品能力的伤害+3、暴击几率+50%。
+如果你没有武器，那么战斗开始时随机获得1件临时武器。",True,141,PassiveIcon/141.png,images\PassiveIcon\141.png
+ShoulderCheck,Fighter,Shoulder Check,路过,"If you're facing a unit after you move, automatically attack it at 33% damage.",你移动后，如果面向1个单位，就自动攻击它一次（33%的伤害）。,"If you're facing a unit after you move, automatically attack the unit.",你移动后，如果面向1个单位，就自动攻击它一次。,True,144,PassiveIcon/144.png,images\PassiveIcon\144.png
+SkullSmash,Fighter,Skullcrack,碎颅,Your basic attack inflicts Bruise.,你的普通攻击会施加【瘀伤】。,Your basic attack inflicts Bruise 2.,你的普通攻击会施加2层【瘀伤】。,True,147,PassiveIcon/147.png,images\PassiveIcon\147.png
+TurtleStyle,Fighter,Turtle Style,龟式,,,+2 Brace,【招架】+2,True,145,PassiveIcon/145.png,images\PassiveIcon\145.png
+Overpowered,Fighter,OVERPOWERED!!!,超模！！！,"Excess damage you deal to units makes them explode, dealing the excess damage to units around it, except for you.",你如果造成溢出伤害，会令目标爆炸，溢出的伤害会施加给目标周围的单位（不包括你）。,"Excess damage you deal to units makes them explode, dealing the excess damage to units within 2 tiles of it, except for you.",你如果造成溢出伤害，会令目标爆炸，溢出的伤害会施加给目标周围2格之内的单位（不包括你）。,True,148,PassiveIcon/148.png,images\PassiveIcon\148.png
+FightMe,Fighter,Underdog,逆风,You have +2 [img:str] and +1 Brace for each enemy adjacent to you.,前后左右每有1个敌方和你相邻，就[img:str]+2，【招架】+1。,You have +3 [img:str] and +2 Brace for each enemy adjacent to you.,前后左右每有1个敌方和你相邻，就[img:str]+3，【招架】+2。,True,149,PassiveIcon/149.png,images\PassiveIcon\149.png
+HighAsYouCanCount,Fighter,Math?,数学？,"Your spells cost 3 mana to cast, but each can be cast only once per turn.",你的法术耗费3点魔能，但每个法术每个回合只能施放1次。,"Your spells cost 0 mana to cast, but each can be cast only once per turn.",你的法术耗费0点魔能，但每个法术每个回合只能施放1次。,True,150,PassiveIcon/150.png,images\PassiveIcon\150.png
+DumbMuscle,Fighter,Dumb Muscle,肌壮无脑,"Lose 1 [img:int] each time you take damage.
+If you have 4 or less [img:int], gain +2 [img:str] and your basic attack inflicts Bruise. at 0 [img:int], gain +100% critical hit chance.","你每次受到伤害时，[img:int]-1。
+如果你的[img:int]小于等于4，那么[img:str]+2，而且普通攻击会施加【瘀伤】。[img:int]为0时，暴击几率+100%。","Lose 2 [img:int] each time you take damage.
+If you have 4 or less [img:int], gain +2 [img:str] and your basic attack inflicts Bruise. At 0 [img:int], gain +100% critical hit chance. At -10 [img:int], you can use your basic move and attack an additional time each turn.","你每次受到伤害时，[img:int]-2。
+如果你的[img:int]小于等于4，那么[img:str]+2，而且普通攻击会施加【瘀伤】。[img:int]为0时，暴击几率+100%。[img:int]为-10时，你每个回合可以额外使用1次基础移动和1次攻击。",True,151,PassiveIcon/151.png,images\PassiveIcon\151.png
+ThickSkull,Fighter,Thick Skull,榆木脑袋,"All injuries you get are Concussions.
+You get +3 [img:shield] for each concussion you have. This caps at 30 [img:shield].","你获得的所有伤残都会变成脑震荡。
+你每有1个脑震荡，就[img:shield]+3（[img:shield]最多30）。","All injuries you get are Concussions.
+You get +3 [img:shield] and +1 [img:str] for each concussion you have. This caps at 30 [img:shield] and 10 [img:str].","你获得的所有伤残都会变成脑震荡。
+你每有1个脑震荡，就[img:shield]+3、[img:str]+1（[img:shield]最多30，[img:str]最多10）。",True,152,PassiveIcon/152.png,images\PassiveIcon\152.png
+MostValuableCat,Fighter,Most Valuable Cat,最有价值猫咪,"When you or an ally downs another unit, they become the Alpha.
+If you're the Alpha, take an extra turn at the end of each round.","你或友方击倒单位，就会成为头猫。
+如果你是头猫，那么每轮结束时获得1个额外回合。","You start the battle as the Alpha.
+Whenever you or an ally downs another unit, they become the Alpha.
+If you're the Alpha, take an extra turn at the end of each round.","你战斗开场是头猫。
+每当你或友方击倒单位，就会成为头猫。
+如果你是头猫，那么每轮结束时获得1个额外回合。",True,155,PassiveIcon/155.png,images\PassiveIcon\155.png
+RatStyle,Fighter,Rat Style,老鼠功,+10% dodge chance.,闪避几率+10%。,+30% dodge chance.,闪避几率+30%。,True,154,PassiveIcon/154.png,images\PassiveIcon\154.png
+Boned,Fighter,Boned,有骨气,"When you kill a unit, if you don't have a weapon, gain a Bone Club.",你击杀单位时，如果没有武器，那么获得1根骨头棒。,"When you kill a unit, if you don't have a weapon, gain a Bone Club.
+Bonus Ability: Throw Weapon.","你击杀单位时，如果没有武器，那么获得1根骨头棒。
+奖励能力：投掷武器。",True,153,PassiveIcon/153.png,images\PassiveIcon\153.png
+DualWield,Fighter,Dual Wield,武器双持,"When you use your weapon, automatically use it again for free.",你使用武器时，会免费自动再用1次。,"When you use your weapon, automatically use it again for free, and then again! for free!",你使用武器时，会免费自动再用1次，然后再用1次！免费！,True,158,PassiveIcon/158.png,images\PassiveIcon\158.png
+ReflexPunch,Fighter,Patellar Reflex,膝跳反射,"When a unit damages you, counter-attack dealing 1 damage and inflicting Bruise.",有单位伤害你时，反击，造成1点伤害，同时施加【瘀伤】。,"When a unit damages you, counter-attack with your basic attack and inflict Bruise.",有单位伤害你时，用普通攻击反击，同时施加【瘀伤】。,True,157,PassiveIcon/157.png,images\PassiveIcon\157.png
+HitMe,Fighter,Hit Me,打我！,"When you take damage from an ally, basic attack in the direction you're facing.
+Damage you take from allies is reduced to 1.","你受到友方的伤害时，向你面朝的方向普通攻击1次。
+你受到的友方伤害降为1。","When you take damage from an ally, basic attack in the direction you're facing.
+Damage you take from allies is reduced to 1.
+Whenever you take damage, gain +1 to a random stat.","你受到友方的伤害时，向你面朝的方向普通攻击1次。
+你受到的友方伤害降为1。
+你每次受到伤害时，随机1项属性+1。",True,156,PassiveIcon/156.png,images\PassiveIcon\156.png
+Smash,Fighter,Smash!,我砸！,"Your weapons deal triple damage, but they always break when you use them.
+Three Sticks are added to your inventory.","你武器的伤害增大2倍，但只要使用就会损坏。
+你背包里会多3根树枝。","Your weapons deal triple damage, but they have a 50% chance to break when you use them.
+Three more Sticks are added to your inventory.","你武器的伤害增大2倍，但使用时有50%的几率损坏。
+你背包里会多3根树枝。",True,161,PassiveIcon/161.png,images\PassiveIcon\161.png
+PunchFace,Fighter,Punch Face,打脸,Your basic attacks are critical if they hit the front of a unit.,你的普通攻击如果命中单位正面，就一定暴击。,Your physical attacks are critical if they hit the front of a unit.,你的物理攻击如果命中单位正面，就一定暴击。,True,159,PassiveIcon/159.png,images\PassiveIcon\159.png
+Recoil,Fighter,Merciless,无情,"When you deal 10 or more damage in a single hit, gain +2 [img:shield] and refresh your movement action.
+[s:.7](This doesn't trigger during your movement action.)[/s]","你单次伤害不低于10点时，[img:shield]+2，同时你的移动行动刷新。
+[s:.7]（在你移动行动期间不会触发）[/s]","When you deal 10 or more damage in a single hit, gain +2 [img:shield], All Stats Up, and refresh your movement action.
+[s:.7](This doesn't trigger during your movement action.)[/s]","你单次伤害不低于10点时，[img:shield]+2，所有属性提升，同时你的移动行动刷新。
+[s:.7]（在你移动行动期间不会触发）[/s]",True,162,PassiveIcon/162.png,images\PassiveIcon\162.png
+TakeAim,Hunter,Take Aim,瞄准,Gain +1 range and damage at the start of each turn. You lose this when you move.,每个回合开始时，范围和伤害各+1。你一移动就会失去这个效果。,Gain +2 range and damage at the start of each turn. You lose this when you move.,每个回合开始时，范围和伤害各+2。你一移动就会失去这个效果。,True,15,PassiveIcon/15.png,images\PassiveIcon\15.png
+TowerDefense,Hunter,Tower Defense,塔防,"When an enemy comes within range, shoot them for 1 damage.",敌人停在你的范围之内时，对它射击，造成1点伤害。,"When an enemy comes within range, use your basic attack on them.",敌人停在你的范围之内时，对它使用普通攻击。,True,2,PassiveIcon/2.png,images\PassiveIcon\2.png
+HuntersBoon,Hunter,Hunter's Boon,猎手恩赐,"The first time you kill a unit each turn, gain 5 mana.",每个回合你第一次击杀单位时，获得5点魔能。,"The first time you kill a unit each turn, restore all your mana.",每个回合你第一次击杀单位时，魔能回满。,True,6,PassiveIcon/6.png,images\PassiveIcon\6.png
+BroodMother,Hunter,Brood Mother,育母,Your familiars and units you charm gain +2 Damage and +5 HP.,你的跟班和你【洗脑】的单位伤害+2、生命+5。,"Your familiars and units you charm gain +3 Damage, +10 HP, and inflict Poison.",你的跟班和你【洗脑】的单位伤害+3、生命+10，而且会施加【中毒】。,True,4,PassiveIcon/4.png,images\PassiveIcon\4.png
+TaintedMother,Hunter,Tainted Mother,腐化之母,Your familiars and units you charm gain +4 [img:spd] and inflict Poison and Bleed.,你的跟班和你【洗脑】的单位[img:spd]+4，而且会施加【中毒】和【出血】。,"Your familiars and units you charm gain +4 [img:spd] and inflict Poison and Bleed.
+Start each battle with 4 fly familiars.","你的跟班和你【洗脑】的单位[img:spd]+4，而且会施加【中毒】和【出血】。
+每场战斗开始时，自带4个苍蝇跟班。",True,11,PassiveIcon/11.png,images\PassiveIcon\11.png
+Quiver,Hunter,Quiver,箭袋,Save unused basic attacks for future turns.,没有使用的普通攻击可以留到以后的回合使用。,"Save unused basic attacks for future turns.
+If you haven't attacked this battle, the number you save is doubled.","没有使用的普通攻击可以留到以后的回合使用。
+如果这场战斗你还没攻击，你留下的普通攻击次数增加1倍。",True,13,PassiveIcon/13.png,images\PassiveIcon\13.png
+SplitShot,Hunter,Split Shot,分裂箭,Your basic attack has +1 area but deals 50% less damage.,你普通攻击的区域+1，但伤害降低50%。,Your basic attack has +2 area but deals 50% less damage.,你普通攻击的区域+2，但伤害降低50%。,True,12,PassiveIcon/12.png,images\PassiveIcon\12.png
+Hazardous,Hunter,Hazardous,危险环境,Tile damage and effects are doubled.,方格伤害和方格效果增强1倍。,"Tile damage and effects are doubled.
+Allies are immune to tile damage and effects.","方格伤害和方格效果增强1倍。
+友方免疫方格伤害和方格效果。",True,14,PassiveIcon/14.png,images\PassiveIcon\14.png
+ThornArrows,Hunter,Thorn Arrows,尖刺箭,Your basic attack spawns brambles.,你的普通攻击会生成灌木。,Your basic attack spawns brambles in an area.,你的普通攻击会在1片区域生成灌木。,True,9,PassiveIcon/9.png,images\PassiveIcon\9.png
+Traps,Hunter,Traps,夹子,"Your basic attack spawns a bear trap if you shoot an empty tile.
+Whenever one of your traps triggers, gain +2 [img:dex].","如果你向空格进行普通攻击，那么生成1个捕兽夹。
+每当你的夹子触发，就[img:dex]+2。","Your basic attack spawns a bear trap if you shoot an empty tile.
+Whenever one of your traps triggers, gain +2 [img:dex] and +1 Bonus Attack.","如果你向空格进行普通攻击，那么生成1个捕兽夹。
+每当你的夹子触发，就[img:dex]+2、奖励攻击+1。",True,8,PassiveIcon/8.png,images\PassiveIcon\8.png
+CatchProjectiles,Hunter,Catch Projectiles,接球手,"33% chance to block enemy projectiles and a 100% chance to block allied projectiles. If you block a projectile, gain +1 Bonus Attack.",有33%的几率格挡敌方的投射物，有100%的几率格挡友方的投射物。每当你挡住投射物，就奖励攻击+1。,"50% chance to block enemy projectiles and a 100% chance to block allied projectiles. If you block a projectile, gain +1 Bonus Attack and +1 All Stats Up.",有50%的几率格挡敌方的投射物，且100%的几率格挡友方的投射物。每当你挡住投射物，就奖励攻击+1，而且所有属性+1。,True,10,PassiveIcon/10.png,images\PassiveIcon\10.png
+TrickyTraps,Hunter,Tricky Traps,阴险夹子,Damage and effects from your traps are doubled.,你夹子的伤害和效果增强1倍。,"Damage and effects from your traps are doubled.
+Allies don't trigger your traps.","你夹子的伤害和效果增强1倍。
+友方不会触发你的夹子。",True,16,PassiveIcon/16.png,images\PassiveIcon\16.png
+GravityFalls,Hunter,Gravity Falls,重力加持,Your basic attack deals +1 damage for each tile you shoot beyond range 3.,如果你普通攻击的箭飞到3格之外，那么每超出1格，伤害+1。,"+2 range.
+Your basic attack deals +1 damage for each tile you shoot beyond range 3.","范围+2。
+如果你普通攻击的箭飞到3格之外，那么每超出1格，伤害+1。",True,17,PassiveIcon/17.png,images\PassiveIcon\17.png
+HawkEye,Hunter,Bullseye,正中靶心,"Your ranged attacks never miss.
++25% critical hit chance.","你的远程攻击不会落空。
+暴击几率+25%。","Your ranged attacks never miss.
++25% critical hit chance.
+Gain +1 [img:lck] each time you make a critical hit.","你的远程攻击不会落空。
+暴击几率+25%。
+每当你暴击，[img:lck]+1。",True,18,PassiveIcon/18.png,images\PassiveIcon\18.png
+Spotters,Hunter,Spotters,点位支援,Your basic attack can target tiles adjacent to allies.,你的普通攻击可以瞄准友方前后左右相邻的方格。,Your basic attack and spells can target tiles adjacent to allies.,你的普通攻击和法术可以瞄准友方前后左右相邻的方格。,True,19,PassiveIcon/19.png,images\PassiveIcon\19.png
+LuckSwing,Hunter,Luck Swing,赌一棒,+50% critical hit chance but +25% chance to miss.,暴击几率+50%，但有25%的几率落空。,+50% critical hit chance but +25% chance to miss.,暴击几率+50%，但有25%的几率落空。,True,20,PassiveIcon/20.png,images\PassiveIcon\20.png
+Host,Hunter,Host,宿主,Start each battle with 2 tiny spider familiars. A spider egg parasite is added to your inventory. You can unequip parasites freely.,每场战斗开始时，自带2个小小蜘蛛跟班。背包会多1个寄生体“蜘蛛卵”。寄生体可以自由取下。,Start each battle with 2 tiny spider familiars. A spider webber parasite is added to your inventory. You can unequip parasites freely.,每场战斗开始时，自带2个小小蜘蛛跟班。背包会多1个寄生体“织网蛛”。寄生体可以自由取下。,True,23,PassiveIcon/23.png,images\PassiveIcon\23.png
+Sniper,Hunter,Sniper,狙击手,Critical hits deal +100% more damage and have a 25% chance to inflict Stun.,暴击伤害+100%，有25%的几率施加【眩晕】。,Critical hits deal +200% more damage and have a 33% chance to inflict Stun.,暴击伤害+200%，有33%的几率施加【眩晕】。,True,22,PassiveIcon/22.png,images\PassiveIcon\22.png
+RubberArrows,Hunter,Rubber Arrows,橡胶箭,Your projectiles bounce to another enemy within 3 tiles.,你的投射物命中之后会弹到3格之内另一个敌人身上。,"Your projectiles bounce to another enemy within 4 tiles, twice!",你的投射物命中之后会弹到4格之内另一个敌人身上，会弹2次！,True,21,PassiveIcon/21.png,images\PassiveIcon\21.png
+TalkToAnimals,Hunter,Talk to Animals,动物交谈,Your basic attack inflicts Charm 5 the first time you use it each battle.,你每场战斗第一次普通攻击会施加5层【洗脑】。,"Your basic attack inflicts Charm 5 the first time you use it each battle.
+Your basic attack has a 25% chance to inflict Charm 1.","你每场战斗第一次普通攻击会施加5层【洗脑】。
+你的普通攻击有25%的几率施加1层【洗脑】。",True,26,PassiveIcon/26.png,images\PassiveIcon\26.png
+AnimalControl,Hunter,Animal Control,动物控制,Your basic attack causes units to immediately attack an enemy in range.,你的普通攻击会令单位立刻攻击它范围内的1个敌人。,Your basic attack causes units to immediately attack an enemy in range. Your basic attack can heal allies.,你的普通攻击会令单位立刻攻击它范围内的1个敌人。你的普通攻击可以治疗友方。,True,25,PassiveIcon/25.png,images\PassiveIcon\25.png
+SleepDarts,Hunter,Sleep Darts,麻醉飞镖,"At the start of each battle, you and all allies that don't have weapons gains a temporary Sleep Dart.",每场战斗开始时，你和没有武器的友方都会获得一支临时的麻醉飞镖。,"At the start of each battle, you and all allies that don't have weapons gains a temporary Sleep Dart with 2 uses.",每场战斗开始时，你和没有武器的友方都会获得一支临时麻醉飞镖（可以用2次）。,True,24,PassiveIcon/24.png,images\PassiveIcon\24.png
+Survivalist,Hunter,Survivalist,求生高手,"6 healing consumables and a full water bottle are added to your inventory.
+You can use consumables on allies.
+Store +2 food at the end of each battle.","背包增加6份治疗消耗品和满满1瓶水。
+你可以对友方使用消耗品。
+每场战斗结束时，食物+2。","4 large healing consumables are added to your inventory.
+You can use consumables on allies.
+Store +20 food at the end of each battle.","背包增加4大份治疗消耗品。
+你可以对友方使用消耗品。
+每场战斗结束时，食物+20。",True,29,PassiveIcon/29.png,images\PassiveIcon\29.png
+Fleabag,Hunter,Fleabag,邋遢,"At the end of your turn, spawn Flea familiars equal to the number of enemies you've killed this battle.",你的回合结束时，生成跳蚤跟班，数量等于自身这场战斗击杀的敌人。,"At the end of your turn, spawn Flea familiars equal to the number of enemies you've killed this battle plus two.",你的回合结束时，生成跳蚤跟班，数量等于自身这场战斗击杀的敌人+2。,True,28,PassiveIcon/28.png,images\PassiveIcon\28.png
+ThrillOfTheHunt,Hunter,Thrill of the Hunt,狩猎快感,"At the end of each battle, if you killed at least 3 enemies, gain +1 [img:dex] permanently and find a random consumable item.",每场战斗结束时，如果你击杀了至少3个敌人，那么[img:dex]永久+1，同时随机获得1个消耗品。,"At the end of each battle, if you killed at least 3 enemies, gain +1 [img:dex] permanently and find a random consumable item. +1 Range and +1 Health Regeneration for every 5 [img:dex] you have.",每场战斗结束时，如果你击杀了至少3个敌人，那么[img:dex]永久+1，同时随机获得1个消耗品。你每有5点[img:dex]，就范围+1，生命自然恢复+1。,True,27,PassiveIcon/27.png,images\PassiveIcon\27.png
+SuperLuck,Jester,Super Luck,超幸运,,,,,True,322,PassiveIcon/322.png,images\PassiveIcon\322.png
+Goofball,Jester,Goofball,活宝,Take an extra turn at the start of each round.,每轮开始时，获得1个额外回合。,Take 2 extra turns at the start of each round.,每轮开始时，获得2个额外回合。,True,323,PassiveIcon/323.png,images\PassiveIcon\323.png
+Micronaps,Mage,Synthesize,合成,Gain +1 [img:int] at the start of each turn.,每个回合开始时，[img:int]+1。,"Gain +1 [img:int] at the start of each turn.
+Your spells cost 25% less mana.","每个回合开始时，[img:int]+1。
+你法术的魔能耗费减少25%。",True,85,PassiveIcon/85.png,images\PassiveIcon\85.png
+HolyMantel,Mage,Force Field,力场,"At the start of every third turn, gain +1 [img:divineshield].",3个回合一个周期，每个周期第3个回合开始时，[img:divineshield]+1。,"At the start of every other turn, gain +1 [img:divineshield].",每隔一个回合，回合开始时，[img:divineshield]+1。,True,86,PassiveIcon/86.png,images\PassiveIcon\86.png
+Shrapnel,Mage,Splash Damage,溅射伤害,Your basic attack deals 2 Magic splash damage.,你的普通攻击会造成2点魔法溅射伤害。,+2 Range. Your basic attack deals 2 Magic splash damage in a wide area. ,范围+2。你的普通攻击会在1大片区域内造成2点魔法溅射伤害。,True,87,PassiveIcon/87.png,images\PassiveIcon\87.png
+BurningPaws,Mage,Burning Paws,烈焰爪,Your basic action inflicts Burn 2.,你的基础行动会施加2层【灼烧】。,Your basic action inflicts Burn 5.,你的基础行动会施加5层【灼烧】。,True,88,PassiveIcon/88.png,images\PassiveIcon\88.png
+LightningPaws,Mage,Lightning Paws,闪电爪,Your basic attack deals +2 Electric Damage and has a 15% chance to Stun.,你普通攻击的电系伤害+2，同时有15%的几率施加【眩晕】。,Your basic attack deals +4 Electric Damage and has a 40% chance to Stun.,你普通攻击的电系伤害+4，同时有40%的几率施加【眩晕】。,True,89,PassiveIcon/89.png,images\PassiveIcon\89.png
+IcePaws,Mage,Ice Paws,寒冰爪,"Your basic attack deals Ice Damage, inflicts Slow 2, and has a 20% chance to Freeze. You can damage frozen units.",你的普通攻击会造成冰冻伤害，施加2层【迟缓】，同时有20%的几率【冻住】目标。你可以对冻住的单位造成伤害。,"Your basic attack deals Ice Damage, inflicts Slow 5, and has a 50% chance to Freeze. You can damage frozen units.",你的普通攻击会造成冰冻伤害，施加5层【迟缓】，同时有50%的几率【冻住】目标。你可以对冻住的单位造成伤害。,True,90,PassiveIcon/90.png,images\PassiveIcon\90.png
+PawMissile,Mage,Paw Missile,猫爪飞弹,"Your basic attack is Magic Missile.
+(its damage scales with [img:int]).","你的普通攻击变成【魔法飞弹】。
+（伤害随[img:int]变化）","Your basic attack is Magic Missile.
+(its damage scales with [img:int]).
+Emit 4 Sparkles when you use your basic attack.","你的普通攻击变成【魔法飞弹】。
+（伤害随[img:int]变化）
+你使用普通攻击时，会发出4道【闪光】。",True,95,PassiveIcon/95.png,images\PassiveIcon\95.png
+Overload,Mage,Overload,过载,"When you cast a spell, deal 3 random elemental damage to adjacent tiles.",你施放法术时，对前后左右相邻的方格造成3点伤害，元素随机。,"When you cast a spell, deal 6 tri-elemental damage to adjacent tiles.",你施放法术时，对前后左右相邻的方格造成6点三元素伤害。,True,91,PassiveIcon/91.png,images\PassiveIcon\91.png
+ChargeUp,Mage,Charge Up,积蓄,"If you end your turn with 0 mana, the next spell you cast is free",你的回合结束时，如果你的魔能是0，那么下一次施放的法术不耗费魔能,"If you end your turn with 0 mana, gain +1 Magic Damage and the next spell you cast is free.",你的回合结束时，如果你的魔能是0，那么魔法伤害+1，而且下一次施放的法术不耗费魔能,True,93,PassiveIcon/93.png,images\PassiveIcon\93.png
+DeathChill,Mage,Death Chill,死亡寒意,"When downed, Freeze all enemies and the rest of the map. ",倒地时，【冻住】所有敌人和地图其他区域。,"When downed, Freeze all enemies and the rest of the map, and full heal all allies. ",倒地时，【冻住】所有敌人和地图上其他区域，同时令友方全体生命回满。,True,,,
+Recharged,Mage,Epiphany,顿悟,"+5 starting mana. +5 Mana Regeneration.
+Lose all unspent mana at the end of each of your turns","开场魔能+5，魔能自然恢复+5。
+每当你的回合结束，就失去剩余所有魔能","+20 starting mana. +5 Mana Regeneration.
+Lose all unspent mana at the end of each of your turns","开场魔能+20，魔能自然恢复+5。
+每当你的回合结束，就失去剩余所有魔能",True,92,PassiveIcon/92.png,images\PassiveIcon\92.png
+EnergyStorm,Mage,Three,叁,Every 3rd spell you cast in a turn is cast twice.,一个回合之内，3个法术为一个周期，每个周期的第3个法术施放两次,The first spell and every 3rd spell you cast is cast twice.,第1个法术施放两次。另外，3个法术为一个周期，每个周期第3个法术施放两次,True,94,PassiveIcon/94.png,images\PassiveIcon\94.png
+FireArmor,Mage,Fire Aspect,火焰附加,"Fire immunity.
+Inflict Burn 1 on units that contact you.
+Your Fire element damage is increased by 1 and inflicts +1 Burn.","免疫火烧。
+接触你的单位会获得1层【灼烧】。
+你造成的火系伤害+1，同时额外施加1层【灼烧】","Fire immunity.
+Inflict Burn 3 on units that contact you.
+Your Fire element damage is increased by 2 and inflicts +3 Burn.","免疫火烧。
+接触你的单位会获得3层【灼烧】。
+你造成的火系伤害+2，同时额外施加3层【灼烧】",True,96,PassiveIcon/96.png,images\PassiveIcon\96.png
+IceArmor,Mage,Ice Aspect,冰霜附加,"Ice immunity. You can damage frozen units.
+Units that contact you take 1 Ice Damage, Slow 2, and have a 5% chance to Freeze.","免疫冰冻。你可以伤害【冻住】的单位。
+接触你的单位受到1点冰冻伤害，获得2层【迟缓】，同时有5%的几率被【冻住】","+2 Brace. Ice immunity. You can damage frozen units.
+Units that contact you take 3 Ice Damage, Slow 2, and have a 15% chance to Freeze.","【招架】+2。免疫冰冻。你可以伤害【冻住】的单位。
+接触你的单位受到3点冰冻伤害，获得2层【迟缓】，同时有15%的几率被【冻住】",True,97,PassiveIcon/97.png,images\PassiveIcon\97.png
+Resonance,Mage,Resonance,共鸣,When you cast a spell gain +1 Magic Damage for the rest of the turn.,施放法术之后，这个回合魔法伤害+1,When you cast a spell gain +1 Magic Damage and +1 Damage for the rest of the turn.,施放法术之后，这个回合魔法伤害+1、伤害+1,True,98,PassiveIcon/98.png,images\PassiveIcon\98.png
+LearnFromMe,Mage,Learn From Me,向我学习,"When you cast a spell, all allied cats gain that spell in their bonus slot.",你施放法术时，这个法术会进入所有友方猫咪的奖励栏位。,"When you cast a spell, all allied cats gain the upgraded version of that spell in their bonus slot.",你施放法术时，这个法术的强化版会进入所有友方猫咪的奖励栏位。,True,99,PassiveIcon/99.png,images\PassiveIcon\99.png
+LightningArmor,Mage,Lightning Aspect,雷电附加,"Electric immunity.
+When you deal Electric Damage, gain +1 Charge.","免疫电击。
+造成电系伤害时，【蓄能】+1。","Electric immunity.
+When you deal Electric Damage, gain +1 Charge for each point of damage dealt.","免疫电击。
+造成电系伤害时，每造成1点伤害，【蓄能】就+1。",True,100,PassiveIcon/100.png,images\PassiveIcon\100.png
+LongCast,Mage,Long Cast,远距离施法,Tile-targeted spells gain +5 Range.,以方格为目标的法术范围+5。,+2 Magic Damage. Tile-targeted spells gain +10 Range.,魔法伤害+2。以方格为目标的法术范围+10。,True,103,PassiveIcon/103.png,images\PassiveIcon\103.png
+LightUpTheStage,Mage,Light Up the Stage,照亮舞台,"At the end of your turn, emit 2 Sparkles for each turn you've taken.",你的回合结束时，你每行动过1个回合，就放出2道【闪光】。,"At the end of your turn, emit 4 Sparkles for each turn you've taken and gain +1 Kinetic Spikes . ",你的回合结束时，【动能尖刺】+1，而且你每行动过1个回合，就放出4道【闪光】。,True,102,PassiveIcon/102.png,images\PassiveIcon\102.png
+ElementalAttunement,Mage,Elemental Attunement,元素调谐,Casting elemental spells imbues your basic attack with those elements and relevant effects for the rest of the battle.,你施放什么元素的法术，你的普通攻击本场战斗期间就会获得什么元素和相应的效果。,"Casting elemental spells imbues your basic attack with those elements and relevant effects for the rest of the battle.
+Elemental spells cost -2 mana.","你施放什么元素的法术，你的普通攻击本场战斗期间就会获得什么元素和相应的效果。
+元素法术的魔能耗费-2。",True,101,PassiveIcon/101.png,images\PassiveIcon\101.png
+LatentEnergy,Mage,Latent Energy,潜能,"When an ally spends mana, Gain +2 Magic Damage until the next time you use magic.",友方耗费魔能时，你在自己下次使用魔法之前魔法伤害+2。,"When an ally spends mana, Gain +2 Magic Damage until the next time you use magic, and gain +2 mana. ",友方耗费魔能时，魔能+2，你在自己下次使用魔法之前魔法伤害+2。,True,106,PassiveIcon/106.png,images\PassiveIcon\106.png
+Five,Mage,Five,伍,"When you end your turn with exactly 5 mana or HP, gain +5 [img:shield] and temporarily gain +5 Kinetic Spikes until the end of your next turn . ",你的回合结束时，如果魔能或生命刚好是5点，那么[img:shield]+5，而且你在下一回合结束之前【动能尖刺】临时+5。,"When you end your turn with exactly 5 mana or HP, gain +5 [img:shield], heal 5 HP and temporarily gain +5 Kinetic Spikes and +5 Damage until the end of your next turn. ",你的回合结束时，如果魔能或生命刚好是5点，那么[img:shield]+5，恢复5点生命，而且你在下一回合结束之前【动能尖刺】临时+5，伤害+5。,True,105,PassiveIcon/105.png,images\PassiveIcon\105.png
+MagicGuru,Mage,Magic Guru,魔法大师,"Your allies have +1 Mana Regeneration. When an ally spends 7+ mana to cast a spell, they gain All Stats Up.",你的友方魔能自然恢复+1。如果友方施放了魔能耗费不低于7的法术，那么它所有属性提升。,"Your allies have +1 Mana Regeneration. When an ally spends 7+ mana to cast a spell, they gain All Stats Up. When you spend mana, each ally gains +1 mana.",你的友方魔能自然恢复+1。如果友方施放了魔能耗费不低于7的法术，那么它所有属性提升。你耗费魔能时，每个友方魔能+1。,True,104,PassiveIcon/104.png,images\PassiveIcon\104.png
+One,Mage,One,壹,"When you end your turn, if you cast exactly 1 spell, double cast your next spell.",你的回合结束时，如果这个回合施放了刚好1个法术，那么下面1个法术会施放2次。,"When you end your turn, if you cast exactly 1 spell, double cast your next 2 spells.",你的回合结束时，如果这个回合施放了刚好1个法术，那么下面2个法术会施放2次。,True,109,PassiveIcon/109.png,images\PassiveIcon\109.png
+Two,Mage,Two,贰,"When you end your turn, if you cast exactly 2 spells, gain +1 Bonus Attack.
+When you end your turn, if you have exactly 2 mana, gain +1 Bonus Attack.","你的回合结束时，如果这个回合施放了刚好2个法术，那么奖励攻击+1。
+你的回合结束时，如果魔能刚好是2点，那么奖励攻击+1。","When you end your turn, if you cast exactly 2 spells, gain +1 Bonus Attack and Movement.
+When you end your turn, if you have exactly 2 mana, gain +1 Bonus Attack and Movement.","你的回合结束时，如果这个回合施放了刚好2个法术，那么奖励攻击和奖励移动分别+1。
+你的回合结束时，如果魔能刚好是2点，那么奖励攻击和奖励移动分别+1。",True,108,PassiveIcon/108.png,images\PassiveIcon\108.png
+Four,Mage,Four,肆,"When you end your turn with exactly 4 mana or HP, gain +1 [img:int] and +1 Magic Damage.",你的回合结束时，如果魔能或生命刚好是4点，那么[img:int]+1、魔法伤害+1,"When you end your turn with exactly 4 mana or HP, gain +1 [img:int], +1 Magic Damage, +1 Kinetic Spikes, and +1 Holy Shield.",你的回合结束时，如果魔能或生命刚好是4点，那么[img:int]+1、魔法伤害+1、【动能尖刺】+1、【圣盾】+1。,True,107,PassiveIcon/107.png,images\PassiveIcon\107.png
+HealingAura,Medic,Healing Aura,治疗光环,"+1 Health Regeneration
+Your Health Regeneration also applies to your allies.","生命自然恢复+1
+你的生命自然恢复也会对友方生效。","+2 Health Regeneration
+Your Health Regeneration also applies to your allies.
+You and your allies have uncapped HP.","生命自然恢复+2
+你的生命自然恢复也会对友方生效。
+你和友方的生命没有上限。",True,111,PassiveIcon/111.png,images\PassiveIcon\111.png
+NaturalHealer,Medic,Natural Healer,疗愈天赋,Your heals heal for 2 extra.,你发起的治疗效果+2。,"Your heals heal for 4 extra.
+Start each battle at full HP.","你发起的治疗效果+4。
+每场战斗开始时满血。",True,114,PassiveIcon/114.png,images\PassiveIcon\114.png
+Eternal,Medic,Eternal,永恒,"When you are downed for the 1st time each battle, take no injuries and revive with half HP.",每场战斗，你第一次倒地不会落下伤残，而且会以半血复活。,"When you are downed for the 1st time each battle, take no injuries and revive with half HP, All Stats Up 2, and immediately take an extra turn.",每场战斗，你第一次倒地不会落下伤残，而且会以半血复活，所有属性提升2，同时立刻获得1个额外回合。,True,112,PassiveIcon/112.png,images\PassiveIcon\112.png
+Blessed,Medic,Blessed,蒙福,Gain +1 to 2 random stats at the start of each turn.,每个回合开始时，随机2项属性分别+1。,+3 Health Regeneration Gain +1 to 3 random stats at the start of each turn.,生命自然恢复+3。每个回合开始时，随机3项属性分别+1。,True,113,PassiveIcon/113.png,images\PassiveIcon\113.png
+EvilPatron,Medic,Evil Patron,邪恶庇护主,"Your healing abilities deal damage to enemies.
+Gain +2 range on tile-targeted healing spells.","你的治疗能力会对敌人造成伤害。
+你以方格为目标的治疗法术范围+2。","Your healing abilities deal damage to enemies.
+Holy element damage you deal is doubled.
+Gain +2 range on tile-targeted healing spells.","你的治疗能力会对敌人造成伤害。
+你造成的神圣系伤害增大1倍。
+你以方格为目标的治疗法术范围+2。",True,115,PassiveIcon/115.png,images\PassiveIcon\115.png
+AngelicInspiration,Medic,Angelic Inspiration,天使启迪,"When you heal an ally, they also gain +2 mana.",你治疗友方时，对方魔能+2。,"When you heal an ally, they also gain mana equal to half the amount healed.",你治疗友方时，对方魔能增加，幅度等于治疗效果的一半。,True,120,PassiveIcon/120.png,images\PassiveIcon\120.png
+TopOff,Medic,Top Off,加满,"When you heal another unit over their max HP, you both gain +1 [img:shield].",你的治疗令另一个单位生命超过上限时，你们双方分别[img:shield]+1。,"When you heal another unit over their max HP, you both gain +2 [img:shield].",你的治疗令另一个单位生命超过上限时，你们双方分别[img:shield]+2。,True,118,PassiveIcon/118.png,images\PassiveIcon\118.png
+SharingIsCaring,Medic,Sharing is Caring,有福同享,"When you pick up a non-coin pickup, allies gain the same effects.",如果你捡起的物品不是钱，友方就获得同样的效果。,"When you pick up a non-coin pickup, allies gain the same effects.
+Start each battle with pickups nearby.","如果你捡起的物品不是钱，友方就获得同样的效果。
+每场战斗开始时，你附近会生成可以捡起的物品。",True,121,PassiveIcon/121.png,images\PassiveIcon\121.png
+Caretaker,Medic,Caretaker,照顾,"When you heal another unit, heal yourself for half that amount.",你治疗其他单位时，也会令自己恢复生命，幅度等于这次治疗效果的一半。,"When you heal another unit, heal yourself for the same amount. ",你治疗其他单位时，也会让自己恢复生命，幅度和这次治疗效果相同。,True,116,PassiveIcon/116.png,images\PassiveIcon\116.png
+MoraleBoost,Medic,Morale Boost,提振士气,Allies gain All Stats Up whenever you kill something.,每当你击杀单位，友方就所有属性提升。,"Allies gain All Stats Up whenever you kill something.
+When you kill something, refresh your basic attack. ","每当你击杀单位，友方就所有属性提升。
+你击杀单位时，你的普通攻击刷新。",True,119,PassiveIcon/119.png,images\PassiveIcon\119.png
+RangedMedic,Medic,Ranged Medic,远程军医,Your basic attack is a ranged lobbed attack that heals allies and damages enemies.,你的普通攻击变成远程抛射攻击，会治疗友方，对敌人造成伤害。,+2 Range. Your basic attack is a ranged lobbed attack that heals allies and damages enemies.,范围+2。你的普通攻击变成远程抛射攻击，会治疗友方，对敌人造成伤害。,True,117,PassiveIcon/117.png,images\PassiveIcon\117.png
+Godspeed,Medic,Godspeed,神速,"When you heal something, gain +2 [img:spd].",你治疗单位时，[img:spd]+2。,"When you heal something, gain +4 [img:spd] and +1 to a random stat.",你治疗单位时，[img:spd]+4，同时随机1项属性+1。,True,122,PassiveIcon/122.png,images\PassiveIcon\122.png
+GodWarrior,Medic,God Warrior,神的战士,"When you kill an enemy, gain +1 [img:divineshield].",你击杀敌人时，[img:divineshield]+1。,"When you kill an enemy, gain +1 [img:divineshield] and refresh your movement action.",你击杀敌人时，[img:divineshield]+1，而且你的移动行动刷新。,True,123,PassiveIcon/123.png,images\PassiveIcon\123.png
+BreathOfLife,Medic,Breath of Life,生命之息,"When you heal a downed unit, revive it. ",你治疗倒地的单位时，令它复活。,"When you heal a downed unit, revive it and heal it for 3 times the number you healed. ",你治疗倒地的单位时，令它复活，同时令它恢复生命，幅度是你治疗效果的3倍。,True,124,PassiveIcon/124.png,images\PassiveIcon\124.png
+ThouShaltNotKill,Medic,Thou Shalt Not Kill,不可杀生,"When an enemy downs another unit, they take 10 holy damage.",敌人击倒其他单位时，它会受到10点神圣伤害。,"When an enemy downs another unit, they take 10 holy damage and become Stunned. ",敌人击倒其他单位时，它会受到10点神圣伤害，同时【眩晕】。,True,125,PassiveIcon/125.png,images\PassiveIcon\125.png
+ThouShaltNotCovet,Medic,Thou Shalt Not Covet,不可贪恋,"When an enemy takes damage from an ability, it drops a random pickup.",敌人受到能力伤害时，它会随机掉落1件可以捡起的物品。,"When an enemy takes damage from an ability, it drops 2 random pickups.",敌人受到能力伤害时，它会随机掉落2件可以捡起的物品。,True,126,PassiveIcon/126.png,images\PassiveIcon\126.png
+BlessingOfHolyFire,Medic,Blessing of Holy Fire,圣火福佑,"Holy-element spells deal double damage to enemies instead of healing and inflict Burn 2. 
+This blessing is lost when you kill a unit.","神圣系法术不会治疗敌人，而是对敌人造成双倍伤害、施加2层【灼烧】。
+你击杀单位时会失去这个福佑。","Holy-element spells deal triple damage to enemies instead of healing and inflict Burn 3. 
+This blessing is lost when you kill a unit.","神圣系法术不再治疗，而是对敌人造成三倍伤害、施加3层【灼烧】。
+你击杀单位时会失去这个福佑。",True,129,PassiveIcon/129.png,images\PassiveIcon\129.png
+AlmsForThePoor,Medic,Alms for the Poor,施舍穷苦,"When you gain coins, all allies heal +1 HP and gain +1 [img:lck].",你获得钱时，所有友方恢复1点生命，而且[img:lck]+1。,"When you gain coins, you gain +1 [img:divineshield] and all allies heal HP and gain [img:lck] equal to the number of coins gained.",你获得钱时，你自己[img:divineshield]+1，同时所有友方恢复生命、[img:lck]提升，幅度都等于本次所获钱的数量。,True,128,PassiveIcon/128.png,images\PassiveIcon\128.png
+Purifier,Medic,Purifier,净化者,Your basic attack removes debuffs from allies.,你的普通攻击会移除友方身上的减益。,Your basic attack removes debuffs from allies and gives them All Stats Up.,你的普通攻击会移除友方身上的减益，同时令他们所有属性提升。,True,127,PassiveIcon/127.png,images\PassiveIcon\127.png
+VeneratedTouch,Medic,Venerated Touch,尊崇之触,Your basic attack inflicts Confusion 2 on enemies and gives +2 [img:shield] to allies.,你的普通攻击会对敌人施加2层【混乱】，同时令友方[img:shield]+2。,Your basic attack inflicts Confusion 3 on enemies and has a 50% chance to Stun. It also gives +3 [img:shield] to allies and a 50% chance for All Stats Up.,你的普通攻击会对敌人施加3层【混乱】，还有50%的几率令它【眩晕】。同时令友方[img:shield]+3，还有50%的几率令所有属性提升。,True,132,PassiveIcon/132.png,images\PassiveIcon\132.png
+ProtectTheWeak,Medic,Protect the Weak,保护弱小,Allies with 5 or fewer HP gain +50% dodge chance.,生命不超过5的友方闪避几率+50%。,Allies with 10 or fewer HP gain +50% dodge chance.,生命不超过10的友方闪避几率+50%。,True,131,PassiveIcon/131.png,images\PassiveIcon\131.png
+ThouShaltObey,Medic,Thou Shalt Obey,不可违抗,"At the end of each round, inflict Charm on a random adjacent enemy.",每轮结束时，随机对前后左右相邻的1个敌人施加【洗脑】。,"At the end of each round, inflict Charm on the closest enemy.",每轮结束时，对距离最近的1个敌人施加【洗脑】。,True,130,PassiveIcon/130.png,images\PassiveIcon\130.png
+EnchantedRelic,Medic,Enchanted Relic,附魔遗物,Your trinket's passive and active effects are doubled.,你小玩意儿的被动效果和主动效果增强1倍。,Your trinket's passive and active effects are tripled.,你小玩意儿的被动效果和主动效果增强2倍。,True,135,PassiveIcon/135.png,images\PassiveIcon\135.png
+BlessingOfSpirit,Medic,Blessing of Spirit,圣灵福佑,"When you end your turn, you and all allies heal 2 HP and gain 2 mana. This blessing is lost when you cast a spell.",你的回合结束时，你和所有友方恢复2点生命和2点魔能。你施放法术会失去这个福佑。,"When you end your turn, you and all allies heal 3 HP, gain 3 mana and gain +1 to 3 random stats. This blessing is lost when you cast a spell.",你的回合结束时，你和所有友方恢复3点生命和3点魔能，随机3项属性+1。你施放法术会失去这个福佑。,True,134,PassiveIcon/134.png,images\PassiveIcon\134.png
+Heathens,Medic,Heathens!,异教徒！,"At the start of the battle, inflict Weakness 3 on all enemies.",战斗开始时，对所有敌人施加3层【虚弱】。,"At the start of the battle, inflict Weakness 4 and Magic Weakness 4 on all enemies.",战斗开始时，对所有敌人施加4层【虚弱】和4层【魔法克制】。,True,133,PassiveIcon/133.png,images\PassiveIcon\133.png
+SafeSwitching,Monk,Safe Switching,安全切换,"When you switch stances, gain +2 [img:shield].",你切换架势时，[img:shield]+2。,"When you switch stances, gain +3 [img:shield] and cleanse one stack of a random debuff.",你切换架势时，[img:shield]+3，同时随机净化1层减益。,True,243,PassiveIcon/243.png,images\PassiveIcon\243.png
+Mixup,Monk,Mixup,择,"When you switch stances, your next basic attack this turn is critical.",你切换架势时，这个回合下1次普通攻击一定暴击。,"When you switch stances, your next basic attack this turn is critical.
+Critical hits you land inflict Confusion 1.","你切换架势时，这个回合下1次普通攻击一定暴击。
+你的暴击会造成1层【混乱】。",True,244,PassiveIcon/244.png,images\PassiveIcon\244.png
+Turnabout,Monk,Turnabout,望身后,Your basic melee attacks inflict Confusion 1 and make units face away from you.,你的基础近身攻击会施加1层【混乱】，同时令目标背对你。,"Your basic melee attacks inflict Confusion 1, make units face away from you, and have a 20% chance to inflict Stun 1.",你的基础近身攻击会施加1层【混乱】，令目标背对你，还有20%的几率施加1层【眩晕】。,True,245,PassiveIcon/245.png,images\PassiveIcon\245.png
+MonkeyStyle,Monk,Monkey Style,猴拳,15% chance to block damage and counter-attack.,有15%的几率格挡伤害，同时反击。,33% chance to block damage and counter-attack.,有33%的几率格挡伤害，同时反击。,True,246,PassiveIcon/246.png,images\PassiveIcon\246.png
+BrickSkin,Monk,Brick Skin,皮糙肉厚,Any [img:shield] you gain is increased by 2.,每当你获得[img:shield]，[img:shield]额外+2。,"Any [img:shield] you gain is increased by 2.
+",每当你获得[img:shield]，[img:shield]额外+2。,True,247,PassiveIcon/247.png,images\PassiveIcon\247.png
+JaggedEdges,Monk,Jagged Edges,锯齿边缘,"When you lose [img:shield], gain +1 Thorns.",你失去[img:shield]时，【尖刺】+1。,"When you lose [img:shield], gain that many Thorns.",你失去[img:shield]时，失去多少，就获得多少【尖刺】。,True,248,PassiveIcon/248.png,images\PassiveIcon\248.png
+MindBreaker,Monk,Mind Breaker,智灭,Your basic attack inflicts Magic Weakness 1.,你的普通攻击会施加1层【魔法克制】。,Your basic attack inflicts Magic Weakness 2.,你的普通攻击会施加2层【魔法克制】。,True,249,PassiveIcon/249.png,images\PassiveIcon\249.png
+CobraStyle,Monk,Cobra Style,蛇式,"When an enemy moves into an adjacent tile, perform a weak melee attack on it.",敌人移动到前后左右相邻的方格时，对它进行1次较弱的近身攻击。,"When an enemy moves into an adjacent tile, perform a weak melee attack on it, twice!",敌人移动到前后左右相邻的方格时，对它进行2次较弱的近身攻击。,True,250,PassiveIcon/250.png,images\PassiveIcon\250.png
+Tenderize,Monk,Tenderize,敲肉,Your basic melee attacks inflict Bruise 1.,你的基础近身攻击会施加1层【瘀伤】。,Your basic melee attacks inflict Bruise 1 and have a 15% chance to inflict Stun 1.,你的基础近身攻击会施加1层【瘀伤】，同时有15%的几率施加1层【眩晕】。,True,251,PassiveIcon/251.png,images\PassiveIcon\251.png
+LongArms,Monk,Long Arms,通臂,+1 Range and +1 Reach.,范围+1，近身距离+1。,+1 Range and +1 Reach.,范围+1，近身距离+1。,True,252,PassiveIcon/252.png,images\PassiveIcon\252.png
+SpreadThePain,Monk,Spread the Pain,传播痛苦,Deal 2 extra damage the first time you damage each unit each turn.,每个回合对1个单位第一次造成伤害时，伤害额外+2。,Deal 2 extra damage with 100% crit chance the first time you damage each unit each turn.,每个回合对1个单位第一次造成伤害时，伤害额外+2，而且暴击几率100%。,True,253,PassiveIcon/253.png,images\PassiveIcon\253.png
+Harden,Monk,Harden,变硬,"When you gain [img:shield], also gain temporary Brace 1.",你获得[img:shield]时，同时获得1层临时【招架】。,"When you gain [img:shield], also gain temporary Brace 1.
+Gain +1 [img:shield] when you hit a unit with your basic attack.","你获得[img:shield]时，同时获得1层临时【招架】。
+你的普通攻击命中单位时，[img:shield]+1。",True,254,PassiveIcon/254.png,images\PassiveIcon\254.png
+IronSkin,Monk,Iron Skin Technique,铁布衫,Gain +2 [img:shield] when you land a critical hit. +10% critical chance.,你造成暴击时，[img:shield]+2。暴击几率+10%。,Gain +3 [img:shield] when you land a critical hit. +25% critical chance.,你造成暴击时，[img:shield]+3。暴击几率+25%。,True,255,PassiveIcon/255.png,images\PassiveIcon\255.png
+JetFists,Monk,Jet Fists,拳风,Your melee attacks and abilities blow wind through the tiles they hit.,你的近身攻击和能力会掀起一阵风，刮过命中的方格。,Your melee attacks and abilities blow wind through the tiles they hit in a large cone.,你的近身攻击和能力会掀起一阵风，刮过命中的大片扇形区域。,True,256,PassiveIcon/256.png,images\PassiveIcon\256.png
+EnergyFists,Monk,Energy Fists,气拳,Emit a Sparkle when you use your basic attack.,你使用普通攻击时，会发出1道【闪光】。,Emit two Sparkles when you use your basic attack.,你使用普通攻击时，会发出2道【闪光】。,True,257,PassiveIcon/257.png,images\PassiveIcon\257.png
+Unstoppable,Monk,Unstoppable!,势不可挡！,"You're immune to knockback, Stun, Slow, and other mobility debuffs.",免疫击退、【眩晕】、【迟缓】等移动减益。,You're immune to knockback and debuffs.,免疫击退和减益。,True,258,PassiveIcon/258.png,images\PassiveIcon\258.png
+UnburdenedMotion,Monk,Unburdened Motion,行无碍,"+1 [img:spd] and +10% dodge chance for each empty armor slot. If all of your armor slots are empty, you can use your movement action an extra time.",每有1个防具栏位空着，就[img:spd]+1，闪避几率+10%。如果所有防具栏位都空着，那么你就可以额外移动1次。,"+2 [img:spd] and +15% dodge chance for each empty armor slot. If all of your armor slots are empty, you gain flying and can use your movement action an extra time.",每有1个防具栏位空着，就[img:spd]+2，闪避几率+15%。如果所有防具栏位都空着，那么你会飞行，而且可以额外移动1次。,True,261,PassiveIcon/261.png,images\PassiveIcon\261.png
+UnburdenedStrikes,Monk,Unburdened Strikes,身无累,"+10% critical hit chance and +25% critical hit damage for each empty armor slot. If all of your armor slots are empty, counter-attack whenever you get hit.",每有1个防具栏位空着，就暴击几率+10%，暴击伤害+25%。如果所有防具栏位都空着，那么你只要被打到就会反击。,"+10% critical hit chance and +25% critical hit damage for each empty armor slot. If all of your armor slots are empty your critical hits inflict bruise, and counter-attack whenever you get hit.",每有1个防具栏位空着，就暴击几率+10%，暴击伤害+25%。如果完全没有装备防具，那么你的暴击会施加【瘀伤】，而且你只要被打到就会反击。,True,260,PassiveIcon/260.png,images\PassiveIcon\260.png
+UnburdenedThoughts,Monk,Unburdened Thoughts,心无羁,"+1 [img:int] and +1 [img:cha] for each empty armor slot. If all of your armor slots are empty, your spells cost 1 less mana.",每有1个防具栏位空着，就[img:int]+1，[img:cha]+1。如果所有防具栏位都空着，那么你法术的魔能耗费-1。,"+1 [img:int], +1 [img:cha], and +1 Kinetic Spikes for each empty armor slot. If all of your armor slots are empty, you have +2 Magic Damage and your spells cost 1 less mana.",每有1个防具栏位空着，就[img:int]+1，[img:cha]+1，【动能尖刺】+1。如果所有防具栏位都空着，那么你的魔法伤害+2，法术的魔能耗费-1。,True,259,PassiveIcon/259.png,images\PassiveIcon\259.png
+RunningJab,Monk,Running Jab,跑动冲拳,"When you end your movement, automatically use your basic attack if an enemy is in range.",你结束移动时，如果范围内有敌人，会自动进行1次普通攻击。,"When you end your movement, automatically use your basic attack if an enemy is in range. You can move an extra time each turn.",你结束移动时，如果范围内有敌人，会自动进行1次普通攻击。每个回合获得1次奖励移动。,True,264,PassiveIcon/264.png,images\PassiveIcon\264.png
+PerfectTechnique,Monk,Perfect Technique,出神入化,"While in ranged stance, You have +1 Range and +2 Magic Damage. While in melee stance, you have +1 Brace.",远程架势期间，范围+1，魔法伤害+2。近身架势期间，【招架】+1。,"While in ranged stance, You have +1 Range, +2 Kinetic Spikes, and +2 Magic Damage. While in melee stance, you have +2 Brace and +2 Health Regeneration.",远程架势期间，范围+1，【动能尖刺】+2，魔法伤害+2。近身架势期间，【招架】+2，生命自然恢复+2。,True,263,PassiveIcon/263.png,images\PassiveIcon\263.png
+RapidFlow,Monk,Rapid Flow,行云流水,"When you switch stances, do a spin attack that hits all adjacent units.",你切换架势时，会进行1次旋转攻击，命中前后左右相邻的所有单位。,"When you switch stances, do a double spin attack that hits all adjacent units.",你切换架势时，会进行1次双重旋转攻击，命中前后左右相邻的所有单位。,True,262,PassiveIcon/262.png,images\PassiveIcon\262.png
+CounterBarrage,Monk,Counter Barrage,借力打力,"When you take damage from an enemy attack, gain +1 Bonus Attack.",敌人攻击对你造成伤害时，你奖励攻击+1。,"When you take damage from an enemy attack, gain +1 Bonus Attack and +1 Bonus Move.",敌人攻击对你造成伤害时，你奖励攻击+1，奖励移动+1。,True,267,PassiveIcon/267.png,images\PassiveIcon\267.png
+FlowState,Monk,Flow State,心流,"When you deal damage to another unit, gain +1 [img:str] and +2 [img:dex] until the end of the turn.",你对另一个单位造成伤害后，这个回合结束之前，[img:str]+1，[img:dex]+2。,"When you deal damage to another unit, gain +2 [img:str], +2 [img:dex], and +2 [img:lck] until the end of the turn.",你对另一个单位造成伤害后，这个回合结束之前，[img:str]+2，[img:dex]+2，[img:lck]+2。,True,266,PassiveIcon/266.png,images\PassiveIcon\266.png
+DancingLights,Monk,Dancing Lights,舞光术,"When you switch stances, for each empty armor slot, emit a Sparkle. If all slots are empty gain +1 to a random stat.",你切换架势时，每有1个防具栏位空着，就放出1道【闪光】。如果所有防具栏位都空着，那么随机1项属性+1。,"When you switch stances, for each empty armor slot, emit a Sparkle. If all slots are empty gain +1 to a random stat.
+While all armor slots are empty, you have +1 Magic Damage.","你切换架势时，每有1个防具栏位空着，就放出1道【闪光】。如果所有防具栏位都空着，那么随机1项属性+1。
+如果所有防具栏位都空着，那么你的魔法伤害+1。",True,265,PassiveIcon/265.png,images\PassiveIcon\265.png
+Vampirism,Necromancer,Vampirism,吸血猫,Your basic attack has lifesteal.,你的普通攻击带【吸血】。,"Your basic attack has lifesteal.
+Your spells have 50% lifesteal.","你的普通攻击有【吸血】。
+你的法术有50%的【吸血】。",True,165,PassiveIcon/165.png,images\PassiveIcon\165.png
+OneWithNothing,Necromancer,One With Nothing,无何有,"If you end your turn with 0 mana, your Mana Regeneration is doubled.",你的回合结束时，如果你的魔能为0，那么你的魔能自然恢复增加1倍。,"If you end your turn with 0 mana, your Mana Regeneration is doubled.
+Bonus ability: Slit Wrists","你的回合结束时，如果你的魔能为0，那么你的魔能自然恢复增加1倍。
+奖励能力：割腕。",True,166,PassiveIcon/166.png,images\PassiveIcon\166.png
+BedBugs,Necromancer,Bed Bugs,臭虫,You start battles with 2 beefy leech familiars.,战斗开始时，自带2个健壮的水蛭跟班。,You start battles with 4 beefy leech familiars.,战斗开始时，自带4个健壮的水蛭跟班。,True,167,PassiveIcon/167.png,images\PassiveIcon\167.png
+WormLord,Necromancer,Worm Lord,肉虫王,"When you take damage, spawn a leech familiar.",你受到伤害时，生成1个水蛭跟班。,"When you take damage, spawn a leech familiar.
+Your basic attack spawns leech familiars.","你受到伤害时，生成1个水蛭跟班。
+你的普通攻击会生成水蛭跟班。",True,168,PassiveIcon/168.png,images\PassiveIcon\168.png
+InfiniteRebirth,Necromancer,Infinite Rebirth,借尸还魂,"At the end of each round, if there is a body on the map and you're downed, you respawn on that tile with 1 HP and +10 temporary Speed. If that body was a party member, you spawn with full HP instead.",每轮结束时，如果地图上有尸体，而且你处于倒地状态，那么你会在那个方格复活，生命为1，同时速度临时+10。如果那个尸体是队友，那么你改为满血复活。,"At the end of each round, if there is a body on the map and you're downed, you respawn on that tile with 25% HP and +10 temporary Speed. If that body was a party member, you spawn with full HP instead.",每轮结束时，如果地图上有尸体，而且你处于倒地状态，那么你会在那个方格以25%的生命复活，同时速度临时+10。如果那个尸体是队友，那么你改为满血复活。,True,169,PassiveIcon/169.png,images\PassiveIcon\169.png
+SacrificialLamb,Necromancer,Sacrificial Lamb,祭祀羔羊,"When you're downed, allies gain All Stats Up and take an extra turn.",你倒地时，友方所有属性提升，同时获得1个额外回合。,"When you're downed, allies gain All Stats Up and take an extra turn.
+You can't get injuries.","你倒地时，友方所有属性提升，同时获得1个额外回合。
+你不会落下伤残。",True,170,PassiveIcon/170.png,images\PassiveIcon\170.png
+DeathIncarnate,Necromancer,Servus Mortem,死神奴仆,Destroy a random non-boss enemy at the start of each battle.,每场战斗开始时，随机消灭不是头目的1个敌人。,"Destroy a random enemy at the start of each battle. If this hits a boss, deal 50 damage instead.",每场战斗开始时，随机消灭1个敌人。如果对方是头目，那么改为造成50点伤害。,True,171,PassiveIcon/171.png,images\PassiveIcon\171.png
+OffloadPain,Necromancer,Offload Pain,转移疼痛,"When you heal, deal 1 damage to each enemy.",你恢复生命时，对每个敌人造成1点伤害。,"When you heal, deal 2 damage to each enemy and you gain +1 Thorns.",你恢复生命时，对每个敌人造成2点伤害，同时【尖刺】+1。,True,172,PassiveIcon/172.png,images\PassiveIcon\172.png
+CambionConception,Necromancer,Cambion Conception,恶魔受胎,"When you're downed, spawn a demon kitten familiar.",你倒地时，生成1个恶魔小猫跟班。,"When you're downed, spawn 2 demon kitten familiars.",你倒地时，生成2个恶魔小猫跟班。,True,173,PassiveIcon/173.png,images\PassiveIcon\173.png
+Leechmother,Necromancer,Leech Mother,水蛭母体,Your basic attack spawns a leech familiar.,你的普通攻击会生成1个水蛭跟班。,Your basic attack spawns a beefy leech familiar.,你的普通攻击会生成1个健壮的水蛭跟班。,True,174,PassiveIcon/174.png,images\PassiveIcon\174.png
+Infected,Necromancer,Infected,感染,"When you down a unit, reanimate it with 50% HP.",你击倒单位时，会令它以50%的生命复苏。,"When you down a unit, reanimate it with full HP.",你击倒单位时，会令它满血复苏。,True,175,PassiveIcon/175.png,images\PassiveIcon\175.png
+LastGasp,Necromancer,Last Grasp,垂死一搏,"When you're downed, deal 6 damage to each enemy and heal 6 HP to all allies.
+Bonus ability: Seppuku","你倒地时，对每个敌人造成6点伤害，同时令所有友方恢复6点生命。
+奖励能力：切腹","When you're downed, deal 10 damage to each enemy and heal 10 HP to all allies.
+Bonus ability: Seppuku","你倒地时，对每个敌人造成10点伤害，同时令所有友方恢复10点生命。
+奖励能力：切腹",True,176,PassiveIcon/176.png,images\PassiveIcon\176.png
+RelentlessDead,Necromancer,Relentless Dead,亡者不休,"At the end of each round, spawn a zombie kitten familiar onto a random tile.",每轮结束时，随机方格生成1个僵尸小猫跟班。,"At the end of each round, spawn 2 zombie kitten familiars onto random tiles.",每轮结束时，随机方格生成2个僵尸小猫跟班。,True,177,PassiveIcon/177.png,images\PassiveIcon\177.png
+ChainsOfGuilt,Necromancer,Chains of Guilt,罪的锁链,"When an enemy downs you and it wasn't a boss, it joins your party permanently.",如果敌人击倒了你，而且它不是头目，那么它会永久进入你的队伍。,"When an enemy downs you and it wasn't a boss, it joins your party permanently. If it was a boss, inflict Stun 3 on it.",如果敌人击倒了你，而且它不是头目，那么它会永久进入你的队伍。如果它是头目，那么对它施加3层【眩晕】。,True,178,PassiveIcon/178.png,images\PassiveIcon\178.png
+DarkPriest,Necromancer,Dark Priest,黑暗祭司,"At the start of each battle, if you don't have a weapon, gain a temporary Soul Dagger weapon.",每场战斗开始时，如果你没有武器，那么获得一把临时武器“灵魂匕首”。,"At the start of each battle, if you don't have a weapon, gain a temporary Soul Dagger weapon. You can use your weapon action an extra time each turn.",每场战斗开始时，如果你没有武器，那么获得一把临时武器“灵魂匕首”。每个回合，武器行动可以额外用1次。,True,179,PassiveIcon/179.png,images\PassiveIcon\179.png
+Undeath,Necromancer,Undeath,不死,"When you're downed, reanimate each ally to 33% HP. (Once per battle.)",你倒地时，令每个友方以33%的生命复苏。（每场战斗限一次。）,"When you're downed, reanimate each ally to max HP. (Once per battle.)",你倒地时，令每个友方满血复苏。（每场战斗限一次。）,True,180,PassiveIcon/180.png,images\PassiveIcon\180.png
+NumbingLeeches,Necromancer,Numbing Leeches,麻痹水蛭,Your basic attack deals 0 damage but its status and hit effects are tripled.,你的普通攻击造成0点伤害，但它施加的状态和命中效果增强2倍。,"Your basic attack deals 0 damage, but its status and hit effects are tripled.
+Your basic attack inflicts Mana Leech.","你的普通攻击造成0点伤害，但它施加的状态和命中效果增强2倍。
+你的普通攻击会施加【魔能吸取】。",True,183,PassiveIcon/183.png,images\PassiveIcon\183.png
+EternalHealth,Necromancer,Eternal Health,不朽之身,"Suffer only Jinxed when downed. When your party wins a battle, if you were downed, heal to full.",你倒地时只会获得“触霉头了”。队伍取得胜利时，如果你处于倒地状态，那么生命回满。,"Suffer only Jinxed when downed. When your party wins a battle, if you were downed, heal to full. Your body is indestructible. When you're downed, allies get +1 [img:lck] for each Jinxed injury you have.",你倒地时只会获得“触霉头了”。队伍取得胜利时，如果你倒地了，那么生命回满。你的尸体不能摧毁。你倒地时，自身每有1个“触霉头”，友方就[img:lck]+1。,True,182,PassiveIcon/182.png,images\PassiveIcon\182.png
+Torpor,Necromancer,Torpor,蛰伏,"While you're downed, your basic attack is Haunt. Your body gains +6 corpse HP.",你倒地期间，你的普通攻击变成【侵扰】。你的尸体耐久+6。,"While you're downed, your basic attack is Haunt and your spells are Spook. Your body gains +6 corpse HP.",你倒地期间，你的普通攻击变成【侵扰】，你的法术变成【惊吓】。你的尸体耐久+6。,True,181,PassiveIcon/181.png,images\PassiveIcon\181.png
+SoulBound,Necromancer,Soul Bond,灵魂联结,Your basic attack inflicts Soul Link.,你的普通攻击会施加【灵魂链接】。,Your basic attack inflicts Soul Link. Inflict Soul Link on a random enemy at the start of the battle.,你的普通攻击会施加【灵魂链接】。战斗开始时，随机对1个敌人施加【灵魂链接】。,True,186,PassiveIcon/186.png,images\PassiveIcon\186.png
+Superstition,Necromancer,Superstition,迷信,"Your basic attack inflicts -1[img:lck]. 
+When a unit damages you, inflict -1[img:lck] on it.","你的普通攻击会施加“[img:lck]-1”。
+有单位伤害你时，对它施加“[img:lck]-1”。","Your basic attack inflicts -1[img:lck] and has a 15% chance to inflict Fear.
+When a unit damages you, inflict -1[img:lck] and a 15% to Fear on it.","你的普通攻击会施加“[img:lck]-1”，同时有15%的几率施加【害怕】。
+有单位伤害你时，对它施加“[img:lck]-1”，同时有15%的几率施加【害怕】。",True,185,PassiveIcon/185.png,images\PassiveIcon\185.png
+ImmortalLeeches,Necromancer,Immortal Leeches,不朽水蛭,"When a unit you inflicted Leeches on dies or loses its leeches, your next basic attack inflicts that many additional leeches.",你施加过水蛭的单位死亡或失去水蛭时，你下一次普通攻击会额外施加等量的水蛭。,"When a unit you inflicted Leeches on dies or loses its leeches, your next basic attack inflicts that many additional leeches.
+Your basic attack inflicts +1 leech.","你施加过水蛭的单位死亡或失去水蛭时，你下一次普通攻击会额外施加等量的水蛭。
+你普通攻击额外施加1层水蛭。",True,184,PassiveIcon/184.png,images\PassiveIcon\184.png
+CorpseConnoisseur,Necromancer,Corpse Connoisseur,尸体鉴赏家,"Start each battle with 2-3 corpses near you.
+When you destroy a corpse, heal 2 HP and spawn a food pickup.","每场战斗开始时，你附近会出现2-3具尸体。
+你摧毁尸体时，恢复2点生命，同时生成1份可以捡起的食物。","Start each battle with 3-4 corpses near you.
+When you destroy a corpse, heal 8 HP and spawn a food pickup.","每场战斗开始时，你附近会出现3-4具尸体。
+你摧毁尸体时，恢复8点生命，同时生成1份可以捡起的食物。",True,189,PassiveIcon/189.png,images\PassiveIcon\189.png
+Parasitic,Necromancer,Parasitic,寄生,"When you gain health, spawn a leech familiar.",你获得生命时，生成1个水蛭跟班。,"When you gain health, spawn a leech familiar. 50% of the time, spawn a beefy leech instead.",你获得生命时，生成1个水蛭跟班，有50%的几率改为生成健壮的水蛭。,True,188,PassiveIcon/188.png,images\PassiveIcon\188.png
+SpreadSorrow,Necromancer,Spread Sorrow,散播悲痛,"When you inflict a debuff to an enemy, inflict that same debuff on another random enemy.",你对敌人施加减益时，会把同样的减益随机施加给另外1个敌人。,"When you inflict a debuff to an enemy, inflict that same debuff on 2 other random enemies.",你对敌人施加减益时，会把同样的减益随机施加给另外2个敌人。,True,187,PassiveIcon/187.png,images\PassiveIcon\187.png
+Flying,Psychic,Antigravity,反重力,"You have Flying Movement. When you use a Gravity element ability gain +1 [img:spd].
+Gravity element spells cost -1 mana.","你可以飞行移动。你使用引力系能力时，[img:spd]+1。
+引力系法术的魔能耗费-1。","You have Flying Movement. When you use a Gravity element ability gain +2 [img:spd].
+Gravity element spells cost -2 mana.
+","你可以飞行移动。你使用引力系能力时，[img:spd]+2。
+引力系法术的魔能耗费-2。",True,269,PassiveIcon/269.png,images\PassiveIcon\269.png
+SoulShatter,Psychic,Soul Shatter,灵魂碎裂,"When you kill a unit, deal 1 damage to all enemies.",你击杀单位时，对所有敌人造成1点伤害,"When you kill a unit, deal 2 damage to all enemies.",你击杀单位时，对所有敌人造成2点伤害,True,270,PassiveIcon/270.png,images\PassiveIcon\270.png
+Glow,Psychic,Glow,发光,Your basic attack inflicts Blind.,你的普通攻击会施加【瞎眼】。,All damage you deal inflicts Blind.,你造成的所有伤害都会施加【瞎眼】。,True,271,PassiveIcon/271.png,images\PassiveIcon\271.png
+Blink,Psychic,Blink,闪现术,33% chance to teleport to a random tile when targeted by an enemy.,你成为敌人的目标时，有33%的几率随机传送到其他方格。,50% chance to teleport to a random tile when targeted by an enemy.,你成为敌人的目标时，有50%的几率随机传送到其他方格。,True,272,PassiveIcon/272.png,images\PassiveIcon\272.png
+FullPower,Psychic,Full Power,功力全开,"While at full mana, your basic attack deals triple damage and has +3 Knockback.",魔能全满时，你的普通攻击会造成3倍伤害，同时击退距离+3。,"While at full mana, your basic attack deals triple damage and has +3 Knockback.
+Bonus Ability: Grow Head.","魔能全满时，你的普通攻击会造成3倍伤害，同时击退距离+3。
+奖励能力：长脑袋。",True,273,PassiveIcon/273.png,images\PassiveIcon\273.png
+RealityShatter,Psychic,Reality Shatter,现实碎裂,Gravity element abilities spawn Floating Glass.,引力系能力会生成浮空玻璃。,Gravity element abilities spawn Floating Glass and inflict Bleed 1. ,引力系能力会生成浮空玻璃，同时造成1层【出血】。,True,274,PassiveIcon/274.png,images\PassiveIcon\274.png
+MentalStorm,Psychic,Mental Storm,精神风暴,Gain +1 Charge when you cast a spell.,你施放法术时，【蓄能】+1。,Gain +2 Charge when you cast a spell.,你施放法术时，【蓄能】+2。,True,275,PassiveIcon/275.png,images\PassiveIcon\275.png
+Wither,Psychic,Wither,凋零,Gravity element abilities inflict a random negative status effect when used on enemies.,引力系能力对敌人使用时，会随机施加1个减益。,"Gravity element abilities inflict a random negative status effect when used on enemies. When you inflict a negative status effect, inflict +1 of that status effect.",引力系能力对敌人使用时，会随机施加1个减益。你施加减益时，施加的层数+1。,True,276,PassiveIcon/276.png,images\PassiveIcon\276.png
+Flourish,Psychic,Flourish,茁壮,"Gravity element abilities do not harm allies. Gravity element abilities give a random positive status effect when used on allies. When you inflict a positive status effect, inflict +1 of that status effect.",引力系能力不会伤害友方。引力系能力对友方使用时，会随机给1个增益。你施加增益时，施加的层数+1。,"Gravity element abilities do not harm allies. Gravity element abilities give a random positive status effect when used on allies. When you inflict a positive status effect, inflict +2 of that status effect.",引力系能力不会伤害友方。引力系能力对友方使用时，会随机给1个增益。你施加增益时，施加的层数+2。,True,277,PassiveIcon/277.png,images\PassiveIcon\277.png
+PsySmack,Psychic,Psy Smack,念力重拍,Knockback damage you and your allies deal is doubled.,你和友方造成的击退伤害增大1倍。,Knockback damage and distance you and your allies deal is doubled and has Chain Knockback.,你和友方造成的击退伤害和距离增大1倍，而且可以连锁击退。,True,278,PassiveIcon/278.png,images\PassiveIcon\278.png
+Beckon,Psychic,Beckon,招手,Your basic attack has +4 Knockback.,你普通攻击的击退距离+4。,Your basic attack has +4 Knockback and Chain Knockback.,你普通攻击的击退距离+4，而且可以连锁击退,True,279,PassiveIcon/279.png,images\PassiveIcon\279.png
+MindTempest,Psychic,Mind Tempest,心灵风暴,"After every sixth spell you cast, gain All Stats Up and +1 Magic Damage.",6个法术一个周期，每个周期当你施放第6个法术时，所有属性提升，同时魔法伤害+1。,"After every sixth spell you cast, gain All Stats Up, +1 Magic Damage, and reduce the cost of your spells by 1 mana.",6个法术一个周期，每个周期当你施放第6个法术时，所有属性提升、魔法伤害+1，同时你法术的魔能耗费-1。,True,280,PassiveIcon/280.png,images\PassiveIcon\280.png
+Overflow,Psychic,Overflow,溢出,"While at full mana, gain +2 Brace and Flying Movement. Your mana is uncapped.",魔能全满时，【招架】+2，同时可以飞行移动。你的魔能没有上限。,"While at full mana, gain +2 Brace and Teleportation. Your mana is uncapped.",魔能全满时，【招架】+2，同时可以传送。你的魔能没有上限。,True,282,PassiveIcon/282.png,images\PassiveIcon\282.png
+Omniscience,Psychic,Omniscience,全知,You can see EVERYTHING. Line of sight restrictions are ignored.,你能看到一切，无视所有视线限制,You can see EVERYTHING. Line of sight restrictions are ignored.,你能看到一切，无视所有视线限制,True,283,PassiveIcon/283.png,images\PassiveIcon\283.png
+PsionicRepel,Psychic,Psionic Repel,念力排斥,Units that attack or contact you get knocked back 10 tiles.,攻击或接触你的单位会被击退10格。,Units that attack or contact you get knocked back 10 tiles and are Immobilized.,攻击或接触你的单位会被击退10格，而且无法移动。,True,284,PassiveIcon/284.png,images\PassiveIcon\284.png
+Enlightened,Psychic,Enlightened,开悟,"While at full mana, the first spell you cast each turn is free.",魔能全满时，你每个回合第一次施放法术不耗费魔能。,"While at full mana, all of your spells are free to cast once a turn.",魔能全满时，你所有法术每个回合都可以免费施放一次。,True,281,PassiveIcon/281.png,images\PassiveIcon\281.png
+MadVisage,Psychic,Mad Visage,面容癫狂,"All injuries you get are Disfigured.
+While at full mana, your basic action inflicts Madness.
+While you have 0 or less [img:cha] you can attack an additional time each turn.","你获得的所有伤残都会是毁容。
+魔能全满时，你的基础行动会施加【癫狂】。
+你的[img:cha]不高于0时，每个回合获得1次奖励攻击。","All injuries you get are Disfigured.
+Units that contact or attack you get Madness.
+While at full mana, your basic attack inflicts Madness.
+While at 0 [img:cha] you can attack 2 additional times each turn.","你获得的所有伤残都会是毁容。
+攻击或接触你的单位会获得【癫狂】。
+魔能全满时，你的普通攻击会施加【癫狂】。
+你的[img:cha]为0时，每个回合获得2次奖励攻击。",True,286,PassiveIcon/286.png,images\PassiveIcon\286.png
+PowerUp,Psychic,Power Up,功力增强,"When you gain excess mana, gain +1 Magic Damage and +1 [img:int].",你的魔能超出上限时，魔法伤害+1，[img:int]+1。,"When you gain excess mana, gain +1 Magic Damage, +1 [img:int]. and +1 [img:divineshield].",你的魔能超出上限时，魔法伤害+1，[img:int]+1，同时[img:divineshield]+1。,True,287,PassiveIcon/287.png,images\PassiveIcon\287.png
+TrueSight,Psychic,True Sight,真视,You and your allies can't miss enemies within your line of sight.,你和友方攻击你视线内的敌人不会落空。,You and your allies can't miss enemies within your line of sight. Allied physical attacks gain +50% critical hit chance against those enemies.,你和友方攻击你视线内的敌人不会落空。友方的物理攻击对这些敌人暴击几率+50%,True,288,PassiveIcon/288.png,images\PassiveIcon\288.png
+Radiation,Psychic,Braingeyser,脑力跃泉,"When you gain excess mana, emit that many Sparkles.",你的魔能超出上限时，放出【闪光】，数量等于超出上限的魔能。,"When you gain excess mana, emit that many Sparkles and remove all your debuffs.",你的魔能超出上限时，放出【闪光】，数量等于超出上限的魔能，同时清除自身所有减益,True,291,PassiveIcon/291.png,images\PassiveIcon\291.png
+GravityWell,Psychic,Gravity Well,引力井,"When a unit is knocked through a tile adjacent to you, stop it and inflict Stun.",单位被击退时，如果经过你前后左右相邻的方格，会被拦下并【眩晕】。,"When a unit is knocked through a tile adjacent to you, stop it, inflict Stun and deal 5 damage to it.",单位被击退时，如果经过你前后左右相邻的方格，会被拦下、【眩晕】，同时受到5点伤害。,True,290,PassiveIcon/290.png,images\PassiveIcon\290.png
+Drag,Psychic,Drag,拖拽,Units that you knockback take 1 damage for each tile they pass through.,单位如果被你击退，那么击退几个方格，就受到几点伤害。,Units that you knockback take 2 damage for each tile they pass through.,单位如果被你击退，那么击退几个方格，就受到方格数量乘以二的伤害。,True,289,PassiveIcon/289.png,images\PassiveIcon\289.png
+Twiddle,Psychic,Twiddle,摆弄,"Your basic attack deals 0 damage, but you can use it 2 additional times each turn.",你的普通攻击造成0伤害，但每个回合可以额外使用2次。,"Start each battle with +5 Bonus Attacks. Your basic attack deals 0 damage, but you can use it 2 additional times each turn.",战斗开始时，奖励攻击+5。你的普通攻击造成0伤害，但每个回合可以额外使用2次。,True,294,PassiveIcon/294.png,images\PassiveIcon\294.png
+RepressedMemories,Psychic,Repressed Memories,尘封回忆,"When you spend mana, cast a random Psychic spell that costs less than the mana spent.",你耗费魔能时，会随机施放灵能士的1个法术，前提是这个法术的魔能耗费少于这次耗费的魔能。,"When you spend mana, cast a random spell from any class that costs less than the mana spent.",你耗费魔能时，会随机施放任意职业的1个法术，前提是这个法术的魔能耗费少于这次耗费的魔能。,True,293,PassiveIcon/293.png,images\PassiveIcon\293.png
+EldritchVisage,Psychic,Eldritch Visage,面容邪异,"At the start of your turn, inflict Magic Weakness 1 on all enemies in your line of sight.",你的回合开始时，对视线内所有敌人施加1层【魔法克制】。,"At the start of your turn, inflict Magic Weakness 1 and Marked on all enemies in your line of sight.",你的回合开始时，对视线内所有敌人施加【标记】和1层【魔法克制】。,True,292,PassiveIcon/292.png,images\PassiveIcon\292.png
+Thorns,Tank,Thorns,尖刺,Thorns 2.,2层【尖刺】。,"Thorns 4.
+Gain +1 Thorns when you take damage.","4层【尖刺】。
+你受到伤害时，【尖刺】+1。",True,36,PassiveIcon/36.png,images\PassiveIcon\36.png
+HeavyHanded,Tank,Heavy Handed,下重爪,+2 Knockback Damage.,击退伤害+2。,"+3 Knockback Damage.
+Your basic attack gains +3 Knockback.","击退伤害+3。
+你普通攻击的击退距离+3。",True,32,PassiveIcon/32.png,images\PassiveIcon\32.png
+SlackOff,Tank,Slack Off,摸鱼,"If you end your turn with unused movement actions, gain 8 HP. ",回合结束时，如果你还有移动行动没有用，那么恢复8点生命。,"If you end your turn with unused movement actions, gain +2 [img:con], 8 HP and 5 mana. ",回合结束时，如果你还有移动行动没有用，那么[img:con]+2，同时恢复8点生命和5点魔能。,True,33,PassiveIcon/33.png,images\PassiveIcon\33.png
+Scabs,Tank,Scabs,结痂,Gain +2 Shield when you take damage from an ability.,你受到能力的伤害时，[img:shield]+2。,Gain +2 Shield when you take damage from any source.,你受到伤害时（来源不限），[img:shield]+2。,True,34,PassiveIcon/34.png,images\PassiveIcon\34.png
+EyeCatchin,Tank,,,,,,,True,,,
+ThunderThighs,Tank,Thunder Thighs,雷霆大腿,Trample.,横冲直撞。,Trample 9.,9层横冲直撞。,True,35,PassiveIcon/35.png,images\PassiveIcon\35.png
+Plow,Tank,Plow,破土,"When you knock back a unit, leave a rock where that unit was.",你击退单位时，在它原来的位置留下1块石头。,"When you knock back a unit, leave a rock where that unit was.
+All damage you deal has +1 Knockback.","你击退单位时，在它原来的位置留下1块石头。
+你造成的所有伤害击退距离+1。",True,40,PassiveIcon/40.png,images\PassiveIcon\40.png
+PetRocks,Tank,Pet Rocks,宠物石头,"Rocks you spawn are alive!!
+...and have +3 HP. Spawn a rock at the start of the battle.","你召唤的石头是活的！！
+……而且它们生命+3。战斗开始时召唤1块石头。","Rocks you spawn are alive, and hot!!
+...and have +7 HP. Spawn a boulder at the start of the battle.","你召唤的石头是活的，而且滚烫！！
+……而且它们生命+7。战斗开始时召唤1块巨石。",True,41,PassiveIcon/41.png,images\PassiveIcon\41.png
+ToadStyle,Tank,Toad Style,蛤蟆功,Your movement action is a jump. Landing on a unit deals damage and displaces it.,你的移动行动变成跳跃。落在单位身上会造成伤害并把它挤开。,Your movement action is a jump. Landing on a unit deals damage and displaces it.,你的移动行动变成跳跃。落在单位身上会造成伤害并把它挤开。,True,37,PassiveIcon/37.png,images\PassiveIcon\37.png
+ChainKnockback,Tank,Chain Knockback,连锁击退,"Your basic attack gains +1 Knockback.
+Units you knockback will Knockback other units.","你普通攻击的击退距离+1。
+你击退的单位也会击退其他单位。","Your basic attack gains +1 Knockback.
+All knockback you deal is increased by 2 and deals +1 extra damage.
+Units you knockback will Knockback other units further.","你普通攻击的击退距离+1。
+你造成的所有击退距离+2，同时伤害+1。
+你击退的单位也会击退其他单位，而且击退得更远。",True,39,PassiveIcon/39.png,images\PassiveIcon\39.png
+ProtectiveAura,Tank,Protective,保护欲,Your allies have Brace 1.,你的友方拥有1层【招架】。,Your allies have Brace 2.,你的友方拥有2层【招架】。,True,43,PassiveIcon/43.png,images\PassiveIcon\43.png
+Wrestlemaniac,Tank,Wrestlemaniac,摔角狂喵,"Your basic attack becomes Suplex when adjacent to enemies.
+You gain the ability Toss.","前后左右有敌人和你相邻时，你的普通攻击变成【背摔】。
+你获得能力【我丢】。","Your basic attack is Suplex while you're next to a unit that can be suplexed and Your basic attack becomes Suplex when adjacent to enemies. +1 Bonus Move.
+You gain the ability Toss+.","如果前后左右相邻的方格有单位可以背摔，你的普通攻击就变成【背摔】；前后左右有敌人和你相邻时，你的普通攻击变成【背摔】。奖励移动+1
+你获得能力【我丢+】。",True,44,PassiveIcon/44.png,images\PassiveIcon\44.png
+MountainForm,Tank,Mountain Form,成山,"Knockback immunity.
+Tiles you walk over become dirt and may spawn rocks.","你免疫击退。
+你走过的方格会变成泥地，同时可能生成石头。","Trample. Knockback and Fire immunity.
+Tiles you walk over become dirt and may spawn rocks. ","横冲直撞。免疫击退和火烧。
+你走过的方格会变成泥地，同时可能生成石头。",True,42,PassiveIcon/42.png,images\PassiveIcon\42.png
+HomeRun,Tank,Home Run,本垒打,Knockback you deal is increased by 10.,你造成的击退距离+10。,Knockback you deal is increased by 10 and inflicts Bruise 1.,你造成的击退距离+10，而且施加1层【瘀伤】。,True,38,PassiveIcon/38.png,images\PassiveIcon\38.png
+RockAspect,Tank,Rock Aspect,岩相,Units that attack or contact you have a 10% chance to get Petrified.,攻击或接触到你的单位有10%的几率【石化】。,Units that attack or contact you have a 20% chance to get Petrified.,攻击或接触到你的单位有20%的几率【石化】。,True,45,PassiveIcon/45.png,images\PassiveIcon\45.png
+WideLoad,Tank,Wide Load,宽载,"When an adjacent ally is targeted by an enemy, swap places with the ally.",前后左右相邻的友方成为敌人的目标时，你和这个友方调换位置。,"When an adjacent ally is targeted by an enemy, gain +1 temp Thorns and temp Brace, then swap places with the ally.",前后左右相邻的友方成为敌人的目标时，你临时【尖刺】+1、临时【招架】+1，然后和这个友方调换位置。,True,46,PassiveIcon/46.png,images\PassiveIcon\46.png
+HardHead,Tank,Hard Head,铁头功,You block attacks from the front.,你会格挡正面的攻击。,You block attacks from the front. Your basic attack inflicts Bruise.,你会格挡正面的攻击。你的普通攻击会施加【瘀伤】。,True,47,PassiveIcon/47.png,images\PassiveIcon\47.png
+MyLeg,Tank,My Leg!,我的腿！,"All injuries you get are Broken Legs.
+If you have four broken legs, gain +4 Thorns, Trample, and adjacent allies have Toss as a bonus ability.","你获得的所有伤残都变成“腿断了”。
+如果你断了四条腿，那么【尖刺】+4，获得横冲直撞，而且前后左右相邻的友方获得奖励能力【我丢】。","All injuries you get are Broken Legs.
+If you have four broken legs, gain +4 Thorns, +4 Brace, Trample, and adjacent allies have Toss as a bonus ability.","你获得的所有伤残都变成“腿断了”。
+如果你断了四条腿，那么【尖刺】+4、【招架】+4，获得横冲直撞，而且前后左右相邻的友方获得奖励能力【我丢】。",True,50,PassiveIcon/50.png,images\PassiveIcon\50.png
+Hardy,Tank,Hardy,强韧,Heal to full HP at the start of each battle.,每场战斗开始时，生命完全恢复。,Heal to full HP at the start of each battle. +3 Health Regeneration.,每场战斗开始时，生命完全恢复。生命自然恢复+3。,True,49,PassiveIcon/49.png,images\PassiveIcon\49.png
+SlowAndSteady,Tank,Slow and Steady,稳扎稳打,"Gain -2 [img:spd] and +1 Range at the end of each turn. If your [img:spd] is 0, you can attack an extra time each turn.",每个回合结束时，[img:spd]-2，范围+1。如果你的[img:spd]为0，那么每个回合获得1次奖励攻击。,"Gain -2 [img:spd], +1 Range, +1 [img:str], and +1 [img:int] at the end of each turn. If your [img:spd] is 0, you can attack an extra time each turn.",每个回合结束时，[img:spd]-2，范围+1，[img:str]+1，[img:int]+1。如果你的[img:spd]为0，那么每个回合获得1次奖励攻击。,True,48,PassiveIcon/48.png,images\PassiveIcon\48.png
+FollowUp,Tank,Follow Up,乘胜追击,"After you use your basic attack, dash forward as far as you can.",你使用普通攻击后，尽可能向前突进。,"After you use your basic attack, dash forward as far as you can and do a melee attack.",你使用普通攻击后，尽可能向前突进，然后进行一次近身攻击。,True,53,PassiveIcon/53.png,images\PassiveIcon\53.png
+CatAPult,Tank,Cat-A-Pult,投喵猫,You can throw adjacent allies up to 4 tiles on their turns without using their movement action.,在前后左右相邻的友方回合期间，你可以把他们扔出去，最远4格，不消耗他们的移动行动。,You can throw adjacent allies to any tile on their turns without using their movement action.,在前后左右相邻的友方回合期间，你可以把他们扔到场上任一方格，不耗费他们的移动行动。,True,52,PassiveIcon/52.png,images\PassiveIcon\52.png
+ShovingMatch,Tank,Shoving Match,推搡大战,"When you knock a unit into an ally, or knock an ally into an enemy, that ally uses their basic attack on the other unit.
+Your basic attack has +1 Knockback.","你把单位撞到友方身上或把友方撞到敌人身上时，这个友方会对那个单位使用普通攻击。
+你普通攻击的击退距离+1。","When you knock a unit into an ally, or knock an ally into an enemy, that ally uses their basic attack on the other unit.
+Your basic attack has +2 Knockback. You deal no damage to allies.","你把单位撞到友方身上或把友方撞到敌人身上时，这个友方会对那个单位使用普通攻击。
+你普通攻击的击退距离+2。你对友方不会造成伤害。",True,51,PassiveIcon/51.png,images\PassiveIcon\51.png
+Stoic,Tank,Stoic,隐忍,"If you end your turn with unused movement actions, gain +2 Bonus Moves.",你的回合结束时，如果还有移动行动没有用，那么奖励移动+2。,"If you end your turn with unused movement actions, gain +2 Bonus Moves, +2 [img:shield] and +1 Brace.",你的回合结束时，如果还有移动行动没有用，那么奖励移动+2、[img:shield]+2、【招架】+1。,True,56,PassiveIcon/56.png,images\PassiveIcon\56.png
+PriorityTarget,Tank,Priority Target,显眼包,Enemies will attack you instead of your allies if they can.,敌人如果能攻击你，就会优先打你，而不是打你的友方。,"+2 Thorns, +2 Brace, and +2 Health Regeneration. Enemies will attack you instead of your allies if they can.",【尖刺】+2、【招架】+2、生命自然恢复+2。敌人如果能攻击你，就会优先打你，而不是打你的友方。,True,55,PassiveIcon/55.png,images\PassiveIcon\55.png
+Bouncer,Tank,Bouncer,夜店保安,"When an ally takes damage, move 3 tiles toward the source of the damage and attack it if you can.",有友方受到伤害时，向伤害来源的方向移动3格，然后如果能攻击它，就进行攻击。,"When an ally takes damage, full move toward the source of the damage and attack it if you can.",有友方受到伤害时，尽你所能向伤害来源的方向移动，然后如果能攻击它，就进行攻击。,True,54,PassiveIcon/54.png,images\PassiveIcon\54.png
+Backstabber,Thief,Backstabber,背刺专家,Your backstabs are always critical.,你的背刺一定暴击。,"Your backstabs are always critical.
+When you land a critical hit, gain a random stat up.","你的背刺一定暴击。
+你每次暴击时，随机1种属性提升。",True,60,PassiveIcon/60.png,images\PassiveIcon\60.png
+GoldenClaws,Thief,Golden Claws,金爪子,Gain +1 Damage for each coin you collect.,你每捡到1块钱，伤害+1。,Gain +2 Damage for each coin you collect.,你每捡到1块钱，伤害+2。,True,64,PassiveIcon/64.png,images\PassiveIcon\64.png
+Shadow,Thief,Stealthed,隐匿,Start each battle with Stealth.,每场战斗开始时处于【隐匿】状态。,Start each battle with Stealth. Gain Stealth when you get a kill.,每场战斗开始时处于【隐匿】状态。击杀单位时获得【隐匿】。,True,59,PassiveIcon/59.png,images\PassiveIcon\59.png
+PoisonTips,Thief,Poison Tips,涂毒,Your basic attack inflicts Poison 1.,你的普通攻击会施加1层【中毒】。,"Your basic attack inflicts Poison 1.
+Poison you inflict is doubled.","你的普通攻击会施加1层【中毒】。
+你施加的【中毒】层数增加1倍。",True,63,PassiveIcon/63.png,images\PassiveIcon\63.png
+Burgle,Thief,Burgle,偷钱,Your basic attack gains you 1 coin when it deals damage.,你普通攻击造成伤害时，获得1块钱。,Your basic attack gains you 1 coin and spawns a coin pickup when it deals damage.,你普通攻击造成伤害时，获得1块钱，同时产生1枚可以捡起的钱。,True,58,PassiveIcon/58.png,images\PassiveIcon\58.png
+SwiftKiller,Thief,More!,再来！,"When you kill a unit, refresh your movement action.",你击杀单位时，你的移动行动刷新。,"When you kill a unit, refresh your movement and basic attack.",你击杀单位时，你的移动行动和普通攻击刷新。,True,61,PassiveIcon/61.png,images\PassiveIcon\61.png
+LongStrider,Thief,Long Stride,大步流星,+1 movement range.,移动范围+1。,"+2 movement range.
++10% dodge chance.","移动范围+2。
+闪避几率+10%。",True,,,
+DoubleThrow,Thief,Double Throw,子母钉,Your basic attack hits twice for half damage.,你的普通攻击会打2下，每下只有1/2伤害。,Your basic attack hits thrice for 1/3rd damage.,你的普通攻击会打3下，每下只有1/3伤害。,True,70,PassiveIcon/70.png,images\PassiveIcon\70.png
+BountyHunter,Thief,Bounty Hunter,赏金猎手,"During your turn, one random enemy has a Bounty.",你的回合期间，随机有1个敌人头顶赏金。,"During your turn, 2 random enemies have a large Bounty.",你的回合期间，随机有2个敌人头顶大额赏金。,True,67,PassiveIcon/67.png,images\PassiveIcon\67.png
+RazorClaws,Thief,Razor Claws,锐利之爪,Your basic attack inflicts Bleed 1.,你的普通攻击会施加1层【出血】。,All of your damaging abilities inflict Bleed 1.,你造成伤害的能力都会施加1层【出血】。,True,62,PassiveIcon/62.png,images\PassiveIcon\62.png
+Looter,Thief,Swift Looter,闪电扒手,"When you collect a coin pickup, refresh your movement action.
+1-2 extra coins spawn in each battle.","你捡起钱时，你的移动行动刷新。
+每场战斗会额外生成1–2块钱。","When you collect a coin pickup, refresh your movement action and gain +1 [img:dex] and +1 [img:spd].
+2-3 extra coins spawn in each battle.","你捡起钱时，你的移动行动刷新，同时[img:dex]+1、[img:spd]+1。
+每场战斗会额外生成2–3块钱。",True,65,PassiveIcon/65.png,images\PassiveIcon\65.png
+AlphaStrike,Thief,First Strike,先爪,Gain an extra turn at the start of the battle.,战斗开始时获得1个额外回合。,Gain an extra turn at the start of the battle. Damage you deal on this turn is always critical.,战斗开始时获得1个额外回合。这个回合你造成的伤害一定暴击。,True,66,PassiveIcon/66.png,images\PassiveIcon\66.png
+Zip,Thief,ZIP!,咻！,Your movement action is Shadowstep.,你的移动行动变成【暗影步】。,"Your movement action is Shadowstep.
+You can use your movement action an extra time each turn.","你的移动行动变成【暗影步】。
+每个回合获得1次奖励移动。",True,68,PassiveIcon/68.png,images\PassiveIcon\68.png
+WeakSpot,Thief,Weak Spot,弱点洞悉,Your basic attack ignores shield and inflicts Weakness 1.,你的普通攻击无视护盾，同时施加1层【虚弱】。,All of your damaging abilities ignore shield and inflict Weakness 2. +25% crit chance.,你造成伤害的能力都无视护盾，同时施加2层【虚弱】。暴击几率+25%。,True,69,PassiveIcon/69.png,images\PassiveIcon\69.png
+Penetrate,Thief,Penetrate,贯穿,Your basic attack passes through units and ignores shield. +1 Range.,你的普通攻击会穿过单位并无视护盾。范围+1。,Your basic attack passes through units and ignores shield. +10 Range.,你的普通攻击会穿过单位并无视护盾。范围+10。,True,71,PassiveIcon/71.png,images\PassiveIcon\71.png
+AfterImage,Thief,After Image,残影,"When you move, spawn a shadow where you moved from. The shadow mimics your basic action but fades away at the end of your turn.",你移动时，会在离开的地方生成1个影子。影子会模仿你的基础行动，但会在你的回合结束时消散。,"When you move, spawn a shadow where you moved from. The shadow mimics your basic action.",你移动时，会在离开的地方生成1个影子。影子会模仿你的基础行动。,True,72,PassiveIcon/72.png,images\PassiveIcon\72.png
+Shiv,Thief,Shiv,小刀,"Your basic attack has +2 damage, +25% critical chance, and inflicts Bleed 1 when attacking a unit in melee range.",你对近身范围的单位发动普通攻击时，伤害+2、暴击几率+25%，同时施加1层【出血】。,"Your basic attack has +2 damage, +50% critical chance, and inflicts Bleed 2 when attacking a unit in melee range.",你对近身范围的单位发动普通攻击时，伤害+2、暴击几率+50%，同时施加2层【出血】。,True,73,PassiveIcon/73.png,images\PassiveIcon\73.png
+Critical,Thief,Critical,暴击,Your critical hits deal +100% more damage. Gain +1 [img:lck] whenever you make a critical hit.,你的暴击伤害+100%。你只要暴击，就[img:lck]+1。,Your critical hits deal +100% more damage and inflict Bleed and Weakness 1.  Gain +1 [img:lck] whenever you make a critical hit.,你的暴击伤害+100%，同时会造成1层【出血】和1层【虚弱】。你只要暴击，就[img:lck]+1。,True,76,PassiveIcon/76.png,images\PassiveIcon\76.png
+LootHoarder,Thief,Loot Hoarder,战利品贮藏者,Automatically collect all pickups at the end of the battle if you're not downed.,战斗结束时，如果你没有倒地，那么自动捡起所有可以捡起的物品。,Automatically destroy all enemy bodies and collect all pickups at the end of the battle if you're not downed.,战斗结束时，如果你没有倒地，那么自动摧毁敌方所有尸体，同时捡起所有可以捡起的物品。,True,75,PassiveIcon/75.png,images\PassiveIcon\75.png
+Cripple,Thief,Cripple,打残,Your critical hits inflict Immobilize and Weakness 2.,你的暴击会施加【移动受限】和2层【虚弱】。,Your critical hits inflict Stun and Weakness 2.,你的暴击会施加【眩晕】和2层【虚弱】。,True,74,PassiveIcon/74.png,images\PassiveIcon\74.png
+Agile,Thief,Agile,灵活,"+2 Movement Range. If you move fewer tiles than your full movement range, you can move a 2nd time for the rest of your movement range.",移动范围+2。如果你移动的格数少于自己的移动范围上限，那么你可以再移动1次，用完剩余的移动范围。,"+4 Movement Range. If you move fewer tiles than your full movement range, you can move a 2nd, 3rd and 4th time for the rest of your movement range.",移动范围+4。如果你移动的格数少于自己的移动范围上限，那么你可以再移动3次，用完剩余的移动范围。,True,79,PassiveIcon/79.png,images\PassiveIcon\79.png
+Shank,Thief,Shank,身后刀,"When behind and adjacent to an enemy, your basic attack is a melee attack that hits twice.",你在敌人身后而且跟对方相邻时，你的普通攻击变成近身攻击，可以连打2次。,"When behind and adjacent to an enemy, your basic attack is a melee attack that hits thrice!",你在敌人身后而且跟对方相邻时，你的普通攻击变成近身攻击，可以连打3次。,True,78,PassiveIcon/78.png,images\PassiveIcon\78.png
+FlipACoin,Thief,Flip a Coin,抛硬币,"When you gain a coin, you have a 50% chance to spawn a coin on a random tile and a 50% chance to gain +2 [img:spd] and +2 [img:lck].",你获得钱时，有50%的几率随机在1个方格生成1块钱，有50%的几率[img:spd]+2、[img:lck]+2。,"When you gain a coin, you have a 50% chance to spawn 2 coins on random tiles and a 50% chance to gain +2 [img:spd], +2 [img:lck] and +2 [img:dex].",你获得钱时，有50%的几率随机在2个方格分别生成1块钱，有50%的几率[img:spd]+2、[img:lck]+2、[img:dex]+2。,True,77,PassiveIcon/77.png,images\PassiveIcon\77.png
+ShakeDown,Thief,Shake Down,勒索,Your critical hits spawn a coin and a random pickup.,你的暴击会生成1块钱和随机1件可以捡起的物品。,+25% critical hit chance. Your critical hits spawn a coin and two random pickups.,暴击几率+25%。你的暴击会生成1块钱和随机2件可以捡起的物品。,True,83,PassiveIcon/83.png,images\PassiveIcon\83.png
+SweetSpot,Thief,Sweetspot,最佳位置,+1 Range. Your basic attack deals more damage the farther away you are from the target.,范围+1。你离目标越远，普通攻击的伤害越高。,+6 Range. Your basic attack deals more damage the farther away you are from the target.,范围+6。你离目标越远，普通攻击的伤害越高。,True,82,PassiveIcon/82.png,images\PassiveIcon\82.png
+Pinpoint,Thief,Pinpoint,精准定位,Your critical hits inflict Marked.,你的暴击会施加【标记】。,"Your critical hits inflict Marked.
+Your critical hits deal 100% more damage.","你的暴击会施加【标记】。
+你暴击的伤害+100%。",True,81,PassiveIcon/81.png,images\PassiveIcon\81.png
+VersionTwo,Tinkerer,v2.0,2.0版本,"Start with 1 Tech.
+Your Tech can't drop below 1.","每场战斗开始时，自带1点【科技】。
+你的【科技】不会低于1。","Start with 1 Tech.
+Your Tech can't drop below 1.
+Your Tech isn't removed when you craft.","每场战斗开始时，自带1点【科技】。
+你的【科技】不会低于1。
+你制作物品不耗费【科技】。",True,296,PassiveIcon/296.png,images\PassiveIcon\296.png
+WeaponProficiency,Tinkerer,Weapon Proficiency,武器精通,Your weapon damage scales with your stats and counts as a basic attack.,你武器的伤害会随你的属性提高，而且算作普通攻击。,"Your weapon damage scales with your stats and counts as a basic attack.
+You can use your weapon an extra time each turn.","你武器的伤害会随你的属性提高，而且算作普通攻击。
+你的武器每个回合可以额外使用1次。",True,297,PassiveIcon/297.png,images\PassiveIcon\297.png
+LivingBattery,Tinkerer,Living Battery,活体电池,"When an adjacent ally spends mana, gain that much mana.",前后左右相邻的友方耗费魔能时，你获得等量的魔能。,"When an adjacent ally spends mana, gain that much mana. You have no mana cap.",前后左右相邻的友方耗费魔能时，你获得等量的魔能。你的魔能没有上限。,True,298,PassiveIcon/298.png,images\PassiveIcon\298.png
+FuzzyFeet,Tinkerer,Fuzzy Feet,毛脚爪,"When you end your movement, deal 1 Electric Damage to all adjacent units for each tile you moved.",你结束移动时，对前后左右相邻的所有单位分别造成电系伤害，移动了几格，就造成几点伤害。,"When you end your movement, deal 1 Electric Damage to all adjacent units for each tile you moved. This damage has a chance to inflict Stun.",你结束移动时，对前后左右相邻的所有单位分别造成电系伤害，移动了几格，就造成几点伤害。这个伤害有一定几率造成【眩晕】。,True,299,PassiveIcon/299.png,images\PassiveIcon\299.png
+ArmorSpecialist,Tinkerer,Armor Specialist,防护专家,Your equipment passive effects are doubled.,你的装备被动效果增强1倍。,Your equipment passive and active effects are doubled.,你的装备主、被动效果增强1倍。,True,300,PassiveIcon/300.png,images\PassiveIcon\300.png
+EMP,Tinkerer,EMP,电磁脉冲,"Your explosions are Electric element and deal +2 damage.
+Instead of knockback, explosions have a chance to inflict Stun.
++2 Blast Resistance.","你的爆炸属于电元素，而且伤害+2。
+爆炸不再击退，而是有一定几率施加【眩晕】。
+冲击抗性+2。","Your explosions are Electric element and deal +4 damage.
+Instead of knockback, explosions have a chance to inflict Stun. Your explosions don't affect allies.
++4 Blast Resistance.","你的爆炸属于电元素，并且伤害+4。
+爆炸不再击退，而是有一定几率造成【眩晕】。你的爆炸不会影响友方。
+冲击抗性+4。",True,301,PassiveIcon/301.png,images\PassiveIcon\301.png
+MrMega,Tinkerer,Mr. Mega,大爆弹先生,"Your explosions are larger and deal +3 damage.
++3 Blast Resistance.","你的爆炸范围更大，伤害+3。
+冲击抗性+3。","Your explosions are larger and deal +6 damage.
+You have explosion immunity.","你的爆炸范围更大，伤害+6。
+你免疫爆炸。",True,302,PassiveIcon/302.png,images\PassiveIcon\302.png
+EscapeSequence,Tinkerer,Escape Sequence,逃生程序,"When you take damage, explode and get launched to a random tile. This explosion doesn't damage you.",你受到伤害时会爆炸，然后随机飞到1个方格。这次爆炸不会对你造成伤害。,"When you take damage, explode with a large blast radius and get launched to a random tile. This explosion doesn't damage you.",你受到伤害时会造成大爆炸，然后随机飞到1个方格。这次爆炸不会对你造成伤害。,True,303,PassiveIcon/303.png,images\PassiveIcon\303.png
+ItemProxy,Tinkerer,Item Proxy,套装代打,You need one fewer piece of equipment to get set bonuses.,你触发套装加成所需的装备数量-1。,You need two fewer pieces of equipment to get set bonuses.,你触发套装加成所需的装备数量-2。,True,304,PassiveIcon/304.png,images\PassiveIcon\304.png
+LightningRod,Tinkerer,Lightning Rod,避雷针,"You have Electric immunity and are conductive.
+Electric damage you deal is increased by 1. Gain 1 Tech when you are hit with electric damage.","你免疫电击，但是可以导电。
+你造成的电系伤害+1。你被电系伤害命中时，获得1点【科技】。","You have Electric immunity and are conductive.
+Electric damage you deal is increased by 2. Gain 1 Tech and become Energized when you are hit with electric damage.","你免疫电击，但是可以导电。
+你造成的电系伤害+2。你被电系伤害命中时，获得1点【科技】，同时【活力迸发】。",True,305,PassiveIcon/305.png,images\PassiveIcon\305.png
+ItsAlive,Tinkerer,IT'S ALIVE!,它活了！,"Hitting a body with electric damage revives it with 1 HP. The revived corpse is charmed and takes an extra turn, then dies.",用电系伤害命中尸体会令它以1点生命复活。复活的尸体会被【洗脑】，获得1个额外回合，然后死亡。,"Hitting a body with electric damage revives it with 1 HP, +8 [img:spd], and +2 Damage. The revived corpse is charmed and takes an extra turn, then dies.",用电系伤害命中尸体会令它以1点生命复活、[img:spd]+8、伤害+2。复活的尸体会被【洗脑】，获得1个额外回合，然后死亡。,True,306,PassiveIcon/306.png,images\PassiveIcon\306.png
+Energizer,Tinkerer,Energizer,蓄能器,"When you cast a spell, your weapon gets +1 Damage.",你施放法术时，你武器的伤害+1。,"When you cast a spell, your weapon gets +1 Damage.
+Every third spell you cast, repair 1 use to your weapon.","你施放法术时，你武器的伤害+1。
+你每施放3个法术，就令武器的使用次数恢复1。",True,307,PassiveIcon/307.png,images\PassiveIcon\307.png
+ReactiveArmor,Tinkerer,Reactive Armor,反应装甲,"When you take damage, craft a Tinkerer weapon or armor piece and equip it in an empty slot.",你受到伤害时，制作1件工匠武器或防具，然后装备到空的栏位。,"When you take damage, craft a Tinkerer weapon or armor piece and equip it in an empty slot and gain +1 [img:shield].",你受到伤害时，制作1件工匠武器或防具，然后装备到空的栏位，同时[img:shield]+1。,True,308,PassiveIcon/308.png,images\PassiveIcon\308.png
+Nanobots,Tinkerer,Nanobots,纳米机器人,Gain +2 Diminishing Health Regeneration every time you take damage from an attack or spell.,你每次受到攻击或法术的伤害时，获得2层递减的生命自然恢复。,Gain +2 Diminishing Health Regeneration every time you take damage from an attack or spell and +1 Diminishing Health Regeneration each time you take damage from any other source.,你每次受到攻击或法术的伤害时，获得2层递减的生命自然恢复。你每次受到其他来源的伤害时，获得1层递减的生命自然恢复。,True,309,PassiveIcon/309.png,images\PassiveIcon\309.png
+Scrapper,Tinkerer,Scrapper,破烂王,"Find an extra consumable item at the end of each battle.
+When you use up a consumable or trinket, equip a new consumable from your inventory if you have any.","每场战斗结束时，额外获得1个消耗品。
+你用光1个消耗品或小玩意儿时，如果背包里还有消耗品，就自动再装备1个。","Find an extra item at the end of each battle.
+When you use up a consumable or trinket, equip a new consumable from your inventory if you have any.","每场战斗结束时，额外获得1件物品。
+你用光1个消耗品或小玩意儿时，如果背包里还有消耗品，就自动再装备1个。",True,310,PassiveIcon/310.png,images\PassiveIcon\310.png
+DemoMan,Tinkerer,Demo Man,爆破手,"Always craft a bomb at Tech 1 or less.
++2 Blast Resistance.","【科技】小于等于1时，每次都会制作炸弹。
+冲击抗性+2。","Always craft a bomb at Tech 1 or less. You can use your basic action an additional time on each of your turns.
++3 Blast Resistance.","【科技】小于等于1时，每次都会制作炸弹。你每个回合可以额外使用一次基础行动。
+冲击抗性+3。",True,311,PassiveIcon/311.png,images\PassiveIcon\311.png
+DuctTape,Tinkerer,Duct Tape,防水胶带,"Items you craft stay with you between battles, but become cursed.",战斗结束时，你制作的物品会保留，但会受到诅咒。,Items you craft stay with you between battles.,战斗结束时，你制作的物品会保留。,True,314,PassiveIcon/314.png,images\PassiveIcon\314.png
+ArmoredPlating,Tinkerer,Armored Plating,装甲板,Robots you spawn gain the stats and [img:shield] of your equipped armor.,你生成的机器人会获得属性和[img:shield]，和你所装备的防具相同。,"Robots you spawn gain the stats, [img:shield] and passive effects of your equipped armor.",你生成的机器人会获得属性、[img:shield]和被动效果，和你所装备的防具相同。,True,313,PassiveIcon/313.png,images\PassiveIcon\313.png
+BoobyTrap,Tinkerer,Booby Trap,诡雷,"When an item you have equipped breaks, it explodes!",你装备的物品损坏时会爆炸！,"When an item you have equipped breaks, it explodes with bonus damage!",你装备的物品损坏时会爆炸，爆炸伤害增加！,True,312,PassiveIcon/312.png,images\PassiveIcon\312.png
+RobotArms,Tinkerer,Robot Arms,机械臂,You can use your weapon an additional time each turn.,你的武器每个回合可以额外使用1次。,"You can use your weapon and trinket an additional time each turn.
+Whenever you equip a new item during battle it gains +1 use.","你的武器和小玩意儿每个回合可以额外使用1次。
+战斗期间，每当你装备1个新物品，它的使用次数就+1。",True,317,PassiveIcon/317.png,images\PassiveIcon\317.png
+Conductor,Tinkerer,Conductor,导体,"Electric damage you deal is increased by 2 for each piece of metal armor you have equipped.
+If you are wearing metal, your weapon deals electric damage.","你每装备了1件金属防具，你造成的电系伤害就+2。
+如果你装备了金属防具，那么你的武器会造成电系伤害。","Electric damage you deal is increased by 2 for each piece of metal armor you have equipped. You have +2 Mana Regeneration for each piece of metal armor.
+If you are wearing metal, your weapon deals electric damage.","你每装备了1件金属防具，你造成的电系伤害就+2。你每装备了1件金属防具，魔能自然恢复就+2。
+如果你装备了金属防具，那么你的武器会造成电系伤害。",True,316,PassiveIcon/316.png,images\PassiveIcon\316.png
+Napalm,Tinkerer,Napalm,凝固汽油弹,"Your explosions inflict Burn 3 and light tiles on fire.
++2 Blast Resistance.","你的爆炸会施加3层灼烧，同时点燃方格。
+冲击抗性+2。","Your explosions inflict Burn 6 and light tiles on fire.
++3 Blast Resistance.","你的爆炸会施加6层灼烧，同时点燃方格。
+冲击抗性+3。",True,315,PassiveIcon/315.png,images\PassiveIcon\315.png
+Ingenuity,Tinkerer,Ingenuity,心灵手巧,Pickups give you +1 Tech in addition to their other effects.,捡起的物品除了原本的效果，还会令你【科技】+1。,"Pickups give you +1 Tech in addition to their other effects.
+10 extra pickups spawn at the start of each battle.","捡起的物品除了原本的效果，还会令你【科技】+1。
+每场战斗开始时，额外生成10件可以捡起的物品。",True,320,PassiveIcon/320.png,images\PassiveIcon\320.png
+Shrapnel_Tinkerer,Tinkerer,Shrapnel,弹片,"When you break an item, gain +1 Thorns.",你有物品损坏时，【尖刺】+1。,"When you break an item, gain +2 Thorns and +3 [img:shield].",你有物品损坏时，【尖刺】+2，同时[img:shield]+3。,True,319,PassiveIcon/319.png,images\PassiveIcon\319.png
+Blacksmith,Tinkerer,Blacksmith,铁匠,"If you have a weapon, your basic attack becomes Hone.",如果你有武器，那么你的普通攻击变成【锤炼】。,"If you have a weapon, your basic attack becomes Hone+.",如果你有武器，那么你的普通攻击变成【锤炼+】。,True,318,PassiveIcon/318.png,images\PassiveIcon\318.png
+STARTER_PLACEHOLDER_Fighter,Fighter,???,？？？,Becomes a random Fighter passive when you lock in your team's collars.,在你锁定队伍的项圈时，随机变成战士的被动。,,,False,406,PassiveIcon/406.png,images\PassiveIcon\406.png
+STARTER_PLACEHOLDER_Thief,Thief,???,？？？,Becomes a random Thief passive when you lock in your team's collars.,在你锁定队伍的项圈时，随机变成盗贼的被动。,,,False,407,PassiveIcon/407.png,images\PassiveIcon\407.png
+STARTER_PLACEHOLDER_Tank,Tank,???,？？？,Becomes a random Tank passive when you lock in your team's collars.,在你锁定队伍的项圈时，随机变成坦克的被动。,,,False,408,PassiveIcon/408.png,images\PassiveIcon\408.png
+STARTER_PLACEHOLDER_Mage,Mage,???,？？？,Becomes a random Mage passive when you lock in your team's collars.,在你锁定队伍的项圈时，随机变成法师的被动。,,,False,410,PassiveIcon/410.png,images\PassiveIcon\410.png
+STARTER_PLACEHOLDER_Medic,Medic,???,？？？,Becomes a random Cleric passive when you lock in your team's collars.,在你锁定队伍的项圈时，随机变成牧师的被动。,,,False,411,PassiveIcon/411.png,images\PassiveIcon\411.png
+STARTER_PLACEHOLDER_Hunter,Hunter,???,？？？,Becomes a random Hunter passive when you lock in your team's collars.,在你锁定队伍的项圈时，随机变成猎手的被动。,,,False,409,PassiveIcon/409.png,images\PassiveIcon\409.png
+STARTER_PLACEHOLDER_Necromancer,Necromancer,???,？？？,Becomes a random Necromancer passive when you lock in your team's collars.,在你锁定队伍的项圈时，随机变成死灵法师的被动。,,,False,414,PassiveIcon/414.png,images\PassiveIcon\414.png
+STARTER_PLACEHOLDER_Butcher,Butcher,???,？？？,Becomes a random Butcher passive when you lock in your team's collars.,在你锁定队伍的项圈时，随机变成屠户的被动。,,,False,412,PassiveIcon/412.png,images\PassiveIcon\412.png
+STARTER_PLACEHOLDER_Monk,Monk,???,？？？,Becomes a random Monk passive when you lock in your team's collars.,在你锁定队伍的项圈时，随机变成武僧的被动。,,,False,415,PassiveIcon/415.png,images\PassiveIcon\415.png
+STARTER_PLACEHOLDER_Druid,Druid,???,？？？,Becomes a random Druid passive when you lock in your team's collars.,在你锁定队伍的项圈时，随机变成德鲁伊的被动。,,,False,413,PassiveIcon/413.png,images\PassiveIcon\413.png
+STARTER_PLACEHOLDER_Psychic,Psychic,???,？？？,Becomes a random Psychic passive when you lock in your team's collars.,在你锁定队伍的项圈时，随机变成灵能士的被动。,,,False,417,PassiveIcon/417.png,images\PassiveIcon\417.png
+STARTER_PLACEHOLDER_Tinkerer,Tinkerer,???,？？？,Becomes a random Tinkerer passive when you lock in your team's collars.,在你锁定队伍的项圈时，随机变成工匠的被动。,,,False,418,PassiveIcon/418.png,images\PassiveIcon\418.png
+STARTER_PLACEHOLDER_Colorless,Colorless,???,？？？,Becomes a random Collarless passive when you lock in your team's collars.,在你锁定队伍的项圈时，随机变成无色被动。,,,False,419,PassiveIcon/419.png,images\PassiveIcon\419.png
+STARTER_PLACEHOLDER_Jester,Colorless,???,？？？,Becomes a random passive from any class when you lock in your team's collars.,在你锁定队伍的项圈时，随机变成任意职业的被动。,,,False,416,PassiveIcon/416.png,images\PassiveIcon\416.png

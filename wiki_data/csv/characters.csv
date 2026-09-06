@@ -1,0 +1,1460 @@
+﻿character_key,variant_of,name_en,name_zh,tooltip_en,tooltip_zh,movieclip,sprite_id,icon_url,icon_local
+AlbinoTomTom,,Albino Tom Tom,白化浪浪,Its wide melee attacks have Knockback 2.,近身范围攻击可以击退2格。,_CAT,1324,CharacterPortrait/1324/1.png,images\CharacterPortrait\1324\1.png
+AlienBeast,,Crater Maker,陨坑女王,"Changes its primed attack whenever it takes damage.
+Shoots from its sides when damaged.","每次受到伤害时都会改变准备好的攻击。
+受到伤害时，身体两侧会射出投射物。",AlienBeast,1024,CharacterPortrait/1024/1.png,images\CharacterPortrait\1024\1.png
+AlienEgg,,Strange Egg,奇怪的蛋,What could it hatch into?,会孵出来什么呢？,AlienEgg,100,CharacterPortrait/100/1.png,images\CharacterPortrait\100\1.png
+AllyRotFly,Fly,Rot Fly,腐烂苍蝇,"Melee attacker.
+Flying.","近身攻击单位。
+飞行。",Fly,1646,CharacterPortrait/1646/1.png,images\CharacterPortrait\1646\1.png
+Amoeba,,Amoeba,变形虫,"Can attach itself to equipment slots on cats, and will break existing equipment if it does.
+Will attempt to find a rock to defend itself.","能够趴在猫的装备栏位上，一旦趴住，就会损坏原本的装备。
+会找石头保护自己。",Amoeba,1046,CharacterPortrait/1046/1.png,images\CharacterPortrait\1046\1.png
+AngelicCat,,Angelic Cat,天使猫,"Has a Holy Wind area attack.
+Gains 1 [img:divineshield] at the end of its turn.
+Immune to Holy. Gains All Stats Up when struck with Holy Element.","有圣风区域攻击。
+它在回合结束时，[img:divineshield]+1。
+免疫神圣元素。被神圣元素命中时，所有属性提升。",_CAT,363,CharacterPortrait/363/1.png,images\CharacterPortrait\363\1.png
+AngelicKitten,,Angelic Kitten,天使小猫,"Attracts units. Dooms what kills it.
+Immune to Holy. Gains All Stats Up when struck with Holy Element.","会吸引单位。击杀它的单位会获得【必死无疑】。
+免疫神圣元素。被神圣元素命中时，所有属性提升。",AngelicCatFetus,361,CharacterPortrait/361/1.png,images\CharacterPortrait\361\1.png
+AnimalEgg,,Egg,蛋,What could it hatch into?,会孵出来什么呢？,AnimalEgg,152,CharacterPortrait/152/1.png,images\CharacterPortrait\152\1.png
+AnimalEgg2,AnimalEgg,Egg,蛋,What could it hatch into?,会孵出来什么呢？,AnimalEgg,152,CharacterPortrait/152/1.png,images\CharacterPortrait\152\1.png
+AnimatedBoulder,,Pet Boulder,宠物巨石,Attack it to push it 1 tile. It deals 9 damage to units it hits.,攻击它可以令它移动1格，并对撞到的单位造成9点伤害。,PetBoulder,138,CharacterPortrait/138/1.png,images\CharacterPortrait\138\1.png
+AnimatedBoulder:hot,,Hot Pet Boulder <3,滚烫的宠物巨石<3,,,PetBoulder,138,CharacterPortrait/138/1.png,images\CharacterPortrait\138\1.png
+AnimatedLavaBoulder,AnimatedBoulder,Pet Boulder,宠物巨石,Attack it to push it 1 tile. It deals 9 damage to units it hits.,攻击它可以令它移动1格，并对撞到的单位造成9点伤害。,PetBoulder,134,CharacterPortrait/134/1.png,images\CharacterPortrait\134\1.png
+AnimatedSmallLavaRock,AnimatedSmallRock,Pet Rock,宠物石头,Attack it to knock it forward in a straight line. It deals 5 damage to units it hits.,攻击它可以让它向前直线移动，撞到什么单位，就会造成5点伤害。,PetRock,136,CharacterPortrait/136/1.png,images\CharacterPortrait\136\1.png
+AnimatedSmallRock,,Pet Rock,宠物石头,Attack it to knock it forward in a straight line. It deals 5 damage to units it hits.,攻击它可以让它向前直线移动，撞到什么单位，就会造成5点伤害。,PetRock,140,CharacterPortrait/140/1.png,images\CharacterPortrait\140\1.png
+AnimatedSmallRock:hot,,Hot Pet Rock <3,滚烫的宠物石头<3,,,PetRock,140,CharacterPortrait/140/1.png,images\CharacterPortrait\140\1.png
+Ankylosaurus,,Ankylosaurus,甲龙,"Has a wide melee attack with Knockback 10 and a chance to inflict Stun.
+Does a spin attack when it takes damage.","近身范围攻击，击退10格，有一定几率施加【眩晕】。
+受到伤害时会旋转攻击。",_CAT,692,CharacterPortrait/692/1.png,images\CharacterPortrait\692\1.png
+Antidote,PickupBase,Antidote,解毒剂,Cleanse all debuffs when eaten.,吃下可以清除所有减益。,AntidotePickup,,,
+Astro,,Astronaut,宇航员,Its melee attack has a high chance to inflict Stun.,近身攻击有很高的几率施加【眩晕】。,_CAT,975,CharacterPortrait/975/1.png,images\CharacterPortrait\975\1.png
+AstroZombie,,Abandoned One,被抛弃的人,Its melee attacks inflict random injuries.,近身攻击会随机造成1处伤残。,AstroZombie,988,CharacterPortrait/988/1.png,images\CharacterPortrait\988\1.png
+AstroZombieHead,,Abandoned One,被抛弃的人,"Its melee attack inflicts Burn.
+Its scream will inflict Fear.","近身攻击会施加【灼烧】。
+叫喊会施加【害怕】。",AstroSkull,961,CharacterPortrait/961/1.png,images\CharacterPortrait\961\1.png
+AtomicKitten,,Atomic Kitten,原子小猫,"Emits a burst of radiation at the start of its turn.
+Teleports away when damaged.
+Explodes when killed.","它在回合开始时，会突然放出一波辐射。
+受到伤害时会传送离开。
+被击杀时会爆炸。",_CAT,1175,CharacterPortrait/1175/1.png,images\CharacterPortrait\1175\1.png
+BabyDeathWorm,,Baby Deathworm,大肠虫幼虫,"Dash attacks units that end their movement in line with it.
+Can't dash backwards!","如果有单位停在它所在的直线上，它会突进攻击。
+不能倒退突进！",BabyDeathWorm,1252,CharacterPortrait/1252/1.png,images\CharacterPortrait\1252\1.png
+BabyShark,,Baby Shark,鲨鱼宝宝,"Its bite inflicts Bleed but does no damage.
+Takes bonus turns for each bleeding unit.
+Focuses on bleeding units.","它会施加【出血】，但不造成伤害。
+场上每有1个单位【出血】，就会获得奖励回合。
+专门攻击【出血】的单位。",BabyShark,1472,CharacterPortrait/1472/1.png,images\CharacterPortrait\1472\1.png
+BabySquirrel,,Baby Squirrel,松鼠宝宝,,,Squirrel,164,CharacterPortrait/164/1.png,images\CharacterPortrait\164\1.png
+Bait,FoodBase,Bait,鱼饵,"Attracts enemies toward it.
+Heals 1 HP when eaten.","会吸引敌人。
+吃下可以恢复1点生命。",Food,,,
+Bat,,Bat,蝙蝠,"Its melee flurry inflicts Confusion.
+50% Dodge Chance.
+Flying.","近身连击会施加【混乱】。
+50%闪避几率。
+飞行。",Bat,1322,CharacterPortrait/1322/1.png,images\CharacterPortrait\1322\1.png
+BeaniesRat,,Dr. Beanies,比尼斯博士,Tosses bombs that explode at the end of the round.,会扔出炸弹，炸弹会在一轮结束时爆炸。,BeaniesX,431,CharacterPortrait/431/1.png,images\CharacterPortrait\431\1.png
+Bear,,Bear,熊,,,Bear,158,CharacterPortrait/158/1.png,images\CharacterPortrait\158\1.png
+Bear2,Bear,Bear,熊,,,Bear,158,CharacterPortrait/158/1.png,images\CharacterPortrait\158\1.png
+Beaver,,,,,,_CAT,,,
+BeefyCharmedLeech,Maggot,Beefy Leech,健壮的水蛭,Melee attacker.,近身攻击单位。,Maggot,197,CharacterPortrait/197/1.png,images\CharacterPortrait\197\1.png
+Belcher,,Belcher,嗝魔,"Its ranged attack inflicts Burn and creates a lava tile.
+Immune to fire.","远程攻击会施加【灼烧】，同时产生岩浆方格。
+免疫火焰。",_CAT,1108,CharacterPortrait/1108/1.png,images\CharacterPortrait\1108\1.png
+BestBud,Maggot,Best Bud,生死之交,Melee attacker.,近身攻击单位。,Maggot,168,CharacterPortrait/168/1.png,images\CharacterPortrait\168\1.png
+BigAsteroid,,Big Asteroid,大小行星,"Its attack spawns a boulder.
+Gets knocked back with Chain Knockback when hit.
+Can only recieve 1 damage at a time.
+Immune to status effects.","攻击会生成一块大石头。
+被击中会被击退，可以造成连锁击退。
+每次最多只会受到1点伤害。
+免疫状态效果。",BigAsteroid,977,CharacterPortrait/977/1.png,images\CharacterPortrait\977\1.png
+BigCatnip,PickupBase,Big Catnip,大份猫薄荷,Gain +6 mana when eaten.,吃下获得6点魔能。,ManaPickup,,,
+BigDemon,,Brute,蛮牛,"Throws rocks that have a chance inflict Stun when at range.
+Will uppercut units above 50% health.
+Will instantly kill units below 50% health.
+Immune to Fire.","会扔石头，如果是远距离命中，那么有一定几率施加【眩晕】。
+会对生命高于50%的单位使用上勾拳。
+会秒杀生命低于50%的单位。
+免疫火焰。",BigDemon,1102,CharacterPortrait/1102/1.png,images\CharacterPortrait\1102\1.png
+BigFood,FoodBase,Medium Food,中份食物,Heals 7 HP when eaten.,吃下可以恢复7点生命。,Food,,,
+BigScrap,PickupBase,Big Scrap,大份边角料,Gain +6 [img:shield] when collected.,捡起时[img:shield]+6。,ArmorPickup,,,
+BigSlime,,Big Slime,大史莱姆,"Melee attacker.
+Splits into 4 medium Slimes on death.","近身攻击单位。
+死亡时会分裂成4个中型史莱姆。",BigSlime,1306,CharacterPortrait/1306/1.png,images\CharacterPortrait\1306\1.png
+BigSlimeX,,Steven,史蒂文,"Melee attacker.
+Splits into 4 medium Stevens on death.","近身攻击单位。
+死亡时会分裂成4个中型史蒂文。",BigSlimeX,417,CharacterPortrait/417/1.png,images\CharacterPortrait\417\1.png
+BigUFO,,Megasaucer,巨型飞碟,"Performs a random action on its turn.
+Has a dash attack that inflicts Stun.
+Has a charge up laser attack that instakills.
+Has the ability to summon B-Probers.
+Explodes when killed.","每个回合随机行动1次。
+有突进攻击，会施加【眩晕】。
+有【蓄能】激光，会秒杀目标。
+能召唤小绿人。
+被击杀时会爆炸。",BigUFO,963,CharacterPortrait/963/1.png,images\CharacterPortrait\963\1.png
+Bigfoot,,,,,,_CAT,,,
+BiggestFood,FoodBase,Big Food,大份食物,Heals 10 HP when eaten.,吃下可以恢复10点生命。,Food,,,
+Bird,,,,,,,,,
+BirdBase,,Bird,鸟,Whoever kills this gets All Stats Up and finds a bonus item!,谁击杀它，谁就能所有属性提升，然后捡到1件奖励物品！,BirdSmall,,,
+BirdLarge,BirdBase,Big Bird,大鸟,Whoever kills this gets All Stats Up and finds a bonus item!,谁击杀它，谁就能所有属性提升，然后捡到1件奖励物品！,BirdLarge,,,
+BirdMed,BirdBase,Medium Bird,中鸟,Whoever kills this gets All Stats Up and finds a bonus item!,谁击杀它，谁就能所有属性提升，然后捡到1件奖励物品！,BirdMed,,,
+BirdSmall,BirdBase,Little Bird,小鸟,Whoever kills this gets All Stats Up and finds a bonus item!,谁击杀它，谁就能所有属性提升，然后捡到1件奖励物品！,BirdSmall,,,
+Birthwort,,Birthwort,马兜铃,"Blind. Can melee attack and dash with Trample in random directions.
+Fires shots that inflict Rot whenever it's attacked.
+Heals itself and its neighbors at the end of its turn.","【瞎眼】。能近身攻击，也能随机朝1个方向横冲直撞突进。
+每次被攻击，都会射击，命中会施加【腐烂】。
+它在回合结束时，会治疗自己和周围的单位。",Birthwort,1038,CharacterPortrait/1038/1.png,images\CharacterPortrait\1038\1.png
+BishopHat,,Bishop Hat,教主帽子,"Attracts Cultists.
+Can be picked up by a Cultist to promote them into a Bishop.","会吸引教徒。
+教徒捡起之后，会升为教主。",BishopHat,4,CharacterPortrait/4/1.png,images\CharacterPortrait\4\1.png
+BlackBird,BirdSmall,Black Bird,黑鸟,Whoever kills this gets All Stats Up and finds a bonus item!,谁击杀它，谁就能所有属性提升，然后捡到1件奖励物品！,BirdSmall,226,CharacterPortrait/226/1.png,images\CharacterPortrait\226\1.png
+BlackHole,NeutronStar,Neutron Star,中子星,May go supernova...,可能会发生超新星爆发……,NeutronStar,38,CharacterPortrait/38/1.png,images\CharacterPortrait\38\1.png
+Blessing,PickupBase,Blessing,福佑,Gain +1 [img:divineshield] when collected.,捡起时[img:divineshield]+1。,HolyPickup,,,
+BloatEye,,Peeper,窥眼,Moves 1 tile towards units each time they take an action. Trample.,每当有单位行动时，它就会朝这个单位移动1格。横冲直撞。,BloatEye,,,
+BloatyCorpse,,Bloated Corpse,浮肿的尸体,Explodes into Maggots when destroyed.,摧毁时会爆开，产生蛆。,BloatyCorpse,,,
+Bomb,,Rat Bomb,老鼠炸弹,"Explodes on its turn or when hit with fire.
+Attack to disarm!","会在它的回合或被火焰命中时爆炸。
+攻击它可以拆除！",Bomb,1579,CharacterPortrait/1579/1.png,images\CharacterPortrait\1579\1.png
+BombFly,,Bomb Fly,炸弹蝇,Explodes when it dies.,死亡时会爆炸。,BombFly,,,
+Bombchu,,Bombchu,炸弹鼠,,,Bombchu,146,CharacterPortrait/146/1.png,images\CharacterPortrait\146\1.png
+BomberRat,,Radical Rat,带劲老鼠,Tosses bombs that explode at the end of the round.,会扔出炸弹，炸弹会在一轮结束时爆炸。,BomberRat,1581,CharacterPortrait/1581/1.png,images\CharacterPortrait\1581\1.png
+BoomerCat,,Boomer,呕吐者,"Explodes when killed, damaging all nearby units.",被击杀时会爆炸，伤害附近所有单位。,_CAT,1466,CharacterPortrait/1466/1.png,images\CharacterPortrait\1466\1.png
+Boulder,,Boulder,巨石,Attack it to push it 1 tile. It deals 9 damage to units it hits.,攻击它可以令它移动1格，并对撞到的单位造成9点伤害。,Boulder,,,
+Boulder:hot,,Hot Boulder,滚烫的巨石,,,Boulder,,,
+BoyDino,,Pachysaurus [img:male],厚头龙[img:male],Melee attacker. Defends its partner.,近身攻击单位。会保护自己的伴侣。,BoyDino,682,CharacterPortrait/682/1.png,images\CharacterPortrait\682\1.png
+BoyShade,,Herald,先驱,Melee attacker that summons shadows of itself.,近身攻击单位，会召唤自己的影子。,ShadeM,538,CharacterPortrait/538/1.png,images\CharacterPortrait\538\1.png
+BoyShadeClone,,Herald's Shadow,先驱的影子,Melee attacker. Dies when the original dies.,近身攻击单位。本体死了，它也会死。,ShadeMShadow,518,CharacterPortrait/518/1.png,images\CharacterPortrait\518\1.png
+BrainDrain,,Brain Drain,脑力流失,"Infinite ranged magic attacker.
+Will counter a spell once per turn.
+If it starts its turn with its counterspell still available, it absorbs it for a buff.","魔法攻击单位，范围无限。
+每个回合会反制1次法术。
+它在回合开始时，如果反制还没用掉，那么就“吸收”这次反制，变成一个增益。",MindFetus,1316,CharacterPortrait/1316/1.png,images\CharacterPortrait\1316\1.png
+BrambleBaby,,Bramble Baby,灌木宝宝,Spawns Bramble tiles and pulls units into them.,会生成灌木方格，然后把单位拉进灌木。,BrambleBaby,1044,CharacterPortrait/1044/1.png,images\CharacterPortrait\1044\1.png
+BuffCharmedKitten,CharmedKitten,Kitten,小猫,Runs away when damaged.,受到伤害时会逃跑。,_CAT,177,CharacterPortrait/177/1.png,images\CharacterPortrait\177\1.png
+BuffFamiliarFlea,Flea,Flea,跳蚤,Its melee attack damages itself.,近身攻击会伤害自己。,Flea,1606,CharacterPortrait/1606/1.png,images\CharacterPortrait\1606\1.png
+BuffFamiliarFly,Fly,Fly,苍蝇,"Melee attacker.
+Flying.","近身攻击单位。
+飞行。",Fly,1608,CharacterPortrait/1608/1.png,images\CharacterPortrait\1608\1.png
+BuffFamiliarMaggot,Maggot,Maggot,蛆,Melee attacker.,近身攻击单位。,Maggot,1590,CharacterPortrait/1590/1.png,images\CharacterPortrait\1590\1.png
+BuffFamiliarPooter,Pooter,Pooter,狙击蝇,Ranged attacker. Flying.,远程攻击单位。飞行。,Pooter,1610,CharacterPortrait/1610/1.png,images\CharacterPortrait\1610\1.png
+Bumblefoot,,Bumblefoot,笨脚,"Its leap attack will turn it upside down.
+When upside down it performs an area attack.
+Will eat any bodies in play, and living things if there are no bodies left.","跳扑攻击会栽进地里。
+头在地里时会进行区域攻击。
+会吃掉场上的尸体，如果没有尸体就吃活的。",Bumblefoot,1159,CharacterPortrait/1159/1.png,images\CharacterPortrait\1159\1.png
+BungaThrone,,Throne,王座,Built from the bones of his enemies.,用敌人的骨头搭出来的。,BungaThrone,,,
+BungaWarrior1,,Bunga's Champion,邦加的勇士,One of Lord Bunga's top guys!,邦加大人的强力干将！,BungaElite1,753,CharacterPortrait/753/1.png,images\CharacterPortrait\753\1.png
+BungaWarrior2,BungaWarrior1,Bunga's Champion,邦加的勇士,One of Lord Bunga's top guys!,邦加大人的强力干将！,BungaElite2,751,CharacterPortrait/751/1.png,images\CharacterPortrait\751\1.png
+Bunny,,,,,,_CAT,,,
+ButchTinkBoris,,Butch & Tink,布奇和汀可,"Moves 1 tile toward whatever damages them.
+Will dash on their last turn.
+Trample.","会朝着伤害自己的目标移动1格。
+他们会在自己的最后一个回合突进。
+横冲直撞。",ButchTinkX,427,CharacterPortrait/427/1.png,images\CharacterPortrait\427\1.png
+ButcherCat,,Gein,盖恩,"Hooks and pulls units that end their movement in range, inflicting Bleed.
+Does a melee spin attack that spawns meat.
+Seeks meat pickups.
+Trample.","如果有单位停在自己的范围内，就会将其勾住拉过来，施加【出血】。
+近身旋转攻击会产生肉。
+会去捡肉。
+横冲直撞。",_CAT,1224,CharacterPortrait/1224/1.png,images\CharacterPortrait\1224\1.png
+ButcherCat_Terminator,ButcherCat,Robo-Gein,机械盖恩,"Hooks and pulls units that end their movement in range, inflicting Bleed.
+Does a melee spin attack that spawns meat.
+Seeks meat pickups.
+Trample.","如果有单位停在自己的范围内，就会将其勾住拉过来，施加【出血】。
+近身旋转攻击会产生肉。
+会去捡肉。
+横冲直撞。",_CAT,282,CharacterPortrait/282/1.png,images\CharacterPortrait\282\1.png
+ButtZombie,,Butt Zombie,屁股僵尸,"Will attack all adjacent units with its melee attack when its backside is underground.
+Goes upside down when damaged.
+Undead.","屁股在地下时，会近身攻击前后左右相邻的所有单位。
+受到伤害时，屁股会翻出来。
+亡灵。",GroundZombie,1387,CharacterPortrait/1387/1.png,images\CharacterPortrait\1387\1.png
+Cactus,,Cactus,仙人球,,,Cactus,,,
+CanCreeper,,Can Creeper,垃圾桶爬爬,"Shoots diagonally or dashes forward leaving a Fly behind.
+Can only be damaged from the front.
+Spawns creep.","会朝对角线方向射击，或向前突进，在身后留下苍蝇。
+只有正面能受到伤害。
+会生成黏液。",CanCreeper,1520,CharacterPortrait/1520/1.png,images\CharacterPortrait\1520\1.png
+CanCreeperOut,,Can Creeper,垃圾桶爬爬,"Ranged attacker.
+Must be in creep to attack.","远程攻击单位。
+必须在黏液里才能攻击。",CanCreeperOut,1518,CharacterPortrait/1518/1.png,images\CharacterPortrait\1518\1.png
+CancerCat,,Cancer Cat,癌猫,"Its melee attack causes cats it hits to lose 1 [img:con] permanently and has a chance to give them cancer.
+Explodes after 3 turns.","近身攻击命中时会令目标永久[img:con]-1，同时有一定几率令其得癌症。
+3回合之后会爆炸。",_CAT,520,CharacterPortrait/520/1.png,images\CharacterPortrait\520\1.png
+CandleBig,static_object_template,,,,,BunkerCandles2x2,,,
+CandleSmall,static_object_template,,,,,BunkerCandlesSmall,,,
+Carcus,,Carcass,尸骸,Spawns random types of Maggots.,会生成蛆，类型随机。,Carcus,1228,CharacterPortrait/1228/1.png,images\CharacterPortrait\1228\1.png
+Carnibulb,,Carnibulb,食肉绿魔,"Will instantly kill anything it can reach.
+Has +1 movement range for each Sprout.
+Summons a Sprout at the end of its turn.","它不论能接触到什么，都会立刻杀死。
+场上有几棵嫩芽，它的移动范围就加几。
+它在回合结束时，召唤1棵嫩芽。",Carnibulb,1036,CharacterPortrait/1036/1.png,images\CharacterPortrait\1036\1.png
+CatCaller,,Cat Caller,叫猫,"Slows units.
+Counterattacks when hit.","会令单位【迟缓】。
+被命中时会反击。",_CAT,1588,CharacterPortrait/1588/1.png,images\CharacterPortrait\1588\1.png
+CatCopyClot,Clot,{SpawnedBy}'s Clot,{SpawnedBy}的血块,Has a chance to become a {SpawnedBy} Clone at the end of its turn.,它在回合结束时，有一定几率变成{SpawnedBy}的克隆。,Clot,476,CharacterPortrait/476/1.png,images\CharacterPortrait\476\1.png
+CatCultist,,Cat Cultist,邪教猫,Melee attacker. Increases the amount of times it can attack each turn whenever it takes damage.,近身攻击单位。每次受到伤害时，它每个回合的攻击次数都会增加。,_CAT,1172,CharacterPortrait/1172/1.png,images\CharacterPortrait\1172\1.png
+CatHuman,,Half-Human λ,半人 λ,"Spawns Kittens.
+Its melee attack inflicts injuries.
+Can howl to Immobilize units.","会生成小猫。
+近身攻击会施加伤残。
+嚎叫会令单位【移动受限】。",CatHuman,849,CharacterPortrait/849/1.png,images\CharacterPortrait\849\1.png
+Catbot,,Catbot,机器猫,,,_CAT,187,CharacterPortrait/187/1.png,images\CharacterPortrait\187\1.png
+Catepillar,,Caterpillar,毛毛虫,"Gains All Stats Up each turn.
+Evolves into a Moth when it reaches All Stats Up 5.","每个回合所有属性提升1次。
+所有属性提升5次时，进化成飞蛾。",Caterpillar,156,CharacterPortrait/156/1.png,images\CharacterPortrait\156\1.png
+Catnip,PickupBase,Catnip,猫薄荷,Gain +2 mana when eaten.,吃下获得2点魔能。,ManaPickup,,,
+CaveBaby,CavePerson,Caveman,穴居人,"Has a multi-hit melee attack.
+Hates Cats!","有多段近身攻击。
+讨厌猫！",CavePerson,781,CharacterPortrait/781/1.png,images\CharacterPortrait\781\1.png
+CaveCatBaby,,Poobles Rocksnow,普布斯·洛克斯诺,Places bear traps. Has a jumping melee attack.,会放捕兽夹。能近身跳跃攻击。,_CAT,758,CharacterPortrait/758/1.png,images\CharacterPortrait\758\1.png
+CaveCatDad,,Frod Rocksnow,弗罗德·洛克斯诺,"Has a wide melee attack with Knockback and a chance to stun.
+Can throw rocks.","近身范围攻击带击退，有一定几率造成【眩晕】。
+能扔石头。",_CAT,762,CharacterPortrait/762/1.png,images\CharacterPortrait\762\1.png
+CaveCatMom,,Wolma Rocksnow,沃玛·洛克斯诺,Has a ranged ice attack that inflicts Slow. Can heal its allies. Can throw enemies to her allies.,远程冰系攻击会施加【迟缓】。能治疗友方。能把敌人扔给友方。,_CAT,760,CharacterPortrait/760/1.png,images\CharacterPortrait\760\1.png
+CaveChief,,Caveman Chief,穴居人酋长,"Its melee attack inflicts Stun.
+Goes for killing blows against enemies with 10 or fewer HP.
+Buffs its humanoid allies.
+Hates Cats!","近身攻击会施加【眩晕】。
+攻击生命不多于10的敌人时，会下死手。
+会强化人形友方。
+讨厌猫！",CaveChief,770,CharacterPortrait/770/1.png,images\CharacterPortrait\770\1.png
+CaveMan,CavePerson,Caveman,穴居人,"Has a multi-hit melee attack.
+Hates Cats!","有多段近身攻击。
+讨厌猫！",CavePerson,781,CharacterPortrait/781/1.png,images\CharacterPortrait\781\1.png
+CaveManNoSpear,CavePerson,Caveman,穴居人,"Has a multi-hit melee attack.
+Hates Cats!","有多段近身攻击。
+讨厌猫！",CavePerson,781,CharacterPortrait/781/1.png,images\CharacterPortrait\781\1.png
+CavePerson,,Caveman,穴居人,"Has a multi-hit melee attack.
+Hates Cats!","有多段近身攻击。
+讨厌猫！",CavePerson,781,CharacterPortrait/781/1.png,images\CharacterPortrait\781\1.png
+CavePerson:CaveBaby,,Caveman Baby,穴居宝宝,Has a melee attack with Lifesteal. Seeks food. Will grow up when it reaches full health.,近身攻击带【吸血】。会找食物。生命回满时会长大。,CavePerson,781,CharacterPortrait/781/1.png,images\CharacterPortrait\781\1.png
+CavePerson:CaveMan,,Caveman Man,穴居男人,"Has a multi-hit melee attack. Will attempt to pick up spears.
+Hates Cats!","有多段近身攻击。会想着捡起长矛。
+讨厌猫！",CavePerson,781,CharacterPortrait/781/1.png,images\CharacterPortrait\781\1.png
+CavePerson:CaveManSpear,,Caveman Man,穴居男人,"Can throw its spear to inflict Stun.
+Hates Cats!","能投掷长矛，施加【眩晕】。
+讨厌猫！",CavePerson,781,CharacterPortrait/781/1.png,images\CharacterPortrait\781\1.png
+CavePerson:CaveWoman,,Caveman Woman,穴居女人,"Will use cats as weapons.
+Pregnant!","会把猫当武器用。
+怀孕了！",CavePerson,781,CharacterPortrait/781/1.png,images\CharacterPortrait\781\1.png
+CavePerson:CaveWomanHasCat,,Caveman Woman,穴居女人,"Will use cats as weapons.
+Pregnant!","会把猫当武器用。
+怀孕了！",CavePerson,781,CharacterPortrait/781/1.png,images\CharacterPortrait\781\1.png
+CavePerson:WereMan,,Wereman,猫人,"Has a multi-hit melee attack.
+Will jump-attack units in range.
+Hates Cavemen!","有多段近身攻击。
+会跳跃攻击范围内的单位。
+讨厌穴居人！",CavePerson,781,CharacterPortrait/781/1.png,images\CharacterPortrait\781\1.png
+CaveWoman,CavePerson,Caveman,穴居人,"Has a multi-hit melee attack.
+Hates Cats!","有多段近身攻击。
+讨厌猫！",CavePerson,781,CharacterPortrait/781/1.png,images\CharacterPortrait\781\1.png
+Cerberubs,,Cerberubs,地狱小笨狗,"Shoots Lava from its necks when damaged.
+Becomes enraged when hit from behind.
+Immune to Fire.","受到伤害时，脖子会喷出岩浆。
+身后被命中时，会暴怒。
+免疫火焰。",Cerberubs,1090,CharacterPortrait/1090/1.png,images\CharacterPortrait\1090\1.png
+Chaos,,Soahc,沌混,Stropelet eh emit hcae egnahc seitiliba sih.,变改会都力能，时送传次每他。,Chaos,413,CharacterPortrait/413/1.png,images\CharacterPortrait\413\1.png
+ChaosStacy,,Chaos Stacy,混沌史黛西,"Its melee attack inflicts Scrambled.
+Reflects projectiles and knocks back units that contact.","近身攻击会施加【乱七八糟】。
+会【反弹】投射物，也会击退跟它接触的单位。",_CAT,412,CharacterPortrait/412/1.png,images\CharacterPortrait\412\1.png
+ChargeyMaggot,,Chargey Maggot,冲锋蛆,Its dash attack has trample.,突进攻击带横冲直撞。,ChargeyMaggot,1409,CharacterPortrait/1409/1.png,images\CharacterPortrait\1409\1.png
+CharmedAmoeba,Amoeba,Amoeba,变形虫,"Can attach itself to equipment slots on cats, and will break existing equipment if it does.
+Will attempt to find a rock to defend itself.","能够趴在猫的装备栏位上，一旦趴住，就会损坏原本的装备。
+会找石头保护自己。",Amoeba,1046,CharacterPortrait/1046/1.png,images\CharacterPortrait\1046\1.png
+CharmedBabyDeathWorm,BabyDeathWorm,Baby Deathworm,大肠虫幼虫,"Dash attacks units that end their movement in line with it.
+Can't dash backwards!","如果有单位停在它所在的直线上，它会突进攻击。
+不能倒退突进！",BabyDeathWorm,1252,CharacterPortrait/1252/1.png,images\CharacterPortrait\1252\1.png
+CharmedBear,Bear,Bear,熊,,,Bear,158,CharacterPortrait/158/1.png,images\CharacterPortrait\158\1.png
+CharmedBigDemon,BigDemon,Brute,蛮牛,"Throws rocks that have a chance inflict Stun when at range.
+Will uppercut units above 50% health.
+Will instantly kill units below 50% health.
+Immune to Fire.","会扔石头，如果是远距离命中，那么有一定几率施加【眩晕】。
+会对生命高于50%的单位使用上勾拳。
+会秒杀生命低于50%的单位。
+免疫火焰。",BigDemon,1102,CharacterPortrait/1102/1.png,images\CharacterPortrait\1102\1.png
+CharmedCancerCat,CancerCat,Cancer Cat,癌猫,"Its melee attack causes cats it hits to lose 1 [img:con] permanently and has a chance to give them cancer.
+Explodes after 3 turns.","近身攻击命中时会令目标永久[img:con]-1，同时有一定几率令其得癌症。
+3回合之后会爆炸。",_CAT,113,CharacterPortrait/113/1.png,images\CharacterPortrait\113\1.png
+CharmedCaveBaby,CaveBaby,Caveman,穴居人,"Has a multi-hit melee attack.
+Hates Cats!","有多段近身攻击。
+讨厌猫！",CavePerson,781,CharacterPortrait/781/1.png,images\CharacterPortrait\781\1.png
+CharmedChargeyMaggot,ChargeyMaggot,Chargey Maggot,冲锋蛆,Its dash attack has trample.,突进攻击带横冲直撞。,ChargeyMaggot,1409,CharacterPortrait/1409/1.png,images\CharacterPortrait\1409\1.png
+CharmedClot,Clot,Clot,血块,Has a chance to become a Stem Cat at the end of its turn.,它在回合结束时，有一定几率变成干细喵。,Clot,476,CharacterPortrait/476/1.png,images\CharacterPortrait\476\1.png
+CharmedCopBot,CopBot,Cop Bot,警用机器人,Melee attacker. Will shoot at enemies who damage its allies.,近身攻击单位。友方受到伤害时，会向伤害它的敌人射击。,CopBot,874,CharacterPortrait/874/1.png,images\CharacterPortrait\874\1.png
+CharmedCultist,Cultist,Cultist,教徒,,,BunkerBoy,1153,CharacterPortrait/1153/1.png,images\CharacterPortrait\1153\1.png
+CharmedDaddyShark,DaddyShark,Daddy Shark,鲨鱼爸爸,"Will instantly kill anything it can reach!
+Takes bonus turns for each bleeding unit.
+Focuses on bleeding units.","它不论能接触到什么，都会立刻杀死！
+场上每有1个单位【出血】，就会获得奖励回合。
+专门攻击【出血】的单位。",DaddyShark,1454,CharacterPortrait/1454/1.png,images\CharacterPortrait\1454\1.png
+CharmedDemonKitten,Hyde,Demon Kitten,恶魔小猫,Its melee attack can hit multiple times!,近身攻击可能命中多次！,_CAT,183,CharacterPortrait/183/1.png,images\CharacterPortrait\183\1.png
+CharmedDip,Dip,Dip,小粪,Melee attacker.,近身攻击单位。,Dip,1478,CharacterPortrait/1478/1.png,images\CharacterPortrait\1478\1.png
+CharmedDoctorBot,DoctorBot,Doktorbot,道柯特博特,"Heals its allies and gives them random buffs.
+Spawns Invaders.
+Collects Pickups.","会治疗友方，同时随机赋予增益。
+会生成施皮登博特。
+会捡起物品。",DocBot,614,CharacterPortrait/614/1.png,images\CharacterPortrait\614\1.png
+CharmedDustDevil,DustDevil,Dust Devil,沙魔,He's got the power of an upright in his goddamn hand!,他他妈手上的力气比立式吸尘器还大！,DustDevil,58,CharacterPortrait/58/1.png,images\CharacterPortrait\58\1.png
+CharmedFetus,Fetus,Fetus,胎儿,"Ranged attacker.
+Can drink water to heal.","远程攻击单位。
+能喝水回血。",Fetus,1464,CharacterPortrait/1464/1.png,images\CharacterPortrait\1464\1.png
+CharmedFetus2,CharmedFetus,Fetus,胎儿,"Ranged attacker.
+Can drink water to heal.","远程攻击单位。
+能喝水回血。",Fetus,1464,CharacterPortrait/1464/1.png,images\CharacterPortrait\1464\1.png
+CharmedFlea,Flea,Flea,跳蚤,Its melee attack damages itself.,近身攻击会伤害自己。,Flea,1606,CharacterPortrait/1606/1.png,images\CharacterPortrait\1606\1.png
+CharmedFleaSpecial,CharmedFlea,Florian the Flea,跳蚤弗洛里安,Your flea friend till the end!,永远都是你的跳蚤伙伴！,Flea,1606,CharacterPortrait/1606/1.png,images\CharacterPortrait\1606\1.png
+CharmedFloast,Floast,Floast,浮颅,Has a melee throw attack and a ranged hook attack.,可以近身投掷攻击，也可以远程拖钩攻击。,Floast,526,CharacterPortrait/526/1.png,images\CharacterPortrait\526\1.png
+CharmedFloater,Floater,Floater,浮粪,Melee attacker that moves away after it deals damage.,近身攻击单位，造成伤害后会走开。,Floater,1476,CharacterPortrait/1476/1.png,images\CharacterPortrait\1476\1.png
+CharmedFly,Fly,Fly,苍蝇,"Melee attacker.
+Flying.","近身攻击单位。
+飞行。",Fly,1608,CharacterPortrait/1608/1.png,images\CharacterPortrait\1608\1.png
+CharmedFlySwarm,FlySwarm,Fly Swarm,一群苍蝇,"Performs a melee attack that hits once for each fly.
+Each time it's damaged it loses a fly.","可以近身攻击，有几个苍蝇，就击中几次。
+每次受到伤害，就会少一个苍蝇。",FlySwarm,1254,CharacterPortrait/1254/1.png,images\CharacterPortrait\1254\1.png
+CharmedFutureBot,FutureBot,Katzebot,卡策博特,Melee attacker. Focuses its lowest health enemy. Will Suplex others out of the way.,近身攻击单位。专门攻击生命最少的敌人。会把其他敌人背摔到一边。,_CAT,638,CharacterPortrait/638/1.png,images\CharacterPortrait\638\1.png
+CharmedGamete,Gamete,Gamete,配子,Spawns random units.,会随机生成单位。,Gamete,886,CharacterPortrait/886/1.png,images\CharacterPortrait\886\1.png
+CharmedGeoLad,GeoLad,GeoLad,大力石,Performs a jump attack that damages and knocks back all units in an area.,跳跃攻击，伤害并击退1片区域的所有单位。,GeoLad,1050,CharacterPortrait/1050/1.png,images\CharacterPortrait\1050\1.png
+CharmedGunCat,GunCat,Bounty Hunter,赏金猎手,Can shoot anywhere within its line of sight. Prefers long shots.,能向视线之内的任一位置射击。偏好远距离射击。,_CAT,124,CharacterPortrait/124/1.png,images\CharacterPortrait\124\1.png
+CharmedHangerBot,HangerBot,Hängenbot,亨根博特,"Its melee attack inflicts Short Circuit.
+Retracts when damaged.
+Spawns Invaders.","近身攻击会施加【短路】。
+受到伤害会回缩。
+会生成施皮登博特。",HangerBot,612,CharacterPortrait/612/1.png,images\CharacterPortrait\612\1.png
+CharmedHeadTumor,HeadTumor,Tumorhead,肿瘤脑袋,"Its melee attack knocks units back 3 tiles.
+Dashes forward when damaged.","近身攻击会把单位击退3格。
+受到伤害时会向前突进。",HeadTumor,1100,CharacterPortrait/1100/1.png,images\CharacterPortrait\1100\1.png
+CharmedHornyCat,HornyCat,Horny Cat,角猫,Its ranged attack inflicts Blind.,远程攻击会施加【瞎眼】。,_CAT,126,CharacterPortrait/126/1.png,images\CharacterPortrait\126\1.png
+CharmedHyde,Hyde,Hyde,海德,Its melee attack can hit multiple times!,近身攻击可能命中多次！,_CAT,184,CharacterPortrait/184/1.png,images\CharacterPortrait\184\1.png
+CharmedKitten,Kitten,Kitten,小猫,Runs away when damaged.,受到伤害时会逃跑。,_CAT,178,CharacterPortrait/178/1.png,images\CharacterPortrait\178\1.png
+CharmedLeaper,Leaper,Leaper,跳跳,Its leap attack damages and knocks back all adjacent units.,跳跃攻击会伤害、击退前后左右相邻的所有单位。,FatRat,1583,CharacterPortrait/1583/1.png,images\CharacterPortrait\1583\1.png
+CharmedLeech,Maggot,Leech,水蛭,Melee attacker.,近身攻击单位。,Maggot,199,CharacterPortrait/199/1.png,images\CharacterPortrait\199\1.png
+CharmedLice,Lice,Louse,虱子,Its melee attacks inflict Bruise.,近身攻击会施加【瘀伤】。,Flea,1606,CharacterPortrait/1606/1.png,images\CharacterPortrait\1606\1.png
+CharmedLoveBot,LoveBot,Love Bot,机器伴侣,Heals and gives +1 [img:spd] to its allies. Its heal can grant an extra turn if healed over max.,会治疗友方，同时令友方[img:spd]+1。它的治疗如果令目标生命超过上限，那么令目标获得1个额外回合。,LoveBot,1163,CharacterPortrait/1163/1.png,images\CharacterPortrait\1163\1.png
+CharmedMaggot,Maggot,Maggot,蛆,Melee attacker.,近身攻击单位。,Maggot,1590,CharacterPortrait/1590/1.png,images\CharacterPortrait\1590\1.png
+CharmedMammoth,Mammoth,Wooly Mammoth,长毛猛犸,"Has a melee attack that knocks units into the air, and a dash attack.
+Will Bruise and Knockback adjacent units at the start of its turn.
+Trample.","近身攻击会把单位击飞，还会突进攻击。
+它在回合开始时，会对前后左右相邻的单位施加【瘀伤】并击退。
+横冲直撞。",Mammoth,766,CharacterPortrait/766/1.png,images\CharacterPortrait\766\1.png
+CharmedMammothBaby,MammothBaby,Mammoth Kitten,小猛犸,"Its melee attack knocks units into the air.
+Bruises and knocks back adjacent units at the start of its turn.
+Trample.","近身攻击会把单位打飞。
+它在回合开始时，会对前后左右相邻的单位施加【瘀伤】并击退。
+横冲直撞。",_CAT,108,CharacterPortrait/108/1.png,images\CharacterPortrait\108\1.png
+CharmedMangy2,Mangy2,Mummified Mangy,木乃伊大癞,"Its ranged attack may inflict Poison.
+Spawns Maggots when damaged.
+Becomes a Carcass when killed.","远程攻击可能施加【中毒】。
+受到伤害时会产生蛆。
+被击杀时会变成尸骸。",_CAT,128,CharacterPortrait/128/1.png,images\CharacterPortrait\128\1.png
+CharmedMegaDino,MegaDinoLeg,Dreadnoughtus,无畏龙,Stomps towards units that damage it. Lifts when it takes enough damage.,哪个单位伤害它，它就会踩哪个单位。受到足够的伤害之后，会抬起来。,MegaDinoLeg,674,CharacterPortrait/674/1.png,images\CharacterPortrait\674\1.png
+CharmedPile,Pile,Pile,坨坨,Its ranged attack spawns Dips. Stationary.,远程攻击会生成小粪。不会移动。,Pile,1474,CharacterPortrait/1474/1.png,images\CharacterPortrait\1474\1.png
+CharmedPinky,Pinky,Pinky,老鼠崽子,"Melee attacker.
+Moves randomly.","近身攻击单位。
+随机移动。",Pinky,1592,CharacterPortrait/1592/1.png,images\CharacterPortrait\1592\1.png
+CharmedPooter,Pooter,Pooter,狙击蝇,Ranged attacker. Flying.,远程攻击单位。飞行。,Pooter,1610,CharacterPortrait/1610/1.png,images\CharacterPortrait\1610\1.png
+CharmedRaptorBaby,RaptorBaby,Raptor Kitten,迅猛小猫,Its melee attack inflicts bleed. Moves far away after attacking.,近身攻击会施加【出血】。攻击后会跑到远处。,_CAT,697,CharacterPortrait/697/1.png,images\CharacterPortrait\697\1.png
+CharmedRat,Rat,Lil' Rat,小老鼠,Dashes in a straight line.,直线突进。,Rat,1585,CharacterPortrait/1585/1.png,images\CharacterPortrait\1585\1.png
+CharmedRattleSnake,RattleSnake,Rattlesnek,响尾虫它,"Ambushes enemies who walk past it.
+Its attacks inflict Poison.","伏击身边路过的敌人。
+攻击会施加【中毒】。",Snake,130,CharacterPortrait/130/1.png,images\CharacterPortrait\130\1.png
+CharmedReaper,Reaper,Reaper,讨命鬼,"Performs a spin attack at the start of its turn.
+Teleports to units that kill its allies.
+Undead.","它在回合开始时进行旋转攻击。
+有单位击杀它的友方时，它会传送到那个单位旁边。
+亡灵。",Reaper,1385,CharacterPortrait/1385/1.png,images\CharacterPortrait\1385\1.png
+CharmedScorpionCat,ScorpionCat,Scorpion Cat,蝎猫,Its melee attacks can Poison or Immobilize.,近身攻击能够施加【中毒】或【移动受限】。,_CAT,122,CharacterPortrait/122/1.png,images\CharacterPortrait\122\1.png
+CharmedSecurityBot,SecurityBot,Security Bot,安保机器人,"When its allies are damaged, it will move towards the attacker and attempt to attack it.
+Gains +1 movement range at the end of its turn.","友方受到伤害时，会朝攻击者移动并尝试攻击。
+它在回合结束时，移动范围+1。",SecurityBot,1166,CharacterPortrait/1166/1.png,images\CharacterPortrait\1166\1.png
+CharmedSnakeyBones,SnakeyBones,Bone Worm,骨虫,"Ranged attacker.
+Gains more range the taller it becomes.
+Loses height when it takes damage.
+Can only take 1 damage at a time when tall.
+Undead.","远程攻击单位。
+个子越高，攻击范围越大。
+受到伤害会变矮。
+比较高时，每次只会受到1点伤害。
+亡灵。",SnakeyBones,1245,CharacterPortrait/1245/1.png,images\CharacterPortrait\1245\1.png
+CharmedSoldierBot,SoldierBot,Schutzbot,舒茨博特,"Ranged attacker with limited ammo.
+Shoots at enemies that damage its allies.
+Expends the rest of its ammo and reloads at the end of its turn.
+Backflips one attack per turn.","远程攻击单位，弹药有限。
+友方受到伤害时，会朝攻击者射击。
+它在回合结束时，会把剩余弹药打完，然后填弹。
+每个回合可以后空翻闪避1次攻击。",SoldierBot,618,CharacterPortrait/618/1.png,images\CharacterPortrait\618\1.png
+CharmedSpookie,Spookie,Spookie,阿飘,"Its melee attack drains mana.
+Undead.","近身攻击会吸取魔能。
+亡灵。",Spookie,1403,CharacterPortrait/1403/1.png,images\CharacterPortrait\1403\1.png
+CharmedStacy,Stacy2p0,Stacy #{stacy_number},{stacy_number}号史黛西,"Its melee attack inflicts Charm.
+Can heal and grant All Stats Up to its allies.","近身攻击会施加【洗脑】。
+能治疗友方，同时令对方所有属性提升。",_CAT,120,CharacterPortrait/120/1.png,images\CharacterPortrait\120\1.png
+CharmedSwappyMaggot,SwappyMaggot,Diggy Maggot,钻地蛆,Its melee attack has a chance to Stun. Swaps places with a unit to move.,近身攻击有一定几率施加【眩晕】。会通过跟其他单位交换位置来移动。,DiggyMaggot,1411,CharacterPortrait/1411/1.png,images\CharacterPortrait\1411\1.png
+CharmedTallBot,TallBot,Großerbot,格罗瑟博特,"Its suplex attack can Stun or Immobilize.
+Primes Airstrikes.","背摔攻击能令目标【眩晕】或【移动受限】。
+会准备空袭。",TallBot,616,CharacterPortrait/616/1.png,images\CharacterPortrait\616\1.png
+CharmedTarBaby,TarBaby,Tar Baby,焦油娃,"Its ranged attack creates Tar tiles.
+Leaves Tar tiles in its path.","远程攻击会产生焦油方格。
+移动会留下焦油方格。",TarBaby,703,CharacterPortrait/703/1.png,images\CharacterPortrait\703\1.png
+CharmedTinaFly,Fly,Tina's Friend,泰娜的朋友,"Melee attacker.
+Flying.","近身攻击单位。
+飞行。",Fly,1608,CharacterPortrait/1608/1.png,images\CharacterPortrait\1608\1.png
+CharmedTinySpider,TinySpider,Spiderling,小蜘蛛,"Burrows inside its victims, inflicting Infested.",钻进受害者体内，施加【滋生】。,BabySpider,1329,CharacterPortrait/1329/1.png,images\CharacterPortrait\1329\1.png
+CharmedTinyTumor,TinyTumor,Tiny Tumor,小小肿瘤,Its melee attack causes cats it hits to lose 1 [img:con] permanently and has a chance to give them cancer.,近身攻击打中的猫永久[img:con]-1，而且有一定几率令它得癌症。,[TinyTumorA,,,
+CharmedTomTom,TomTom,Tom Tom,浪浪,"It's slow, but has a wide melee attack.",动作很慢，但是近身攻击范围大。,_CAT,174,CharacterPortrait/174/1.png,images\CharacterPortrait\174\1.png
+CharmedTumorousMaggot,TumorousMaggot,Burfer Maggot,肿瘤蛆,Its attack surrounds units with Thorny lumps.,它的攻击会用带刺肿块包围单位。,Burfer,1407,CharacterPortrait/1407/1.png,images\CharacterPortrait\1407\1.png
+CharmedWhiteRabbit,WhiteRabbit,White Rabbit,白兔,Has a 50% chance of gaining Madness at the end of each turn.,每个回合结束时，有50%的几率【癫狂】。,_CAT,109,CharacterPortrait/109/1.png,images\CharacterPortrait\109\1.png
+Cherub,BirdSmall,Cherub,小智天使,Whoever kills this gets All Stats Up and finds a bonus item!,谁击杀它，谁就能所有属性提升，然后捡到1件奖励物品！,BirdSmall,220,CharacterPortrait/220/1.png,images\CharacterPortrait\220\1.png
+Cherub_FinalBoss,Cherub,Cherub,小智天使,Whoever kills this gets All Stats Up!,谁击杀这个单位，谁的所有属性就会提升！,BirdSmall,220,CharacterPortrait/220/1.png,images\CharacterPortrait\220\1.png
+Cherubim,,Cherubim,大智天使,"Gives its allies [img:divineshield].
+Primes an area attack when damaged.
+Immune to Holy. Gains All Stats Up when struck with Holy Element.","令友方获得[img:divineshield]。
+受到伤害时会准备区域攻击。
+免疫神圣元素。被神圣元素命中时，所有属性提升。",Revalark,357,CharacterPortrait/357/1.png,images\CharacterPortrait\357\1.png
+Chicken,BirdLarge,Chicken,鸡,Whoever kills this gets All Stats Up and finds a bonus item!,谁击杀它，谁就能所有属性提升，然后捡到1件奖励物品！,BirdLarge,210,CharacterPortrait/210/1.png,images\CharacterPortrait\210\1.png
+Chubs,,Chubs,圆圆,"Blind.
+Shoots a Poison shot when damaged.
+Does a melee spin attack.","【瞎眼】。
+受到伤害时会喷毒。
+会进行近身旋转攻击。",Chubs,1516,CharacterPortrait/1516/1.png,images\CharacterPortrait\1516\1.png
+ChumBag,,Chum Bag,鱼杂袋子,Its long range attack spawns Maggots if it hits an empty tile. Becomes a Chummy when killed. Stationary.,远程攻击如果击中的是空方格，那么生成蛆。被杀时会变成好大饵。不会移动。,ChumBag,1522,CharacterPortrait/1522/1.png,images\CharacterPortrait\1522\1.png
+Chummy,,Chummy,好大饵,Dashes in a straight line.,直线突进。,Chummy,1524,CharacterPortrait/1524/1.png,images\CharacterPortrait\1524\1.png
+Chupacabra,,Chupacabra,卓柏卡布拉,More like chupa gato! Am I right?,桌布卡住啦？,_CAT,50,CharacterPortrait/50/1.png,images\CharacterPortrait\50\1.png
+CloakedDemon,,Cloaked Demon,披风恶魔,"Casts an area spell that inflicts Burn 3 to enemies and gives +1 Damage to allies.
+Inflicts Hex on units that damage it.
+Immune to Fire.","会施放区域法术，对敌人施加3层【灼烧】，同时令友方伤害+1。
+单位如果对它造成伤害，会被施加【咒术】。
+免疫火焰。",CloakedDemon,1104,CharacterPortrait/1104/1.png,images\CharacterPortrait\1104\1.png
+CloningVat,,Cloning Vat,克隆舱,Something is moving inside...,里面有什么在动……,CloningVat,6,CharacterPortrait/6/1.png,images\CharacterPortrait\6\1.png
+Clot,,Clot,血块,Has a chance to become a Stem Cat at the end of its turn.,它在回合结束时，有一定几率变成干细喵。,Clot,476,CharacterPortrait/476/1.png,images\CharacterPortrait\476\1.png
+Coin,PickupBase,Coin,硬币,Collect it to get money!,捡起来就有钱！,Coin,,,
+Coin10,Coin,Coin,硬币,Collect it to get money!,捡起来就有钱！,Coin,,,
+Coin2,Coin,Coin,硬币,Collect it to get money!,捡起来就有钱！,Coin,,,
+Coin3,Coin,Coin,硬币,Collect it to get money!,捡起来就有钱！,Coin,,,
+Coin4,Coin,Coin,硬币,Collect it to get money!,捡起来就有钱！,Coin,,,
+Coin5,Coin,Coin,硬币,Collect it to get money!,捡起来就有钱！,Coin,,,
+Coin6,Coin,Coin,硬币,Collect it to get money!,捡起来就有钱！,Coin,,,
+Coin7,Coin,Coin,硬币,Collect it to get money!,捡起来就有钱！,Coin,,,
+Coin8,Coin,Coin,硬币,Collect it to get money!,捡起来就有钱！,Coin,,,
+Coin9,Coin,Coin,硬币,Collect it to get money!,捡起来就有钱！,Coin,,,
+CollectiveCat,,The Collective,集合体,"Has a spin attack.
+Counterattacks when hit.
+Mimics the attacks and counters of all other cats in The Collective.","旋转攻击。
+被命中时会反击。
+会模仿集合体其他猫的攻击和反击。",_CAT,524,CharacterPortrait/524/1.png,images\CharacterPortrait\524\1.png
+ColorlessCat_Tutorial,,Pebbles,石头,"Its melee attack knocks units back.
+Can throw rocks.","近身攻击会击退单位。
+能扔石头。",_CAT,1575,CharacterPortrait/1575/1.png,images\CharacterPortrait\1575\1.png
+ConjoinedHusk,,Conjoined Husk,连体躯壳,"Its melee attack picks up cats.
+Creates evil copies of cats it's holding.","近身攻击会把猫抓起来。
+手上抓着什么猫，就会生成什么猫的邪恶复制体。",ConjoinedHusk,534,CharacterPortrait/534/1.png,images\CharacterPortrait\534\1.png
+CookedBait,FoodBase,Cooked Bait,熟鱼饵,"Attracts enemies toward it.
+Heals 1 HP and +1 [img:str] when eaten.","会吸引敌人。
+吃下可以恢复1点生命，而且[img:str]+1。",Food,,,
+CookedBigFood,FoodBase,Cooked Medium Food,中份热食,Heals 7 HP and +1 [img:str] when eaten.,吃下可以恢复7点生命，而且[img:str]+1。,Food,,,
+CookedBiggestFood,FoodBase,Cooked Big Food,大份热食,Heals 10 HP and +1 [img:str] when eaten.,吃下可以恢复10点生命，而且[img:str]+1。,Food,,,
+CookedChickenLeg,CookedBigFood,Cooked Medium Food,中份热食,Heals 7 HP and +1 [img:str] when eaten.,吃下可以恢复7点生命，而且[img:str]+1。,Food,,,
+CookedFood,FoodBase,Cooked Food,热食,Heals 4 HP and +1 [img:str] when eaten.,吃下可以恢复4点生命，而且[img:str]+1。,Food,,,
+CookedPoisonBait,FoodBase,Cooked Poisoned Bait,有毒熟鱼饵,"Attracts enemy units toward it.
+Gain Poison 2, Slow 2 and +1 [img:str] if eaten.","会吸引敌方单位。
+吃下会获得2层【中毒】、2层【迟缓】，同时[img:str]+1。",Food,,,
+CookedPoisonFood,FoodBase,Cooked Poisoned Food,有毒热食,"Gain Poison 2, Slow 2 and +1 [img:str] if eaten.",吃下会获得2层【中毒】、2层【迟缓】，同时[img:str]+1。,Food,,,
+CookedPurifiedPoisonFood,FoodBase,Cooked Purified Food,净化热食,Heals 4 HP and +1 [img:str] when eaten.,吃下可以恢复4点生命，而且[img:str]+1。,Food,,,
+CopBot,,Cop Bot,警用机器人,Melee attacker. Will shoot at enemies who damage its allies.,近身攻击单位。友方受到伤害时，会向伤害它的敌人射击。,CopBot,874,CharacterPortrait/874/1.png,images\CharacterPortrait\874\1.png
+CopBot_Uprising,CopBot,Cop Bot,警用机器人,Melee attacker. Will shoot at enemies who damage its allies.,近身攻击单位。友方受到伤害时，会向伤害它的敌人射击。,CopBot,874,CharacterPortrait/874/1.png,images\CharacterPortrait\874\1.png
+CoreFreak,,Core Freak,地核怪物,"Can perform a flurry melee attack or a headbutt that inflicts Stun.
+Blind.","能进行近身连击，或用头槌施加【眩晕】。
+【瞎眼】。",CoreFreak,1094,CharacterPortrait/1094/1.png,images\CharacterPortrait\1094\1.png
+CovenCandle,,Candle,蜡烛,,,CovenCandle,,,
+Crate,,Crate,板条箱,What could be inside?,里面会有什么呢？,Crate,,,
+Crate_WithItemChance,Crate,Crate,板条箱,What could be inside?,里面会有什么呢？,Crate,,,
+CraterCreeper,,Crater Creeper,陨坑爬爬,"Shoots rocks or dashes forward leaving an Amoeba behind.
+Can only be damaged from the front.","会射石头，或向前突进，在身后留下1个变形虫。
+只能从正面伤害它。",CanCreeper,1032,CharacterPortrait/1032/1.png,images\CharacterPortrait\1032\1.png
+CraterCreeperOut,,Crater Creeper,陨坑爬爬,Its ranged attack spawns an Amoeba.,远程攻击会生成1个变形虫。,CanCreeperOut,1030,CharacterPortrait/1030/1.png,images\CharacterPortrait\1030\1.png
+Crow,,{SpawnedBy}'s Crow,{SpawnedBy}的乌鸦,"Inherits its owner's stats.
+Basic attack modifiers on its owner also get applied to the Crow.
+Flying.","继承主人的属性。
+主人普通攻击的修正也会在乌鸦身上生效。
+飞行。",Crow,166,CharacterPortrait/166/1.png,images\CharacterPortrait\166\1.png
+Crow2,Crow,{SpawnedBy}'s Crow,{SpawnedBy}的乌鸦,"Inherits its owner's stats.
+Basic attack modifiers on its owner also get applied to the Crow.
+Flying.","继承主人的属性。
+主人普通攻击的修正也会在乌鸦身上生效。
+飞行。",Crow,166,CharacterPortrait/166/1.png,images\CharacterPortrait\166\1.png
+Crow3,Crow,{SpawnedBy}'s Crow,{SpawnedBy}的乌鸦,"Inherits its owner's stats.
+Basic attack modifiers on its owner also get applied to the Crow.
+Flying.","继承主人的属性。
+主人普通攻击的修正也会在乌鸦身上生效。
+飞行。",Crow,166,CharacterPortrait/166/1.png,images\CharacterPortrait\166\1.png
+Cultist,,Cultist,教徒,,,BunkerBoy,1153,CharacterPortrait/1153/1.png,images\CharacterPortrait\1153\1.png
+Cultist:Cultist,,Cultist Lackey,邪教走狗,"Melee attacker that throws units.
+Becomes a Zealot when it kills something.","近身攻击单位，会把单位扔出去。
+击杀单位之后会变成【狂热信徒】。",BunkerBoy,1153,CharacterPortrait/1153/1.png,images\CharacterPortrait\1153\1.png
+Cultist:Zealot,,Cultist Zealot,狂热信徒,"Does a multi-stab attack.
+Gains +1 Damage at the end of its turn.
+Becomes suicidal when at low HP.","会进行多段戳刺攻击。
+它在回合结束时，伤害+1。
+生命低时会出现自杀倾向。",BunkerBoy,1153,CharacterPortrait/1153/1.png,images\CharacterPortrait\1153\1.png
+Cultist:ZealotBomb,,Cultist Zealot,狂热信徒,He's gonna blow!,他快要炸了！,BunkerBoy,1153,CharacterPortrait/1153/1.png,images\CharacterPortrait\1153\1.png
+Cultist:Mutant,,Cultist Mutant,突变教徒,"Does a wide melee attack that knocks units into the air.
+Spawns a Tumor when it dies.
+Brace 2.","会用近身范围攻击把单位打到空中。
+死亡时会生成1个肿瘤。
+2层【招架】。",BunkerBoy,212,CharacterPortrait/212/1.png,images\CharacterPortrait\212\1.png
+Cultist:Bishop,,Cultist Bishop,邪教教主,"Its lightning attack has a chance to Stun.
+Heals its allies. Spawns a Bishop Hat when killed.","它的闪电攻击有一定几率施加【眩晕】。
+会治疗友方。被击杀会生成教主帽子。",BunkerBoy,1153,CharacterPortrait/1153/1.png,images\CharacterPortrait\1153\1.png
+Cultist:Washer,,Cultist Lackey,邪教走狗,He's here to cool down Johnny!,他是来给强尼降温的！,BunkerBoy,1153,CharacterPortrait/1153/1.png,images\CharacterPortrait\1153\1.png
+CultistBishop,Cultist,Cultist,教徒,,,BunkerBoy,1153,CharacterPortrait/1153/1.png,images\CharacterPortrait\1153\1.png
+CultistMutant,Cultist,Cultist,教徒,,,BunkerBoy,1153,CharacterPortrait/1153/1.png,images\CharacterPortrait\1153\1.png
+CultistWasher,Cultist,Cultist,教徒,,,BunkerBoy,1153,CharacterPortrait/1153/1.png,images\CharacterPortrait\1153\1.png
+CultistZealot,Cultist,Cultist,教徒,,,BunkerBoy,1153,CharacterPortrait/1153/1.png,images\CharacterPortrait\1153\1.png
+CustomEnemyCat,PlayerCat,{Catname},{Catname},Cat.,猫。,_CAT,,,
+Cutter,,Cutter,切割怪,,,Cutter,,,
+DaddyShark,,Daddy Shark,鲨鱼爸爸,"Will instantly kill anything it can reach!
+Takes bonus turns for each bleeding unit.
+Focuses on bleeding units.","它不论能接触到什么，都会立刻杀死！
+场上每有1个单位【出血】，就会获得奖励回合。
+专门攻击【出血】的单位。",DaddyShark,1454,CharacterPortrait/1454/1.png,images\CharacterPortrait\1454\1.png
+Dclaude,,D'Claude,屈朱阿,,,_CAT,,,
+DeadPinky,Pinky,Pinky,老鼠崽子,This poor little guy didn't stand a chance!,这个可怜的小家伙根本毫无胜算！,Pinky,1592,CharacterPortrait/1592/1.png,images\CharacterPortrait\1592\1.png
+Death,,Death!,死神！,He's here to take what he's owed.,他来索命了。,Reaper,1385,CharacterPortrait/1385/1.png,images\CharacterPortrait\1385\1.png
+DeathWorm,,Death Worm,大肠虫,"Digs underground after its dash attack.
+Will eat any unit that ends movement on top of it while it's underground.","突进攻击之后会钻到地下。
+它在地下时，单位只要停在它的正上方，就会被吃掉。",DeathWorm,1249,CharacterPortrait/1249/1.png,images\CharacterPortrait\1249\1.png
+Deathbot,,Deathbot,死亡机器人,,,Deathbot,104,CharacterPortrait/104/1.png,images\CharacterPortrait\104\1.png
+Debug_MegaGuppyPhase3,Dummy,,,,,_CAT,,,
+Decoy,,Decoy,诱饵,,,Decoy2,,,
+DemonHooker,,Chain Demon,锁链恶魔,"Will hook and pull units toward itself.
+Immune to fire.","会用锁链勾住单位，拉向自己。
+免疫火焰。",_CAT,1110,CharacterPortrait/1110/1.png,images\CharacterPortrait\1110\1.png
+Dice,,D6,D6,Attack to re-roll.,攻击它会重掷。,GambitDice,,,
+DinoEggs,,Dino Nest,恐龙窝,Spawns baby Raptors.,会生成幼年迅猛龙。,DinoEggs,701,CharacterPortrait/701/1.png,images\CharacterPortrait\701\1.png
+Dip,,Dip,小粪,Melee attacker.,近身攻击单位。,Dip,1478,CharacterPortrait/1478/1.png,images\CharacterPortrait\1478\1.png
+DoctorBot,,Doktorbot,道柯特博特,"Heals its allies and gives them random buffs.
+Spawns Invaders.
+Collects Pickups.","会治疗友方，同时随机赋予增益。
+会生成施皮登博特。
+会捡起物品。",DocBot,614,CharacterPortrait/614/1.png,images\CharacterPortrait\614\1.png
+Dog,,,,,,_CAT,,,
+Dove,BirdSmall,Dove,和平鸽,Whoever kills this gets All Stats Up and finds a bonus item!,谁击杀它，谁就能所有属性提升，然后捡到1件奖励物品！,BirdSmall,224,CharacterPortrait/224/1.png,images\CharacterPortrait\224\1.png
+DrDitto,,Dr. Ditto,百变博士,"Fires explosive rockets that hit a random tile in an area.
+Will Fear units near it at the start of its turn.
+Its body revives at the end of the round.","会发射爆炸火箭，随机命中1片区域的1个方格。
+它在回合开始时，会令附近的单位【害怕】。
+它的尸体会在一轮结束时复活。",DrDitto,872,CharacterPortrait/872/1.png,images\CharacterPortrait\872\1.png
+DrMangler,,Dr. Mangler,蒙格勒医生,Controls the Monster.,会操控怪物。,DrMangler,604,CharacterPortrait/604/1.png,images\CharacterPortrait\604\1.png
+Drcat,,Dr. Cat,猫博士,Will randomly cast one of 6 spells.,会施放6种法术，每次随机施放1种。,_CAT,890,CharacterPortrait/890/1.png,images\CharacterPortrait\890\1.png
+DruidCat,,Draven,德莱文,"Heals and buffs his crows.
+Enters Squirrel Form once his crows die.","会治疗并强化他的乌鸦。
+乌鸦全部死亡时，会立刻进入松鼠形态。",_CAT,857,CharacterPortrait/857/1.png,images\CharacterPortrait\857\1.png
+DruidCat:SquirrelForm,,,,"Has a multi-hit melee attack.
+Spawns squirrels.","有多段近身攻击。
+会生成松鼠。",_CAT,857,CharacterPortrait/857/1.png,images\CharacterPortrait\857\1.png
+DruidCat_Terminator,,Robo-Draven,机械德莱文,,,_CAT,264,CharacterPortrait/264/1.png,images\CharacterPortrait\264\1.png
+DruidCrow,,Draven's Crow,德莱文的乌鸦,"Melee attacker than can also use a wind attack with Knockback.
+Will move and attack enemies that attack Draven.","近身攻击单位，也能用带击退的风系攻击。
+有敌人攻击德莱文时，它会移动过去攻击那个敌人。",Crow,166,CharacterPortrait/166/1.png,images\CharacterPortrait\166\1.png
+DruidCrow_Terminator,DruidCrow,Robo-Draven's Crow,机械德莱文的乌鸦,"Melee attacker than can also use a wind attack with Knockback.
+Will move and attack enemies that attack Draven.","近身攻击单位，也能用带击退的风系攻击。
+有敌人攻击德莱文时，它会移动过去攻击那个敌人。",Crow,166,CharacterPortrait/166/1.png,images\CharacterPortrait\166\1.png
+Dummy,,,,,,_CAT,,,
+Dumpster_interactive,,Dumpster,垃圾箱,Spawns random Pickups when damaged.,受到伤害时会随机生成可以捡起的物品。,Dumpster,,,
+DustCloud,,Dust Cloud,尘土,,,DustCloud,,,
+DustDevil,,Dust Devil,沙魔,He's got the power of an upright in his goddamn hand!,他他妈手上的力气比立式吸尘器还大！,DustDevil,58,CharacterPortrait/58/1.png,images\CharacterPortrait\58\1.png
+Dybbuk,,Dybbuk,附鬼,Avoids your attacks! Will get revenge on the cat who kills it!,会躲开你的攻击！被杀之后，会找杀害自己的猫复仇！,Dybbuk,1381,CharacterPortrait/1381/1.png,images\CharacterPortrait\1381\1.png
+Eagle,BirdLarge,Eagle,白头雕,Whoever kills this gets All Stats Up and finds a bonus item!,谁击杀它，谁就能所有属性提升，然后捡到1件奖励物品！,BirdLarge,207,CharacterPortrait/207/1.png,images\CharacterPortrait\207\1.png
+Edmund,,,,,,_CAT,,,
+ElectricNail,,Electric Nail,带电钉,It arcs electricity to neighboring tiles whenever any unit spends mana.,每当有单位耗费魔能时，就会向前后左右相邻的方格放电。,ElectricNail,,,
+EventBountyHunter,,Bounty Hunter,赏金猎手,Can shoot anywhere within its line of sight. Prefers long shots.,能向视线之内的任一位置射击。偏好远距离射击。,_CAT,54,CharacterPortrait/54/1.png,images\CharacterPortrait\54\1.png
+ExplodingDecoy,Decoy,Decoy,诱饵,Explodes when it dies.,死亡时会爆炸。,Decoy2,,,
+FaceGrubFamiliar,GrubFamiliarBase,Face Grub,脸虫,Melee attacker.,近身攻击单位。,Maggot,1590,CharacterPortrait/1590/1.png,images\CharacterPortrait\1590\1.png
+FamiliarBrainDrain,BrainDrain,Brain Drain,脑力流失,"Infinite ranged magic attacker.
+Will counter a spell once per turn.
+If it starts its turn with its counterspell still available, it absorbs it for a buff.","魔法攻击单位，范围无限。
+每个回合会反制1次法术。
+它在回合开始时，如果反制还没用掉，那么就“吸收”这次反制，变成一个增益。",MindFetus,1316,CharacterPortrait/1316/1.png,images\CharacterPortrait\1316\1.png
+FamiliarChargeyMaggot,ChargeyMaggot,Chargey Maggot,冲锋蛆,Its dash attack has trample.,突进攻击带横冲直撞。,ChargeyMaggot,1409,CharacterPortrait/1409/1.png,images\CharacterPortrait\1409\1.png
+FamiliarFetus,,Fetus,胎儿,"Ranged attacker.
+Can drink water to heal.","远程攻击单位。
+能喝水回血。",Fetus,1464,CharacterPortrait/1464/1.png,images\CharacterPortrait\1464\1.png
+FamiliarFetusGusher,,Fetus Gusher,喷水胎儿,"Its water attack pushes all units in a straight line.
+Must be in water to attack. Seeks water when out of water.","它的水系攻击会推开一条直线上的所有单位。
+必须在水里才能攻击。离开水时会找水。",FetusGusher,1462,CharacterPortrait/1462/1.png,images\CharacterPortrait\1462\1.png
+FamiliarFleshLad,FleshLad,Flesh Lad,肉肉小子,"Gains an extra attack per turn each time it takes damage.
+Gains Speed at the end of its turn.","每受到一次伤害，一回合内的攻击次数就会+1。
+它的回合结束时，速度+1。",FleshLad,469,CharacterPortrait/469/1.png,images\CharacterPortrait\469\1.png
+FamiliarKirbyFetus,KirbyFetus,Korbee,咔比,"Will suck units in, then spit them out as far away as it can.",会吸入单位，然后吐出，能吐多远吐多远。,Kirby,1314,CharacterPortrait/1314/1.png,images\CharacterPortrait\1314\1.png
+FamiliarMaggot,Maggot,Maggot,蛆,Melee attacker.,近身攻击单位。,Maggot,1590,CharacterPortrait/1590/1.png,images\CharacterPortrait\1590\1.png
+FamiliarPooter,Pooter,Pooter,狙击蝇,Ranged attacker. Flying.,远程攻击单位。飞行。,Pooter,1610,CharacterPortrait/1610/1.png,images\CharacterPortrait\1610\1.png
+FamiliarSwappyMaggot,SwappyMaggot,Diggy Maggot,钻地蛆,Its melee attack has a chance to Stun. Swaps places with a unit to move.,近身攻击有一定几率施加【眩晕】。会通过跟其他单位交换位置来移动。,DiggyMaggot,1411,CharacterPortrait/1411/1.png,images\CharacterPortrait\1411\1.png
+FamiliarTumorousMaggot,TumorousMaggot,Burfer Maggot,肿瘤蛆,Its attack surrounds units with Thorny lumps.,它的攻击会用带刺肿块包围单位。,Burfer,1407,CharacterPortrait/1407/1.png,images\CharacterPortrait\1407\1.png
+FastFetus,Fetus,Fetus,胎儿,"Ranged attacker.
+Can drink water to heal.","远程攻击单位。
+能喝水回血。",Fetus,1464,CharacterPortrait/1464/1.png,images\CharacterPortrait\1464\1.png
+FastRat,Rat,Lil' Rat,小老鼠,Dashes in a straight line.,直线突进。,Rat,1585,CharacterPortrait/1585/1.png,images\CharacterPortrait\1585\1.png
+FatCat,,Übercat,于伯卡特,"Has a leap attack that does knockback in an area.
+Reflects Projectiles. Uncapped HP.","跳扑攻击可以击退1片区域的目标。
+会【反弹】投射物。生命没有上限。",_CAT,640,CharacterPortrait/640/1.png,images\CharacterPortrait\640\1.png
+FatMan,,Überman,于伯曼,"Melee attacker with Knockback.
+Reflects projectiles. Units that contact it get knocked back.
+Trample.","近身攻击单位，能够击退。
+可以反弹投射物。不论是谁，接触到它都会被击退。
+横冲直撞。",FatMan,631,CharacterPortrait/631/1.png,images\CharacterPortrait\631\1.png
+FatWoman,FatMan,Überwoman,于伯乌曼,"Melee attacker with Knockback.
+Reflects projectiles. Units that contact it get knocked back.
+Trample.","近身攻击单位，能够击退。
+可以反弹投射物。不论是谁，接触到它都会被击退。
+【横冲直撞】。",FatWoman,629,CharacterPortrait/629/1.png,images\CharacterPortrait\629\1.png
+Fatso,,Boris,鲍里斯,"Moves 1 tile towards whatever damages it.
+Will Dash on its last turn.
+Trample.","会朝伤害它的目标移动1格。
+会在它最后一个回合突进。
+横冲直撞。",Fatso,1458,CharacterPortrait/1458/1.png,images\CharacterPortrait\1458\1.png
+FeralZombieKitten,ZombieCatFamiliar,Zombie Kitten,僵尸小猫,,,_CAT,118,CharacterPortrait/118/1.png,images\CharacterPortrait\118\1.png
+Fetus,,Fetus,胎儿,"Ranged attacker.
+Can drink water to heal.","远程攻击单位。
+能喝水回血。",Fetus,1464,CharacterPortrait/1464/1.png,images\CharacterPortrait\1464\1.png
+FetusGusher,,Fetus Gusher,喷水胎儿,"Its water attack pushes all units in a straight line.
+Must be in water to attack. Seeks water when out of water.","它的水系攻击会推开一条直线上的所有单位。
+必须在水里才能攻击。离开水时会找水。",FetusGusher,1462,CharacterPortrait/1462/1.png,images\CharacterPortrait\1462\1.png
+FetusJar,,Fötusjar,弗图斯雅,Multi-hit melee attacker. Immune to Magic and Debuffs.,多段近身攻击单位。免疫魔法和减益。,FetusJar,625,CharacterPortrait/625/1.png,images\CharacterPortrait\625\1.png
+FetusNoJar,,Der Fötus,德·弗图斯,"Multi-hit melee attacker.
+Calls an airstrike when at low health.","多段近身攻击单位。
+生命低时会呼叫空袭。",FetusNoJar,633,CharacterPortrait/633/1.png,images\CharacterPortrait\633\1.png
+FighterCat,,Magnus,马格努斯,Has a chaining dash attack and a spin attack.,有连锁突进攻击和旋转攻击。,_CAT,1597,CharacterPortrait/1597/1.png,images\CharacterPortrait\1597\1.png
+FighterCat_Terminator,FighterCat,Robo-Magnus,机械马格努斯,Has a chaining dash attack and a spin attack.,有连锁突进攻击和旋转攻击。,_CAT,272,CharacterPortrait/272/1.png,images\CharacterPortrait\272\1.png
+FijiMermaid,,,,,,_CAT,,,
+FlamingPoop,Poop,Poop,便便,,,Poop,,,
+Flea,,Flea,跳蚤,Its melee attack damages itself.,近身攻击会伤害自己。,Flea,1606,CharacterPortrait/1606/1.png,images\CharacterPortrait\1606\1.png
+FleshLad,,Flesh Lad,肉肉小子,"Attacks as many times as it can, then uppercuts and inflicts Bruise. Gains an extra attack per turn each time it takes damage.
+Gains Speed at the end of its turn.","会尽全力多次攻击，然后上勾拳施加【瘀伤】。它每受一次伤害，每个回合就会额外攻击1次。
+它在回合结束时，速度提升。",FleshLad,469,CharacterPortrait/469/1.png,images\CharacterPortrait\469\1.png
+FleshyMind,,Fleshy Mind,血肉心智,Has a ranged attack that inflicts Muted. Inflicts Confusion on units that attack it.,有远程攻击，会施加【沉默】。攻击它的单位会【混乱】。,FleshyMind,467,CharacterPortrait/467/1.png,images\CharacterPortrait\467\1.png
+Floast,,Floast,浮颅,Has a melee throw attack and a ranged hook attack.,可以近身投掷攻击，也可以远程拖钩攻击。,Floast,526,CharacterPortrait/526/1.png,images\CharacterPortrait\526\1.png
+Floater,,Floater,浮粪,Melee attacker that moves away after it deals damage.,近身攻击单位，造成伤害后会走开。,Floater,1476,CharacterPortrait/1476/1.png,images\CharacterPortrait\1476\1.png
+FloatingHive,,Florb,黏黏,Its ranged attack inflicts Slow. Flying.,远程攻击会施加【迟缓】。飞行。,FloatingHive,1168,CharacterPortrait/1168/1.png,images\CharacterPortrait\1168\1.png
+Flushmaster,,Flushmaster,冲水大师,Pushes all units back 10 tiles in the direction its facing.,会把所有单位朝它面向的方向击退10格。,Flushmaster,1460,CharacterPortrait/1460/1.png,images\CharacterPortrait\1460\1.png
+Fly,,Fly,苍蝇,"Melee attacker.
+Flying.","近身攻击单位。
+飞行。",Fly,1608,CharacterPortrait/1608/1.png,images\CharacterPortrait\1608\1.png
+FlySwarm,,Fly Swarm,一群苍蝇,"Performs a melee attack that hits once for each fly.
+Each time it's damaged it loses a fly.","可以近身攻击，有几个苍蝇，就击中几次。
+每次受到伤害，就会少一个苍蝇。",FlySwarm,1254,CharacterPortrait/1254/1.png,images\CharacterPortrait\1254\1.png
+Food,FoodBase,Food,食物,Heals 4 HP when eaten.,吃下可以恢复4点生命。,Food,,,
+FoodBase,PickupBase,Food,食物,Heals 4 HP when eaten.,吃下可以恢复4点生命。,Food,,,
+FrankFetus,,Frank,弗兰克,"Will suck units in, then spit them out.
+Becomes Frank's Bean when killed.","会吸入单位，然后吐出去。
+被击杀时，会变成弗兰克的豆子。",FrankX,425,CharacterPortrait/425/1.png,images\CharacterPortrait\425\1.png
+FrankPinky,,Frank's Bean,弗兰克的豆子,"Melee attacker.
+Moves randomly.","近身攻击单位。
+随机移动。",PinkyX,433,CharacterPortrait/433/1.png,images\CharacterPortrait\433\1.png
+FutureBot,,Katzebot,卡策博特,Melee attacker. Focuses its lowest health enemy. Will Suplex others out of the way.,近身攻击单位。专门攻击生命最少的敌人。会把其他敌人背摔到一边。,_CAT,638,CharacterPortrait/638/1.png,images\CharacterPortrait\638\1.png
+Fuzzer,,Fuzzer,毛毛,"Melee attacker that inflicts Confusion, then runs away. Units that contact this gain Confusion.
+Heals whenever an enemy damages itself with Confusion.","会用近身攻击施加【混乱】，然后逃跑。单位接触它时会【混乱】。
+只要有【混乱】的敌人伤到自己，它就会恢复生命。",Fuzzer,787,CharacterPortrait/787/1.png,images\CharacterPortrait\787\1.png
+Gambit,,Gambit,博弈,Has 6 special moves tied to the number on its dice! Higher numbers are more deadly.,有6个特殊招数，都跟骰子的点数有关！点数越大，招数越危险。,Gambit,1242,CharacterPortrait/1242/1.png,images\CharacterPortrait\1242\1.png
+Gamete,,Gamete,配子,Spawns random units.,会随机生成单位。,Gamete,886,CharacterPortrait/886/1.png,images\CharacterPortrait\886\1.png
+GasCan,,Gas Can,油桶,,,GasCan,,,
+GasCloud,,Gas Cloud,毒气,Poisons units that walk through it.,穿过它的单位会【中毒】。,GasCloud,,,
+Gasper,,Gasper,毒气怪,"Creates Poison clouds when it attacks or is damaged.
+Primes an explosion when killed.","它攻击或受到伤害时会产生一团毒气。
+被击杀时会准备爆炸。",Tox,528,CharacterPortrait/528/1.png,images\CharacterPortrait\528\1.png
+Gasser,,Gasser,喷气怪,,,Gasser,,,
+GassyCat,,Gassy,胀气,"Its farts inflict Poison 3.
+Farts and projects itself forward when damaged.","放屁会施加3层【中毒】。
+受到伤害时会放屁，把自己向前推进几格。",_CAT,1456,CharacterPortrait/1456/1.png,images\CharacterPortrait\1456\1.png
+Gatekeeper,,Gatekeeper,守门人,"Goes after the cat with the lowest max health.
+Sucks the soul out of its target, instantly killing it and permanently lowering their [img:con] by 2.
+Summons Skeletons.
+Undead.","会追赶生命上限最低的猫。
+会吸走目标的灵魂，直接秒杀，同时令其永久[img:con]-2。
+会召唤骷髅。
+亡灵。",Gatekeeper,359,CharacterPortrait/359/1.png,images\CharacterPortrait\359\1.png
+GeminiCats,,Gemini Cats,双子猫,,,Gemini,,,
+GeoLad,,GeoLad,大力石,Performs a jump attack that damages and knocks back all units in an area.,跳跃攻击，伤害并击退1片区域的所有单位。,GeoLad,1050,CharacterPortrait/1050/1.png,images\CharacterPortrait\1050\1.png
+GirlDino,,Pachysaurus [img:female],厚头龙[img:female],Melee attacker. Defends its partner.,近身攻击单位。会保护自己的伴侣。,GirlDino,680,CharacterPortrait/680/1.png,images\CharacterPortrait\680\1.png
+GirlShade,,Heraldess,女先驱,Melee attacker. Becomes scary when damaged.,近身攻击单位。受到伤害后会变得恐怖。,ShadeF,540,CharacterPortrait/540/1.png,images\CharacterPortrait\540\1.png
+GlassSpitter,,Glass Spitter,吐玻璃猫,Its ranged attack spawns glass and inflicts Bleed.,远程攻击会生成玻璃，同时施加【出血】。,_CAT,1537,CharacterPortrait/1537/1.png,images\CharacterPortrait\1537\1.png
+GlowingBear,,Glowing Bear,发光的熊,It glows with an eternal light.,它散发着永恒不灭的光。,WhiteBear,56,CharacterPortrait/56/1.png,images\CharacterPortrait\56\1.png
+GlowingMushroom,,Glowing Mushroom,发光蘑菇,Grants Mana to nearby units on its turn.,在它的回合，会令附近的单位魔能增加。,GlowingMushroom,150,CharacterPortrait/150/1.png,images\CharacterPortrait\150\1.png
+GlowingMushroom2,GlowingMushroom,Glowing Mushroom,发光蘑菇,Grants Mana and health to nearby units on its turn.,在它的回合，会令附近的单位魔能和生命增加。,GlowingMushroom,150,CharacterPortrait/150/1.png,images\CharacterPortrait\150\1.png
+GolemCat,,Golem,魔像,Invulnerable. Dies when all of its allies are dead.,无敌。友方全部死亡时，才会死亡。,_CAT,32,CharacterPortrait/32/1.png,images\CharacterPortrait\32\1.png
+Gorger,,Gorger,吞兽,"Its melee attack consumes what it hits.
+Runs all the way towards its next target at the end of its turn.
+Trample.","近身攻击会吞下命中的目标。
+它在回合结束时，会冲到下一个目标旁边。
+横冲直撞。",ShamblingShade,542,CharacterPortrait/542/1.png,images\CharacterPortrait\542\1.png
+GraveWorm,,Grave Worm,墓虫,"Ranged attacker.
+Digs away when damaged.","远程攻击单位。
+受到伤害时会打洞逃走。",GraveWorm,1401,CharacterPortrait/1401/1.png,images\CharacterPortrait\1401\1.png
+GreenProber,,B-Prober,小绿人,"Melee attacker. If it can melee attack a cat from behind it will inflict Charm.
+This Charm lasts until the Charmed cat takes damage.","近身攻击单位。如果能从身后近身攻击猫，就会施加【洗脑】。
+这个猫受到伤害之后才会脱离【洗脑】的状态。",GreenProber,967,CharacterPortrait/967/1.png,images\CharacterPortrait\967\1.png
+Grenade,,Grenade,手榴弹,Explodes on its turn or if it's destroyed. Explosion shreds 5 stacks of random buffs off of whatever it hits.,会在它的回合或摧毁时爆炸。爆炸会令命中的目标随机失去5层增益。,Grenade,44,CharacterPortrait/44/1.png,images\CharacterPortrait\44\1.png
+Grey,,,,,,_CAT,,,
+GreyAlien,,G-Alien,小灰人,"Its ranged attack has Knockback.
+Primes a Counterspell at the end of its turn.
+Is powered up when Counterspell is primed.","远程攻击带击退。
+它在回合结束时，会准备施放反制法术。
+反制法术准备好时，会进入强化状态。",GreyAlien,969,CharacterPortrait/969/1.png,images\CharacterPortrait\969\1.png
+GroundedSpear,,Spear,标枪,Attack to send it flying.,攻击会令它飞出去。,GroundedSpear,,,
+GrubFamiliarBase,Maggot,Grub,幼虫,Melee attacker.,近身攻击单位。,Maggot,1590,CharacterPortrait/1590/1.png,images\CharacterPortrait\1590\1.png
+Guillotina1,,Guillotina,断头泰娜,She lusts with a never ending hunger!,她的欲望无尽，饥饿难厌！,Guillotina1,304,CharacterPortrait/304/1.png,images\CharacterPortrait\304\1.png
+Guillotina2Body,,Guillotina,断头泰娜,"It may be separated from her head, but they are still working together.",身体虽然离开了头，但还在并肩作战。,Guillotina2Body,300,CharacterPortrait/300/1.png,images\CharacterPortrait\300\1.png
+Guillotina2Head,,Guillotina,断头泰娜,"It may be separated from her body, but they are still working together.",头虽然离开了身体，但还在并肩作战。,Guillotina2Head,302,CharacterPortrait/302/1.png,images\CharacterPortrait\302\1.png
+Guillotina3Body,,Guillotina,断头泰娜,It's trying to find it's head...,它在找自己的头……,Guillotina3Body,296,CharacterPortrait/296/1.png,images\CharacterPortrait\296\1.png
+Guillotina3Head,,Guillotina,断头泰娜,Sorry I'm dead...,对不起，我死了……,Guillotina3Head,298,CharacterPortrait/298/1.png,images\CharacterPortrait\298\1.png
+GunCat,,Bounty Hunter,赏金猎手,Can shoot anywhere within its line of sight. Prefers long shots.,能向视线之内的任一位置射击。偏好远距离射击。,_CAT,1234,CharacterPortrait/1234/1.png,images\CharacterPortrait\1234\1.png
+HangerBot,,Hängenbot,亨根博特,"Its melee attack inflicts Short Circuit.
+Retracts when damaged.
+Spawns Invaders.","近身攻击会施加【短路】。
+受到伤害会回缩。
+会生成施皮登博特。",HangerBot,612,CharacterPortrait/612/1.png,images\CharacterPortrait\612\1.png
+HarpoonTrap,,Harpoon Trap,鱼叉机关,Harpoons units that end movement in front of it.,会叉住停在正前方的单位。,HarpoonTrap,,,
+Harpy,BirdLarge,Harpy,鹰身女妖,Whoever kills this gets All Stats Up and finds a bonus item!,谁击杀它，谁就能所有属性提升，然后捡到1件奖励物品！,BirdLarge,203,CharacterPortrait/203/1.png,images\CharacterPortrait\203\1.png
+HeadGrubFamiliar,GrubFamiliarBase,Head Grub,头虫,Melee attacker.,近身攻击单位。,Maggot,1590,CharacterPortrait/1590/1.png,images\CharacterPortrait\1590\1.png
+HeadTumor,,Tumorhead,肿瘤脑袋,"Its melee attack knocks units back 3 tiles.
+Dashes forward when damaged.","近身攻击会把单位击退3格。
+受到伤害时会向前突进。",HeadTumor,1100,CharacterPortrait/1100/1.png,images\CharacterPortrait\1100\1.png
+HellHand,,Hell Hand,地狱之手,Grapples its enemies if they walk past it.,敌人从它身边经过时，会被擒抱。,CoreArm,,,
+Hellspawn,,Hellspawn,颤齿,It has such sights to show you!,它能让你大开眼界！,_CAT,52,CharacterPortrait/52/1.png,images\CharacterPortrait\52\1.png
+Hemlock,,Hemlock,毒参,"Attacks units that move in range.
+Knocks back adjacent units when damaged.
+Heals allies.","会攻击进入范围的单位。
+受到伤害时，会击退前后左右相邻的单位。
+会治疗友方。",Hemlock,1042,CharacterPortrait/1042/1.png,images\CharacterPortrait\1042\1.png
+Hitler,,Hitler,希特勒,Rallies his army. Has a ranged attack and Trample.,会鼓舞自己的军队。会远程攻击，也会横冲直撞。,Hitler,606,CharacterPortrait/606/1.png,images\CharacterPortrait\606\1.png
+HitlerClone,,Führerfötus,菲尔弗图斯,Has a multi-hit melee attack. Follows orders.,多段近身攻击。遵从命令。,FetusNoJar,636,CharacterPortrait/636/1.png,images\CharacterPortrait\636\1.png
+HitlerClone:Grown,,Führerclone,菲尔克隆,,,FetusNoJar,636,CharacterPortrait/636/1.png,images\CharacterPortrait\636\1.png
+HitlerHead,,Hitler,希特勒,Grows his army of Hitlers!,会培育他的希特勒大军！,HitlerHead,608,CharacterPortrait/608/1.png,images\CharacterPortrait\608\1.png
+Hive,,Blorb,粘粘,Its ranged attack inflicts Slow in an area.,远程攻击会在1片区域内施加【迟缓】。,Hive,1170,CharacterPortrait/1170/1.png,images\CharacterPortrait\1170\1.png
+HornyCat,,Horny Cat,角猫,Its ranged attack inflicts Blind.,远程攻击会施加【瞎眼】。,_CAT,1247,CharacterPortrait/1247/1.png,images\CharacterPortrait\1247\1.png
+Host,,Host,宿主,"Shoots 3 projectiles in a spread.
+Reflects projectiles and knocks back units who contact it.
+Stationary.","会分散射出3发投射物。
+会【反弹】投射物，而且击退和它接触的单位。
+不会移动。",Host,1528,CharacterPortrait/1528/1.png,images\CharacterPortrait\1528\1.png
+HumanCat,,Half-Human δ,半人 δ,Melee attacker that Immobilizes. May dodge attacks unless attacked from the human side.,近身攻击单位，会施加【移动受限】。除非是人类那一头受到攻击，不然有可能闪避攻击。,HumanCat,879,CharacterPortrait/879/1.png,images\CharacterPortrait\879\1.png
+HumanCat:HumanDead,,,,Has a spin attack with Knockback.,旋转攻击可以击退。,HumanCat,879,CharacterPortrait/879/1.png,images\CharacterPortrait\879\1.png
+HummingBird,BirdSmall,Hummingbird,蜂鸟,Whoever kills this gets All Stats Up and finds a bonus item!,谁击杀它，谁就能所有属性提升，然后捡到1件奖励物品！,BirdSmall,222,CharacterPortrait/222/1.png,images\CharacterPortrait\222\1.png
+HunterCat,,Fenrir,芬里尔,"Tosses bear traps!
+Has an affinity for tall grass.
+Swats away melee attackers.","会扔捕兽夹！
+喜欢钻草丛。
+会击退近身攻击单位。",_CAT,1599,CharacterPortrait/1599/1.png,images\CharacterPortrait\1599\1.png
+HunterCat_Terminator,,Robo-Fenrir,机械芬里尔,"Tosses bear traps!
+Has an affinity for tall grass.
+Swats away melee attackes.","会扔捕兽夹！
+喜欢钻草丛。
+会击退近身攻击单位。",_CAT,274,CharacterPortrait/274/1.png,images\CharacterPortrait\274\1.png
+Husk,,Husk,躯壳,Has a multi-hit melee attack. Turns into an Edema when killed.,多段近身攻击。被击杀时会变成水肿。,Husk,532,CharacterPortrait/532/1.png,images\CharacterPortrait\532\1.png
+HuskG,Husk,Husk,躯壳,Has a multi-hit melee attack. Turns into an Edema when killed.,多段近身攻击。被击杀时会变成水肿。,Husk,532,CharacterPortrait/532/1.png,images\CharacterPortrait\532\1.png
+Hyde,,Hyde,海德,Its melee attack can hit multiple times!,近身攻击可能命中多次！,_CAT,1529,CharacterPortrait/1529/1.png,images\CharacterPortrait\1529\1.png
+Hydrant,,Fire Hydrant,消防栓,,,Hydrant,,,
+HydrantFountain,,Fountain,喷泉,,,HydrantFountain,,,
+IceBlock,,Ice Cube,冰块,Slides when attacked.,被攻击时会滑动。,IceCube,,,
+IceElemental,,Frostbiter,冻伤大师,"Slows and knocks back units.
+Freezes adjacent units.","会令单位【迟缓】、击退。
+会【冻住】前后左右相邻的单位。",IceElemental,764,CharacterPortrait/764/1.png,images\CharacterPortrait\764\1.png
+Infested,,Infested Kitten,生虫小猫,"Its melee attack inflicts Possessed.
+Moves away when damaged.","近身攻击会施加【上身】。
+受到伤害时会拉开距离。",_CAT,1056,CharacterPortrait/1056/1.png,images\CharacterPortrait\1056\1.png
+InfestedDuo,,Paraisaria,类猫棒束孢,Takes an extra turn for each Sprout.,场上每有几棵嫩芽，就获得几个额外回合。,_CAT,1026,CharacterPortrait/1026/1.png,images\CharacterPortrait\1026\1.png
+Invader,,Schpidenbot,施皮登博特,Melee attacker that inflicts Poison.,近身攻击单位，会施加【中毒】。,Invader,620,CharacterPortrait/620/1.png,images\CharacterPortrait\620\1.png
+Isaac,,,,,,_CAT,,,
+JackCat,,Jack,杰克,Protects his allies.,会保护友方。,_CAT,429,CharacterPortrait/429/1.png,images\CharacterPortrait\429\1.png
+JarHead,,Krughead,克吕戈海德,"Melee attacker. Gives its allies extra turns.
+Immune to Magic and Debuffs.","近身攻击单位。能令友方获得额外回合。
+免疫魔法和减益。",JarHead,627,CharacterPortrait/627/1.png,images\CharacterPortrait\627\1.png
+Jekyll,,Jekyll,杰基尔,It will evolve in several turns.,几回合之后会进化。,_CAT,1531,CharacterPortrait/1531/1.png,images\CharacterPortrait\1531\1.png
+JerseyDevil,,,,,,_CAT,,,
+JesterCat,,Arthur,亚瑟,Who knows what he will do!?,谁知道他要干什么！？,_CAT,851,CharacterPortrait/851/1.png,images\CharacterPortrait\851\1.png
+JesterCat_Terminator,JesterCat,Robo-Arthur,机械亚瑟,Who knows what he will do!?,谁知道他要干什么！？,_CAT,260,CharacterPortrait/260/1.png,images\CharacterPortrait\260\1.png
+Johnny,,Johnny,强尼,"Calls in Cultists for help.
+Can only use his psychic spells while being washed.","会呼叫教徒帮忙。
+只有擦澡的时候才能使用灵能士法术。",Johnny,1155,CharacterPortrait/1155/1.png,images\CharacterPortrait\1155\1.png
+Junk,,Junk,废品,,,Junk,,,
+KillDozer,,Killdozer,杀戮推土机,"Moves towards what damages it.
+Trample.","会朝伤害自己的单位移动。
+横冲直撞。",KillDozer,1161,CharacterPortrait/1161/1.png,images\CharacterPortrait\1161\1.png
+KirbyFetus,,Korbee,咔比,"Will suck units in, then spit them out as far away as it can.",会吸入单位，然后吐出，能吐多远吐多远。,Kirby,1314,CharacterPortrait/1314/1.png,images\CharacterPortrait\1314\1.png
+Kitten,,Kitten,小猫,Runs away when damaged.,受到伤害时会逃跑。,_CAT,1593,CharacterPortrait/1593/1.png,images\CharacterPortrait\1593\1.png
+LabSupportPillar,,Support Pillar,承重立柱,When destroyed will drop random things down around it.,摧毁时，周围会随机掉落一些东西。,LabSupportPillar,,,
+LargeBirdPool,,,,,,,,,
+LavaBoulder,Boulder,Boulder,巨石,Attack it to push it 1 tile. It deals 9 damage to units it hits.,攻击它可以令它移动1格，并对撞到的单位造成9点伤害。,Boulder,,,
+Leaper,,Leaper,跳跳,Its leap attack damages and knocks back all adjacent units.,跳跃攻击会伤害、击退前后左右相邻的所有单位。,FatRat,1583,CharacterPortrait/1583/1.png,images\CharacterPortrait\1583\1.png
+Lenny,,Lenny,雷尼,Loves kitties! Especially {buddyname}!,超爱小猫！尤其是{buddyname}！,Lenny,1157,CharacterPortrait/1157/1.png,images\CharacterPortrait\1157\1.png
+Lice,,Louse,虱子,Its melee attacks inflict Bruise.,近身攻击会施加【瘀伤】。,Flea,1606,CharacterPortrait/1606/1.png,images\CharacterPortrait\1606\1.png
+LightningElemental,,Zapphauser,扎普豪瑟,"Primes an attack when damaged.
+Attacks all tiles of the same parity as his own.","受到伤害时会准备攻击。
+会攻击跟自己所在方格颜色相同的所有方格。",LightningElemental,610,CharacterPortrait/610/1.png,images\CharacterPortrait\610\1.png
+LoanShark,,Loan Shark,放贷鲨鱼,"Its bite inflicts Bleed.
+Takes bonus turns for each bleeding unit.
+Focuses on bleeding units.","会施加【出血】。
+场上每有1个【出血】单位，就会获得奖励回合。
+专门攻击【出血】的单位。",_CAT,48,CharacterPortrait/48/1.png,images\CharacterPortrait\48\1.png
+LordBunga,,Lord Bunga,邦加领主,"Retaliates when hit.
+Consumes adjacent units at the start of his turn.
+Blind to units behind him.","被命中时会反击。
+他的回合开始时，会吞下前后左右相邻的单位。
+看不到身后的单位。",LordBunga,756,CharacterPortrait/756/1.png,images\CharacterPortrait\756\1.png
+LoveBot,,Love Bot,机器伴侣,Heals and gives +1 [img:spd] to its allies. Its heal can grant an extra turn if healed over max.,会治疗友方，同时令友方[img:spd]+1。它的治疗如果令目标生命超过上限，那么令目标获得1个额外回合。,LoveBot,1163,CharacterPortrait/1163/1.png,images\CharacterPortrait\1163\1.png
+Lumpy,,Lumpy,肿包,Its ranged attack creates Creep. Spawns Creep when damaged.,远程攻击会产生黏液。受到伤害也会生成黏液。,BloatRat,1526,CharacterPortrait/1526/1.png,images\CharacterPortrait\1526\1.png
+MadLad,,Mad Lad,疯小子,,,MadLad,,,
+MaddenedBear,Bear,Bear,熊,,,Bear,158,CharacterPortrait/158/1.png,images\CharacterPortrait\158\1.png
+Maelestes,,Maelestes,蒙美掠兽,"Steals equipment from cats.
+Collects pickups.","会偷猫的装备。
+会捡起物品。",_CAT,699,CharacterPortrait/699/1.png,images\CharacterPortrait\699\1.png
+MageCat,,Lucy,露西,Her powerful spells take time to charge up.,她的法术强力，需要时间蓄能。,_CAT,1601,CharacterPortrait/1601/1.png,images\CharacterPortrait\1601\1.png
+MageCat_Terminator,MageCat,Robo-Lucy,机械露西,Her powerful spells take time to charge up.,她的法术强力，需要时间蓄能。,_CAT,276,CharacterPortrait/276/1.png,images\CharacterPortrait\276\1.png
+Maggot,,Maggot,蛆,Melee attacker.,近身攻击单位。,Maggot,1590,CharacterPortrait/1590/1.png,images\CharacterPortrait\1590\1.png
+MaggotLord,,Mama Maggot,蛆妈妈,"Spawns Maggots, evolves them and gives them bonus turns.
+Trample.","会产生蛆，令它们进化、获得奖励回合。
+横冲直撞。",MamaMaggot,1383,CharacterPortrait/1383/1.png,images\CharacterPortrait\1383\1.png
+MamaMaggotTina,MaggotLord,Mama Maggot,蛆妈妈,"Spawns Maggots, evolves them and gives them bonus turns.
+Trample.","会产生蛆，令它们进化、获得奖励回合。
+横冲直撞。",MamaMaggot,1383,CharacterPortrait/1383/1.png,images\CharacterPortrait\1383\1.png
+Mammoth,,Wooly Mammoth,长毛猛犸,"Has a melee attack that knocks units into the air, and a dash attack.
+Will Bruise and Knockback adjacent units at the start of its turn.
+Trample.","近身攻击会把单位击飞，还会突进攻击。
+它在回合开始时，会对前后左右相邻的单位施加【瘀伤】并击退。
+横冲直撞。",Mammoth,766,CharacterPortrait/766/1.png,images\CharacterPortrait\766\1.png
+MammothBaby,,Mammoth Kitten,小猛犸,"Its melee attack knocks units into the air.
+Bruises and knocks back adjacent units at the start of its turn.
+Trample.","近身攻击会把单位打飞。
+它在回合开始时，会对前后左右相邻的单位施加【瘀伤】并击退。
+横冲直撞。",_CAT,768,CharacterPortrait/768/1.png,images\CharacterPortrait\768\1.png
+ManglersMonster,,Mangler's Monster,蒙格勒的怪物,Controlled by the Doctor.,受蒙格勒医生控制。,ManglersMonster,8,CharacterPortrait/8/1.png,images\CharacterPortrait\8\1.png
+Mangy,,Mangy,大癞,"Its ranged attack may inflict Poison.
+Spawns maggots when damaged.","远程攻击可能施加【中毒】。
+受到伤害时会产生蛆。",_CAT,1612,CharacterPortrait/1612/1.png,images\CharacterPortrait\1612\1.png
+Mangy2,,Mummified Mangy,木乃伊大癞,"Its ranged attack may inflict Poison.
+Spawns Maggots when damaged.
+Becomes a Carcass when killed.","远程攻击可能施加【中毒】。
+受到伤害时会产生蛆。
+被击杀时会变成尸骸。",_CAT,1259,CharacterPortrait/1259/1.png,images\CharacterPortrait\1259\1.png
+Mangy3,,Infested,生虫猫,"Its ranged attack has a chance to break equipment and attach a parasite.
+Spawns a Gamete when killed.","远程攻击有一定几率损坏目标装备，同时附上寄生体。
+被击杀时会生成配子。",_CAT,1624,CharacterPortrait/1624/1.png,images\CharacterPortrait\1624\1.png
+MeatMinion,,Meat Minion,肉仆从,,,MeatMinion,,,
+MeatSlime,,Meat Slime,肉史莱姆,Splits into Clots on death.,死亡时会分裂成血块。,MeatSlime,471,CharacterPortrait/471/1.png,images\CharacterPortrait\471\1.png
+MechSuit,,Mech Suit,机甲,,,MechSuit,102,CharacterPortrait/102/1.png,images\CharacterPortrait\102\1.png
+MedBirdPool,,,,,,,,,
+MedCatnip,PickupBase,Medium Catnip,中份猫薄荷,Gain +4 mana when eaten.,吃下获得4点魔能。,ManaPickup,,,
+MedScrap,PickupBase,Medium Scrap,中份边角料,Gain +4 [img:shield] when collected.,捡起时[img:shield]+4。,ArmorPickup,,,
+MedSlime,,Medium Slime,中史莱姆,"Melee attacker.
+Splits into 4 small Slimes on death.","近身攻击单位。
+死亡时会分裂成4个小型史莱姆。",MedSlime,1308,CharacterPortrait/1308/1.png,images\CharacterPortrait\1308\1.png
+MedSlimeX,,Steven,史蒂文,"Melee attacker.
+Splits into 4 small Stevens on death.","近身攻击单位。
+死亡时会分裂成4个小型史蒂文。",MedSlimeX,419,CharacterPortrait/419/1.png,images\CharacterPortrait\419\1.png
+MedicCat,,Marshmallow,棉花糖,Her lick attack Charms units.,舔舔攻击会给单位【洗脑】。,_CAT,1222,CharacterPortrait/1222/1.png,images\CharacterPortrait\1222\1.png
+MedicCat_Terminator,MedicCat,Robo-Marshmallow,机械棉花糖,Her lick attack Charms units.,舔舔攻击会给单位【洗脑】。,_CAT,280,CharacterPortrait/280/1.png,images\CharacterPortrait\280\1.png
+MegaDinoHead,,Dreadnoughtus,无畏龙,Now's your opportunity! Get him before he gets back up!,机会来了！趁他还没爬起来，干他！,MegaDinoHead,678,CharacterPortrait/678/1.png,images\CharacterPortrait\678\1.png
+MegaDinoLeg,,Dreadnoughtus,无畏龙,Stomps towards units that damage it. Lifts when it takes enough damage.,哪个单位伤害它，它就会踩哪个单位。受到足够的伤害之后，会抬起来。,MegaDinoLeg,674,CharacterPortrait/674/1.png,images\CharacterPortrait\674\1.png
+MegaFetus,,Mega Fetus,巨型胎儿,"Performs a spin attack.
+Will try to counterattack with its left arm when hit.","会进行旋转攻击。
+被命中时，会用左手反击。",MegaFetus,1312,CharacterPortrait/1312/1.png,images\CharacterPortrait\1312\1.png
+MegaGuppy,,The Father,圣父,,,FinalBossMegaGuppy,355,CharacterPortrait/355/1.png,images\CharacterPortrait\355\1.png
+MegaMutant,,Mega Mutant,超级突变体,"Melee attacks adjacent units with Knockback 10 at the start of its turn.
+Performs a straight, long-range quake attack.
+Can grab and instakill units if it can reach them.
+Gains +99 Brace until its next turn when damaged.","它在回合开始时，会对前后左右相邻的单位进行带10点击退的近身攻击。
+会进行1次远距离直线震荡攻击。
+只要是够得到的单位，就会抓住秒杀。
+受到伤害后，在它下个回合开始之前，招架+99。",MegaMutant,870,CharacterPortrait/870/1.png,images\CharacterPortrait\870\1.png
+MegaTumor,,Mega Tumor,巨型肿瘤,"Trample.
+Gains +1 movement range at the end of its turns.
+Immune to Fire.","横冲直撞。
+它在回合结束时，移动范围+1。
+免疫火焰。",MegaTumor,1096,CharacterPortrait/1096/1.png,images\CharacterPortrait\1096\1.png
+MiniNuke,,Mini Nuke,迷你核弹,Explodes when destroyed.,摧毁时会爆炸。,TNTCrate,,,
+MiniVolcano,,Mini Volcano,迷你火山,Spawns lava rocks when attacked.,受到攻击时会产生熔岩石头。,MiniVolcano,,,
+MonkCat,,Chan Hung,陈雄,"Uses his own actions every time one of his enemies uses an action.
+Has a different response for move, attack/weapon, and spell/trinket.","每当敌人行动，他就会跟着行动1次。
+对敌人移动、攻击/武器、法术/小玩意儿的反应各不相同。",_CAT,859,CharacterPortrait/859/1.png,images\CharacterPortrait\859\1.png
+MonkCat_Terminator,MonkCat,Robo-Chan Hung,机械陈雄,"Uses his own actions every time one of his enemies uses an action.
+Has a different response for move, attack/weapon, and spell/trinket.","每当敌人行动，他就会跟着行动1次。
+对敌人移动、攻击/武器、法术/小玩意儿的反应各不相同。",_CAT,266,CharacterPortrait/266/1.png,images\CharacterPortrait\266\1.png
+MoonHand,,Moon Hand,月之手,"Will grab units that end movement directly in front of it.
+Attack it to turn it away from you.
+Attacking it from behind will force it to dash attack or drop what its holding.","会抓住停在自己正前方的单位。
+攻击这个单位，令它背对自己。
+如果身后受到攻击，会被迫突进攻击，或丢掉手里的东西。",MoonHand,957,CharacterPortrait/957/1.png,images\CharacterPortrait\957\1.png
+MoonHead,,Man In The Moon,月中人,"Its breath attack will push all units back 10 tiles.
+Loses its Brace if it punches itself.
+What could be inside?","吹气攻击会把所有单位击退10格。
+如果它打了自己，就失去【招架】。
+里面能有什么呢？",MoonHead,959,CharacterPortrait/959/1.png,images\CharacterPortrait\959\1.png
+MoonWorm,,Moon Worm,月虫,"Lobs shots at all of its enemies within range.
+Gains +1 Brace when damaged.","抛射攻击范围内的所有敌人。
+受到伤害时，【招架】+1。",MoonWorm,981,CharacterPortrait/981/1.png,images\CharacterPortrait\981\1.png
+Moth,,Moth,飞蛾,,,Moth,154,CharacterPortrait/154/1.png,images\CharacterPortrait\154\1.png
+MotherSpike,,The Mother,母亲,,,MotherSpike,,,
+MotherTumor,,The Mother,母亲,Grabs units and pulls them towards The Mother.,会抓住单位，同时把它拉到母亲身边。,MotherTumor,,,
+MotherTumorBig,MotherTumor,The Mother,母亲,Grabs units and pulls them towards The Mother.,会抓住单位，同时把它拉到母亲身边。,MotherTumor,,,
+Mothman,,,,,,_CAT,,,
+Multicat,,Multicat,多头猫,,,Multicat,,,
+Mutant,BirdMed,Mutant,突变鸟,Whoever kills this gets All Stats Up and finds a bonus item!,谁击杀它，谁就能所有属性提升，然后捡到1件奖励物品！,BirdMed,212,CharacterPortrait/212/1.png,images\CharacterPortrait\212\1.png
+NeckGrubFamiliar,GrubFamiliarBase,Neck Grub,脖子虫,Melee attacker.,近身攻击单位。,Maggot,1590,CharacterPortrait/1590/1.png,images\CharacterPortrait\1590\1.png
+NecroCat,,Morana,莫拉娜,"Its ranged attack inflicts Leech.
+Reanimates dead bodies.
+Revives through dead bodies.","远程攻击会施加【水蛭】。
+会令尸体复苏。
+能借助尸体复活。",_CAT,1226,CharacterPortrait/1226/1.png,images\CharacterPortrait\1226\1.png
+NecroCat_Terminator,NecroCat,Robo-Morana,机械莫拉娜,"Its ranged attack inflicts Leech.
+Reanimates dead bodies.
+Revives through dead bodies.","远程攻击会施加【水蛭】。
+会令尸体复苏。
+能借助尸体复活。",_CAT,284,CharacterPortrait/284/1.png,images\CharacterPortrait\284\1.png
+Needlecat,,Spun Cat,嗨猫,Has a random class basic attack that inflicts a randomly assigned debuff.,会随机使用某个职业的普通攻击，同时随机施加1个减益。,_CAT,906,CharacterPortrait/906/1.png,images\CharacterPortrait\906\1.png
+Nessie,,,,,,_CAT,,,
+Nettle,,Nettle,荨麻,"Melee attacker.
+Each time one of its enemies casts a spell, this emits a Sparkle and gains +1 Thorns.","近身攻击单位。
+每当有敌人施放法术，它就会放出1道【闪光】，同时自身【尖刺】+1。",Nettle,1040,CharacterPortrait/1040/1.png,images\CharacterPortrait\1040\1.png
+NeutralToad,Toad,Frog,青蛙,,,Frog,170,CharacterPortrait/170/1.png,images\CharacterPortrait\170\1.png
+NeutralTwister,Twister,Twister,龙卷风,Moves randomly. Tosses what it touches.,会向随机方向移动，把碰到的东西甩出去。,Twister,34,CharacterPortrait/34/1.png,images\CharacterPortrait\34\1.png
+NeutralZombieKitten,ZombieCatFamiliar,Zombie Kitten,僵尸小猫,,,_CAT,171,CharacterPortrait/171/1.png,images\CharacterPortrait\171\1.png
+NeutronStar,,Neutron Star,中子星,May go supernova...,可能会发生超新星爆发……,NeutronStar,40,CharacterPortrait/40/1.png,images\CharacterPortrait\40\1.png
+NeutronStar:BlackHole,,Black Hole,黑洞,Pulls units towards it. Destroys anything that touches it.,会把单位拉向自己。只要有东西碰到它，就会被摧毁。,NeutronStar,38,CharacterPortrait/38/1.png,images\CharacterPortrait\38\1.png
+NoHead,,Headless,没头,"Has a spin attack.
+Shoots a Poison shot when damaged.
+Blind.","旋转攻击。
+受到伤害时会喷毒。
+【瞎眼】。",_CAT,1052,CharacterPortrait/1052/1.png,images\CharacterPortrait\1052\1.png
+NonChampionFlySwarm,FlySwarm,Fly Swarm,一群苍蝇,"Performs a melee attack that hits once for each fly.
+Each time it's damaged it loses a fly.","可以近身攻击，有几个苍蝇，就击中几次。
+每次受到伤害，就会少一个苍蝇。",FlySwarm,1254,CharacterPortrait/1254/1.png,images\CharacterPortrait\1254\1.png
+Nubs,,Nubs,滚滚,"Blind.
+Lobs a Poison creep shot when damaged.
+Does a leap attack with Knockback.","【瞎眼】。
+受到伤害时会抛射有毒黏液。
+跳扑攻击会击退目标。",Nubs,1514,CharacterPortrait/1514/1.png,images\CharacterPortrait\1514\1.png
+NubsCat,,Half-Dog,半狗,"Has a leap attack with Knockback.
+Leap attacks in the direction it's facing when damaged.","跳扑攻击可以击退。
+受到伤害时会朝自己面向的方向跳扑攻击。",NubsCat,881,CharacterPortrait/881/1.png,images\CharacterPortrait\881\1.png
+NurseBot,,Nurse Bot,机器护士,,,LoveBot,1163,CharacterPortrait/1163/1.png,images\CharacterPortrait\1163\1.png
+OrganZodiac,,{organname},{organname},"Will shoot at anything that moves!
+Limited ammo.","只要是会动的，他看见就会开枪！
+子弹有限。",OrganGrinderX,415,CharacterPortrait/415/1.png,images\CharacterPortrait\415\1.png
+Ornstein,,Ornstein,翁斯坦,,,Ornstein,,,
+Parasaurolophus,,Parasaurolophus,副栉龙,"Its attacks always crit against Wet units.
+Tries to toss units into water.","攻击潮湿的单位一定暴击。
+会试图把单位丢进水里。",_CAT,694,CharacterPortrait/694/1.png,images\CharacterPortrait\694\1.png
+Parasiter,,Throbbing Servant,搏动的仆从,Ranged attacker that has a chance to destroy equipment and attach a parasite. Spawns Maggots.,远程攻击单位，有一定几率摧毁装备，同时附上寄生体。会产生蛆。,Parasiter,465,CharacterPortrait/465/1.png,images\CharacterPortrait\465\1.png
+Peashy,,Peashy,皮希,"May attack its own allies.
+Blocks damage from the front.
+Becomes enraged when it kills something.","可能攻击自己的友方。
+能挡住正面的伤害。
+击杀单位后会兴奋。",Peashy,1257,CharacterPortrait/1257/1.png,images\CharacterPortrait\1257\1.png
+Pebbles_Terminator,,Robo-Pebbles,机械石头,,,_CAT,286,CharacterPortrait/286/1.png,images\CharacterPortrait\286\1.png
+PhantomMaskRock,,Phantom Mask,幽灵面具,Invulnerable. Attack it to knock it forward in a straight line. It deals 5 damage to units it hits.,无敌。攻击它可以让它向前直线移动，撞到什么单位，就会造成5点伤害。,Mask,98,CharacterPortrait/98/1.png,images\CharacterPortrait\98\1.png
+Phylactery,,Phylactery,命匣,"When its owner dies, this breaks and revives them.",主人死亡时会碎裂，复活主人。,Tumor,,,
+PickupBase,,Nothing!,什么都没有！,,,Coin,,,
+Pig,,,,,,_CAT,,,
+Pigeon,BirdMed,Pigeon,鸽子,Whoever kills this gets All Stats Up and finds a bonus item!,谁击杀它，谁就能所有属性提升，然后捡到1件奖励物品！,BirdMed,218,CharacterPortrait/218/1.png,images\CharacterPortrait\218\1.png
+Pile,,Pile,坨坨,Its ranged attack spawns Dips. Stationary.,远程攻击会生成小粪。不会移动。,Pile,1474,CharacterPortrait/1474/1.png,images\CharacterPortrait\1474\1.png
+Pinky,,Pinky,老鼠崽子,"Melee attacker.
+Moves randomly.","近身攻击单位。
+随机移动。",Pinky,1592,CharacterPortrait/1592/1.png,images\CharacterPortrait\1592\1.png
+PlayerCat,,{Catname},{Catname},Cat.,猫。,_CAT,,,
+PlayerCat_AncestralShade,PlayerCat,{Catname},{Catname},Cat.,猫。,_CAT,,,
+PlayerCat_CambionMiniMe,PlayerCat,Mini-{Catname},迷你{Catname},Cat.,猫。,_CAT,,,
+PlayerCat_ClotClone,PlayerCat,{Catname} Clone,克隆{Catname},Cat.,猫。,_CAT,,,
+PlayerCat_FinalBossClone,PlayerCat,Good {Catname},善良的{Catname},Cat.,猫。,_CAT,,,
+PlayerCat_FinalBossClone_Champion,PlayerCat_FinalBossClone,Good {Catname},善良的{Catname},Cat.,猫。,_CAT,,,
+PlayerCat_FinalBossClone_Elite,PlayerCat_FinalBossClone,Good {Catname},善良的{Catname},Cat.,猫。,_CAT,,,
+PlayerCat_FleshGolem,PlayerCat,Flesh Golem,血肉魔像,Cat.,猫。,_CAT,94,CharacterPortrait/94/1.png,images\CharacterPortrait\94\1.png
+PlayerCat_HuskShade,PlayerCat,{Catname},{Catname},Cat.,猫。,_CAT,,,
+PlayerCat_MachineClone,PlayerCat,{Catname} Clone,克隆{Catname},Cat.,猫。,_CAT,,,
+PlayerCat_MiniMe,PlayerCat,Mini-{Catname},迷你{Catname},Cat.,猫。,_CAT,,,
+PlayerCat_MiniMiniMe,PlayerCat,Mini-Mini-{Catname},迷你迷你{Catname},Cat.,猫。,_CAT,,,
+PlayerCat_MonkMiniMe,PlayerCat_MiniMe,Mini-{Catname},迷你{Catname},Cat.,猫。,_CAT,,,
+PlayerCat_MonkShade,PlayerCat,{Catname},{Catname},Cat.,猫。,_CAT,,,
+PlayerCat_NecroShade,PlayerCat,{Catname},{Catname},Cat.,猫。,_CAT,,,
+PlayerCat_Shade,PlayerCat,{Catname},{Catname},Cat.,猫。,_CAT,,,
+PlayerCat_StevenShade,PlayerCat,Steven,史蒂文,Cat.,猫。,_CAT,,,
+PlayerCat_ThiefShade,PlayerCat,{Catname},{Catname},Cat.,猫。,_CAT,,,
+PlayerCat_ThiefShade2,PlayerCat,{Catname},{Catname},Cat.,猫。,_CAT,,,
+PoisonBait,FoodBase,Poisoned Bait,有毒鱼饵,"Attracts enemies toward it.
+Gain Poison 2 and Slow 2 if eaten.","会吸引敌人靠近。
+吃下会获得2层【中毒】和2层【迟缓】。",Food,,,
+PoisonFood,FoodBase,Poisoned Food,有毒食物,Gain Poison 2 and Slow 2 if eaten.,吃下会获得2层【中毒】和2层【迟缓】。,Food,,,
+PoisonFrog,Toad,Poison Frog,毒蛙,,,Frog,170,CharacterPortrait/170/1.png,images\CharacterPortrait\170\1.png
+PokerDemon,,Hot Poker,烙叉鬼,"Has 2 melee attacks, one with Immobilize, the other with Burn that knocks a unit in the direction it's facing.
+Can give its allies extra turns.
+Immune to Fire.","有2种近身攻击：一种带【移动受限】，另一种带【灼烧】，还能把单位朝它自己面朝的方向推开。
+能令友方获得额外回合。
+免疫火焰。",PokerDemon,1106,CharacterPortrait/1106/1.png,images\CharacterPortrait\1106\1.png
+Poop,,Poop,便便,,,Poop,,,
+PoopCat,,Poop Cat,便便猫,Nasty.,呕。,_CAT,676,CharacterPortrait/676/1.png,images\CharacterPortrait\676\1.png
+Pooter,,Pooter,狙击蝇,Ranged attacker. Flying.,远程攻击单位。飞行。,Pooter,1610,CharacterPortrait/1610/1.png,images\CharacterPortrait\1610\1.png
+PopeyeCat,,Popeye,波派,Has a dash attack with knockback.,突进攻击，可以击退。,_CAT,1533,CharacterPortrait/1533/1.png,images\CharacterPortrait\1533\1.png
+Porcupine,,,,,,_CAT,,,
+PrehistoricPooter,,Prehistoric Pooter,史前狙击蝇,"Its ranged attack inflicts Stun.
+Flying.","远程攻击会施加【眩晕】。
+飞行。",Pooter,1630,CharacterPortrait/1630/1.png,images\CharacterPortrait\1630\1.png
+PsychicCat,,Alice,爱丽丝,"Has a psychic choke attack that inflicts Bruise on a unit in her line of sight.
+Knocks back any enemy that casts a spell.","有意念扼喉攻击，可以对视线内的1个单位施加【瘀伤】。
+任何敌人施放法术，都会被她击退。",_CAT,861,CharacterPortrait/861/1.png,images\CharacterPortrait\861\1.png
+PsychicCat_Terminator,PsychicCat,Robo-Alice,机械爱丽丝,"Has a psychic choke attack that inflicts Bruise on a unit in her line of sight.
+Knocks back any enemy that casts a spell.","有意念扼喉攻击，可以对视线内的1个单位施加【瘀伤】。
+任何敌人施放法术，都会被她击退。",_CAT,268,CharacterPortrait/268/1.png,images\CharacterPortrait\268\1.png
+Pterodactyl,,Pterodactyl,翼手龙,"Will pick up cats and peck them.
+Flying.","会抓起猫然后啄它。
+飞行。",Pterodactyl,690,CharacterPortrait/690/1.png,images\CharacterPortrait\690\1.png
+PunchingBag,,Punching Bag,受气包,,,Decoy,,,
+PurifiedPoisonFood,FoodBase,Purified Food,净化食物,Heals 4 HP when eaten.,吃下可以恢复4点生命。,Food,,,
+Pyrophina,,Pyrophina,皮洛菲娜,Pyrophina was baptized in the fires of hell and survived!,皮洛菲娜在地狱之火中受洗，而且活了下来！,Pyrophina,290,CharacterPortrait/290/1.png,images\CharacterPortrait\290\1.png
+PyrophinaFamiliar,,Pyrophina (Friendly),皮洛菲娜（友好）,"Shes here to help, and trying her best!",她是来帮忙的，而且会尽全力！,Pyrophina,290,CharacterPortrait/290/1.png,images\CharacterPortrait\290\1.png
+PyrophinaVS,,Pyrophina,皮洛菲娜,She wants to kill Zaratana!,她想杀了扎拉坦娜！,Pyrophina,290,CharacterPortrait/290/1.png,images\CharacterPortrait\290\1.png
+QueenHippo,,Queen Hippo,河马女王,"Its melee attack deals Chain Knockback.
+Uppercuts any adjacent units at the start of its turn.
+Has heart problems...","近身攻击会造成连锁击退。
+它在回合开始时，会用上勾拳击飞前后左右相邻的单位。
+心脏不太好……",QueenHippo,1577,CharacterPortrait/1577/1.png,images\CharacterPortrait\1577\1.png
+Rager,,Rager,暴怒怪,,,Rager,,,
+RandomArmorPickup,,,,,,,,,
+RandomBiggerArmorPickup,,,,,,,,,
+RandomBiggerCatnipPickup,,,,,,,,,
+RandomBiggerFoodPickup,,,,,,,,,
+RandomBiggerPickup,,,,,,,,,
+RandomBiggestPickup,,,,,,,,,
+RandomCatnipPickup,,,,,,,,,
+RandomDruidFamiliar,,,,,,,,,
+RandomFoodPickup,,,,,,,,,
+RandomLivingPoop,,,,,,,,,
+RandomNonCoinPickup,,,,,,,,,
+RandomPickup,,,,,,,,,
+Raptor,,Raptor,迅猛龙,"Its melee attack hits a random amount of times.
+Pack hunter.","近身攻击，命中次数随机。
+结群狩猎。",_CAT,696,CharacterPortrait/696/1.png,images\CharacterPortrait\696\1.png
+RaptorBaby,,Raptor Kitten,迅猛小猫,Its melee attack inflicts bleed. Moves far away after attacking.,近身攻击会施加【出血】。攻击后会跑到远处。,_CAT,697,CharacterPortrait/697/1.png,images\CharacterPortrait\697\1.png
+Rat,,Lil' Rat,小老鼠,Dashes in a straight line.,直线突进。,Rat,1585,CharacterPortrait/1585/1.png,images\CharacterPortrait\1585\1.png
+RatCat,,Half-Rat,半鼠,Does a chaining dash attack with a chance to spread diseases.,会进行连锁突进攻击，有一定几率传播疾病。,RatCat,888,CharacterPortrait/888/1.png,images\CharacterPortrait\888\1.png
+RatKing,,Rat King,鼠王,Spawns Lil' Rats and throws adjacent units.,会生成小老鼠，而且会把前后左右相邻的单位扔开。,RatKing_New,1452,CharacterPortrait/1452/1.png,images\CharacterPortrait\1452\1.png
+RatKing_Old,,Rat King,鼠王,,,RatKing,1452,CharacterPortrait/1452/1.png,images\CharacterPortrait\1452\1.png
+RatPile,,Rat Pile,鼠堆,,,RatPile,,,
+RattleSnake,,Rattlesnek,响尾虫它,"Ambushes enemies who walk past it.
+Its attacks inflict Poison.","伏击身边路过的敌人。
+攻击会施加【中毒】。",Snake,1250,CharacterPortrait/1250/1.png,images\CharacterPortrait\1250\1.png
+Raven,BirdMed,Raven,渡鸦,Whoever kills this gets All Stats Up and finds a bonus item!,谁击杀它，谁就能所有属性提升，然后捡到1件奖励物品！,BirdMed,214,CharacterPortrait/214/1.png,images\CharacterPortrait\214\1.png
+Reaper,,Reaper,讨命鬼,"Performs a spin attack at the start of its turn.
+Teleports to units that kill its allies.
+Undead.","它在回合开始时进行旋转攻击。
+有单位击杀它的友方时，它会传送到那个单位旁边。
+亡灵。",Reaper,1385,CharacterPortrait/1385/1.png,images\CharacterPortrait\1385\1.png
+RiftKitten,,Gun,枪,Thank you for releasing me!,谢谢你放我出来！,_CAT,132,CharacterPortrait/132/1.png,images\CharacterPortrait\132\1.png
+RoboTom,,Robo-Cat,机械猫,Its wide melee attacks have Knockback 10.,近身范围攻击，击退10格。,_CAT,1173,CharacterPortrait/1173/1.png,images\CharacterPortrait\1173\1.png
+RoboVacuum,,Robo-Vac,扫地机器人,,,Roomba,144,CharacterPortrait/144/1.png,images\CharacterPortrait\144\1.png
+RoboVacuum2,RoboVacuum,Robo-Vac,扫地机器人,,,Roomba,144,CharacterPortrait/144/1.png,images\CharacterPortrait\144\1.png
+Rock,,Rock,石头,,,BigRock,,,
+RockHead,,Rock Head,石头脑袋,"Has a spin attack and a dash attack with Trample.
+Blind.","可以旋转攻击，也可以横冲直撞突进攻击。
+【瞎眼】。",_CAT,1054,CharacterPortrait/1054/1.png,images\CharacterPortrait\1054\1.png
+RocketTurret,TinkererTurret,Rocket Turret,火箭炮台,,,Turret,148,CharacterPortrait/148/1.png,images\CharacterPortrait\148\1.png
+RockyBobo,,Rocky Bobo,落石巴尔博亚,"Moves towards what damages it.
+Does a body slam attack in the direction he's facing.
+Can levitate rocks!","会朝伤害它的目标移动。
+会朝自己面向的方向使出泰山压顶。
+能让石头漂起来！",RockyBobo,1028,CharacterPortrait/1028/1.png,images\CharacterPortrait\1028\1.png
+RotFly,Fly,Rot Fly,腐烂苍蝇,"Melee attacker.
+Flying.","近身攻击单位。
+飞行。",Fly,1644,CharacterPortrait/1644/1.png,images\CharacterPortrait\1644\1.png
+Rover,,Rover,探测猫,Has a chaining dash attack.,有连锁突进攻击。,_CAT,973,CharacterPortrait/973/1.png,images\CharacterPortrait\973\1.png
+RubberFistBot,,Rubber Fist Bot,橡胶拳头机器人,It punches anything that gets near it.,不论什么东西，只要凑到它旁边，就会挨揍。,Punchbot,,,
+SabertoothCat,,Sabertooth Cat,剑齿猫,"Pounces on units.
+Does a double-hit melee attack that inflicts bleed at the start of its turn if any enemies are adjacent.
+Hates Cavemen!","会扑向单位。
+如果前后左右相邻的方格有敌人，那么它在回合开始时，会进行2段近身攻击，施加【出血】。
+讨厌穴居人！",_CAT,783,CharacterPortrait/783/1.png,images\CharacterPortrait\783\1.png
+SabertoothCub,,Sabertooth Kitten,剑齿小猫,"Has a multi hit melee attack that inflicts Bleed.
+Can heal its allies.
+Hates Cavemen!","多段近身攻击会施加【出血】。
+能治疗友方。
+讨厌穴居人！",_CAT,785,CharacterPortrait/785/1.png,images\CharacterPortrait\785\1.png
+Scary,,Scary,怕怕,"Its melee attacks can inflict Fear or Doom!
+Undead.","近身攻击有可能施加【害怕】或【必死无疑】！
+亡灵。",Scary,1405,CharacterPortrait/1405/1.png,images\CharacterPortrait\1405\1.png
+ScorpionCat,,Scorpion Cat,蝎猫,Its melee attacks can Poison or Immobilize.,近身攻击能够施加【中毒】或【移动受限】。,_CAT,1232,CharacterPortrait/1232/1.png,images\CharacterPortrait\1232\1.png
+Scrap,PickupBase,Scrap,边角料,Gain +2 [img:shield] when collected.,捡起时[img:shield]+2。,ArmorPickup,,,
+Seagull,BirdMed,Seagull,海鸥,Whoever kills this gets All Stats Up and finds a bonus item!,谁击杀它，谁就能所有属性提升，然后捡到1件奖励物品！,BirdMed,216,CharacterPortrait/216/1.png,images\CharacterPortrait\216\1.png
+SecurityBot,,Security Bot,安保机器人,"When its allies are damaged, it will move towards the attacker and attempt to attack it.
+Gains +1 movement range at the end of its turn.","友方受到伤害时，会朝攻击者移动并尝试攻击。
+它在回合结束时，移动范围+1。",SecurityBot,1166,CharacterPortrait/1166/1.png,images\CharacterPortrait\1166\1.png
+SeducedBoulder,,Seduced Boulder,被引诱的巨石,,,Rock,,,
+Seraphim,,Seraphim,炽天使,"Has a diagonal Holy attack.
+Can revive its downed allies.
+Units that contact or attack this get knocked back 5 tiles.
+Immune to Holy. Gains All Stats Up when struck with Holy Element.","会向对角线方向进行神圣系攻击。
+能复活倒地的友方。
+攻击或接触到它的单位会被击退5格。
+免疫神圣系。被神圣元素命中时，所有属性提升。",Angel,365,CharacterPortrait/365/1.png,images\CharacterPortrait\365\1.png
+ShadeCat,,Shade Cat,暗影猫,"Melee attacker. Teleports behind a random one of its enemies when damaged.
+Its backstabs cause Fear and always crit.","近身攻击单位。受到伤害时会随机传送到1个敌人身后。
+背刺会施加【害怕】而且一定暴击。",_CAT,522,CharacterPortrait/522/1.png,images\CharacterPortrait\522\1.png
+ShadowCat,,Shadow Cat,影子猫,,,_CAT,,,
+Shambler,,Shambler,行尸,"Will throw units it can reach.
+Lunges in a random direction at the end of its turn.
+Undead.","会把够得到的单位扔出去。
+它在回合结束时，会随机扑向一个方向。
+亡灵。",Shambler,1391,CharacterPortrait/1391/1.png,images\CharacterPortrait\1391\1.png
+SharkyCat,,Sharky,大鲨,"Its bite inflicts Bleed.
+Takes bonus turns for each bleeding unit.
+Focuses on bleeding units.","会施加【出血】。
+场上每有1个【出血】单位，就会获得奖励回合。
+专门攻击【出血】的单位。",_CAT,1470,CharacterPortrait/1470/1.png,images\CharacterPortrait\1470\1.png
+Simon,,Throbbing King,搏动的王,,,Simon,,,
+SimonFlopper,,Throbbing King,搏动的王,,,SimonFlop,,,
+Siren,,Siren,塞壬,Calls its enemies towards it and heals its adjacent allies.,会把敌人叫到自己旁边，而且治疗前后左右相邻的友方。,_CAT,1539,CharacterPortrait/1539/1.png,images\CharacterPortrait\1539\1.png
+SkeletonCat,,Skeleton Cat,骷髅猫,"Comes back from the dead if its body isn't destroyed!
+Undead.","只要尸体没有摧毁，就会起死回生！
+亡灵。",_CAT,1379,CharacterPortrait/1379/1.png,images\CharacterPortrait\1379\1.png
+SkeletonCatCorpse,,Skeleton Cat,骷髅猫,"Will come back from the dead next turn!
+Undead.","下个回合就要爬起来啦！
+亡灵。",_CAT,1414,CharacterPortrait/1414/1.png,images\CharacterPortrait\1414\1.png
+SkeletonCatCorpseFamiliar,,Skeleton Kitten,骷髅小猫,,,_CAT,193,CharacterPortrait/193/1.png,images\CharacterPortrait\193\1.png
+SkeletonCatFamiliar,,Skeleton Kitten,骷髅小猫,,,_CAT,194,CharacterPortrait/194/1.png,images\CharacterPortrait\194\1.png
+SkeletonCatRevived,SkeletonCat,Skeleton Cat,骷髅猫,"Comes back from the dead if its body isn't destroyed!
+Undead.","只要尸体没有摧毁，就会起死回生！
+亡灵。",_CAT,1378,CharacterPortrait/1378/1.png,images\CharacterPortrait\1378\1.png
+SkeletonCatRevivedFamiliar,SkeletonCatFamiliar,Skeleton Kitten,骷髅小猫,,,_CAT,190,CharacterPortrait/190/1.png,images\CharacterPortrait\190\1.png
+SkeletonShambler,,Skeleton Shambler,骷髅行尸,"Will throw units it can reach.
+Lunges in a random direction at the end of its turn.
+Comes back from the dead if its body isn't destroyed!
+Undead.","会把够得到的单位扔出去。
+它在回合结束时，会随机扑向一个方向。
+如果它的尸体没有摧毁，就会起死回生！
+亡灵。",Shambler,1243,CharacterPortrait/1243/1.png,images\CharacterPortrait\1243\1.png
+SkeletonShamblerCorpse,,Skeleton Shambler,骷髅行尸,"Comes back from the dead if its body isn't destroyed!
+Undead.","只要尸体没有摧毁，就会起死回生！
+亡灵。",Shambler,1238,CharacterPortrait/1238/1.png,images\CharacterPortrait\1238\1.png
+SkeletonShamblerRevived,SkeletonShambler,Skeleton Shambler,骷髅行尸,"Will throw units it can reach.
+Lunges in a random direction at the end of its turn.
+Comes back from the dead if its body isn't destroyed!
+Undead.","会把够得到的单位扔出去。
+它在回合结束时，会随机扑向一个方向。
+如果它的尸体没有摧毁，就会起死回生！
+亡灵。",Shambler,1236,CharacterPortrait/1236/1.png,images\CharacterPortrait\1236\1.png
+Skinned,,Skinned,没皮,Does 3 dash attacks in a row with Knockback.,会连续3次突进攻击，可以击退。,_CAT,473,CharacterPortrait/473/1.png,images\CharacterPortrait\473\1.png
+SkullOoze,,Skull Ooze,骷髅粘液,Its ranged attack destroys equipment.,远程攻击会摧毁装备。,AcidOoze,1320,CharacterPortrait/1320/1.png,images\CharacterPortrait\1320\1.png
+Skunk,,,,,,_CAT,,,
+Slag,,Slag,石桂,Does a ranged area attack. Spawns Edemas when damaged by a melee attack and Fly Swarms when damaged by a ranged attack.,会进行远程区域攻击。被近身攻击命中时，会生成水肿；被远程攻击命中时，会产生一群苍蝇。,Slag,536,CharacterPortrait/536/1.png,images\CharacterPortrait\536\1.png
+SleepParalysisDemon,Hyde,{SpawnedBy}'s Sleep Paralysis Demon,{SpawnedBy}的梦魇,"When killed, {SpawnedBy} wakes up.",被击杀时，{SpawnedBy}会醒来。,_CAT,180,CharacterPortrait/180/1.png,images\CharacterPortrait\180\1.png
+Slenderman,,,,,,_CAT,,,
+SlotMachine,,Slot Machine,老虎机,Attack to play! Explodes when destroyed.,攻击它可以玩！摧毁时会爆炸。,SlotMachine,10,CharacterPortrait/10/1.png,images\CharacterPortrait\10\1.png
+SlotMachineJackpotCoinsReward,,,,,,,,,
+SlotMachineNormalPickupReward,,,,,,,,,
+SmallAsteroid,,Small Asteroid,小小行星,"Its attack shoots rocks at random tiles in an area.
+Gets knocked back with Chain Knockback when hit.
+Can only recieve 1 damage at a time.
+Immune to status effects.","攻击会随机朝1片区域的方格射出石头。
+被击中会被击退，可以造成连锁击退。
+每次最多只会受到1点伤害。
+免疫状态效果。",SmallAsteroid,979,CharacterPortrait/979/1.png,images\CharacterPortrait\979\1.png
+SmallBirdPool,,,,,,,,,
+SmallLavaRock,SmallRock,Small Rock,小石头,Attack it to knock it forward in a straight line. It deals 5 damage to units it hits.,攻击它可以让它向前直线移动，撞到什么单位，就会造成5点伤害。,SmallRock,,,
+SmallRock,,Small Rock,小石头,Attack it to knock it forward in a straight line. It deals 5 damage to units it hits.,攻击它可以让它向前直线移动，撞到什么单位，就会造成5点伤害。,SmallRock,,,
+SmallRock:hot,,Hot Rock,滚烫的石头,,,SmallRock,,,
+SmallSlime,,Small Slime,小型史莱姆,Melee attacker.,近身攻击单位。,SmallSlime,1310,CharacterPortrait/1310/1.png,images\CharacterPortrait\1310\1.png
+SmallSlimeX,,Steven,史蒂文,"Melee attacker.
+Becomes a glitch tile on death.","近身攻击单位。
+死亡时会变成故障方格。",SmallSlimeX,421,CharacterPortrait/421/1.png,images\CharacterPortrait\421\1.png
+SmallUFO,,Saucie,小飞碟,"Fires energy shots in an X shape.
+Can inflict Marked on enemies or gain [img:divineshield].
+Explodes when killed.","会以叉形发射能量。
+能对敌人施加【标记】，或获得[img:divineshield]。
+被击杀时会爆炸。",SmallUFO,965,CharacterPortrait/965/1.png,images\CharacterPortrait\965\1.png
+Smough,,Smough,斯摩,,,Smough,,,
+Snake,,Snake,蛇,,,Snake,162,CharacterPortrait/162/1.png,images\CharacterPortrait\162\1.png
+Snake2,Snake,Snake,蛇,,,Snake,162,CharacterPortrait/162/1.png,images\CharacterPortrait\162\1.png
+SnakeyBones,,Bone Worm,骨虫,"Ranged attacker.
+Gains more range the taller it becomes.
+Loses height when it takes damage.
+Can only take 1 damage at a time when tall.
+Undead.","远程攻击单位。
+个子越高，攻击范围越大。
+受到伤害会变矮。
+比较高时，每次只会受到1点伤害。
+亡灵。",SnakeyBones,1245,CharacterPortrait/1245/1.png,images\CharacterPortrait\1245\1.png
+SoldierBot,,Schutzbot,舒茨博特,"Ranged attacker with limited ammo.
+Shoots at enemies that damage its allies.
+Expends the rest of its ammo and reloads at the end of its turn.
+Backflips one attack per turn.","远程攻击单位，弹药有限。
+友方受到伤害时，会朝攻击者射击。
+它在回合结束时，会把剩余弹药打完，然后填弹。
+每个回合可以后空翻闪避1次攻击。",SoldierBot,618,CharacterPortrait/618/1.png,images\CharacterPortrait\618\1.png
+Sonichu,,,,,,_CAT,,,
+SpearGuy,,,,,,SpearTestGuy,,,
+Spewer,,Spewer,呕吐宝宝,Will eat pills that heal him and change his form. Spits different kinds of liquids depending on his form.,会吃药，恢复生命，改变形态。不同形态会喷出不同的液体。,Spewer,868,CharacterPortrait/868/1.png,images\CharacterPortrait\868\1.png
+SpewerPillTubeL,,Pill Tube,给药管,Spawns pills for Spewer.,会为呕吐宝宝吐出胶囊。,SpewerTube,46,CharacterPortrait/46/1.png,images\CharacterPortrait\46\1.png
+SpewerPillTubeR,SpewerPillTubeL,Pill Tube,给药管,Spawns pills for Spewer.,会为呕吐宝宝吐出胶囊。,SpewerTube,46,CharacterPortrait/46/1.png,images\CharacterPortrait\46\1.png
+SpewerPill_Fire,SpewerPill_Normal,Lava Pill,岩浆胶囊,Heals and changes the form of Spewer when eaten.,呕吐宝宝吃下之后，会恢复生命，还会改变形态。,SpewerPill,,,
+SpewerPill_Normal,,Creep Pill,黏液胶囊,Heals and changes the form of Spewer when eaten.,呕吐宝宝吃下之后，会恢复生命，还会改变形态。,SpewerPill,,,
+SpewerPill_Tar,SpewerPill_Normal,Tar Pill,焦油胶囊,Heals and changes the form of Spewer when eaten.,呕吐宝宝吃下之后，会恢复生命，还会改变形态。,SpewerPill,,,
+SpiderCat,,Spider Kitten,蜘蛛小猫,"Will Web units, then drain their HP.
+Immune to Webs.","会网住单位，然后吸取生命。
+免疫蛛网。",_CAT,1326,CharacterPortrait/1326/1.png,images\CharacterPortrait\1326\1.png
+SpiderQueen,,Spinnerette,蜘蛛女王,"Does a bite attack.
+Has a chance to spawn Spiderlings when damaged.
+Enrages when hit from behind.
+Can spawn Spider Cats.","会啃咬目标。
+受到伤害时有一定几率生成小蜘蛛。
+身后被命中会暴怒。
+能生成蜘蛛猫。",SpiderQueen,1304,CharacterPortrait/1304/1.png,images\CharacterPortrait\1304\1.png
+SpikedCat,,Spiked Cat,尖刺猫,Be careful of its Thorns!,当心它的刺！,_CAT,1535,CharacterPortrait/1535/1.png,images\CharacterPortrait\1535\1.png
+SpikyCactus,SpikyRock,Spiky Cactus,带刺仙人球,,,SpikyCactus,,,
+SpikyCactus_2x2,SpikyCactus,Spiky Cactus,带刺仙人球,,,SpikyCactus2x2,,,
+SpikyCactus_Tall,SpikyCactus,Spiky Cactus,带刺仙人球,,,SpikyCactusTall,,,
+SpikyRock,,Spiky Rock,带刺石头,,,SpikyRock,,,
+Spookie,,Spookie,阿飘,"Its melee attack drains mana.
+Undead.","近身攻击会吸取魔能。
+亡灵。",Spookie,1403,CharacterPortrait/1403/1.png,images\CharacterPortrait\1403\1.png
+Sprout,,Sprout,嫩芽,Possesses adjacent units on its turn.,轮到它的回合时，会附到前后左右相邻的单位身上。,Sprout,1034,CharacterPortrait/1034/1.png,images\CharacterPortrait\1034\1.png
+Squirrel,,Squirrel,松鼠,,,Squirrel,164,CharacterPortrait/164/1.png,images\CharacterPortrait\164\1.png
+Stacy2p0,,Stacy #{stacy_number},{stacy_number}号史黛西,"Its melee attack inflicts Charm.
+Can heal and grant All Stats Up to its allies.","近身攻击会施加【洗脑】。
+能治疗友方，同时令对方所有属性提升。",_CAT,891,CharacterPortrait/891/1.png,images\CharacterPortrait\891\1.png
+StacyMutant,,Stacy Mutant,突变的史黛西,???,？？？,_CAT,,,
+Static1x1A,static_object_template,,,,,static_1x1_a,,,
+Static1x1B,static_object_template,,,,,static_1x1_b,,,
+Static1x1C,static_object_template,,,,,static_1x1_c,,,
+Static2x2A,static_object_template,,,,,static_2x2_a,,,
+Static2x2B,static_object_template,,,,,static_2x2_b,,,
+StaticTallA,static_object_template,,,,,static_tall_a,,,
+StaticTallB,static_object_template,,,,,static_tall_b,,,
+SteelFly,CharmedFly,Steel Fly,钢铁苍蝇,Invulnerable.,无敌。,Fly,96,CharacterPortrait/96/1.png,images\CharacterPortrait\96\1.png
+Stegosaurus,,Stegosaurus,剑龙,"Does a spin attack at the start of its turn.
+Will seek grass to consume.
+Will counterattack units that attack it from behind.
+Trample.","它在回合开始时，会进行旋转攻击。
+会去找草地吃草。
+如果有单位在身后攻击，它会反击。
+横冲直撞。",Stegosaurus,688,CharacterPortrait/688/1.png,images\CharacterPortrait\688\1.png
+StemCat,,Stem Cat,干细喵,"Melee attacker.
+Spawns a Clot when it takes damage.","近身攻击单位。
+受到伤害时会生成血块。",_CAT,474,CharacterPortrait/474/1.png,images\CharacterPortrait\474\1.png
+StemCat_HalfHealth,StemCat,Stem Cat,干细喵,"Melee attacker.
+Spawns a Clot when it takes damage.","近身攻击单位。
+受到伤害时会生成血块。",_CAT,457,CharacterPortrait/457/1.png,images\CharacterPortrait\457\1.png
+SwappyMaggot,,Diggy Maggot,钻地蛆,Its melee attack has a chance to Stun. Swaps places with a unit to move.,近身攻击有一定几率施加【眩晕】。会通过跟其他单位交换位置来移动。,DiggyMaggot,1411,CharacterPortrait/1411/1.png,images\CharacterPortrait\1411\1.png
+T3Hitler,,Hitler,希特勒,"Ich bin hier, um diese Katzen zu töten und die Kontrolle über diese wertlose Dimension zu übernehmen! Unter Hitlers Herrschaft werden alle Katzen sterben!!","Ich bin hier, um diese Katzen zu töten und die Kontrolle über diese wertlose Dimension zu übernehmen! Unter Hitlers Herrschaft werden alle Katzen sterben!!",HitlerMech,258,CharacterPortrait/258/1.png,images\CharacterPortrait\258\1.png
+T3Hitler:Pulp2,,,,SMASH THAT HEAD!!!,砸烂那颗头！！！,HitlerMech,258,CharacterPortrait/258/1.png,images\CharacterPortrait\258\1.png
+T3Hitler:Pulp3,,,,SMASH THAT HEAD!!!,砸烂那颗头！！！,HitlerMech,258,CharacterPortrait/258/1.png,images\CharacterPortrait\258\1.png
+T3Hitler:Pulp4,,,,SMASH THAT HEAD!!!,砸烂那颗头！！！,HitlerMech,258,CharacterPortrait/258/1.png,images\CharacterPortrait\258\1.png
+T3Hitler:Pulp5,,,,SMASH THAT HEAD!!!,砸烂那颗头！！！,HitlerMech,258,CharacterPortrait/258/1.png,images\CharacterPortrait\258\1.png
+T3Hitler:Pulp6,,,,SMASH THAT HEAD!!!,砸烂那颗头！！！,HitlerMech,258,CharacterPortrait/258/1.png,images\CharacterPortrait\258\1.png
+T3Hitler:Pulp7,,,,SMASH THAT HEAD!!!,砸烂那颗头！！！,HitlerMech,258,CharacterPortrait/258/1.png,images\CharacterPortrait\258\1.png
+TCMechSuit,MechSuit,Mech Suit,机甲,,,MechSuit,102,CharacterPortrait/102/1.png,images\CharacterPortrait\102\1.png
+TNTCrate,,TNT,TNT,Explodes when destroyed.,摧毁时会爆炸。,TNTCrate,,,
+TVBot,,Fernsehbot,芬塞博特,Its commands restrict the actions of its enemies.,它的指令会限制敌人的行动。,EmptyV,623,CharacterPortrait/623/1.png,images\CharacterPortrait\623\1.png
+TallBot,,Großerbot,格罗瑟博特,"Its suplex attack can Stun or Immobilize.
+Primes Airstrikes.","背摔攻击能令目标【眩晕】或【移动受限】。
+会准备空袭。",TallBot,616,CharacterPortrait/616/1.png,images\CharacterPortrait\616\1.png
+TallRobes,,Robes,长袍鬼,"Its ranged attack inflicts Leech.
+Can summon Wisps.
+Becomes a Tatters when killed.
+Undead.","远程攻击会施加【水蛭】。
+能召唤【鬼火】。
+被击杀时会变成【褴褛鬼】。
+亡灵。",TallHaunt,1389,CharacterPortrait/1389/1.png,images\CharacterPortrait\1389\1.png
+TallSkeletonCat,,Tall Skeleton Cat,高个子骷髅猫,"Its ranged attack can also give [img:shield] to its allies.
+Will come back from the dead if its body isn't destroyed!
+Undead.","远程攻击还会令友方获得[img:shield]。
+只要尸体没摧毁，就能再爬起来！
+亡灵。",_CAT,1399,CharacterPortrait/1399/1.png,images\CharacterPortrait\1399\1.png
+TallSkeletonCatCorpse,,Tall Skeleton Cat,高个子骷髅猫,"Will come back from the dead next turn!
+Undead.","下个回合就要爬起来啦！
+亡灵。",_CAT,1398,CharacterPortrait/1398/1.png,images\CharacterPortrait\1398\1.png
+TallSkeletonCatRevived,TallSkeletonCat,Tall Skeleton Cat,高个子骷髅猫,"Its ranged attack can also give [img:shield] to its allies.
+Will come back from the dead if its body isn't destroyed!
+Undead.","远程攻击还会令友方获得[img:shield]。
+只要尸体没摧毁，就能再爬起来！
+亡灵。",_CAT,1377,CharacterPortrait/1377/1.png,images\CharacterPortrait\1377\1.png
+TallSpiderCat,,Spider Cat,蜘蛛猫,"Its melee attack has Lifesteal.
+Will move away after it attacks.
+Immune to tile effects.","近身攻击带【吸血】。
+攻击后会拉开距离。
+免疫方格效果。",_CAT,1327,CharacterPortrait/1327/1.png,images\CharacterPortrait\1327\1.png
+TallTumor,,Tall Tumor,高个子肿瘤,"Drains unspent mana from its enemies when they end their turn. Deals damage equal to the mana drained.
+Counterattacks with a spin attack when damaged.","在敌人回合结束时，会吸取它没有耗费的魔能。造成伤害，数值等于吸取的魔能数量。
+受到伤害时会用旋转攻击反击。",TallTumor,1098,CharacterPortrait/1098/1.png,images\CharacterPortrait\1098\1.png
+TankCat,,Maisie,麦茜,Protects her kittens when they are attacked.,猫崽受到攻击时，她会护崽。,_CAT,1595,CharacterPortrait/1595/1.png,images\CharacterPortrait\1595\1.png
+TankCat_Terminator,,Robo-Maisie,机械麦茜,Protects her allies when they are attacked.,友方被攻击时，她会保护友方。,_CAT,270,CharacterPortrait/270/1.png,images\CharacterPortrait\270\1.png
+TarBaby,,Tar Baby,焦油娃,"Its ranged attack creates Tar tiles.
+Leaves Tar tiles in its path.","远程攻击会产生焦油方格。
+移动会留下焦油方格。",TarBaby,703,CharacterPortrait/703/1.png,images\CharacterPortrait\703\1.png
+Tatters,,Tatters,褴褛鬼,"Its attack inflicts Leech to all units in an area.
+Will inflict Hex on units that damage it.
+Undead.","攻击会对1片区域的所有单位施加【水蛭】。
+对它造成伤害的单位会被施加【咒术】。
+亡灵。",Tatters,1393,CharacterPortrait/1393/1.png,images\CharacterPortrait\1393\1.png
+TenTickles,,Ten Tickles,角虫手,"Can attack any tile adjacent to water.
+Teleports through water tiles.","可以攻击跟水前后左右相邻的任意方格。
+能在水方格之间传送。",TenTickles,1318,CharacterPortrait/1318/1.png,images\CharacterPortrait\1318\1.png
+Terminator1,,C-800,C-800,Primary objective: Destroy all cats.,主要目标：消灭所有猫。,_CAT,294,CharacterPortrait/294/1.png,images\CharacterPortrait\294\1.png
+Terminator2,,C-1000,C-1000,"Primary objective: Destroy all cats, again!",主要目标：再次消灭所有猫！,_CAT,292,CharacterPortrait/292/1.png,images\CharacterPortrait\292\1.png
+TeslaCoil,,Tesla Coil,特斯拉线圈,,,TeslaCoil,142,CharacterPortrait/142/1.png,images\CharacterPortrait\142\1.png
+Test2x2,,,,,,test2x2,,,
+TheBloat,,The Bloat,充血怪,"Does a blood blast when units walk past its sides.
+Spawns Eyeballs.","两侧有单位经过时，它会喷血。
+会生成眼球。",TheBloat,546,CharacterPortrait/546/1.png,images\CharacterPortrait\546\1.png
+TheChild,,The Child,圣童,Respice Finem!,勿忘终时！,FinalBossPhase3,,,
+TheCoven,,The Coven,女巫集会,Attempts to finish its ritual...,企图完成仪式……,TheCoven,1088,CharacterPortrait/1088/1.png,images\CharacterPortrait\1088\1.png
+TheCreator,,The Creator,造物主,Nosce te Ipsum!,认识你自己！,FinalBossPhase1,,,
+TheDestroyer,,The Destroyer,灭世者,Memento Mori!,勿忘你终有一死！,FinalBossPhase2,350,CharacterPortrait/350/1.png,images\CharacterPortrait\350\1.png
+TheDestroyer:DualSword,,,,Tenebris Aeternae!,黑暗永恒！,FinalBossPhase2,350,CharacterPortrait/350/1.png,images\CharacterPortrait\350\1.png
+TheDestroyer:DualSword_Primed,,,,Tenebris Aeternae!,黑暗永恒！,FinalBossPhase2,350,CharacterPortrait/350/1.png,images\CharacterPortrait\350\1.png
+TheDestroyer2,TheDestroyer,The Destroyer,灭世者,Memento Mori!,勿忘你终有一死！,FinalBossPhase2,350,CharacterPortrait/350/1.png,images\CharacterPortrait\350\1.png
+TheIntruder,TallSpiderCat,The Intruder,侵体蜘蛛,"Its melee attack has Lifesteal.
+Will move away after it attacks.
+Immune to tile effects.","近身攻击带【吸血】。
+攻击后会拉开距离。
+免疫方格效果。",_CAT,106,CharacterPortrait/106/1.png,images\CharacterPortrait\106\1.png
+TheLost,Scary,The Lost,游魂,"Its melee attacks can inflict Fear or Doom!
+Undead.","近身攻击有可能施加【害怕】或【必死无疑】！
+亡灵。",Scary,1405,CharacterPortrait/1405/1.png,images\CharacterPortrait\1405\1.png
+TheMother,,The Mother,母亲,The mother will take back what's hers...,母亲会拿回属于她的一切……,TheMother,548,CharacterPortrait/548/1.png,images\CharacterPortrait\548\1.png
+ThiefCat,,Dack,戴克,"His ranged attacks scatter held coins.
+Has a melee attack that inflicts Poison.
+Seeks coin pickups.
+Gains a Backflip every time he collects a coin.","远程攻击会打落目标带的钱。
+近身攻击会施加【中毒】。
+会去捡钱。
+每次捡到1块钱，就会获得1个后空翻的机会。",_CAT,1220,CharacterPortrait/1220/1.png,images\CharacterPortrait\1220\1.png
+ThiefCat_Terminator,ThiefCat,Robo-Dack,机械戴克,"His ranged attacks scatter held coins.
+Has a melee attack that inflicts Poison.
+Seeks coin pickups.
+Gains a Backflip every time he collects a coin.","远程攻击会打落目标带的钱。
+近身攻击会施加【中毒】。
+会去捡钱。
+每次捡到1块钱，就会获得1个后空翻的机会。",_CAT,278,CharacterPortrait/278/1.png,images\CharacterPortrait\278\1.png
+ThrobbingKing,,Throbbing King,搏动的王,Follow his orders! OR ELSE!,听他的号令！否则后果自负！,ThrobbingKing,461,CharacterPortrait/461/1.png,images\CharacterPortrait\461\1.png
+ThrobbingKing2,,Throbbing King,搏动的王,"Oh no, now hes agile!",坏了，他现在非常灵活！,ThrobbingKing2,459,CharacterPortrait/459/1.png,images\CharacterPortrait\459\1.png
+ThrobbingTurret,,Throbbing Turret,搏动的炮台,Ranged area attack that inflicts Bleed. Spawns Clots if nothing is in range.,远程区域攻击，会施加【出血】。如果范围内没目标，那么生成血块。,ThrobbingTurret,463,CharacterPortrait/463/1.png,images\CharacterPortrait\463\1.png
+Thump,,Thump,哐当,"Performs a jump attack.
+Can only be damaged from behind.","跳跃攻击。
+只能从身后对它造成伤害。",Thump,1240,CharacterPortrait/1240/1.png,images\CharacterPortrait\1240\1.png
+TinkererCat,,Franklin,富兰克林,"Spawns Robots and crafts weapons.
+Enters a Mech when at low HP.","会生成机器人，还会制造武器。
+生命低时会进入机甲。",_CAT,855,CharacterPortrait/855/1.png,images\CharacterPortrait\855\1.png
+TinkererCat_Terminator,TinkererCat,Robo-Franklin,机械富兰克林,"Spawns Robots and crafts weapons.
+Enters a Mech when at low HP.","会生成机器人，还会制造武器。
+生命低时会进入机甲。",_CAT,262,CharacterPortrait/262/1.png,images\CharacterPortrait\262\1.png
+TinkererTurret,,Turret,炮台,,,Turret,148,CharacterPortrait/148/1.png,images\CharacterPortrait\148\1.png
+TinySpider,,Spiderling,小蜘蛛,"Burrows inside its victims, inflicting Infested.",钻进受害者体内，施加【滋生】。,BabySpider,1329,CharacterPortrait/1329/1.png,images\CharacterPortrait\1329\1.png
+TinyTumor,,Tiny Tumor,小小肿瘤,Its melee attack causes cats it hits to lose 1 [img:con] permanently and has a chance to give them cancer.,近身攻击打中的猫永久[img:con]-1，而且有一定几率令它得癌症。,[TinyTumorA,,,
+Tire,,Tire,轮胎,Knocks back all adjacent units when this takes damage.,受到伤害时会击退前后左右相邻的所有单位。,Tire,,,
+Tire:Up,,,,Attack it to send it rolling.,攻击它会令它滚动。,Tire,,,
+Tire_Up,Tire,Tire,轮胎,Knocks back all adjacent units when this takes damage.,受到伤害时会击退前后左右相邻的所有单位。,Tire,,,
+Toad,,Toad,蛤蟆,,,Frog,170,CharacterPortrait/170/1.png,images\CharacterPortrait\170\1.png
+Toad2,Toad,Toad,蛤蟆,,,Frog,170,CharacterPortrait/170/1.png,images\CharacterPortrait\170\1.png
+Toadie,,Toadie,马屁精,"Disguises itself as inanimate objects.
+While disguised, ambushes enemies that walk past it, causing Fear.","会伪装成没有生命的物体。
+伪装状态下，会埋伏身边经过的敌人，造成对方【害怕】。",_CAT,1297,CharacterPortrait/1297/1.png,images\CharacterPortrait\1297\1.png
+Toadie_Hidden,Toadie,Toadie,马屁精,"Disguises itself as inanimate objects.
+While disguised, ambushes enemies that walk past it, causing Fear.","会伪装成没有生命的物体。
+伪装状态下，会埋伏身边经过的敌人，造成对方【害怕】。",_CAT,1299,CharacterPortrait/1299/1.png,images\CharacterPortrait\1299\1.png
+TomTom,,Tom Tom,浪浪,"It's slow, but has a wide melee attack.",动作很慢，但是近身攻击范围大。,_CAT,1586,CharacterPortrait/1586/1.png,images\CharacterPortrait\1586\1.png
+Tombstone_Ghost,,Tombstone,墓碑,Could something be inside?,里面会不会有什么东西？,Tombstone,,,
+Tombstone_ManaIdol,,Tombstone,墓碑,Drains mana from units when they end their turn.,单位结束自己的回合时，墓碑会吸取其魔能。,Tombstone,,,
+Tombstone_Zombie,,Tombstone,墓碑,Summons a Zombie Cat at the end of each round.,每轮结束时，会召唤1个僵尸猫。,Tombstone,,,
+Tormentor,,Tormentor,折魔,Its demonic runes grant it powers and abilities.,恶魔符文赋予了它力量和能力。,Tormentor,1086,CharacterPortrait/1086/1.png,images\CharacterPortrait\1086\1.png
+TracyFetus,,Tracy,特蕾茜,"Performs a spin attack.
+Will try to counterattack with her left arm when hit.","会进行旋转攻击。
+被命中时，会用左手反击。",TracyX,423,CharacterPortrait/423/1.png,images\CharacterPortrait\423\1.png
+Trampy,,Trampy,邋遢鬼,"Does a series of seemingly random things, but not in a random order!
+Drunk.","行动看起来莫名其妙，但其实顺序并不随机！
+喝多了。",Trampy,1512,CharacterPortrait/1512/1.png,images\CharacterPortrait\1512\1.png
+TrashBag,,Trash Bag,垃圾袋,Spawns random Pickups when damaged.,受到伤害时会随机生成可以捡起的物品。,TrashBag,,,
+Tremblo,,Tremblo,震震,"Its melee attack inflicts Stun and spawns rocks.
+Can suck rocks towards itself and eat them to gain Brace and Shield.","近身攻击会施加【眩晕】，同时生成石头。
+能把石头吸到身边，然后吃掉，以此获得【招架】和护盾。",Tremblo,1048,CharacterPortrait/1048/1.png,images\CharacterPortrait\1048\1.png
+Trex,,T-Rex,霸王龙,"Will seek out the last unit that damaged it and attempt to eat it.
+Will stomp and inflict Immobile on adjacent units at the end of its turn.
+Trample.","谁最后伤害过它，它就会去追谁，追上就会吃掉。
+它在回合结束时，会跺脚，对前后左右相邻的单位施加【移动受限】。
+横冲直撞。",Trex,684,CharacterPortrait/684/1.png,images\CharacterPortrait\684\1.png
+Triachnid,,Triachnid,三足蛛,,,Triachnid,111,CharacterPortrait/111/1.png,images\CharacterPortrait\111\1.png
+Triceratops,,Triceratops,三角龙,"Has a dash attack.
+Counterattacks units that damage it and flings them backwards.
+Trample.","有突进攻击。
+受到单位伤害时会反击，把对方甩到身后。
+横冲直撞。",Triceratops,686,CharacterPortrait/686/1.png,images\CharacterPortrait\686\1.png
+Tumor,,Tumor,肿瘤,,,Tumor,,,
+TumorBarrier,,Edema,水肿,"Evolves into a Husk when its timer reaches 0.
+Spawns Thorny tumors when killed.","计时归零时，会进化成躯壳。
+被击杀时会生成带刺肿瘤。",TumorBarrier,530,CharacterPortrait/530/1.png,images\CharacterPortrait\530\1.png
+TumorCat,,Tumor Cat,肿瘤猫,"Will dash forward 10 tiles with Trample when damaged.
+Blind.","受到伤害时会向前横冲直撞突进10格。
+【瞎眼】。",_CAT,1112,CharacterPortrait/1112/1.png,images\CharacterPortrait\1112\1.png
+TumorousMaggot,,Burfer Maggot,肿瘤蛆,Its attack surrounds units with Thorny lumps.,它的攻击会用带刺肿块包围单位。,Burfer,1407,CharacterPortrait/1407/1.png,images\CharacterPortrait\1407\1.png
+Turkey,BirdLarge,Turkey,火鸡,Whoever kills this gets All Stats Up and finds a bonus item!,谁击杀它，谁就能所有属性提升，然后捡到1件奖励物品！,BirdLarge,205,CharacterPortrait/205/1.png,images\CharacterPortrait\205\1.png
+Turtle,,Turtle,乌龟,,,Turtle,160,CharacterPortrait/160/1.png,images\CharacterPortrait\160\1.png
+Twister,,Twister,龙卷风,Moves towards its enemies. Tosses what it touches.,会朝敌人移动。把碰到的东西甩出去。,Twister,34,CharacterPortrait/34/1.png,images\CharacterPortrait\34\1.png
+Tyler,,,,,,_CAT,,,
+UltraOrnstein,,Ultra Ornstein,究极奥恩斯坦,,,UltraOrnstein,,,
+UltraSmough,,Ultra Smough,究极斯摩,,,UltraSmough,,,
+Waggle,,Waggle,扭扭,"Melee attacker.
+Will turn enemy familiars and low health allies into Waggles!","近身攻击单位。
+会把敌方的跟班和生命少的友方变成扭扭！",Waggle,983,CharacterPortrait/983/1.png,images\CharacterPortrait\983\1.png
+WallOfCats_Eye,,Wall of Cats,猫墙,,,WoC_Eye,,,
+WallOfCats_Mouth,,Wall of Cats,猫墙,,,WoC_Mouth,,,
+WallOfCats_Wall,,Wall of Cats,猫墙,,,WoC_Wall,,,
+WaterKitten,,Water Kitten,水小猫,"Moves away when damaged.
+May be hiding in water...","受到伤害时会拉开距离。
+有可能藏在水里……",_CAT,1480,CharacterPortrait/1480/1.png,images\CharacterPortrait\1480\1.png
+WaterLeech,,Water Leech,水水蛭,"Seeks water when its out of water.
+While in water, dashes in a straight line with Lifesteal that passes through units.","离开水时会找水。
+在水里时，会直线突进，附带【吸血】，可以穿过单位。",WaterLeech,1468,CharacterPortrait/1468/1.png,images\CharacterPortrait\1468\1.png
+WereMan,CavePerson,Caveman,穴居人,"Has a multi-hit melee attack.
+Hates Cats!","有多段近身攻击。
+讨厌猫！",CavePerson,781,CharacterPortrait/781/1.png,images\CharacterPortrait\781\1.png
+Whisperer,,Whisperer,低语者,"Its ranged attack inflicts Bruise and -2 [img:spd] to enemies, and Brace and +2 [img:spd] to allies.
+Its melee attack inflicts Charm.","远程攻击会施加【瘀伤】，令敌人[img:spd]-2，令友方获得【招架】和[img:spd]+2。
+近身攻击会施加【洗脑】。",Whisperer,1092,CharacterPortrait/1092/1.png,images\CharacterPortrait\1092\1.png
+WhiteRabbit,,White Rabbit,白兔,"What's he do, nibble your bum?",他能咋，啃你腚吗？,_CAT,42,CharacterPortrait/42/1.png,images\CharacterPortrait\42\1.png
+Wisp,,Wisp,鬼火,"Its melee attack inflicts Burn.
+Dodges one attack per turn.","近身攻击会施加【灼烧】。
+每个回合闪避1次攻击。",Wisp,1413,CharacterPortrait/1413/1.png,images\CharacterPortrait\1413\1.png
+Wizard,,Wizard,巫师,,,Wizard,,,
+WolfCat,,Werecat,狼猫,Can use both its dash attack and its leap attack in the same turn.,同一回合既能突进也能跳扑攻击。,_CAT,1396,CharacterPortrait/1396/1.png,images\CharacterPortrait\1396\1.png
+Worm,,Worm,肉虫,Moves away when damaged.,受到伤害时会撤退。,Worm,,,
+YellowBlaster,,Y-Blaster,小黄人,"Shoots at units that cross its path.
+Gains +1 Damage at the end of its turn.
+Moves away when in danger.","如果有单位从它前后左右走过，它会射击。
+它在回合结束时，伤害+1。
+陷入危险时会拉开距离。",YellowBlaster,971,CharacterPortrait/971/1.png,images\CharacterPortrait\971\1.png
+Yeti,,Yeti,雪人,Has a triple-hit melee attack and a close-range Freeze attack.,有3段近身攻击，还有近距离【冻住】攻击。,Yeti,747,CharacterPortrait/747/1.png,images\CharacterPortrait\747\1.png
+Yeticat,,Yeti Cat,雪猫,"Its ranged ice attack inflicts Slow and has a chance to inflict Freeze.
+Counter attacks melee attackers.","远程冰系攻击会施加【迟缓】，同时有一定几率【冻住】。
+受到近身攻击时会反击。",_CAT,749,CharacterPortrait/749/1.png,images\CharacterPortrait\749\1.png
+Zaratana,,Zaratana,扎拉坦娜,Zaratana's body radiates with galactic energy!,扎拉坦娜的身体散发着星河的能量！,Zaratana,288,CharacterPortrait/288/1.png,images\CharacterPortrait\288\1.png
+ZaratanaFamiliar,,Zaratana (Friendly),扎拉坦娜（友好）,"Shes here to help, and trying her best!",她是来帮忙的，而且会尽全力！,Zaratana,288,CharacterPortrait/288/1.png,images\CharacterPortrait\288\1.png
+ZaratanaVS,,Zaratana,扎拉坦娜,She wants to kill Pyrophina!,她想杀了皮洛菲娜！,Zaratana,288,CharacterPortrait/288/1.png,images\CharacterPortrait\288\1.png
+Zodiac,,Zodiac,黄道十二宫,"Will shoot at anything that moves!
+Limited ammo.","只要是会动的，他看见就会开枪！
+子弹有限。",Zodiac,1230,CharacterPortrait/1230/1.png,images\CharacterPortrait\1230\1.png
+ZombieCat,,Zombie Cat,僵尸猫,"Eats corpses and becomes stronger!
+Taking damage weakens it and spawns poison food.
+Undead.","会吃尸体变强！
+它受到伤害会变弱，同时生成有毒食物。
+亡灵。",_CAT,1394,CharacterPortrait/1394/1.png,images\CharacterPortrait\1394\1.png
+ZombieCatFamiliar,,Zombie Kitten,僵尸小猫,,,_CAT,195,CharacterPortrait/195/1.png,images\CharacterPortrait\195\1.png
+cWaggle,Waggle,Waggle,扭扭,"Melee attacker.
+Will turn enemy familiars and low health allies into Waggles!","近身攻击单位。
+会把敌方的跟班和生命少的友方变成扭扭！",Waggle,983,CharacterPortrait/983/1.png,images\CharacterPortrait\983\1.png
+cWaggle2x2,cWaggle,Waggle,扭扭,"Melee attacker.
+Will turn enemy familiars and low health allies into Waggles!","近身攻击单位。
+会把敌方的跟班和生命少的友方变成扭扭！",Waggle,983,CharacterPortrait/983/1.png,images\CharacterPortrait\983\1.png
+cWaggle3x3,cWaggle2x2,Waggle,扭扭,HOLY FUCKING SHIT,这他妈是什么鬼,Waggle,983,CharacterPortrait/983/1.png,images\CharacterPortrait\983\1.png
+static_object_template,,,,,,Rock,,,
