@@ -207,9 +207,39 @@ class MewgenicsApp(ctk.CTk):
         self.lbl_cat_guid = ctk.CTkLabel(self.cat_header, text="", font=("Arial", 11), text_color="#94a3b8")
         self.lbl_cat_guid.pack(side="right", padx=12, pady=8)
 
-        # Tabview
+        # 1. Empty State Frame (Shown when no cat is selected)
+        self.empty_state_frame = ctk.CTkFrame(self.right_pane, fg_color="#111827", corner_radius=10)
+
+        center_f = ctk.CTkFrame(self.empty_state_frame, fg_color="transparent")
+        center_f.place(relx=0.5, rely=0.45, anchor="center")
+
+        ctk.CTkLabel(center_f, text="🐱", font=("Arial", 56)).pack(pady=(0, 10))
+        ctk.CTkLabel(center_f, text="未选择猫咪", font=("Arial", 20, "bold"), text_color="#f8fafc").pack(pady=(0, 8))
+        ctk.CTkLabel(
+            center_f, 
+            text="👈 请从左侧列表中点击选择一只猫咪开始查看与编辑其属性\n或点击左下方「+ 新建猫咪」生成全新定制猫咪", 
+            font=("Arial", 13), 
+            text_color="#94a3b8",
+            justify="center"
+        ).pack(pady=(0, 22))
+
+        feat_card = ctk.CTkFrame(center_f, fg_color="#1e293b", corner_radius=10)
+        feat_card.pack(padx=20, pady=5)
+        
+        features = [
+            ("🧬 10 大部位基因突变", "身体/头部/尾部/四肢等 10 部位突变，显性表达与隐性遗传双轨可调"),
+            ("⚔️ 7+7 战斗属性", "遗传底数(Base 1~7) + 后天加成(Bonus 0~7) + 突变实时计算，支持解锁99"),
+            ("🌟 技能被动与疾病", "4 主动法术 + 4 附魔进阶 + 2 职业专属被动 + 125 种疾病一键净除/特化搭配"),
+            ("🏠 房间调配与繁衍", "一层大厅/侧卧/阁楼/谱系自由调配，支持改名、性取向与繁衍欲望")
+        ]
+        for title, desc in features:
+            row = ctk.CTkFrame(feat_card, fg_color="transparent")
+            row.pack(fill="x", padx=16, pady=7)
+            ctk.CTkLabel(row, text=title, font=("Arial", 12, "bold"), text_color="#38bdf8", width=155, anchor="w").pack(side="left")
+            ctk.CTkLabel(row, text=desc, font=("Arial", 12), text_color="#cbd5e1", anchor="w").pack(side="left", padx=5)
+
+        # 2. Tabview (Constructed and ready, but packed only when a cat is selected)
         self.tabview = ctk.CTkTabview(self.right_pane)
-        self.tabview.pack(fill="both", expand=True, padx=10, pady=5)
 
         self.tab_stats = self.tabview.add("战斗与7+7属性 (Stats)")
         self.tab_mutations = self.tabview.add("🧬 身体与基因突变 (Mutations)")
@@ -220,6 +250,22 @@ class MewgenicsApp(ctk.CTk):
         self.build_mutations_tab()
         self.build_breeding_tab()
         self.build_abilities_tab()
+
+        # Initial view: show empty state, hide tabview
+        self.show_empty_state()
+
+    def show_empty_state(self):
+        self.current_cat = None
+        self.lbl_cat_title.configure(text="请从左侧选择一只猫咪进行编辑")
+        self.lbl_cat_guid.configure(text="")
+        if hasattr(self, 'cat_cards'):
+            for k, btn in self.cat_cards.items():
+                c = self.save_mgr.cats.get(k)
+                btn.configure(fg_color="#143026" if (c and getattr(c, 'is_in_house', False)) else "#1e293b")
+        if hasattr(self, 'tabview'):
+            self.tabview.pack_forget()
+        if hasattr(self, 'empty_state_frame'):
+            self.empty_state_frame.pack(fill="both", expand=True, padx=10, pady=5)
 
     def build_stats_tab(self):
         # Quick Presets Header
@@ -833,6 +879,12 @@ class MewgenicsApp(ctk.CTk):
         cat = self.save_mgr.cats[key]
         self.current_cat = cat
 
+        # Hide empty state, show tabview
+        if hasattr(self, 'empty_state_frame'):
+            self.empty_state_frame.pack_forget()
+        if hasattr(self, 'tabview'):
+            self.tabview.pack(fill="both", expand=True, padx=10, pady=5)
+
         # Highlight selected card
         for k, btn in self.cat_cards.items():
             if k == key:
@@ -1412,10 +1464,8 @@ class MewgenicsApp(ctk.CTk):
         cat_id = self.current_cat.key
         if messagebox.askyesno("确认删除", f"确定要从存档中彻底删除猫咪 #{cat_id} ({self.current_cat.name}) 吗？"):
             del self.save_mgr.cats[cat_id]
-            self.current_cat = None
             self.populate_cat_list()
-            self.lbl_cat_title.configure(text="请从左侧选择一只猫咪进行编辑")
-            self.lbl_cat_guid.configure(text="")
+            self.show_empty_state()
             self.status_bar.configure(text=f"已删除猫咪 #{cat_id}", text_color="#ef4444")
 
     def on_browse(self):
@@ -1434,11 +1484,13 @@ class MewgenicsApp(ctk.CTk):
             self.entry_day.delete(0, "end")
             self.entry_day.insert(0, str(self.save_mgr.properties.get('current_day', 0)))
             self.populate_cat_list()
+            self.show_empty_state()
             self.status_bar.configure(text=f"已成功加载外部存档: {f}", text_color="#10b981")
 
     def on_reload(self):
         self.save_mgr.load()
         self.populate_cat_list()
+        self.show_empty_state()
         self.status_bar.configure(text="已重新从磁盘加载存档数据！", text_color="#38bdf8")
 
     def on_save(self):
