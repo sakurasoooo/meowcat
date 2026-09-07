@@ -25,3 +25,5 @@ extracted_sprites/
 test_icons/
 *.swf
 gpak_manifest.json
+tools/_zh_mewcodex/
+tools/_combined_gpak.csv

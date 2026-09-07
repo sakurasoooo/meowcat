@@ -122,6 +122,12 @@ meowcat/
 
 ---
 
+## 🀄 中文文本来源
+
+界面中的技能、天气、职业、章节等中文名称来自社区 beta 补丁 [mewcodex / Mewgenics-Chinese-Translation](https://github.com/mewcodex/Mewgenics-Chinese-Translation)，**尚未合入主游戏**，也不是发行版自带汉化。
+
+---
+
 ## 📜 许可说明 (License)
 
 本项目仅供学习逆向工程、游戏存档格式研究与个人单机游戏娱乐使用。

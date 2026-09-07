@@ -10,7 +10,7 @@
 
 - 图形界面：**CustomTkinter**（Python 3.10+，Windows 桌面应用）。
 - 存档格式：**SQLite 3 STRICT 数据库 + LZ4 块压缩**（`steamcampaign01.sav`）。
-- 猫咪数据为自研二进制结构 `CatData`，通过逆向游戏 C++ 引擎获得，**没有官方文档**——所有偏移量见 `Mewgenics_Reverse_Engineering_Reference.md`。
+- 猫咪数据为自研二进制结构 `CatData`，通过逆向游戏 C++ 引擎获得，**没有官方文档**。写回 `cats` 表前必读 [`CAT_SAVE_FORMAT.md`](CAT_SAVE_FORMAT.md)（间隔字节 / 装备槽 / 脏写约定）。引擎与内存偏移见 `Mewgenics_Reverse_Engineering_Reference.md`。
 - 交付物：单文件独立 EXE（PyInstaller，约 14MB）。
 
 ## 2. 仓库结构与关键文件 (Key Files)
@@ -20,7 +20,8 @@ meowcat/
 ├── MewgenicsCatEditor.py   # GUI 主程序 (~1500 行, CustomTkinter)。所有 UI 逻辑都在 MewgenicsApp 类中
 ├── mewgenics_core.py       # 核心引擎 (~650 行): MewgenicsSaveManager + CatRecord + MUTATION_SLOTS
 ├── mewgenics_game_data.json# 游戏解包数据库 (~540KB): 突变/技能/被动/失调/中文本地化。只读，勿手改
-├── Mewgenics_Reverse_Engineering_Reference.md  # 二进制布局权威参考，改存档结构前必读
+├── CAT_SAVE_FORMAT.md          # 猫咪存档写回权威：字符串间隔、装备槽、脏写、#778 闪退
+├── Mewgenics_Reverse_Engineering_Reference.md  # 引擎/GPAK/内存偏移；技能段以 CAT_SAVE_FORMAT.md 为准
 ├── assets/                # 游戏解包图标与富文本目录（打包进 EXE）
 │   ├── icons/abilities/   # 技能图标（ability_icons.swf Sprite 1346：841 个带帧标签的主动技能 + 11 个移动补全）
 │   ├── icons/passives/    # 被动/疾病图标（Sprite 515；含班级 Soul 被动等 23 个补全别名）
@@ -52,7 +53,7 @@ meowcat/
 ## 3. 核心领域概念 (Domain Model)
 
 ### 猫咪数据 `CatRecord`（`mewgenics_core.py`）
-- 存档 `cats` 表：`key INTEGER PRIMARY KEY, data BLOB`，`data` 为 LZ4 压缩的 `CatData`。
+- 存档 `cats` 表：`key INTEGER PRIMARY KEY, data BLOB`，`data` 为 LZ4 压缩的 `CatData`。布局与写回铁律见 `CAT_SAVE_FORMAT.md`：只写 `is_modified`，保留 `str_gaps` / `extra_strings`，禁止固定 16 串重建。
 - 定位锚点：在解压后的二进制中用正则搜索 voice 字符串（`male\d+|female\d+|robotom|spidercat|...`），voice 之前是 header+名字+头衔+部件块，之后是属性/技能区。**新增字段解析通常以 voice 偏移为基准**。
 - 名字编码：**UTF-16LE**（`name_len` 为字符数，字节数 = `name_len * 2`）。
 - 10 大突变部位见 `MUTATION_SLOTS`（偏移量常量表），每个部位有显性/隐性双等位基因；显性决定外观与属性，隐性仅参与遗传。

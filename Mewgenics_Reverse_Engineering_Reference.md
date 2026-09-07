@@ -115,15 +115,18 @@
 ```
 
 ### 5. 技能与职业段 (字符串序列)
-紧随属性段后，存放游戏内技能与特性，每个字符串均带 8 字节 `uint64_t` 长度前缀：
-1. **Boon / 偏好属性**: `"none"`, `"str"`, `"dex"`, `"lck"` 等。
-2. **移动技能**: 默认 `"DefaultMove"`。
-3. **普通攻击**: `"BasicMelee"`, `"BasicShortRanged"`, `"BasicTankMelee"`, `"BasicShortLobbed"` 等。
-4. **主动技能槽 1~4**: `"Spit"`, `"Block"`, `"Roll"`, `"MageSwap"`, `"None"` 等。
-5. **被动特性槽 1~8**:
-   - 前 4 个槽为遗传固有特性（如 `"SelfAssured"`, `"HotBlooded"`）。
-   - 后 4 个槽为成长进阶特性（每个特性后跟 4 字节整数 `rank = 1`）。
-6. **职业 (Class)**: `"Colorless"`, `"Fighter"`, `"Mage"`, `"Hunter"`, `"Tank"`, `"Medic"`, `"Thief"`, `"Necromancer"`, `"Butcher"`, `"Druid"`, `"Monk"`, `"Psychic"`, `"Tinkerer"`, `"Jester"`。
+
+**写回约定以 [`CAT_SAVE_FORMAT.md`](CAT_SAVE_FORMAT.md) 为准。** 本段旧描述把被动写成连续 8 槽，会丢掉装备栏空位标记和已装备物品，读档 `out of bounds`。
+
+紧随属性段 + `mid_flags` 之后。每个字符串为 `[uint64_t 字节长度][ascii]`，但串与串之间**不是紧挨着的**：
+
+1. **Boon** → 约 14 字节 `post_boon_flags`
+2. **移动** / **普攻** / **主动×4** / **先天基因×4**
+3. **职业被动×2**、**疾病×2**（各后面跟 `int32` 等级）
+4. **0–N 件装备**（帽子/瓶子/寄生虫等）+ 空槽标记 `05 00 00 00 00`（无装备时共 5 组）
+5. **职业名**（永远是最后一串）→ `tail_data`（性向 `double` 在 +4）
+
+编辑器必须保存并写回原始间隔字节（`str_gaps`）和装备串（`extra_strings`）。
 
 ---
 

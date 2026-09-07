@@ -13,7 +13,13 @@ from datetime import datetime
 _GAME_DATA_CACHE = None
 _OFFICIAL_TEXT_CACHE = None
 
-# 官方文本突变描述部位键（手臂与腿共用 LEGS 文本，游戏 id/效果相同）
+# 中文来自 mewcodex beta 社区补丁（尚未合入主游戏）：
+# https://github.com/mewcodex/Mewgenics-Chinese-Translation
+ZH_PATCH_AUTHOR = 'mewcodex'
+ZH_PATCH_REPO = 'https://github.com/mewcodex/Mewgenics-Chinese-Translation'
+ZH_PATCH_LABEL = 'mewcodex 中文补丁（beta）'
+
+# 突变描述部位键（手臂与腿共用 LEGS 文本，游戏 id/效果相同）
 MUTATION_DESC_PART = {
     'body': 'BODY', 'head': 'HEAD', 'tail': 'TAIL',
     'legs': 'LEGS', 'arms': 'LEGS',
@@ -58,7 +64,7 @@ def _bundled_official_zh_paths():
 
 
 def load_official_text_map():
-    """加载打包的官方中文摘要，返回 {key: (en, zh)}。不读取游戏安装目录。"""
+    """加载打包的 mewcodex beta 中文补丁摘要，返回 {key: (en, zh)}。不读取游戏安装目录。"""
     global _OFFICIAL_TEXT_CACHE
     if _OFFICIAL_TEXT_CACHE is not None:
         return _OFFICIAL_TEXT_CACHE
@@ -113,7 +119,7 @@ def format_mutation_display(entry):
 
 
 def localize_mutations_detailed(game_data, official=None):
-    """用官方中文补丁覆盖 mutations_detailed 的描述/显示名。"""
+    """用 mewcodex beta 中文补丁覆盖 mutations_detailed 的描述/显示名。"""
     if not game_data or game_data.get('_mutations_official_zh'):
         return game_data
     official = official if official is not None else load_official_text_map()
@@ -497,6 +503,10 @@ class CatRecord:
         self.title_len = struct.unpack_from('<Q', self.pre_voice_body, 0)[0]
         self.title = self.pre_voice_body[8 : 8 + self.title_len].decode('ascii', errors='ignore')
         self.p_parts = 8 + self.title_len + 4
+        # 生物性别：title 后 u32，与 parts_chunk+0 同步（夜岚 HUD ♀ = 1；贾克斯 ♂ = 0；2 = 中性 _N）
+        self.gender = 0
+        if self.p_parts >= 4:
+            self.gender = struct.unpack_from('<I', self.pre_voice_body, self.p_parts - 4)[0]
         self.parts_chunk = bytearray(self.pre_voice_body[self.p_parts:])
 
         # Parse 10 mutation slots (Left & Right physical parts for paired slots)
@@ -514,6 +524,18 @@ class CatRecord:
                 self.right_mutations[slot_key] = r_id
             else:
                 self.right_mutations[slot_key] = None
+
+        # 喜欢 / 讨厌：parts_chunk 突变表之前的两槽 (id, pad)。空槽为 -1/-1。
+        # 夜岚#798 +44=南栀#754，与游戏内「喜爱」悬浮一致。
+        self.lover_id = -1
+        self.rival_id = -1
+        if len(self.parts_chunk) >= 76:
+            lover, lover_pad = struct.unpack_from('<ii', self.parts_chunk, 44)
+            rival, rival_pad = struct.unpack_from('<ii', self.parts_chunk, 68)
+            if lover > 0 and lover_pad != -1:
+                self.lover_id = lover
+            if rival > 0 and rival_pad != -1:
+                self.rival_id = rival
         
         # Voice pitch
         p = p_voice + self.voice_len
@@ -611,6 +633,18 @@ class CatRecord:
         self.libido = "Mid (正常)"
         self.aggression = "Mid (适中)"
         self.inbred_level = 0
+
+        # 年龄 / 等级 / 退役：tail+12 出生日，+40 到访章节位图，+48/+49 退役档与等级。
+        # 年龄 = current_day - birth_day（夜岚 birth=223、day=230 → 7 岁，与 HUD 一致）。
+        self.birth_day = 0
+        self.zone_flags = 0
+        self.retire_tier = 0
+        self.cat_level = 0
+        if len(self.tail_data) >= 50:
+            self.birth_day = struct.unpack_from('<i', self.tail_data, 12)[0]
+            self.zone_flags = struct.unpack_from('<I', self.tail_data, 40)[0]
+            self.retire_tier = self.tail_data[48]
+            self.cat_level = self.tail_data[49]
 
     @property
     def mutation_stat_modifiers(self):
@@ -1259,8 +1293,248 @@ def difficulty_progress_defaults():
         'hardpath_unlocked': False,
         'acts': {i: {'normal': True, 'hard': False, 'crazy': False, 'impossible': False} for i in (1, 2, 3)},
         'house_boss_difficulty': -1,      # 当前房间 Boss 难度(-1=无)
-        'alien_invasion_count': 0,        # 异星入侵气象解锁次数
     }
+
+
+# 家园 Boss 9 场（achievements boss_unlocks 前 9 项，不含章节 Boss meatworld/dimensionx/endoftime）。
+# name_key 对齐 wiki/items_db BOSS_*_NAME；中文兜底用 mewcodex 任务名。
+# portrait：wiki CharacterPortrait 帧（characters.csv）。
+# quest_begin：打赢后拿到任务道具时写入 npc_progress（职业页猫头戳）。
+# houseboss_unlock_* 只是入池/可来家里，不等于已击败（例如遇过扎拉坦娜但还没打家园战）。
+HOUSE_BOSSES = (
+    ('guillotina_1', 'BOSS_GUILLOTINA_1_NAME', 'Guillotina 1', '断头泰娜 1', 304, ('gristle',)),
+    ('guillotina_2', 'BOSS_GUILLOTINA_2_NAME', 'Guillotina 2', '断头泰娜 2', 300, ('leech',)),
+    ('guillotina_3', 'BOSS_GUILLOTINA_3_NAME', 'Guillotina 3', '断头泰娜 3', 296, ('tinahead',)),
+    ('pyrophina', 'BOSS_PYROPHINA_NAME', 'Pyrophina', '皮洛菲娜', 290, ('scaldingorb',)),
+    ('zaratana', 'BOSS_ZARATANA_NAME', 'Zaratana', '扎拉坦娜', 288, ('blackshard', 'blackshard_glowing')),
+    ('pyrophina_vs_zaratana', 'BOSS_PYROPHINA_VS_ZARATANA_NAME',
+     'Pyrophina vs Zaratana', '皮洛菲娜 对战 扎拉坦娜', 290,
+     ('pyrophinascollar', 'zaratanascollar')),
+    ('terminator_1', 'BOSS_TERMINATOR_1_NAME', 'C-800', 'C-800', 294, ('receiverantenna',)),
+    ('terminator_2', 'BOSS_TERMINATOR_2_NAME', 'C-1000', 'C-1000', 292, ('transmitterantenna',)),
+    ('terminator_3', 'BOSS_TERMINATOR_3_NAME', 'Hitler III', '希特勒三世', 258, ('signalamplifier',)),
+)
+
+
+def house_boss_progress_defaults():
+    bosses = []
+    for key, name_key, en, zh, portrait, _quests in HOUSE_BOSSES:
+        bosses.append({
+            'key': key,
+            'name_key': name_key,
+            'name_en': en,
+            'name_zh': zh,
+            'portrait': portrait,
+            'beaten': False,
+            'introduced': False,
+            'unlocked': False,
+        })
+    return {
+        'bosses': bosses,
+        'beaten_count': 0,
+        'total': len(HOUSE_BOSSES),
+        'next': '',
+        'difficulty': -1,
+        'times_fought': 0,
+        'first_beat': False,
+    }
+
+
+def _scan_npc_presence_names(data):
+    """npc_progress 存在性标志：连续 [u64 长度][ascii 名]，后面往往没有独立 u32 值。"""
+    names = set()
+    p, n = 0, len(data or b'')
+    while p + 8 <= n:
+        slen = struct.unpack_from('<Q', data, p)[0]
+        if 4 <= slen <= 60 and p + 8 + slen <= n:
+            chunk = data[p + 8:p + 8 + slen]
+            if all(32 <= b <= 126 for b in chunk):
+                names.add(chunk.decode('ascii'))
+                p += 8 + slen
+                continue
+        p += 1
+    return names
+
+
+def parse_house_boss_progress(data, properties):
+    """解析 9 场家园 Boss 进度。
+
+    - houseboss_unlock_{id}：已入家园 Boss 池（可来家里），不是猫头戳。
+    - npc_houseboss_intro_{id}：已来家里（开战/对话）。
+    - quest_begin_{item}：打赢后拿到任务道具 —— 职业页带血猫头戳。
+    - butch_first_house_boss_beat：首次击败过任意家园 Boss。
+    - properties.next_house_boss / house_boss_difficulty / house_boss_times_fought：
+      当前挂起的那场（times_fought 是本场计数，不是生涯胜场）。
+    """
+    out = house_boss_progress_defaults()
+    try:
+        names = _scan_npc_presence_names(data)
+    except Exception:
+        names = set()
+    quest_map = {row[0]: row[5] for row in HOUSE_BOSSES}
+    beaten_n = 0
+    for boss in out['bosses']:
+        key = boss['key']
+        boss['unlocked'] = f'houseboss_unlock_{key}' in names
+        boss['introduced'] = f'npc_houseboss_intro_{key}' in names
+        got_quest = any(f'quest_begin_{q}' in names for q in quest_map.get(key, ()))
+        # 猫头戳 = 打赢拿任务；intro 且无入池-only 也算来过。入池单独不算。
+        boss['beaten'] = got_quest or boss['introduced']
+        if boss['beaten']:
+            beaten_n += 1
+    out['beaten_count'] = beaten_n
+    out['first_beat'] = 'butch_first_house_boss_beat' in names
+    props = properties or {}
+    nxt = props.get('next_house_boss', '')
+    if isinstance(nxt, bytes):
+        nxt = nxt.decode('utf-8', errors='ignore')
+    out['next'] = (str(nxt).strip() if nxt is not None else '')
+    try:
+        out['difficulty'] = int(props.get('house_boss_difficulty', -1))
+    except Exception:
+        pass
+    try:
+        out['times_fought'] = int(props.get('house_boss_times_fought', 0) or 0)
+    except Exception:
+        pass
+    return out
+
+
+# 章节地图 Boss（各章 map *.gon 的 bosses / boss_cutscene）。
+# 小巷/沙漠/实验室会随机二选一；其余章固定一场。
+# portrait：wiki CharacterPortrait 帧。beaten = 任意职业有该章 class-zone 记录。
+CHAPTER_BOSSES = (
+    # 第 1 章关卡序：小巷 洞穴 墓地 / 下水道 废料场 搏动领域
+    ('alley', 1, ('departed_first_real_adventure', 'map_unlock_alley'), (
+        ('radicalrat', 'BOSS_RADICALRAT_NAME', 'Radical Rat', '激进鼠', (1581,), 'default'),
+        ('queenhippo', 'BOSS_QUEENHIPPO_NAME', 'Queen Hippo', '河马女王', (1577,), 'alt'),
+    )),
+    # caves 开场 cutscene 是 spiderkitten；纺丝女皇是隐藏 Boss
+    ('caves', 1, ('map_unlock_caves', 'mapflag_CavesUnlocked'), (
+        ('spiderkitten', 'BOSS_SPIDERKITTEN_NAME', 'Spider Kitten', '蜘蛛小猫', (1326,), 'opening'),
+        ('spiderqueen', 'BOSS_SPIDERQUEEN_NAME', 'Spinnerette', '纺丝女皇', (1304,), 'hidden'),
+    )),
+    ('boneyard', 1, ('map_unlock_boneyard', 'mapflag_BoneyardUnlocked'), (
+        ('dybbuk', 'BOSS_DYBBUK_NAME', 'Dybbuk', '戴布克', (1381,)),
+    )),
+    ('sewers', 1, ('map_unlock_sewers', 'mapflag_SewersUnlocked'), (
+        ('boris', 'BOSS_BORIS_NAME', 'Boris', '鲍里斯', (1458,)),
+    )),
+    ('junkyard', 1, ('map_unlock_junkyard', 'mapflag_JunkyardUnlocked'), (
+        ('chubsandnubs', 'BOSS_CHUBSANDNUBS_NAME', 'Chubs and Nubs', '查布斯与纳布斯', (1516, 1514)),
+    )),
+    ('meatworld', 1, ('meat_world_unlock', 'mapflag_MeatWorldUnlockedFull', 'mapflag_MeatWorldUnlocked'), (
+        ('throbbingking', 'BOSS_THROBBINGKING_NAME', 'Throbbing King', '搏动之王', (461,)),
+    )),
+    ('desert', 2, ('map_unlock_desert', 'mapflag_DesertUnlocked'), (
+        ('zodiac', 'BOSS_ZODIAC_NAME', 'Zodiac', '黄道十二宫', (1230,), 'default'),
+        ('gambit', 'BOSS_GAMBIT_NAME', 'Gambit', '博弈', (1242,), 'alt'),
+    )),
+    ('crater', 2, ('map_unlock_crater', 'mapflag_CraterUnlocked'), (
+        ('alienqueen', 'BOSS_ALIENQUEEN_NAME', 'Crater Maker', '陨坑女王', (1024,)),
+    )),
+    ('bunker', 2, ('map_unlock_bunker', 'mapflag_BunkerUnlocked'), (
+        ('johnny', 'BOSS_JOHNNY_NAME', 'Johnny', '约翰尼', (1155,)),
+    )),
+    ('moon', 2, ('map_unlock_moon', 'mapflag_MoonUnlocked'), (
+        ('moonhead', 'BOSS_MOONHEAD_NAME', 'Man In The Moon', '月中人', (959,)),
+    )),
+    ('core', 2, ('map_unlock_core', 'mapflag_CoreUnlocked'), (
+        ('coven', 'BOSS_COVEN_NAME', 'The Coven', '女巫集会', (1088,)),
+    )),
+    ('dimensionx', 2, ('map_unlock_dimensionx', 'mapflag_DimensionXUnlocked'), (
+        ('chaos', 'BOSS_CHAOS_NAME', 'Soahc', '沌混', (413,)),
+    )),
+    ('lab', 3, ('map_unlock_lab', 'mapflag_LabUnlocked'), (
+        ('stacy', 'BOSS_STACY_NAME', 'Stacy', '斯泰西', (891,)),
+        ('spewer', 'BOSS_SPEWER_NAME', 'Spewer', '呕吐者', (868,)),
+    )),
+    ('iceage', 3, ('map_unlock_iceage', 'mapflag_IceAgeUnlocked'), (
+        ('lordbunga', 'BOSS_LORDBUNGA_NAME', 'Lord Bunga', '班加领主', (756,)),
+    )),
+    ('future', 3, ('map_unlock_future', 'mapflag_FutureUnlocked'), (
+        ('hitler', 'BOSS_HITLER_NAME', 'Hitler', '希特勒', (606,)),
+    )),
+    ('jurassic', 3, ('map_unlock_jurassic', 'mapflag_JurassicUnlocked'), (
+        ('megadino', 'BOSS_MEGADINO_NAME', 'Dreadnoughtus', '无畏龙', (678,)),
+    )),
+    ('theend', 3, ('map_unlock_theend', 'mapflag_TheEndUnlocked'), (
+        ('themother', 'BOSS_THEMOTHER_NAME', 'The Mother', '圣母', (548,)),
+    )),
+    ('endoftime', 3, ('map_unlock_endoftime', 'mapflag_EndOfTimeUnlocked'), (
+        ('thecreator', 'BOSS_THECREATOR_NAME', 'The Creator', '造物主', (350,)),
+    )),
+)
+
+
+def chapter_boss_progress_defaults():
+    chapters = []
+    for zone, act, flags, bosses in CHAPTER_BOSSES:
+        faces = []
+        for row in bosses:
+            key, name_key, en, zh, portraits = row[:5]
+            role = row[5] if len(row) > 5 else 'normal'
+            faces.append({
+                'key': key,
+                'name_key': name_key,
+                'name_en': en,
+                'name_zh': zh,
+                'portraits': list(portraits),
+                'role': role,
+                'seen': False,
+                'alt_unlocked': False,
+            })
+        has_hidden = any(f['role'] == 'hidden' for f in faces)
+        chapters.append({
+            'zone': zone,
+            'act': act,
+            'unlock_flags': list(flags),
+            'bosses': faces,
+            'choice': (not has_hidden) and len(faces) > 1,
+            'hidden': has_hidden,
+            'beaten': False,
+            'unlocked': False,
+            'difficulty': None,
+        })
+    return {
+        'chapters': chapters,
+        'beaten_count': 0,
+        'total': len(CHAPTER_BOSSES),
+    }
+
+
+def parse_chapter_boss_progress(data, class_zone_records):
+    """章节地图 Boss：立绘来自 CharacterPortrait；通关看 (任意职业, 该章) 记录。"""
+    out = chapter_boss_progress_defaults()
+    try:
+        names = _scan_npc_presence_names(data)
+    except Exception:
+        names = set()
+    recs = class_zone_records or {}
+    beaten_n = 0
+    for ch in out['chapters']:
+        zone = ch['zone']
+        ch['unlocked'] = any(f in names for f in ch['unlock_flags'])
+        for face in ch['bosses']:
+            # boss_unlock_X = 通关该章后解锁备选 X（沙漠先打黄道，再入池博弈），不是「本档出场」
+            face['alt_unlocked'] = f"boss_unlock_{face['key']}" in names
+            face['seen'] = face['alt_unlocked'] if face.get('role') == 'alt' else False
+        diffs = []
+        for (cls, z), rec in recs.items():
+            if z != zone:
+                continue
+            d = class_zone_clear_difficulty(rec)
+            if d is not None:
+                diffs.append(d)
+        if diffs:
+            ch['beaten'] = True
+            ch['difficulty'] = max(diffs)
+            beaten_n += 1
+        elif zone == 'alley':
+            # 小巷是开局章，没有 mapflag；出发过也算已入图
+            ch['unlocked'] = ch['unlocked'] or ('departed_first_real_adventure' in names)
+    out['beaten_count'] = beaten_n
+    return out
 
 
 def parse_difficulty_progress(data, properties):
@@ -1269,22 +1543,10 @@ def parse_difficulty_progress(data, properties):
     - npc_progress 存在性标志（[u64 长度][记录名] 无值）：difficulty_unlock_act{N}_{hard|crazy|impossible}
       （N=1..3）——某章某进阶难度已解锁；map_unlock_hardpath —— 困难路径已解锁。
     - properties.house_boss_difficulty：当前房间 Boss 难度(-1=无)。
-    - properties.sfunlockcounter_weather_unlock_alieninvasion：异星入侵气象解锁次数。
     """
     out = difficulty_progress_defaults()
     try:
-        # 存在性标志：u64 len + ascii 名，后面无 u32 值（下一记录的长度前缀）。
-        p, n = 0, len(data)
-        names = set()
-        while p + 8 <= n:
-            slen = struct.unpack_from('<Q', data, p)[0]
-            if 4 <= slen <= 60 and p + 8 + slen <= n:
-                chunk = data[p + 8 : p + 8 + slen]
-                if all(32 <= b <= 126 for b in chunk):
-                    names.add(chunk.decode('ascii'))
-                    p += 8 + slen
-                    continue
-            p += 1
+        names = _scan_npc_presence_names(data)
         for name in names:
             if name == 'map_unlock_hardpath':
                 out['hardpath_unlocked'] = True
@@ -1298,10 +1560,6 @@ def parse_difficulty_progress(data, properties):
         hb = properties.get('house_boss_difficulty', -1)
         try:
             out['house_boss_difficulty'] = int(hb)
-        except Exception:
-            pass
-        try:
-            out['alien_invasion_count'] = int(properties.get('sfunlockcounter_weather_unlock_alieninvasion', 0) or 0)
         except Exception:
             pass
     return out
@@ -1416,6 +1674,32 @@ def storage_capacity(level):
     return 100 + (level - 7)
 
 
+# 家园食物上限：基础 100 + 已放置家具 FoodStorage。
+# 来源: furniture_effects.gon special_foodbox { FoodStorage 40 }；wiki 确认基础 100、满 10 箱 = 500。
+BASE_FOOD_CAPACITY = 100
+FOOD_STORAGE_BY_NAME = {
+    'special_foodbox': 40,
+}
+
+
+def is_warehouse_furniture(rec):
+    """家具仓库（未放置）= 无房间且坐标 (0,0)。无房间但有坐标的是墙面装饰（视为已放置）。"""
+    return (getattr(rec, 'room', '') or '') == '' and int(getattr(rec, 'x', 0) or 0) == 0 and int(getattr(rec, 'y', 0) or 0) == 0
+
+
+def food_capacity(furniture, extra_by_name=None):
+    """已放置家具贡献的食物上限。仓库里未放置的储藏箱不计入。"""
+    lookup = dict(FOOD_STORAGE_BY_NAME)
+    if extra_by_name:
+        lookup.update(extra_by_name)
+    extra = 0
+    for rec in (furniture or {}).values():
+        if is_warehouse_furniture(rec):
+            continue
+        extra += int(lookup.get(getattr(rec, 'name', ''), 0) or 0)
+    return BASE_FOOD_CAPACITY + extra
+
+
 def get_shop_progress(properties, npc_records, house_unlocks_names):
     """汇总各商店/家园升级等级，供 UI 展示（只读）。"""
     rec = {}
@@ -1451,12 +1735,81 @@ def get_shop_progress(properties, npc_records, house_unlocks_names):
 # ============================================================
 
 # 游戏内 9 个职业通关角标对应的章节（来自 chapter_id_enum.gon: major_class_checkmarks）
-MAJOR_CHECKMARK_ZONES = ['caves', 'boneyard', 'moon', 'core', 'jurassic',
-                         'theend', 'meatworld', 'dimensionx', 'endoftime']
+MAJOR_CHECKMARK_ZONES = ['caves', 'boneyard', 'meatworld', 'moon', 'core',
+                         'dimensionx', 'jurassic', 'theend', 'endoftime']
 
 _ZONE_IDS = ['debug', 'tutorial', 'alley', 'sewers', 'junkyard', 'caves', 'boneyard',
              'meatworld', 'desert', 'crater', 'bunker', 'moon', 'core', 'dimensionx',
              'lab', 'iceage', 'future', 'jurassic', 'theend', 'endoftime']
+
+# 幼猫：age<=1（event_rewards_samples.gon set_age 1）。老年：HUD 会标 HOUSE_CAT_INFO_OLD。
+KITTEN_MAX_AGE = 1
+ELDER_MIN_AGE = 10
+LIFE_STAGE_ZH = {
+    'kitten': '幼猫',
+    'adult': '成年猫',
+    'veteran': '老兵退役',
+    'super_retired': '彻底退役',
+    'elder': '老年猫',
+}
+
+# 家园 HUD {gendericon}：0 公 / 1 母 / 2 中性（HOUSE_CAT_INFO_LOVER_M/F/N）
+GENDER_ZH = {0: '公', 1: '母', 2: '中性'}
+GENDER_ICON = {0: '♂', 1: '♀', 2: '?'}
+
+
+def cat_gender_code(cat):
+    return int(getattr(cat, 'gender', 0) or 0)
+
+
+def cat_gender_icon(cat):
+    return GENDER_ICON.get(cat_gender_code(cat), '?')
+
+
+def cat_gender_zh(cat):
+    return GENDER_ZH.get(cat_gender_code(cat), '?')
+
+
+def cat_age(birth_day, current_day):
+    """家园年龄。birth_day<0 表示未写入，返回 None。"""
+    if birth_day is None or int(birth_day) < 0:
+        return None
+    return max(0, int(current_day or 0) - int(birth_day))
+
+
+def zones_from_flags(flags):
+    """到访章节，按 _ZONE_IDS 低位→高位。最高位置为最后返回地图。"""
+    out = []
+    flags = int(flags or 0)
+    for i, z in enumerate(_ZONE_IDS):
+        if flags & (1 << i):
+            out.append(z)
+    return out
+
+
+def last_adventure_zone(flags):
+    zs = zones_from_flags(flags)
+    return zs[-1] if zs else ''
+
+
+def cat_life_stage(cat, age):
+    """幼猫 / 成年 / 老兵退役 / 彻底退役 / 老年（未出征且年长）。"""
+    adventured = (
+        bool(getattr(cat, 'zone_flags', 0))
+        or (getattr(cat, 'cat_class', 'Colorless') not in ('', 'Colorless'))
+        or int(getattr(cat, 'cat_level', 0) or 0) > 0
+    )
+    if age is not None and age <= KITTEN_MAX_AGE:
+        return 'kitten'
+    if not adventured:
+        if age is not None and age >= ELDER_MIN_AGE:
+            return 'elder'
+        return 'adult'
+    if int(getattr(cat, 'retire_tier', 0) or 0) >= 2:
+        return 'super_retired'
+    return 'veteran'
+
+
 _CLASS_IDS = ['Colorless', 'Fighter', 'Hunter', 'Mage', 'Tank', 'Medic', 'Thief',
               'Necromancer', 'Tinkerer', 'Druid', 'Butcher', 'Psychic', 'Monk',
               'Jester', 'any']
@@ -1465,11 +1818,14 @@ _CLASS_IDS = ['Colorless', 'Fighter', 'Hunter', 'Mage', 'Tank', 'Medic', 'Thief'
 def parse_class_zone_records(data):
     """扫描 npc_progress 中的 (章节, 职业) 记录。
 
-    布局: [u64 章节名长][章节名][u64 职业名长][职业名][i32 a][i32 b][u32 visits][u32 0][u32 0]
-    - a == -1 (0xFFFFFFFF) → 该职业已通关此章节（角标点亮）
-    - b == -1 → 仅出现在前三大章（tutorial/alley/sewers/junkyard），疑似困难路径标记
+    布局: [u64 章节名长][章节名][u64 职业名长][职业名][i32 a][i32 b][u32 visits][u32 extra][u32]
+    9 大角标格：有记录 = 至少普通通关（战士洞穴 a=-1、猎人洞穴 a=0 游戏里都会亮）。
+    - a：最高通关难度 0 普通 / 1 困难 / 2 疯狂 / 3 不可能；0xFFFFFFFF 也是普通通关（未写难度号）
+    - 更高难度会叠上所有低难度标记（白底 + ＼ + ／ + ○）
+    - extra：角标 extra 剪辑 0 none=不叠 / 1 monoclass=叉 / 2 solocat=单人对勾
+    - b == -1 → 仅出现在前三大章，疑似困难路径
     - visits → 进入该章节的次数
-    返回 {(class, zone): (a, b, visits)}
+    返回 {(class, zone): (a, b, visits, extra)}
     """
     records = {}
     p, n = 0, len(data)
@@ -1484,14 +1840,71 @@ def parse_class_zone_records(data):
                     cls = data[q + 8 : q + 8 + cl].decode('ascii', errors='ignore')
                     if cls in _CLASS_IDS:
                         t = q + 8 + cl
-                        a, b, visits, _, _ = struct.unpack_from('<IIIII', data, t)
+                        a, b, visits, extra, _ = struct.unpack_from('<IIIII', data, t)
                         a = -1 if a == 0xFFFFFFFF else a
                         b = -1 if b == 0xFFFFFFFF else b
-                        records[(cls, zone)] = (a, b, visits)
-                        p = t
+                        records[(cls, zone)] = (a, b, visits, extra)
+                        p = t + 20
                         continue
         p += 1
     return records
+
+
+def class_zone_clear_difficulty(rec):
+    """通关难度 0–3；未通关返回 None。有记录即通关；a<0 按普通。"""
+    if not rec:
+        return None
+    a = rec[0]
+    if a is None:
+        return None
+    a = int(a)
+    if a < 0:
+        return 0
+    return a
+
+
+def class_zone_is_cleared(rec):
+    return rec is not None
+
+
+# ui.swf sprite 3512 extra 剪辑：0 none=不叠角标 / 1 monoclass=叉 / 2 solocat=对勾
+CLASS_STAMP_EXTRA = ('none', 'monoclass', 'solocat')
+CLASS_STAMP_EXTRA_MARK = (None, 'mark_x.png', 'mark_check.png')
+
+
+def class_zone_marks(rec):
+    """职业页角标：白底卡 + 章节中心图 + 难度叠线 + extra 右下标记。
+
+    有记录即通关。a 为最高难度帧（0 普通 / 1 困难 / 2 疯狂 / 3 不可能），
+    a<0 按普通。高难合成图已含低难叠线。extra 第 4 字段对应 sprite 3512；
+    0 不叠右下角（none 帧里的红星不当默认角标）。
+    """
+    if rec is None:
+        return {
+            'cleared': False, 'difficulty': None,
+            'normal': False, 'hard': False, 'crazy': False, 'impossible': False,
+            'solo': False, 'extra': 0, 'extra_kind': 'none', 'visits': 0,
+            'stamp': None, 'extra_mark': None,
+        }
+    a = int(rec[0]) if rec[0] is not None else -1
+    extra = int(rec[3]) if len(rec) > 3 else 0
+    if extra < 0 or extra > 2:
+        extra = 0
+    diff = 0 if a < 0 else min(a, 3)
+    return {
+        'cleared': True,
+        'difficulty': diff,
+        'normal': True,
+        'hard': diff >= 1,
+        'crazy': diff >= 2,
+        'impossible': diff >= 3,
+        'solo': extra == 2,
+        'extra': extra,
+        'extra_kind': CLASS_STAMP_EXTRA[extra],
+        'visits': int(rec[2]) if len(rec) > 2 else 0,
+        'stamp': f'compose_diff_{diff}.png',
+        'extra_mark': CLASS_STAMP_EXTRA_MARK[extra],
+    }
 
 
 class MewgenicsSaveManager:
@@ -1719,12 +2132,16 @@ class MewgenicsSaveManager:
         self.house_unlocks = []
         self.class_zone_records = {}
         self.difficulty_progress = {}
+        self.house_boss_progress = house_boss_progress_defaults()
+        self.chapter_boss_progress = chapter_boss_progress_defaults()
         try:
             row = cur.execute("SELECT data FROM files WHERE key='npc_progress'").fetchone()
             if row and row[0]:
                 self.npc_records = scan_string_value_records(row[0])
                 self.class_zone_records = parse_class_zone_records(row[0])
                 self.difficulty_progress = parse_difficulty_progress(row[0], self.properties)
+                self.house_boss_progress = parse_house_boss_progress(row[0], self.properties)
+                self.chapter_boss_progress = parse_chapter_boss_progress(row[0], self.class_zone_records)
             row = cur.execute("SELECT data FROM files WHERE key='house_unlocks'").fetchone()
             if row and row[0]:
                 self.house_unlocks = parse_house_unlocks(row[0])
@@ -1951,7 +2368,18 @@ class MewgenicsSaveManager:
         new_cat.name = name
         new_cat.guid = random.getrandbits(64)
         new_cat.cat_class = cat_class
-        new_cat.voice = "male55" if gender == "male" else "female50"
+        if gender == "male":
+            gcode, new_cat.voice = 0, "male55"
+        elif gender == "neutral":
+            gcode = 2
+        else:
+            gcode, new_cat.voice = 1, "female50"
+        if new_cat.p_parts >= 4:
+            struct.pack_into('<I', new_cat.pre_voice_body, new_cat.p_parts - 4, gcode)
+        if len(new_cat.parts_chunk) >= 4:
+            struct.pack_into('<i', new_cat.parts_chunk, 0, gcode)
+            new_cat.pre_voice_body[new_cat.p_parts:new_cat.p_parts + len(new_cat.parts_chunk)] = new_cat.parts_chunk
+        new_cat.gender = gcode
         new_cat.sexuality = sexuality
         
         if stats:

@@ -510,6 +510,10 @@ def format_rich_description(text: str) -> str:
     out = re.sub(r'\bBrace\s*([+-]?\d+)', r'[🐾招架] \1', out, flags=re.IGNORECASE)
     out = re.sub(r'【招架】', '[🐾招架]', out)
     out = re.sub(r'【坚守】', '[🐾坚守]', out)
+    out = re.sub(r'\[s:[^\]]*\]', '', out)
+    out = out.replace('[/s]', '')
+    # 社区中文补丁偶发把「随机」和「随机创伤」叠在一起
+    out = out.replace('随机随机', '随机')
     out = re.sub(r'[ \t]{2,}', ' ', out)
 
     return out.strip()

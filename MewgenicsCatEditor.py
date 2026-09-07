@@ -15,9 +15,13 @@ except ImportError:
 from mewgenics_core import (
     MewgenicsSaveManager, CatRecord, MUTATION_SLOTS,
     get_ability_upgrade, get_base_ability, get_shop_progress, storage_capacity,
-    parse_class_zone_records, MAJOR_CHECKMARK_ZONES, BASIC_ATTACK_ABILITIES, BASIC_MOVE_ABILITIES,
+    food_capacity, BASE_FOOD_CAPACITY, is_warehouse_furniture,
+    cat_age, cat_life_stage, last_adventure_zone, LIFE_STAGE_ZH, ELDER_MIN_AGE,
+    cat_gender_icon, cat_gender_zh,
+    parse_class_zone_records, class_zone_marks, MAJOR_CHECKMARK_ZONES, BASIC_ATTACK_ABILITIES, BASIC_MOVE_ABILITIES,
     get_canonical_passive_code, parse_save_weather, load_weather_catalog,
     load_official_text_map, localize_mutations_detailed, mutation_slot_label,
+    ZH_PATCH_LABEL, ZH_PATCH_REPO,
 )
 from event_catalog import load_event_catalog, filter_events, list_event_types, type_label
 from ability_catalog import (
@@ -395,6 +399,7 @@ class MewgenicsApp(ctk.CTk):
         self.setup_right_content()
         self.build_items_view()
         self.build_furniture_view()
+        self.refresh_food_cap()
         self.build_completion_view()
         self.build_shop_view()
         self.build_weather_view()
@@ -427,9 +432,13 @@ class MewgenicsApp(ctk.CTk):
         self.entry_gold.grid(row=0, column=1, padx=5, pady=2)
 
         ctk.CTkLabel(row_res, text="食物 (Food):").grid(row=1, column=0, sticky="w", pady=2)
-        self.entry_food = ctk.CTkEntry(row_res, width=80)
+        self.entry_food = ctk.CTkEntry(row_res, width=70)
         self.entry_food.insert(0, str(self.save_mgr.properties.get('house_food', 0)))
         self.entry_food.grid(row=1, column=1, padx=5, pady=2)
+        self.lbl_food_cap = ctk.CTkLabel(row_res, text="/ —", font=("Arial", 12, "bold"),
+                                        text_color="#f59e0b", anchor="w")
+        self.lbl_food_cap.grid(row=1, column=2, sticky="w", padx=(0, 2), pady=2)
+        self.entry_food.bind("<KeyRelease>", lambda e: self.refresh_food_cap())
 
         ctk.CTkLabel(row_res, text="天数 (Day):").grid(row=2, column=0, sticky="w", pady=2)
         self.entry_day = ctk.CTkEntry(row_res, width=80)
@@ -437,10 +446,11 @@ class MewgenicsApp(ctk.CTk):
         self.entry_day.grid(row=2, column=1, padx=5, pady=2)
 
         self.lbl_weather = ctk.CTkLabel(row_res, text="天气: —", font=("Arial", 11), text_color="#94a3b8", anchor="w")
-        self.lbl_weather.grid(row=3, column=0, columnspan=2, sticky="w", pady=(4, 2))
+        self.lbl_weather.grid(row=3, column=0, columnspan=3, sticky="w", pady=(4, 2))
         self.refresh_sidebar_weather()
+        self.refresh_food_cap()
 
-        self.btn_max_res = ctk.CTkButton(self.res_frame, text="一键满资源 (+999999)", height=24, font=("Arial", 11), fg_color="#0284c7", command=self.on_max_resources)
+        self.btn_max_res = ctk.CTkButton(self.res_frame, text="一键满资源", height=24, font=("Arial", 11), fg_color="#0284c7", command=self.on_max_resources)
         self.btn_max_res.pack(fill="x", padx=8, pady=(4, 6))
 
         # Search Bar
@@ -511,14 +521,21 @@ class MewgenicsApp(ctk.CTk):
         self.right_pane.pack(side="right", fill="both", expand=True, padx=(5, 5), pady=5)
 
         # Cat Header
-        self.cat_header = ctk.CTkFrame(self.right_pane, height=45, fg_color="#1e293b")
+        self.cat_header = ctk.CTkFrame(self.right_pane, fg_color="#1e293b")
         self.cat_header.pack(fill="x", padx=10, pady=5)
 
-        self.lbl_cat_title = ctk.CTkLabel(self.cat_header, text="请从左侧选择一只猫咪进行编辑", font=("Arial", 16, "bold"), text_color="#f8fafc")
-        self.lbl_cat_title.pack(side="left", padx=12, pady=8)
+        head_row = ctk.CTkFrame(self.cat_header, fg_color="transparent")
+        head_row.pack(fill="x", padx=12, pady=(8, 2))
+        self.lbl_cat_title = ctk.CTkLabel(head_row, text="请从左侧选择一只猫咪进行编辑", font=("Arial", 16, "bold"), text_color="#f8fafc")
+        self.lbl_cat_title.pack(side="left")
 
-        self.lbl_cat_guid = ctk.CTkLabel(self.cat_header, text="", font=("Arial", 11), text_color="#94a3b8")
-        self.lbl_cat_guid.pack(side="right", padx=12, pady=8)
+        self.lbl_cat_guid = ctk.CTkLabel(head_row, text="", font=("Arial", 11), text_color="#94a3b8")
+        self.lbl_cat_guid.pack(side="right")
+
+        self.lbl_cat_life = ctk.CTkLabel(
+            self.cat_header, text="", font=("Arial", 12), text_color="#fbbf24",
+            anchor="w", justify="left")
+        self.lbl_cat_life.pack(fill="x", padx=12, pady=(0, 8))
 
         # 1. Empty State Frame (Shown when no cat is selected)
         self.empty_state_frame = ctk.CTkFrame(self.right_pane, fg_color="#111827", corner_radius=10)
@@ -554,10 +571,10 @@ class MewgenicsApp(ctk.CTk):
         # 2. Tabview (Constructed and ready, but packed only when a cat is selected)
         self.tabview = ctk.CTkTabview(self.right_pane)
 
-        self.tab_stats = self.tabview.add("战斗与7+7属性 (Stats)")
-        self.tab_mutations = self.tabview.add("🧬 身体与基因突变 (Mutations)")
-        self.tab_breeding = self.tabview.add("生理繁衍与生活 (Breeding & Life)")
-        self.tab_abilities = self.tabview.add("技能与外观 (Abilities)")
+        self.tab_stats = self.tabview.add("属性")
+        self.tab_mutations = self.tabview.add("变异")
+        self.tab_breeding = self.tabview.add("生活")
+        self.tab_abilities = self.tabview.add("技能")
 
         self.build_stats_tab()
         self.build_mutations_tab()
@@ -692,8 +709,18 @@ class MewgenicsApp(ctk.CTk):
         ctk.CTkButton(preset_frame, text="✨ 一键随机极品正面突变", width=170, height=26, fg_color="#7c3aed", hover_color="#6d28d9", command=self.on_apply_god_mutations).pack(side="left", padx=4)
         ctk.CTkButton(preset_frame, text="🧼 一键清除全部突变 (纯血统)", width=170, height=26, fg_color="#334155", hover_color="#475569", command=self.on_clear_all_mutations).pack(side="left", padx=4)
 
-        self.lbl_mutation_summary = ctk.CTkLabel(preset_frame, text="", font=("Arial", 11, "bold"), text_color="#4ade80")
-        self.lbl_mutation_summary.pack(side="right", padx=12)
+        summary_box = ctk.CTkFrame(preset_frame, fg_color="transparent")
+        summary_box.pack(side="right", padx=12)
+        _sum_font = ("Arial", 11, "bold")
+        self.lbl_mut_count = ctk.CTkLabel(summary_box, text="", font=_sum_font, text_color="#4ade80")
+        self.lbl_mut_count.pack(side="left")
+        self.lbl_defect_title = ctk.CTkLabel(summary_box, text="", font=_sum_font, text_color="#4ade80")
+        self.lbl_defect_title.pack(side="left")
+        self.lbl_defect_count = ctk.CTkLabel(summary_box, text="", font=_sum_font, text_color="#ef4444")
+        self.lbl_defect_count.pack(side="left")
+        self.lbl_mut_asym = ctk.CTkLabel(summary_box, text="", font=_sum_font, text_color="#fbbf24")
+        self.lbl_mut_asym.pack(side="left")
+        self.lbl_mutation_summary = summary_box
 
         # Tip Banner
         tip_frame = ctk.CTkFrame(container, fg_color="#1e293b", corner_radius=6)
@@ -777,6 +804,11 @@ class MewgenicsApp(ctk.CTk):
         f_breed.pack(fill="x", padx=10, pady=6)
         
         ctk.CTkLabel(f_breed, text="🏠 生活环境与繁衍属性 (Living, Room & Breeding)", font=("Arial", 13, "bold"), text_color="#38bdf8").pack(anchor="w", padx=15, pady=(10, 8))
+
+        self.lbl_breed_life = ctk.CTkLabel(
+            f_breed, text="（只读）年龄 / 等级 / 阶段 / 返回地图 / 喜欢 / 讨厌",
+            font=("Arial", 12), text_color="#fbbf24", anchor="w", justify="left", wraplength=720)
+        self.lbl_breed_life.pack(fill="x", padx=15, pady=(0, 6))
 
         # Room selection
         f_room = ctk.CTkFrame(f_breed, fg_color="transparent")
@@ -863,7 +895,7 @@ class MewgenicsApp(ctk.CTk):
         # Voice / Gender
         f_voice = ctk.CTkFrame(f_ident, fg_color="transparent")
         f_voice.pack(fill="x", padx=15, pady=4)
-        ctk.CTkLabel(f_voice, text="声音/性别 (Voice):", width=140, anchor="w", font=("Arial", 12, "bold")).pack(side="left")
+        ctk.CTkLabel(f_voice, text="声音 (Voice):", width=140, anchor="w", font=("Arial", 12, "bold")).pack(side="left")
         self.combo_voice = ctk.CTkComboBox(f_voice, width=280, values=self.game_data.get('voices', ['male55', 'female50']))
         self.combo_voice.pack(side="left", padx=5)
 
@@ -1269,7 +1301,7 @@ class MewgenicsApp(ctk.CTk):
         self.status_bar.configure(text=f"已为猫咪 #{self.current_cat.key} ({self.current_cat.name}) 自动满配 [{self.current_cat.cat_class}] 的顶级正面被动特性！", text_color="#10b981")
 
     def on_class_changed(self, new_class):
-        cls = self._label_to_class(new_class)  # 下拉显示为官方中文，内部始终保存代码
+        cls = self._label_to_class(new_class)  # 下拉显示为社区中文补丁，内部始终保存代码
         if self.current_cat and self.current_cat.cat_class != cls:
             self.current_cat.cat_class = cls
             self.current_cat.is_modified = True
@@ -1308,7 +1340,8 @@ class MewgenicsApp(ctk.CTk):
             # 2. Search filter（支持中文职业名/房间名）
             if ft:
                 match_pool = [cat.name.lower(), str(k), cat.cat_class.lower(), room_str.lower(),
-                              self._class_zh(cat.cat_class).lower(), self._room_zh(room_str).lower()]
+                              self._class_zh(cat.cat_class).lower(), self._room_zh(room_str).lower(),
+                              self._format_cat_life(cat).lower()]
                 if not any(ft in s for s in match_pool):
                     continue
 
@@ -1323,15 +1356,11 @@ class MewgenicsApp(ctk.CTk):
                 more_lbl.pack(pady=6)
                 break
 
-            # Card text & styling（职业/房间显示官方中文）
-            cls_disp = self._class_zh(cat.cat_class)
+            card_text = f"#{k:3d}  {cat.name} {cat_gender_icon(cat)}"
             if is_in_house:
-                room_disp = self._room_zh(cat.house_room) if cat.house_room else "在生"
-                card_text = f"#{k:3d}  {cat.name:<8} [{cls_disp}] [{room_disp}]"
                 btn_fg = "#143026"
                 btn_hover = "#1b4d3e"
             else:
-                card_text = f"#{k:3d}  {cat.name:<8} [{cls_disp}] [历史]"
                 btn_fg = "#1e293b"
                 btn_hover = "#334155"
 
@@ -1382,8 +1411,13 @@ class MewgenicsApp(ctk.CTk):
                 btn.configure(fg_color="#143026" if (c and getattr(c, 'is_in_house', False)) else "#1e293b")
 
         # Update Header
-        self.lbl_cat_title.configure(text=f"猫咪 #{cat.key} - {cat.name} ({self._class_zh(cat.cat_class)} · {cat.cat_class})")
+        self.lbl_cat_title.configure(
+            text=f"猫咪 #{cat.key} - {cat.name} {cat_gender_icon(cat)} ({self._class_zh(cat.cat_class)} · {cat.cat_class})")
         self.lbl_cat_guid.configure(text=f"GUID: {hex(cat.guid)}")
+        if hasattr(self, 'lbl_cat_life'):
+            self.lbl_cat_life.configure(text=self._format_cat_life(cat))
+        if hasattr(self, 'lbl_breed_life'):
+            self.lbl_breed_life.configure(text=f"（只读）{self._format_cat_life(cat)}")
 
         # Check if values exceed safe limits, auto unlock if needed
         exceeds_safe = any(b < 1 or b > 7 for b in cat.base_stats) or any(bon < 0 or bon > 7 for bon in cat.bonus_stats)
@@ -1597,10 +1631,13 @@ class MewgenicsApp(ctk.CTk):
         if not self.current_cat or not hasattr(self, 'lbl_mutation_summary'):
             return
         counts = self.current_cat.mutation_counts()
-        txt = f"🧬 变异 ×{counts['mutations']}   🐣 出生缺陷 ×{counts['birth_defects']}"
+        self.lbl_mut_count.configure(text=f"🧬 变异 ×{counts['mutations']}   ")
+        self.lbl_defect_title.configure(text="🐣 出生缺陷 ")
+        self.lbl_defect_count.configure(text=f"×{counts['birth_defects']}")
         if counts['asymmetric']:
-            txt += f"   ⚡不对称: {len(counts['asymmetric'])} 部位"
-        self.lbl_mutation_summary.configure(text=txt)
+            self.lbl_mut_asym.configure(text=f"   ⚡不对称: {len(counts['asymmetric'])} 部位")
+        else:
+            self.lbl_mut_asym.configure(text="")
 
     def refresh_mutation_ui(self):
         if not self.current_cat:
@@ -1806,11 +1843,15 @@ class MewgenicsApp(ctk.CTk):
         self.populate_cat_list(text)
 
     def on_max_resources(self):
+        cap = self._current_food_capacity()
         self.entry_gold.delete(0, "end")
-        self.entry_gold.insert(0, "999999")
+        self.entry_gold.insert(0, "999")
         self.entry_food.delete(0, "end")
-        self.entry_food.insert(0, "999999")
-        self.status_bar.configure(text="金币与食物已调整为 999,999，点击右上角保存即可写入存档！", text_color="#10b981")
+        self.entry_food.insert(0, str(cap))
+        self.refresh_food_cap()
+        self.status_bar.configure(
+            text=f"金币已拉满 999，食物已补满至上限 {cap}。点击右上角保存即可写入存档！",
+            text_color="#10b981")
 
     def on_create_cat_dialog(self):
         dialog = ctk.CTkToplevel(self)
@@ -1939,14 +1980,16 @@ class MewgenicsApp(ctk.CTk):
         
         self.save_current_cat_fields()
         src = self.current_cat
+        _gmap = {0: "male", 1: "female", 2: "neutral"}
         clone_cat = self.save_mgr.create_new_cat(
             name=f"{src.name}_Clone",
-            gender="male" if "male" in src.voice else "female",
+            gender=_gmap.get(int(getattr(src, 'gender', 0) or 0), "female"),
             cat_class=src.cat_class,
             template_id=src.key,
             room=getattr(src, 'house_room', 'Floor1_Large'),
             sexuality=getattr(src, 'sexuality', 'Straight (异性恋)')
         )
+        clone_cat.voice = src.voice
         clone_cat.bonus_stats = list(src.bonus_stats)
         clone_cat.attack_ability = src.attack_ability
         clone_cat.move_ability = getattr(src, 'move_ability', 'DefaultMove')
@@ -1999,6 +2042,7 @@ class MewgenicsApp(ctk.CTk):
             self.entry_food.insert(0, str(self.save_mgr.properties.get('house_food', 0)))
             self.entry_day.delete(0, "end")
             self.entry_day.insert(0, str(self.save_mgr.properties.get('current_day', 0)))
+        self.refresh_food_cap()
         self.refresh_sidebar_weather()
         if getattr(self, 'weather_grid', None) is not None:
             self.refresh_weather_grid()
@@ -2315,6 +2359,7 @@ class MewgenicsApp(ctk.CTk):
             ]),
             ('Tracy', "食品店 Tracy", [
                 (f"🍖 食物柜：Lv.{sp['tracy_foodstorage']}/10", "#10b981"),
+                (f"📦 家园食物上限：{self.save_mgr.properties.get('house_food', 0)}/{self._current_food_capacity()}（基础 {BASE_FOOD_CAPACITY} + 已放置储藏箱）", "#cbd5e1"),
                 (f"📿 空白项圈：Lv.{sp['tracy_blankcollar']}", "#cbd5e1"),
                 (f"🗿 神像：Lv.{sp['tracy_idol']}", "#cbd5e1"),
             ]),
@@ -2808,7 +2853,7 @@ class MewgenicsApp(ctk.CTk):
     @staticmethod
     def _is_warehouse_furniture(rec):
         """家具仓库（未放置）= 无房间且坐标 (0,0)。无房间但有坐标的是墙面装饰（视为已放置）。"""
-        return rec.room == '' and rec.x == 0 and rec.y == 0
+        return is_warehouse_furniture(rec)
 
     def _format_furniture_stats(self, stats_str):
         """家具属性 JSON → 映射中文标签（舒适度/刺激度等）。"""
@@ -3010,6 +3055,7 @@ class MewgenicsApp(ctk.CTk):
         rec.name = new_code
         rec.mark_dirty()
         self.refresh_furniture_list()
+        self.refresh_food_cap()
         self.on_select_furniture(self.selected_furniture)
         self.status_bar.configure(text=f"家具类型已更换为 [{new_code}]（内存中），保存后生效。", text_color="#38bdf8")
 
@@ -3028,6 +3074,7 @@ class MewgenicsApp(ctk.CTk):
         rec = self.save_mgr.add_furniture(code, room='', x=0, y=0)
         self.furn_space_seg.set("📦 家具仓库")
         self.refresh_furniture_list()
+        self.refresh_food_cap()
         self.on_select_furniture(rec.key)
         self.status_bar.configure(text=f"已添加家具 [{code}] 到家具仓库（内存中），保存后生效。", text_color="#38bdf8")
 
@@ -3044,6 +3091,7 @@ class MewgenicsApp(ctk.CTk):
         del_rec = self.save_mgr.remove_furniture(self.selected_furniture)
         self.selected_furniture = None
         self.refresh_furniture_list()
+        self.refresh_food_cap()
         self.furn_name_lbl.configure(text="请选择左侧家具")
         self.furn_icon_lbl.configure(image=None, text="🪑")
         self.furn_info_lbl.configure(text="")
@@ -3087,20 +3135,20 @@ class MewgenicsApp(ctk.CTk):
         return self.ROOM_ZH.get(room, room)
 
     def _official_text(self):
-        """懒加载打包的官方中文摘要，返回 {key: (en, zh)}；缺失时返回 {}。"""
+        """懒加载打包的 mewcodex beta 中文补丁摘要，返回 {key: (en, zh)}；缺失时返回 {}。"""
         if hasattr(self, '_official_text_cache'):
             return self._official_text_cache
         self._official_text_cache = load_official_text_map()
         return self._official_text_cache
 
     def _official_name(self, key, fallback_en='', fallback_zh=''):
-        """取官方本地化 (en, zh)；官方文本不可用时用内置兜底。"""
+        """取社区中文补丁本地化 (en, zh)；补丁文本不可用时用内置兜底。"""
         entry = self._official_text().get(key)
         if entry and entry[1]:
             return entry
         return (fallback_en, fallback_zh)
 
-    # ---- 职业名称：官方中文 ↔ 代码 转换 ----
+    # ---- 职业名称：社区中文补丁 ↔ 代码 转换 ----
     def _init_class_labels(self):
         self.CLASS_CODE_TO_LABEL = {}
         self.CLASS_LABEL_TO_CODE = {}
@@ -3113,8 +3161,57 @@ class MewgenicsApp(ctk.CTk):
         o_en, o_zh = self._official_name(f"CAT_CLASS_{str(cls).upper()}_NAME", '', self.CLASS_ZH.get(cls, cls))
         return o_zh
 
+    def _zone_zh(self, zone):
+        if not zone:
+            return ''
+        _, zh = self._official_name(f"AREA_NAME_{str(zone).upper()}", zone, zone)
+        return zh or zone
+
+    def _cat_rel_name(self, cat_id):
+        if not cat_id or cat_id < 0:
+            return ''
+        other = self.save_mgr.cats.get(cat_id)
+        if other:
+            return f"{other.name} (#{cat_id})"
+        return f"#{cat_id}"
+
+    def _format_cat_life(self, cat, compact=False):
+        day = (self.save_mgr.properties or {}).get('current_day', 0)
+        age = cat_age(getattr(cat, 'birth_day', 0), day)
+        stage = cat_life_stage(cat, age)
+        stage_zh = LIFE_STAGE_ZH.get(stage, stage)
+        if age is not None and age >= ELDER_MIN_AGE and stage not in ('kitten', 'elder'):
+            stage_zh = f"{stage_zh} · 老年"
+        age_txt = f"{age}岁" if age is not None else "年龄 —"
+        gicon = cat_gender_icon(cat)
+        gzh = cat_gender_zh(cat)
+        lv = int(getattr(cat, 'cat_level', 0) or 0)
+        zone = last_adventure_zone(getattr(cat, 'zone_flags', 0))
+        zone_zh = self._zone_zh(zone)
+        lover = self._cat_rel_name(getattr(cat, 'lover_id', -1))
+        rival = self._cat_rel_name(getattr(cat, 'rival_id', -1))
+        if compact:
+            bits = [gicon, age_txt, stage_zh]
+            if lv:
+                bits.append(f"Lv.{lv}")
+            if zone_zh:
+                bits.append(zone_zh)
+            return " · ".join(bits)
+        parts = [f"{gicon} {gzh}", f"年龄 {age}" if age is not None else "年龄 —", stage_zh]
+        if lv:
+            parts.append(f"Lv.{lv}")
+        else:
+            parts.append("Lv.—")
+        if zone_zh:
+            parts.append(f"返回 {zone_zh}")
+        if lover:
+            parts.append(f"喜欢 {lover}")
+        if rival:
+            parts.append(f"讨厌 {rival}")
+        return "  ·  ".join(parts)
+
     def _class_label(self, cls):
-        """下拉框显示文本：官方中文 + 原代码。"""
+        """下拉框显示文本：社区中文补丁 + 原代码。"""
         return f"{self._class_zh(cls)} ({cls})"
 
     def _class_to_label(self, cls):
@@ -3134,19 +3231,19 @@ class MewgenicsApp(ctk.CTk):
 
         ctk.CTkLabel(card, text="🏅 职业通关进度（9 大章节角标）",
                      font=("Arial", 15, "bold"), text_color="#f59e0b").pack(anchor="w", padx=15, pady=(12, 2))
-        ctk.CTkLabel(card, text="对应游戏内职业页面的 9 个角标（chapter_id_enum.gon: major_class_checkmarks）。\n"
-                                "职业与章节名称对齐游戏官方中文补丁。数据来源：存档 npc_progress（只读）。✔ = 已通关此章节。",
+        ctk.CTkLabel(card, text="职业页 9 格用 ui.swf 零件叠：白底卡 + 章节中心图 + 难度线；右下角只在 monoclass/solocat 时叠叉或对勾。\n"
+                                f"名称对齐 {ZH_PATCH_LABEL}。有 (职业,章节) 记录即通关；a 为难度帧，a<0 按普通。",
                      font=("Arial", 11), text_color="#94a3b8", justify="left").pack(anchor="w", padx=15, pady=(0, 8))
 
         grid_holder = ctk.CTkScrollableFrame(card, fg_color="transparent")
         grid_holder.pack(fill="both", expand=True, padx=10, pady=(0, 10))
         self.completion_grid = grid_holder
 
-    def _asset_icon(self, rel, size=(26, 26)):
-        """从 assets/ 加载游戏解包图标为 CTkImage（cache）；缺图返回 None。"""
+    def _asset_icon(self, rel, size=(26, 26), root='assets'):
+        """从 assets/（或其它资源根）加载图标为 CTkImage（cache）；缺图返回 None。"""
         if Image is None:
             return None
-        full = get_resource_path(os.path.join('assets', rel))
+        full = get_resource_path(os.path.join(root, rel))
         if not full or not os.path.exists(full):
             return None
         ck = (full, size)
@@ -3157,6 +3254,66 @@ class MewgenicsApp(ctk.CTk):
             except Exception:
                 self._icon_cache[ck] = None
         return self._icon_cache[ck]
+
+    def _load_rgba(self, rel, root='assets'):
+        if Image is None:
+            return None
+        full = get_resource_path(os.path.join(root, rel))
+        if not full or not os.path.exists(full):
+            return None
+        try:
+            return Image.open(full).convert('RGBA')
+        except Exception:
+            return None
+
+    def _class_stamp_icon(self, mk, zone, size=(44, 44)):
+        """白底卡 + 干净章节中心图 + 难度线；extra 1/2 才叠右下叉/对勾。"""
+        if not mk or not mk.get('cleared') or Image is None:
+            return None
+        diff = mk.get('difficulty')
+        if diff is None:
+            return None
+        extra = int(mk.get('extra') or 0)
+        if extra < 0 or extra > 2:
+            extra = 0
+        ck = ('class_stamp_parts', zone, int(diff), extra, size)
+        if ck in self._icon_cache:
+            return self._icon_cache[ck]
+        card = self._load_rgba(os.path.join('icons', 'completion', 'compose_diff_0.png'))
+        emblem = (
+            self._load_rgba(os.path.join('icons', 'completion', f'emblem_plain_{zone}.png'))
+            or self._load_rgba(os.path.join('icons', 'areas', f'{zone}.png'))
+        )
+        if card is None and emblem is None:
+            self._icon_cache[ck] = None
+            return None
+        tw, th = 72, 72
+        canvas = Image.new('RGBA', (tw, th), (0, 0, 0, 0))
+        if card is not None:
+            card_r = card.resize((tw, th), Image.LANCZOS)
+            canvas.paste(card_r, (0, 0), card_r)
+        if emblem is not None:
+            inner = 56
+            ew, eh = emblem.size
+            s = min(inner / max(1, ew), inner / max(1, eh))
+            em = emblem.resize((max(1, int(ew * s)), max(1, int(eh * s))), Image.LANCZOS)
+            canvas.paste(em, ((tw - em.width) // 2, (th - em.height) // 2 - 1), em)
+        mark = {1: 'slash_hard.png', 2: 'slash_crazy.png', 3: 'circle_impossible.png'}.get(int(diff))
+        if mark:
+            ov = self._load_rgba(os.path.join('icons', 'completion', mark))
+            if ov is not None:
+                ov = ov.resize((tw, th), Image.LANCZOS)
+                canvas = Image.alpha_composite(canvas, ov)
+        extra_fn = {1: 'mark_x.png', 2: 'mark_check.png'}.get(extra)
+        if extra_fn:
+            corner = self._load_rgba(os.path.join('icons', 'completion', extra_fn))
+            if corner is not None:
+                side = 18
+                corner = corner.resize((side, side), Image.LANCZOS)
+                canvas.paste(corner, (tw - side - 3, th - side - 3), corner)
+        icon = ctk.CTkImage(light_image=canvas, dark_image=canvas, size=size)
+        self._icon_cache[ck] = icon
+        return icon
 
     def refresh_completion_grid(self):
         for w in self.completion_grid.winfo_children():
@@ -3184,20 +3341,276 @@ class MewgenicsApp(ctk.CTk):
                         text_color="#4ade80" if ok else "#64748b")
                     cell.pack(side="left", padx=2)
             hp = dp.get('hardpath_unlocked', False)
-            hb = dp.get('house_boss_difficulty', -1)
-            inv = dp.get('alien_invasion_count', 0)
-            diff_lvl = ['普通', '困难', '疯狂', '不可能', '地狱(ac)']
-            dline = (f"🛣️ 困难路径：{'✅ 已解锁' if hp else '❌ 未解锁'}"
-                     f"    🏰 当前房间Boss难度：{'无' if hb < 0 else diff_lvl[hb] if hb < len(diff_lvl) else hb}"
-                     f"    🛸 异星入侵解锁：x{inv}")
-            ctk.CTkLabel(dcard, text=dline, font=("Arial", 11), text_color="#94a3b8", anchor="w").pack(anchor="w", padx=10, pady=(4, 8))
+            ctk.CTkLabel(
+                dcard,
+                text=f"🛣️ 困难路径：{'✅ 已解锁' if hp else '❌ 未解锁'}",
+                font=("Arial", 11), text_color="#94a3b8", anchor="w",
+            ).pack(anchor="w", padx=10, pady=(4, 8))
 
         except Exception as e:
             pass
 
-        # ---- 职业 × 章节 难度进度表（grid 布局保证逐列对齐）----
+        # ---- 家园 Boss 9 场（houseboss_unlock_*）----
+        try:
+            hbp = getattr(self.save_mgr, 'house_boss_progress', {}) or {}
+            bosses = hbp.get('bosses') or []
+            if bosses:
+                hcard = ctk.CTkFrame(self.completion_grid, fg_color="#0f172a", corner_radius=8)
+                hcard.pack(fill="x", padx=4, pady=(0, 6))
+                beaten_n = int(hbp.get('beaten_count') or 0)
+                total = int(hbp.get('total') or len(bosses))
+                ctk.CTkLabel(
+                    hcard,
+                    text=f"🏰 家园 Boss 进度（{beaten_n}/{total} · 红头=已入池 · 黑猫头=已击败）",
+                    font=("Arial", 12, "bold"), text_color="#f59e0b",
+                ).pack(anchor="w", padx=10, pady=(8, 2))
+                grid = ctk.CTkFrame(hcard, fg_color="transparent")
+                grid.pack(fill="x", padx=8, pady=(0, 4))
+                for i, boss in enumerate(bosses):
+                    r, c = divmod(i, 3)
+                    beaten = bool(boss.get('beaten'))
+                    unlocked = bool(boss.get('unlocked'))
+                    o_en, o_zh = self._official_name(
+                        boss.get('name_key') or '',
+                        boss.get('name_en') or '',
+                        boss.get('name_zh') or boss.get('key') or '')
+                    if beaten:
+                        mark, col, bg = "✔", "#4ade80", "#14532d"
+                        st = "已击败"
+                    elif unlocked:
+                        mark, col, bg = "🔓", "#f59e0b", "#2d2416"
+                        st = "已入池"
+                    else:
+                        mark, col, bg = "·", "#64748b", "#1e293b"
+                        st = "未遇到"
+                    cell = ctk.CTkFrame(grid, fg_color=bg, corner_radius=6)
+                    cell.grid(row=r, column=c, sticky="nsew", padx=3, pady=3)
+                    grid.grid_columnconfigure(c, weight=1)
+                    key = boss.get('key')
+                    stamp = None
+                    if beaten:
+                        stamp = self._asset_icon(
+                            os.path.join('icons', 'houseboss', f"dead_{key}.png"),
+                            size=(32, 32))
+                    elif unlocked:
+                        stamp = self._asset_icon(
+                            os.path.join('icons', 'houseboss', f"{key}.png"),
+                            size=(28, 28))
+                    pids = []
+                    pid = boss.get('portrait')
+                    if pid:
+                        pids.append(int(pid))
+                    if key == 'pyrophina_vs_zaratana' and 288 not in pids:
+                        pids.append(288)
+                    head = ctk.CTkFrame(cell, fg_color="transparent")
+                    head.pack(anchor="w", padx=8, pady=(6, 0))
+                    for pid in pids:
+                        pic = self._asset_icon(
+                            os.path.join('CharacterPortrait', str(pid), '1.png'),
+                            size=(44, 44), root=os.path.join('wiki_data', 'images'))
+                        if pic:
+                            ctk.CTkLabel(head, text="", image=pic).pack(side="left", padx=(0, 4))
+                    if stamp:
+                        ctk.CTkLabel(head, text="", image=stamp).pack(side="left", padx=(0, 6))
+                    ctk.CTkLabel(head, text=f"{mark} {o_zh}", font=("Arial", 11, "bold"),
+                                 text_color=col, anchor="w").pack(side="left")
+                    ctk.CTkLabel(cell, text=f"{st}  ·  {boss.get('key')}",
+                                 font=("Arial", 10), text_color="#94a3b8",
+                                 anchor="w").pack(anchor="w", padx=8, pady=(0, 6))
+                nxt = (hbp.get('next') or '').strip()
+                hb = int(hbp.get('difficulty', -1))
+                diff_lvl = ['普通', '困难', '疯狂', '不可能', '地狱(ac)']
+                nxt_zh = nxt
+                if nxt:
+                    hit = next((b for b in bosses if b.get('key') == nxt), None)
+                    if hit:
+                        _, nxt_zh = self._official_name(
+                            hit.get('name_key') or '', hit.get('name_en') or nxt, hit.get('name_zh') or nxt)
+                pending = '无'
+                if nxt:
+                    dtxt = diff_lvl[hb] if 0 <= hb < len(diff_lvl) else (str(hb) if hb >= 0 else '—')
+                    pending = f"{nxt_zh}（{dtxt}）"
+                elif hb >= 0:
+                    pending = diff_lvl[hb] if hb < len(diff_lvl) else str(hb)
+                first = '✅ 已击败过' if hbp.get('first_beat') else '❌ 尚未击败'
+                ctk.CTkLabel(
+                    hcard,
+                    text=f"📌 当前挂起：{pending}    首次家园 Boss：{first}",
+                    font=("Arial", 11), text_color="#94a3b8", anchor="w",
+                ).pack(anchor="w", padx=10, pady=(2, 8))
+        except Exception:
+            pass
+
+        # ---- 章节地图 Boss（CharacterPortrait 头像）----
+        try:
+            cbp = getattr(self.save_mgr, 'chapter_boss_progress', {}) or {}
+            chapters = cbp.get('chapters') or []
+            if chapters:
+                mcard = ctk.CTkFrame(self.completion_grid, fg_color="#0f172a", corner_radius=8)
+                mcard.pack(fill="x", padx=4, pady=(0, 6))
+                beaten_n = int(cbp.get('beaten_count') or 0)
+                total = int(cbp.get('total') or len(chapters))
+                ctk.CTkLabel(
+                    mcard,
+                    text=f"🗺️ 章节地图 Boss（{beaten_n}/{total} · 立绘头像，非家园猫头戳）",
+                    font=("Arial", 12, "bold"), text_color="#f59e0b",
+                ).pack(anchor="w", padx=10, pady=(8, 2))
+                ctk.CTkLabel(
+                    mcard,
+                    text="头像来自 CharacterPortrait。有 (任意职业, 该章) 通关记录即已击败。小巷默认激进鼠（通关 3 次入池河马女王）；沙漠默认黄道十二宫（通关后入池博弈）；洞穴开场蜘蛛小猫，纺丝女皇是隐藏 Boss。",
+                    font=("Arial", 10), text_color="#94a3b8",
+                ).pack(anchor="w", padx=10, pady=(0, 4))
+                diff_lvl = ['普通', '困难', '疯狂', '不可能']
+                for act in (1, 2, 3):
+                    act_row = [ch for ch in chapters if ch.get('act') == act]
+                    if not act_row:
+                        continue
+                    ctk.CTkLabel(mcard, text=f"第{act}章", font=("Arial", 11, "bold"),
+                                 text_color="#cbd5e1").pack(anchor="w", padx=10, pady=(4, 0))
+                    grid = ctk.CTkFrame(mcard, fg_color="transparent")
+                    grid.pack(fill="x", padx=8, pady=(0, 2))
+                    for i, ch in enumerate(act_row):
+                        r, c = divmod(i, 3)
+                        beaten = bool(ch.get('beaten'))
+                        unlocked = bool(ch.get('unlocked'))
+                        zone = ch.get('zone') or ''
+                        _, zone_zh = self._official_name(
+                            f"AREA_NAME_{zone.upper()}", zone, zone)
+                        faces = ch.get('bosses') or []
+                        choice = bool(ch.get('choice'))
+                        hidden = bool(ch.get('hidden'))
+                        pair_layout = choice or hidden
+                        shown_faces = faces if pair_layout else ([f for f in faces if f.get('seen')] or faces)
+                        names = []
+                        for face in shown_faces:
+                            o_en, o_zh = self._official_name(
+                                face.get('name_key') or '',
+                                face.get('name_en') or '',
+                                face.get('name_zh') or face.get('key') or '')
+                            names.append(o_zh or o_en)
+                        if beaten:
+                            d = ch.get('difficulty')
+                            dtxt = diff_lvl[d] if isinstance(d, int) and 0 <= d < 4 else '普通'
+                            mark, col, bg, st = "✔", "#4ade80", "#14532d", f"已击败 · {dtxt}"
+                        elif unlocked:
+                            mark, col, bg, st = "🔓", "#f59e0b", "#2d2416", "已入图"
+                        else:
+                            mark, col, bg, st = "·", "#64748b", "#1e293b", "未到达"
+                        cell = ctk.CTkFrame(grid, fg_color=bg, corner_radius=6)
+                        cell.grid(row=r, column=c, sticky="nsew", padx=3, pady=3)
+                        grid.grid_columnconfigure(c, weight=1)
+                        head = ctk.CTkFrame(cell, fg_color="transparent")
+                        head.pack(anchor="w", padx=8, pady=(6, 0))
+                        if not pair_layout:
+                            for face in shown_faces:
+                                for pid in face.get('portraits') or []:
+                                    ic = self._asset_icon(
+                                        os.path.join('CharacterPortrait', str(pid), '1.png'),
+                                        size=(36, 36), root=os.path.join('wiki_data', 'images'))
+                                    if ic:
+                                        ctk.CTkLabel(head, text="", image=ic).pack(side="left", padx=(0, 4))
+                        title = f"{mark} {zone_zh}"
+                        if choice:
+                            title += " · 二选一"
+                        elif hidden:
+                            title += " · 隐藏Boss"
+                        ctk.CTkLabel(head, text=title, font=("Arial", 11, "bold"),
+                                     text_color=col, anchor="w").pack(side="left")
+                        if pair_layout:
+                            pair = ctk.CTkFrame(cell, fg_color="transparent")
+                            pair.pack(fill="x", padx=6, pady=(4, 0))
+                            for fi, face in enumerate(faces):
+                                if fi:
+                                    sep = "→" if hidden else "或"
+                                    ctk.CTkLabel(pair, text=sep, width=22, font=("Arial", 11, "bold"),
+                                                 text_color="#c084fc" if hidden else "#94a3b8").pack(side="left", padx=2)
+                                o_en, o_zh = self._official_name(
+                                    face.get('name_key') or '',
+                                    face.get('name_en') or '',
+                                    face.get('name_zh') or face.get('key') or '')
+                                role = face.get('role') or 'normal'
+                                is_hid = role == 'hidden'
+                                alt_on = bool(face.get('alt_unlocked'))
+                                if hidden:
+                                    if is_hid:
+                                        inner_bg, name_col = (
+                                            ("#166534", "#bbf7d0") if face.get('seen') else ("#3b1d4a", "#e9d5ff"))
+                                        tag = "已遇 · 隐藏" if face.get('seen') else "隐藏"
+                                    elif beaten:
+                                        inner_bg, name_col = "#166534", "#bbf7d0"
+                                        tag = "开场 · 已击败"
+                                    else:
+                                        inner_bg, name_col = "#334155", "#e2e8f0"
+                                        tag = "开场"
+                                elif beaten:
+                                    inner_bg, name_col = "#166534", "#bbf7d0"
+                                    if role == 'default':
+                                        tag = "默认 · 已击败"
+                                    elif role == 'alt':
+                                        tag = "备选已入池" if alt_on else "备选"
+                                    else:
+                                        tag = "已击败（随机一只）"
+                                else:
+                                    inner_bg, name_col = "#334155", "#e2e8f0"
+                                    if role == 'default':
+                                        tag = "默认"
+                                    elif role == 'alt':
+                                        tag = "备选已入池" if alt_on else "备选未入池"
+                                    else:
+                                        tag = "随机一只"
+                                inner = ctk.CTkFrame(pair, fg_color=inner_bg, corner_radius=6)
+                                inner.pack(side="left", expand=True, fill="both", padx=2)
+                                prow = ctk.CTkFrame(inner, fg_color="transparent")
+                                prow.pack(padx=6, pady=(6, 0))
+                                for pid in face.get('portraits') or []:
+                                    ic = self._asset_icon(
+                                        os.path.join('CharacterPortrait', str(pid), '1.png'),
+                                        size=(40, 40), root=os.path.join('wiki_data', 'images'))
+                                    if ic:
+                                        ctk.CTkLabel(prow, text="", image=ic).pack()
+                                ctk.CTkLabel(inner, text=o_zh or o_en,
+                                             font=("Arial", 10, "bold"), text_color=name_col
+                                             ).pack(padx=4, pady=(2, 0))
+                                ctk.CTkLabel(inner, text=tag, font=("Arial", 9),
+                                             text_color="#d8b4fe" if is_hid and not face.get('seen') else "#94a3b8"
+                                             ).pack(padx=4, pady=(0, 6))
+                        else:
+                            ctk.CTkLabel(cell, text=" / ".join(names) if names else zone,
+                                         font=("Arial", 10), text_color="#e2e8f0",
+                                         anchor="w").pack(anchor="w", padx=8, pady=(2, 0))
+                        ctk.CTkLabel(cell, text=f"{st}  ·  {zone}",
+                                     font=("Arial", 10), text_color="#94a3b8",
+                                     anchor="w").pack(anchor="w", padx=8, pady=(0, 6))
+        except Exception:
+            pass
+
+        # ---- 通关叠图图例（ui.swf 3503/3504/3505 + 3511）----
+        legend = ctk.CTkFrame(self.completion_grid, fg_color="#0f172a", corner_radius=8)
+        legend.pack(fill="x", padx=4, pady=(0, 6))
+        ctk.CTkLabel(legend, text="📐 通关零件（白底卡 + 中心图 + 难度线；右下仅单职业叉 / 单人对勾）",
+                     font=("Arial", 12, "bold"), text_color="#f59e0b").pack(anchor="w", padx=10, pady=(8, 2))
+        lrow = ctk.CTkFrame(legend, fg_color="transparent")
+        lrow.pack(fill="x", padx=8, pady=(0, 8))
+        for fn, zh in (
+            ('compose_diff_0.png', '白底卡'),
+            ('slash_hard.png', '困难'),
+            ('slash_crazy.png', '疯狂'),
+            ('circle_impossible.png', '不可能'),
+            ('mark_x.png', '单职业'),
+            ('mark_check.png', '单人'),
+        ):
+            cell = ctk.CTkFrame(lrow, fg_color="#1e293b", corner_radius=6)
+            cell.pack(side="left", padx=4)
+            ic = self._asset_icon(os.path.join('icons', 'completion', fn), size=(36, 36))
+            if ic:
+                ctk.CTkLabel(cell, text=zh, image=ic, compound="top",
+                             font=("Arial", 10), text_color="#cbd5e1").pack(padx=8, pady=6)
+            else:
+                ctk.CTkLabel(cell, text=zh, font=("Arial", 10), text_color="#cbd5e1").pack(padx=8, pady=6)
+
+        # ---- 职业 × 章节 难度进度表（格子用 compose_diff 原图）----
         CW_CLS = 150
-        CW_ZONE = 96
+        CW_ZONE = 56
         CW_PCT = 70
         table = ctk.CTkFrame(self.completion_grid, fg_color="transparent")
         table.pack(fill="x", padx=4, pady=2)
@@ -3213,7 +3626,10 @@ class MewgenicsApp(ctk.CTk):
             _, zh = self._official_name(f"AREA_NAME_{zone.upper()}", '', zh_fb)
             cellh = ctk.CTkFrame(table, fg_color="transparent", width=CW_ZONE)
             cellh.grid(row=0, column=zi + 1, padx=1)
-            ic = self._asset_icon(os.path.join('icons', 'areas', f'{zone}.png'), size=(28, 28))
+            ic = (
+                self._asset_icon(os.path.join('icons', 'completion', f'emblem_plain_{zone}.png'), size=(28, 28))
+                or self._asset_icon(os.path.join('icons', 'areas', f'{zone}.png'), size=(28, 28))
+            )
             ctk.CTkLabel(cellh, text="", image=ic).pack()
             ctk.CTkLabel(cellh, text=zh, font=("Arial", 10), text_color="#38bdf8").pack()
         ctk.CTkLabel(table, text="进度", width=CW_PCT, font=("Arial", 12, "bold"),
@@ -3221,7 +3637,6 @@ class MewgenicsApp(ctk.CTk):
 
         classes = ['Colorless', 'Fighter', 'Mage', 'Hunter', 'Tank', 'Medic', 'Thief',
                    'Necromancer', 'Butcher', 'Druid', 'Monk', 'Psychic', 'Tinkerer', 'Jester']
-        DIFF_ZH = ['普通', '困难', '疯狂', '不可能']
         DIFF_COL = ['#4ade80', '#38bdf8', '#f59e0b', '#ef4444']
         for ri, cls in enumerate(classes, start=1):
             zh_fb = self.CLASS_ZH.get(cls, cls)
@@ -3235,24 +3650,17 @@ class MewgenicsApp(ctk.CTk):
             clbl.grid(row=ri, column=0, sticky="w", padx=4, pady=2)
             cleared_n = 0
             for zi, zone in enumerate(MAJOR_CHECKMARK_ZONES):
-                r = recs.get((cls, zone))
-                if r is None:
-                    t, col, bg = "·", "#475569", "#0f172a"
+                mk = class_zone_marks(recs.get((cls, zone)))
+                stamp = self._class_stamp_icon(mk, zone, size=(44, 44))
+                if mk['cleared']:
+                    cleared_n += 1
+                    bg = "#1e293b"
                 else:
-                    a, b, visits = r
-                    bd = max(0, b) if isinstance(b, int) else 0
-                    if a == -1:
-                        cleared_n += 1
-                        t = f"✔ {DIFF_ZH[bd] if bd < 4 else bd}"
-                        col = DIFF_COL[bd] if bd < 4 else "#4ade80"
-                        bg = "#14532d"
-                    elif b == -1 or visits:
-                        t = f"🚶x{visits}"
-                        col, bg = "#f59e0b", "#2d2416"
-                    else:
-                        t, col, bg = "·", "#475569", "#0f172a"
-                cell = ctk.CTkLabel(table, text=t, width=CW_ZONE, height=34, corner_radius=6,
-                                    fg_color=bg, text_color=col, font=("Arial", 11, "bold"))
+                    bg = "#0f172a"
+                cell = ctk.CTkLabel(
+                    table, text="" if stamp else "·", image=stamp,
+                    width=CW_ZONE, height=48, corner_radius=6,
+                    fg_color=bg, text_color="#475569", font=("Arial", 11, "bold"))
                 cell.grid(row=ri, column=zi + 1, padx=1, pady=2)
             pct = f"{cleared_n}/9"
             color = "#4ade80" if cleared_n == 9 else ("#f59e0b" if cleared_n else "#64748b")
@@ -3280,6 +3688,40 @@ class MewgenicsApp(ctk.CTk):
     def _weather_state(self):
         return parse_save_weather(getattr(self.save_mgr, 'properties', {}) or {})
 
+    def _food_storage_lookup(self):
+        extra = {}
+        db = getattr(self, 'furniture_db', None) or {}
+        for code, row in db.items():
+            raw = row.get('stats') or ''
+            if not raw:
+                continue
+            try:
+                d = json.loads(raw) if isinstance(raw, str) else raw
+            except Exception:
+                continue
+            val = (d or {}).get('food_storage')
+            if val:
+                extra[code] = int(val)
+        return extra
+
+    def _current_food_capacity(self):
+        furn = getattr(self.save_mgr, 'furniture', None) if getattr(self, 'save_mgr', None) else None
+        return food_capacity(furn, extra_by_name=self._food_storage_lookup())
+
+    def refresh_food_cap(self):
+        if not hasattr(self, 'lbl_food_cap'):
+            return
+        cap = self._current_food_capacity()
+        try:
+            cur = int((self.entry_food.get() or '0').strip())
+        except ValueError:
+            cur = 0
+        over = cur > cap
+        self.lbl_food_cap.configure(
+            text=f"/ {cap}",
+            text_color="#ef4444" if over else "#f59e0b",
+        )
+
     def refresh_sidebar_weather(self):
         if not hasattr(self, 'lbl_weather'):
             return
@@ -3300,7 +3742,7 @@ class MewgenicsApp(ctk.CTk):
         v = self.view_weather
         card = ctk.CTkFrame(v, fg_color="#14202e", corner_radius=10)
         card.pack(fill="both", expand=True, padx=10, pady=8)
-        ctk.CTkLabel(card, text="🌦️ 天气图鉴（官方中文 · 存档解锁状态）",
+        ctk.CTkLabel(card, text=f"🌦️ 天气图鉴（{ZH_PATCH_LABEL} · 存档解锁状态）",
                      font=("Arial", 15, "bold"), text_color="#38bdf8").pack(anchor="w", padx=15, pady=(12, 2))
         self.lbl_weather_now = ctk.CTkLabel(card, text="", font=("Arial", 12), text_color="#94a3b8",
                                             justify="left", anchor="w")

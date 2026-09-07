@@ -241,7 +241,7 @@
   },
   "CAT_CLASS_FIGHTER_DESC": {
     "en": "Punch your way to victory! Fighters are great at doing big strong melee attacks and smashing things to pieces!",
-    "zh": "拳打脚踢，走向胜利！\n战士擅长进行强力的近战攻击，\n将物体粉碎成渣！"
+    "zh": "拳打脚踢，走向胜利！\r\n战士擅长进行强力的近战攻击，\r\n将物体粉碎成渣！"
   },
   "CAT_CLASS_HUNTER_NAME": {
     "en": "Hunter",
@@ -249,7 +249,7 @@
   },
   "CAT_CLASS_HUNTER_DESC": {
     "en": "Shoot things from afar! Hunters are great at hitting things from a distance while staying out of danger themselves!",
-    "zh": "百步穿杨！猎人擅长在远处打击目标，\n同时让自己远离危险！"
+    "zh": "百步穿杨！猎人擅长在远处打击目标，\r\n同时让自己远离危险！"
   },
   "CAT_CLASS_MAGE_NAME": {
     "en": "Mage",
@@ -257,7 +257,7 @@
   },
   "CAT_CLASS_MAGE_DESC": {
     "en": "Blast your foes! Mages are great at casting all sorts of crazy spells and dealing elemental damage!",
-    "zh": "轰击你的敌人！\n法师擅长施放各种疯狂的法术，\n并造成元素伤害！"
+    "zh": "轰击你的敌人！\r\n法师擅长施放各种疯狂的法术，\r\n并造成元素伤害！"
   },
   "CAT_CLASS_MEDIC_NAME": {
     "en": "Cleric",
@@ -265,7 +265,7 @@
   },
   "CAT_CLASS_MEDIC_DESC": {
     "en": "Be the best friend! Clerics are great at keeping your team alive and helping them recover from taking hits!",
-    "zh": "做大家最好的朋友！\n牧师擅长让你的队伍存活下来，\n并帮助他们从打击中恢复！"
+    "zh": "做大家最好的朋友！\r\n牧师擅长让你的队伍存活下来，\r\n并帮助他们从打击中恢复！"
   },
   "CAT_CLASS_TANK_NAME": {
     "en": "Tank",
@@ -273,7 +273,7 @@
   },
   "CAT_CLASS_TANK_DESC": {
     "en": "Get in the way! Tanks are great at absorbing damage and pushing enemies around!",
-    "zh": "挡在前面！坦克擅长\n吸收伤害并推搡敌人！"
+    "zh": "挡在前面！坦克擅长\r\n吸收伤害并推搡敌人！"
   },
   "CAT_CLASS_THIEF_NAME": {
     "en": "Thief",
@@ -281,7 +281,7 @@
   },
   "CAT_CLASS_THIEF_DESC": {
     "en": "Attack from the shadows! Thiefs are great at evading hits, collecting coins, and striking from behind!",
-    "zh": "暗影突袭！盗贼擅长闪避攻击、\n收集金币以及从背后发起攻击！"
+    "zh": "暗影突袭！盗贼擅长闪避攻击、\r\n收集金币以及从背后发起攻击！"
   },
   "CAT_CLASS_COLORLESS_NAME": {
     "en": "Collarless",
@@ -297,7 +297,7 @@
   },
   "CAT_CLASS_MONK_DESC": {
     "en": "A versatile combat master! Monks can switch between ranged and melee stances and attack twice per turn!",
-    "zh": "多面手的战斗大师！\n武僧可以在远程和近战架势之间切换，\n并且每回合攻击两次！"
+    "zh": "多面手的战斗大师！\r\n武僧可以在远程和近战架势之间切换，\r\n并且每回合攻击两次！"
   },
   "CAT_CLASS_BUTCHER_NAME": {
     "en": "Butcher",
@@ -305,7 +305,7 @@
   },
   "CAT_CLASS_BUTCHER_DESC": {
     "en": "Meat Meat Meat Meat Meat! Butchers are great at cleaving chunks of meat off of things and have a hook to pull stuff towards them!",
-    "zh": "肉肉肉肉肉！\n屠夫擅长从物体上劈下肉块，\n并拥有能将物体拉向身边的钩爪！"
+    "zh": "肉肉肉肉肉！\r\n屠夫擅长从物体上劈下肉块，\r\n并拥有能将物体拉向身边的钩爪！"
   },
   "CAT_CLASS_DRUID_NAME": {
     "en": "Druid",
@@ -313,7 +313,7 @@
   },
   "CAT_CLASS_DRUID_DESC": {
     "en": "One with nature! Druids are great at summoning animal friends and come with a special Crow counterpart!",
-    "zh": "天人合一！德鲁伊擅长召唤动物朋友，\n并伴有一只特殊的乌鸦伙伴！"
+    "zh": "天人合一！德鲁伊擅长召唤动物朋友，\r\n并伴有一只特殊的乌鸦伙伴！"
   },
   "CAT_CLASS_TINKERER_NAME": {
     "en": "Tinkerer",
@@ -321,7 +321,7 @@
   },
   "CAT_CLASS_TINKERER_DESC": {
     "en": "A crafty inventor! Tinkerers are great at crafting temporary weapons and using all sorts of crazy gadgets!",
-    "zh": "心灵手巧的发明家！\n工匠擅长制作临时武器\n并使用各种疯狂的小玩意！"
+    "zh": "心灵手巧的发明家！\r\n工匠擅长制作临时武器\r\n并使用各种疯狂的小玩意！"
   },
   "CAT_CLASS_NECROMANCER_NAME": {
     "en": "Necromancer",
@@ -329,7 +329,7 @@
   },
   "CAT_CLASS_NECROMANCER_DESC": {
     "en": "Rise from the dead! Necromancers are great at playing with corpses and leeching life from enemies!",
-    "zh": "死而复生！死灵法师擅长摆弄尸体，\n并从敌人身上吸取生命！"
+    "zh": "死而复生！死灵法师擅长摆弄尸体，\r\n并从敌人身上吸取生命！"
   },
   "CAT_CLASS_PSYCHIC_NAME": {
     "en": "Psychic",
@@ -337,7 +337,7 @@
   },
   "CAT_CLASS_PSYCHIC_DESC": {
     "en": "Clear your mind! Psychics are great at manipulating things from afar and moving objects with their minds! Psychics also have +5 starting mana.",
-    "zh": "清空思绪！灵能者擅长\n远程操控事物并用念力移动物体！\n灵能者还拥有 +5 初始法力值。"
+    "zh": "清空思绪！灵能者擅长\r\n远程操控事物并用念力移动物体！\r\n灵能者还拥有 +5 初始法力值。"
   },
   "CAT_CLASS_JESTER_NAME": {
     "en": "Jester",
@@ -345,7 +345,7 @@
   },
   "CAT_CLASS_JESTER_DESC": {
     "en": "You can be anything! Jesters have no limits!",
-    "zh": "你可以成为任何人！\n小丑没有任何限制！"
+    "zh": "你可以成为任何人！\r\n小丑没有任何限制！"
   },
   "MUTATION_BODY_301_DESC": {
     "en": "+1 Thorns.",
@@ -381,7 +381,7 @@
   },
   "MUTATION_BODY_319_DESC": {
     "en": "When you take damage from an attack, gain a random buff.",
-    "zh": "当你受到攻击伤害时，\n获得一个随机增益。"
+    "zh": "当你受到攻击伤害时，\r\n获得一个随机增益。"
   },
   "MUTATION_BODY_321_DESC": {
     "en": "Spawn a Charmed Kitten familiar when you get downed.",
@@ -389,11 +389,11 @@
   },
   "MUTATION_BODY_322_DESC": {
     "en": "Gain an extra consumable item at the end of each battle.",
-    "zh": "在每场战斗结束时，\n获得一个额外消耗品。"
+    "zh": "在每场战斗结束时，\r\n获得一个额外消耗品。"
   },
   "MUTATION_BODY_323_DESC": {
     "en": "Trample. When damaged, move 1 tile in a random direction.",
-    "zh": "践踏。受到伤害时，\n向随机方向移动 1 格。"
+    "zh": "践踏。受到伤害时，\r\n向随机方向移动 1 格。"
   },
   "MUTATION_BODY_324_DESC": {
     "en": "Gain +1 range when you get a kill.",
@@ -417,7 +417,7 @@
   },
   "MUTATION_EARS_303_DESC": {
     "en": "Adds +1 Knockback to your basic attack if it's melee.",
-    "zh": "如果你的基础攻击是近战攻击，\n增加 +1 击退。"
+    "zh": "如果你的基础攻击是近战攻击，\r\n增加 +1 击退。"
   },
   "MUTATION_EARS_309_DESC": {
     "en": "Adds +1 Bleed to your basic attack.",
@@ -425,15 +425,15 @@
   },
   "MUTATION_EARS_313_DESC": {
     "en": "Adds +1 Knockback to your basic attack if it's melee.",
-    "zh": "如果你的基础攻击是近战攻击，\n增加 +1 击退。"
+    "zh": "如果你的基础攻击是近战攻击，\r\n增加 +1 击退。"
   },
   "MUTATION_EARS_314_DESC": {
     "en": "Thorns 1. Your basic attack inflicts Bleed if it's melee.",
-    "zh": "荆棘 1。如果你的基础攻击是近战攻击，\n会造成流血效果。"
+    "zh": "荆棘 1。如果你的基础攻击是近战攻击，\r\n会造成流血效果。"
   },
   "MUTATION_EARS_315_DESC": {
     "en": "50% chance to spawn a Charmed Fly each turn. Start with Poison 1.",
-    "zh": "每回合有 50% 的几率生成一只魅惑苍蝇。\n初始带有 1 层中毒。"
+    "zh": "每回合有 50% 的几率生成一只魅惑苍蝇。\r\n初始带有 1 层中毒。"
   },
   "MUTATION_EARS_316_DESC": {
     "en": "You can see hidden things. 5% dodge chance.",
@@ -441,7 +441,7 @@
   },
   "MUTATION_EARS_317_DESC": {
     "en": "Whenever you down a unit, you have a 10% chance to reanimate that unit with 50% HP.",
-    "zh": "每当你击倒一个单位，\n有 10% 的\n几率将其复生并拥有 50% 生命值。"
+    "zh": "每当你击倒一个单位，\r\n有 10% 的\r\n几率将其复生并拥有 50% 生命值。"
   },
   "MUTATION_EARS_318_DESC": {
     "en": "You have Brace 1 while wet.",
@@ -461,11 +461,11 @@
   },
   "MUTATION_EARS_323_DESC": {
     "en": "Gain 1 HP when your basic attack deals damage.",
-    "zh": "当你的基础攻击造成伤害时，\n恢复 1 点生命值。"
+    "zh": "当你的基础攻击造成伤害时，\r\n恢复 1 点生命值。"
   },
   "MUTATION_EARS_325_DESC": {
     "en": "If you're wet, gain +1 Charge and +1 [img:shield] at the end of your turn.",
-    "zh": "如果你处于潮湿状态，\n回合结束时获得 +1 充能和 +1 [img:shield]。"
+    "zh": "如果你处于潮湿状态，\r\n回合结束时获得 +1 充能和 +1 [img:shield]。"
   },
   "MUTATION_EARS_326_DESC": {
     "en": "5% chance to spawn a Maggot familiar each turn.",
@@ -477,7 +477,7 @@
   },
   "MUTATION_EARS_328_DESC": {
     "en": "5% chance to Petrify on damage and when hit.",
-    "zh": "造成伤害或受到攻击时有 5% 的\n几率施加石化。"
+    "zh": "造成伤害或受到攻击时有 5% 的\r\n几率施加石化。"
   },
   "MUTATION_EARS_329_DESC": {
     "en": "Your basic attack leaves water tiles.",
@@ -485,7 +485,7 @@
   },
   "MUTATION_EARS_330_DESC": {
     "en": "Thorns 1. 10% chance to inflict Immobile on units that contact you.",
-    "zh": "荆棘 1。\n接触你的单位有 10% 的几率被施加定身。"
+    "zh": "荆棘 1。\r\n接触你的单位有 10% 的几率被施加定身。"
   },
   "MUTATION_EARS_331_DESC": {
     "en": "Your basic attack has +1 Knockback.",
@@ -497,7 +497,7 @@
   },
   "MUTATION_EARS_334_DESC": {
     "en": "Spawn 1-3 more coins/scrap around the map on random tiles at the start of each battle.",
-    "zh": "每场战斗开始时，\n在地图上的\n随机地块生成额外 1-3 枚金币/废料。"
+    "zh": "每场战斗开始时，\r\n在地图上的\r\n随机地块生成额外 1-3 枚金币/废料。"
   },
   "MUTATION_EARS_335_DESC": {
     "en": "Start with Bleed 1 and a bonus attack.",
@@ -505,7 +505,7 @@
   },
   "MUTATION_EARS_336_DESC": {
     "en": "You gain 3 mana at the end of your turn if you didn't use your movement action.",
-    "zh": "如果你在回合结束时没有使用移动行动，\n获得 3 点法力值。"
+    "zh": "如果你在回合结束时没有使用移动行动，\r\n获得 3 点法力值。"
   },
   "MUTATION_EARS_337_DESC": {
     "en": "Your basic attack inflicts Burn 1.",
@@ -525,7 +525,7 @@
   },
   "MUTATION_EARS_342_DESC": {
     "en": "20% chance to spawn a Charmed Flea when damaged.",
-    "zh": "受到伤害时有 20% 的\n几率生成一只魅惑跳蚤。"
+    "zh": "受到伤害时有 20% 的\r\n几率生成一只魅惑跳蚤。"
   },
   "MUTATION_EARS_343_DESC": {
     "en": "Thorns 1.",
@@ -553,7 +553,7 @@
   },
   "MUTATION_EARS_753_DESC": {
     "en": "+1 Knockback damage. Your basic attack has +1 Knockback.",
-    "zh": "+1 击退伤害。\n你的基础攻击拥有 +1 击退。"
+    "zh": "+1 击退伤害。\r\n你的基础攻击拥有 +1 击退。"
   },
   "MUTATION_EARS_754_DESC": {
     "en": "Electric damage you deal is increased by 1.",
@@ -581,11 +581,11 @@
   },
   "MUTATION_EYEBROWS_301_DESC": {
     "en": "You have a 10% chance to inflict Confusion on units who contact or attack you.",
-    "zh": "接触或攻击你的单位有 10% 的\n几率被施加混乱。"
+    "zh": "接触或攻击你的单位有 10% 的\r\n几率被施加混乱。"
   },
   "MUTATION_EYEBROWS_306_DESC": {
     "en": "You have a 5% chance to inflict Fear on units who contact or attack you.",
-    "zh": "接触或攻击你的单位有 5% 的\n几率被施加恐惧。"
+    "zh": "接触或攻击你的单位有 5% 的\r\n几率被施加恐惧。"
   },
   "MUTATION_EYEBROWS_307_DESC": {
     "en": "+1 Mana Regeneration. +1 Health Regeneration.",
@@ -601,7 +601,7 @@
   },
   "MUTATION_EYEBROWS_311_DESC": {
     "en": "When you cast your third spell each turn, heal 2.",
-    "zh": "当你每回合施放第三个法术时，\n治疗 2 点生命值。"
+    "zh": "当你每回合施放第三个法术时，\r\n治疗 2 点生命值。"
   },
   "MUTATION_EYEBROWS_313_DESC": {
     "en": "Spawn 1-2 extra pickups in each battle.",
@@ -617,7 +617,7 @@
   },
   "MUTATION_EYEBROWS_900_DESC": {
     "en": "+5% dodge chance. Your basic attack has a 1% chance to inflict Freeze.",
-    "zh": "+5% 闪避率。\n你的基础攻击有 1% 的几率造成冻结。"
+    "zh": "+5% 闪避率。\r\n你的基础攻击有 1% 的几率造成冻结。"
   },
   "MUTATION_EYES_300_DESC": {
     "en": "Your basic attack has a 10% chance to inflict Fear.",
@@ -633,11 +633,11 @@
   },
   "MUTATION_EYES_306_DESC": {
     "en": "Your basic attack has a 10% chance to inflict Confusion 3.",
-    "zh": "你的基础攻击有 10% 的\n几率造成 3 层混乱。"
+    "zh": "你的基础攻击有 10% 的\r\n几率造成 3 层混乱。"
   },
   "MUTATION_EYES_307_DESC": {
     "en": "Gain 1 mana when anything dies.",
-    "zh": "当任何单位死亡时，\n获得 1 点法力值。"
+    "zh": "当任何单位死亡时，\r\n获得 1 点法力值。"
   },
   "MUTATION_EYES_308_DESC": {
     "en": "+5% dodge chance.",
@@ -661,7 +661,7 @@
   },
   "MUTATION_EYES_314_DESC": {
     "en": "When you are downed, spawn 3 Flies. +2 corpse health.",
-    "zh": "当你倒地时，生成 3 只苍蝇。\n+2 尸体生命值。"
+    "zh": "当你倒地时，生成 3 只苍蝇。\r\n+2 尸体生命值。"
   },
   "MUTATION_EYES_315_DESC": {
     "en": "+1 Kinetic Spikes.",
@@ -669,7 +669,7 @@
   },
   "MUTATION_EYES_316_DESC": {
     "en": "15% chance to counter attack with Chain Lightning when you get hit.",
-    "zh": "受到攻击时有 15% 的\n几率用连锁闪电进行反击。"
+    "zh": "受到攻击时有 15% 的\r\n几率用连锁闪电进行反击。"
   },
   "MUTATION_EYES_317_DESC": {
     "en": "Gain a random stat up at the end of each turn.",
@@ -677,7 +677,7 @@
   },
   "MUTATION_EYES_318_DESC": {
     "en": "You can see hidden things. +1 Knockback damage.",
-    "zh": "你可以看到隐藏之物。\n+1 击退伤害。"
+    "zh": "你可以看到隐藏之物。\r\n+1 击退伤害。"
   },
   "MUTATION_EYES_319_DESC": {
     "en": "Blind. +1 Damage. +1 Thorns.",
@@ -693,7 +693,7 @@
   },
   "MUTATION_EYES_326_DESC": {
     "en": "Gain 2 Charge each time you cast 4 spells.",
-    "zh": "每当你施放 4 个法术，\n获得 2 点充能。"
+    "zh": "每当你施放 4 个法术，\r\n获得 2 点充能。"
   },
   "MUTATION_EYES_328_DESC": {
     "en": "+10% crit chance.",
@@ -705,11 +705,11 @@
   },
   "MUTATION_EYES_331_DESC": {
     "en": "At the start of each battle, gain a random temporary pill if your trinket slot is empty.",
-    "zh": "每场战斗开始时，如果你的饰品槽为空，\n获得一颗随机临时药丸。"
+    "zh": "每场战斗开始时，如果你的饰品槽为空，\r\n获得一颗随机临时药丸。"
   },
   "MUTATION_EYES_332_DESC": {
     "en": "Start each battle Bleeding. Gain 1 Charge each time you take damage.",
-    "zh": "每场战斗开始时处于流血状态。\n每次受到伤害获得 1 点充能。"
+    "zh": "每场战斗开始时处于流血状态。\r\n每次受到伤害获得 1 点充能。"
   },
   "MUTATION_EYES_333_DESC": {
     "en": "Your basic attack can't miss.",
@@ -725,11 +725,11 @@
   },
   "MUTATION_EYES_336_DESC": {
     "en": "Your basic attack is electric element and has a 5% chance to stun.",
-    "zh": "你的基础攻击为电击元素，\n且有 5% 的几率造成击晕。"
+    "zh": "你的基础攻击为电击元素，\r\n且有 5% 的几率造成击晕。"
   },
   "MUTATION_EYES_337_DESC": {
     "en": "Your basic attack is ice element and inflicts Slow.",
-    "zh": "你的基础攻击为冰元素，\n且造成减速效果。"
+    "zh": "你的基础攻击为冰元素，\r\n且造成减速效果。"
   },
   "MUTATION_EYES_338_DESC": {
     "en": "Your basic attack inflicts Burn.",
@@ -737,7 +737,7 @@
   },
   "MUTATION_EYES_339_DESC": {
     "en": "+1 Health Regeneration while wet. Your basic attack is water element.",
-    "zh": "潮湿状态下 +1 生命恢复。\n你的基础攻击为水元素。"
+    "zh": "潮湿状态下 +1 生命恢复。\r\n你的基础攻击为水元素。"
   },
   "MUTATION_EYES_340_DESC": {
     "en": "Your basic attack inflicts Leech.",
@@ -749,11 +749,11 @@
   },
   "MUTATION_EYES_342_DESC": {
     "en": "Your basic attack inflicts Poison 1. Start each battle Poisoned.",
-    "zh": "你的基础攻击造成 1 层中毒。\n每场战斗开始时处于中毒状态。"
+    "zh": "你的基础攻击造成 1 层中毒。\r\n每场战斗开始时处于中毒状态。"
   },
   "MUTATION_EYES_343_DESC": {
     "en": "You have a 5% chance to inflict Fear on units who contact or attack you.",
-    "zh": "接触或攻击你的单位有 5% 的\n几率被施加恐惧。"
+    "zh": "接触或攻击你的单位有 5% 的\r\n几率被施加恐惧。"
   },
   "MUTATION_EYES_344_DESC": {
     "en": "You have a 10% chance to Blind units who contact or attack you.",
@@ -769,7 +769,7 @@
   },
   "MUTATION_EYES_347_DESC": {
     "en": "Your basic attack has a 15% chance to inflict Confusion 2.",
-    "zh": "你的基础攻击有 15% 的\n几率造成 2 层混乱。"
+    "zh": "你的基础攻击有 15% 的\r\n几率造成 2 层混乱。"
   },
   "MUTATION_EYES_348_DESC": {
     "en": "+1 range, +1 reach.",
@@ -777,7 +777,7 @@
   },
   "MUTATION_EYES_349_DESC": {
     "en": "Emit 4 Sparkles each time you cast 8 spells.",
-    "zh": "每当你施放 8 个法术，\n发出 4 道火花。"
+    "zh": "每当你施放 8 个法术，\r\n发出 4 道火花。"
   },
   "MUTATION_EYES_351_DESC": {
     "en": "Your bonus ability is a different random spell each battle.",
@@ -845,7 +845,7 @@
   },
   "MUTATION_HEAD_308_DESC": {
     "en": "+1 movement range while wet. Water does not slow movement.",
-    "zh": "潮湿状态下 +1 移动距离。\n水不会减缓移动。"
+    "zh": "潮湿状态下 +1 移动距离。\r\n水不会减缓移动。"
   },
   "MUTATION_HEAD_311_DESC": {
     "en": "Spawn a coin when you take damage.",
@@ -865,11 +865,11 @@
   },
   "MUTATION_HEAD_315_DESC": {
     "en": "At the start of each battle, swap your highest and lowest stats.",
-    "zh": "每场战斗开始时，\n交换你的最高和最低属性。"
+    "zh": "每场战斗开始时，\r\n交换你的最高和最低属性。"
   },
   "MUTATION_HEAD_316_DESC": {
     "en": "When you take damage from an attack, gain a random buff.",
-    "zh": "当你受到攻击伤害时，\n获得一个随机增益。"
+    "zh": "当你受到攻击伤害时，\r\n获得一个随机增益。"
   },
   "MUTATION_HEAD_317_DESC": {
     "en": "+5% dodge chance.",
@@ -881,7 +881,7 @@
   },
   "MUTATION_HEAD_319_DESC": {
     "en": "Gain +1 [img:int] permanently at the end of each battle. Start each battle with Bruise 2.",
-    "zh": "每场战斗结束时永久获得 +1 [img:int]。\n每场战斗开始时带有 2 层淤伤。"
+    "zh": "每场战斗结束时永久获得 +1 [img:int]。\r\n每场战斗开始时带有 2 层淤伤。"
   },
   "MUTATION_HEAD_320_DESC": {
     "en": "Your basic attack has +2 Knockback.",
@@ -889,15 +889,15 @@
   },
   "MUTATION_HEAD_321_DESC": {
     "en": "You have a 5% chance to inflict Fear on units who contact or attack you.",
-    "zh": "接触或攻击你的单位有 5% 的\n几率被施加恐惧。"
+    "zh": "接触或攻击你的单位有 5% 的\r\n几率被施加恐惧。"
   },
   "MUTATION_HEAD_703_DESC": {
     "en": "Attacks against your face count as backstabs.",
     "zh": "针对你面部的攻击算作背刺。"
   },
   "MUTATION_HEAD_704_DESC": {
-    "en": "20% miss chance.\nYour spells cost 1 less mana.",
-    "zh": "20% 未命中率。\n你的法术法力消耗减少 1 点。"
+    "en": "20% miss chance.\r\nYour spells cost 1 less mana.",
+    "zh": "20% 未命中率。\r\n你的法术法力消耗减少 1 点。"
   },
   "MUTATION_HEAD_706_DESC": {
     "en": "Brace 1.",
@@ -921,7 +921,7 @@
   },
   "MUTATION_LEGS_300_DESC": {
     "en": "+1 movement range while wet. Water does not slow movement.",
-    "zh": "潮湿状态下 +1 移动距离。\n水不会减缓移动。"
+    "zh": "潮湿状态下 +1 移动距离。\r\n水不会减缓移动。"
   },
   "MUTATION_LEGS_301_DESC": {
     "en": "Your basic attack has a 5% chance to Stun.",
@@ -941,7 +941,7 @@
   },
   "MUTATION_LEGS_309_DESC": {
     "en": "Your basic attack has a 10% chance to inflict Bleed 3.",
-    "zh": "你的基础攻击有 10% 的\n几率造成 3 层流血。"
+    "zh": "你的基础攻击有 10% 的\r\n几率造成 3 层流血。"
   },
   "MUTATION_LEGS_310_DESC": {
     "en": "Your movement action is a jump.",
@@ -965,7 +965,7 @@
   },
   "MUTATION_LEGS_317_DESC": {
     "en": "Your basic attack inflicts Bleed 1 if it's melee.",
-    "zh": "如果你的基础攻击是近战攻击，\n则施加 1 层流血。"
+    "zh": "如果你的基础攻击是近战攻击，\r\n则施加 1 层流血。"
   },
   "MUTATION_LEGS_319_DESC": {
     "en": "10% chance to gain a bonus move each turn.",
@@ -989,7 +989,7 @@
   },
   "MUTATION_LEGS_327_DESC": {
     "en": "Gain 2 random stat ups and 1 random stat down at the end of each turn.",
-    "zh": "在每回合结束时，\n获得 2 个随机属性提升和 \n1 个随机属性下降。"
+    "zh": "在每回合结束时，\r\n获得 2 个随机属性提升和 \r\n1 个随机属性下降。"
   },
   "MUTATION_LEGS_328_DESC": {
     "en": "Equip a temporary Bottles weapon at the start of the battle.",
@@ -1009,7 +1009,7 @@
   },
   "MUTATION_LEGS_332_DESC": {
     "en": "50% chance to spawn a pickup on an adjacent tile when you end your turn.",
-    "zh": "当你结束回合时，\n有 50% 几率在相邻地块生成一个掉落物。"
+    "zh": "当你结束回合时，\r\n有 50% 几率在相邻地块生成一个掉落物。"
   },
   "MUTATION_LEGS_333_DESC": {
     "en": "Your basic attack has wind element and +1 Knockback.",
@@ -1017,11 +1017,11 @@
   },
   "MUTATION_LEGS_334_DESC": {
     "en": "Your basic attack tosses units into the air if it's melee.",
-    "zh": "如果你的基础攻击是近战攻击，\n则将单位抛向空中。"
+    "zh": "如果你的基础攻击是近战攻击，\r\n则将单位抛向空中。"
   },
   "MUTATION_LEGS_335_DESC": {
     "en": "+1 Bleed Thorns. Spawn glass when you take damage.",
-    "zh": "+1 流血荆棘。\n当你受到伤害时生成玻璃。"
+    "zh": "+1 流血荆棘。\r\n当你受到伤害时生成玻璃。"
   },
   "MUTATION_LEGS_336_DESC": {
     "en": "Your basic attack inflicts Soul Link.",
@@ -1065,7 +1065,7 @@
   },
   "MUTATION_LEGS_754_DESC": {
     "en": "Your movement action is a jump. Your basic attack inflicts Bruise.",
-    "zh": "你的移动行动变为跳跃。\n你的基础攻击施加淤伤。"
+    "zh": "你的移动行动变为跳跃。\r\n你的基础攻击施加淤伤。"
   },
   "MUTATION_LEGS_757_DESC": {
     "en": "Trample.",
@@ -1081,7 +1081,7 @@
   },
   "MUTATION_LEGS_761_DESC": {
     "en": "Your movement action is a jump. Your basic attack inflicts Bleed.",
-    "zh": "你的移动行动变为跳跃。\n你的基础攻击施加流血。"
+    "zh": "你的移动行动变为跳跃。\r\n你的基础攻击施加流血。"
   },
   "MUTATION_LEGS_762_DESC": {
     "en": "Ignore the effects of tiles and traps.",
@@ -1129,7 +1129,7 @@
   },
   "MUTATION_MOUTH_312_DESC": {
     "en": "Your basic attack has a 10% chance to inflict Immobile if it's melee.",
-    "zh": "如果你的基础攻击是近战攻击，\n则有 10% 几率施加定身。"
+    "zh": "如果你的基础攻击是近战攻击，\r\n则有 10% 几率施加定身。"
   },
   "MUTATION_MOUTH_313_DESC": {
     "en": "At the end of each round, spit at an enemy .",
@@ -1149,7 +1149,7 @@
   },
   "MUTATION_MOUTH_317_DESC": {
     "en": "Spawn glass when you take damage. +1 Bleed Thorns.",
-    "zh": "当你受到伤害时生成玻璃。\n+1 流血荆棘。"
+    "zh": "当你受到伤害时生成玻璃。\r\n+1 流血荆棘。"
   },
   "MUTATION_MOUTH_318_DESC": {
     "en": "Your movement action is Dig.",
@@ -1157,7 +1157,7 @@
   },
   "MUTATION_MOUTH_319_DESC": {
     "en": "Water does not slow movement. +1 Health Regeneration while wet.",
-    "zh": "水不会减缓移动。\n处于潮湿状态时 +1 生命恢复。"
+    "zh": "水不会减缓移动。\r\n处于潮湿状态时 +1 生命恢复。"
   },
   "MUTATION_MOUTH_322_DESC": {
     "en": "Your basic attack inflicts Bleed.",
@@ -1181,7 +1181,7 @@
   },
   "MUTATION_MOUTH_328_DESC": {
     "en": "Can't eat food, use consumables, or use musical abilities. +2 Health Regeneration",
-    "zh": "无法吃食物、使用消耗品或使用音乐技能。\n+2 生命恢复"
+    "zh": "无法吃食物、使用消耗品或使用音乐技能。\r\n+2 生命恢复"
   },
   "MUTATION_MOUTH_900_DESC": {
     "en": "Your basic attack has a 10% chance to inflict Fear.",
@@ -1201,11 +1201,11 @@
   },
   "MUTATION_MOUTH_705_DESC": {
     "en": "Your basic attack can be used two extra times each turn but is replaced with a 1-damage spit attack.",
-    "zh": "你的基础攻击每回合可额外使用两次，\n但会被替换为造成 1 点伤害的吐口水攻击。"
+    "zh": "你的基础攻击每回合可额外使用两次，\r\n但会被替换为造成 1 点伤害的吐口水攻击。"
   },
   "MUTATION_MOUTH_750_DESC": {
     "en": "Your basic attack destroys inanimate objects and turns tiles into dirt.",
-    "zh": "你的\n基础攻击会摧毁无生命物体并将地块变为泥土。"
+    "zh": "你的\r\n基础攻击会摧毁无生命物体并将地块变为泥土。"
   },
   "MUTATION_MOUTH_752_DESC": {
     "en": "Your basic attack creates water tiles.",
@@ -1225,7 +1225,7 @@
   },
   "MUTATION_MOUTH_760_DESC": {
     "en": "When a food pickup spawns within 2 tiles of you, move to it.",
-    "zh": "当食物掉落物生成在你 2 格范围内时，\n移动向它。"
+    "zh": "当食物掉落物生成在你 2 格范围内时，\r\n移动向它。"
   },
   "MUTATION_TAIL_301_DESC": {
     "en": "Poop when you take damage.",
@@ -1261,7 +1261,7 @@
   },
   "MUTATION_TAIL_314_DESC": {
     "en": "Whenever you down a unit, you have a 10% chance to reanimate that unit with 50% HP.",
-    "zh": "每当你击倒一个单位时，\n有 10% 几率以 50% \n生命值复生该单位。"
+    "zh": "每当你击倒一个单位时，\r\n有 10% 几率以 50% \r\n生命值复生该单位。"
   },
   "MUTATION_TAIL_315_DESC": {
     "en": "20% chance to spawn a Maggot when hit.",
@@ -1273,7 +1273,7 @@
   },
   "MUTATION_TAIL_317_DESC": {
     "en": "When hit, fart a Poison 4 attack with Knockback behind you.",
-    "zh": "被击中时，\n向身后放一个造成 4 层中毒并带有击退效果的\n屁。"
+    "zh": "被击中时，\r\n向身后放一个造成 4 层中毒并带有击退效果的\r\n屁。"
   },
   "MUTATION_TAIL_318_DESC": {
     "en": "Your basic attack inflicts Poison.",
@@ -1305,7 +1305,7 @@
   },
   "MUTATION_TAIL_327_DESC": {
     "en": "If you don't move, gain 3 Charge at the end of the turn.",
-    "zh": "如果你不移动，\n回合结束时获得 3 层充能。"
+    "zh": "如果你不移动，\r\n回合结束时获得 3 层充能。"
   },
   "MUTATION_TAIL_329_DESC": {
     "en": "You can unequip cursed items and parasites.",
@@ -1405,7 +1405,7 @@
   },
   "MUTATION_TEXTURE_309_DESC": {
     "en": "Your basic attack has a 5% chance to inflict Fear. You have a 5% chance to inflict Fear on units who contact or attack you.",
-    "zh": "你的基础攻击有 5% 几率施加恐惧。\n你有 5% 几率对接触或攻击你的\n单位施加恐惧。"
+    "zh": "你的基础攻击有 5% 几率施加恐惧。\r\n你有 5% 几率对接触或攻击你的\r\n单位施加恐惧。"
   },
   "MUTATION_TEXTURE_310_DESC": {
     "en": "Gain double the effects of pickups you collect.",
@@ -1434,5 +1434,477 @@
   "MUTATION_TEXTURE_750_DESC": {
     "en": "Units who contact you get Poison 2.",
     "zh": "接触你的单位会获得 2 层中毒。"
+  },
+  "WEATHER_NONE_NAME": {
+    "en": "Clear Skies",
+    "zh": "晴朗天空"
+  },
+  "WEATHER_NONE_DESC": {
+    "en": "There are no weather effects.",
+    "zh": "没有天气效果。"
+  },
+  "WEATHER_FOG_NAME": {
+    "en": "Fog",
+    "zh": "雾"
+  },
+  "WEATHER_FOG_DESC": {
+    "en": "All attacks and abilities have a +10% chance to miss.",
+    "zh": "所有攻击和技能有 +10% 几率未命中。"
+  },
+  "WEATHER_RAIN_NAME": {
+    "en": "Rain",
+    "zh": "雨"
+  },
+  "WEATHER_RAIN_DESC": {
+    "en": "Persistent Water Element.",
+    "zh": "持续水元素。"
+  },
+  "WEATHER_HEAVYRAIN_NAME": {
+    "en": "Heavy Rain",
+    "zh": "大雨"
+  },
+  "WEATHER_HEAVYRAIN_DESC": {
+    "en": "Persistent Water Element. There are extra water tiles in every battle.",
+    "zh": "持续水元素。每场战斗中会有额外的水地块。"
+  },
+  "WEATHER_WINDY_NAME": {
+    "en": "Windy",
+    "zh": "多风"
+  },
+  "WEATHER_WINDY_DESC": {
+    "en": "At the end of each round, wind blows everything 1 space in a random direction.",
+    "zh": "在每回合结束时，风会将所有单位向随机方向吹动 1 格。"
+  },
+  "WEATHER_SANDSTORM_NAME": {
+    "en": "Sandstorm",
+    "zh": "沙尘暴"
+  },
+  "WEATHER_SANDSTORM_DESC": {
+    "en": "At the end of each round, damages everything by 1.",
+    "zh": "在每回合结束时，对所有单位造成 1 点伤害。"
+  },
+  "WEATHER_OVERGROWTH_NAME": {
+    "en": "Overgrowth",
+    "zh": "过度生长"
+  },
+  "WEATHER_OVERGROWTH_DESC": {
+    "en": "There are extra tall grass and bramble tiles in every battle.",
+    "zh": "每场战斗中会有额外的高草和荆棘地块。"
+  },
+  "WEATHER_EARTHQUAKE_NAME": {
+    "en": "Earthquake",
+    "zh": "地震"
+  },
+  "WEATHER_EARTHQUAKE_DESC": {
+    "en": "There was an earthquake! Objects in each battle have been destroyed and there are rocks everywhere!",
+    "zh": "发生地震了！每场战斗中的物体已被摧毁，到处都是岩石！"
+  },
+  "WEATHER_WILDFIRE_NAME": {
+    "en": "Wildfire",
+    "zh": "野火"
+  },
+  "WEATHER_WILDFIRE_DESC": {
+    "en": "There is fire everywhere!",
+    "zh": "到处都是火！"
+  },
+  "WEATHER_HEATWAVE_NAME": {
+    "en": "Heat Wave",
+    "zh": "热浪"
+  },
+  "WEATHER_HEATWAVE_DESC": {
+    "en": "Cats do not heal after battle. All heals are reduced by 1. Can be mitigated with water.",
+    "zh": "猫咪战后不会恢复生命值。所有治疗量减少 1 点。可用水来缓解。"
+  },
+  "WEATHER_SNOW_NAME": {
+    "en": "Snow",
+    "zh": "雪"
+  },
+  "WEATHER_SNOW_DESC": {
+    "en": "Persistent Ice Element.",
+    "zh": "持续冰元素。"
+  },
+  "WEATHER_ACIDRAIN_NAME": {
+    "en": "Acid Rain",
+    "zh": "酸雨"
+  },
+  "WEATHER_ACIDRAIN_DESC": {
+    "en": "At the end of each round, damages everything by 2 with a chance to lower a random stat as well.",
+    "zh": "在每回合结束时，对所有单位造成 2 点伤害，并有几率降低一项随机属性。"
+  },
+  "WEATHER_METEORS_NAME": {
+    "en": "Meteor Shower",
+    "zh": "陨石雨"
+  },
+  "WEATHER_METEORS_DESC": {
+    "en": "After each turn there's a chance for a flaming meteor to fall onto a random tile.",
+    "zh": "每回合结束后，有几率落下一颗燃烧的陨石到随机地块上。"
+  },
+  "WEATHER_THUNDERSTORM_NAME": {
+    "en": "Thunderstorm",
+    "zh": "雷暴"
+  },
+  "WEATHER_THUNDERSTORM_DESC": {
+    "en": "Persistent Water Element. At the end of each round, wind blows everything 1 space in a random direction. After each turn, there's a chance for a random lightning strike.",
+    "zh": "持续水元素。在每回合结束时，风会将所有单位向随机方向吹动 1 格。每回合结束后，有几率发生随机雷击。"
+  },
+  "WEATHER_FLASHFLOOD_NAME": {
+    "en": "Flash Flood",
+    "zh": "山洪"
+  },
+  "WEATHER_FLASHFLOOD_DESC": {
+    "en": "Persistent Water Element. There are a ton of extra water tiles in every battle.",
+    "zh": "持续水元素。每场战斗中会有大量额外的水地块。"
+  },
+  "WEATHER_TRASHDAY_NAME": {
+    "en": "Trash Day",
+    "zh": "垃圾日"
+  },
+  "WEATHER_TRASHDAY_DESC": {
+    "en": "There is extra junk in every battle.",
+    "zh": "每场战斗中会有额外的垃圾。"
+  },
+  "WEATHER_FROGS_NAME": {
+    "en": "Raining Frogs",
+    "zh": "蛙雨"
+  },
+  "WEATHER_FROGS_DESC": {
+    "en": "There are extra neutral frogs in every battle.",
+    "zh": "每场战斗中会有额外的中立青蛙。"
+  },
+  "WEATHER_BLOCKAGE_NAME": {
+    "en": "Pipe Blockage",
+    "zh": "管道堵塞"
+  },
+  "WEATHER_BLOCKAGE_DESC": {
+    "en": "There is extra poop and sewage in every battle.",
+    "zh": "每场战斗中会有额外的便便和污水。"
+  },
+  "WEATHER_PAYDAY_NAME": {
+    "en": "Pay Day",
+    "zh": "发薪日"
+  },
+  "WEATHER_PAYDAY_DESC": {
+    "en": "There are extra coins in every battle.",
+    "zh": "每场战斗中会有额外的金币。"
+  },
+  "WEATHER_HUNTING_NAME": {
+    "en": "Hunting Season",
+    "zh": "狩猎季节"
+  },
+  "WEATHER_HUNTING_DESC": {
+    "en": "There are extra bear traps in every battle.",
+    "zh": "每场战斗中会有额外的捕兽夹。"
+  },
+  "WEATHER_RESTLESS_NAME": {
+    "en": "Restless Dead",
+    "zh": "亡灵躁动"
+  },
+  "WEATHER_RESTLESS_DESC": {
+    "en": "Zombies spawn at the end of each round.",
+    "zh": "僵尸会在每回合结束时生成。"
+  },
+  "WEATHER_FIREFLY_NAME": {
+    "en": "Firefly Swarm",
+    "zh": "萤火虫群"
+  },
+  "WEATHER_FIREFLY_DESC": {
+    "en": "All allies have +2 luck.",
+    "zh": "所有友方单位 +2 幸运。"
+  },
+  "WEATHER_BUTTERFLY_NAME": {
+    "en": "Butterfly Swarm",
+    "zh": "蝴蝶群"
+  },
+  "WEATHER_BUTTERFLY_DESC": {
+    "en": "All allies have +2 luck.",
+    "zh": "所有友方单位 +2 幸运。"
+  },
+  "WEATHER_FLYSWARM_NAME": {
+    "en": "Fly Swarm",
+    "zh": "蝇群"
+  },
+  "WEATHER_FLYSWARM_DESC": {
+    "en": "At the end of each turn, there's a chance to get bitten for 1 damage and 1 Bleed.",
+    "zh": "在每回合结束时，有几率被咬伤，造成 1 点伤害和 1 层流血。"
+  },
+  "WEATHER_TORFLIES_NAME": {
+    "en": "Fly Swarm",
+    "zh": "蝇群"
+  },
+  "WEATHER_TORFLIES_DESC": {
+    "en": "There's lots of flies!",
+    "zh": "这儿有很多苍蝇！"
+  },
+  "WEATHER_LOWGRAV_NAME": {
+    "en": "Low Gravity",
+    "zh": "低重力"
+  },
+  "WEATHER_LOWGRAV_DESC": {
+    "en": "Jumps, throws, and projectile abilities have +2 range. All physical abilities have +1 Knockback. Other abilities that cause Knockback have +1 Knockback as well.",
+    "zh": "跳跃、投掷和投射物技能增加 +2 射程。所有物理技能增加 +1 击退。其他造成击退的技能也增加 +1 击退。"
+  },
+  "WEATHER_FIRESTORM_NAME": {
+    "en": "Firestorm",
+    "zh": "火焰风暴"
+  },
+  "WEATHER_FIRESTORM_DESC": {
+    "en": "Persistent Fire Element. Fires no longer burn out. Parts of the map are on fire.",
+    "zh": "持续火元素。火焰不再熄灭。地图部分区域着火。"
+  },
+  "WEATHER_KAIJUFIRE_NAME": {
+    "en": "Firestorm",
+    "zh": "火焰风暴"
+  },
+  "WEATHER_KAIJUFIRE_DESC": {
+    "en": "Persistent Fire Element. Fireballs occasionally rain down from the sky. Fires no longer burn out.",
+    "zh": "持续火元素。偶尔会有火球从天而降。火焰不再熄灭。"
+  },
+  "WEATHER_METEORNADO_NAME": {
+    "en": "Meteornado",
+    "zh": "陨石龙卷"
+  },
+  "WEATHER_METEORNADO_DESC": {
+    "en": "At the end of each round, damages everything by 1 with a 33% chance to Bruise.",
+    "zh": "在每回合结束时，对所有单位造成 1 点伤害，并有 33% 几率造成淤伤。"
+  },
+  "WEATHER_KAIJUMETEORNADO_NAME": {
+    "en": "Meteornado",
+    "zh": "陨石龙卷"
+  },
+  "WEATHER_KAIJUMETEORNADO_DESC": {
+    "en": "At the end of each round, damages everything by 1 with a 33% chance to Bruise.",
+    "zh": "在每回合结束时，对所有单位造成 1 点伤害，并有 33% 几率造成淤伤。"
+  },
+  "WEATHER_KAIJUMETEORSOLO_NAME": {
+    "en": "Meteornado",
+    "zh": "陨石龙卷"
+  },
+  "WEATHER_KAIJUMETEORSOLO_DESC": {
+    "en": "At the end of each round, damages everything by 1 with a 33% chance to Bruise.",
+    "zh": "在每回合结束时，对所有单位造成 1 点伤害，并有 33% 几率造成淤伤。"
+  },
+  "WEATHER_ROBOTS_NAME": {
+    "en": "Robot Uprising",
+    "zh": "机器人起义"
+  },
+  "WEATHER_ROBOTS_DESC": {
+    "en": "2-4 robots spawn in each battle. All robots have gone rogue!",
+    "zh": "每场战斗中生成 2-4 个机器人。所有机器人都失控了！"
+  },
+  "WEATHER_HAUNTED_NAME": {
+    "en": "Haunted Night",
+    "zh": "闹鬼之夜"
+  },
+  "WEATHER_HAUNTED_DESC": {
+    "en": "2-4 ghosts spawn in each battle. All ghosts have gone rogue!",
+    "zh": "每场战斗中生成 2-4 个幽灵。所有幽灵都失控了！"
+  },
+  "WEATHER_MIGRATION_NAME": {
+    "en": "Bird Migration",
+    "zh": "鸟类迁徙"
+  },
+  "WEATHER_MIGRATION_DESC": {
+    "en": "1-2 extra birds spawn in each battle.",
+    "zh": "每场战斗中额外生成 1-2 只鸟。"
+  },
+  "WEATHER_COCKROACHES_NAME": {
+    "en": "Cockroach Infestation",
+    "zh": "蟑螂泛滥"
+  },
+  "WEATHER_COCKROACHES_DESC": {
+    "en": "All units have a 25% chance to start each battle with Fear or Poison.",
+    "zh": "所有单位在每场战斗开始时有 25% 几率带有恐惧或中毒状态。"
+  },
+  "WEATHER_JUDGEMENT_NAME": {
+    "en": "Judgement Day",
+    "zh": "审判日"
+  },
+  "WEATHER_JUDGEMENT_DESC": {
+    "en": "Some tiles will get Raptured at the end of each round during the battle. More tiles are affected every round.",
+    "zh": "战斗中，每回合结束时部分地块会被提。每回合受影响的地块会增加。"
+  },
+  "WEATHER_PANDEMONIUM_NAME": {
+    "en": "Pandemonium",
+    "zh": "群魔乱舞"
+  },
+  "WEATHER_PANDEMONIUM_DESC": {
+    "en": "All units have a 25% chance to have Madness each round.",
+    "zh": "所有单位每回合有 25% 几率获得疯狂状态。"
+  },
+  "WEATHER_HOLLOWING_NAME": {
+    "en": "The Hollowing",
+    "zh": "活尸化"
+  },
+  "WEATHER_HOLLOWING_DESC": {
+    "en": "At the end of the round, each corpse has a 25% chance to revive at half health with Madness 5.",
+    "zh": "在回合结束时，每具尸体有 25% 几率以半血复活并带有 5 层疯狂。"
+  },
+  "WEATHER_OILSPILL_NAME": {
+    "en": "Oil Spill",
+    "zh": "石油泄漏"
+  },
+  "WEATHER_OILSPILL_DESC": {
+    "en": "A puddle of tar appears in each battle.",
+    "zh": "每场战斗中会出现一滩焦油。"
+  },
+  "WEATHER_BLIZZARD_NAME": {
+    "en": "Blizzard!",
+    "zh": "暴风雪！"
+  },
+  "WEATHER_BLIZZARD_DESC": {
+    "en": "Persistent Ice Element. At the end of each round, wind blows everything 1 space in a random direction. After each turn, there's a chance for a random lightning strike.",
+    "zh": "持续冰元素。在每回合结束时，风会将所有单位向随机方向吹动 1 格。每回合结束后，有几率发生随机雷击。"
+  },
+  "WEATHER_HURRICANE_NAME": {
+    "en": "Hurricane!",
+    "zh": "飓风！"
+  },
+  "WEATHER_HURRICANE_DESC": {
+    "en": "At the end of each round, wind blows everything 10 spaces in a random direction.",
+    "zh": "在每回合结束时，风会将所有单位向随机方向吹动 10 格。"
+  },
+  "WEATHER_STRANGESPIKES_NAME": {
+    "en": "Strange Spikes!",
+    "zh": "奇异尖刺！"
+  },
+  "WEATHER_STRANGESPIKES_DESC": {
+    "en": "At the end of the round, all units gain +1 Thorns.",
+    "zh": "在回合结束时，所有单位获得 +1 荆棘。"
+  },
+  "WEATHER_BLESSED_NAME": {
+    "en": "Blessed Day!",
+    "zh": "受祝福之日！"
+  },
+  "WEATHER_BLESSED_DESC": {
+    "en": "All units have +3 Health Regen. Persistent Holy Element.",
+    "zh": "所有单位拥有 +3 生命恢复。持续神圣元素。"
+  },
+  "WEATHER_STEALTH_NAME": {
+    "en": "Stealth Mission",
+    "zh": "潜行任务"
+  },
+  "WEATHER_STEALTH_DESC": {
+    "en": "All units gain Stealth at the start of the battle.",
+    "zh": "所有单位在战斗开始时获得潜行。"
+  },
+  "WEATHER_INFESTATION_NAME": {
+    "en": "Infestation",
+    "zh": "虫患"
+  },
+  "WEATHER_INFESTATION_DESC": {
+    "en": "All non-tiny units explode into a charmed maggot when they die.",
+    "zh": "所有非微型单位死亡时会爆炸生成魅惑蛆虫。"
+  },
+  "WEATHER_ERUPTION_NAME": {
+    "en": "Eruption",
+    "zh": "喷发"
+  },
+  "WEATHER_ERUPTION_DESC": {
+    "en": "A mini volcano spawns in each battle.",
+    "zh": "每场战斗中会生成一座迷你火山。"
+  },
+  "WEATHER_DRUGS_NAME": {
+    "en": "Drug Awareness Day",
+    "zh": "禁毒宣传日"
+  },
+  "WEATHER_DRUGS_DESC": {
+    "en": "There is extra catnip in every battle. Find a random pill after every battle.",
+    "zh": "每场战斗中会有额外的猫薄荷。每场战斗后会找到一颗随机药丸。"
+  },
+  "WEATHER_TRAININGDAY_NAME": {
+    "en": "Training Day",
+    "zh": "训练日"
+  },
+  "WEATHER_TRAININGDAY_DESC": {
+    "en": "A punching bag with Kinetic Spikes 5 spawns in each battle.",
+    "zh": "每场战斗中会生成一个带有 5 层动能尖刺的沙袋。"
+  },
+  "WEATHER_TORNADOES_NAME": {
+    "en": "Tornadoes",
+    "zh": "龙卷风"
+  },
+  "WEATHER_TORNADOES_DESC": {
+    "en": "Twisters spawn each round.",
+    "zh": "每回合都会生成龙卷风。"
+  },
+  "WEATHER_CRAZY_NAME": {
+    "en": "Crazy Weather",
+    "zh": "疯狂天气"
+  },
+  "WEATHER_CRAZY_DESC": {
+    "en": "The weather around here is crazy! It's different every battle!",
+    "zh": "这儿的天气太疯狂了！每场战斗都不一样！"
+  },
+  "WEATHER_BOUNTY_NAME": {
+    "en": "Bounty Hunting",
+    "zh": "赏金狩猎"
+  },
+  "WEATHER_BOUNTY_DESC": {
+    "en": "A random unit in each battle has a bounty. A Bounty Hunter is here to collect.",
+    "zh": "每场战斗中随机一名单位拥有赏金。一名赏金猎人正赶来领取。"
+  },
+  "WEATHER_MINESWEEPER_NAME": {
+    "en": "Minesweeper",
+    "zh": "扫雷"
+  },
+  "WEATHER_MINESWEEPER_DESC": {
+    "en": "There are extra land mines in every battle.",
+    "zh": "每场战斗中都会有额外的地雷。"
+  },
+  "WEATHER_ALIENS_NAME": {
+    "en": "Alien Invasion",
+    "zh": "外星人入侵"
+  },
+  "WEATHER_ALIENS_DESC": {
+    "en": "2-4 aliens spawn in each battle. Aliens are invading!",
+    "zh": "每场战斗生成 2-4 个外星人。外星人正在入侵！"
+  },
+  "WEATHER_BIRDEMIC_NAME": {
+    "en": "Birdemic",
+    "zh": "鸟患"
+  },
+  "WEATHER_BIRDEMIC_DESC": {
+    "en": "2-4 birds spawn in each battle. All birds are stronger, and angry!",
+    "zh": "每场战斗生成 2-4 只鸟。所有的鸟都更强壮，而且很愤怒！"
+  },
+  "WEATHER_SOLARFLARE_NAME": {
+    "en": "Solar Flare",
+    "zh": "太阳耀斑"
+  },
+  "WEATHER_SOLARFLARE_DESC": {
+    "en": "A solar flare strikes a large area at the end of each round, Burning and inflicting Blind.",
+    "zh": "每回合结束时，太阳耀斑会袭击大片区域，造成燃烧并施加致盲。"
+  },
+  "WEATHER_GEOMAGSTORM_NAME": {
+    "en": "Geomagnetic Storm",
+    "zh": "地磁风暴"
+  },
+  "WEATHER_GEOMAGSTORM_DESC": {
+    "en": "All rocks levitate at the end of the round. Extra rocks spawn in each battle.",
+    "zh": "回合结束时所有岩石都会漂浮。每场战斗中生成额外的岩石。"
+  },
+  "WEATHER_SHIMMER_NAME": {
+    "en": "The Shimmer",
+    "zh": "微光"
+  },
+  "WEATHER_SHIMMER_DESC": {
+    "en": "All units gain a random status effect at the start of each round. Cats gain a random mutation at the end of each battle.",
+    "zh": "每回合开始时，所有单位获得一个随机状态效果。每场战斗结束时，猫咪获得一个随机突变。"
+  },
+  "WEATHER_STRANGEEGGS_NAME": {
+    "en": "Strange Eggs",
+    "zh": "奇怪的蛋"
+  },
+  "WEATHER_STRANGEEGGS_DESC": {
+    "en": "3-6 strange eggs spawn in each battle. Kill them before they hatch!",
+    "zh": "每场战斗生成 3-6 个奇怪的蛋。在它们孵化前杀掉它们！"
+  },
+  "WEATHER_ALIENOVERGROWTH_NAME": {
+    "en": "Alien Overgrowth",
+    "zh": "外星蔓延"
+  },
+  "WEATHER_ALIENOVERGROWTH_DESC": {
+    "en": "A few bramble patches spawn in each battle, but something is strange about them...",
+    "zh": "每场战斗会生成几片荆棘丛，但它们有些古怪……"
   }
 }

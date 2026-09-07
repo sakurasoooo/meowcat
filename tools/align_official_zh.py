@@ -1,4 +1,5 @@
-"""将 wiki_data CSV 的中文字段与游戏官方中文补丁 (data/text/combined.csv) 对齐。
+"""将 wiki_data CSV 的中文字段与 mewcodex beta 中文补丁 (combined.csv) 对齐。
+来源：https://github.com/mewcodex/Mewgenics-Chinese-Translation （尚未合入主游戏）
 
 映射规则（已验证）:
   items.csv      ITEM_<CODE大写>_NAME / _DESC
@@ -16,14 +17,19 @@ from collections import defaultdict
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OFFICIAL = r'C:\Program Files (x86)\Steam\steamapps\common\Mewgenics\data\text\combined.csv'
-if not os.path.exists(OFFICIAL):
-    OFFICIAL = os.path.join(ROOT, 'game_assets', 'data', 'text', 'combined.csv')
+_CANDIDATES = [
+    os.environ.get('MEW_ZH_CSV') or '',
+    os.path.join(ROOT, 'tools', '_zh_mewcodex', 'Mewgenics_CN_patch', 'data', 'text', 'combined.csv'),
+    os.path.join(ROOT, 'game_assets', 'data', 'text', 'combined.csv'),
+]
+OFFICIAL = next((p for p in _CANDIDATES if p and os.path.exists(p)), '')
+if not OFFICIAL:
+    raise SystemExit('找不到 mewcodex combined.csv，请设置 MEW_ZH_CSV')
 
-# ---------- 载入官方文本 ----------
+# ---------- 载入社区补丁文本 ----------
 rows = list(csv.reader(open(OFFICIAL, encoding='utf-8-sig', newline='')))
 header = [h.strip().lower() for h in rows[0]]
-zh_i = header.index('zh')
+zh_i = next(header.index(c) for c in ('zh', 'zh-cn', 'schinese') if c in header)
 en_i = header.index('en')
 key2zh, key2en = {}, {}
 en2zh = defaultdict(list)   # 英文 -> [(zh, key)]
@@ -35,7 +41,7 @@ for r in rows[1:]:
     if r[en_i].strip() and r[zh_i].strip():
         en2zh[r[en_i].strip().lower()].append((r[zh_i].strip(), r[0]))
 en2zh_uniq = {k: v[0][0] for k, v in en2zh.items() if len(v) == 1}
-print(f'官方文本: {len(key2zh)} keys, 唯一英文匹配 {len(en2zh_uniq)} 条')
+print(f'mewcodex 补丁: {len(key2zh)} keys, 唯一英文匹配 {len(en2zh_uniq)} 条  ({OFFICIAL})')
 
 stats = {}
 

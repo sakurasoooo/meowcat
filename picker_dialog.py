@@ -167,8 +167,8 @@ def load_class_icon(cls_name, size=(20, 20)):
 
 
 MAJOR_CHECKMARK_ZONES = [
-    'caves', 'boneyard', 'moon', 'core', 'jurassic',
-    'theend', 'meatworld', 'dimensionx', 'endoftime'
+    'caves', 'boneyard', 'meatworld', 'moon', 'core',
+    'dimensionx', 'jurassic', 'theend', 'endoftime'
 ]
 
 def get_class_cleared_count(class_progress, cls):
@@ -178,7 +178,7 @@ def get_class_cleared_count(class_progress, cls):
     cleared = 0
     for zone in MAJOR_CHECKMARK_ZONES:
         r = class_progress.get((cls, zone))
-        if r is not None and r[0] == -1:
+        if r is not None:
             cleared += 1
     return cleared
 

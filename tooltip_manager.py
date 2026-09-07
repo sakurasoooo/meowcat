@@ -137,11 +137,16 @@ class GameTooltip:
         f_titles.pack(side="left", fill="x", expand=True)
 
         cn_name = self.item_data.get('name') or self.item_data.get('key', '未知技能')
-        en_name = self.item_data.get('key', '')
-        
+        en_name = (self.item_data.get('name_en') or '').strip()
+        code = self.item_data.get('key', '')
+        if en_name and code and en_name != code:
+            en_line = f"{en_name}  ·  {code}"
+        else:
+            en_line = en_name or code
+
         ctk.CTkLabel(f_titles, text=cn_name, font=("Arial", 14, "bold"), text_color="#fbbf24", anchor="w").pack(anchor="w")
-        if en_name and en_name != cn_name:
-            ctk.CTkLabel(f_titles, text=en_name, font=("Arial", 10), text_color="#94a3b8", anchor="w").pack(anchor="w")
+        if en_line and en_line != cn_name:
+            ctk.CTkLabel(f_titles, text=en_line, font=("Arial", 10), text_color="#94a3b8", anchor="w").pack(anchor="w")
 
         # Class badge
         cls_name = self.item_data.get('class', '')
@@ -219,19 +224,34 @@ class GameTooltip:
 
         # 3. Description Body
         raw_desc = (self.item_data.get('desc') or '').strip()
+        raw_en = (self.item_data.get('desc_en') or '').strip()
         desc = format_rich_description(raw_desc)
-        if desc:
+        desc_en = format_rich_description(raw_en)
+        if desc_en and desc_en == desc:
+            desc_en = ""
+        if desc or desc_en:
             f_desc = ctk.CTkFrame(outer, fg_color="transparent")
             f_desc.pack(fill="x", padx=12, pady=(4, 8))
-            ctk.CTkLabel(
-                f_desc,
-                text=desc,
-                font=("Arial", 11),
-                text_color="#e2e8f0",
-                wraplength=320,
-                justify="left",
-                anchor="w"
-            ).pack(anchor="w")
+            if desc:
+                ctk.CTkLabel(
+                    f_desc,
+                    text=desc,
+                    font=("Arial", 11),
+                    text_color="#e2e8f0",
+                    wraplength=320,
+                    justify="left",
+                    anchor="w"
+                ).pack(anchor="w")
+            if desc_en:
+                ctk.CTkLabel(
+                    f_desc,
+                    text=desc_en,
+                    font=("Arial", 10),
+                    text_color="#94a3b8",
+                    wraplength=320,
+                    justify="left",
+                    anchor="w"
+                ).pack(anchor="w", pady=(6, 0))
 
         # 4. Variant / Tier 2 info
         var_of = self.item_data.get('variant_of', '')
