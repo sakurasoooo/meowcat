@@ -11,7 +11,7 @@ import class_theme
 import attribute_renderer as ar
 from mewgenics_core import (
     GAME_CODE_ALIAS, get_canonical_passive_code, dedupe_catalog_items,
-    BASIC_ATTACK_ABILITIES, BASIC_MOVE_ABILITIES,
+    BASIC_ATTACK_ABILITIES, BASIC_MOVE_ABILITIES, get_game_data_cache,
 )
 
 _BASIC_ACTION_KEYS = set(BASIC_ATTACK_ABILITIES) | set(BASIC_MOVE_ABILITIES)
@@ -210,6 +210,106 @@ def runtime_base_dir():
     return os.path.dirname(os.path.abspath(__file__))
 
 
+_PASSIVE_CLASS_BY_KEY = None
+_PASSIVE_GON_CLASS = {
+    'colorless_passives.gon': 'Colorless',
+    'fighter_passives.gon': 'Fighter',
+    'mage_passives.gon': 'Mage',
+    'hunter_passives.gon': 'Hunter',
+    'tank_passives.gon': 'Tank',
+    'medic_passives.gon': 'Medic',
+    'thief_passives.gon': 'Thief',
+    'necromancer_passives.gon': 'Necromancer',
+    'butcher_passives.gon': 'Butcher',
+    'druid_passives.gon': 'Druid',
+    'monk_passives.gon': 'Monk',
+    'psychic_passives.gon': 'Psychic',
+    'tinkerer_passives.gon': 'Tinkerer',
+    'jester_passives.gon': 'Jester',
+    'disorders.gon': 'Disorder',
+}
+
+
+def _class_from_passive_gon(src, pools, declared):
+    """用游戏 data2/passives/*.gon（SWF 解包同源）判断职业。"""
+    valid = set(class_theme.CLASS_PALETTE)
+    fn = (src or '').replace('\\', '/').split('/')[-1].lower()
+    if fn in _PASSIVE_GON_CLASS:
+        return _PASSIVE_GON_CLASS[fn]
+    for cls in valid:
+        if fn.startswith(cls.lower() + '_'):
+            return cls
+    if declared == 'Disorder' or declared in valid:
+        return declared
+    for p in pools or []:
+        head = str(p).split('.')[0]
+        if head in valid or head == 'Disorder':
+            return head
+    return None
+
+
+def _passive_class_lookup():
+    """passive_code -> 职业。来源：passives_combined（data2/passives/*.gon + SWF 帧表），再补 class_passives。"""
+    global _PASSIVE_CLASS_BY_KEY
+    if _PASSIVE_CLASS_BY_KEY is not None:
+        return _PASSIVE_CLASS_BY_KEY
+    out = {}
+    valid = set(class_theme.CLASS_PALETTE)
+    comb_p = os.path.join(runtime_base_dir(), 'wiki_data', 'passives_combined.json')
+    if os.path.exists(comb_p):
+        try:
+            with open(comb_p, encoding='utf-8') as f:
+                data = json.load(f)
+            for row in data.get('passives') or []:
+                code = (row.get('passive_code') or row.get('passive_name') or '').strip()
+                if not code:
+                    continue
+                k = get_canonical_passive_code(code)
+                cls = _class_from_passive_gon(
+                    row.get('source_file'),
+                    row.get('passive_pools'),
+                    (row.get('passive_class') or '').strip(),
+                )
+                if cls:
+                    out[k] = cls
+                    if code != k:
+                        out[code] = cls
+        except Exception:
+            pass
+    try:
+        for cls, lst in (get_game_data_cache().get('class_passives') or {}).items():
+            if cls not in valid:
+                continue
+            for p in lst or []:
+                k = get_canonical_passive_code(p.get('key') or '')
+                if k and k != 'None' and k not in out:
+                    out[k] = cls
+    except Exception:
+        pass
+    _PASSIVE_CLASS_BY_KEY = out
+    return out
+
+
+def _attach_passive_classes(items):
+    """给被动目录补 class，并去掉疾病（疾病走独立选择器）。"""
+    lookup = _passive_class_lookup()
+    valid = set(class_theme.CLASS_PALETTE)
+    out = []
+    for it in items:
+        k = it.get('key') or ''
+        if str(k).startswith('STARTER_PLACEHOLDER'):
+            continue
+        mapped = lookup.get(k) or lookup.get(get_canonical_passive_code(k))
+        cls = mapped or it.get('class')
+        if cls == 'Disorder':
+            continue
+        if cls not in valid:
+            cls = 'Colorless'
+        it['class'] = cls
+        out.append(it)
+    return out
+
+
 def get_shared_catalog(catalog_type):
     """Process-wide catalog list. Callers must not mutate the returned list."""
     assets_dir = os.path.join(runtime_base_dir(), 'assets')
@@ -225,7 +325,9 @@ def get_shared_catalog(catalog_type):
             with open(cat_path, 'r', encoding='utf-8') as f:
                 items = json.load(f)
             if catalog_type == 'passive':
-                items = dedupe_catalog_items(items, canonicalize=get_canonical_passive_code)
+                items = _attach_passive_classes(
+                    dedupe_catalog_items(items, canonicalize=get_canonical_passive_code)
+                )
             else:
                 items = dedupe_catalog_items(items)
         except Exception as e:
@@ -729,6 +831,7 @@ class UniversalGridPickerDialog(ctk.CTkToplevel):
         self.entry_search = ctk.CTkEntry(f_search_row, width=280, placeholder_text="输入中文名称、英文代码或属性效果...")
         self.entry_search.pack(side="left", padx=4)
         self.entry_search.bind("<KeyRelease>", self.on_search_changed)
+        self.entry_search.bind("<Return>", lambda e: self.apply_filter())
 
         btn_clear_search = ctk.CTkButton(f_search_row, text="✕", width=28, height=28, fg_color="#334155", hover_color="#475569", command=self.clear_search)
         btn_clear_search.pack(side="left", padx=(2, 10))
@@ -1060,6 +1163,16 @@ class UniversalGridPickerDialog(ctk.CTkToplevel):
         self.apply_filter()
 
     def on_search_changed(self, event=None):
+        job = getattr(self, '_search_job', None)
+        if job:
+            try:
+                self.after_cancel(job)
+            except Exception:
+                pass
+        self._search_job = self.after(200, self._apply_filter_debounced)
+
+    def _apply_filter_debounced(self):
+        self._search_job = None
         self.apply_filter()
 
     def clear_search(self):
@@ -1088,6 +1201,9 @@ class UniversalGridPickerDialog(ctk.CTkToplevel):
                             continue
                 elif self.catalog_type == 'furniture':
                     if item.get('set') != self.current_category:
+                        continue
+                elif self.catalog_type in ('ability', 'passive'):
+                    if (item.get('class') or 'Colorless') != self.current_category:
                         continue
                 elif item.get('class') != self.current_category:
                     continue
@@ -1119,6 +1235,20 @@ class UniversalGridPickerDialog(ctk.CTkToplevel):
         self.filtered_catalog = res
         self.current_page = 1
         self.render_grid()
+
+    def _card_chrome(self, item):
+        """格子底色/描边：物品看稀有度，法术和被动看职业色。"""
+        border_col = "#1e293b"
+        bg_col = "#131d2e"
+        if self.catalog_type == "item":
+            r = (item.get('rarity') or '').lower()
+            border_col = RARITY_COLORS.get(r, '#1e293b')
+            bg_col = RARITY_BG.get(r, '#131d2e')
+        elif self.catalog_type == "furniture":
+            border_col = "#334155"
+        elif self.catalog_type in ("ability", "passive"):
+            border_col = class_theme.ui_color(item.get('class'))
+        return bg_col, border_col
 
     def locate_current_value(self):
         if self.current_value and self.current_value != 'None':
@@ -1174,18 +1304,7 @@ class UniversalGridPickerDialog(ctk.CTkToplevel):
                     self._set_elem_icons(slot['elems'], None)
                 self._set_stat_icons(slot['stats'], ar.extract_core_stat_keys(item))
 
-                # Border color
-                border_col = "#1e293b"
-                bg_col = "#131d2e"
-                if self.catalog_type == "item":
-                    r = item.get('rarity', '').lower()
-                    border_col = RARITY_COLORS.get(r, '#1e293b')
-                    bg_col = RARITY_BG.get(r, '#131d2e')  # 稀有度颜色背景
-                elif self.catalog_type == "furniture":
-                    border_col = "#334155"
-                elif self.catalog_type == "ability":
-                    # 技能卡按所属职业主题色描边
-                    border_col = class_theme.ui_color(item.get('class'))
+                bg_col, border_col = self._card_chrome(item)
 
                 # Highlight selected
                 if k == self.selected_value:
@@ -1234,16 +1353,7 @@ class UniversalGridPickerDialog(ctk.CTkToplevel):
                 if item['key'] == key:
                     card.configure(fg_color="#143026", border_color="#10b981", border_width=2)
                 else:
-                    border_col = "#1e293b"
-                    bg_col = "#131d2e"
-                    if self.catalog_type == "item":
-                        r = item.get('rarity', '').lower()
-                        border_col = RARITY_COLORS.get(r, '#1e293b')
-                        bg_col = RARITY_BG.get(r, '#131d2e')
-                    elif self.catalog_type == "furniture":
-                        border_col = "#334155"
-                    elif self.catalog_type == "ability":
-                        border_col = class_theme.ui_color(item.get('class'))
+                    bg_col, border_col = self._card_chrome(item)
                     card.configure(fg_color=bg_col, border_color=border_col, border_width=1)
 
     def update_selected_preview(self, key):

@@ -84,8 +84,11 @@ def load_official_text_map():
                     result[k] = ('', v)
         except Exception:
             continue
-    _OFFICIAL_TEXT_CACHE = result
-    return result
+    _OFFICIAL_TEXT_CACHE = {
+        k: (en, format_mutation_markup(zh) if zh else zh)
+        for k, (en, zh) in result.items()
+    }
+    return _OFFICIAL_TEXT_CACHE
 
 
 def official_zh(key, fallback=''):
@@ -99,11 +102,34 @@ def mutation_slot_label(slot_key, fallback=''):
     return official_zh(MUTATION_SLOT_NAME_KEY.get(slot_key, ''), fallback or slot_key)
 
 
+_IMG_TAG_ZH = {
+    'shield': '护盾', 'divineshield': '神圣护盾', 'brace': '招架',
+    'str': '力量', 'dex': '敏捷', 'con': '体质', 'int': '智力',
+    'spd': '速度', 'cha': '魅力', 'lck': '幸运',
+    'health': '生命', 'mana': '魔能', 'sword': '伤害',
+    'comfort': '舒适度', 'stimulation': '刺激度', 'appeal': '吸引力',
+    'evolution': '变异促进',
+}
+_IMG_TAG_RE = re.compile(r'\[img:([a-z0-9]+)\]', re.IGNORECASE)
+
+
+def format_mutation_markup(text):
+    """把补丁里的 [img:int] 等标签换成中文，去掉尺寸标记。"""
+    if not text:
+        return ''
+    out = str(text).replace('\r\n', '\n')
+    out = _IMG_TAG_RE.sub(lambda m: _IMG_TAG_ZH.get(m.group(1).lower(), m.group(1)), out)
+    out = re.sub(r'\[img:[^\]]{0,32}\]?', '', out)
+    out = re.sub(r'\[s:[^\]]*\]', '', out)
+    out = out.replace('[/s]', '')
+    return out.strip()
+
+
 def format_mutation_display(entry):
     mid = entry.get('id')
-    name = (entry.get('name') or '').strip()
+    name = format_mutation_markup(entry.get('name') or '')
     stat = (entry.get('stat_str') or '').strip()
-    desc = (entry.get('desc') or '').replace('\r\n', '\n').replace('\n', ' ').strip()
+    desc = format_mutation_markup(entry.get('desc') or '').replace('\n', ' ')
     if desc:
         short = desc if len(desc) <= 40 else desc[:38] + '…'
         if stat and stat not in short:
@@ -132,11 +158,9 @@ def localize_mutations_detailed(game_data, official=None):
             mid = e.get('id')
             pair = official.get(f'MUTATION_{part}_{mid}_DESC') if mid is not None else None
             if pair and pair[1]:
-                zh = pair[1].replace('\r\n', '\n').strip()
-                e['desc'] = zh
-                one = zh.replace('\n', ' ')
-                if len(one) <= 32:
-                    e['name'] = one.rstrip('。.')
+                e['desc'] = pair[1].replace('\r\n', '\n').strip()
+            if e.get('desc'):
+                e['desc'] = format_mutation_markup(e['desc'])
             e['display'] = format_mutation_display(e)
     game_data['_mutations_official_zh'] = True
     return game_data
@@ -179,6 +203,53 @@ def get_base_ability(code):
     if code.endswith('2'):
         return code[:-1]
     return code
+
+
+_PASSIVE_UPGRADE_TABLE = None
+
+
+def _load_passive_upgrade_table():
+    """passive_code -> {has_upgrade, desc, desc_up} from wiki passives.csv."""
+    global _PASSIVE_UPGRADE_TABLE
+    if _PASSIVE_UPGRADE_TABLE is not None:
+        return _PASSIVE_UPGRADE_TABLE
+    table = {}
+    base_dir = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+    for base in [base_dir, os.getcwd()]:
+        csv_p = os.path.join(base, 'wiki_data', 'csv', 'passives.csv')
+        if not os.path.exists(csv_p):
+            continue
+        try:
+            with open(csv_p, encoding='utf-8-sig') as f:
+                for row in csv.DictReader(f):
+                    code = (row.get('passive_code') or '').strip()
+                    if not code:
+                        continue
+                    flag = str(row.get('has_upgrade') or '').strip().lower()
+                    table[code] = {
+                        'has_upgrade': flag in ('1', 'true', 'yes'),
+                        'desc': (row.get('desc_zh') or row.get('desc_en') or '').strip(),
+                        'desc_up': (row.get('desc_upgraded_zh') or row.get('desc_upgraded_en') or '').strip(),
+                    }
+            break
+        except Exception:
+            continue
+    _PASSIVE_UPGRADE_TABLE = table
+    return table
+
+
+def passive_has_upgrade(code):
+    if not code or code == 'None':
+        return False
+    info = _load_passive_upgrade_table().get(get_canonical_passive_code(code))
+    return bool(info and info.get('has_upgrade'))
+
+
+def get_passive_upgrade_desc(code):
+    if not code or code == 'None':
+        return ''
+    info = _load_passive_upgrade_table().get(get_canonical_passive_code(code)) or {}
+    return info.get('desc_up') or ''
 
 # 15 个物理部位槽：10 个部位类型，其中 眉/耳/腿/臂/眼 5 个成对部位各占左(off1)、右(off2)两个独立槽位。
 # 槽内为部件 id：<300 = 正常外观部件；>=300 = 变异部件；-2 = 部位完全缺失(出生缺陷)。
@@ -566,45 +637,46 @@ class CatRecord:
             end = strings[i][0] + 8 + strings[i][1]
             self.str_gaps.append(bytes(raw[end:strings[i + 1][0]]))
 
-        self.boon = str_vals[0] if len(str_vals) > 0 else 'none'
-        self.move_ability = str_vals[1] if len(str_vals) > 1 else 'DefaultMove'
-        self.attack_ability = str_vals[2] if len(str_vals) > 2 else 'BasicMelee'
-        
-        # Active abilities (up to 4)
-        self.active_abilities = []
-        for i in range(3, min(7, len(str_vals))):
-            self.active_abilities.append(str_vals[i])
-        while len(self.active_abilities) < 4:
-            self.active_abilities.append('None')
-            
-        # Active ability upgrades / enchantments (up to 4)
-        self.ability_upgrades = []
-        for i in range(7, min(11, len(str_vals))):
-            self.ability_upgrades.append(str_vals[i])
-        while len(self.ability_upgrades) < 4:
-            self.ability_upgrades.append('None')
+        # Slot indices are relative to the first known move ability, not raw
+        # scan order. Combat leftovers such as "Burn 5" can sit between boon
+        # and DefaultMove and would otherwise shift every later field by +1.
+        move_set = set(BASIC_MOVE_ABILITIES)
+        move_idx = 1
+        for i in range(1, len(str_vals)):
+            if str_vals[i] in move_set:
+                move_idx = i
+                break
+        self.post_boon_strings = list(str_vals[1:move_idx]) if move_idx > 1 else []
+
+        def _slot(offset, default='None'):
+            i = move_idx + offset
+            return str_vals[i] if i < len(str_vals) else default
+
+        def _gap_i32(str_index, default=1):
+            if 0 <= str_index < len(self.str_gaps) and len(self.str_gaps[str_index]) >= 4:
+                return struct.unpack_from('<i', self.str_gaps[str_index], 0)[0]
+            return default
+
+        self.boon = str_vals[0] if str_vals else 'none'
+        self.move_ability = _slot(0, 'DefaultMove')
+        self.attack_ability = _slot(1, 'BasicMelee')
+
+        self.active_abilities = [_slot(2 + i) for i in range(4)]
+        self.ability_upgrades = [_slot(6 + i) for i in range(4)]
         self.innate_abilities = self.ability_upgrades
 
-        # 2 Class Passives (职业专属正面被动)
-        self.class_passives = []
-        for i in range(11, min(13, len(str_vals))):
-            self.class_passives.append(str_vals[i])
-        while len(self.class_passives) < 2:
-            self.class_passives.append('None')
-
-        # 2 Disorder Passives (疾病/心理缺陷负面被动)
-        self.disorders = []
-        for i in range(13, min(15, len(str_vals))):
-            self.disorders.append(str_vals[i])
-        while len(self.disorders) < 2:
-            self.disorders.append('None')
+        self.class_passives = [_slot(10), _slot(11)]
+        self.disorders = [_slot(12), _slot(13)]
+        self.class_passive_ranks = [_gap_i32(move_idx + 10), _gap_i32(move_idx + 11)]
+        self.disorder_ranks = [_gap_i32(move_idx + 12), _gap_i32(move_idx + 13)]
 
         # Legacy passives list (8 items) for full backward compatibility
         self.passives = self.ability_upgrades + self.class_passives + self.disorders
-            
+
         # Class is the last scanned string. Anything between disorder #2 and class
         # is equipped items (hats / bottles / parasites) and must be preserved.
-        self.extra_strings = list(str_vals[15:-1]) if len(str_vals) > 16 else []
+        extras_from = move_idx + 14
+        self.extra_strings = list(str_vals[extras_from:-1]) if len(str_vals) > extras_from else []
         self.cat_class = str_vals[-1] if str_vals else 'Colorless'
         
         # Save fixed byte segments between strings
@@ -731,7 +803,33 @@ class CatRecord:
                     struct.pack_into('<i', self.parts_chunk, off2, mutation_id)
                     self.right_mutations[slot_key] = mutation_id
                 break
+        self._sync_parts_into_pre_voice()
+        self.is_modified = True
+
+    def _sync_parts_into_pre_voice(self):
         self.pre_voice_body[self.p_parts : self.p_parts + len(self.parts_chunk)] = self.parts_chunk
+
+    def set_title(self, title):
+        """家园列表上的自定义标记（FontIcon_* 名，空字符串 = 无标记）。"""
+        raw = (title or '').strip()
+        if raw.lower() in ('none', '无', '无标记'):
+            raw = ''
+        if not raw:
+            enc = b''
+        else:
+            try:
+                enc = raw.encode('ascii')
+            except UnicodeEncodeError:
+                enc = raw.encode('ascii', errors='ignore')
+            raw = enc.decode('ascii')
+        if raw == (self.title or '') and len(enc) == int(self.title_len or 0):
+            return
+        self._sync_parts_into_pre_voice()
+        gender = struct.pack('<I', int(self.gender or 0))
+        self.title = raw
+        self.title_len = len(enc)
+        self.p_parts = 8 + len(enc) + 4
+        self.pre_voice_body = bytearray(struct.pack('<Q', len(enc)) + enc + gender + bytes(self.parts_chunk))
         self.is_modified = True
 
     def set_right_mutation(self, slot_key, mutation_id):
@@ -762,7 +860,7 @@ class CatRecord:
             self.set_mutation(sk, norm_id, sync_right=True)
 
     def apply_god_mutations(self):
-        """每个部位从正面突变池随机抽取一项（净属性>0、非缺陷、id>=300），左右对称写入。"""
+        """每个部位从正面+特效池随机抽取一项（净属性≥0、非缺陷、id≥300），左右对称写入。"""
         gd = get_game_data_cache()
         mut_detailed = gd.get('mutations_detailed', {})
         defect_ids = self.get_birth_defect_ids()
@@ -772,7 +870,7 @@ class CatRecord:
                 mid = entry.get('id')
                 if mid is None or mid < 300 or mid in defect_ids:
                     continue
-                if sum((entry.get('stats') or {}).values()) > 0:
+                if sum((entry.get('stats') or {}).values()) >= 0:
                     pool.append(mid)
             if pool:
                 self.set_mutation(slot_key, random.choice(pool), sync_right=True)
@@ -930,6 +1028,11 @@ class CatRecord:
                 self.class_passives = ['None', 'None']
         self.sync_legacy_passives()
         self.is_modified = True
+        for i, key in enumerate(self.class_passives[:2]):
+            if key and key != 'None' and passive_has_upgrade(key):
+                self.set_class_passive_rank(i, 2)
+            else:
+                self.set_class_passive_rank(i, 1)
 
     def sync_legacy_passives(self):
         while len(self.ability_upgrades) < 4:
@@ -997,8 +1100,37 @@ class CatRecord:
         self.sync_legacy_passives()
         self.is_modified = True
 
+    def _skill_base_index(self):
+        """Index of move ability in the written string list (boon=0, optional post-boon blobs, then move)."""
+        return 1 + len(getattr(self, 'post_boon_strings', None) or [])
+
+    def _write_rank_gap(self, str_index, rank):
+        rank = 2 if int(rank) >= 2 else 1
+        gaps = list(getattr(self, 'str_gaps', None) or [])
+        while len(gaps) <= str_index:
+            gaps.append(self._fallback_gap_after(len(gaps)))
+        g = bytearray(gaps[str_index] or b'')
+        if len(g) < 4:
+            g.extend(b'\x00' * (4 - len(g)))
+        struct.pack_into('<i', g, 0, rank)
+        gaps[str_index] = bytes(g)
+        self.str_gaps = gaps
+
+    def set_class_passive_rank(self, slot, rank):
+        rank = 2 if int(rank) >= 2 else 1
+        ranks = list(getattr(self, 'class_passive_ranks', None) or [1, 1])
+        while len(ranks) < 2:
+            ranks.append(1)
+        key = (self.class_passives[slot] if slot < len(self.class_passives) else 'None') or 'None'
+        if key == 'None' or not passive_has_upgrade(key):
+            rank = 1
+        ranks[slot] = rank
+        self.class_passive_ranks = ranks
+        self._write_rank_gap(self._skill_base_index() + 10 + slot, rank)
+        self.is_modified = True
+
     def _skill_string_list(self):
-        """boon / move / attack / 4 actives / 4 upgrades / 2 class passives / 2 disorders / items / class."""
+        """boon / [post-boon extras] / move / attack / 4 actives / 4 upgrades / 2 class passives / 2 disorders / items / class."""
         act = list(self.active_abilities[:4])
         upg = list(self.ability_upgrades[:4])
         pas = list(self.class_passives[:2])
@@ -1012,20 +1144,22 @@ class CatRecord:
         while len(dis) < 2:
             dis.append('None')
         extras = list(getattr(self, 'extra_strings', None) or [])
+        prefix = list(getattr(self, 'post_boon_strings', None) or [])
         return [
             self.boon or 'none',
+            *prefix,
             self.move_ability or 'DefaultMove',
             self.attack_ability or 'BasicMelee',
             *act, *upg, *pas, *dis, *extras,
             self.cat_class or 'Colorless',
         ]
 
-    @staticmethod
-    def _fallback_gap_after(index):
+    def _fallback_gap_after(self, index):
         """Only used if parse did not capture original interstitial bytes."""
-        if index in (11, 12, 13):
+        base = self._skill_base_index()
+        if index in (base + 10, base + 11, base + 12):
             return struct.pack('<i', 1)
-        if index == 14:
+        if index == base + 13:
             return struct.pack('<i', 1) + b'\x05\x00\x00\x00\x00' * 5
         return b''
 
@@ -1038,6 +1172,7 @@ class CatRecord:
         buf.extend(struct.pack('<Q', len(self.name)))
         buf.extend(name_enc)
 
+        self._sync_parts_into_pre_voice()
         buf.extend(self.pre_voice_body)
 
         voice_enc = self.voice.encode('ascii')
@@ -1153,6 +1288,166 @@ class InventoryItem:
         return bytes(buf)
 
 
+# 道具 extra 串绑定的随机效果：大陨石/祖先套 = 被动，小陨石/发光骨头 = 主动。
+ITEM_AUX_KIND = {
+    'LargeMeteor': 'passive',
+    'AncestorsSkull': 'passive',
+    'AncestorsJaw': 'passive',
+    'AncestorsBones': 'passive',
+    'LearnPassive': 'passive',
+    'LearnDisorder': 'disorder',
+    'SmallMeteor': 'ability',
+    'GlowingBone': 'ability',
+    'LearnAbility': 'ability',
+}
+
+_AUX_EFFECT_CACHE = None
+_COLORLESS_PASSIVE_POOL = None
+_COLORLESS_ABILITY_POOL = None
+
+
+def item_aux_kind(code):
+    return ITEM_AUX_KIND.get(code or '')
+
+
+def _json_blob(rel):
+    base_dir = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+    for base in [base_dir, os.getcwd()]:
+        p = os.path.join(base, *rel)
+        if os.path.exists(p):
+            try:
+                with open(p, encoding='utf-8') as f:
+                    return json.load(f)
+            except Exception:
+                return None
+    return None
+
+
+def colorless_passive_pool():
+    """大陨石游戏内随机池：Colorless.passive_pool（含灵魂被动 / 无限制等）。"""
+    global _COLORLESS_PASSIVE_POOL
+    if _COLORLESS_PASSIVE_POOL is not None:
+        return _COLORLESS_PASSIVE_POOL
+    codes = []
+    data = _json_blob(('wiki_data', 'passives_combined.json')) or {}
+    for row in data.get('passives') or []:
+        pools = row.get('passive_pools') or []
+        if 'Colorless.passive_pool' in pools:
+            code = (row.get('passive_code') or '').strip()
+            if code:
+                codes.append(code)
+    _COLORLESS_PASSIVE_POOL = codes
+    return codes
+
+
+def colorless_ability_pool():
+    """小陨石同类池：Colorless.ability_pool。"""
+    global _COLORLESS_ABILITY_POOL
+    if _COLORLESS_ABILITY_POOL is not None:
+        return _COLORLESS_ABILITY_POOL
+    codes = []
+    data = _json_blob(('wiki_data', 'abilities_combined.json')) or {}
+    for row in data.get('abilities') or []:
+        pools = row.get('ability_pools') or []
+        if 'Colorless.ability_pool' in pools:
+            code = (row.get('ability_code') or '').strip()
+            if code:
+                codes.append(code)
+    _COLORLESS_ABILITY_POOL = codes
+    return codes
+
+
+def item_aux_reroll_pool(item_code):
+    kind = item_aux_kind(item_code)
+    if item_code == 'LargeMeteor':
+        return list(colorless_passive_pool())
+    if item_code == 'SmallMeteor':
+        return list(colorless_ability_pool())
+    if kind == 'passive':
+        return list(colorless_passive_pool())
+    if kind == 'ability':
+        return list(colorless_ability_pool())
+    return []
+
+
+def _load_aux_effect_table():
+    global _AUX_EFFECT_CACHE
+    if _AUX_EFFECT_CACHE is not None:
+        return _AUX_EFFECT_CACHE
+    table = {'passive': {}, 'ability': {}, 'disorder': {}}
+    base_dir = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+    csv_specs = (
+        ('passive', 'passives.csv', 'passive_code', 'name_zh', 'name_en', 'desc_zh', 'desc_en'),
+        ('ability', 'abilities.csv', 'ability_code', 'name_zh', 'name_en', 'desc_zh', 'desc_en'),
+        ('disorder', 'passives.csv', 'passive_code', 'name_zh', 'name_en', 'desc_zh', 'desc_en'),
+    )
+    for kind, fn, key_col, nz, ne, dz, de in csv_specs:
+        for base in [base_dir, os.getcwd()]:
+            p = os.path.join(base, 'wiki_data', 'csv', fn)
+            if not os.path.exists(p):
+                continue
+            try:
+                with open(p, encoding='utf-8-sig') as f:
+                    for row in csv.DictReader(f):
+                        code = (row.get(key_col) or '').strip()
+                        if not code:
+                            continue
+                        if kind == 'disorder' and (row.get('passive_class') or '') != 'Disorder':
+                            continue
+                        table[kind][code] = {
+                            'name': (row.get(nz) or row.get(ne) or code).strip(),
+                            'desc': (row.get(dz) or row.get(de) or '').strip(),
+                            'stats': None,
+                        }
+                break
+            except Exception:
+                continue
+    pdata = _json_blob(('wiki_data', 'passives_combined.json')) or {}
+    for row in pdata.get('passives') or []:
+        code = (row.get('passive_code') or '').strip()
+        if not code:
+            continue
+        stats = row.get('stats_level1') or row.get('stats_base')
+        slot = table['passive'].setdefault(code, {'name': code, 'desc': '', 'stats': None})
+        if stats:
+            slot['stats'] = dict(stats)
+        texts = row.get('passive_name_texts') or {}
+        if texts.get('zh') and slot['name'] == code:
+            slot['name'] = texts['zh']
+        dtexts = row.get('description_texts') or {}
+        if dtexts.get('zh') and not slot['desc']:
+            slot['desc'] = dtexts['zh']
+        if (row.get('passive_class') or '') == 'Disorder':
+            table['disorder'][code] = dict(slot)
+    _AUX_EFFECT_CACHE = table
+    return table
+
+
+def lookup_aux_effect(code, kind):
+    if not code or code == 'None' or not kind:
+        return None
+    if kind == 'passive':
+        code = get_canonical_passive_code(code)
+    table = _load_aux_effect_table()
+    return table.get(kind, {}).get(code)
+
+
+def resolve_item_aux_text(text, extra, kind):
+    """把 {str_aux_passive_name} / {str_aux_active_desc} 等占位符换成已绑定效果。"""
+    if not text:
+        return text
+    info = lookup_aux_effect(extra, kind) if extra else None
+    name = (info or {}).get('name') or extra or '???'
+    desc = (info or {}).get('desc') or ''
+    return (
+        text
+        .replace('{str_aux_passive_name}', name)
+        .replace('{str_aux_passive_desc}', desc)
+        .replace('{str_aux_active_name}', name)
+        .replace('{str_aux_active_desc}', desc)
+    )
+
+
 class InventoryBlob:
     """一个库存箱子（storage/backpack/trash）的全部道具。"""
     def __init__(self):
@@ -1184,7 +1479,7 @@ class InventoryBlob:
     def next_serial(self):
         return (max((it.serial for it in self.items), default=1000) + 1)
 
-    def add_item(self, name):
+    def add_item(self, name, extra=None):
         """以仓库中最普通的道具为模板克隆尾巴，新建道具实例。"""
         it = InventoryItem()
         it.name = name
@@ -1195,6 +1490,8 @@ class InventoryBlob:
         if tmpl:
             it.m1, it.unk_a, it.unk_b = tmpl.m1, tmpl.unk_a, tmpl.unk_b
             it.flag1, it.flag2 = tmpl.flag1, tmpl.flag2
+        if extra:
+            it.extra = extra
         it.serial = self.next_serial()
         self.items.append(it)
         self.mark_dirty()
@@ -1328,6 +1625,7 @@ def house_boss_progress_defaults():
             'beaten': False,
             'introduced': False,
             'unlocked': False,
+            'pending': False,
         })
     return {
         'bosses': bosses,
@@ -1336,6 +1634,7 @@ def house_boss_progress_defaults():
         'next': '',
         'difficulty': -1,
         'times_fought': 0,
+        'countdown': 0,
         'first_beat': False,
     }
 
@@ -1360,11 +1659,11 @@ def parse_house_boss_progress(data, properties):
     """解析 9 场家园 Boss 进度。
 
     - houseboss_unlock_{id}：已入家园 Boss 池（可来家里），不是猫头戳。
-    - npc_houseboss_intro_{id}：已来家里（开战/对话）。
-    - quest_begin_{item}：打赢后拿到任务道具 —— 职业页带血猫头戳。
+    - npc_houseboss_intro_{id}：Butch 预告/开场白（入池后、开战前就会写）。
+    - quest_begin_{item}：打赢后拿到任务道具 —— 职业页带血猫头戳，这才是已击败。
     - butch_first_house_boss_beat：首次击败过任意家园 Boss。
-    - properties.next_house_boss / house_boss_difficulty / house_boss_times_fought：
-      当前挂起的那场（times_fought 是本场计数，不是生涯胜场）。
+    - properties.next_house_boss / house_boss_countdown / house_boss_difficulty /
+      house_boss_times_fought：当前挂起的那场（倒计时天数；times_fought 是本场计数）。
     """
     out = house_boss_progress_defaults()
     try:
@@ -1372,18 +1671,6 @@ def parse_house_boss_progress(data, properties):
     except Exception:
         names = set()
     quest_map = {row[0]: row[5] for row in HOUSE_BOSSES}
-    beaten_n = 0
-    for boss in out['bosses']:
-        key = boss['key']
-        boss['unlocked'] = f'houseboss_unlock_{key}' in names
-        boss['introduced'] = f'npc_houseboss_intro_{key}' in names
-        got_quest = any(f'quest_begin_{q}' in names for q in quest_map.get(key, ()))
-        # 猫头戳 = 打赢拿任务；intro 且无入池-only 也算来过。入池单独不算。
-        boss['beaten'] = got_quest or boss['introduced']
-        if boss['beaten']:
-            beaten_n += 1
-    out['beaten_count'] = beaten_n
-    out['first_beat'] = 'butch_first_house_boss_beat' in names
     props = properties or {}
     nxt = props.get('next_house_boss', '')
     if isinstance(nxt, bytes):
@@ -1397,6 +1684,23 @@ def parse_house_boss_progress(data, properties):
         out['times_fought'] = int(props.get('house_boss_times_fought', 0) or 0)
     except Exception:
         pass
+    try:
+        out['countdown'] = int(props.get('house_boss_countdown', 0) or 0)
+    except Exception:
+        pass
+    beaten_n = 0
+    for boss in out['bosses']:
+        key = boss['key']
+        boss['unlocked'] = f'houseboss_unlock_{key}' in names
+        boss['introduced'] = f'npc_houseboss_intro_{key}' in names
+        got_quest = any(f'quest_begin_{q}' in names for q in quest_map.get(key, ()))
+        # 猫头戳只看打赢任务；intro/入池都不算击败（挂起倒计时就会有 intro）。
+        boss['beaten'] = got_quest
+        boss['pending'] = bool(out['next']) and out['next'] == key and not boss['beaten']
+        if boss['beaten']:
+            beaten_n += 1
+    out['beaten_count'] = beaten_n
+    out['first_beat'] = 'butch_first_house_boss_beat' in names
     return out
 
 
@@ -1731,6 +2035,246 @@ def get_shop_progress(properties, npc_records, house_unlocks_names):
 
 
 # ============================================================
+# 职业 / 技能 / 道具解锁（files.unlocks + adventure_progression_unlocks.gon）
+# ============================================================
+
+UNLOCK_CLASSES = (
+    'Colorless', 'Fighter', 'Mage', 'Hunter', 'Tank', 'Medic', 'Thief',
+    'Necromancer', 'Butcher', 'Druid', 'Monk', 'Psychic', 'Tinkerer', 'Jester',
+)
+STARTER_CLASSES = frozenset(('Colorless', 'Fighter', 'Hunter', 'Mage', 'Tank'))
+CLASS_UNLOCK_FLAG = {
+    'Medic': 'class_unlock_medic',
+    'Thief': 'class_unlock_thief',
+    'Necromancer': 'class_unlock_necromancer',
+    'Psychic': 'class_unlock_psychic',
+    'Tinkerer': 'class_unlock_tinkerer',
+    'Druid': 'class_unlock_druid',
+    'Butcher': 'class_unlock_butcher',
+    'Monk': 'class_unlock_monk',
+    'Jester': 'class_unlock_jester',
+}
+
+# gon 里每种奖励的职业顺序（与 adventure_progression_unlocks.gon 一致）
+_UNLOCK_REWARD_CLASS_ORDER = (
+    'Fighter', 'Hunter', 'Mage', 'Medic', 'Thief', 'Tank',
+    'Necromancer', 'Psychic', 'Tinkerer', 'Butcher', 'Druid', 'Monk',
+    'Colorless', 'Jester',
+)
+
+SKILL_UNLOCK_SLOTS = (
+    ('ability', '洞穴主动'),
+    ('passive', '墓园被动'),
+    ('colorless_ability', '地核无项圈'),
+    ('colorless_passive', '月球灵魂'),
+)
+ITEM_UNLOCK_SLOTS = (
+    ('helmet', '搏动帽'),
+    ('face', '裂隙脸'),
+    ('neck', '无限颈'),
+    ('weapon', '侏罗武器'),
+    ('trinket', '终点饰品'),
+    ('trinket2', '全标饰品'),
+)
+
+
+def _unlock_slot_map(kind, rewards):
+    out = {}
+    for cls, rew in zip(_UNLOCK_REWARD_CLASS_ORDER, rewards):
+        if isinstance(rew, str):
+            rew = (rew,)
+        out[(cls, kind)] = tuple(rew)
+    return out
+
+
+CLASS_SLOT_REWARDS = {}
+CLASS_SLOT_REWARDS.update(_unlock_slot_map('ability', (
+    'Pawbreaker', 'BallOfSpiders', 'HyperBeam', 'Ethereal', 'NailFlurry', 'Suplex',
+    'SummonShade', 'Supernova', 'MechSuit', 'SliceAndDice', 'SummonBear',
+    'HundredHandSlap', 'Metronome',
+    ('SmartMetronome', 'RNGCannon', 'Bump', 'PowerUp'),
+)))
+CLASS_SLOT_REWARDS.update(_unlock_slot_map('passive', (
+    'DualWield', 'ThrillOfTheHunt', 'EnergyStorm', 'EvilPatron', 'AlphaStrike', 'Bouncer',
+    'DeathIncarnate', 'GravityWell', 'ArmorSpecialist', 'Indigestion', 'SuicideSquad',
+    'Unstoppable', 'SkillShare', ('SuperLuck', 'Goofball'),
+)))
+CLASS_SLOT_REWARDS.update(_unlock_slot_map('colorless_ability', (
+    'PathOfTheFighter', 'PathOfTheHunter', 'PathOfTheMage', 'PathOfTheCleric',
+    'PathOfTheThief', 'PathOfTheTank', 'PathOfTheNecromancer', 'PathOfThePsychic',
+    'PathOfTheTinkerer', 'PathOfTheButcher', 'PathOfTheDruid', 'PathOfTheMonk',
+    'PathOfTheVoid', 'PathOfTheJester',
+)))
+CLASS_SLOT_REWARDS.update(_unlock_slot_map('colorless_passive', (
+    'FightersSoul', 'HuntersSoul', 'MagesSoul', 'ClericsSoul', 'ThiefsSoul', 'TanksSoul',
+    'NecromancersSoul', 'PsychicsSoul', 'TinkerersSoul', 'ButchersSoul', 'DruidsSoul',
+    'MonksSoul', 'VoidSoul', 'JestersSoul',
+)))
+CLASS_SLOT_REWARDS.update(_unlock_slot_map('weapon', (
+    'BattleAxe', 'InfinityArrow', 'StaffOfFlame', 'AnointingOil', 'LacedNeedle', 'Girder',
+    'UnderworldStaff', 'BentSpoon', 'BallPeenHammer', 'ButchersCleaver', 'RainStaff',
+    'Bo', 'LilKitty', 'NinnyStick',
+)))
+CLASS_SLOT_REWARDS.update(_unlock_slot_map('trinket', (
+    'RageJuice', 'HuntersFlute', 'RingOfFrost', 'HolyWater', 'LuckyCoinPurse', 'TankJuice',
+    'SatanicBible', 'TarotDeck', 'ScrapBag', 'Cookbook', 'DruidsWhistle', 'EmptyHand',
+    'BallOfYarn', 'ToyGun',
+)))
+CLASS_SLOT_REWARDS.update(_unlock_slot_map('helmet', (
+    'FighterHelm', 'HunterCap', 'MageHat', 'ClericHat', 'ThiefHood', 'TankHelmet',
+    'SpiderHat', 'TinfoilHat', 'ScrappersHat', 'FleshShroud', 'MushroomHat',
+    'HeadBrand', 'CatEars', 'CapAndBells',
+)))
+CLASS_SLOT_REWARDS.update(_unlock_slot_map('face', (
+    'FighterScar', 'HunterMonocle', 'MageRobe', 'ClericTears', 'ThiefTattoo', 'TankTattoo',
+    'DeathMask', 'MysticEye', 'ScrappersMask', 'IronJaw', 'GreenmanMask',
+    'FaceBrand', 'CatWhiskers', 'ClownMakeup',
+)))
+CLASS_SLOT_REWARDS.update(_unlock_slot_map('neck', (
+    'FighterShoulderPad', 'HunterQuiver', 'MageScarf', 'ClericRelic', 'ThiefCloak', 'TankPads',
+    'LeechNecklace', 'DivinersCloth', 'ScrappersBackpack', 'HookedNecklace',
+    'RingOfMushrooms', 'PrayerBeads', 'CatCollar', 'Ruffle',
+)))
+CLASS_SLOT_REWARDS.update(_unlock_slot_map('trinket2', (
+    'Steroids', 'BagOfSeeds', 'SpellBook', 'PrayerCard', 'BagOfBags', 'TankToy',
+    'CambionConception', 'FriendshipBracelet', 'Fireworks', 'SackOfMeat',
+    'TinyCage', 'TinyPebble', 'SkillSplit', 'JokerCard',
+)))
+
+EXTRA_ITEM_UNLOCKS = (
+    ('class_unlock_box0', 'TheBoxCardboard', '纸箱'),
+    ('class_unlock_box1', 'TheBoxChest', '木箱'),
+    ('class_unlock_box2', 'TheBox', '铁箱'),
+    ('class_unlock_box3', 'TheBlackBox', '黑箱'),
+    ('class_unlock_monocolorless_head', 'CopycatHat', '仿猫帽'),
+    ('class_unlock_monocolorless_face', 'CopycatMask', '仿猫脸'),
+    ('class_unlock_monocolorless_neck', 'CopycatScarf', '仿猫颈'),
+    ('legacy_event_unlock_momsknife', 'MomsKnife', '妈刀'),
+)
+
+
+def parse_unlocks_blob(data):
+    """解析 files.unlocks：u32 版本 + 若干 [u64 count][count × (u64 len + ascii)]。
+
+    当前版本 3 的列表顺序：职业 / 主动技能 / 被动 / 道具 / 备选 Boss / 歌曲 / 杂项。
+    """
+    empty = {
+        'classes': set(), 'abilities': set(), 'passives': set(), 'items': set(),
+        'bosses': set(), 'songs': set(), 'misc': set(), 'all': set(),
+    }
+    if not data or len(data) < 12:
+        return empty
+    lists = []
+    p = 4
+    n = len(data)
+    while p + 8 <= n:
+        cnt = struct.unpack_from('<Q', data, p)[0]
+        if cnt > 400:
+            break
+        p += 8
+        items = []
+        ok = True
+        for _ in range(int(cnt)):
+            if p + 8 > n:
+                ok = False
+                break
+            slen = struct.unpack_from('<Q', data, p)[0]
+            if not (1 <= slen <= 80) or p + 8 + slen > n:
+                ok = False
+                break
+            chunk = data[p + 8:p + 8 + slen]
+            if not all(32 <= b <= 126 for b in chunk):
+                ok = False
+                break
+            items.append(chunk.decode('ascii'))
+            p += 8 + slen
+        if not ok:
+            break
+        lists.append(items)
+    keys = ('classes', 'abilities', 'passives', 'items', 'bosses', 'songs', 'misc')
+    out = dict(empty)
+    for i, items in enumerate(lists):
+        bucket = keys[i] if i < len(keys) else 'misc'
+        out[bucket].update(items)
+        out['all'].update(items)
+    return out
+
+
+def unlocks_progress_defaults():
+    return {
+        'classes': {c: {'unlocked': c in STARTER_CLASSES, 'starter': c in STARTER_CLASSES} for c in UNLOCK_CLASSES},
+        'class_got': sum(1 for c in UNLOCK_CLASSES if c in STARTER_CLASSES),
+        'class_total': len(UNLOCK_CLASSES),
+        'skills': {},
+        'skill_got': 0,
+        'skill_total': 0,
+        'items': {},
+        'item_got': 0,
+        'item_total': 0,
+        'extras': [],
+        'extra_got': 0,
+        'extra_total': len(EXTRA_ITEM_UNLOCKS),
+        'codes': parse_unlocks_blob(b''),
+    }
+
+
+def parse_unlocks_progress(unlocks_blob, npc_names=None):
+    """职业/技能/道具解锁进度。内容以 files.unlocks 为准；职业另可用 npc_progress 的 class_unlock_*。"""
+    codes = parse_unlocks_blob(unlocks_blob)
+    names = npc_names or set()
+    out = unlocks_progress_defaults()
+    out['codes'] = codes
+    class_got = 0
+    for cls in UNLOCK_CLASSES:
+        starter = cls in STARTER_CLASSES
+        flag = CLASS_UNLOCK_FLAG.get(cls)
+        unlocked = cls in codes['classes'] or starter or (flag in names if flag else False)
+        out['classes'][cls] = {'unlocked': unlocked, 'starter': starter}
+        if unlocked:
+            class_got += 1
+    out['class_got'] = class_got
+
+    have = codes['all']
+    skill_got = skill_total = 0
+    for cls in UNLOCK_CLASSES:
+        slots = {}
+        for kind, _zh in SKILL_UNLOCK_SLOTS:
+            rewards = CLASS_SLOT_REWARDS.get((cls, kind), ())
+            on = tuple(r in have for r in rewards)
+            slots[kind] = {'codes': rewards, 'on': on, 'unlocked': bool(rewards) and all(on)}
+            skill_total += len(rewards)
+            skill_got += sum(1 for x in on if x)
+        out['skills'][cls] = slots
+    out['skill_got'] = skill_got
+    out['skill_total'] = skill_total
+
+    item_got = item_total = 0
+    for cls in UNLOCK_CLASSES:
+        slots = {}
+        for kind, _zh in ITEM_UNLOCK_SLOTS:
+            rewards = CLASS_SLOT_REWARDS.get((cls, kind), ())
+            on = tuple(r in have for r in rewards)
+            slots[kind] = {'codes': rewards, 'on': on, 'unlocked': bool(rewards) and all(on)}
+            item_total += len(rewards)
+            item_got += sum(1 for x in on if x)
+        out['items'][cls] = slots
+    extras = []
+    extra_got = 0
+    for flag, code, zh in EXTRA_ITEM_UNLOCKS:
+        ok = code in have or flag in names
+        extras.append({'flag': flag, 'code': code, 'zh': zh, 'unlocked': ok})
+        item_total += 1
+        if ok:
+            extra_got += 1
+            item_got += 1
+    out['extras'] = extras
+    out['extra_got'] = extra_got
+    out['item_got'] = item_got
+    out['item_total'] = item_total
+    return out
+
+
+# ============================================================
 # 职业通关角标 (class completion checkmarks) — 只读解析
 # ============================================================
 
@@ -1756,6 +2300,117 @@ LIFE_STAGE_ZH = {
 # 家园 HUD {gendericon}：0 公 / 1 母 / 2 中性（HOUSE_CAT_INFO_LOVER_M/F/N）
 GENDER_ZH = {0: '公', 1: '母', 2: '中性'}
 GENDER_ICON = {0: '♂', 1: '♀', 2: '?'}
+
+# 家园 HUD 自定义标记（cat.title = FontIcon_* 名；空 = 无标记）
+CAT_MARKS = [
+    ('', '无标记', ''),
+    ('star2', '星星', '⭐'),
+    ('star', '空心星', '☆'),
+    ('heart', '心', '❤'),
+    ('circle', '圆', '⭕'),
+    ('square', '方', '⬛'),
+    ('triangle', '三角', '🔺'),
+    ('poop', '便便', '💩'),
+    ('sword', '剑', '⚔'),
+    ('shield', '盾', '🛡'),
+    ('shield2', '盾2', '🛡️'),
+    ('health', '生命', '❤'),
+    ('appeal', '吸引力', '💖'),
+    ('evolution', '变异促进', '🧬'),
+    ('comfort', '舒适度', '🛋'),
+    ('stimulation', '刺激度', '⚡'),
+    ('str', '力量', '💪'),
+    ('dex', '敏捷', '🏹'),
+    ('con', '体质', '💖'),
+    ('int', '智力', '💡'),
+    ('spd', '速度', '👟'),
+    ('cha', '魅力', '👄'),
+    ('lck', '幸运', '🍀'),
+    ('divineshield', '神圣护盾', '✨'),
+]
+CAT_MARK_META = {k: (zh, icon) for k, zh, icon in CAT_MARKS}
+CAT_MARK_ORDER = {k: i for i, (k, _zh, _ic) in enumerate(CAT_MARKS) if k}
+CAT_ROOM_SORT_ORDER = [
+    'Floor1_Large', 'Floor1_Small', 'Attic',
+    'Floor2_Large', 'Floor2_Small',
+    'Basement0', 'Basement1', 'Basement2', 'Basement3', 'Basement4',
+]
+_CAT_ROOM_RANK = {name: i for i, name in enumerate(CAT_ROOM_SORT_ORDER)}
+
+
+def cat_mark_key(cat_or_title=''):
+    if isinstance(cat_or_title, str):
+        raw = cat_or_title
+    else:
+        raw = getattr(cat_or_title, 'title', None) or ''
+    raw = str(raw).strip()
+    if raw.lower() in ('none', '无', '无标记'):
+        return ''
+    return raw
+
+
+def cat_mark_icon(cat_or_title=''):
+    key = cat_mark_key(cat_or_title)
+    if not key:
+        return ''
+    meta = CAT_MARK_META.get(key)
+    return meta[1] if meta else '•'
+
+
+def cat_mark_zh(cat_or_title=''):
+    key = cat_mark_key(cat_or_title)
+    if not key:
+        return '无标记'
+    meta = CAT_MARK_META.get(key)
+    return meta[0] if meta else key
+
+
+def cat_mark_choice(cat_or_title=''):
+    key = cat_mark_key(cat_or_title)
+    if not key:
+        return '无标记'
+    zh, icon = CAT_MARK_META.get(key, (key, '•'))
+    if icon:
+        return f'{icon} {zh} ({key})'
+    return f'{zh} ({key})'
+
+
+def parse_cat_mark_choice(label):
+    raw = (label or '').strip()
+    if not raw or raw in ('无标记', '无', 'None', 'none'):
+        return ''
+    if raw.endswith(')') and '(' in raw:
+        inner = raw[raw.rfind('(') + 1:-1].strip()
+        if inner:
+            return cat_mark_key(inner)
+    return cat_mark_key(raw)
+
+
+def cat_mark_choices(extra=''):
+    labels = [cat_mark_choice(k) for k, _zh, _ic in CAT_MARKS]
+    extra_key = cat_mark_key(extra)
+    extra_lbl = cat_mark_choice(extra_key)
+    if extra_lbl not in labels:
+        labels.append(extra_lbl)
+    return labels
+
+
+def cat_mark_sort_key(cat_or_title=''):
+    key = cat_mark_key(cat_or_title)
+    if not key:
+        return (2, 999, '')
+    if key in CAT_MARK_ORDER:
+        return (0, CAT_MARK_ORDER[key], key)
+    return (1, 0, key)
+
+
+def cat_room_sort_key(cat):
+    if getattr(cat, 'is_on_adventure', False):
+        return (0, 0, '')
+    room = getattr(cat, 'house_room', '') or ''
+    if getattr(cat, 'is_in_house', False) and room:
+        return (1, _CAT_ROOM_RANK.get(room, 50), room)
+    return (2, 99, room)
 
 
 def cat_gender_code(cat):
@@ -1790,6 +2445,33 @@ def zones_from_flags(flags):
 def last_adventure_zone(flags):
     zs = zones_from_flags(flags)
     return zs[-1] if zs else ''
+
+
+def parse_adventure_party_ids(blob):
+    """files.adventure_state：出征队伍猫 ID。布局 u32 ver + u64 count + count*u64 id。"""
+    if not blob or len(blob) < 12:
+        return []
+    count = struct.unpack_from('<Q', blob, 4)[0]
+    if count > 16:
+        return []
+    ids = []
+    off = 12
+    for _ in range(int(count)):
+        if off + 8 > len(blob):
+            break
+        cid = struct.unpack_from('<Q', blob, off)[0]
+        off += 8
+        if cid:
+            ids.append(int(cid))
+    return ids
+
+
+def parse_trollengine_level(blob):
+    """files.trollengine_state 里当前战斗关卡路径，如 levels/alley/easy/ch1-25.lvl。"""
+    if not blob:
+        return ''
+    m = re.search(rb'levels/[A-Za-z0-9_./-]+\.lvl', blob)
+    return m.group().decode('ascii') if m else ''
 
 
 def cat_life_stage(cat, age):
@@ -2045,6 +2727,10 @@ class MewgenicsSaveManager:
         self.properties = {}
         self.inventories = {}      # {'storage': InventoryBlob, 'backpack': ..., 'trash': ...}
         self.furniture = {}        # {key: FurnitureRecord}
+        self.house_cat_ids = set()
+        self.adventure_cat_ids = set()
+        self.adventure_level = ''
+        self.on_adventure = False
         self._furniture_orig_keys = set()
         self._properties_orig = {}
         self._house_state_dirty = False
@@ -2071,6 +2757,8 @@ class MewgenicsSaveManager:
                 c = CatRecord(k, raw)
                 c.is_in_house = False
                 c.house_room = ""
+                c.is_on_adventure = False
+                c.adventure_level = ""
                 self.cats[k] = c
             except Exception as e:
                 pass
@@ -2106,6 +2794,31 @@ class MewgenicsSaveManager:
         except Exception as e:
             pass
 
+        # 出征/战斗中的队伍（从家园移出，但仍在 cats 表，可编辑）
+        self.adventure_cat_ids = set()
+        self.adventure_level = ''
+        self.on_adventure = False
+        try:
+            self.on_adventure = bool(int(self.properties.get('on_adventure') or 0))
+        except Exception:
+            self.on_adventure = False
+        try:
+            row = cur.execute("SELECT data FROM files WHERE key='adventure_state'").fetchone()
+            if row and row[0]:
+                for cid in parse_adventure_party_ids(row[0]):
+                    if cid in self.cats:
+                        self.adventure_cat_ids.add(cid)
+            row = cur.execute("SELECT data FROM files WHERE key='trollengine_state'").fetchone()
+            if row and row[0]:
+                self.adventure_level = parse_trollengine_level(row[0])
+        except Exception:
+            pass
+        for cid in self.adventure_cat_ids:
+            c = self.cats.get(cid)
+            if c:
+                c.is_on_adventure = True
+                c.adventure_level = self.adventure_level
+
         # 库存道具 (inventory_storage/backpack/trash)
         self.inventories = {}
         for box in ('storage', 'backpack', 'trash'):
@@ -2134,26 +2847,37 @@ class MewgenicsSaveManager:
         self.difficulty_progress = {}
         self.house_boss_progress = house_boss_progress_defaults()
         self.chapter_boss_progress = chapter_boss_progress_defaults()
+        self.unlocks_progress = unlocks_progress_defaults()
         try:
             row = cur.execute("SELECT data FROM files WHERE key='npc_progress'").fetchone()
-            if row and row[0]:
-                self.npc_records = scan_string_value_records(row[0])
-                self.class_zone_records = parse_class_zone_records(row[0])
-                self.difficulty_progress = parse_difficulty_progress(row[0], self.properties)
-                self.house_boss_progress = parse_house_boss_progress(row[0], self.properties)
-                self.chapter_boss_progress = parse_chapter_boss_progress(row[0], self.class_zone_records)
+            npc_blob = row[0] if row and row[0] else None
+            npc_names = set()
+            if npc_blob:
+                self.npc_records = scan_string_value_records(npc_blob)
+                self.class_zone_records = parse_class_zone_records(npc_blob)
+                self.difficulty_progress = parse_difficulty_progress(npc_blob, self.properties)
+                self.house_boss_progress = parse_house_boss_progress(npc_blob, self.properties)
+                self.chapter_boss_progress = parse_chapter_boss_progress(npc_blob, self.class_zone_records)
+                npc_names = _scan_npc_presence_names(npc_blob)
             row = cur.execute("SELECT data FROM files WHERE key='house_unlocks'").fetchone()
             if row and row[0]:
                 self.house_unlocks = parse_house_unlocks(row[0])
+            row = cur.execute("SELECT data FROM files WHERE key='unlocks'").fetchone()
+            self.unlocks_progress = parse_unlocks_progress(row[0] if row else None, npc_names)
         except Exception:
             pass
 
         conn.close()
         return len(self.cats)
 
+    def living_cat_ids(self):
+        return set(getattr(self, 'house_cat_ids', set()) or []) | set(getattr(self, 'adventure_cat_ids', set()) or [])
+
     def set_cat_room(self, cat_key, room_name):
         cat = self.cats.get(cat_key)
         if not cat:
+            return False
+        if getattr(cat, 'is_on_adventure', False):
             return False
             
         old_room = getattr(cat, 'house_room', '')

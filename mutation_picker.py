@@ -6,6 +6,7 @@ import sys
 import tkinter as tk
 import customtkinter as ctk
 from PIL import Image, ImageDraw, ImageFont
+from mewgenics_core import format_mutation_markup
 
 # ---- 磁贴样式 ----
 CATEGORY_COLORS = {
@@ -56,9 +57,16 @@ def classify_mutation(entry, defect_ids):
     return 'effect'
 
 
+# 手臂与腿共用 legs.gon / CatLeg 帧（同一突变 ID），没有独立 arms 贴图目录
+_MUTATION_ICON_SLOT_ALIAS = {
+    'arms': 'legs',
+}
+
+
 def get_mutation_icon_path(slot_key, mid):
     if not slot_key or mid is None:
         return None
+    icon_slot = _MUTATION_ICON_SLOT_ALIAS.get(slot_key, slot_key)
     base_dirs = []
     if hasattr(sys, '_MEIPASS'):
         base_dirs.append(sys._MEIPASS)
@@ -69,7 +77,7 @@ def get_mutation_icon_path(slot_key, mid):
     base_dirs.append(os.getcwd())
 
     for b in base_dirs:
-        p = os.path.join(b, "assets", "icons", "mutations", slot_key, f"{mid}.png")
+        p = os.path.join(b, "assets", "icons", "mutations", icon_slot, f"{mid}.png")
         if os.path.exists(p):
             return p
     return None
@@ -177,8 +185,9 @@ class MutationPicker(ctk.CTkToplevel):
     def __init__(self, parent, title, entries, defect_ids, current_id, norm_id, on_pick, slot_key=None):
         super().__init__(parent)
         self.title(title)
-        self.geometry('980x560')
-        self.resizable(False, False)
+        self.geometry('1180x620')
+        self.minsize(1100, 580)
+        self.resizable(True, True)
         self.configure(fg_color='#0f172a')
         self.transient(parent.winfo_toplevel())
 
@@ -204,39 +213,49 @@ class MutationPicker(ctk.CTkToplevel):
         self.search_var = tk.StringVar()
         se = ctk.CTkEntry(top, placeholder_text='🔍 搜索名称 / 描述 / 属性...', textvariable=self.search_var, width=320)
         se.pack(side='left', padx=(0, 10))
-        se.bind('<KeyRelease>', lambda e: self._on_filter())
+        se.bind('<KeyRelease>', lambda e: self._schedule_filter())
+        se.bind('<Return>', lambda e: self._on_filter())
         self.seg = ctk.CTkSegmentedButton(top, values=[lbl for _, lbl in self.CATEGORIES], command=self._on_category)
         self.seg.set('全部')
         self.seg.pack(side='left')
 
-        # ---- 主体：左网格 + 右详情 ----
+        # ---- 主体：左网格 + 右详情（详情列固定宽度，不被格子挤掉） ----
+        DETAIL_W = 300
         body = ctk.CTkFrame(self, fg_color='transparent')
         body.pack(fill='both', expand=True, padx=12, pady=4)
+        body.grid_columnconfigure(0, weight=1)
+        body.grid_columnconfigure(1, weight=0, minsize=DETAIL_W)
+        body.grid_rowconfigure(0, weight=1)
 
         self.grid_frame = ctk.CTkFrame(body, fg_color='#111827', corner_radius=8)
-        self.grid_frame.pack(side='left', fill='both', expand=True, padx=(0, 8))
+        self.grid_frame.grid(row=0, column=0, sticky='nsew', padx=(0, 10))
+        for c in range(self.COLS):
+            self.grid_frame.grid_columnconfigure(c, weight=1, uniform='mutcol')
+        for r in range(self.ROWS):
+            self.grid_frame.grid_rowconfigure(r, weight=1)
         self._slots = []
         for i in range(self.PER_PAGE):
             btn = ctk.CTkButton(
                 self.grid_frame, text='', compound='top',
-                width=96, height=104, font=('Arial', 9),
+                width=88, height=108, font=('Arial', 9),
                 fg_color='#1e293b', border_width=2, border_color='#64748b',
                 hover_color='#475569',
             )
             self._slots.append(btn)
 
-        self.detail = ctk.CTkFrame(body, fg_color='#111827', corner_radius=8, width=270)
-        self.detail.pack(side='right', fill='y')
-        self.detail.pack_propagate(False)
+        self.detail = ctk.CTkFrame(body, fg_color='#111827', corner_radius=8, width=DETAIL_W)
+        self.detail.grid(row=0, column=1, sticky='nsew')
+        self.detail.grid_propagate(False)
         self._d_hint = ctk.CTkLabel(self.detail, text='🖱 悬停查看详情\n点击图标直接选用',
                                    font=('Arial', 12), text_color='#64748b', justify='center')
         self._d_cat = ctk.CTkLabel(self.detail, text='', font=('Arial', 12, 'bold'))
         self._d_img = ctk.CTkLabel(self.detail, text='')
         self._d_name = ctk.CTkLabel(self.detail, text='', font=('Arial', 13, 'bold'),
-                                   text_color='#f8fafc', wraplength=240)
-        self._d_stat = ctk.CTkLabel(self.detail, text='', font=('Arial', 12, 'bold'), text_color='#fbbf24')
+                                   text_color='#f8fafc', wraplength=DETAIL_W - 28)
+        self._d_stat = ctk.CTkLabel(self.detail, text='', font=('Arial', 12, 'bold'),
+                                   text_color='#fbbf24', wraplength=DETAIL_W - 28)
         self._d_desc = ctk.CTkLabel(self.detail, text='', font=('Arial', 11), text_color='#cbd5e1',
-                                   wraplength=240, justify='left')
+                                   wraplength=DETAIL_W - 28, justify='left')
         self._d_id = ctk.CTkLabel(self.detail, text='', font=('Arial', 10), text_color='#64748b')
         self._detail_widgets = (self._d_cat, self._d_img, self._d_name, self._d_stat, self._d_desc, self._d_id)
 
@@ -287,7 +306,17 @@ class MutationPicker(ctk.CTkToplevel):
         _MUT_TILE_CACHE[key] = img
         return img
 
+    def _schedule_filter(self):
+        job = getattr(self, '_filter_job', None)
+        if job:
+            try:
+                self.after_cancel(job)
+            except Exception:
+                pass
+        self._filter_job = self.after(200, self._on_filter)
+
     def _on_filter(self):
+        self._filter_job = None
         self.query = self.search_var.get()
         self.page = 0
         self._refresh()
@@ -315,9 +344,11 @@ class MutationPicker(ctk.CTkToplevel):
                 continue
             e, cat = page_items[i]
             is_cur = (e.get('id') == self.current_id)
-            short = e.get('name', '')[:14]
-            if e.get('id', 0) >= 300:
-                short = f"#{e['id']} {short.split(':', 1)[-1].strip()}"[:18]
+            mid = e.get('id', 0)
+            if mid >= 300:
+                short = f'#{mid}'
+            else:
+                short = (e.get('name') or '')[:8]
             btn.configure(
                 text=short, image=self._tile(e, cat, 56),
                 fg_color='#334155' if is_cur else '#1e293b',
@@ -327,7 +358,7 @@ class MutationPicker(ctk.CTkToplevel):
             btn.unbind('<Enter>')
             btn.bind('<Enter>', lambda ev, ent=e, cc=cat: self._show_detail(ent, cc))
             r, c = divmod(i, self.COLS)
-            btn.grid(row=r, column=c, padx=5, pady=5, sticky='n')
+            btn.grid(row=r, column=c, padx=6, pady=6, sticky='nsew')
 
         self.lbl_page.configure(text=f'{self.page + 1}/{max_page + 1} 页  (共 {len(items)} 项)')
         self.btn_prev.configure(state='normal' if self.page > 0 else 'disabled')
@@ -346,14 +377,23 @@ class MutationPicker(ctk.CTkToplevel):
         self._d_cat.pack(pady=(14, 2))
         self._d_img.configure(image=self._tile(e, cat, 108))
         self._d_img.pack(pady=4)
-        self._d_name.configure(text=e.get('name', '?'))
-        self._d_name.pack(pady=(2, 0))
+        name = format_mutation_markup(e.get('name') or e.get('name_en') or '')
+        desc = format_mutation_markup(e.get('desc') or '')
+        if name:
+            self._d_name.configure(text=name)
+            self._d_name.pack(pady=(2, 0), padx=12)
         stat_str = e.get('stat_str') or ''
         if stat_str:
             self._d_stat.configure(text=stat_str)
             self._d_stat.pack(pady=(2, 0))
-        self._d_desc.configure(text=(e.get('desc') or '').strip() or '（无特殊效果）')
-        self._d_desc.pack(padx=12, pady=(8, 4), anchor='w')
+        name_key = name.rstrip('。. ')
+        desc_key = desc.replace('\n', ' ').rstrip('。. ')
+        if desc and desc_key != name_key:
+            self._d_desc.configure(text=desc)
+            self._d_desc.pack(padx=12, pady=(8, 4), anchor='w')
+        elif not desc and not stat_str:
+            self._d_desc.configure(text='（无特殊效果）')
+            self._d_desc.pack(padx=12, pady=(8, 4), anchor='w')
         if e.get('id', 0) >= 300:
             self._d_id.configure(text=f"ID: #{e['id']}")
             self._d_id.pack(pady=(4, 10))

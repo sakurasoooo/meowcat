@@ -3,6 +3,7 @@ import sys
 import json
 import csv
 import re
+import random
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 import customtkinter as ctk
@@ -17,11 +18,16 @@ from mewgenics_core import (
     get_ability_upgrade, get_base_ability, get_shop_progress, storage_capacity,
     food_capacity, BASE_FOOD_CAPACITY, is_warehouse_furniture,
     cat_age, cat_life_stage, last_adventure_zone, LIFE_STAGE_ZH, ELDER_MIN_AGE,
-    cat_gender_icon, cat_gender_zh,
+    cat_gender_icon, cat_gender_zh, cat_gender_code,
+    cat_mark_icon, cat_mark_zh, cat_mark_key, cat_mark_choice, cat_mark_choices,
+    parse_cat_mark_choice, cat_mark_sort_key, cat_room_sort_key,
     parse_class_zone_records, class_zone_marks, MAJOR_CHECKMARK_ZONES, BASIC_ATTACK_ABILITIES, BASIC_MOVE_ABILITIES,
     get_canonical_passive_code, parse_save_weather, load_weather_catalog,
     load_official_text_map, localize_mutations_detailed, mutation_slot_label,
+    format_mutation_markup, passive_has_upgrade,
+    item_aux_kind, item_aux_reroll_pool, lookup_aux_effect, resolve_item_aux_text,
     ZH_PATCH_LABEL, ZH_PATCH_REPO,
+    UNLOCK_CLASSES, SKILL_UNLOCK_SLOTS, ITEM_UNLOCK_SLOTS, STARTER_CLASSES,
 )
 from event_catalog import load_event_catalog, filter_events, list_event_types, type_label
 from ability_catalog import (
@@ -298,6 +304,7 @@ class MewgenicsApp(ctk.CTk):
         self.innate_locked = [True, True, True, True]
         self.upgrade_combos = self.innate_combos
         self.class_passive_combos = []
+        self.class_passive_upgrade_checkboxes = []
         self.disorder_combos = []
         self.passive_combos = []
         self.class_passive_lookup = {}
@@ -305,6 +312,8 @@ class MewgenicsApp(ctk.CTk):
         self.disorder_lookup = {}
         self.disorder_key_to_str = {}
         self.disorder_display_list = []
+        self.cat_sort_mode = "id_desc"
+        self._loading_cat = False
 
         self.init_ui()
         self.populate_cat_list()
@@ -454,7 +463,7 @@ class MewgenicsApp(ctk.CTk):
         self.btn_max_res.pack(fill="x", padx=8, pady=(4, 6))
 
         # Search Bar
-        self.search_entry = ctk.CTkEntry(self.left_pane, placeholder_text="搜索猫咪名称、ID或房间...")
+        self.search_entry = ctk.CTkEntry(self.left_pane, placeholder_text="搜索名称、ID、房间、性别或标记...")
         self.search_entry.pack(fill="x", padx=8, pady=(8, 4))
         self.search_entry.bind("<KeyRelease>", self.on_search)
         self.search_entry.bind("<Return>", lambda e: self.do_search_immediate())
@@ -464,7 +473,7 @@ class MewgenicsApp(ctk.CTk):
         self.filter_frame = ctk.CTkFrame(self.left_pane, fg_color="transparent")
         self.filter_frame.pack(fill="x", padx=8, pady=(2, 4))
 
-        n_house = len(getattr(self.save_mgr, 'house_cat_ids', set()))
+        n_house = len(self.save_mgr.living_cat_ids()) if hasattr(self.save_mgr, 'living_cat_ids') else len(getattr(self.save_mgr, 'house_cat_ids', set()))
         n_total = len(self.save_mgr.cats)
 
         self.btn_flt_house = ctk.CTkButton(
@@ -500,6 +509,23 @@ class MewgenicsApp(ctk.CTk):
         )
         self.btn_flt_hist.pack(side="left", fill="x", expand=True, padx=(2, 0))
 
+        self.cat_sort_mode = "id_desc"
+        self.CAT_SORT_OPTIONS = [
+            ("id_desc", "序号 ↓"),
+            ("id_asc", "序号 ↑"),
+            ("room", "房间"),
+            ("gender", "性别"),
+            ("mark", "标记"),
+        ]
+        sort_row = ctk.CTkFrame(self.left_pane, fg_color="transparent")
+        sort_row.pack(fill="x", padx=8, pady=(0, 2))
+        ctk.CTkLabel(sort_row, text="排序", font=("Arial", 11), text_color="#94a3b8").pack(side="left")
+        self.combo_sort = ctk.CTkComboBox(
+            sort_row, width=128, height=26, font=("Arial", 11),
+            values=[lbl for _k, lbl in self.CAT_SORT_OPTIONS])
+        self.combo_sort.pack(side="left", padx=6)
+        self.combo_sort.set("序号 ↓")
+
         # Action Buttons for Cats
         btn_row = ctk.CTkFrame(self.left_pane, fg_color="transparent")
         btn_row.pack(fill="x", padx=8, pady=3)
@@ -515,6 +541,7 @@ class MewgenicsApp(ctk.CTk):
         # Scrollable Cat List
         self.cat_list_frame = ctk.CTkScrollableFrame(self.left_pane, label_text=f"家园在生猫咪 (共 {n_house} 只)")
         self.cat_list_frame.pack(fill="both", expand=True, padx=8, pady=5)
+        self.combo_sort.configure(command=self.on_cat_sort_changed)
 
     def setup_right_content(self):
         self.right_pane = ctk.CTkFrame(self.view_cats)
@@ -591,7 +618,10 @@ class MewgenicsApp(ctk.CTk):
         if hasattr(self, 'cat_cards'):
             for k, btn in self.cat_cards.items():
                 c = self.save_mgr.cats.get(k)
-                btn.configure(fg_color="#143026" if (c and getattr(c, 'is_in_house', False)) else "#1e293b")
+                if c and getattr(c, 'is_on_adventure', False):
+                    btn.configure(fg_color="#3b1d0a")
+                else:
+                    btn.configure(fg_color="#143026" if (c and getattr(c, 'is_in_house', False)) else "#1e293b")
         if hasattr(self, 'tabview'):
             self.tabview.pack_forget()
         if hasattr(self, 'empty_state_frame'):
@@ -706,7 +736,7 @@ class MewgenicsApp(ctk.CTk):
         preset_frame.pack(fill="x", padx=10, pady=6)
 
         ctk.CTkLabel(preset_frame, text="突变预设:", font=("Arial", 12, "bold"), text_color="#a855f7").pack(side="left", padx=(12, 6), pady=6)
-        ctk.CTkButton(preset_frame, text="✨ 一键随机极品正面突变", width=170, height=26, fg_color="#7c3aed", hover_color="#6d28d9", command=self.on_apply_god_mutations).pack(side="left", padx=4)
+        ctk.CTkButton(preset_frame, text="✨ 一键随机极品突变", width=170, height=26, fg_color="#7c3aed", hover_color="#6d28d9", command=self.on_apply_god_mutations).pack(side="left", padx=4)
         ctk.CTkButton(preset_frame, text="🧼 一键清除全部突变 (纯血统)", width=170, height=26, fg_color="#334155", hover_color="#475569", command=self.on_clear_all_mutations).pack(side="left", padx=4)
 
         summary_box = ctk.CTkFrame(preset_frame, fg_color="transparent")
@@ -818,10 +848,19 @@ class MewgenicsApp(ctk.CTk):
             'Floor1_Large (一层大厅)',
             'Floor1_Small (一层侧卧)',
             'Attic (阁楼)',
+            '⚔️ 探险中 (战斗存档)',
             '移出家园 (转入历史谱系)'
         ])
         self.combo_room.pack(side="left", padx=5)
         ctk.CTkLabel(f_room, text="*可直接将历史谱系猫召回家园或移出家园", font=("Arial", 10), text_color="#94a3b8").pack(side="left", padx=8)
+
+        f_mark = ctk.CTkFrame(f_breed, fg_color="transparent")
+        f_mark.pack(fill="x", padx=15, pady=4)
+        ctk.CTkLabel(f_mark, text="自定义标记 (Mark):", width=140, anchor="w", font=("Arial", 12, "bold")).pack(side="left")
+        self.combo_mark = ctk.CTkComboBox(
+            f_mark, width=280, values=cat_mark_choices(), command=self.on_mark_changed)
+        self.combo_mark.pack(side="left", padx=5)
+        ctk.CTkLabel(f_mark, text="*家园列表图标，对应游戏内可编辑标记", font=("Arial", 10), text_color="#94a3b8").pack(side="left", padx=8)
 
         # Sexuality (性取向)
         f_sex = ctk.CTkFrame(f_breed, fg_color="transparent")
@@ -891,6 +930,8 @@ class MewgenicsApp(ctk.CTk):
                                            values=[self._class_to_label(c) for c in self.game_data.get('classes', [])],
                                            command=self.on_class_changed)
         self.combo_class.pack(side="left", padx=5)
+        self.lbl_class_lock = ctk.CTkLabel(f_class, text="仅已解锁职业", font=("Arial", 10), text_color="#94a3b8")
+        self.lbl_class_lock.pack(side="left", padx=8)
 
         # Voice / Gender
         f_voice = ctk.CTkFrame(f_ident, fg_color="transparent")
@@ -1045,6 +1086,7 @@ class MewgenicsApp(ctk.CTk):
         ctk.CTkButton(f_cp_head, text="✨ 自动满配本职业极品被动", height=26, fg_color="#059669", hover_color="#047857", command=self.on_apply_best_class_passives).pack(side="right")
 
         self.class_passive_combos = []
+        self.class_passive_upgrade_checkboxes = []
         for i in range(2):
             f_row = ctk.CTkFrame(f_cp, fg_color="transparent")
             f_row.pack(fill="x", padx=15, pady=3)
@@ -1052,12 +1094,25 @@ class MewgenicsApp(ctk.CTk):
             cb = SkillCardWidget(
                 f_row,
                 catalog_type="passive",
-                width=580,
+                width=400,
                 height=48,
-                command=lambda val, idx=i: self.on_class_passive_changed(idx, val)
+                command=lambda val, idx=i: self.on_class_passive_changed(idx, val),
+                get_current_class_func=lambda: getattr(self.current_cat, 'cat_class', 'Colorless') if self.current_cat else None,
             )
             cb.pack(side="left", padx=5)
             self.class_passive_combos.append(cb)
+            chk_upg = ctk.CTkCheckBox(
+                f_row,
+                text="进阶强化 (未选择)",
+                font=("Arial", 12),
+                text_color="#64748b",
+                fg_color="#10b981",
+                hover_color="#059669",
+                command=lambda idx=i: self.on_class_passive_upgrade_toggled(idx),
+            )
+            chk_upg.pack(side="left", padx=(8, 0))
+            chk_upg.configure(state="disabled")
+            self.class_passive_upgrade_checkboxes.append(chk_upg)
 
         # 4. 2 Disorders / Negative Passives (疾病/心理缺陷)
         f_dis = ctk.CTkFrame(container, fg_color="#1e293b", corner_radius=8)
@@ -1123,9 +1178,40 @@ class MewgenicsApp(ctk.CTk):
             self.save_current_cat_fields()
 
     def on_class_passive_changed(self, idx, val):
+        if getattr(self, '_loading_cat', False):
+            return
+        self._sync_class_passive_upgrade_ui(idx, keep_check=False)
         if self.current_cat:
             self.save_current_cat_fields()
             self.status_bar.configure(text=f"已更新猫咪 #{self.current_cat.key} 的职业被动 {idx+1} 为: {val}", text_color="#10b981")
+
+    def on_class_passive_upgrade_toggled(self, idx):
+        if getattr(self, '_loading_cat', False):
+            return
+        if idx < len(self.class_passive_upgrade_checkboxes):
+            chk = self.class_passive_upgrade_checkboxes[idx]
+            self.class_passive_combos[idx].set_upgraded(chk.get() == 1)
+        if self.current_cat:
+            self.save_current_cat_fields()
+
+    def _sync_class_passive_upgrade_ui(self, idx, keep_check=None):
+        key = 'None'
+        if idx < len(self.class_passive_combos):
+            key = self.get_class_passive_key_from_val(self.class_passive_combos[idx].get())
+        chk = self.class_passive_upgrade_checkboxes[idx]
+        card = self.class_passive_combos[idx]
+        can = key != 'None' and passive_has_upgrade(key)
+        if not can:
+            chk.deselect()
+            chk.configure(state="disabled", text="进阶强化 (无法升级)", text_color="#64748b")
+            card.set_upgraded(False)
+            return
+        chk.configure(state="normal", text="✨ 进阶强化 (Tier 2)", text_color="#e2e8f0")
+        if keep_check is True:
+            chk.select()
+        elif keep_check is False:
+            chk.deselect()
+        card.set_upgraded(chk.get() == 1)
 
     def toggle_innate_lock(self, idx):
         self.innate_locked[idx] = not self.innate_locked[idx]
@@ -1182,7 +1268,7 @@ class MewgenicsApp(ctk.CTk):
         for d in disorders:
             k = d['key']
             name = d.get('name', k)
-            raw_desc = d.get('desc', '').strip('"\r\n\t ')
+            raw_desc = format_mutation_markup(d.get('desc', '')).strip('"\r\n\t ')
             clean_desc = raw_desc.replace('\r', ' ').replace('\n', ' ')
             if len(clean_desc) > 35:
                 clean_desc = clean_desc[:35] + "..."
@@ -1213,7 +1299,7 @@ class MewgenicsApp(ctk.CTk):
         for p in current_list:
             k = p['key']
             name = p.get('name', k)
-            raw_desc = p.get('desc', '').strip('"\r\n\t ')
+            raw_desc = format_mutation_markup(p.get('desc', '')).strip('"\r\n\t ')
             clean_desc = raw_desc.replace('\r', ' ').replace('\n', ' ')
             if len(clean_desc) > 32:
                 clean_desc = clean_desc[:32] + "..."
@@ -1232,7 +1318,7 @@ class MewgenicsApp(ctk.CTk):
                 if k in self.class_passive_key_to_str:
                     continue
                 name = p.get('name', k)
-                raw_desc = p.get('desc', '').strip('"\r\n\t ')
+                raw_desc = format_mutation_markup(p.get('desc', '')).strip('"\r\n\t ')
                 clean_desc = raw_desc.replace('\r', ' ').replace('\n', ' ')
                 if len(clean_desc) > 30:
                     clean_desc = clean_desc[:30] + "..."
@@ -1298,10 +1384,21 @@ class MewgenicsApp(ctk.CTk):
         for i in range(2):
             k = self.current_cat.class_passives[i]
             self.class_passive_combos[i].set(k)
+            ranks = getattr(self.current_cat, 'class_passive_ranks', [1, 1])
+            self._sync_class_passive_upgrade_ui(i, keep_check=(ranks[i] >= 2 if i < len(ranks) else False))
+        self.save_current_cat_fields()
         self.status_bar.configure(text=f"已为猫咪 #{self.current_cat.key} ({self.current_cat.name}) 自动满配 [{self.current_cat.cat_class}] 的顶级正面被动特性！", text_color="#10b981")
 
     def on_class_changed(self, new_class):
         cls = self._label_to_class(new_class)  # 下拉显示为社区中文补丁，内部始终保存代码
+        keep = getattr(self.current_cat, 'cat_class', None) if self.current_cat else None
+        if not self._is_class_unlocked(cls, allow=keep):
+            if keep:
+                self.combo_class.set(self._class_to_label(keep))
+            self.status_bar.configure(
+                text=f"职业 {self._class_zh(cls)} 尚未解锁，不能选用",
+                text_color="#ef4444")
+            return
         if self.current_cat and self.current_cat.cat_class != cls:
             self.current_cat.cat_class = cls
             self.current_cat.is_modified = True
@@ -1314,35 +1411,42 @@ class MewgenicsApp(ctk.CTk):
         self.cat_cards.clear()
 
         # Update button counts in filter tabs
-        n_house = len(getattr(self.save_mgr, 'house_cat_ids', set()))
+        n_house = len(self.save_mgr.living_cat_ids()) if hasattr(self.save_mgr, 'living_cat_ids') else len(getattr(self.save_mgr, 'house_cat_ids', set()))
         n_total = len(self.save_mgr.cats)
         if hasattr(self, 'btn_flt_house'):
             self.btn_flt_house.configure(text=f"🏠 家园 ({n_house})")
             self.btn_flt_all.configure(text=f"全部 ({n_total})")
             self.btn_flt_hist.configure(text=f"📜 谱系 ({max(0, n_total - n_house)})")
 
-        # Sort cats by key descending (newest on top)
-        sorted_keys = sorted(self.save_mgr.cats.keys(), reverse=True)
+        sorted_keys = self._sorted_cat_keys(self.save_mgr.cats.keys())
         count = 0
         ft = filter_text.lower() if filter_text else ""
 
         for k in sorted_keys:
             cat = self.save_mgr.cats[k]
             is_in_house = getattr(cat, 'is_in_house', False)
+            is_on_adv = getattr(cat, 'is_on_adventure', False)
+            is_living = is_in_house or is_on_adv
             room_str = getattr(cat, 'house_room', '')
+            mark_key = cat_mark_key(cat)
 
-            # 1. Mode filter
-            if self.filter_mode == "house" and not is_in_house:
+            # 1. Mode filter（探险中的猫仍算在生，不进历史谱系）
+            if self.filter_mode == "house" and not is_living:
                 continue
-            elif self.filter_mode == "history" and is_in_house:
+            elif self.filter_mode == "history" and is_living:
                 continue
 
-            # 2. Search filter（支持中文职业名/房间名）
+            # 2. Search filter（支持中文职业名/房间名/性别/标记）
             if ft:
                 match_pool = [cat.name.lower(), str(k), cat.cat_class.lower(), room_str.lower(),
                               self._class_zh(cat.cat_class).lower(), self._room_zh(room_str).lower(),
-                              self._format_cat_life(cat).lower()]
-                if not any(ft in s for s in match_pool):
+                              self._format_cat_life(cat).lower(),
+                              cat_gender_zh(cat).lower(), cat_gender_icon(cat),
+                              mark_key.lower(), cat_mark_zh(cat).lower(), cat_mark_icon(cat)]
+                if is_on_adv:
+                    match_pool.extend(['探险', '战斗', 'adventure', 'combat',
+                                       (getattr(cat, 'adventure_level', '') or '').lower()])
+                if not any(ft in s for s in match_pool if s):
                     continue
 
             # Limit display to max 100 items when showing all to guarantee silky smooth performance
@@ -1356,8 +1460,20 @@ class MewgenicsApp(ctk.CTk):
                 more_lbl.pack(pady=6)
                 break
 
-            card_text = f"#{k:3d}  {cat.name} {cat_gender_icon(cat)}"
-            if is_in_house:
+            mark_ic = cat_mark_icon(cat)
+            mark_s = f"{mark_ic} " if mark_ic else ""
+            adv_s = "⚔ " if is_on_adv else ""
+            if is_on_adv:
+                loc = "探险"
+            elif is_in_house:
+                loc = self._room_zh(room_str) or room_str or "家园"
+            else:
+                loc = "谱系"
+            card_text = f"#{k:3d} {mark_s}{adv_s}{cat.name} {cat_gender_icon(cat)}  {loc}"
+            if is_on_adv:
+                btn_fg = "#3b1d0a"
+                btn_hover = "#9a3412"
+            elif is_in_house:
                 btn_fg = "#143026"
                 btn_hover = "#1b4d3e"
             else:
@@ -1395,6 +1511,7 @@ class MewgenicsApp(ctk.CTk):
 
         cat = self.save_mgr.cats[key]
         self.current_cat = cat
+        self._loading_cat = True
 
         # Hide empty state, show tabview
         if hasattr(self, 'empty_state_frame'):
@@ -1408,11 +1525,16 @@ class MewgenicsApp(ctk.CTk):
                 btn.configure(fg_color="#0284c7")
             else:
                 c = self.save_mgr.cats.get(k)
-                btn.configure(fg_color="#143026" if (c and getattr(c, 'is_in_house', False)) else "#1e293b")
+                if c and getattr(c, 'is_on_adventure', False):
+                    btn.configure(fg_color="#3b1d0a")
+                else:
+                    btn.configure(fg_color="#143026" if (c and getattr(c, 'is_in_house', False)) else "#1e293b")
 
         # Update Header
+        mark_ic = cat_mark_icon(cat)
+        mark_bit = f"{mark_ic} " if mark_ic else ""
         self.lbl_cat_title.configure(
-            text=f"猫咪 #{cat.key} - {cat.name} {cat_gender_icon(cat)} ({self._class_zh(cat.cat_class)} · {cat.cat_class})")
+            text=f"猫咪 #{cat.key} - {mark_bit}{cat.name} {cat_gender_icon(cat)} ({self._class_zh(cat.cat_class)} · {cat.cat_class})")
         self.lbl_cat_guid.configure(text=f"GUID: {hex(cat.guid)}")
         if hasattr(self, 'lbl_cat_life'):
             self.lbl_cat_life.configure(text=self._format_cat_life(cat))
@@ -1439,7 +1561,9 @@ class MewgenicsApp(ctk.CTk):
         # Update Breeding Tab
         # Room
         curr_room = getattr(cat, 'house_room', '')
-        if not getattr(cat, 'is_in_house', False) or not curr_room:
+        if getattr(cat, 'is_on_adventure', False):
+            room_str = "⚔️ 探险中 (战斗存档)"
+        elif not getattr(cat, 'is_in_house', False) or not curr_room:
             room_str = '移出家园 (转入历史谱系)'
         elif curr_room == 'Floor1_Large':
             room_str = 'Floor1_Large (一层大厅)'
@@ -1450,6 +1574,10 @@ class MewgenicsApp(ctk.CTk):
         else:
             room_str = curr_room
         self.combo_room.set(room_str)
+
+        if hasattr(self, 'combo_mark'):
+            self.combo_mark.configure(values=cat_mark_choices(cat))
+            self.combo_mark.set(cat_mark_choice(cat))
 
         # Sexuality
         self.combo_sexuality.set(getattr(cat, 'sexuality', 'Straight (异性恋)'))
@@ -1467,6 +1595,7 @@ class MewgenicsApp(ctk.CTk):
         # Identity
         self.entry_name.delete(0, "end")
         self.entry_name.insert(0, cat.name)
+        self._refresh_class_combo(extra_code=cat.cat_class)
         self.combo_class.set(self._class_to_label(cat.cat_class))
         self.combo_voice.set(cat.voice)
         self.slider_pitch.set(cat.pitch)
@@ -1503,13 +1632,22 @@ class MewgenicsApp(ctk.CTk):
             raw_k = cat.class_passives[i] if i < len(cat.class_passives) else 'None'
             k = get_canonical_passive_code(raw_k)
             self.class_passive_combos[i].set(k)
+            ranks = getattr(cat, 'class_passive_ranks', [1, 1])
+            self._sync_class_passive_upgrade_ui(i, keep_check=(ranks[i] >= 2 if i < len(ranks) else False))
 
         for i in range(2):
             k = cat.disorders[i] if i < len(cat.disorders) else 'None'
             disp = self.disorder_key_to_str.get(k, k)
             self.disorder_combos[i].set(disp)
 
-        self.status_bar.configure(text=f"已选中猫咪 #{cat.key}: {cat.name} - 可直接修改各项属性", text_color="#38bdf8")
+        if getattr(cat, 'is_on_adventure', False):
+            lvl = getattr(cat, 'adventure_level', '') or getattr(self.save_mgr, 'adventure_level', '') or ''
+            self.status_bar.configure(
+                text=f"已选中猫咪 #{cat.key}: {cat.name} — 当前在探险/战斗中{(' · ' + lvl) if lvl else ''}，可改属性与技能（保存后需重新读档）",
+                text_color="#f59e0b")
+        else:
+            self.status_bar.configure(text=f"已选中猫咪 #{cat.key}: {cat.name} - 可直接修改各项属性", text_color="#38bdf8")
+        self._loading_cat = False
 
     def save_current_cat_fields(self):
         if not self.current_cat:
@@ -1521,11 +1659,17 @@ class MewgenicsApp(ctk.CTk):
             tuple(cat.base_stats), tuple(cat.bonus_stats),
             cat.sexuality, cat.attack_ability, cat.move_ability,
             tuple(cat.active_abilities[:4]), tuple(cat.ability_upgrades[:4]),
-            tuple(cat.class_passives[:2]), tuple(cat.disorders[:2]),
+            tuple(cat.class_passives[:2]), tuple(getattr(cat, 'class_passive_ranks', [1, 1])[:2]),
+            tuple(cat.disorders[:2]),
             getattr(cat, 'house_room', ''),
+            cat_mark_key(cat),
         )
         cat.name = self.entry_name.get().strip() or "Unnamed"
-        cat.cat_class = self._label_to_class(self.combo_class.get())
+        wanted = self._label_to_class(self.combo_class.get())
+        if self._is_class_unlocked(wanted, allow=cat.cat_class):
+            cat.cat_class = wanted
+        else:
+            self.combo_class.set(self._class_to_label(cat.cat_class))
         cat.voice = self.combo_voice.get()
         cat.pitch = float(self.slider_pitch.get())
         cat.boon = self.combo_boon.get()
@@ -1560,9 +1704,14 @@ class MewgenicsApp(ctk.CTk):
             target_room = "Attic"
         elif "移出" in room_disp:
             target_room = ""
+        elif "探险" in room_disp:
+            target_room = getattr(cat, 'house_room', '')
 
-        if target_room != getattr(cat, 'house_room', ''):
+        if target_room != getattr(cat, 'house_room', '') and not getattr(cat, 'is_on_adventure', False):
             self.save_mgr.set_cat_room(cat.key, target_room)
+
+        if hasattr(self, 'combo_mark'):
+            cat.set_title(parse_cat_mark_choice(self.combo_mark.get()))
 
         # Abilities
         cat.attack_ability = self.combo_atk.get()
@@ -1579,6 +1728,10 @@ class MewgenicsApp(ctk.CTk):
         for i in range(2):
             raw = self.class_passive_combos[i].get()
             cat.class_passives[i] = self.get_class_passive_key_from_val(raw)
+            is_upg = False
+            if i < len(self.class_passive_upgrade_checkboxes):
+                is_upg = self.class_passive_upgrade_checkboxes[i].get() == 1
+            cat.set_class_passive_rank(i, 2 if is_upg else 1)
 
         for i in range(2):
             raw = self.disorder_combos[i].get()
@@ -1593,8 +1746,10 @@ class MewgenicsApp(ctk.CTk):
             tuple(cat.base_stats), tuple(cat.bonus_stats),
             cat.sexuality, cat.attack_ability, cat.move_ability,
             tuple(cat.active_abilities[:4]), tuple(cat.ability_upgrades[:4]),
-            tuple(cat.class_passives[:2]), tuple(cat.disorders[:2]),
+            tuple(cat.class_passives[:2]), tuple(getattr(cat, 'class_passive_ranks', [1, 1])[:2]),
+            tuple(cat.disorders[:2]),
             getattr(cat, 'house_room', ''),
+            cat_mark_key(cat),
         )
         cat.is_modified = True if after != before else was_modified
 
@@ -1707,7 +1862,9 @@ class MewgenicsApp(ctk.CTk):
         if mid is None or mid < 300:
             return "无突变 (普通外观 / Pure)"
         match = next((e for e in entries if e.get('id') == mid), None)
-        return match['display'] if match else f"#{mid} 未知部件"
+        if not match:
+            return f"#{mid} 未知部件"
+        return format_mutation_markup(match.get('display') or f"#{mid}")
 
     def open_mutation_picker(self, slot_key, side):
         """打开图标选择器；side = 'left' / 'right'。"""
@@ -1743,7 +1900,7 @@ class MewgenicsApp(ctk.CTk):
         self.refresh_mutation_ui()
         for k in CatRecord.STAT_NAMES:
             self.update_stat_display(k)
-        self.status_bar.configure(text="✨ 已从各部位正面突变池随机抽取全套极品突变！左右对称写入，繁殖时统一遗传。", text_color="#a855f7")
+        self.status_bar.configure(text="✨ 已从各部位正面+特效池随机抽取全套突变！不含负面/缺陷，左右对称写入，繁殖时统一遗传。", text_color="#a855f7")
 
     def on_clear_all_mutations(self):
         if not self.current_cat:
@@ -1819,12 +1976,62 @@ class MewgenicsApp(ctk.CTk):
             self.update_stat_display(k)
         self.status_bar.configure(text=f"已应用特化预设: {mode}", text_color="#10b981")
 
+    def on_cat_sort_changed(self, choice=None):
+        label = choice or (self.combo_sort.get() if hasattr(self, 'combo_sort') else '序号 ↓')
+        self.cat_sort_mode = next((k for k, lbl in self.CAT_SORT_OPTIONS if lbl == label), 'id_desc')
+        q = self.search_entry.get().strip() if hasattr(self, 'search_entry') else ''
+        self.populate_cat_list(q)
+
+    def on_mark_changed(self, _choice=None):
+        if getattr(self, '_loading_cat', False) or not self.current_cat:
+            return
+        self.save_current_cat_fields()
+        mark_ic = cat_mark_icon(self.current_cat)
+        mark_bit = f"{mark_ic} " if mark_ic else ""
+        self.lbl_cat_title.configure(
+            text=f"猫咪 #{self.current_cat.key} - {mark_bit}{self.current_cat.name} {cat_gender_icon(self.current_cat)} ({self._class_zh(self.current_cat.cat_class)} · {self.current_cat.cat_class})")
+        q = self.search_entry.get().strip() if hasattr(self, 'search_entry') else ''
+        self.populate_cat_list(q)
+
+    def _sorted_cat_keys(self, keys):
+        cats = self.save_mgr.cats
+        adv = getattr(self.save_mgr, 'adventure_cat_ids', set()) or set()
+        mode = getattr(self, 'cat_sort_mode', 'id_desc')
+        keys = list(keys)
+
+        def pin_adventure(ordered):
+            if not adv:
+                return ordered
+            return [k for k in ordered if k in adv] + [k for k in ordered if k not in adv]
+
+        if mode == 'id_asc':
+            return pin_adventure(sorted(keys))
+        if mode == 'room':
+            return sorted(keys, key=lambda k: (*cat_room_sort_key(cats[k]), -k))
+        if mode == 'gender':
+            return sorted(keys, key=lambda k: (cat_gender_code(cats[k]), -k))
+        if mode == 'mark':
+            return sorted(keys, key=lambda k: (*cat_mark_sort_key(cats[k]), -k))
+        return pin_adventure(sorted(keys, reverse=True))
+
     def set_filter_mode(self, mode):
         self.filter_mode = mode
         self.btn_flt_house.configure(fg_color="#0284c7" if mode == "house" else "#334155")
         self.btn_flt_all.configure(fg_color="#0284c7" if mode == "all" else "#334155")
         self.btn_flt_hist.configure(fg_color="#0284c7" if mode == "history" else "#334155")
         self.populate_cat_list(self.search_entry.get().strip())
+
+    def _schedule(self, attr, delay_ms, fn):
+        job = getattr(self, attr, None)
+        if job:
+            try:
+                self.after_cancel(job)
+            except Exception:
+                pass
+        def _run():
+            setattr(self, attr, None)
+            fn()
+        setattr(self, attr, self.after(delay_ms, _run))
 
     def on_search(self, event=None):
         if hasattr(self, '_search_job') and self._search_job:
@@ -1874,9 +2081,15 @@ class MewgenicsApp(ctk.CTk):
         f2 = ctk.CTkFrame(dialog, fg_color="transparent")
         f2.pack(fill="x", padx=25, pady=5)
         ctk.CTkLabel(f2, text="职业:", width=90, anchor="w").pack(side="left")
-        cb_cls = ctk.CTkComboBox(f2, width=240,
-                                 values=[self._class_to_label(c) for c in self.game_data.get('classes', [])])
-        cb_cls.set(self._class_to_label("Mage"))
+        cls_labels = self._unlocked_class_labels()
+        cb_cls = ctk.CTkComboBox(f2, width=240, values=cls_labels or [self._class_to_label("Colorless")])
+        mage_lbl = self._class_to_label("Mage")
+        if mage_lbl in (cls_labels or []):
+            cb_cls.set(mage_lbl)
+        elif cls_labels:
+            cb_cls.set(cls_labels[0])
+        else:
+            cb_cls.set(self._class_to_label("Colorless"))
         cb_cls.pack(side="left")
 
         # Gender / Voice
@@ -1928,6 +2141,9 @@ class MewgenicsApp(ctk.CTk):
         def do_create():
             c_name = e_name.get().strip() or "NewCat"
             c_class = self._label_to_class(cb_cls.get())
+            if not self._is_class_unlocked(c_class):
+                messagebox.showerror("职业未解锁", f"{self._class_zh(c_class)} 尚未解锁，不能创建该职业的猫。")
+                return
             c_gen = cb_gen.get()
             
             # parse room
@@ -1998,6 +2214,8 @@ class MewgenicsApp(ctk.CTk):
         clone_cat.class_passives = list(src.class_passives)
         clone_cat.disorders = list(src.disorders)
         clone_cat.sync_legacy_passives()
+        for i, r in enumerate(getattr(src, 'class_passive_ranks', [1, 1])[:2]):
+            clone_cat.set_class_passive_rank(i, r)
         
         self.populate_cat_list()
         self.select_cat(clone_cat.key)
@@ -2046,6 +2264,7 @@ class MewgenicsApp(ctk.CTk):
         self.refresh_sidebar_weather()
         if getattr(self, 'weather_grid', None) is not None:
             self.refresh_weather_grid()
+        self._refresh_class_combo()
 
     def switch_to_save(self, file_path):
         if not file_path or not os.path.exists(file_path):
@@ -2209,11 +2428,32 @@ class MewgenicsApp(ctk.CTk):
         self.item_detail_lbl = ctk.CTkLabel(right, text="", font=("Consolas", 11), text_color="#64748b", anchor="w")
         self.item_detail_lbl.pack(fill="x", padx=14, pady=2)
 
-        f_item_actions = ctk.CTkFrame(right, fg_color="transparent")
-        f_item_actions.pack(fill="x", padx=14, pady=(10, 4))
+        self.f_item_aux = ctk.CTkFrame(right, fg_color="#1e293b", corner_radius=8)
+        self.lbl_item_aux_title = ctk.CTkLabel(
+            self.f_item_aux, text="☄️ 专用配置：随机绑定效果",
+            font=("Arial", 13, "bold"), text_color="#38bdf8", anchor="w")
+        self.lbl_item_aux_title.pack(fill="x", padx=12, pady=(10, 2))
+        self.lbl_item_aux_hint = ctk.CTkLabel(
+            self.f_item_aux,
+            text="生成时从游戏池随机抽取，结果写在道具 extra 串。可在此指定或按原池重掷。",
+            font=("Arial", 11), text_color="#94a3b8", anchor="w", wraplength=560, justify="left")
+        self.lbl_item_aux_hint.pack(fill="x", padx=12, pady=(0, 6))
+        self.f_item_aux_row = ctk.CTkFrame(self.f_item_aux, fg_color="transparent")
+        self.f_item_aux_row.pack(fill="x", padx=12, pady=(0, 10))
+        self.card_item_aux = None
+        self._item_aux_kind = None
+        self._loading_item_aux = False
+        self.btn_item_aux_reroll = ctk.CTkButton(
+            self.f_item_aux_row, text="🎲 按游戏池重掷", width=130, height=34,
+            font=("Arial", 12), fg_color="#6366f1", hover_color="#4f46e5",
+            command=self.on_item_aux_reroll)
+        self._pending_item_aux = None  # ('add', code) or ('change', box, idx, new_code)
+
+        self.f_item_actions = ctk.CTkFrame(right, fg_color="transparent")
+        self.f_item_actions.pack(fill="x", padx=14, pady=(10, 4))
 
         self.btn_item_change = ctk.CTkButton(
-            f_item_actions,
+            self.f_item_actions,
             text="🔄 浏览图库更换道具 ▾",
             font=("Arial", 12, "bold"),
             fg_color="#334155",
@@ -2225,7 +2465,7 @@ class MewgenicsApp(ctk.CTk):
         self.btn_item_change.configure(state="disabled")
 
         self.btn_item_delete = ctk.CTkButton(
-            f_item_actions,
+            self.f_item_actions,
             text="🗑 删除该道具",
             font=("Arial", 12),
             fg_color="#334155",
@@ -2237,7 +2477,7 @@ class MewgenicsApp(ctk.CTk):
         self.btn_item_delete.configure(state="disabled")
 
         self.btn_item_repair = ctk.CTkButton(
-            f_item_actions,
+            self.f_item_actions,
             text="🔧 修理（移除磨损）",
             font=("Arial", 12),
             fg_color="#334155",
@@ -2247,6 +2487,18 @@ class MewgenicsApp(ctk.CTk):
         )
         self.btn_item_repair.pack(side="left", padx=(10, 0))
         self.btn_item_repair.configure(state="disabled")
+
+        self.btn_item_refill_uses = ctk.CTkButton(
+            self.f_item_actions,
+            text="🔋 补满使用次数",
+            font=("Arial", 12),
+            fg_color="#334155",
+            hover_color="#0f766e",
+            height=34,
+            command=self.on_item_refill_uses
+        )
+        self.btn_item_refill_uses.pack(side="left", padx=(10, 0))
+        self.btn_item_refill_uses.configure(state="disabled")
 
         ctk.CTkLabel(right, text="💡 所有修改先作用于内存，点击右上角「保存所有更改」写入存档（自动备份）。",
                      font=("Arial", 11), text_color="#94a3b8").pack(anchor="w", padx=14, pady=(10, 4))
@@ -2281,6 +2533,8 @@ class MewgenicsApp(ctk.CTk):
 
     def _item_add_block_reason(self, code):
         if not code or code == 'None':
+            return None
+        if item_aux_kind(code):
             return None
         if code in self._ITEM_ADD_BLOCKED:
             return self._ITEM_ADD_BLOCKED[code]
@@ -2402,19 +2656,38 @@ class MewgenicsApp(ctk.CTk):
         zh, color = self.WEAR_STATE_ZH.get(it.flag2, (f"未知({it.flag2})", "#94a3b8"))
         return zh
 
+    def _item_durability_max(self, row_db):
+        """图鉴 durability 上限。区间取最大值（如狙击步枪 [2,4] → 4）。解析失败返回 None。"""
+        d = (row_db or {}).get('durability', '')
+        if d is None:
+            return None
+        d = str(d).strip()
+        if not d:
+            return None
+        try:
+            v = json.loads(d) if d.startswith('[') else int(d)
+            dmax = max(v) if isinstance(v, list) else int(v)
+        except Exception:
+            return None
+        return dmax if dmax > 0 else None
+
+    def _item_needs_use_refill(self, it):
+        """当前这件是否有次数、且低于图鉴上限。"""
+        try:
+            cur = int(getattr(it, 'm1', -1))
+        except Exception:
+            return False
+        if cur < 0:
+            return False
+        dmax = self._item_durability_max(self.items_db.get(it.name, {}))
+        return dmax is not None and cur < dmax
+
     def _durability_text(self, it, row_db):
         """使用次数显示：m1 = 剩余使用次数（游戏内 "N uses left"），-1 = 无次数限制。
         上限参考 wiki durability 字段。磨损(Worn)是独立的状态字段，不是这个数值。"""
         if it.m1 == -1:
             return "♾️ 无限次"
-        dmax = None
-        d = (row_db or {}).get('durability', '')
-        if d:
-            try:
-                v = json.loads(d) if d.strip().startswith('[') else int(d)
-                dmax = max(v) if isinstance(v, list) else v
-            except Exception:
-                pass
+        dmax = self._item_durability_max(row_db)
         return f"剩{it.m1}次" + (f"/{dmax}" if dmax else "")
 
     def _current_item_cat(self):
@@ -2459,6 +2732,11 @@ class MewgenicsApp(ctk.CTk):
             for idx, it in group_items:
                 row_db = self.items_db.get(it.name, {})
                 zh = row_db.get('name_zh') or row_db.get('name_en') or it.name
+                aux_kind = item_aux_kind(it.name)
+                if aux_kind and it.extra:
+                    aux_info = lookup_aux_effect(it.extra, aux_kind)
+                    aux_zh = (aux_info or {}).get('name') or it.extra
+                    zh = f"{zh} · {aux_zh}"
                 icon = self.get_wiki_icon(row_db, compose_rarity=row_db.get('rarity', ''))
                 dur = self._durability_text(it, row_db)
                 wear_icon = {3: "🟠", 0: "🧿"}.get(it.flag2, "") if box == 'storage' else ""
@@ -2528,9 +2806,19 @@ class MewgenicsApp(ctk.CTk):
                 if badges:
                     badges.pack(fill="x")
             raw_desc = row_db.get('desc_zh') or row_db.get('desc_en') or ''
+            aux_kind = item_aux_kind(it.name)
+            if aux_kind:
+                raw_desc = resolve_item_aux_text(raw_desc, it.extra, aux_kind)
             rich_desc = ar.format_rich_description(raw_desc)
             if rich_desc:
                 info_lines.append(f"效果: {rich_desc}")
+            aux_info = lookup_aux_effect(it.extra, aux_kind) if aux_kind else None
+            if aux_info and aux_info.get('stats'):
+                extra_stats = ar.extract_stats_from_item({'stats': aux_info['stats']})
+                if extra_stats:
+                    more = ar.create_stat_badges_bar(self.item_stats_bar, extra_stats, max_per_row=4)
+                    if more:
+                        more.pack(fill="x", pady=(4, 0))
         else:
             for child in self.item_stats_bar.winfo_children():
                 child.destroy()
@@ -2544,11 +2832,158 @@ class MewgenicsApp(ctk.CTk):
             text=f"实例 #{it.serial}  ·  {uses}  ·  状态: {wear}{quest_tag}  ·  原始字节: unk=({it.unk_a},{it.unk_b}) flags=({it.flag1},{it.flag2}){extra}")
         
         self._update_item_edit_buttons(box, it)
+        self._refresh_item_aux_panel(box, it)
+
+    def _hide_item_aux_panel(self):
+        if getattr(self, 'f_item_aux', None):
+            self.f_item_aux.pack_forget()
+
+    def _ensure_item_aux_card(self, kind):
+        if self.card_item_aux is not None and self._item_aux_kind == kind:
+            return
+        if self.card_item_aux is not None:
+            self.card_item_aux.destroy()
+            self.card_item_aux = None
+        self.card_item_aux = SkillCardWidget(
+            self.f_item_aux_row,
+            catalog_type=kind,
+            width=400,
+            height=48,
+            command=self.on_item_aux_changed,
+        )
+        self.card_item_aux.pack(side="left", padx=(0, 10))
+        self._item_aux_kind = kind
+
+    def _refresh_item_aux_panel(self, box, it):
+        kind = item_aux_kind(getattr(it, 'name', '') if it else '')
+        if not it or not kind:
+            self._hide_item_aux_panel()
+            return
+        titles = {
+            'LargeMeteor': '☄️ 大陨石专用配置：绑定被动',
+            'SmallMeteor': '☄️ 小陨石专用配置：绑定法术',
+            'GlowingBone': '🦴 发光骨头专用配置：绑定法术',
+            'AncestorsSkull': '💀 祖先头骨专用配置：绑定被动',
+            'AncestorsJaw': '💀 祖先下颚专用配置：绑定被动',
+            'AncestorsBones': '💀 祖先尸骨专用配置：绑定被动',
+            'LearnPassive': '💉 被动注射器：绑定被动',
+            'LearnDisorder': '💉 缺陷注射器：绑定疾病',
+            'LearnAbility': '💉 技能注射器：绑定法术',
+        }
+        hints = {
+            'LargeMeteor': '游戏从无项圈被动池（Colorless.passive_pool）随机抽取，例如无限制、各职业之魂。结果写在 extra 串。',
+            'SmallMeteor': '游戏从无项圈法术池（Colorless.ability_pool）随机抽取，结果写在 extra 串。',
+        }
+        self.lbl_item_aux_title.configure(text=titles.get(it.name, '✨ 专用配置：随机绑定效果'))
+        self.lbl_item_aux_hint.configure(text=hints.get(
+            it.name, '该道具用 extra 串绑定一条具体效果。可在此指定。'))
+        self._ensure_item_aux_card(kind)
+        self._loading_item_aux = True
+        self.card_item_aux.set(it.extra or 'None')
+        self._loading_item_aux = False
+        editable = not self._box_readonly(box) and not self._item_is_quest(it)
+        self.card_item_aux.configure(state='normal' if editable else 'disabled')
+        pool = item_aux_reroll_pool(it.name)
+        if editable and pool:
+            self.btn_item_aux_reroll.pack(side="left")
+        else:
+            self.btn_item_aux_reroll.pack_forget()
+        self.f_item_aux.pack(fill="x", padx=14, pady=(6, 4), before=self.f_item_actions)
+
+    def _aux_picker_title(self, code):
+        kind = item_aux_kind(code)
+        names = {
+            'passive': '选择绑定的被动效果',
+            'ability': '选择绑定的主动法术',
+            'disorder': '选择绑定的疾病缺陷',
+        }
+        if code == 'LargeMeteor':
+            return '选择大陨石绑定的被动'
+        if code == 'SmallMeteor':
+            return '选择小陨石绑定的法术'
+        return names.get(kind, '选择绑定效果')
+
+    def _open_item_aux_picker(self, code, current, pending):
+        kind = item_aux_kind(code)
+        if not kind:
+            return
+        self._pending_item_aux = pending
+        open_grid_picker(
+            self,
+            title=self._aux_picker_title(code),
+            catalog_type=kind,
+            current_value=current or 'None',
+            on_select_callback=self._on_item_aux_picked,
+        )
+
+    def _on_item_aux_picked(self, extra):
+        pending = self._pending_item_aux
+        self._pending_item_aux = None
+        if not extra or extra == 'None' or not pending:
+            return
+        action = pending[0]
+        if action == 'add':
+            self._finish_add_item(pending[1], extra)
+        elif action == 'change':
+            _, box, idx, new_code = pending
+            self._finish_change_item(box, idx, new_code, extra)
+        elif action == 'set':
+            self._apply_item_extra(extra)
+
+    def _apply_item_extra(self, extra):
+        if not self.selected_item:
+            return
+        box, idx = self.selected_item
+        blob = self.save_mgr.inventories.get(box)
+        if not blob or not (0 <= idx < len(blob.items)):
+            return
+        if self._box_readonly(box) or self._item_is_quest(blob.items[idx]):
+            return
+        kind = item_aux_kind(blob.items[idx].name)
+        if kind == 'passive':
+            extra = get_canonical_passive_code(extra)
+        blob.items[idx].extra = extra
+        blob.mark_dirty()
+        self.refresh_item_list()
+        self.on_select_item(box, idx)
+        info = lookup_aux_effect(extra, kind) or {}
+        self.status_bar.configure(
+            text=f"已绑定效果 {info.get('name') or extra}（内存中），保存后生效。",
+            text_color="#38bdf8")
+
+    def on_item_aux_changed(self, val):
+        if getattr(self, '_loading_item_aux', False):
+            return
+        if not val or val == 'None':
+            self.status_bar.configure(text="该道具必须绑定一条效果，不能清空。", text_color="#f59e0b")
+            if self.selected_item:
+                box, idx = self.selected_item
+                blob = self.save_mgr.inventories.get(box)
+                if blob and 0 <= idx < len(blob.items) and blob.items[idx].extra:
+                    self._loading_item_aux = True
+                    self.card_item_aux.set(blob.items[idx].extra)
+                    self._loading_item_aux = False
+            return
+        self._apply_item_extra(val)
+
+    def on_item_aux_reroll(self):
+        if not self.selected_item:
+            return
+        box, idx = self.selected_item
+        blob = self.save_mgr.inventories.get(box)
+        if not blob or not (0 <= idx < len(blob.items)):
+            return
+        it = blob.items[idx]
+        pool = [c for c in item_aux_reroll_pool(it.name) if c and c != it.extra]
+        if not pool:
+            self.status_bar.configure(text="没有可重掷的效果池。", text_color="#f59e0b")
+            return
+        self._apply_item_extra(random.choice(pool))
 
     def _update_item_edit_buttons(self, box, it=None):
         """根据（箱子可编辑性, 是否任务道具, 是否磨损）显隐按钮组：
         不可编辑时不显示按钮，而不是置灰文字提示。"""
-        btns = (self.btn_item_change, self.btn_item_delete, self.btn_item_repair)
+        btns = (self.btn_item_change, self.btn_item_delete, self.btn_item_repair, self.btn_item_refill_uses)
         if it is None:
             for b in btns:
                 b.pack_forget()
@@ -2564,6 +2999,11 @@ class MewgenicsApp(ctk.CTk):
                 self.btn_item_repair.pack(side="left", padx=(10, 0))
             else:
                 self.btn_item_repair.pack_forget()
+            if self._item_needs_use_refill(it):
+                self.btn_item_refill_uses.configure(state="normal", fg_color="#0d9488")
+                self.btn_item_refill_uses.pack(side="left", padx=(10, 0))
+            else:
+                self.btn_item_refill_uses.pack_forget()
         else:
             for b in btns:
                 b.pack_forget()
@@ -2603,11 +3043,46 @@ class MewgenicsApp(ctk.CTk):
             messagebox.showwarning("不能换成这件道具", f"[{new_code}]\n\n{blocked}")
             self.status_bar.configure(text=f"更换被拒绝：[{new_code}] 会让游戏闪退", text_color="#ef4444")
             return
+        old = blob.items[idx]
+        new_kind = item_aux_kind(new_code)
+        old_kind = item_aux_kind(old.name)
+        extra = old.extra
+        if new_kind and new_kind != old_kind:
+            self.after(80, lambda: self._open_item_aux_picker(
+                new_code, extra, ('change', box, idx, new_code)))
+            return
+        if not new_kind:
+            extra = None
+        self._finish_change_item(box, idx, new_code, extra)
+
+    def _finish_change_item(self, box, idx, new_code, extra):
+        blob = self.save_mgr.inventories.get(box)
+        if not blob or not (0 <= idx < len(blob.items)):
+            return
+        kind = item_aux_kind(new_code)
+        if kind == 'passive' and extra:
+            extra = get_canonical_passive_code(extra)
+        if kind and not extra:
+            extra = self._fallback_aux_extra(new_code)
         blob.items[idx].name = new_code
+        blob.items[idx].extra = extra
         blob.mark_dirty()
         self.refresh_item_list()
         self.on_select_item(box, idx)
         self.status_bar.configure(text=f"道具类型已更换为 [{new_code}]（内存中），保存后生效。", text_color="#38bdf8")
+
+    def _fallback_aux_extra(self, code):
+        pool = item_aux_reroll_pool(code)
+        if pool:
+            return random.choice(pool)
+        kind = item_aux_kind(code)
+        if kind == 'passive':
+            return 'Unrestricted'
+        if kind == 'ability':
+            return 'Itch'
+        if kind == 'disorder':
+            return 'Soulless'
+        return None
 
     def open_item_add_picker(self):
         open_grid_picker(
@@ -2641,11 +3116,28 @@ class MewgenicsApp(ctk.CTk):
                     "（任务道具不占容量）请先在游戏中找 Butch 升级仓库，或删除部分道具后再添加。")
                 self.status_bar.configure(text=f"添加被拒绝：仓库容量已满（{cur}/{cap}）", text_color="#ef4444")
                 return
-        it = self.save_mgr.inventories[box].add_item(code)
+        if item_aux_kind(code):
+            self.after(80, lambda: self._open_item_aux_picker(code, 'None', ('add', code)))
+            return
+        self._finish_add_item(code, None)
+
+    def _finish_add_item(self, code, extra):
+        box = self._current_box_key()
+        if self._box_readonly(box):
+            return
+        if box not in self.save_mgr.inventories:
+            return
+        kind = item_aux_kind(code)
+        if kind == 'passive' and extra:
+            extra = get_canonical_passive_code(extra)
+        if kind and not extra:
+            extra = self._fallback_aux_extra(code)
+        it = self.save_mgr.inventories[box].add_item(code, extra=extra)
         self.refresh_item_list()
         self.refresh_shop_progress()
         self.on_select_item(box, len(self.save_mgr.inventories[box].items) - 1)
-        self.status_bar.configure(text=f"已添加道具 [{code}]（内存中），保存后生效。", text_color="#38bdf8")
+        extra_txt = f" · {extra}" if extra else ""
+        self.status_bar.configure(text=f"已添加道具 [{code}{extra_txt}]（内存中），保存后生效。", text_color="#38bdf8")
 
     def on_item_delete(self):
         if not self.selected_item:
@@ -2671,9 +3163,13 @@ class MewgenicsApp(ctk.CTk):
         self.item_info_lbl.configure(text="")
         for child in self.item_stats_bar.winfo_children():
             child.destroy()
+        self._hide_item_aux_panel()
         self.btn_item_change.configure(state="disabled", fg_color="#334155")
         self.btn_item_delete.configure(state="disabled", fg_color="#334155")
         self.btn_item_repair.configure(state="disabled", fg_color="#334155")
+        if hasattr(self, 'btn_item_refill_uses'):
+            self.btn_item_refill_uses.configure(state="disabled", fg_color="#334155")
+        self._update_item_edit_buttons(box, None)
         self.status_bar.configure(text=f"已删除道具 [{it.name}]（内存中），保存后生效。", text_color="#38bdf8")
 
     def on_item_repair(self):
@@ -2697,6 +3193,43 @@ class MewgenicsApp(ctk.CTk):
         self.refresh_item_list()
         self.on_select_item(box, idx)
         self.status_bar.configure(text=f"已修理 [{it.name}]：移除磨损标记（回家不再有 50% 损坏风险）。", text_color="#d97706")
+
+    def on_item_refill_uses(self):
+        """把当前选中道具的剩余使用次数补到图鉴上限。"""
+        if not self.selected_item:
+            self.status_bar.configure(text="请先在左侧选择一个道具！", text_color="#f59e0b")
+            return
+        box, idx = self.selected_item
+        if self._box_readonly(box):
+            self.status_bar.configure(text="背包/回收站道具不可修改！", text_color="#ef4444")
+            return
+        blob = self.save_mgr.inventories.get(box)
+        if not blob or not (0 <= idx < len(blob.items)):
+            return
+        it = blob.items[idx]
+        if self._item_is_quest(it):
+            self.status_bar.configure(text="任务道具不可修改！", text_color="#ef4444")
+            return
+        try:
+            cur = int(it.m1)
+        except Exception:
+            cur = -1
+        zh = (self.items_db.get(it.name, {}) or {}).get('name_zh') or it.name
+        if cur < 0:
+            self.status_bar.configure(text=f"[{zh}] 没有使用次数限制，无需补满。", text_color="#f59e0b")
+            return
+        dmax = self._item_durability_max(self.items_db.get(it.name, {}))
+        if dmax is None:
+            self.status_bar.configure(text=f"[{zh}] 图鉴没有次数上限，无法补满。", text_color="#f59e0b")
+            return
+        if cur >= dmax:
+            self.status_bar.configure(text=f"[{zh}] 使用次数已满（{cur}/{dmax}）。", text_color="#f59e0b")
+            return
+        it.m1 = dmax
+        blob.mark_dirty()
+        self.refresh_item_list()
+        self.on_select_item(box, idx)
+        self.status_bar.configure(text=f"已补满 [{zh}] 使用次数：{cur}→{dmax}", text_color="#14b8a6")
 
     # ================================================================
     # 家具管理视图
@@ -3224,6 +3757,46 @@ class MewgenicsApp(ctk.CTk):
             self._init_class_labels()
         return self.CLASS_LABEL_TO_CODE.get(label, label)
 
+    def _is_class_unlocked(self, cls, allow=None):
+        if not cls:
+            return False
+        if allow and cls == allow:
+            return True
+        up = getattr(self.save_mgr, 'unlocks_progress', None) or {}
+        info = (up.get('classes') or {}).get(cls) or {}
+        if info.get('unlocked') or info.get('starter'):
+            return True
+        if not (up.get('classes')):
+            return cls in STARTER_CLASSES
+        return False
+
+    def _unlocked_class_labels(self, extra_code=None):
+        pool = self.game_data.get('classes') or list(UNLOCK_CLASSES)
+        codes = [c for c in pool if self._is_class_unlocked(c, allow=extra_code)]
+        if extra_code and extra_code not in codes:
+            codes.append(extra_code)
+        if not codes:
+            codes = [c for c in pool if c in STARTER_CLASSES] or ['Colorless']
+        return [self._class_to_label(c) for c in codes]
+
+    def _refresh_class_combo(self, extra_code=None):
+        if not getattr(self, 'combo_class', None):
+            return
+        labels = self._unlocked_class_labels(extra_code)
+        cur = self.combo_class.get()
+        self.combo_class.configure(values=labels)
+        if cur in labels:
+            self.combo_class.set(cur)
+        elif extra_code:
+            self.combo_class.set(self._class_to_label(extra_code))
+        elif labels:
+            self.combo_class.set(labels[0])
+        pool = self.game_data.get('classes') or list(UNLOCK_CLASSES)
+        n = sum(1 for c in pool if self._is_class_unlocked(c))
+        total = len(pool)
+        if getattr(self, 'lbl_class_lock', None):
+            self.lbl_class_lock.configure(text=f"仅已解锁职业（{n}/{total}）")
+
     def build_completion_view(self):
         v = self.view_completion
         card = ctk.CTkFrame(v, fg_color="#14202e", corner_radius=10)
@@ -3315,6 +3888,37 @@ class MewgenicsApp(ctk.CTk):
         self._icon_cache[ck] = icon
         return icon
 
+    def _unlock_reward_icon(self, kind, code, size=(26, 26)):
+        if not code:
+            return None
+        if kind in ('ability', 'colorless_ability'):
+            return get_shared_skill_icon('ability', code, size=size)
+        if kind in ('passive', 'colorless_passive'):
+            return get_shared_skill_icon('passive', code, size=size)
+        row = (getattr(self, 'items_db', None) or {}).get(code)
+        ic = self.get_wiki_icon(row, size=size) if row else None
+        if ic:
+            return ic
+        return self._asset_icon(os.path.join('icons', 'items', f'{code}.png'), size=size)
+
+    def _pack_unlock_codes(self, parent, kind, slot, size=(26, 26)):
+        codes = slot.get('codes') or ()
+        ons = slot.get('on') or ()
+        holder = ctk.CTkFrame(parent, fg_color="transparent")
+        holder.pack()
+        if not codes:
+            ctk.CTkLabel(holder, text="·", font=("Arial", 11), text_color="#475569").pack()
+            return
+        for i, code in enumerate(codes):
+            ok = bool(ons[i]) if i < len(ons) else False
+            ic = self._unlock_reward_icon(kind, code, size=size)
+            ctk.CTkLabel(
+                holder, text="" if ic else ("✔" if ok else "·"), image=ic,
+                width=size[0] + 6, height=size[1] + 6, corner_radius=4,
+                fg_color="#14532d" if ok else "#1e293b",
+                text_color="#4ade80" if ok else "#64748b", font=("Arial", 11, "bold"),
+            ).pack(side="left", padx=1)
+
     def refresh_completion_grid(self):
         for w in self.completion_grid.winfo_children():
             w.destroy()
@@ -3347,7 +3951,110 @@ class MewgenicsApp(ctk.CTk):
                 font=("Arial", 11), text_color="#94a3b8", anchor="w",
             ).pack(anchor="w", padx=10, pady=(4, 8))
 
-        except Exception as e:
+        except Exception:
+            pass
+
+        # ---- 职业 / 技能 / 道具解锁（files.unlocks）----
+        try:
+            up = getattr(self.save_mgr, 'unlocks_progress', None) or {}
+            if not getattr(self, 'items_db', None):
+                self.items_db = self.load_wiki_csv('items.csv', 'item_code')
+            classes = UNLOCK_CLASSES
+            # 职业
+            ucard = ctk.CTkFrame(self.completion_grid, fg_color="#0f172a", corner_radius=8)
+            ucard.pack(fill="x", padx=4, pady=(0, 6))
+            cg, ct = int(up.get('class_got') or 0), int(up.get('class_total') or len(classes))
+            ctk.CTkLabel(
+                ucard, text=f"🐱 职业解锁（{cg}/{ct} · files.unlocks，开局 5 职默认已开）",
+                font=("Arial", 12, "bold"), text_color="#f59e0b",
+            ).pack(anchor="w", padx=10, pady=(8, 4))
+            crow = None
+            cmap = up.get('classes') or {}
+            for i, cls in enumerate(classes):
+                if i % 7 == 0:
+                    crow = ctk.CTkFrame(ucard, fg_color="transparent")
+                    crow.pack(fill="x", padx=8, pady=(0, 4 if i else 0))
+                info = cmap.get(cls) or {}
+                ok = bool(info.get('unlocked'))
+                starter = bool(info.get('starter'))
+                zh = self._class_zh(cls)
+                ic = self._asset_icon(os.path.join('icons', 'classes', f'{cls}.png'), size=(28, 28))
+                cell = ctk.CTkFrame(crow, fg_color="#14532d" if ok else "#1e293b", corner_radius=6)
+                cell.pack(side="left", padx=3, pady=2)
+                tag = "初始" if starter else ("已开" if ok else "未开")
+                ctk.CTkLabel(
+                    cell, text=f"{zh}\n{tag}", image=ic, compound="top",
+                    font=("Arial", 9), text_color="#bbf7d0" if ok else "#64748b",
+                ).pack(padx=6, pady=4)
+
+            # 技能
+            scard = ctk.CTkFrame(self.completion_grid, fg_color="#0f172a", corner_radius=8)
+            scard.pack(fill="x", padx=4, pady=(0, 6))
+            sg, st = int(up.get('skill_got') or 0), int(up.get('skill_total') or 0)
+            ctk.CTkLabel(
+                scard, text=f"⚔️ 技能解锁（{sg}/{st} · 洞穴主动 / 墓园被动 / 地核无项圈 / 月球灵魂）",
+                font=("Arial", 12, "bold"), text_color="#f59e0b",
+            ).pack(anchor="w", padx=10, pady=(8, 2))
+            sgrid = ctk.CTkFrame(scard, fg_color="transparent")
+            sgrid.pack(fill="x", padx=8, pady=(0, 8))
+            ctk.CTkLabel(sgrid, text="职业", width=88, font=("Arial", 11, "bold"),
+                         text_color="#38bdf8", anchor="w").grid(row=0, column=0, sticky="w", padx=2)
+            for si, (_kind, zh) in enumerate(SKILL_UNLOCK_SLOTS):
+                ctk.CTkLabel(sgrid, text=zh, font=("Arial", 10, "bold"),
+                             text_color="#38bdf8").grid(row=0, column=si + 1, padx=4)
+            skills = up.get('skills') or {}
+            for ri, cls in enumerate(classes, start=1):
+                zh = self._class_zh(cls)
+                ic = self._asset_icon(os.path.join('icons', 'classes', f'{cls}.png'), size=(20, 20))
+                ctk.CTkLabel(sgrid, text=zh, image=ic, compound="left", width=88, anchor="w",
+                             font=("Arial", 11), text_color="#e2e8f0").grid(row=ri, column=0, sticky="w", pady=2)
+                slots = skills.get(cls) or {}
+                for si, (kind, _zh) in enumerate(SKILL_UNLOCK_SLOTS):
+                    cell = ctk.CTkFrame(sgrid, fg_color="transparent")
+                    cell.grid(row=ri, column=si + 1, padx=2, pady=1)
+                    self._pack_unlock_codes(cell, kind, slots.get(kind) or {}, size=(24, 24))
+
+            # 道具
+            icard = ctk.CTkFrame(self.completion_grid, fg_color="#0f172a", corner_radius=8)
+            icard.pack(fill="x", padx=4, pady=(0, 6))
+            ig, itn = int(up.get('item_got') or 0), int(up.get('item_total') or 0)
+            ctk.CTkLabel(
+                icard, text=f"🎒 道具解锁（{ig}/{itn} · 职业专属 + 箱子/仿猫/妈刀）",
+                font=("Arial", 12, "bold"), text_color="#f59e0b",
+            ).pack(anchor="w", padx=10, pady=(8, 2))
+            igrid = ctk.CTkFrame(icard, fg_color="transparent")
+            igrid.pack(fill="x", padx=8, pady=(0, 4))
+            ctk.CTkLabel(igrid, text="职业", width=88, font=("Arial", 11, "bold"),
+                         text_color="#38bdf8", anchor="w").grid(row=0, column=0, sticky="w", padx=2)
+            for si, (_kind, zh) in enumerate(ITEM_UNLOCK_SLOTS):
+                ctk.CTkLabel(igrid, text=zh, font=("Arial", 10, "bold"),
+                             text_color="#38bdf8").grid(row=0, column=si + 1, padx=4)
+            items = up.get('items') or {}
+            for ri, cls in enumerate(classes, start=1):
+                zh = self._class_zh(cls)
+                ic = self._asset_icon(os.path.join('icons', 'classes', f'{cls}.png'), size=(20, 20))
+                ctk.CTkLabel(igrid, text=zh, image=ic, compound="left", width=88, anchor="w",
+                             font=("Arial", 11), text_color="#e2e8f0").grid(row=ri, column=0, sticky="w", pady=2)
+                slots = items.get(cls) or {}
+                for si, (kind, _zh) in enumerate(ITEM_UNLOCK_SLOTS):
+                    cell = ctk.CTkFrame(igrid, fg_color="transparent")
+                    cell.grid(row=ri, column=si + 1, padx=2, pady=1)
+                    self._pack_unlock_codes(cell, kind, slots.get(kind) or {}, size=(24, 24))
+            erow = ctk.CTkFrame(icard, fg_color="transparent")
+            erow.pack(fill="x", padx=8, pady=(2, 8))
+            ctk.CTkLabel(erow, text="额外", width=88, font=("Arial", 11),
+                         text_color="#94a3b8", anchor="w").pack(side="left")
+            for extra in up.get('extras') or []:
+                ok = bool(extra.get('unlocked'))
+                ic = self._unlock_reward_icon('item', extra.get('code'), size=(24, 24))
+                cell = ctk.CTkFrame(erow, fg_color="#14532d" if ok else "#1e293b", corner_radius=4)
+                cell.pack(side="left", padx=3)
+                ctk.CTkLabel(
+                    cell, text=extra.get('zh') or extra.get('code') or '',
+                    image=ic, compound="left", font=("Arial", 10),
+                    text_color="#bbf7d0" if ok else "#64748b",
+                ).pack(padx=6, pady=3)
+        except Exception:
             pass
 
         # ---- 家园 Boss 9 场（houseboss_unlock_*）----
@@ -3361,15 +4068,18 @@ class MewgenicsApp(ctk.CTk):
                 total = int(hbp.get('total') or len(bosses))
                 ctk.CTkLabel(
                     hcard,
-                    text=f"🏰 家园 Boss 进度（{beaten_n}/{total} · 红头=已入池 · 黑猫头=已击败）",
+                    text=f"🏰 家园 Boss 进度（{beaten_n}/{total} · 红头=已入池 · 黑猫头=已击败 · 蓝卡=挂起）",
                     font=("Arial", 12, "bold"), text_color="#f59e0b",
                 ).pack(anchor="w", padx=10, pady=(8, 2))
                 grid = ctk.CTkFrame(hcard, fg_color="transparent")
                 grid.pack(fill="x", padx=8, pady=(0, 4))
+                cd_left = int(hbp.get('countdown') or 0)
+                nxt_key = (hbp.get('next') or '').strip()
                 for i, boss in enumerate(bosses):
                     r, c = divmod(i, 3)
                     beaten = bool(boss.get('beaten'))
                     unlocked = bool(boss.get('unlocked'))
+                    pending = bool(boss.get('pending')) or (nxt_key == boss.get('key') and not beaten)
                     o_en, o_zh = self._official_name(
                         boss.get('name_key') or '',
                         boss.get('name_en') or '',
@@ -3377,6 +4087,9 @@ class MewgenicsApp(ctk.CTk):
                     if beaten:
                         mark, col, bg = "✔", "#4ade80", "#14532d"
                         st = "已击败"
+                    elif pending:
+                        mark, col, bg = "⏳", "#38bdf8", "#1e3a5f"
+                        st = f"挂起 · {cd_left}天后" if cd_left > 0 else "挂起 · 即将开战"
                     elif unlocked:
                         mark, col, bg = "🔓", "#f59e0b", "#2d2416"
                         st = "已入池"
@@ -3392,7 +4105,7 @@ class MewgenicsApp(ctk.CTk):
                         stamp = self._asset_icon(
                             os.path.join('icons', 'houseboss', f"dead_{key}.png"),
                             size=(32, 32))
-                    elif unlocked:
+                    elif unlocked or pending:
                         stamp = self._asset_icon(
                             os.path.join('icons', 'houseboss', f"{key}.png"),
                             size=(28, 28))
@@ -3428,8 +4141,14 @@ class MewgenicsApp(ctk.CTk):
                             hit.get('name_key') or '', hit.get('name_en') or nxt, hit.get('name_zh') or nxt)
                 pending = '无'
                 if nxt:
-                    dtxt = diff_lvl[hb] if 0 <= hb < len(diff_lvl) else (str(hb) if hb >= 0 else '—')
-                    pending = f"{nxt_zh}（{dtxt}）"
+                    bits = []
+                    if cd_left > 0:
+                        bits.append(f"{cd_left}天后")
+                    elif nxt:
+                        bits.append("即将开战")
+                    if 0 <= hb < len(diff_lvl):
+                        bits.append(diff_lvl[hb])
+                    pending = f"{nxt_zh}（{' · '.join(bits) or '—'}）"
                 elif hb >= 0:
                     pending = diff_lvl[hb] if hb < len(diff_lvl) else str(hb)
                 first = '✅ 已击败过' if hbp.get('first_beat') else '❌ 尚未击败'
@@ -3752,7 +4471,9 @@ class MewgenicsApp(ctk.CTk):
         ctk.CTkLabel(f_search, text="🔍 搜索:", font=("Arial", 12, "bold"), text_color="#38bdf8").pack(side="left")
         self.entry_weather_search = ctk.CTkEntry(f_search, width=280, placeholder_text="中文名、英文或代码...")
         self.entry_weather_search.pack(side="left", padx=8)
-        self.entry_weather_search.bind("<KeyRelease>", lambda e: self.refresh_weather_grid())
+        self.entry_weather_search.bind("<KeyRelease>", lambda e: self._schedule(
+            '_weather_search_job', 200, self.refresh_weather_grid))
+        self.entry_weather_search.bind("<Return>", lambda e: self.refresh_weather_grid())
         self.lbl_weather_count = ctk.CTkLabel(f_search, text="", font=("Arial", 11), text_color="#94a3b8")
         self.lbl_weather_count.pack(side="right")
         holder = ctk.CTkScrollableFrame(card, fg_color="transparent")
@@ -3779,6 +4500,13 @@ class MewgenicsApp(ctk.CTk):
     def refresh_weather_grid(self):
         if not getattr(self, 'weather_grid', None):
             return
+        job = getattr(self, '_weather_search_job', None)
+        if job:
+            try:
+                self.after_cancel(job)
+            except Exception:
+                pass
+            self._weather_search_job = None
         st = self._weather_state()
         cur = st['current'] if st['current'] not in ('', '0') else 'None'
         cur_meta = next((w for w in st['catalog'] if w['key'] == cur), None)
@@ -3845,15 +4573,17 @@ class MewgenicsApp(ctk.CTk):
         card.pack(fill="both", expand=True, padx=10, pady=8)
         ctk.CTkLabel(card, text="📜 事件图鉴（本地游戏事件定义 · 选项 / 检定 / 奖惩）",
                      font=("Arial", 15, "bold"), text_color="#c4b5fd").pack(anchor="w", padx=15, pady=(12, 2))
-        ctk.CTkLabel(card, text="数据来自本地 data/events（events_combined.json）。筛选与奖惩解析对齐 mewcodex Events Viewer。",
+        ctk.CTkLabel(card, text=f"数据来自本地 data/events。中文按 {ZH_PATCH_LABEL} 覆盖 wiki 旧译，可搜选项、英文名或游戏原文。",
                      font=("Arial", 11), text_color="#94a3b8").pack(anchor="w", padx=15, pady=(0, 6))
 
         bar = ctk.CTkFrame(card, fg_color="transparent")
         bar.pack(fill="x", padx=15, pady=(0, 6))
         ctk.CTkLabel(bar, text="🔍", font=("Arial", 13)).pack(side="left")
-        self.entry_event_search = ctk.CTkEntry(bar, width=240, placeholder_text="标题、提示或代码...")
+        self.entry_event_search = ctk.CTkEntry(bar, width=280, placeholder_text="标题、选项、提示、英文或代码...")
         self.entry_event_search.pack(side="left", padx=6)
-        self.entry_event_search.bind("<KeyRelease>", lambda e: self.refresh_events_list())
+        self.entry_event_search.bind("<KeyRelease>", lambda e: self._schedule(
+            '_event_search_job', 200, self.refresh_events_list))
+        self.entry_event_search.bind("<Return>", lambda e: self.refresh_events_list())
 
         types = list_event_types()
         self._event_type_keys = {'全部类型': ''}
@@ -3885,6 +4615,7 @@ class MewgenicsApp(ctk.CTk):
         self._rendered_event_key = None
         self._event_list_btns = {}
         self._event_btns_ready = False
+        self._event_shown_keys = None
 
     def _event_filter_args(self):
         q = self.entry_event_search.get().strip() if getattr(self, 'entry_event_search', None) else ''
@@ -3899,6 +4630,7 @@ class MewgenicsApp(ctk.CTk):
     def _ensure_event_buttons(self):
         if self._event_btns_ready:
             return
+        self.event_list.grid_columnconfigure(0, weight=1)
         for e in load_event_catalog():
             k = e['key']
             badge = "🙈 " if e.get('hidden') else ""
@@ -3912,38 +4644,56 @@ class MewgenicsApp(ctk.CTk):
             self._event_list_btns[k] = btn
         self._event_btns_ready = True
 
+    def _paint_event_button(self, key, on):
+        btn = (self._event_list_btns or {}).get(key)
+        if not btn:
+            return
+        btn.configure(fg_color="#6d28d9" if on else "#1e293b",
+                      hover_color="#7c3aed" if on else "#334155")
+
     def refresh_events_list(self):
         if not getattr(self, 'event_list', None):
             return
+        job = getattr(self, '_event_search_job', None)
+        if job:
+            try:
+                self.after_cancel(job)
+            except Exception:
+                pass
+            self._event_search_job = None
         self._ensure_event_buttons()
         q, type_key, show_hidden = self._event_filter_args()
         items = filter_events(query=q, type_key=type_key, show_hidden=show_hidden)
         total = len(load_event_catalog())
         self.lbl_event_count.configure(text=f"显示 {len(items)} / {total}")
-        keys = {e['key'] for e in items}
-        if self._selected_event_key not in keys:
-            self._selected_event_key = items[0]['key'] if items else None
-        for btn in self._event_list_btns.values():
-            btn.pack_forget()
-        for e in items:
-            k = e['key']
-            btn = self._event_list_btns.get(k)
-            if not btn:
-                continue
-            on = k == self._selected_event_key
-            btn.configure(fg_color="#6d28d9" if on else "#1e293b",
-                          hover_color="#7c3aed" if on else "#334155")
-            btn.pack(fill="x", padx=4, pady=3)
+        shown = [e['key'] for e in items]
+        if self._selected_event_key not in shown:
+            self._selected_event_key = shown[0] if shown else None
+        if getattr(self, '_event_shown_keys', None) == shown:
+            for k in shown:
+                self._paint_event_button(k, k == self._selected_event_key)
+        else:
+            prev = set(getattr(self, '_event_shown_keys', None) or ())
+            now = set(shown)
+            for k in prev - now:
+                btn = self._event_list_btns.get(k)
+                if btn:
+                    btn.grid_remove()
+            for i, k in enumerate(shown):
+                btn = self._event_list_btns.get(k)
+                if not btn:
+                    continue
+                self._paint_event_button(k, k == self._selected_event_key)
+                btn.grid(row=i, column=0, sticky="ew", padx=4, pady=3)
+            self._event_shown_keys = shown
         if self._rendered_event_key != self._selected_event_key:
             self.render_event_detail()
             self._rendered_event_key = self._selected_event_key
 
     def select_event(self, key):
         self._selected_event_key = key
-        for k, btn in (self._event_list_btns or {}).items():
-            on = k == key
-            btn.configure(fg_color="#6d28d9" if on else "#1e293b",
-                          hover_color="#7c3aed" if on else "#334155")
+        for k in (getattr(self, '_event_shown_keys', None) or ()):
+            self._paint_event_button(k, k == key)
         if self._rendered_event_key != key:
             self.render_event_detail()
             self._rendered_event_key = key
@@ -3975,9 +4725,19 @@ class MewgenicsApp(ctk.CTk):
                          anchor="w").pack(fill="x", padx=14)
 
         prompt = ev.get('prompt') or ''
+        alts = ev.get('prompt_alts') or []
         if prompt:
             ctk.CTkLabel(box, text=prompt, font=("Arial", 13), text_color="#cbd5e1",
                          justify="left", anchor="w", wraplength=640).pack(fill="x", padx=14, pady=(8, 6))
+        if ev.get('prompt_en') and ev.get('prompt_en') != prompt:
+            ctk.CTkLabel(box, text=ev['prompt_en'], font=("Arial", 11), text_color="#64748b",
+                         justify="left", anchor="w", wraplength=640).pack(fill="x", padx=14, pady=(0, 6))
+        if alts:
+            ctk.CTkLabel(box, text="其他开场（章节 / 进度）", font=("Arial", 11, "bold"),
+                         text_color="#94a3b8", anchor="w").pack(fill="x", padx=14, pady=(4, 0))
+            for alt in alts:
+                ctk.CTkLabel(box, text=alt, font=("Arial", 12), text_color="#cbd5e1",
+                             justify="left", anchor="w", wraplength=640).pack(fill="x", padx=14, pady=(2, 4))
 
         refs = ev.get('refs') or []
         if refs:
@@ -3995,7 +4755,10 @@ class MewgenicsApp(ctk.CTk):
     def _render_event_option(self, parent, opt):
         card = ctk.CTkFrame(parent, fg_color="#1e293b", corner_radius=8)
         card.pack(fill="x", padx=12, pady=6)
-        head = f"选项：{opt.get('label') or opt.get('name')}    检定属性：{opt.get('stat_zh')}"
+        head = f"选项：{opt.get('label') or opt.get('name')}"
+        if opt.get('label_en') and opt.get('label_en') != opt.get('label'):
+            head += f" ({opt['label_en']})"
+        head += f"    检定属性：{opt.get('stat_zh')}"
         ctk.CTkLabel(card, text=head, font=("Arial", 13, "bold"), text_color="#e2e8f0",
                      anchor="w").pack(fill="x", padx=10, pady=(8, 4))
         outcomes = opt.get('outcomes') or []
@@ -4055,7 +4818,9 @@ class MewgenicsApp(ctk.CTk):
         ctk.CTkLabel(bar, text="🔍", font=("Arial", 13)).pack(side="left")
         self.entry_ability_search = ctk.CTkEntry(bar, width=220, placeholder_text="名称、描述、代码，或 #(卡池)")
         self.entry_ability_search.pack(side="left", padx=6)
-        self.entry_ability_search.bind("<KeyRelease>", lambda e: self.refresh_ability_codex_list(reset_page=True))
+        self.entry_ability_search.bind("<KeyRelease>", lambda e: self._schedule(
+            '_ability_search_job', 200, lambda: self.refresh_ability_codex_list(reset_page=True)))
+        self.entry_ability_search.bind("<Return>", lambda e: self.refresh_ability_codex_list(reset_page=True))
 
         self._ability_class_keys = {'全部职业': '', '其他（无职业）': '__null__'}
         self.opt_ability_class = ctk.CTkOptionMenu(bar, values=['全部职业', '其他（无职业）'], width=130,
@@ -4181,6 +4946,13 @@ class MewgenicsApp(ctk.CTk):
     def refresh_ability_codex_list(self, reset_page=False):
         if not getattr(self, 'ability_list', None):
             return
+        job = getattr(self, '_ability_search_job', None)
+        if job:
+            try:
+                self.after_cancel(job)
+            except Exception:
+                pass
+            self._ability_search_job = None
         self._ensure_ability_slots()
         q, class_key, pool_key, show_hidden, show_files = self._ability_filter_args()
         items = filter_abilities(query=q, class_key=class_key, pool_key=pool_key,
@@ -4193,11 +4965,18 @@ class MewgenicsApp(ctk.CTk):
         self._ability_page = min(max(1, self._ability_page), pages)
         start = (self._ability_page - 1) * self.ABILITY_CODEX_PAGE
         page_items = items[start:start + self.ABILITY_CODEX_PAGE]
-        keys = {it['key'] for it in page_items}
         if self._selected_ability_key not in {it['key'] for it in items}:
             self._selected_ability_key = page_items[0]['key'] if page_items else None
         self.lbl_ability_count.configure(text=f"显示 {len(items)} / {total}")
         self.lbl_ability_page.configure(text=f"{self._ability_page} / {pages}")
+        page_keys = tuple(it['key'] for it in page_items)
+        sig = (page_keys, self._selected_ability_key)
+        if getattr(self, '_ability_list_sig', None) == sig:
+            if self._rendered_ability_key != self._selected_ability_key:
+                self.render_ability_codex_detail()
+                self._rendered_ability_key = self._selected_ability_key
+            return
+        self._ability_list_sig = sig
         tooltip = GameTooltip.get_instance()
         for i, slot in enumerate(self._ability_slots):
             if i >= len(page_items):
@@ -4205,6 +4984,7 @@ class MewgenicsApp(ctk.CTk):
                 slot['row'].pack_forget()
                 continue
             it = page_items[i]
+            same = slot.get('key') == it['key']
             slot['key'] = it['key']
             on = it['key'] == self._selected_ability_key
             cls = it.get('class') or it.get('wiki_class')
@@ -4214,13 +4994,14 @@ class MewgenicsApp(ctk.CTk):
             slot['name'].configure(text=it.get('name') or it['key'], text_color=border if not on else "#fde68a")
             hidden = "  · 隐藏" if it.get('wiki_hidden') else ""
             slot['meta'].configure(text=f"{class_label(it.get('wiki_class'))}  ·  {it['key']}{hidden}")
-            set_label_image(slot['icon'], get_shared_skill_icon('ability', it['key'], (32, 32)), size=(32, 32))
-            tooltip.bind_widget(slot['row'], {
-                'key': it['key'], 'name': it.get('name') or it['key'],
-                'desc': it.get('desc') or '', 'class': cls or 'Colorless',
-                'mana': it.get('mana') or 0, 'damage': it.get('damage') or '',
-                'elements': it.get('elements') or [], 'type_icon': it.get('type_icon') or '',
-            }, get_icon_func=lambda k: get_shared_skill_icon('ability', k, (36, 36)))
+            if not same:
+                set_label_image(slot['icon'], get_shared_skill_icon('ability', it['key'], (32, 32)), size=(32, 32))
+                tooltip.bind_widget(slot['row'], {
+                    'key': it['key'], 'name': it.get('name') or it['key'],
+                    'desc': it.get('desc') or '', 'class': cls or 'Colorless',
+                    'mana': it.get('mana') or 0, 'damage': it.get('damage') or '',
+                    'elements': it.get('elements') or [], 'type_icon': it.get('type_icon') or '',
+                }, get_icon_func=lambda k: get_shared_skill_icon('ability', k, (36, 36)))
             slot['row'].pack(fill="x", padx=4, pady=3)
         if self._rendered_ability_key != self._selected_ability_key:
             self.render_ability_codex_detail()

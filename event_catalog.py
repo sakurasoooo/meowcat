@@ -78,6 +78,17 @@ _RICH_RE = re.compile(r'\[/?[a-zA-Z](?::[^\]]+)?\]')
 
 _CATALOG = None
 _NAME_INDEX = None
+_EVENT_ZH = None
+
+# 游戏内汉化与 wiki 旧译的常见用字差（毕皮斯 / 比皮斯）
+_SEARCH_FOLD = str.maketrans({
+    '毕': '比',
+    '…': '.',
+    '“': '"',
+    '”': '"',
+    '‘': "'",
+    '’': "'",
+})
 
 
 def _search_bases():
@@ -129,6 +140,32 @@ def _loc(texts, fallback=''):
     return (texts.get('zh') or texts.get('en') or fallback or '').strip()
 
 
+def _event_zh_map():
+    global _EVENT_ZH
+    if _EVENT_ZH is None:
+        data = _load_json(('wiki_data', 'event_zh.json'))
+        _EVENT_ZH = data if isinstance(data, dict) else {}
+    return _EVENT_ZH
+
+
+def _event_zh(key, fallback=''):
+    if key:
+        zh = _event_zh_map().get(key)
+        if zh:
+            return zh
+    return fallback
+
+
+def _loc_overlay(key, texts, fallback=''):
+    return _event_zh(key, _loc(texts, fallback))
+
+
+def _norm_search(text):
+    s = (text or '').replace('\r\n', '\n').replace('\r', '\n').lower()
+    s = s.translate(_SEARCH_FOLD)
+    return ' '.join(s.split())
+
+
 def type_key_from_source(source_file):
     if not source_file:
         return ''
@@ -138,6 +175,26 @@ def type_key_from_source(source_file):
 
 def type_label(type_key):
     return EVENT_TYPE_LABELS.get(type_key, (type_key or '').replace('_', ' ') or '未知')
+
+
+_KIND_NAME_KEYS = {
+    'item': ('ARMOR_{}_NAME', 'ITEM_{}_NAME'),
+    'passive': ('PASSIVE_{}_NAME', 'DISORDER_{}_NAME'),
+    'ability': ('ABILITY_{}_NAME',),
+}
+
+_PROMPT_KEY_RE = re.compile(r'(?:prompt|label)\s+"([^"]+)"')
+
+
+def _patch_name(kind, code):
+    if not code:
+        return ''
+    up = str(code).strip().upper()
+    for tmpl in _KIND_NAME_KEYS.get(kind, ()):
+        zh = _event_zh(tmpl.format(up))
+        if zh:
+            return clean_text(zh)
+    return ''
 
 
 def _name_index():
@@ -156,12 +213,12 @@ def _name_index():
         for row in data:
             key = row.get('key')
             if key:
-                idx[kind][key] = row.get('name') or row.get('name_en') or key
+                idx[kind][key] = _patch_name(kind, key) or row.get('name') or row.get('name_en') or key
     ev = _load_json(('wiki_data', 'events_combined.json')) or {}
     for e in ev.get('events') or []:
         k = e.get('event_key')
         if k:
-            idx['event'][k] = _loc(e.get('title_texts'), k)
+            idx['event'][k] = clean_text(_loc_overlay(e.get('title_key'), e.get('title_texts'), k))
     _NAME_INDEX = idx
     return idx
 
@@ -169,7 +226,7 @@ def _name_index():
 def lookup_name(kind, code):
     if not code:
         return ''
-    return _name_index().get(kind, {}).get(code, code)
+    return _patch_name(kind, code) or _name_index().get(kind, {}).get(code, code)
 
 
 def _keyword_maps():
@@ -239,10 +296,39 @@ def _quoted(text):
 def _prompt_from_map(key, prompt_map):
     if not key:
         return ''
+    overlay = _event_zh(key)
+    if overlay:
+        return clean_text(overlay)
     texts = (prompt_map or {}).get(key)
     if isinstance(texts, dict):
         return clean_text(_loc(texts, key))
     return clean_text(key)
+
+
+def _loc_keys_in_code(*codes):
+    keys = []
+    seen = set()
+    for code in codes:
+        for k in _PROMPT_KEY_RE.findall(code or ''):
+            if k in seen:
+                continue
+            if not (k.startswith('EVENT_') or k.startswith('QEVENT_')):
+                continue
+            seen.add(k)
+            keys.append(k)
+    return keys
+
+
+def _texts_for_keys(keys, prompt_map=None):
+    out = []
+    seen = set()
+    for k in keys:
+        text = _prompt_from_map(k, prompt_map)
+        if not text or text == k or text in seen:
+            continue
+        seen.add(text)
+        out.append(text)
+    return out
 
 
 def _first_line_token(line):
@@ -407,7 +493,11 @@ def parse_option_outcomes(option, meta, ignored):
         tree = build_block_tree(code)
         rows = summarize_node(tree, prompt_map, meta, ignored, side=side)
         if not rows:
-            fallback_prompt = _loc(option.get('good_prompt_texts' if side == 'good' else 'bad_prompt_texts'))
+            prompt_key = option.get('good_prompt_key' if side == 'good' else 'bad_prompt_key')
+            fallback_prompt = _loc_overlay(
+                prompt_key,
+                option.get('good_prompt_texts' if side == 'good' else 'bad_prompt_texts'),
+            )
             if fallback_prompt:
                 rows = [{
                     'side': side,
@@ -434,7 +524,7 @@ def _format_stat(option):
 
 
 def normalize_event(raw, meta, ignored):
-    title = _loc(raw.get('title_texts'), raw.get('event_key') or '')
+    title = clean_text(_loc_overlay(raw.get('title_key'), raw.get('title_texts'), raw.get('event_key') or ''))
     title_en = (raw.get('title_texts') or {}).get('en') or ''
     hidden = not bool((_loc(raw.get('title_texts')) or '').strip())
     tkey = type_key_from_source(raw.get('source_file'))
@@ -443,10 +533,29 @@ def normalize_event(raw, meta, ignored):
         stat, stat_zh = _format_stat(opt)
         options.append({
             'name': opt.get('name') or '',
-            'label': _loc(opt.get('label_texts'), opt.get('name') or ''),
+            'label': clean_text(_loc_overlay(opt.get('label_key'), opt.get('label_texts'), opt.get('name') or '')),
+            'label_en': ((opt.get('label_texts') or {}).get('en') or '').strip(),
             'stat': stat,
             'stat_zh': stat_zh,
             'outcomes': parse_option_outcomes(opt, meta, ignored),
+        })
+    if not options and (raw.get('outcome_code') or '').strip():
+        fake = {
+            'name': 'outcome',
+            'label_key': '',
+            'label_texts': {'zh': '固定结果', 'en': 'Outcome'},
+            'stat': 'none',
+            'good_code': raw.get('outcome_code') or '',
+            'bad_code': '',
+            'prompt_texts': raw.get('outcome_prompt_texts') or {},
+        }
+        options.append({
+            'name': 'outcome',
+            'label': '固定结果',
+            'label_en': 'Outcome',
+            'stat': 'none',
+            'stat_zh': STAT_LABELS.get('none', '无检定'),
+            'outcomes': parse_option_outcomes(fake, meta, ignored),
         })
     refs = []
     for ref in raw.get('refs') or []:
@@ -455,11 +564,19 @@ def normalize_event(raw, meta, ignored):
         label_kind = {'item': 'item', 'passive': 'passive', 'ability': 'ability', 'event': 'event'}.get(kind)
         label = lookup_name(label_kind, code) if label_kind else code
         refs.append({'type': kind, 'code': code, 'label': label})
-    return {
+    prompt = clean_text(_loc_overlay(raw.get('main_prompt_key'), raw.get('main_prompt_texts')))
+    ques_keys = [k for k in _loc_keys_in_code(raw.get('main_code'), raw.get('outcome_code')) if '_QUES' in k]
+    ques_texts = _texts_for_keys(ques_keys)
+    prompt_alts = [t for t in ques_texts if t != prompt]
+    if not prompt and ques_texts:
+        prompt = ques_texts[0]
+        prompt_alts = ques_texts[1:]
+    ev = {
         'key': raw.get('event_key') or '',
         'title': title or raw.get('event_key') or '',
         'title_en': title_en,
-        'prompt': clean_text(_loc(raw.get('main_prompt_texts'))),
+        'prompt': prompt,
+        'prompt_alts': prompt_alts,
         'prompt_en': clean_text((raw.get('main_prompt_texts') or {}).get('en') or ''),
         'cat_choice': raw.get('cat_choice') or '',
         'cat_choice_zh': CAT_CHOICE_LABELS.get((raw.get('cat_choice') or '').lower(), raw.get('cat_choice') or ''),
@@ -471,6 +588,37 @@ def normalize_event(raw, meta, ignored):
         'refs': refs,
         'options': options,
     }
+    ev['_search'] = _event_search_blob(ev, raw)
+    return ev
+
+
+def _event_search_blob(ev, raw):
+    bits = [
+        ev.get('key') or '', ev.get('title') or '', ev.get('title_en') or '',
+        ev.get('prompt') or '', ev.get('prompt_en') or '',
+        ' '.join(ev.get('prompt_alts') or []),
+        ev.get('type_zh') or '', ev.get('type_key') or '',
+        _loc(raw.get('title_texts')), _loc(raw.get('main_prompt_texts')),
+        (raw.get('main_prompt_texts') or {}).get('en') or '',
+    ]
+    for opt in ev.get('options') or []:
+        bits.extend([opt.get('label') or '', opt.get('label_en') or '', opt.get('name') or ''])
+        for row in opt.get('outcomes') or []:
+            bits.append(row.get('prompt') or '')
+            for act in row.get('actions') or []:
+                bits.extend([act.get('title') or '', act.get('body') or '', act.get('key') or ''])
+    for opt in raw.get('options') or []:
+        bits.append(_loc(opt.get('label_texts')))
+        bits.append((opt.get('label_texts') or {}).get('en') or '')
+        for texts in (opt.get('prompt_texts') or {}).values():
+            if isinstance(texts, dict):
+                bits.extend([texts.get('zh') or '', texts.get('en') or ''])
+    for texts in (raw.get('outcome_prompt_texts') or {}).values():
+        if isinstance(texts, dict):
+            bits.extend([texts.get('zh') or '', texts.get('en') or ''])
+    for ref in ev.get('refs') or []:
+        bits.extend([ref.get('label') or '', ref.get('code') or '', ref.get('type') or ''])
+    return _norm_search(' '.join(str(b) for b in bits if b))
 
 
 def load_event_catalog():
@@ -501,7 +649,7 @@ def list_event_types(events=None):
 
 def filter_events(events=None, query='', type_key='', show_hidden=False):
     events = events if events is not None else load_event_catalog()
-    q = (query or '').strip().lower()
+    q = _norm_search(query)
     out = []
     for e in events:
         if not show_hidden and e.get('hidden'):
@@ -509,10 +657,7 @@ def filter_events(events=None, query='', type_key='', show_hidden=False):
         if type_key and e.get('type_key') != type_key:
             continue
         if q:
-            hay = ' '.join([
-                e.get('key') or '', e.get('title') or '', e.get('title_en') or '',
-                e.get('prompt') or '', e.get('type_zh') or '', e.get('type_key') or '',
-            ]).lower()
+            hay = e.get('_search') or ''
             if q not in hay:
                 continue
         out.append(e)

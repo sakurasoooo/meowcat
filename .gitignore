@@ -26,4 +26,5 @@ test_icons/
 *.swf
 gpak_manifest.json
 tools/_zh_mewcodex/
+tools/_zh_tmp/
 tools/_combined_gpak.csv

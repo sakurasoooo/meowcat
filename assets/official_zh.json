@@ -465,7 +465,7 @@
   },
   "MUTATION_EARS_325_DESC": {
     "en": "If you're wet, gain +1 Charge and +1 [img:shield] at the end of your turn.",
-    "zh": "如果你处于潮湿状态，\r\n回合结束时获得 +1 充能和 +1 [img:shield]。"
+    "zh": "如果你处于潮湿状态，\r\n回合结束时获得 +1 充能和 +1 护盾。"
   },
   "MUTATION_EARS_326_DESC": {
     "en": "5% chance to spawn a Maggot familiar each turn.",
@@ -861,7 +861,7 @@
   },
   "MUTATION_HEAD_314_DESC": {
     "en": "Gain +1 [img:int] at the end of each turn.",
-    "zh": "每回合结束时获得 +1 [img:int]。"
+    "zh": "每回合结束时获得 +1 智力。"
   },
   "MUTATION_HEAD_315_DESC": {
     "en": "At the start of each battle, swap your highest and lowest stats.",
@@ -881,7 +881,7 @@
   },
   "MUTATION_HEAD_319_DESC": {
     "en": "Gain +1 [img:int] permanently at the end of each battle. Start each battle with Bruise 2.",
-    "zh": "每场战斗结束时永久获得 +1 [img:int]。\r\n每场战斗开始时带有 2 层淤伤。"
+    "zh": "每场战斗结束时永久获得 +1 智力。\r\n每场战斗开始时带有 2 层淤伤。"
   },
   "MUTATION_HEAD_320_DESC": {
     "en": "Your basic attack has +2 Knockback.",
@@ -1037,7 +1037,7 @@
   },
   "MUTATION_LEGS_340_DESC": {
     "en": "When you take damage, gain +1 [img:lck].",
-    "zh": "当你受到伤害时，获得 +1 [img:lck] 。"
+    "zh": "当你受到伤害时，获得 +1 幸运。"
   },
   "MUTATION_LEGS_341_DESC": {
     "en": "Your basic attack makes units face away from you.",
@@ -1289,7 +1289,7 @@
   },
   "MUTATION_TAIL_322_DESC": {
     "en": "Gain +1 [img:spd] each turn.",
-    "zh": "每回合获得 +1 [img:spd]。"
+    "zh": "每回合获得 +1 速度。"
   },
   "MUTATION_TAIL_323_DESC": {
     "en": "Your movement action is a jump.",

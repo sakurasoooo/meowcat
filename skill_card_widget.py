@@ -11,7 +11,10 @@ from picker_dialog import (
     open_grid_picker, set_label_image,
     get_shared_catalog_maps, get_shared_skill_icon,
 )
-from mewgenics_core import get_canonical_passive_code, BASIC_ATTACK_ABILITIES, BASIC_MOVE_ABILITIES
+from mewgenics_core import (
+    get_canonical_passive_code, BASIC_ATTACK_ABILITIES, BASIC_MOVE_ABILITIES,
+    get_passive_upgrade_desc,
+)
 import class_theme
 import attribute_renderer as ar
 
@@ -54,6 +57,7 @@ class SkillCardWidget(ctk.CTkFrame):
         self.allowed_keys = list(allowed_keys) if allowed_keys else None
         self.current_value = "None"
         self.state = "normal"
+        self.show_upgraded = False
 
         # Assets & Catalog
         self.base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -179,6 +183,13 @@ class SkillCardWidget(ctk.CTkFrame):
             self.current_value = get_canonical_passive_code(self.current_value)
         self.update_display()
 
+    def set_upgraded(self, flag):
+        flag = bool(flag)
+        if flag == getattr(self, 'show_upgraded', False):
+            return
+        self.show_upgraded = flag
+        self.update_display()
+
     def configure(self, **kwargs):
         kwargs.pop('values', None) # ignore legacy dropdown values list
         if 'state' in kwargs:
@@ -221,9 +232,16 @@ class SkillCardWidget(ctk.CTkFrame):
                 ''.join(c for c in k.lower() if c.isalnum()), {}
             )
             cn_name = item.get('name') or k
+            desc_up = ''
+            if self.show_upgraded and self.catalog_type in ("passive", "disorder"):
+                desc_up = (item.get('desc_up') or get_passive_upgrade_desc(k) or '').strip()
+                if desc_up and not cn_name.endswith('+'):
+                    cn_name = cn_name + '+'
 
             # 技能卡按所属职业主题色显示（名称 + 边框）
-            cls = item.get('class') if self.catalog_type == "ability" else None
+            cls = item.get('class') if self.catalog_type in ("ability", "passive") else None
+            if cls not in class_theme.CLASS_PALETTE:
+                cls = None
             cls_col = class_theme.ui_color(cls) if cls else None
             if self.state == 'disabled':
                 name_col, code_col, border_col = "#64748b", "#475569", "#1e293b"
@@ -239,22 +257,23 @@ class SkillCardWidget(ctk.CTkFrame):
 
             icon = self.get_icon(k, size=(36, 36))
             set_label_image(self.lbl_icon, icon, size=(36, 36))
-            item_data = item or {'key': k, 'name': cn_name, 'desc': ''}
+            item_data = dict(item) if item else {'key': k, 'name': cn_name, 'desc': ''}
+            if desc_up:
+                item_data['name'] = cn_name
+                item_data['desc'] = desc_up
             self._bind_card_chrome(item_data=item_data)
 
     def _hover_targets(self):
         return [self, self.lbl_icon, self.f_text, self.lbl_name, self.lbl_code]
 
     def _bind_card_chrome(self, item_data=None):
-        """Rebind click/hover. Clearing to None must drop the previous skill tooltip closure."""
+        """只更新悬浮详情数据，不再重复 bind（CTk add=True 会叠加上次技能）。"""
+        tip = GameTooltip.get_instance()
         for w in self._hover_targets():
-            w.bind("<Button-1>", lambda e: self.open_picker())
-            w.unbind("<Motion>")
             if item_data:
-                GameTooltip.get_instance().bind_widget(w, item_data, get_icon_func=self.get_icon)
+                tip.bind_widget(w, item_data, get_icon_func=self.get_icon)
             else:
-                w.bind("<Enter>", lambda e: self.on_mouse_enter())
-                w.bind("<Leave>", lambda e: self.on_mouse_leave())
+                tip.clear_widget(w)
 
     def _current_border_color(self):
         if self.state == 'disabled':
@@ -262,7 +281,9 @@ class SkillCardWidget(ctk.CTkFrame):
         if not self.current_value or self.current_value == "None":
             return "#334155"
         item = self.catalog_map.get(self.current_value) or {}
-        cls = item.get('class') if self.catalog_type == "ability" else None
+        cls = item.get('class') if self.catalog_type in ("ability", "passive") else None
+        if cls not in class_theme.CLASS_PALETTE:
+            cls = None
         return class_theme.ui_color(cls) if cls else "#334155"
 
     def on_mouse_enter(self):

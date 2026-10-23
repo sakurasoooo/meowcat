@@ -21375,8 +21375,8 @@
         "name": "Pyramid Head",
         "stats": {},
         "stat_str": "",
-        "desc": "每个回合结束时，[img:int]+1。",
-        "display": "#314 Pyramid Head (每个回合结束时，[img:int]+1。)"
+        "desc": "每个回合结束时，智力+1。",
+        "display": "#314 Pyramid Head (每个回合结束时，智力+1。)"
       },
       {
         "id": 315,
@@ -21415,8 +21415,8 @@
         "name": "Exposed Brain",
         "stats": {},
         "stat_str": "",
-        "desc": "每场战斗结束时，[img:int]永久+1。每场战斗开始时，自带2层【瘀伤】。",
-        "display": "#319 Exposed Brain (每场战斗结束时，[img:int]永久+1。每场)"
+        "desc": "每场战斗结束时，智力永久+1。每场战斗开始时，自带2层【瘀伤】。",
+        "display": "#319 Exposed Brain (每场战斗结束时，智力永久+1。每场)"
       },
       {
         "id": 320,
@@ -22206,8 +22206,8 @@
         "name": "Exhaust Pipe",
         "stats": {},
         "stat_str": "",
-        "desc": "每个回合[img:spd]+1。",
-        "display": "#322 Exhaust Pipe (每个回合[img:spd]+1。)"
+        "desc": "每个回合速度+1。",
+        "display": "#322 Exhaust Pipe (每个回合速度+1。)"
       },
       {
         "id": 323,
@@ -23269,8 +23269,8 @@
         "name": "Lucky Toe",
         "stats": {},
         "stat_str": "",
-        "desc": "你受到伤害时，[img:lck]+1。",
-        "display": "#340 Lucky Toe (你受到伤害时，[img:lck]+1。)"
+        "desc": "你受到伤害时，幸运+1。",
+        "display": "#340 Lucky Toe (你受到伤害时，幸运+1。)"
       },
       {
         "id": 341,
@@ -25575,8 +25575,8 @@
         "name": "Tree Branch",
         "stats": {},
         "stat_str": "",
-        "desc": "潮湿的时候，你在回合结束时【蓄能】和[img:shield]各+1。",
-        "display": "#325 Tree Branch (潮湿的时候，你在回合结束时【蓄能】和[img:s)"
+        "desc": "潮湿的时候，你在回合结束时【蓄能】和护盾各+1。",
+        "display": "#325 Tree Branch (潮湿的时候，你在回合结束时【蓄能】和护盾各+1。)"
       },
       {
         "id": 326,
@@ -28252,8 +28252,8 @@
         "name": "Lucky Toe",
         "stats": {},
         "stat_str": "",
-        "desc": "你受到伤害时，[img:lck]+1。",
-        "display": "#340 Lucky Toe (你受到伤害时，[img:lck]+1。)"
+        "desc": "你受到伤害时，幸运+1。",
+        "display": "#340 Lucky Toe (你受到伤害时，幸运+1。)"
       },
       {
         "id": 341,

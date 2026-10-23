@@ -27,11 +27,43 @@ class GameTooltip:
         self.get_icon_func = None
 
     def bind_widget(self, widget, item_data, get_icon_func=None):
-        widget.bind("<Enter>", lambda e: self.schedule_show(widget, item_data, e, get_icon_func))
-        widget.bind("<Leave>", lambda e: self.hide())
+        """绑定一次，之后只更新 widget 上的 payload。
+
+        CTk Frame/Label 的 bind() 强制 add=True，重复 bind 会叠加上一次技能的闭包，
+        读档清空槽位后格子显示 None，悬浮详情却仍是旧技能。
+        """
+        widget._mc_tt_item = item_data
+        widget._mc_tt_icon = get_icon_func
+        if getattr(widget, "_mc_tt_bound", False):
+            return
+        widget._mc_tt_bound = True
+        widget.bind("<Enter>", lambda e, w=widget: self._enter_widget(w, e))
+        widget.bind("<Leave>", lambda e, w=widget: self._leave_widget(w))
         widget.bind("<Motion>", lambda e: self.on_motion(e))
 
+    def clear_widget(self, widget):
+        try:
+            widget._mc_tt_item = None
+            widget._mc_tt_icon = None
+        except Exception:
+            pass
+        if self.current_widget is widget:
+            self.hide()
+
+    def _enter_widget(self, widget, event):
+        item = getattr(widget, "_mc_tt_item", None)
+        if not item:
+            return
+        self.schedule_show(widget, item, event, getattr(widget, "_mc_tt_icon", None))
+
+    def _leave_widget(self, widget):
+        if self.current_widget is widget or self.current_widget is None:
+            self.hide()
+
     def schedule_show(self, widget, item_data, event, get_icon_func=None):
+        if not item_data:
+            self.hide()
+            return
         self.cancel_schedule()
         self.current_widget = widget
         self.item_data = item_data
@@ -62,6 +94,9 @@ class GameTooltip:
 
     def hide(self):
         self.cancel_schedule()
+        self.item_data = None
+        self.get_icon_func = None
+        self.current_widget = None
         if not self._window_alive():
             self.tip_window = None
             return
@@ -99,6 +134,16 @@ class GameTooltip:
         return self.tip_window
 
     def show(self, x, y):
+        # 延迟弹出期间若已读档/清空，以 widget 上的实时 payload 为准
+        if self.current_widget is not None and hasattr(self.current_widget, "_mc_tt_item"):
+            live = self.current_widget._mc_tt_item
+            if not live:
+                self.item_data = None
+                return
+            self.item_data = live
+            icon = getattr(self.current_widget, "_mc_tt_icon", None)
+            if icon is not None:
+                self.get_icon_func = icon
         if not self.item_data:
             return
         try:
